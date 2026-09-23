@@ -1,0 +1,2772 @@
+{
+ "meta": {
+  "snapshotDate": "2026-09-23",
+  "site": "uvation-devops.atlassian.net",
+  "projectsVisible": 20,
+  "queries": {
+   "issues": "updated >= -30d (all projects)",
+   "worklogs": "worklogDate >= -14d",
+   "register": "summary ~ Risk|Dependency, created >= 2026-06-01, project != HC"
+  },
+  "counts": {
+   "issuesUpdated30d": 2422,
+   "openAllTime": 1850,
+   "worklogIssues": 379,
+   "worklogEntries": 1181,
+   "registerItems": 29
+  }
+ },
+ "period": {
+  "label": "Sprint window 9–22 Sep 2026",
+  "start": "2026-09-09",
+  "end": "2026-09-22",
+  "workingDays": 9,
+  "holidayNote": "No worklogs exist on Mon 14 Sep for any person, so it is treated as a non-working day."
+ },
+ "capacityPolicy": {
+  "source": "Confluence SOP: Resource Planning, Jira Management and Tempo Time Logging",
+  "fteHoursPerFortnight": 80,
+  "fteDevHoursPerFortnight": 60,
+  "contractorHoursPerFortnight": 40,
+  "utilisationTarget": "80–90%",
+  "hoursPerDay": 8
+ },
+ "title": "Portfolio Status Review",
+ "kpis": {
+  "projectsVisible": 20,
+  "projectsActive": 14,
+  "issuesUpdated30": 2422,
+  "done30": 1208,
+  "doneInPeriod": 794,
+  "openAllTime": 1850,
+  "overdueOpen": 106,
+  "hoursInPeriod": 1250.2,
+  "capacityPerPerson": 72
+ },
+ "projects": [
+  {
+   "key": "HC",
+   "name": "Hamara CRM",
+   "updated30": 578,
+   "created30": 578,
+   "todo": 578,
+   "inprog": 0,
+   "done": 0,
+   "doneInPeriod": 0,
+   "overdue": 0,
+   "openBugs": 0,
+   "hours": 0.0
+  },
+  {
+   "key": "USP",
+   "name": "Web-Uvation Services Platform",
+   "updated30": 552,
+   "created30": 192,
+   "todo": 74,
+   "inprog": 70,
+   "done": 408,
+   "doneInPeriod": 361,
+   "overdue": 6,
+   "openBugs": 72,
+   "hours": 246.2
+  },
+  {
+   "key": "DMI",
+   "name": "Marketing",
+   "updated30": 314,
+   "created30": 248,
+   "todo": 57,
+   "inprog": 14,
+   "done": 243,
+   "doneInPeriod": 101,
+   "overdue": 9,
+   "openBugs": 0,
+   "hours": 0.0
+  },
+  {
+   "key": "MT",
+   "name": "Web-Marketplace",
+   "updated30": 314,
+   "created30": 214,
+   "todo": 20,
+   "inprog": 67,
+   "done": 227,
+   "doneInPeriod": 152,
+   "overdue": 33,
+   "openBugs": 3,
+   "hours": 365.2
+  },
+  {
+   "key": "MR",
+   "name": "Web-Marketing",
+   "updated30": 204,
+   "created30": 153,
+   "todo": 28,
+   "inprog": 16,
+   "done": 160,
+   "doneInPeriod": 97,
+   "overdue": 0,
+   "openBugs": 5,
+   "hours": 203.7
+  },
+  {
+   "key": "IT",
+   "name": "Infrastructure",
+   "updated30": 119,
+   "created30": 98,
+   "todo": 73,
+   "inprog": 39,
+   "done": 7,
+   "doneInPeriod": 3,
+   "overdue": 9,
+   "openBugs": 0,
+   "hours": 0.0
+  },
+  {
+   "key": "UC",
+   "name": "Uvation Conversational AI",
+   "updated30": 91,
+   "created30": 64,
+   "todo": 50,
+   "inprog": 14,
+   "done": 27,
+   "doneInPeriod": 15,
+   "overdue": 6,
+   "openBugs": 0,
+   "hours": 87.8
+  },
+  {
+   "key": "VTN",
+   "name": "Design & Creative",
+   "updated30": 82,
+   "created30": 63,
+   "todo": 8,
+   "inprog": 13,
+   "done": 61,
+   "doneInPeriod": 24,
+   "overdue": 21,
+   "openBugs": 0,
+   "hours": 0.0
+  },
+  {
+   "key": "IN",
+   "name": "Devops",
+   "updated30": 57,
+   "created30": 47,
+   "todo": 9,
+   "inprog": 5,
+   "done": 43,
+   "doneInPeriod": 22,
+   "overdue": 4,
+   "openBugs": 2,
+   "hours": 171.5
+  },
+  {
+   "key": "ID",
+   "name": "Web-Identity",
+   "updated30": 51,
+   "created30": 32,
+   "todo": 5,
+   "inprog": 14,
+   "done": 32,
+   "doneInPeriod": 13,
+   "overdue": 9,
+   "openBugs": 2,
+   "hours": 114.8
+  },
+  {
+   "key": "UP",
+   "name": "Uvation Projects (overhead)",
+   "updated30": 27,
+   "created30": 2,
+   "todo": 2,
+   "inprog": 25,
+   "done": 0,
+   "doneInPeriod": 0,
+   "overdue": 0,
+   "openBugs": 0,
+   "hours": 28.5
+  },
+  {
+   "key": "DM",
+   "name": "Design Marketing Development Collab",
+   "updated30": 25,
+   "created30": 9,
+   "todo": 0,
+   "inprog": 10,
+   "done": 15,
+   "doneInPeriod": 5,
+   "overdue": 8,
+   "openBugs": 0,
+   "hours": 4.5
+  },
+  {
+   "key": "PC",
+   "name": "Web-Marketplace Product Catalog",
+   "updated30": 6,
+   "created30": 4,
+   "todo": 4,
+   "inprog": 1,
+   "done": 1,
+   "doneInPeriod": 1,
+   "overdue": 1,
+   "openBugs": 0,
+   "hours": 28.0
+  },
+  {
+   "key": "INF",
+   "name": "Infrastructure-test",
+   "updated30": 2,
+   "created30": 2,
+   "todo": 1,
+   "inprog": 1,
+   "done": 0,
+   "doneInPeriod": 0,
+   "overdue": 0,
+   "openBugs": 0,
+   "hours": 0.0
+  }
+ ],
+ "register": [
+  {
+   "key": "EN-17",
+   "project": "EN",
+   "projectName": "Web-Email Notifications",
+   "kind": "Risk",
+   "summary": "No automated tests in Notification Service — changes must be verified manually",
+   "likelihood": "High",
+   "impact": "High",
+   "ownerTeam": "Engineering Team",
+   "assignee": null,
+   "jiraStatus": "To Do",
+   "updated": "2026-07-07",
+   "daysSinceUpdate": 78,
+   "context": "The Notification Service currently has no automated tests, so every change must be verified manually, slowing delivery and increasing regression risk.",
+   "mitigation": [
+    "Introduce a test framework for the service",
+    "Add unit and integration test coverage for core notification flows",
+    "Block PRs that don't include adequate test coverage"
+   ],
+   "lastComment": null,
+   "verdict": "Escalate",
+   "rag": "red",
+   "why": "High likelihood and high impact. No automated tests. Unowned for 78 days.",
+   "action": "Assign owner and add to next sprint.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "EN-18",
+   "project": "EN",
+   "projectName": "Web-Email Notifications",
+   "kind": "Risk",
+   "summary": "SQL injection risk in Notification Service via string interpolation in raw SQL",
+   "likelihood": "High",
+   "impact": "Critical",
+   "ownerTeam": "Security Team",
+   "assignee": null,
+   "jiraStatus": "To Do",
+   "updated": "2026-07-07",
+   "daysSinceUpdate": 78,
+   "context": "Raw SQL built via string interpolation was found in the Notification Service, creating a critical SQL injection exposure.",
+   "mitigation": [
+    "Replace all string-interpolated SQL with parameterised queries",
+    "Conduct a security code review of the affected modules",
+    "Add a lint/CI check to catch future raw string SQL interpolation"
+   ],
+   "lastComment": null,
+   "verdict": "Escalate",
+   "rag": "red",
+   "why": "SQL injection via string interpolation. High likelihood, critical impact. Unowned for 78 days.",
+   "action": "Treat as a security defect, not a register entry. Fix before any further Notification Service release.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "EN-19",
+   "project": "EN",
+   "projectName": "Web-Email Notifications",
+   "kind": "Risk",
+   "summary": "Open public mutation endpoints in Notification Service accepting writes without auth",
+   "likelihood": "High",
+   "impact": "Critical",
+   "ownerTeam": "Security Team",
+   "assignee": null,
+   "jiraStatus": "To Do",
+   "updated": "2026-07-07",
+   "daysSinceUpdate": 78,
+   "context": "Some public mutation endpoints in the Notification Service currently accept writes without authentication or input validation, a critical exposure.",
+   "mitigation": [
+    "Enforce authentication and input validation on all public endpoints",
+    "Review and re-enable RBAC checks on affected endpoints",
+    "Add automated tests confirming unauthenticated writes are rejected"
+   ],
+   "lastComment": null,
+   "verdict": "Escalate",
+   "rag": "red",
+   "why": "Public mutation endpoints accept writes without auth. High likelihood, critical impact. Unowned for 78 days.",
+   "action": "Treat as a security defect. Fix before any further Notification Service release.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "MT-1093",
+   "project": "MT",
+   "projectName": "Web-Marketplace",
+   "kind": "Dependency",
+   "summary": "OEM/brand partner agreements must be in place before product listing",
+   "likelihood": "Medium",
+   "impact": "High",
+   "ownerTeam": "Product Team / Business Team",
+   "assignee": null,
+   "jiraStatus": "TODO",
+   "updated": "2026-07-07",
+   "daysSinceUpdate": 78,
+   "context": "Product listings require signed OEM/brand partner agreements. This dependency is jointly owned by the Product and Business teams and is currently open.",
+   "mitigation": [
+    "Initiate OEM agreements in parallel with development work",
+    "Track agreement status via a procurement checklist",
+    "Block listing publication until agreement status is confirmed"
+   ],
+   "lastComment": null,
+   "verdict": "Keep – now critical",
+   "rag": "red",
+   "why": "27 AI-server listings for Dell, HPE, NVIDIA, Supermicro and Lenovo were moved to production between 16 and 22 Sep. The register's own mitigation says to block publication until OEM agreements are confirmed.",
+   "action": "Confirm OEM agreement status per brand before products are enabled.",
+   "suggestedOwner": "Anshul Bhargava"
+  },
+  {
+   "key": "MT-1098",
+   "project": "MT",
+   "projectName": "Web-Marketplace",
+   "kind": "Risk",
+   "summary": "OEM pricing changes without notice impacting listed prices",
+   "likelihood": "Medium",
+   "impact": "Medium",
+   "ownerTeam": "Product Team",
+   "assignee": null,
+   "jiraStatus": "TODO",
+   "updated": "2026-07-07",
+   "daysSinceUpdate": 78,
+   "context": "OEMs can change pricing without notice, and Marketplace listings can drift out of sync, creating pricing-accuracy risk.",
+   "mitigation": [
+    "Build automated price-sync jobs against OEM pricing feeds",
+    "Add \"starting from\" display guard logic where exact price can't be guaranteed",
+    "Alert Product team on large/unexpected price deltas"
+   ],
+   "lastComment": null,
+   "verdict": "Keep – now critical",
+   "rag": "red",
+   "why": "Listed AI-server prices depend on OEM pricing. Listings are now in production (disabled). Unassigned for 78 days.",
+   "action": "Agree the price-sync or 'price on request' rule before enablement.",
+   "suggestedOwner": "Anshul Bhargava"
+  },
+  {
+   "key": "USP-3755",
+   "project": "USP",
+   "projectName": "Web-Uvation Services Platform",
+   "kind": "Risk",
+   "summary": "Scope creep from multiple managed service teams adding portal requirements",
+   "likelihood": "High",
+   "impact": "Medium",
+   "ownerTeam": "Product Team",
+   "assignee": "Livian Stefan Stan",
+   "jiraStatus": "TODO",
+   "updated": "2026-09-17",
+   "daysSinceUpdate": 6,
+   "context": "Multiple managed service teams are independently adding portal requirements, risking scope creep. Currently In Progress.",
+   "mitigation": [
+    "Enforce a formal change request process for new requirements",
+    "Require product owner gate approval before requirements enter the backlog",
+    "Use a phased delivery roadmap with MoSCoW prioritisation"
+   ],
+   "lastComment": null,
+   "verdict": "Keep – materialising",
+   "rag": "red",
+   "why": "Scope creep is visible now: 192 USP issues created in 30 days and 72 open bugs.",
+   "action": "Enforce the change-request gate named in the mitigation.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "EN-20",
+   "project": "EN",
+   "projectName": "Web-Email Notifications",
+   "kind": "Risk",
+   "summary": "No CI/CD config found in Notification Service repo — deployment handled outside repo",
+   "likelihood": "High",
+   "impact": "High",
+   "ownerTeam": "DevOps Team",
+   "assignee": null,
+   "jiraStatus": "To Do",
+   "updated": "2026-07-07",
+   "daysSinceUpdate": 78,
+   "context": "The Notification Service repo has no CI/CD configuration; deployment currently happens outside the repo, which is inconsistent with the standard DevOps pipeline.",
+   "mitigation": [
+    "Add a Dockerfile for the service",
+    "Add CI/CD pipeline configuration aligned to the standard DevOps pipeline",
+    "Migrate deployment off any manual/out-of-repo process"
+   ],
+   "lastComment": null,
+   "verdict": "Keep",
+   "rag": "amber",
+   "why": "Deployment still runs outside the repo pipeline. Unowned for 78 days.",
+   "action": "Assign to DevOps with a date.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "MT-1094",
+   "project": "MT",
+   "projectName": "Web-Marketplace",
+   "kind": "Dependency",
+   "summary": "Gynger API sandbox access required before financing integration",
+   "likelihood": "Medium",
+   "impact": "Medium",
+   "ownerTeam": "Backend Team",
+   "assignee": null,
+   "jiraStatus": "TODO",
+   "updated": "2026-07-07",
+   "daysSinceUpdate": 78,
+   "context": "Financing integration on the Marketplace requires Gynger API sandbox access, which has not yet been granted.",
+   "mitigation": [
+    "Request Gynger sandbox access as early as possible",
+    "Build a mock integration layer to unblock development while access is pending",
+    "Swap mock layer for real sandbox once access is granted"
+   ],
+   "lastComment": null,
+   "verdict": "Re-assess",
+   "rag": "amber",
+   "why": "Financing modal is part of the PDP story (MT-1217, in UAT). No Jira evidence that Gynger sandbox access was obtained.",
+   "action": "Confirm whether financing is in go-live scope. If not, close. If yes, assign an owner.",
+   "suggestedOwner": "Naveen Jangid"
+  },
+  {
+   "key": "MT-1096",
+   "project": "MT",
+   "projectName": "Web-Marketplace",
+   "kind": "Risk",
+   "summary": "Identity provider (Azure AD B2C) outage affecting login",
+   "likelihood": "Low",
+   "impact": "High",
+   "ownerTeam": "Identity Team",
+   "assignee": null,
+   "jiraStatus": "TODO",
+   "updated": "2026-07-07",
+   "daysSinceUpdate": 78,
+   "context": "An Azure AD B2C outage would prevent Marketplace login entirely if no fallback exists.",
+   "mitigation": [
+    "Maintain a fallback authentication path",
+    "Monitor Azure AD B2C via its published SLA",
+    "Surface a status page / clear error messaging on login failure"
+   ],
+   "lastComment": null,
+   "verdict": "Keep",
+   "rag": "amber",
+   "why": "Still valid for checkout go-live. Untouched and unassigned for 78 days.",
+   "action": "Assign to Identity lead and link to USP-3751, which covers the same outage.",
+   "suggestedOwner": "Saravana Kumar"
+  },
+  {
+   "key": "MT-1097",
+   "project": "MT",
+   "projectName": "Web-Marketplace",
+   "kind": "Risk",
+   "summary": "Payment gateway downtime at checkout",
+   "likelihood": "Low",
+   "impact": "High",
+   "ownerTeam": "Backend Team",
+   "assignee": null,
+   "jiraStatus": "TODO",
+   "updated": "2026-07-07",
+   "daysSinceUpdate": 78,
+   "context": "Checkout currently has no automatic failover if the primary payment gateway experiences downtime, risking lost orders.",
+   "mitigation": [
+    "Implement dual payment provider failover",
+    "Process orders asynchronously via a queue so brief outages don't lose transactions",
+    "Alert the Backend team on gateway failure"
+   ],
+   "lastComment": null,
+   "verdict": "Keep",
+   "rag": "amber",
+   "why": "Cart, PO upload and checkout stories are done (MT-1219), so payment gateway downtime is now a live exposure. Unassigned for 78 days.",
+   "action": "Assign an owner and confirm failover approach before checkout is enabled.",
+   "suggestedOwner": "Naveen Jangid"
+  },
+  {
+   "key": "MT-1100",
+   "project": "MT",
+   "projectName": "Web-Marketplace",
+   "kind": "Risk",
+   "summary": "Data breach exposing customer PII or order history",
+   "likelihood": "Low",
+   "impact": "Critical",
+   "ownerTeam": "Security Team",
+   "assignee": "Naveen Jangid",
+   "jiraStatus": "IN PRODUCTION",
+   "updated": "2026-09-18",
+   "daysSinceUpdate": 5,
+   "context": "Customer PII and order history are high-value targets; a breach would have critical impact and reputational/legal consequences.",
+   "mitigation": [
+    "Enforce encryption at rest and in transit for all PII and order data",
+    "Enforce role-based access control (RBAC) across services touching this data",
+    "Maintain a SOC2 audit trail for access to sensitive data"
+   ],
+   "lastComment": {
+    "author": "Naveen Jangid",
+    "date": "2026-09-07",
+    "text": "@Saravana Kumar @Naman Bapna I have made the changes to user get_userinfo API to get user details instead of the claims for marketplace fe and pushed to development"
+   },
+   "verdict": "Close after sign-off",
+   "rag": "amber",
+   "why": "Userinfo API now used instead of token claims (7 Sep). Ticket is In Production. Claims-removal subtasks ID-679 to ID-683 are still in UAT.",
+   "action": "Close once ID-679 to ID-683 reach production and Security signs off.",
+   "suggestedOwner": "Naveen Jangid"
+  },
+  {
+   "key": "MT-1101",
+   "project": "MT",
+   "projectName": "Web-Marketplace",
+   "kind": "Risk",
+   "summary": "Regulatory non-compliance (GDPR/CCPA) on cookie handling",
+   "likelihood": "Medium",
+   "impact": "High",
+   "ownerTeam": "Legal / Compliance",
+   "assignee": null,
+   "jiraStatus": "TODO",
+   "updated": "2026-07-07",
+   "daysSinceUpdate": 78,
+   "context": "Cookie handling must comply with GDPR and CCPA; non-compliance carries regulatory and reputational risk.",
+   "mitigation": [
+    "Integrate a consent management platform for cookie handling",
+    "Conduct a quarterly compliance review",
+    "Document compliance status for Legal/Compliance sign-off"
+   ],
+   "lastComment": null,
+   "verdict": "Re-assess",
+   "rag": "amber",
+   "why": "Marketing site shipped GDPR cookie consent (MR-760, Done). No equivalent evidence for Marketplace.",
+   "action": "Confirm Marketplace consent coverage, then close or assign.",
+   "suggestedOwner": "Vishnu kumar yadav"
+  },
+  {
+   "key": "USP-3750",
+   "project": "USP",
+   "projectName": "Web-Uvation Services Platform",
+   "kind": "Dependency",
+   "summary": "Uvation Rewards Platform API required for service credit sync",
+   "likelihood": "Medium",
+   "impact": "High",
+   "ownerTeam": "Backend Team",
+   "assignee": "Livian Stefan Stan",
+   "jiraStatus": "TODO",
+   "updated": "2026-09-17",
+   "daysSinceUpdate": 6,
+   "context": "Service credit sync depends on the Rewards Platform API, currently tracked as an open dependency.",
+   "mitigation": [
+    "Implement idempotent async processing via Service Bus",
+    "Run an hourly reconciliation job to catch missed/duplicate syncs",
+    "Alert Backend team on reconciliation discrepancies"
+   ],
+   "lastComment": null,
+   "verdict": "Keep",
+   "rag": "amber",
+   "why": "Depends on Rewards API. Same failure mode as MT-1099, which Marketplace has already mitigated.",
+   "action": "Reuse the Marketplace sync and reconciliation pattern.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "USP-3754",
+   "project": "USP",
+   "projectName": "Web-Uvation Services Platform",
+   "kind": "Risk",
+   "summary": "Service credit sync failure from Marketplace or Rewards",
+   "likelihood": "Medium",
+   "impact": "High",
+   "ownerTeam": "Backend Team",
+   "assignee": "Livian Stefan Stan",
+   "jiraStatus": "TODO",
+   "updated": "2026-09-17",
+   "daysSinceUpdate": 6,
+   "context": "Service credit sync from Marketplace or Rewards can fail, risking inconsistent balances for customers.",
+   "mitigation": [
+    "Implement idempotent async processing via Service Bus",
+    "Run an hourly reconciliation job",
+    "Alert on discrepancies detected during reconciliation"
+   ],
+   "lastComment": null,
+   "verdict": "Keep",
+   "rag": "amber",
+   "why": "Duplicate of USP-3750 in substance.",
+   "action": "Merge with USP-3750.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "IN-986",
+   "project": "IN",
+   "projectName": "Devops",
+   "kind": "Risk",
+   "summary": "Infrastructure scaling risk causing performance degradation",
+   "likelihood": "Medium",
+   "impact": "High",
+   "ownerTeam": "DevOps Team",
+   "assignee": "k.kishore",
+   "jiraStatus": "Done",
+   "updated": "2026-09-07",
+   "daysSinceUpdate": 16,
+   "context": "Current infrastructure capacity is not proven against peak load scenarios, risking performance degradation.",
+   "mitigation": [
+    "Complete capacity planning against expected peak load",
+    "Configure AKS horizontal pod autoscaler for key services",
+    "Run load testing before each production release"
+   ],
+   "lastComment": {
+    "author": "k.kishore",
+    "date": "2026-09-03",
+    "text": "Configured Horizontal Pod Autoscalar for production environment when there is high utilization exceeding 80% CPU the pod will be autoscaled. "
+   },
+   "verdict": "Close with condition",
+   "rag": "green",
+   "why": "Horizontal pod autoscaling configured in production at 80% CPU (3 Sep). Ticket is Done. Load testing before release is not evidenced.",
+   "action": "Close risk. Keep 'load test before each production release' as a release checklist item.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "MT-1092",
+   "project": "MT",
+   "projectName": "Web-Marketplace",
+   "kind": "Dependency",
+   "summary": "Azure AD B2C tenant config must be active before Marketplace auth works",
+   "likelihood": "Medium",
+   "impact": "High",
+   "ownerTeam": "Identity Team",
+   "assignee": null,
+   "jiraStatus": "TODO",
+   "updated": "2026-07-07",
+   "daysSinceUpdate": 78,
+   "context": "Marketplace authentication depends on the Azure AD B2C tenant being active and correctly configured. This is currently an open dependency owned by the Identity Team.",
+   "mitigation": [
+    "Coordinate early with the Identity Team on tenant configuration and timeline",
+    "Monitor Azure AD B2C SLA for the tenant",
+    "Maintain a fallback authentication path in case the tenant is unavailable"
+   ],
+   "lastComment": null,
+   "verdict": "Close",
+   "rag": "green",
+   "why": "Azure AD B2C tenant is live. Marketplace login works in production and Identity is now removing token claims (ID-679 to ID-686).",
+   "action": "Close as realised dependency.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "MT-1095",
+   "project": "MT",
+   "projectName": "Web-Marketplace",
+   "kind": "Dependency",
+   "summary": "CDN infrastructure must be operational to serve product images",
+   "likelihood": "Low",
+   "impact": "Medium",
+   "ownerTeam": "DevOps Team",
+   "assignee": null,
+   "jiraStatus": "TODO",
+   "updated": "2026-07-07",
+   "daysSinceUpdate": 78,
+   "context": "Product image delivery depends on CDN infrastructure being operational. This is owned by DevOps and currently open.",
+   "mitigation": [
+    "Validate CDN uptime SLA",
+    "Implement fallback image hosting for CDN outages",
+    "Monitor CDN health as part of standard observability"
+   ],
+   "lastComment": null,
+   "verdict": "Close",
+   "rag": "green",
+   "why": "Product images are served on production for all migrated products (MT-1528). CDN is operational.",
+   "action": "Close as realised dependency.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "MT-1099",
+   "project": "MT",
+   "projectName": "Web-Marketplace",
+   "kind": "Risk",
+   "summary": "Rewards platform sync failure leading to incorrect point balances",
+   "likelihood": "Medium",
+   "impact": "Medium",
+   "ownerTeam": "Backend Team",
+   "assignee": "Naveen Jangid",
+   "jiraStatus": "Done",
+   "updated": "2026-09-17",
+   "daysSinceUpdate": 6,
+   "context": "Sync failures between Marketplace and the Rewards platform can leave customers with incorrect point balances.",
+   "mitigation": [
+    "Implement idempotent, event-driven sync between Marketplace and Rewards",
+    "Add a manual reconciliation process for detected discrepancies",
+    "Alert Backend team on repeated sync failures"
+   ],
+   "lastComment": {
+    "author": "Naveen Jangid",
+    "date": "2026-09-16",
+    "text": "Event based sync mechanism is already implemented and manual sync of the orders are possible and rewards admin can also adjust the loyalty points balance through admin"
+   },
+   "verdict": "Close",
+   "rag": "green",
+   "why": "Mitigation delivered. Event-based sync, manual order sync and admin point adjustment exist (comment 16 Sep). Ticket is Done.",
+   "action": "Close in register.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "USP-3747",
+   "project": "USP",
+   "projectName": "Web-Uvation Services Platform",
+   "kind": "Dependency",
+   "summary": "Uvation Identity must remain single source of truth for USP auth",
+   "likelihood": "Low",
+   "impact": "High",
+   "ownerTeam": "Identity Team",
+   "assignee": "Livian Stefan Stan",
+   "jiraStatus": "TODO",
+   "updated": "2026-09-17",
+   "daysSinceUpdate": 6,
+   "context": "USP must not implement standalone authentication; all auth flows must delegate to Azure AD B2C via OAuth 2.0.",
+   "mitigation": [
+    "No standalone auth implementation exists in USP",
+    "All authentication delegated to Azure AD B2C via OAuth 2.0",
+    "Periodic audit confirms no auth bypass paths exist"
+   ],
+   "lastComment": null,
+   "verdict": "Keep",
+   "rag": "green",
+   "why": "Owned and dated.",
+   "action": "Run the periodic auth-bypass audit named in the mitigation.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "USP-3748",
+   "project": "USP",
+   "projectName": "Web-Uvation Services Platform",
+   "kind": "Dependency",
+   "summary": "Cloud partner APIs (Azure Monitor / GCP) must be accessible for dashboards",
+   "likelihood": "Medium",
+   "impact": "High",
+   "ownerTeam": "Engineering Team",
+   "assignee": "Livian Stefan Stan",
+   "jiraStatus": "TODO",
+   "updated": "2026-09-17",
+   "daysSinceUpdate": 6,
+   "context": "Phase 3 dashboard work depends on cloud partner API access being validated ahead of build start.",
+   "mitigation": [
+    "Validate partner API access against existing agreements",
+    "Confirm access before Phase 3 build kickoff",
+    "Document access/authentication method for the dashboard team"
+   ],
+   "lastComment": null,
+   "verdict": "Keep",
+   "rag": "green",
+   "why": "Owned and dated.",
+   "action": "Confirm partner API access before Phase 3.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "USP-3751",
+   "project": "USP",
+   "projectName": "Web-Uvation Services Platform",
+   "kind": "Risk",
+   "summary": "Azure AD B2C outage preventing USP portal login",
+   "likelihood": "Low",
+   "impact": "High",
+   "ownerTeam": "Identity Team",
+   "assignee": "Livian Stefan Stan",
+   "jiraStatus": "TODO",
+   "updated": "2026-09-17",
+   "daysSinceUpdate": 6,
+   "context": "An Azure AD B2C outage would block USP portal login entirely without mitigation in place.",
+   "mitigation": [
+    "Rely on Azure's 99.99% SLA as the baseline",
+    "Maintain cached session tokens so active sessions survive brief outages",
+    "Link a status page on the login error screen"
+   ],
+   "lastComment": null,
+   "verdict": "Keep",
+   "rag": "green",
+   "why": "Owned and dated.",
+   "action": "Merge with MT-1096 into one cross-platform identity risk.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "USP-3752",
+   "project": "USP",
+   "projectName": "Web-Uvation Services Platform",
+   "kind": "Risk",
+   "summary": "Cloud partner API rate limits blocking dashboard data",
+   "likelihood": "Medium",
+   "impact": "Medium",
+   "ownerTeam": "Engineering Team",
+   "assignee": "Livian Stefan Stan",
+   "jiraStatus": "TODO",
+   "updated": "2026-09-17",
+   "daysSinceUpdate": 6,
+   "context": "Cloud partner API rate limits can block real-time dashboard data from loading.",
+   "mitigation": [
+    "Implement a caching layer with a 5-minute TTL",
+    "Gracefully degrade to last-known data with a visible timestamp when rate-limited",
+    "Alert Engineering team when sustained rate-limiting is detected"
+   ],
+   "lastComment": null,
+   "verdict": "Keep",
+   "rag": "green",
+   "why": "Owned and dated.",
+   "action": "Review at 30 Sep.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "USP-3753",
+   "project": "USP",
+   "projectName": "Web-Uvation Services Platform",
+   "kind": "Risk",
+   "summary": "AI transcription service failure after advisory session",
+   "likelihood": "Medium",
+   "impact": "Medium",
+   "ownerTeam": "Engineering Team",
+   "assignee": "Livian Stefan Stan",
+   "jiraStatus": "TODO",
+   "updated": "2026-09-17",
+   "daysSinceUpdate": 6,
+   "context": "The AI transcription service can fail after an advisory session, currently flagged as needing verification of applicability.",
+   "mitigation": [
+    "Fall back to manual transcript delivery via email within a 4-hour SLA",
+    "Implement a retry queue for failed transcription jobs",
+    "Verify this failure mode's applicability with the advisory workflow owner (per register comment)"
+   ],
+   "lastComment": null,
+   "verdict": "Keep",
+   "rag": "green",
+   "why": "Owned and dated.",
+   "action": "Confirm the failure mode applies to the advisory workflow.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "USP-3756",
+   "project": "USP",
+   "projectName": "Web-Uvation Services Platform",
+   "kind": "Risk",
+   "summary": "Low adoption of self-service portal by clients used to manual engagement",
+   "likelihood": "Medium",
+   "impact": "High",
+   "ownerTeam": "Product Team",
+   "assignee": "Livian Stefan Stan",
+   "jiraStatus": "TODO",
+   "updated": "2026-09-17",
+   "daysSinceUpdate": 6,
+   "context": "Clients accustomed to manual engagement may be slow to adopt the self-service portal, risking underuse of the platform.",
+   "mitigation": [
+    "Build an in-portal guided onboarding tour",
+    "Have the Success Team run dedicated outreach to at-risk clients",
+    "Offer a demo-credit incentive to encourage first use"
+   ],
+   "lastComment": null,
+   "verdict": "Keep",
+   "rag": "green",
+   "why": "Owned and dated.",
+   "action": "Review at 30 Sep.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "USP-3757",
+   "project": "USP",
+   "projectName": "Web-Uvation Services Platform",
+   "kind": "Dependency",
+   "summary": "Vendor API approval delays blocking integrations",
+   "likelihood": "Medium",
+   "impact": "High",
+   "ownerTeam": "Engineering Team",
+   "assignee": "Livian Stefan Stan",
+   "jiraStatus": "TODO",
+   "updated": "2026-09-17",
+   "daysSinceUpdate": 6,
+   "context": "External vendor API approvals are on the critical path for several USP integrations and are prone to delay.",
+   "mitigation": [
+    "Coordinate early with external vendors on approval requirements",
+    "Track approval status weekly",
+    "Build mock APIs to unblock parallel development while approvals are pending"
+   ],
+   "lastComment": null,
+   "verdict": "Keep",
+   "rag": "green",
+   "why": "Owned and dated.",
+   "action": "Review at 30 Sep.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "EN-16",
+   "project": "EN",
+   "projectName": "Web-Email Notifications",
+   "kind": "Epic",
+   "summary": "Risk and Dependency Mitigation",
+   "likelihood": null,
+   "impact": null,
+   "ownerTeam": null,
+   "assignee": null,
+   "jiraStatus": "To Do",
+   "updated": "2026-07-07",
+   "daysSinceUpdate": 78,
+   "context": null,
+   "mitigation": [],
+   "lastComment": null,
+   "verdict": "Escalate",
+   "rag": "red",
+   "why": "Notification Service register has had no owner and no update since 7 Jul.",
+   "action": "Assign an engineering owner this week or formally accept the risks.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "IN-985",
+   "project": "IN",
+   "projectName": "Devops",
+   "kind": "Epic",
+   "summary": "Risk and Dependency Mitigation",
+   "likelihood": null,
+   "impact": null,
+   "ownerTeam": null,
+   "assignee": null,
+   "jiraStatus": "To Do",
+   "updated": "2026-07-07",
+   "daysSinceUpdate": 78,
+   "context": null,
+   "mitigation": [],
+   "lastComment": null,
+   "verdict": "Keep",
+   "rag": "amber",
+   "why": "Parent epic for the Devops register.",
+   "action": "Close once IN-986 load-test evidence is attached.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "MT-1091",
+   "project": "MT",
+   "projectName": "Web-Marketplace",
+   "kind": "Epic",
+   "summary": "Risk and Dependency Mitigation",
+   "likelihood": null,
+   "impact": null,
+   "ownerTeam": null,
+   "assignee": null,
+   "jiraStatus": "TODO",
+   "updated": "2026-07-07",
+   "daysSinceUpdate": 78,
+   "context": null,
+   "mitigation": [],
+   "lastComment": null,
+   "verdict": "Keep",
+   "rag": "amber",
+   "why": "Parent epic for the Marketplace register. Children were never refreshed after 7 Jul.",
+   "action": "Refresh all children in the next status review and assign one owner per child.",
+   "suggestedOwner": null
+  },
+  {
+   "key": "USP-3746",
+   "project": "USP",
+   "projectName": "Web-Uvation Services Platform",
+   "kind": "Epic",
+   "summary": "Risk and Dependency Mitigation",
+   "likelihood": null,
+   "impact": null,
+   "ownerTeam": null,
+   "assignee": "Livian Stefan Stan",
+   "jiraStatus": "TODO",
+   "updated": "2026-08-26",
+   "daysSinceUpdate": 28,
+   "context": null,
+   "mitigation": [],
+   "lastComment": null,
+   "verdict": "Keep",
+   "rag": "green",
+   "why": "USP register is actively owned. Children updated 17 Sep with 30 Sep due dates.",
+   "action": "Review at 30 Sep.",
+   "suggestedOwner": null
+  }
+ ],
+ "registerSummary": {
+  "items": 25,
+  "risks": 17,
+  "dependencies": 8,
+  "unassigned": 12,
+  "stale30": 12,
+  "verdicts": {
+   "Escalate": 3,
+   "Keep": 15,
+   "Re-assess": 2,
+   "Close": 5
+  }
+ },
+ "reportedRisksNotInJira": [
+  {
+   "title": "Hiring a Product Catalog resource",
+   "verdict": "Retire as a critical risk",
+   "rag": "green",
+   "evidence": [
+    "Suganya Murugaraj researched and validated attribute values for Dell, HPE, Supermicro and Lenovo between 15 and 22 Sep (PC-133). She has now moved on to NVIDIA Vera Rubin.",
+    "Naman Bapna created 27 AI-server listings on UAT and moved them all to production between 16 and 22 Sep (MT-1500 to MT-1512, MT-1528).",
+    "The Confluence 30/60/90 plan for the Product Research & Upload team already defines the roles this hire would fill."
+   ],
+   "replaceWith": "Key-person dependency on Naman Bapna for Magento product creation and production migration. One researcher (Suganya) covers all brands.",
+   "action": "Cross-train one more person on CSV import and production migration before the NVIDIA Vera Rubin batch. Revisit hiring only if the pipeline grows past current throughput."
+  }
+ ],
+ "newRisks": [
+  {
+   "title": "Key-person dependency on Magento product migration",
+   "project": "Marketplace",
+   "likelihood": "Medium",
+   "impact": "High",
+   "rag": "red",
+   "evidence": [
+    "MT-1500–MT-1512",
+    "MT-1527",
+    "MT-1528"
+   ],
+   "detail": "Every UAT product creation and the whole UAT-to-production CSV migration were done by one person.",
+   "mitigation": "Pair a second engineer on the next batch and document the CSV and attribute steps as an SOP.",
+   "suggestedOwner": "Naman Bapna"
+  },
+  {
+   "title": "AI-server products are in production but disabled",
+   "project": "Marketplace",
+   "likelihood": "High",
+   "impact": "High",
+   "rag": "red",
+   "evidence": [
+    "MT-1528",
+    "MT-1484",
+    "MT-1529"
+   ],
+   "detail": "All 27 migrated listings were verified and then disabled pending business approval. Cross-validation on UAT (MT-1529) is still in progress.",
+   "mitigation": "Set an approval date with the approver and a named enablement owner.",
+   "suggestedOwner": "Shashi Prasad K"
+  },
+  {
+   "title": "Marketplace staging performance",
+   "project": "Marketplace",
+   "likelihood": "High",
+   "impact": "Medium",
+   "rag": "amber",
+   "evidence": [
+    "MT-1475"
+   ],
+   "detail": "Lighthouse performance score on staging was 43 on 18 Sep, after categories were reduced. The ticket was routed to the wrong person first.",
+   "mitigation": "Performance baseline and fix plan before enabling products.",
+   "suggestedOwner": "Naveen Jangid"
+  },
+  {
+   "title": "Sitemap exposes 250 of 500+ URLs",
+   "project": "Web-Marketing",
+   "likelihood": "High",
+   "impact": "Medium",
+   "rag": "amber",
+   "evidence": [
+    "MR-1199",
+    "MR-1165"
+   ],
+   "detail": "The production sitemap lists 250 URLs. More than 500 are expected. This hurts SEO and caps automated test coverage.",
+   "mitigation": "Fix the sitemap generator, then extend Playwright coverage to the full URL list.",
+   "suggestedOwner": "Vishnu kumar yadav"
+  },
+  {
+   "title": "Time-logging data cannot support utilisation reporting",
+   "project": "All",
+   "likelihood": "High",
+   "impact": "High",
+   "rag": "red",
+   "evidence": [
+    "Tempo worklogs"
+   ],
+   "detail": "Every Tempo worklog in the window uses the generic description 'time-tracking'. Marketing content, Design, Infrastructure and Hamara CRM have no Tempo hours against Jira at all.",
+   "mitigation": "Enforce the SOP rule that a description is mandatory. Pull the weekly utilisation view from Tempo by worker, not by Jira assignee.",
+   "suggestedOwner": "Shashi Prasad K"
+  },
+  {
+   "title": "Marketplace QA automation has no owner",
+   "project": "Marketplace",
+   "likelihood": "Medium",
+   "impact": "Medium",
+   "rag": "amber",
+   "evidence": [
+    "MT-1141"
+   ],
+   "detail": "The end-to-end automation framework was moved to backlog after the assigned engineer left on 23 Jul. Web-Marketing has working Playwright automation (MR-1165) that could be reused.",
+   "mitigation": "Reuse the Web-Marketing Playwright setup for a Marketplace smoke suite.",
+   "suggestedOwner": "Kannan Elangovan"
+  }
+ ],
+ "issues": [
+  {
+   "id": "policy-uat",
+   "title": "Policy change identified during UAT is not recorded anywhere in Jira",
+   "project": "Marketplace",
+   "status": "Open – gap",
+   "rag": "red",
+   "keys": [
+    "MT-1116",
+    "MT-1180",
+    "MT-1181",
+    "MT-1187",
+    "MT-1286"
+   ],
+   "surfaced": "UAT",
+   "impact": "Not measurable from Jira. The change is not logged, so its effect on scope, dates and effort cannot be traced.",
+   "rootCause": "No change-request ticket type, and no UAT sign-off step that captures business-policy changes. About 300 tickets mentioning policy or change requests across 8 projects were checked. The closest are the returns-policy use cases (MT-1116, MT-1180, MT-1181, MT-1187) and MT-1286, which made the return-eligibility window configurable on 2 Sep. None of them records a change found in UAT.",
+   "actionTaken": "None visible in Jira.",
+   "preventive": "Log it now as a Change Request with impact and effort, linked to the affected stories. Add a 'business rules confirmed' line to UAT sign-off covering returns, refunds, loyalty points and pricing. Open business-rule questions already exist on MT-978 (loyalty points) and MT-1488 (refund and exchange timelines).",
+   "owner": "Shashi Prasad K"
+  },
+  {
+   "id": "pivot",
+   "title": "Marketplace scope changed mid-sprint to AI servers only",
+   "project": "Marketplace",
+   "status": "Largely delivered",
+   "rag": "amber",
+   "keys": [
+    "MT-1437",
+    "MT-1438",
+    "MT-1524"
+   ],
+   "surfaced": "10 Sep",
+   "impact": "A 38-task category-disable plan was added on 10 Sep. 36 are done and about 43 hours were logged against it. The home page is being redesigned around B300, GB300 and Vera Rubin (MT-1524, due 30 Sep).",
+   "rootCause": "Business strategy change mid-sprint.",
+   "actionTaken": "Category disable executed in 12 days. URL disposition (MT-1447) and performance check (MT-1475) remain open.",
+   "preventive": "Route strategy changes through a change request with an impact estimate before tasks are raised."
+  },
+  {
+   "id": "dell-config",
+   "title": "Dell products created with wrong parent-child configuration",
+   "project": "Marketplace",
+   "status": "Resolved",
+   "rag": "green",
+   "keys": [
+    "MT-1503",
+    "MT-1527"
+   ],
+   "surfaced": "UAT review, 16 Sep",
+   "impact": "4 of 6 Dell products needed rework. One had to be recreated. Dell GPU values also needed correction (PC-133, 17 Sep).",
+   "rootCause": "No agreed standard for configurable versus standalone products before creation started.",
+   "actionTaken": "Fixed and verified on UAT on 17 Sep. Later brands were created as standalone products.",
+   "preventive": "Apply the pre-publish QA checklist in the Confluence 30/60/90 plan to every batch before production migration."
+  },
+  {
+   "id": "product-inputs",
+   "title": "Product list and specs arrived late",
+   "project": "Marketplace",
+   "status": "Resolved",
+   "rag": "green",
+   "keys": [
+    "MT-1506",
+    "MT-1484"
+   ],
+   "surfaced": "16–17 Sep",
+   "impact": "HPE creation waited a day for one product's details. Timelines could not be set until the final list existed.",
+   "rootCause": "Creation started before the approved product list was final.",
+   "actionTaken": "HPE completed 18 Sep.",
+   "preventive": "Require a signed approved-product list per batch before creation, as the 30/60/90 plan's approval gate specifies."
+  },
+  {
+   "id": "go-live-approval",
+   "title": "Migrated products are disabled pending approval",
+   "project": "Marketplace",
+   "status": "Open",
+   "rag": "red",
+   "keys": [
+    "MT-1528",
+    "MT-1529"
+   ],
+   "surfaced": "18–22 Sep",
+   "impact": "27 listings are in production but not visible to buyers.",
+   "rootCause": "Approval step sits after migration, with no date.",
+   "actionTaken": "Cross-validation on UAT in progress (MT-1529).",
+   "preventive": "Put a dated approval gate in the plan for each batch."
+  },
+  {
+   "id": "lenovo-visibility",
+   "title": "Earlier Lenovo UAT products not visible, and ticket status not maintained",
+   "project": "Product Catalog",
+   "status": "Unclear",
+   "rag": "amber",
+   "keys": [
+    "PC-121"
+   ],
+   "surfaced": "2 Sep",
+   "impact": "A manually created Lenovo product did not appear on the UAT storefront. PC-121 is still 'To Do' with 49.5 hours logged. It is not clear whether its Lenovo products were superseded by the 2 Lenovo products in MT-1512.",
+   "rootCause": "Not recorded.",
+   "actionTaken": "None recorded after 7 Sep.",
+   "preventive": "Close or re-scope PC-121 and state which Lenovo SKUs are in the go-live list."
+  },
+  {
+   "id": "perf",
+   "title": "Staging performance score of 43",
+   "project": "Marketplace",
+   "status": "Open",
+   "rag": "amber",
+   "keys": [
+    "MT-1475"
+   ],
+   "surfaced": "18 Sep",
+   "impact": "Slow pages on the reduced catalogue. Risk to conversion and SEO at go-live.",
+   "rootCause": "Not yet analysed. The ticket was first routed to the wrong person.",
+   "actionTaken": "Reassigned to Naveen Jangid on 22 Sep.",
+   "preventive": "Add a performance budget to the release checklist."
+  },
+  {
+   "id": "sitemap",
+   "title": "Production sitemap lists 250 of 500+ URLs",
+   "project": "Web-Marketing",
+   "status": "Open",
+   "rag": "amber",
+   "keys": [
+    "MR-1199",
+    "MR-1200"
+   ],
+   "surfaced": "22 Sep",
+   "impact": "Search engines and the Playwright suite both see only half the site.",
+   "rootCause": "Sitemap generation limit. Not yet confirmed.",
+   "actionTaken": "Raised as P1.",
+   "preventive": "Add a URL-count check to the automated smoke run."
+  },
+  {
+   "id": "overdue-mt",
+   "title": "Marketplace buyer stories are past due",
+   "project": "Marketplace",
+   "status": "Open",
+   "rag": "amber",
+   "keys": [
+    "MT-1215",
+    "MT-1216",
+    "MT-1217",
+    "MT-1311",
+    "MT-1331"
+   ],
+   "surfaced": "Due 31 Aug and 15 Sep",
+   "impact": "Home page and PDP are in UAT, and product listing is in development, all three due 31 Aug. Account hub and returns flow were due 15 Sep.",
+   "rootCause": "Not recorded. Due dates were not re-baselined after the AI-servers pivot.",
+   "actionTaken": "Returns flow is in testing. Account hub subtasks are in development.",
+   "preventive": "Re-baseline due dates when scope changes, per the SOP's Scenario 14."
+  },
+  {
+   "id": "automation",
+   "title": "Marketplace automation framework parked after a resource exit",
+   "project": "Marketplace",
+   "status": "Open",
+   "rag": "amber",
+   "keys": [
+    "MT-1141"
+   ],
+   "surfaced": "23 Jul",
+   "impact": "Marketplace regression testing stays manual.",
+   "rootCause": "Single owner left and work was not reassigned.",
+   "actionTaken": "Moved to backlog.",
+   "preventive": "Reuse the Web-Marketing Playwright suite and name a new owner."
+  },
+  {
+   "id": "livechat",
+   "title": "Conflicting requirement on live chat",
+   "project": "Web-Marketing",
+   "status": "Open",
+   "rag": "amber",
+   "keys": [
+    "MR-754"
+   ],
+   "surfaced": "15 Sep",
+   "impact": "The team was asked to build a widget that it had earlier been asked to remove.",
+   "rootCause": "Requirement changes are not recorded as decisions.",
+   "actionTaken": "Waiting on chatbot design and APIs.",
+   "preventive": "Keep a decision log per project and link reversals to the original decision."
+  }
+ ],
+ "marketplace": {
+  "summary": "All five brands in the AI-servers batch were created on UAT and moved to production by 22 Sep. None are live yet because every migrated product was disabled pending approval.",
+  "expectedCompletion": "30 Sep 2026 (due date on MT-1485, MT-1488 and MT-1524)",
+  "brands": [
+   {
+    "brand": "Dell",
+    "products": 6,
+    "research": "Validated 16–17 Sep (PC-133)",
+    "uat": "Created 16 Sep (MT-1503), 4 fixed 17 Sep (MT-1527)",
+    "prod": "Moved 18 Sep (MT-1528)",
+    "live": "Disabled",
+    "items": [
+     "XE9780",
+     "XE9785",
+     "XE9780L",
+     "XE9780LAP",
+     "XE9785L",
+     "XE9712"
+    ]
+   },
+   {
+    "brand": "HPE",
+    "products": 3,
+    "research": "Validated 18 Sep (PC-133)",
+    "uat": "Created 17–18 Sep (MT-1506)",
+    "prod": "Moved 18 Sep (MT-1528)",
+    "live": "Disabled",
+    "items": [
+     "XD690",
+     "XD685",
+     "GB300 NVL72"
+    ]
+   },
+   {
+    "brand": "NVIDIA",
+    "products": 8,
+    "note": "One listing is a group of 17 products",
+    "research": "Reviewed 10–15 Sep (MT-1484, MT-1477)",
+    "uat": "Created by 15 Sep (MT-1484)",
+    "prod": "Moved 21 Sep (MT-1528)",
+    "live": "Disabled",
+    "items": [
+     "DGX B300",
+     "HGX B300",
+     "DGX GB300",
+     "GB300 NVL72",
+     "DGX SuperPOD with DGX GB300",
+     "DGX Station GB300",
+     "DGX Station for Windows",
+     "DGX Super POD group (17)"
+    ]
+   },
+   {
+    "brand": "Supermicro",
+    "products": 8,
+    "research": "Validated 18 Sep (PC-133)",
+    "uat": "Created 21 Sep (MT-1509)",
+    "prod": "Moved by 22 Sep (MT-1528 closed)",
+    "live": "Disabled",
+    "items": [
+     "SYS-822GS-NB3RT",
+     "AS-8126GS-NB3RT",
+     "SYS-422GS-NB3RT-LCC",
+     "SYS-422GS-NB3RT-ALC",
+     "AS-4126GS-NB3RT-LCC",
+     "SYS-222GS-NB3OT-ALC",
+     "ARS-511GD-NB-LCC",
+     "SRS-GB300-NVL72"
+    ]
+   },
+   {
+    "brand": "Lenovo",
+    "products": 2,
+    "research": "Validated 21 Sep (PC-133)",
+    "uat": "Created 21 Sep (MT-1512)",
+    "prod": "Moved by 22 Sep (MT-1528 closed)",
+    "live": "Disabled",
+    "items": [
+     "SR680a V4",
+     "GB300 NVL72 rack-scale"
+    ]
+   }
+  ],
+  "pending": [
+   "Business approval and enablement of all 27 listings.",
+   "Cross-validation and audit on UAT (MT-1529, in progress).",
+   "NVIDIA Vera Rubin research started 22 Sep (PC-133).",
+   "Status of the earlier Lenovo batch in PC-121 is unclear."
+  ],
+  "otherWorkstreams": [
+   {
+    "name": "Category disable (AI servers only)",
+    "key": "MT-1438",
+    "state": "36 of 38 tasks done",
+    "open": "URL disposition (MT-1447), performance check (MT-1475)"
+   },
+   {
+    "name": "Returns and refund flow",
+    "key": "MT-1331",
+    "state": "In testing. 7 of 12 subtasks done",
+    "open": "RMA email templates and backend support (MT-1365, MT-1487, MT-1488, due 30 Sep)"
+   },
+   {
+    "name": "Account hub",
+    "key": "MT-1311",
+    "state": "In development. 1 of 10 subtasks done",
+    "open": "Due date 15 Sep has passed"
+   },
+   {
+    "name": "Home page and PDP",
+    "key": "MT-1215, MT-1217",
+    "state": "In UAT",
+    "open": "Due date 31 Aug has passed. Home page redesign MT-1524 due 30 Sep"
+   },
+   {
+    "name": "Product listing, filter and search",
+    "key": "MT-1216",
+    "state": "In development. 6 of 7 subtasks done or in production",
+    "open": "Due date 31 Aug has passed"
+   },
+   {
+    "name": "Loyalty points logic",
+    "key": "MT-978",
+    "state": "Waiting on business rules",
+    "open": "Due 30 Sep"
+   }
+  ]
+ },
+ "marketingTesting": {
+  "summary": "Production smoke automation passes on every URL it can see, but it can see only 250 of more than 500 URLs. Page-wise Figma validation has raised 23 defects so far, and 7 are fixed.",
+  "scopeUrlsExpected": 500,
+  "scopeNote": "More than 500 URLs expected, per MR-1199",
+  "automatedUrls": 250,
+  "automatedChecks": 2250,
+  "automatedPassed": 2250,
+  "browserDeviceProjects": 9,
+  "manualCrossBrowserPages": 40,
+  "manualNote": "About 40 pages tested manually on macOS Chrome, Firefox and Safari and on iPhone, 3–9 Sep (MR-1100, MR-1101)",
+  "figmaDefects": {
+   "raised": 23,
+   "done": 7,
+   "inProgress": 2,
+   "todo": 14,
+   "pagesCovered": 16,
+   "key": "MR-1179"
+  },
+  "siteVerification": {
+   "key": "MR-1166",
+   "subtasks": 5,
+   "done": 1
+  },
+  "validated": [
+   "250 production URLs load on 9 browser and device profiles, with 2,250 of 2,250 checks passing (21 Sep).",
+   "About 40 pages checked on macOS and iPhone browsers (3–9 Sep).",
+   "Page-by-page testing for People, GDPR, Nuclear Energy, Partnership, Rewards and Rewards Donations, with all issues fixed.",
+   "Cookie consent blocks analytics scripts until accepted (MR-1068)."
+  ],
+  "pending": [
+   "Fix the sitemap (MR-1199), then extend automation from 250 URLs to the full list.",
+   "16 open Figma-vs-website defects (MR-1179).",
+   "Figma validation for the remaining pages. About 16 pages have been covered so far.",
+   "Playwright integration into the Azure production pipeline.",
+   "New home page design and API (MR-1169)."
+  ],
+  "remainingEffort": "Not estimated in Jira. None of the testing tickets carry an Original Estimate.",
+  "targetDate": "Not set in Jira. The only dated item is MR-1168, due 30 Sep.",
+  "anmolNote": "Anmol Srivastava's detailed testing report is not in Jira or Confluence. The figures here come from the Jira testing tickets."
+ },
+ "people": [
+  {
+   "name": "Sapavat Yadagiri",
+   "hours": 146.8,
+   "daysLogged": 9,
+   "maxDay": 26.8,
+   "avgPerDay": 16.3,
+   "pctCapacity": 204,
+   "tickets": 40,
+   "doneInPeriod": 34,
+   "open": 39,
+   "overdue": 29,
+   "projects": {
+    "MT": 120.8,
+    "ID": 26.0
+   },
+   "daily": {
+    "2026-09-09": 26.8,
+    "2026-09-10": 14.5,
+    "2026-09-11": 20.5,
+    "2026-09-15": 25.5,
+    "2026-09-16": 14.8,
+    "2026-09-17": 15.0,
+    "2026-09-18": 14.8,
+    "2026-09-21": 8.0,
+    "2026-09-22": 7.0
+   },
+   "flags": [
+    "attribution"
+   ]
+  },
+  {
+   "name": "b.kumar",
+   "hours": 120.0,
+   "daysLogged": 9,
+   "maxDay": 14.0,
+   "avgPerDay": 13.3,
+   "pctCapacity": 167,
+   "tickets": 10,
+   "doneInPeriod": 9,
+   "open": 3,
+   "overdue": 0,
+   "projects": {
+    "IN": 120.0
+   },
+   "daily": {
+    "2026-09-09": 14.0,
+    "2026-09-10": 14.0,
+    "2026-09-11": 14.0,
+    "2026-09-15": 14.0,
+    "2026-09-16": 14.0,
+    "2026-09-17": 14.0,
+    "2026-09-18": 14.0,
+    "2026-09-21": 14.0,
+    "2026-09-22": 8.0
+   },
+   "flags": [
+    "attribution"
+   ]
+  },
+  {
+   "name": "r.jaiswal",
+   "hours": 94.3,
+   "daysLogged": 9,
+   "maxDay": 31.1,
+   "avgPerDay": 10.5,
+   "pctCapacity": 131,
+   "tickets": 40,
+   "doneInPeriod": 46,
+   "open": 18,
+   "overdue": 0,
+   "projects": {
+    "USP": 94.3
+   },
+   "daily": {
+    "2026-09-09": 6.0,
+    "2026-09-10": 1.2,
+    "2026-09-11": 6.0,
+    "2026-09-15": 5.0,
+    "2026-09-16": 11.0,
+    "2026-09-17": 14.0,
+    "2026-09-18": 31.1,
+    "2026-09-21": 10.5,
+    "2026-09-22": 9.5
+   },
+   "flags": [
+    "attribution"
+   ]
+  },
+  {
+   "name": "Saurabh Jain",
+   "hours": 78.8,
+   "daysLogged": 9,
+   "maxDay": 17.5,
+   "avgPerDay": 8.8,
+   "pctCapacity": 109,
+   "tickets": 17,
+   "doneInPeriod": 19,
+   "open": 9,
+   "overdue": 0,
+   "projects": {
+    "MT": 55.8,
+    "MR": 23.0
+   },
+   "daily": {
+    "2026-09-09": 6.0,
+    "2026-09-10": 7.0,
+    "2026-09-11": 5.5,
+    "2026-09-15": 6.0,
+    "2026-09-16": 11.2,
+    "2026-09-17": 3.0,
+    "2026-09-18": 9.5,
+    "2026-09-21": 13.0,
+    "2026-09-22": 17.5
+   },
+   "flags": [
+    "attribution"
+   ]
+  },
+  {
+   "name": "Kunal Jangid",
+   "hours": 78.1,
+   "daysLogged": 9,
+   "maxDay": 14.9,
+   "avgPerDay": 8.7,
+   "pctCapacity": 108,
+   "tickets": 54,
+   "doneInPeriod": 58,
+   "open": 16,
+   "overdue": 0,
+   "projects": {
+    "MR": 78.1
+   },
+   "daily": {
+    "2026-09-09": 11.5,
+    "2026-09-10": 6.9,
+    "2026-09-11": 9.0,
+    "2026-09-15": 14.9,
+    "2026-09-16": 3.6,
+    "2026-09-17": 13.0,
+    "2026-09-18": 5.8,
+    "2026-09-21": 5.0,
+    "2026-09-22": 8.5
+   },
+   "flags": [
+    "attribution"
+   ]
+  },
+  {
+   "name": "Akhil Katiyar",
+   "hours": 69.5,
+   "daysLogged": 8,
+   "maxDay": 15.2,
+   "avgPerDay": 8.7,
+   "pctCapacity": 97,
+   "tickets": 34,
+   "doneInPeriod": 90,
+   "open": 15,
+   "overdue": 0,
+   "projects": {
+    "USP": 69.5
+   },
+   "daily": {
+    "2026-09-09": 11.5,
+    "2026-09-10": 3.8,
+    "2026-09-11": 7.5,
+    "2026-09-15": 10.5,
+    "2026-09-16": 7.5,
+    "2026-09-17": 10.5,
+    "2026-09-18": 15.2,
+    "2026-09-22": 3.0
+   },
+   "flags": [
+    "attribution"
+   ]
+  },
+  {
+   "name": "Aman prakash",
+   "hours": 67.9,
+   "daysLogged": 9,
+   "maxDay": 16.0,
+   "avgPerDay": 7.5,
+   "pctCapacity": 94,
+   "tickets": 21,
+   "doneInPeriod": 43,
+   "open": 13,
+   "overdue": 1,
+   "projects": {
+    "USP": 67.9
+   },
+   "daily": {
+    "2026-09-09": 7.0,
+    "2026-09-10": 4.0,
+    "2026-09-11": 16.0,
+    "2026-09-15": 9.5,
+    "2026-09-16": 11.0,
+    "2026-09-17": 7.0,
+    "2026-09-18": 2.9,
+    "2026-09-21": 4.0,
+    "2026-09-22": 6.5
+   },
+   "flags": [
+    "attribution"
+   ]
+  },
+  {
+   "name": "Naman Bapna",
+   "hours": 61.8,
+   "daysLogged": 9,
+   "maxDay": 8.8,
+   "avgPerDay": 6.9,
+   "pctCapacity": 86,
+   "tickets": 28,
+   "doneInPeriod": 41,
+   "open": 2,
+   "overdue": 0,
+   "projects": {
+    "MT": 61.3,
+    "DM": 0.5
+   },
+   "daily": {
+    "2026-09-09": 8.8,
+    "2026-09-10": 6.5,
+    "2026-09-11": 7.5,
+    "2026-09-15": 5.5,
+    "2026-09-16": 8.0,
+    "2026-09-17": 4.8,
+    "2026-09-18": 6.0,
+    "2026-09-21": 8.8,
+    "2026-09-22": 6.0
+   },
+   "flags": []
+  },
+  {
+   "name": "Vishnu kumar yadav",
+   "hours": 60.8,
+   "daysLogged": 9,
+   "maxDay": 9.2,
+   "avgPerDay": 6.8,
+   "pctCapacity": 84,
+   "tickets": 24,
+   "doneInPeriod": 33,
+   "open": 15,
+   "overdue": 0,
+   "projects": {
+    "MR": 60.0,
+    "USP": 0.5,
+    "MT": 0.2
+   },
+   "daily": {
+    "2026-09-09": 8.0,
+    "2026-09-10": 1.5,
+    "2026-09-11": 9.2,
+    "2026-09-15": 7.0,
+    "2026-09-16": 7.5,
+    "2026-09-17": 7.0,
+    "2026-09-18": 7.0,
+    "2026-09-21": 5.5,
+    "2026-09-22": 8.0
+   },
+   "flags": []
+  },
+  {
+   "name": "Yash Janeshwar",
+   "hours": 57.0,
+   "daysLogged": 9,
+   "maxDay": 7.0,
+   "avgPerDay": 6.3,
+   "pctCapacity": 79,
+   "tickets": 10,
+   "doneInPeriod": 14,
+   "open": 6,
+   "overdue": 0,
+   "projects": {
+    "ID": 57.0
+   },
+   "daily": {
+    "2026-09-09": 7.0,
+    "2026-09-10": 4.0,
+    "2026-09-11": 4.0,
+    "2026-09-15": 7.0,
+    "2026-09-16": 7.0,
+    "2026-09-17": 7.0,
+    "2026-09-18": 7.0,
+    "2026-09-21": 7.0,
+    "2026-09-22": 7.0
+   },
+   "flags": []
+  },
+  {
+   "name": "Ankit Saxena",
+   "hours": 49.0,
+   "daysLogged": 8,
+   "maxDay": 7.0,
+   "avgPerDay": 6.1,
+   "pctCapacity": 68,
+   "tickets": 7,
+   "doneInPeriod": 17,
+   "open": 13,
+   "overdue": 0,
+   "projects": {
+    "UC": 49.0
+   },
+   "daily": {
+    "2026-09-09": 6.5,
+    "2026-09-11": 4.0,
+    "2026-09-15": 7.0,
+    "2026-09-16": 7.0,
+    "2026-09-17": 7.0,
+    "2026-09-18": 7.0,
+    "2026-09-21": 4.0,
+    "2026-09-22": 6.5
+   },
+   "flags": []
+  },
+  {
+   "name": "Naveen Jangid",
+   "hours": 44.5,
+   "daysLogged": 9,
+   "maxDay": 7.5,
+   "avgPerDay": 4.9,
+   "pctCapacity": 62,
+   "tickets": 16,
+   "doneInPeriod": 17,
+   "open": 19,
+   "overdue": 4,
+   "projects": {
+    "MT": 44.5
+   },
+   "daily": {
+    "2026-09-09": 7.0,
+    "2026-09-10": 2.0,
+    "2026-09-11": 6.0,
+    "2026-09-15": 7.0,
+    "2026-09-16": 7.0,
+    "2026-09-17": 5.0,
+    "2026-09-18": 2.0,
+    "2026-09-21": 7.5,
+    "2026-09-22": 1.0
+   },
+   "flags": []
+  },
+  {
+   "name": "Sarath Chandra",
+   "hours": 41.5,
+   "daysLogged": 6,
+   "maxDay": 8.0,
+   "avgPerDay": 6.9,
+   "pctCapacity": 58,
+   "tickets": 5,
+   "doneInPeriod": 11,
+   "open": 3,
+   "overdue": 1,
+   "projects": {
+    "IN": 41.5
+   },
+   "daily": {
+    "2026-09-09": 7.0,
+    "2026-09-10": 7.0,
+    "2026-09-11": 5.0,
+    "2026-09-15": 8.0,
+    "2026-09-16": 8.0,
+    "2026-09-21": 6.5
+   },
+   "flags": [
+    "low"
+   ]
+  },
+  {
+   "name": "Kannan Elangovan",
+   "hours": 41.1,
+   "daysLogged": 9,
+   "maxDay": 14.0,
+   "avgPerDay": 4.6,
+   "pctCapacity": 57,
+   "tickets": 10,
+   "doneInPeriod": 6,
+   "open": 9,
+   "overdue": 2,
+   "projects": {
+    "MR": 41.1
+   },
+   "daily": {
+    "2026-09-09": 2.0,
+    "2026-09-10": 1.5,
+    "2026-09-11": 0.5,
+    "2026-09-15": 1.8,
+    "2026-09-16": 14.0,
+    "2026-09-17": 4.0,
+    "2026-09-18": 6.0,
+    "2026-09-21": 10.2,
+    "2026-09-22": 1.0
+   },
+   "flags": [
+    "attribution"
+   ]
+  },
+  {
+   "name": "Nareddy Shiva Prasad Reddy",
+   "hours": 38.8,
+   "daysLogged": 7,
+   "maxDay": 7.0,
+   "avgPerDay": 5.5,
+   "pctCapacity": 54,
+   "tickets": 5,
+   "doneInPeriod": 5,
+   "open": 5,
+   "overdue": 0,
+   "projects": {
+    "UC": 38.8
+   },
+   "daily": {
+    "2026-09-09": 4.0,
+    "2026-09-10": 6.0,
+    "2026-09-15": 4.0,
+    "2026-09-16": 7.0,
+    "2026-09-17": 7.0,
+    "2026-09-21": 4.0,
+    "2026-09-22": 6.8
+   },
+   "flags": [
+    "low"
+   ]
+  },
+  {
+   "name": "Suganya Murugaraj",
+   "hours": 28.0,
+   "daysLogged": 6,
+   "maxDay": 6.5,
+   "avgPerDay": 4.7,
+   "pctCapacity": 39,
+   "tickets": 1,
+   "doneInPeriod": 1,
+   "open": 2,
+   "overdue": 0,
+   "projects": {
+    "PC": 28.0
+   },
+   "daily": {
+    "2026-09-15": 1.5,
+    "2026-09-16": 6.5,
+    "2026-09-17": 5.5,
+    "2026-09-18": 4.5,
+    "2026-09-21": 4.5,
+    "2026-09-22": 5.5
+   },
+   "flags": [
+    "low"
+   ]
+  },
+  {
+   "name": "Ankit Sharma",
+   "hours": 27.5,
+   "daysLogged": 4,
+   "maxDay": 9.0,
+   "avgPerDay": 6.9,
+   "pctCapacity": 38,
+   "tickets": 6,
+   "doneInPeriod": 68,
+   "open": 3,
+   "overdue": 0,
+   "projects": {
+    "ID": 14.0,
+    "MT": 7.0,
+    "USP": 6.5
+   },
+   "daily": {
+    "2026-09-10": 8.0,
+    "2026-09-11": 9.0,
+    "2026-09-21": 4.0,
+    "2026-09-22": 6.5
+   },
+   "flags": [
+    "low"
+   ]
+  },
+  {
+   "name": "shubham kuchwar",
+   "hours": 27.0,
+   "daysLogged": 6,
+   "maxDay": 7.0,
+   "avgPerDay": 4.5,
+   "pctCapacity": 38,
+   "tickets": 4,
+   "doneInPeriod": 9,
+   "open": 6,
+   "overdue": 1,
+   "projects": {
+    "MT": 27.0
+   },
+   "daily": {
+    "2026-09-09": 4.0,
+    "2026-09-10": 4.0,
+    "2026-09-11": 7.0,
+    "2026-09-15": 4.0,
+    "2026-09-16": 4.0,
+    "2026-09-22": 4.0
+   },
+   "flags": [
+    "low"
+   ]
+  },
+  {
+   "name": "Nagamuni Valluri",
+   "hours": 23.0,
+   "daysLogged": 5,
+   "maxDay": 7.0,
+   "avgPerDay": 4.6,
+   "pctCapacity": 32,
+   "tickets": 5,
+   "doneInPeriod": 1,
+   "open": 10,
+   "overdue": 3,
+   "projects": {
+    "MT": 23.0
+   },
+   "daily": {
+    "2026-09-10": 0.5,
+    "2026-09-17": 5.0,
+    "2026-09-18": 3.5,
+    "2026-09-21": 7.0,
+    "2026-09-22": 7.0
+   },
+   "flags": [
+    "low"
+   ]
+  },
+  {
+   "name": "Saravana Kumar",
+   "hours": 17.8,
+   "daysLogged": 6,
+   "maxDay": 3.5,
+   "avgPerDay": 3.0,
+   "pctCapacity": 25,
+   "tickets": 3,
+   "doneInPeriod": 0,
+   "open": 5,
+   "overdue": 1,
+   "projects": {
+    "ID": 17.8
+   },
+   "daily": {
+    "2026-09-10": 3.5,
+    "2026-09-15": 3.5,
+    "2026-09-16": 3.5,
+    "2026-09-18": 3.5,
+    "2026-09-21": 0.8,
+    "2026-09-22": 3.0
+   },
+   "flags": [
+    "low"
+   ]
+  },
+  {
+   "name": "Gourav Agnani",
+   "hours": 14.0,
+   "daysLogged": 2,
+   "maxDay": 7.0,
+   "avgPerDay": 7.0,
+   "pctCapacity": 19,
+   "tickets": 2,
+   "doneInPeriod": 5,
+   "open": 7,
+   "overdue": 2,
+   "projects": {
+    "MT": 8.0,
+    "USP": 6.0
+   },
+   "daily": {
+    "2026-09-17": 7.0,
+    "2026-09-18": 7.0
+   },
+   "flags": [
+    "low"
+   ]
+  },
+  {
+   "name": "Shashi Prasad K",
+   "hours": 13.1,
+   "daysLogged": 4,
+   "maxDay": 9.6,
+   "avgPerDay": 3.3,
+   "pctCapacity": 18,
+   "tickets": 4,
+   "doneInPeriod": 8,
+   "open": 4,
+   "overdue": 4,
+   "projects": {
+    "MT": 10.1,
+    "DM": 2.0,
+    "MR": 1.0
+   },
+   "daily": {
+    "2026-09-09": 1.0,
+    "2026-09-10": 9.6,
+    "2026-09-17": 2.0,
+    "2026-09-18": 0.5
+   },
+   "flags": [
+    "low"
+   ]
+  },
+  {
+   "name": "Murali G",
+   "hours": 5.0,
+   "daysLogged": 3,
+   "maxDay": 2.5,
+   "avgPerDay": 1.7,
+   "pctCapacity": 7,
+   "tickets": 4,
+   "doneInPeriod": 7,
+   "open": 3,
+   "overdue": 1,
+   "projects": {
+    "MT": 2.5,
+    "DM": 2.0,
+    "MR": 0.5
+   },
+   "daily": {
+    "2026-09-10": 2.5,
+    "2026-09-21": 0.5,
+    "2026-09-22": 2.0
+   },
+   "flags": [
+    "low"
+   ]
+  },
+  {
+   "name": "Anshul Bhargava",
+   "hours": 2.5,
+   "daysLogged": 2,
+   "maxDay": 1.5,
+   "avgPerDay": 1.2,
+   "pctCapacity": 3,
+   "tickets": 1,
+   "doneInPeriod": 4,
+   "open": 7,
+   "overdue": 6,
+   "projects": {
+    "MT": 2.5
+   },
+   "daily": {
+    "2026-09-10": 1.0,
+    "2026-09-11": 1.5
+   },
+   "flags": [
+    "low"
+   ]
+  },
+  {
+   "name": "Parth",
+   "hours": 2.5,
+   "daysLogged": 2,
+   "maxDay": 1.5,
+   "avgPerDay": 1.2,
+   "pctCapacity": 3,
+   "tickets": 1,
+   "doneInPeriod": 1,
+   "open": 2,
+   "overdue": 0,
+   "projects": {
+    "MT": 2.5
+   },
+   "daily": {
+    "2026-09-15": 1.5,
+    "2026-09-16": 1.0
+   },
+   "flags": [
+    "low"
+   ]
+  },
+  {
+   "name": "Cășvan Marcel",
+   "hours": 1.5,
+   "daysLogged": 1,
+   "maxDay": 1.5,
+   "avgPerDay": 1.5,
+   "pctCapacity": 2,
+   "tickets": 3,
+   "doneInPeriod": 36,
+   "open": 21,
+   "overdue": 3,
+   "projects": {
+    "USP": 1.5
+   },
+   "daily": {
+    "2026-09-17": 1.5
+   },
+   "flags": [
+    "low"
+   ]
+  },
+  {
+   "name": "Abhishek",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 0,
+   "open": 3,
+   "overdue": 0,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Ajinkya Gosavi",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 11,
+   "open": 4,
+   "overdue": 1,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Andrei Momita",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 4,
+   "open": 0,
+   "overdue": 0,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Arnab",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 0,
+   "open": 2,
+   "overdue": 1,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Deepak Sabharwal",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 10,
+   "open": 6,
+   "overdue": 0,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Ivan Divjakovic",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 6,
+   "open": 2,
+   "overdue": 2,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Kevan Carbaugh",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 0,
+   "open": 6,
+   "overdue": 2,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Kuldeep Raghuwanshi",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 0,
+   "open": 3,
+   "overdue": 0,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Lalit Kumar",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 0,
+   "open": 2,
+   "overdue": 0,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Livian Stefan Stan",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 6,
+   "open": 41,
+   "overdue": 0,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Milica Stojkovic",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 6,
+   "open": 2,
+   "overdue": 2,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Milos Janjic",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 8,
+   "open": 4,
+   "overdue": 0,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Parul Singh",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 2,
+   "open": 5,
+   "overdue": 2,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Pradeep Kumar",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 0,
+   "open": 12,
+   "overdue": 0,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Prashanth Naikar",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 30,
+   "open": 14,
+   "overdue": 1,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "RAGHAVENDRA KARRI",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 0,
+   "open": 3,
+   "overdue": 2,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Rajesh R",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 23,
+   "open": 22,
+   "overdue": 3,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Raluca Conea",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 7,
+   "open": 9,
+   "overdue": 8,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Reen Singh",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 0,
+   "open": 1,
+   "overdue": 0,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Sahil Sehgal",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 0,
+   "open": 2,
+   "overdue": 0,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Sanjay Singh",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 3,
+   "open": 12,
+   "overdue": 3,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Shivam Dhoundiyal",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 36,
+   "open": 2,
+   "overdue": 0,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Silviu Oltean",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 22,
+   "open": 27,
+   "overdue": 1,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Ujjwal Koul",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 0,
+   "open": 12,
+   "overdue": 2,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Valeriia",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 2,
+   "open": 5,
+   "overdue": 5,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Vinamre Sood",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 0,
+   "open": 55,
+   "overdue": 0,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Yotam Abramovich",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 9,
+   "open": 7,
+   "overdue": 1,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "Zuber Siddiqui",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 0,
+   "open": 1,
+   "overdue": 0,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "a.kaushal",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 5,
+   "open": 8,
+   "overdue": 8,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "h.chauhan",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 3,
+   "open": 6,
+   "overdue": 0,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "k.kishore",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 0,
+   "open": 2,
+   "overdue": 1,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  },
+  {
+   "name": "z.amirkhan",
+   "hours": 0.0,
+   "daysLogged": 0,
+   "maxDay": 0,
+   "avgPerDay": 0,
+   "pctCapacity": 0,
+   "tickets": 0,
+   "doneInPeriod": 4,
+   "open": 2,
+   "overdue": 1,
+   "projects": {},
+   "daily": {},
+   "flags": [
+    "nolog"
+   ]
+  }
+ ],
+ "quality": {
+  "worklogsInPeriod": 674,
+  "genericDescriptions": 674,
+  "worklogAuthors": {
+   "Timesheets by Tempo - Jira Time Tracking": 674
+  },
+  "ticketsWithTime": 379,
+  "ticketsWithTimeNoEstimate": 264,
+  "unattributedHours": 38.5,
+  "overheadTicketsTruncated": [
+   "UP-12",
+   "UP-14",
+   "UP-15",
+   "UP-17",
+   "UP-20",
+   "UP-23",
+   "UP-28",
+   "UP-3",
+   "UP-30",
+   "UP-32",
+   "UP-4",
+   "UP-8",
+   "UP-9"
+  ],
+  "projectsWithNoTempoHours": [
+   {
+    "key": "DMI",
+    "name": "Marketing",
+    "updated30": 314
+   },
+   {
+    "key": "HC",
+    "name": "Hamara CRM",
+    "updated30": 578
+   },
+   {
+    "key": "IT",
+    "name": "Infrastructure",
+    "updated30": 119
+   },
+   {
+    "key": "VTN",
+    "name": "Design & Creative",
+    "updated30": 82
+   }
+  ],
+  "totalHours": 1250.2
+ },
+ "utilisationNotes": {
+  "attributionWarning": "Tempo writes every worklog to Jira under its own app account, so Jira cannot say who logged an hour. Hours here are credited to each ticket's current assignee. When a developer's ticket is handed to QA, the developer's hours move with it. Any day above 10 hours for one person is flagged for this reason.",
+  "overheadGap": "Meetings, stand-ups and leave are logged against 13 shared overhead tickets in Uvation Projects. Jira returns only the oldest 20 worklogs per ticket, so recent overhead time is invisible here.",
+  "deepDives": [
+   {
+    "person": "Suganya Murugaraj",
+    "finding": "Logged 28 hours on 6 days, all on PC-133. That averages 4.7 hours a day against an 8-hour day. No hours appear in Jira for 9, 10 and 11 Sep, and 15 Sep shows 1.5 hours.",
+    "context": "The 5.5 hours on 17 Sep covered Dell GPU corrections with Naman and then HPE validation, which is 3 products. Each product also needed a tech-spec table, long description, short description and product-card copy in HTML. Across the window she validated 19 products for 4 brands, about 1.5 hours per product.",
+    "question": "Where are the other 3 or so hours a day? They may be on overhead tickets, which Jira hides, or unlogged.",
+    "verify": "Pull Suganya's Tempo timesheet for 9–22 Sep and compare the total with 72 hours."
+   },
+   {
+    "person": "Sapavat Yadagiri",
+    "finding": "Jira credits Sapavat with 146.8 hours, including 26.8 hours on 9 Sep. That is impossible for one person and shows developer time on tickets reassigned to QA.",
+    "context": "Sapavat's own QA tasks show 0.5 to 2 hours each. For example, the navigation, homepage-module and facet UI updates for the category disable took 1 hour each (MT-1455 to MT-1457). Functional test on staging took 1.5 hours and the toggle test 1.5 hours (MT-1471, MT-1473).",
+    "question": "Sapavat's real hours cannot be separated from developer hours in Jira. The Tempo worker report is the only reliable source.",
+    "verify": "Pull Sapavat's Tempo timesheet by worker. Check that QA time is logged on QA subtasks, not on development subtasks."
+   }
+  ]
+ },
+ "jiraBase": "https://uvation-devops.atlassian.net/browse/",
+ "_refs": [
+  {
+   "key": "MT-1485",
+   "summary": "Product creation on Magento for all AI servers",
+   "status": "In Progress"
+  },
+  {
+   "key": "MT-1528",
+   "summary": "Move AI Server Products from UAT to Production via CSV",
+   "status": "Done"
+  },
+  {
+   "key": "MR-1179",
+   "summary": "Figma vs Website – Complete Page-wise UI Validation",
+   "status": "In Progress"
+  },
+  {
+   "key": "MR-1165",
+   "summary": "Playwright Automation – Validate 71 URLs",
+   "status": "In Progress"
+  }
+ ]
+}

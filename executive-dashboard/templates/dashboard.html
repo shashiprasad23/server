@@ -1,0 +1,555 @@
+<title>Portfolio Status Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  --bg:#F3F5F7; --surface:#FFFFFF; --surface-2:#F8FAFB; --ink:#16212C; --ink-2:#3A4754; --muted:#5E6B78; --rule:#DCE2E8; --rule-2:#EBEFF3;
+  --accent:#1D5C84; --accent-ink:#174C6E; --accent-soft:#E2EDF4;
+  --seq-1:#C4DAE8; --seq-2:#6D9DC1; --seq-3:#1D5C84;
+  --good:#2C7A4D; --good-soft:#E3F2E9; --warn:#9A620E; --warn-soft:#FBEFD9; --bad:#B02B23; --bad-soft:#FBE4E2; --grey:#66727E; --grey-soft:#ECEFF2;
+  --focus:#1D5C84;
+  --font-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-display:"IBM Plex Sans Condensed","IBM Plex Sans","Arial Narrow",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0E141A; --surface:#151D25; --surface-2:#18222B; --ink:#E3E9EF; --ink-2:#C3CDD6; --muted:#93A0AD; --rule:#283540; --rule-2:#1F2A34;
+    --accent:#7DB6DC; --accent-ink:#9CCBEA; --accent-soft:#1B2E3C;
+    --seq-1:#2B4659; --seq-2:#4F86AE; --seq-3:#9CCBEA;
+    --good:#62C28B; --good-soft:#15291E; --warn:#E3A84E; --warn-soft:#2E2412; --bad:#F07D72; --bad-soft:#321716; --grey:#99A5B1; --grey-soft:#212B34;
+    --focus:#9CCBEA;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0E141A; --surface:#151D25; --surface-2:#18222B; --ink:#E3E9EF; --ink-2:#C3CDD6; --muted:#93A0AD; --rule:#283540; --rule-2:#1F2A34;
+  --accent:#7DB6DC; --accent-ink:#9CCBEA; --accent-soft:#1B2E3C;
+  --seq-1:#2B4659; --seq-2:#4F86AE; --seq-3:#9CCBEA;
+  --good:#62C28B; --good-soft:#15291E; --warn:#E3A84E; --warn-soft:#2E2412; --bad:#F07D72; --bad-soft:#321716; --grey:#99A5B1; --grey-soft:#212B34;
+  --focus:#9CCBEA;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.5;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:1180px;margin:0 auto}
+a{color:var(--accent-ink)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:4px}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;letter-spacing:-.005em}
+h1{font-size:clamp(28px,4.2vw,40px);font-weight:600;line-height:1.1}
+h2{font-size:26px;font-weight:600;line-height:1.15}
+h3{font-size:18px;font-weight:600;line-height:1.25}
+p{margin:0}
+.mono,.key{font-family:var(--font-mono);font-size:.86em}
+.num{font-variant-numeric:tabular-nums}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:500}
+.muted{color:var(--muted)}
+.lede{color:var(--ink-2);max-width:72ch}
+
+/* header */
+header.top{padding-block:32px 20px;display:grid;gap:10px}
+header.top .meta{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--muted);font-size:13px}
+header.top .meta span b{color:var(--ink-2);font-weight:500}
+
+/* nav */
+nav.sections{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--rule);margin-bottom:28px}
+nav.sections .wrap{display:flex;gap:4px;overflow-x:auto;padding-block:8px;scrollbar-width:none}
+nav.sections a{flex:0 0 auto;text-decoration:none;color:var(--ink-2);font-size:14px;font-weight:500;padding:6px 12px;border-radius:999px}
+nav.sections a:hover{background:var(--accent-soft);color:var(--accent-ink)}
+nav.sections a.on{background:var(--ink);color:var(--surface)}
+
+section.block{padding-block:12px 36px;display:grid;gap:18px;scroll-margin-top:64px}
+.section-head{display:grid;gap:6px;border-top:2px solid var(--ink);padding-top:14px}
+.section-head .ask{font-size:13px;color:var(--muted);max-width:80ch}
+.section-head .ask b{color:var(--ink-2);font-weight:500}
+
+/* kpis */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.kpi{background:var(--surface);padding:14px 16px;display:grid;gap:2px;align-content:start}
+.kpi .v{font-family:var(--font-display);font-size:30px;font-weight:600;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi .v small{font-size:15px;color:var(--muted);font-weight:500}
+.kpi .l{font-size:13px;color:var(--ink-2)}
+.kpi .s{font-size:12px;color:var(--muted)}
+.kpi.bad .v{color:var(--bad)} .kpi.warn .v{color:var(--warn)}
+
+/* panels */
+.panel{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:18px}
+.panel.flush{padding:0;overflow:hidden}
+.panel h3+p{margin-top:6px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+section.block>*,.two>*,.panel,.deep>*{min-width:0}
+
+/* decisions */
+.decisions{display:grid;gap:0}
+.decisions li{list-style:none;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:12px 0;border-top:1px solid var(--rule-2)}
+.decisions li:first-child{border-top:0;padding-top:0}
+.decisions ul{margin:0;padding:0}
+.decisions .t{font-weight:500}
+.decisions .d{grid-column:2;color:var(--muted);font-size:13.5px}
+
+/* pills */
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;line-height:1;padding:5px 9px 5px 8px;border-radius:999px;white-space:nowrap;background:var(--grey-soft);color:var(--grey)}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;flex:none}
+.pill.red{background:var(--bad-soft);color:var(--bad)} .pill.red::before{border-radius:1px;transform:rotate(45deg)}
+.pill.amber{background:var(--warn-soft);color:var(--warn)} .pill.amber::before{border-radius:0;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.pill.green{background:var(--good-soft);color:var(--good)}
+.pill.plain::before{display:none}
+.chip{display:inline-block;font-size:11.5px;padding:2px 7px;border-radius:4px;background:var(--surface-2);border:1px solid var(--rule);color:var(--ink-2);white-space:nowrap}
+.chip.hi{border-color:transparent;background:var(--bad-soft);color:var(--bad)}
+.chip.md{border-color:transparent;background:var(--warn-soft);color:var(--warn)}
+
+/* tables */
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:500;text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);background:var(--surface-2);white-space:nowrap}
+td{padding:11px 12px;border-bottom:1px solid var(--rule-2);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right}
+td .sub{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+td .key{color:var(--accent-ink);text-decoration:none}
+td .key:hover{text-decoration:underline}
+.risk-table td:nth-child(1){min-width:250px}
+.risk-table td:nth-child(6){min-width:300px}
+details.more summary{cursor:pointer;color:var(--accent-ink);font-size:12.5px;margin-top:6px;list-style:none}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::before{content:"+ ";font-family:var(--font-mono)}
+details.more[open] summary::before{content:"− "}
+details.more ul{margin:6px 0 0;padding-left:18px;color:var(--ink-2);font-size:13px}
+details.more .cm{margin-top:6px;font-size:12.5px;color:var(--muted)}
+
+.filters{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.filters button{font:inherit;font-size:13px;border:1px solid var(--rule);background:var(--surface);color:var(--ink-2);padding:5px 12px;border-radius:999px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.filters .count{font-family:var(--font-mono);font-size:11.5px;opacity:.75;margin-left:4px}
+
+/* issues */
+.issue{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:16px 18px;display:grid;gap:12px}
+.issue header{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:baseline;justify-content:space-between}
+.issue header h3{font-size:17px;flex:1 1 360px}
+.issue .tags{display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:12.5px;color:var(--muted)}
+.issue dl{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px 20px}
+.issue dt{font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:500;margin-bottom:3px}
+.issue dd{margin:0;font-size:13.5px;color:var(--ink-2)}
+.issue .keys{font-family:var(--font-mono);font-size:12px}
+.issues-list{display:grid;gap:12px}
+
+/* pipeline */
+.pipe td.step{white-space:nowrap}
+.step-done{color:var(--good);font-weight:500}
+.step-done::before{content:"✓ ";}
+.pipe td .items{display:block;color:var(--muted);font-size:12px;margin-top:3px;max-width:44ch}
+.pipe tfoot td{font-weight:600;border-top:1px solid var(--rule);background:var(--surface-2)}
+
+/* meters */
+.meters{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px}
+.meter{display:grid;gap:6px}
+.meter .row{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.meter .row b{font-family:var(--font-display);font-size:22px;font-weight:600;font-variant-numeric:tabular-nums}
+.meter .bar{height:10px;border-radius:5px;background:var(--rule-2);overflow:hidden;display:flex}
+.meter .bar i{display:block;height:100%;background:var(--seq-3);border-radius:0 4px 4px 0}
+.meter .note{font-size:12.5px;color:var(--muted)}
+ul.clean{margin:0;padding-left:18px;display:grid;gap:6px;font-size:14px;color:var(--ink-2)}
+.callout{border:1px solid var(--rule);background:var(--surface-2);border-radius:8px;padding:12px 14px;font-size:13.5px;color:var(--ink-2)}
+.callout.warn{background:var(--warn-soft);border-color:transparent;color:var(--ink)}
+.callout b{font-weight:600}
+
+/* stacked bar */
+.stack{display:flex;height:12px;width:100%;min-width:120px;gap:2px}
+.stack span{display:block;height:100%}
+.stack span:first-child{border-radius:3px 0 0 3px}
+.stack span:last-child{border-radius:0 3px 3px 0}
+.stack span:only-child{border-radius:3px}
+.s1{background:var(--seq-1)} .s2{background:var(--seq-2)} .s3{background:var(--seq-3)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--muted);align-items:center}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+
+/* utilisation */
+.ubar{position:relative;height:12px;min-width:140px;background:var(--rule-2);border-radius:3px}
+.ubar i{position:absolute;left:0;top:0;bottom:0;background:var(--seq-3);border-radius:0 3px 3px 0}
+.ubar i.over{background:var(--grey)}
+.ubar b{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--ink);border-radius:1px}
+.flags{display:flex;gap:4px;flex-wrap:wrap}
+.daily{display:grid;grid-template-columns:repeat(9,1fr);gap:4px;align-items:end;height:96px;position:relative;padding-top:4px}
+.daily .col{display:grid;align-items:end;height:100%;position:relative}
+.daily .col i{display:block;background:var(--seq-3);border-radius:3px 3px 0 0;min-height:2px}
+.daily .col i.hot{background:var(--bad)}
+.daily .line{position:absolute;left:0;right:0;border-top:1.5px dashed var(--muted);pointer-events:none}
+.daily .line span{position:absolute;right:0;top:-17px;font-size:11px;color:var(--muted);background:var(--surface);padding:0 3px}
+.dlabels{display:grid;grid-template-columns:repeat(9,1fr);gap:4px;font-size:11px;color:var(--muted);text-align:center;font-family:var(--font-mono)}
+.deep{display:grid;gap:12px}
+.deep .q{font-size:13.5px;color:var(--ink-2)}
+.deep .q b{font-weight:600;color:var(--ink)}
+.nolog{display:flex;flex-wrap:wrap;gap:6px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.stats div{background:var(--surface);padding:12px 14px;display:grid;gap:2px}
+.stats b{font-family:var(--font-display);font-size:22px;font-weight:600;font-variant-numeric:tabular-nums}
+.stats span{font-size:12.5px;color:var(--muted)}
+
+/* tooltip */
+#tip{position:fixed;z-index:20;pointer-events:none;background:var(--ink);color:var(--surface);font-size:12.5px;line-height:1.4;padding:6px 9px;border-radius:6px;max-width:260px;box-shadow:0 4px 14px rgb(0 0 0 / .18)}
+[data-tip]{cursor:default}
+
+footer.notes{font-size:13px;color:var(--muted);display:grid;gap:8px;max-width:90ch}
+footer.notes code{font-family:var(--font-mono);font-size:12px;background:var(--surface-2);border:1px solid var(--rule);padding:1px 5px;border-radius:4px;color:var(--ink-2)}
+
+@media (max-width:640px){
+  body{font-size:14.5px}
+  h2{font-size:22px}
+  .kpi .v{font-size:26px}
+  .panel{padding:14px}
+}
+@media (prefers-reduced-motion:no-preference){
+  nav.sections a{transition:background .15s,color .15s}
+}
+</style>
+
+<header class="top wrap">
+  <div class="eyebrow" id="eyebrow">Programme status</div>
+  <h1 id="title">Portfolio Status Review</h1>
+  <p class="lede" id="lede"></p>
+  <div class="meta" id="meta"></div>
+</header>
+
+<nav class="sections" aria-label="Sections">
+  <div class="wrap">
+    <a href="#summary">Summary</a>
+    <a href="#risks">1 · Risks</a>
+    <a href="#issues">2 · Issues &amp; prevention</a>
+    <a href="#projects">3 · Project progress</a>
+    <a href="#resources">4 · Resource utilisation</a>
+    <a href="#notes">Data notes</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="block" id="summary">
+    <div class="kpis" id="kpis"></div>
+    <div class="two">
+      <div class="panel">
+        <h3>Decisions needed this week</h3>
+        <p class="muted" style="font-size:13px;margin-top:4px">Red items from the risk review, the issues log and the new risks, most urgent first.</p>
+        <div class="decisions" style="margin-top:14px"><ul id="decisions"></ul></div>
+      </div>
+      <div class="panel">
+        <h3>Where the work went, last 30 days</h3>
+        <p class="muted" style="font-size:13px;margin-top:4px">Issues updated in each project, by current status. Hover a bar for counts.</p>
+        <div class="legend" style="margin-top:10px"><span><i class="s1"></i>To do</span><span><i class="s2"></i>In progress</span><span><i class="s3"></i>Done</span></div>
+        <div id="mini-portfolio" style="margin-top:12px;display:grid;gap:9px"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="risks">
+    <div class="section-head">
+      <span class="eyebrow">Review point 1</span>
+      <h2>Risks: impact, mitigation, owner and status</h2>
+      <p class="ask"><b>Asked for:</b> review every listed risk, state impact, mitigation, owner and current status, and drop the stale ones.</p>
+    </div>
+    <p class="lede" id="risk-lede"></p>
+    <div class="filters" id="risk-filters" role="group" aria-label="Filter by review verdict"></div>
+    <div class="panel flush"><div class="tscroll"><table class="risk-table" id="risk-table"></table></div></div>
+
+    <div class="two">
+      <div class="panel" id="reported-risk"></div>
+      <div class="panel">
+        <h3>New risks surfaced from Jira evidence</h3>
+        <p class="muted" style="font-size:13px;margin-top:4px">These are not in the register yet. Each one is backed by tickets.</p>
+        <div id="new-risks" style="margin-top:12px;display:grid;gap:0"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="issues">
+    <div class="section-head">
+      <span class="eyebrow">Review point 2</span>
+      <h2>Issues and preventive actions</h2>
+      <p class="ask"><b>Asked for:</b> every issue that surfaced, with impact, root cause, action taken and preventive measure. The UAT policy change must appear.</p>
+    </div>
+    <div class="issues-list" id="issues-list"></div>
+  </section>
+
+  <section class="block" id="projects">
+    <div class="section-head">
+      <span class="eyebrow">Review point 3</span>
+      <h2>Project-wise accomplishments</h2>
+      <p class="ask"><b>Asked for:</b> real progress per project. For Marketplace, what reached UAT and production, what is pending, open issues and the completion date. For Marketing, testing done against total scope.</p>
+    </div>
+
+    <div class="panel">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline">
+        <h3>Web-Marketplace · AI-server catalogue</h3>
+        <span class="pill amber" id="mp-eta"></span>
+      </div>
+      <p class="lede" style="margin-top:6px" id="mp-summary"></p>
+      <div class="tscroll" style="margin-top:14px"><table class="pipe" id="pipe"></table></div>
+      <div class="two" style="margin-top:16px">
+        <div><h3 style="font-size:15px">Still pending</h3><ul class="clean" id="mp-pending" style="margin-top:8px"></ul></div>
+        <div><h3 style="font-size:15px">Other Marketplace workstreams</h3><div class="tscroll" style="margin-top:8px"><table id="mp-streams"></table></div></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Web-Marketing · testing progress</h3>
+      <p class="lede" style="margin-top:6px" id="mk-summary"></p>
+      <div class="meters" id="mk-meters" style="margin-top:16px"></div>
+      <div class="two" style="margin-top:18px">
+        <div><h3 style="font-size:15px">Validated</h3><ul class="clean" id="mk-done" style="margin-top:8px"></ul></div>
+        <div><h3 style="font-size:15px">Still pending</h3><ul class="clean" id="mk-pending" style="margin-top:8px"></ul></div>
+      </div>
+      <div class="two" style="margin-top:14px" id="mk-gaps"></div>
+    </div>
+
+    <div class="panel flush">
+      <div style="padding:16px 18px 6px;display:grid;gap:6px">
+        <h3>All active projects</h3>
+        <p class="muted" style="font-size:13px">Every project with an issue updated in the last 30 days. Done in window counts issues resolved 9–22 Sep. Hours are Tempo worklogs visible in Jira for the same window.</p>
+        <div class="legend"><span><i class="s1"></i>To do</span><span><i class="s2"></i>In progress</span><span><i class="s3"></i>Done</span></div>
+      </div>
+      <div class="tscroll"><table id="portfolio"></table></div>
+    </div>
+  </section>
+
+  <section class="block" id="resources">
+    <div class="section-head">
+      <span class="eyebrow">Review point 4</span>
+      <h2>Resource utilisation</h2>
+      <p class="ask"><b>Asked for:</b> allocation, planned versus actual work and available capacity per person. Explain the low-utilisation examples.</p>
+    </div>
+    <div class="callout warn" id="attrib"></div>
+    <div class="stats" id="quality"></div>
+    <div class="two" id="deep"></div>
+    <div class="panel flush">
+      <div style="padding:16px 18px 8px;display:grid;gap:6px">
+        <h3>Hours logged per person, 9–22 Sep</h3>
+        <p class="muted" style="font-size:13px" id="cap-note"></p>
+        <div class="legend"><span><i style="background:var(--seq-3)"></i>Hours on tickets now assigned to the person</span><span><i style="background:var(--grey)"></i>Has a day over 10 h: other people's hours or bulk logging</span><span><i style="background:var(--ink);width:2px;border-radius:0"></i>Capacity for the window</span></div>
+      </div>
+      <div class="tscroll"><table id="people"></table></div>
+    </div>
+    <div class="panel">
+      <h3>Completed work in Jira but no Tempo hours against it</h3>
+      <p class="muted" style="font-size:13px;margin-top:4px">These people closed or hold open tickets in the window, yet no Tempo worklog on their tickets reached Jira. Either they log elsewhere or they do not log.</p>
+      <div class="nolog" id="nolog" style="margin-top:12px"></div>
+    </div>
+  </section>
+
+  <section class="block" id="notes">
+    <div class="section-head">
+      <span class="eyebrow">Method</span>
+      <h2>Data notes</h2>
+    </div>
+    <footer class="notes" id="method"></footer>
+  </section>
+</main>
+<div id="tip" hidden></div>
+
+<script>
+const D = /*__DATA__*/null;
+(function(){
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const fmt = n => Number(n).toLocaleString("en-GB");
+  const J = k => `<a class="key" href="${D.jiraBase}${encodeURIComponent(k)}" target="_blank" rel="noopener">${esc(k)}</a>`;
+  const keyify = t => esc(t).replace(/\b([A-Z]{2,6}-\d{1,5})\b/g, m => J(m));
+  const pill = (rag, text) => `<span class="pill ${rag||""}">${esc(text)}</span>`;
+  const dshort = iso => { if(!iso) return "—"; const d = new Date(iso+"T00:00:00"); return d.toLocaleDateString("en-GB",{day:"numeric",month:"short"}); };
+
+  // header
+  const snap = D.meta.snapshotDate;
+  $("#eyebrow").textContent = `Programme status · Jira snapshot ${dshort(snap)} 2026`;
+  $("#title").textContent = D.title;
+  $("#lede").textContent = `All ${D.kpis.projectsVisible} Jira projects on ${D.meta.site}, reviewed against the four points raised on the last status report. Figures come from Jira and Tempo worklogs. The judgements come from reading the tickets.`;
+  $("#meta").innerHTML = [
+    `<span><b>Window</b> ${esc(D.period.label)}</span>`,
+    `<span><b>Issues pulled</b> ${fmt(D.kpis.issuesUpdated30)} updated in 30 days</span>`,
+    `<span><b>Worklogs</b> ${fmt(D.quality.worklogsInPeriod)} in window</span>`,
+    `<span><b>Register</b> ${D.registerSummary.items} risks and dependencies</span>`
+  ].join("");
+
+  // KPIs
+  const mp = D.marketplace, mk = D.marketingTesting;
+  const totalProducts = mp.brands.reduce((a,b)=>a+b.products,0);
+  const escal = D.register.filter(r=>r.kind!=="Epic" && r.rag==="red").length;
+  const kp = [
+    {v:fmt(D.kpis.issuesUpdated30), l:"Issues moved, last 30 days", s:`${D.kpis.projectsActive} of ${D.kpis.projectsVisible} projects active`},
+    {v:fmt(D.kpis.doneInPeriod), l:"Issues completed 9–22 Sep", s:`${fmt(D.kpis.done30)} in 30 days`},
+    {v:`0<small> / ${totalProducts}</small>`, l:"AI-server listings live", s:"All migrated to production, all disabled", c:"bad"},
+    {v:fmt(D.kpis.overdueOpen), l:"Open issues past due date", s:"Among issues active in 30 days", c:"warn"},
+    {v:`${escal}<small> / ${D.registerSummary.items}</small>`, l:"Register items rated red", s:`${D.registerSummary.unassigned} have no Jira assignee`, c:"bad"},
+    {v:`${fmt(Math.round(D.kpis.hoursInPeriod))}<small> h</small>`, l:"Tempo hours visible in Jira", s:"Author hidden on every entry", c:"warn"}
+  ];
+  $("#kpis").innerHTML = kp.map(k=>`<div class="kpi ${k.c||""}"><div class="v">${k.v}</div><div class="l">${esc(k.l)}</div><div class="s">${esc(k.s)}</div></div>`).join("");
+
+  // decisions
+  const dec = [];
+  D.issues.filter(i=>i.rag==="red").forEach(i=>dec.push({t:i.title, d:i.preventive.split(". ")[0]+".", tag:"Issue"}));
+  D.newRisks.filter(r=>r.rag==="red").forEach(r=>dec.push({t:r.title, d:r.mitigation, tag:"New risk"}));
+  const enKeys = D.register.filter(r=>r.project==="EN" && r.kind!=="Epic" && r.rag==="red").map(r=>r.key);
+  if(enKeys.length) dec.push({t:`Notification Service security risks unowned for ${D.register.find(r=>r.key===enKeys[0]).daysSinceUpdate} days`, d:`Assign an owner for ${enKeys.join(", ")} or formally accept them.`, tag:"Register"});
+  D.register.filter(r=>r.kind!=="Epic" && r.rag==="red" && r.project!=="EN").forEach(r=>dec.push({t:`${r.key}: ${r.summary}`, d:r.action, tag:"Register"}));
+  $("#decisions").innerHTML = dec.slice(0,8).map(x=>`<li><span class="pill red">${esc(x.tag)}</span><span class="t">${keyify(x.t)}</span><span class="d">${keyify(x.d)}</span></li>`).join("");
+
+  // mini portfolio
+  const projs = D.projects.filter(p=>p.key!=="UP");
+  const maxU = Math.max(...projs.map(p=>p.updated30));
+  const stack = (p, scaleMax) => {
+    const tot = p.todo+p.inprog+p.done; const w = scaleMax ? (tot/scaleMax*100) : 100;
+    const seg = (n,c,l) => n ? `<span class="${c}" style="flex:${n}" data-tip="${esc(p.name)}: ${n} ${l}"></span>` : "";
+    return `<div class="stack" style="width:${w}%">${seg(p.todo,"s1","to do")}${seg(p.inprog,"s2","in progress")}${seg(p.done,"s3","done")}</div>`;
+  };
+  $("#mini-portfolio").innerHTML = projs.slice(0,10).map(p=>`
+    <div style="display:grid;grid-template-columns:minmax(90px,150px) 1fr 44px;gap:10px;align-items:center;font-size:13px">
+      <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="${esc(p.name)}">${esc(p.name)}</span>
+      ${stack(p,maxU)}
+      <span class="num muted" style="text-align:right">${p.updated30}</span>
+    </div>`).join("");
+
+  // risks
+  const rs = D.registerSummary;
+  $("#risk-lede").innerHTML = `The Jira register holds <b>${rs.risks} risks</b> and <b>${rs.dependencies} dependencies</b> across Marketplace, Services Platform, Devops and Email Notifications. It was created on 7 Jul. <b>${rs.stale30}</b> items have not been updated in over 30 days, and <b>${rs.unassigned}</b> have no Jira assignee. Only the Services Platform set is actively owned.`;
+  const vgroup = v => v.startsWith("Escalate")?"Escalate":v.startsWith("Close")?"Close":v.startsWith("Re-assess")?"Re-assess":"Keep";
+  const items = D.register.filter(r=>r.kind!=="Epic");
+  const groups = ["All","Escalate","Keep","Re-assess","Close"];
+  let filt = "All";
+  const lvl = v => !v ? "" : `<span class="chip ${/high|critical/i.test(v)?"hi":/medium/i.test(v)?"md":""}">${esc(v)}</span>`;
+  function renderRisks(){
+    const rows = items.filter(r=>filt==="All"||vgroup(r.verdict)===filt);
+    $("#risk-filters").innerHTML = groups.map(g=>`<button type="button" id="rf-${g}" aria-pressed="${g===filt}" data-g="${g}">${g}<span class="count">${g==="All"?items.length:items.filter(r=>vgroup(r.verdict)===g).length}</span></button>`).join("");
+    $("#risk-table").innerHTML = `<thead><tr><th>Risk or dependency</th><th>Likelihood · Impact</th><th>Owner</th><th class="r">Last update</th><th>Review verdict</th><th>Why, and next action</th></tr></thead><tbody>${
+      rows.map(r=>`<tr>
+        <td>${J(r.key)} <span class="chip">${esc(r.kind)}</span><div style="margin-top:3px;font-weight:500">${esc(r.summary)}</div><span class="sub">${esc(r.projectName)}</span>
+          <details class="more"><summary>Impact and mitigation</summary>${r.context?`<div class="cm" style="color:var(--ink-2)">${esc(r.context)}</div>`:""}<ul>${r.mitigation.map(m=>`<li>${esc(m)}</li>`).join("")}</ul>${r.lastComment?`<div class="cm">Last comment, ${esc(r.lastComment.author)}, ${dshort(r.lastComment.date)}: “${esc(r.lastComment.text.slice(0,220))}${r.lastComment.text.length>220?"…":""}”</div>`:""}</details></td>
+        <td><div style="display:flex;gap:4px;flex-wrap:wrap">${lvl(r.likelihood)}${lvl(r.impact)}</div></td>
+        <td>${esc(r.ownerTeam||"—")}<span class="sub">Jira: ${r.assignee?esc(r.assignee):'<span style="color:var(--bad)">unassigned</span>'}</span>${r.suggestedOwner&&!r.assignee?`<span class="sub">Suggested: ${esc(r.suggestedOwner)}</span>`:""}</td>
+        <td class="r num">${r.daysSinceUpdate} d<span class="sub">${dshort(r.updated)} · ${esc(r.jiraStatus)}</span></td>
+        <td>${pill(r.rag, r.verdict)}</td>
+        <td>${keyify(r.why||"")}<span class="sub" style="color:var(--ink-2)"><b style="font-weight:600">Next:</b> ${keyify(r.action||"")}</span></td>
+      </tr>`).join("")}</tbody>`;
+    document.querySelectorAll("#risk-filters button").forEach(b=>b.onclick=()=>{filt=b.dataset.g; try{localStorage.setItem("riskFilter",filt)}catch(e){} renderRisks();});
+  }
+  try{ const f = localStorage.getItem("riskFilter"); if(groups.includes(f)) filt=f; }catch(e){}
+  renderRisks();
+
+  const rr = D.reportedRisksNotInJira[0];
+  $("#reported-risk").innerHTML = `
+    <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline"><h3>In the status report, not in Jira: “${esc(rr.title)}”</h3>${pill(rr.rag, rr.verdict)}</div>
+    <ul class="clean" style="margin-top:12px">${rr.evidence.map(e=>`<li>${keyify(e)}</li>`).join("")}</ul>
+    <div class="callout" style="margin-top:14px"><b>Replace it with:</b> ${esc(rr.replaceWith)}<br><b>Action:</b> ${esc(rr.action)}</div>`;
+  $("#new-risks").innerHTML = D.newRisks.map((r,i)=>`
+    <div style="display:grid;gap:4px;padding:12px 0;${i?"border-top:1px solid var(--rule-2)":"padding-top:0"}">
+      <div style="display:flex;gap:8px;justify-content:space-between;align-items:baseline;flex-wrap:wrap"><b style="font-weight:600">${esc(r.title)}</b>${pill(r.rag, `${r.likelihood} · ${r.impact}`)}</div>
+      <span style="font-size:13.5px;color:var(--ink-2)">${keyify(r.detail)}</span>
+      <span style="font-size:13px;color:var(--muted)"><b style="font-weight:600;color:var(--ink-2)">Mitigation:</b> ${esc(r.mitigation)} · <b style="font-weight:600;color:var(--ink-2)">Owner:</b> ${esc(r.suggestedOwner)} · ${r.evidence.map(e=>/^[A-Z]+-\d+$/.test(e)?J(e):esc(e)).join(", ")}</span>
+    </div>`).join("");
+
+  // issues
+  $("#issues-list").innerHTML = D.issues.map(i=>`
+    <article class="issue">
+      <header><h3>${esc(i.title)}</h3><div class="tags">${pill(i.rag, i.status)}<span>${esc(i.project)}</span><span>· surfaced ${esc(i.surfaced)}</span></div></header>
+      <dl>
+        <div><dt>Impact</dt><dd>${keyify(i.impact)}</dd></div>
+        <div><dt>Root cause</dt><dd>${keyify(i.rootCause)}</dd></div>
+        <div><dt>Action taken</dt><dd>${keyify(i.actionTaken)}</dd></div>
+        <div><dt>Preventive measure</dt><dd>${keyify(i.preventive)}</dd></div>
+      </dl>
+      ${i.keys.length?`<div class="keys">Evidence: ${i.keys.map(J).join(", ")}${i.owner?` · <span class="muted" style="font-family:var(--font-body)">Owner: ${esc(i.owner)}</span>`:""}</div>`:`<div class="keys muted" style="font-family:var(--font-body)">No ticket exists${i.owner?` · Owner: ${esc(i.owner)}`:""}</div>`}
+    </article>`).join("");
+
+  // marketplace
+  $("#mp-eta").textContent = "Target: " + mp.expectedCompletion.split(" (")[0];
+  $("#mp-summary").textContent = mp.summary + " Expected completion: " + mp.expectedCompletion + ".";
+  const step = t => `<span class="step-done">${keyify(t)}</span>`;
+  $("#pipe").innerHTML = `<thead><tr><th>Brand</th><th class="r">Listings</th><th>Research and validation</th><th>Created on UAT</th><th>Moved to production</th><th>Live to buyers</th></tr></thead>
+    <tbody>${mp.brands.map(b=>`<tr><td><b style="font-weight:600">${esc(b.brand)}</b><span class="items">${esc(b.items.join(" · "))}</span></td><td class="r num">${b.products}${b.note?`<span class="sub">${esc(b.note)}</span>`:""}</td><td class="step">${step(b.research)}</td><td class="step">${step(b.uat)}</td><td class="step">${step(b.prod)}</td><td>${pill("red", b.live)}</td></tr>`).join("")}</tbody>
+    <tfoot><tr><td>Total</td><td class="r num">${totalProducts}</td><td>${mp.brands.length} of ${mp.brands.length} brands</td><td>${totalProducts} of ${totalProducts}</td><td>${totalProducts} of ${totalProducts}</td><td>0 of ${totalProducts}</td></tr></tfoot>`;
+  $("#mp-pending").innerHTML = mp.pending.map(p=>`<li>${keyify(p)}</li>`).join("");
+  $("#mp-streams").innerHTML = `<thead><tr><th>Workstream</th><th>State</th><th>Open</th></tr></thead><tbody>${mp.otherWorkstreams.map(w=>`<tr><td>${esc(w.name)}<span class="sub">${keyify(w.key)}</span></td><td>${esc(w.state)}</td><td>${keyify(w.open)}</td></tr>`).join("")}</tbody>`;
+
+  // marketing
+  $("#mk-summary").textContent = mk.summary;
+  const meter = (label, a, b, note, pct) => `<div class="meter"><div class="row"><span style="font-size:13px;color:var(--ink-2)">${esc(label)}</span><b>${a}<span style="font-size:14px;color:var(--muted)"> / ${b}</span></b></div><div class="bar" data-tip="${esc(label)}: ${a} of ${b}"><i style="width:${Math.min(100,pct)}%"></i></div><span class="note">${keyify(note)}</span></div>`;
+  const fd = mk.figmaDefects;
+  $("#mk-meters").innerHTML = [
+    meter("URLs under automated smoke test", fmt(mk.automatedUrls), fmt(mk.scopeUrlsExpected)+"+", `${mk.scopeNote}. Capped by the sitemap bug.`, mk.automatedUrls/mk.scopeUrlsExpected*100),
+    meter("Automated checks passing", fmt(mk.automatedPassed), fmt(mk.automatedChecks), `${mk.browserDeviceProjects} browser and device profiles, MR-1165`, mk.automatedPassed/mk.automatedChecks*100),
+    meter("Figma defects fixed", fd.done, fd.raised, `${fd.inProgress} in progress, ${fd.todo} to do, ${fd.pagesCovered} pages covered, ${fd.key}`, fd.done/fd.raised*100),
+    meter("Site verification checks closed", mk.siteVerification.done, mk.siteVerification.subtasks, mk.siteVerification.key, mk.siteVerification.done/mk.siteVerification.subtasks*100)
+  ].join("");
+  $("#mk-done").innerHTML = mk.validated.map(p=>`<li>${keyify(p)}</li>`).join("");
+  $("#mk-pending").innerHTML = mk.pending.map(p=>`<li>${keyify(p)}</li>`).join("");
+  $("#mk-gaps").innerHTML = `<div class="callout warn"><b>Remaining effort:</b> ${keyify(mk.remainingEffort)}<br><b>Target date:</b> ${keyify(mk.targetDate)}</div><div class="callout">${esc(mk.anmolNote)}</div>`;
+
+  // portfolio table
+  $("#portfolio").innerHTML = `<thead><tr><th>Project</th><th class="r">Moved, 30 d</th><th style="min-width:160px">Status mix</th><th class="r">Created, 30 d</th><th class="r">Done in window</th><th class="r">Overdue</th><th class="r">Open bugs</th><th class="r">Tempo hours</th></tr></thead><tbody>${
+    D.projects.map(p=>`<tr><td>${esc(p.name)}<span class="sub mono">${esc(p.key)}</span></td><td class="r num">${p.updated30}</td><td style="vertical-align:middle">${stack(p,0)}<span class="sub num">${p.todo} · ${p.inprog} · ${p.done}</span></td><td class="r num">${p.created30}</td><td class="r num">${p.doneInPeriod}</td><td class="r num" style="${p.overdue>=10?"color:var(--bad);font-weight:600":""}">${p.overdue}</td><td class="r num">${p.openBugs}</td><td class="r num" style="${p.hours===0&&p.key!=="UP"?"color:var(--muted)":""}">${p.hours?fmt(Math.round(p.hours)):"—"}</td></tr>`).join("")}</tbody>`;
+
+  // resources
+  const cap = D.kpis.capacityPerPerson, cp = D.capacityPolicy, q = D.quality, un = D.utilisationNotes;
+  $("#attrib").innerHTML = `<b>Read this before the table.</b> ${esc(un.attributionWarning)} ${esc(un.overheadGap)}`;
+  const genericPct = Math.round(100*q.genericDescriptions/q.worklogsInPeriod);
+  const noEstPct = Math.round(100*q.ticketsWithTimeNoEstimate/q.ticketsWithTime);
+  $("#quality").innerHTML = [
+    [`${genericPct}%`, `of ${fmt(q.worklogsInPeriod)} worklogs say only “time-tracking”. The SOP makes a description mandatory.`],
+    [`${noEstPct}%`, `of ${q.ticketsWithTime} tickets with logged time have no Original Estimate, so planned versus actual cannot be measured.`],
+    [`${q.overheadTicketsTruncated.length}`, `overhead tickets hide recent meeting and leave time from Jira.`],
+    [`${q.projectsWithNoTempoHours.length}`, `active projects have no Tempo hours in Jira: ${q.projectsWithNoTempoHours.map(p=>p.name).join(", ")}.`],
+    [`${fmt(Math.round(q.unattributedHours))} h`, `logged on unassigned tickets, which cannot be credited to anyone.`]
+  ].map(([b,s])=>`<div><b>${b}</b><span>${esc(s)}</span></div>`).join("");
+  $("#cap-note").textContent = `Capacity is ${cap} hours per full-time person for the window: ${D.period.workingDays} working days at ${cp.hoursPerDay} hours. The SOP expects ${cp.fteDevHoursPerFortnight} of every ${cp.fteHoursPerFortnight} hours on development and sets a utilisation target of ${cp.utilisationTarget}. Contractors have half this capacity. Contract status is not in Jira, so every row uses the full-time figure.`;
+  const flagTxt = {attribution:["red","A day over 10 h"], low:["amber","Below 60% of capacity"], nolog:["grey","No Tempo hours"]};
+  const logged = D.people.filter(p=>p.hours>0);
+  const scaleMax = Math.max(cap*1.1, ...logged.map(p=>p.hours));
+  $("#people").innerHTML = `<thead><tr><th>Person</th><th style="min-width:180px">Hours vs ${cap} h capacity</th><th class="r">Hours</th><th class="r">% cap.</th><th class="r">Days logged</th><th class="r">Peak day</th><th class="r">Done</th><th class="r">Open</th><th class="r">Overdue</th><th>Flag</th></tr></thead><tbody>${
+    logged.map(p=>{
+      const over = p.flags.includes("attribution");
+      return `<tr><td>${esc(p.name)}<span class="sub">${Object.entries(p.projects).map(([k,v])=>`${k} ${v}h`).join(" · ")}</span></td>
+        <td style="vertical-align:middle"><div class="ubar" data-tip="${esc(p.name)}: ${p.hours} h logged, ${p.daysLogged} days, peak ${p.maxDay} h"><i class="${over?"over":""}" style="width:${p.hours/scaleMax*100}%"></i><b style="left:${cap/scaleMax*100}%"></b></div></td>
+        <td class="r num">${p.hours}</td><td class="r num">${p.pctCapacity}%</td><td class="r num">${p.daysLogged}</td><td class="r num" style="${p.maxDay>10?"color:var(--bad);font-weight:600":""}">${p.maxDay}</td>
+        <td class="r num">${p.doneInPeriod}</td><td class="r num">${p.open}</td><td class="r num">${p.overdue}</td>
+        <td><div class="flags">${p.flags.map(f=>pill(flagTxt[f][0], flagTxt[f][1])).join("")}</div></td></tr>`;}).join("")}</tbody>`;
+  const nolog = D.people.filter(p=>p.flags.includes("nolog")).sort((a,b)=>b.doneInPeriod-a.doneInPeriod);
+  $("#nolog").innerHTML = nolog.map(p=>`<span class="chip" data-tip="${esc(p.name)}: ${p.doneInPeriod} done in window, ${p.open} open">${esc(p.name)} · ${p.doneInPeriod} done</span>`).join("");
+
+  // deep dives
+  const days = ["2026-09-09","2026-09-10","2026-09-11","2026-09-15","2026-09-16","2026-09-17","2026-09-18","2026-09-21","2026-09-22"];
+  $("#deep").innerHTML = un.deepDives.map(dd=>{
+    const p = D.people.find(x=>x.name===dd.person) || {daily:{},hours:0};
+    const mx = Math.max(10, ...Object.values(p.daily));
+    const line = 8/mx*100;
+    return `<div class="panel deep">
+      <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline"><h3>${esc(dd.person)}</h3><span class="muted num" style="font-size:13px">${p.hours} h in Jira · ${cap} h capacity</span></div>
+      <div>
+        <div class="daily" role="img" aria-label="Hours per day for ${esc(dd.person)}">
+          ${days.map(d=>{const h=p.daily[d]||0; return `<div class="col"><i class="${h>10?"hot":""}" style="height:${h/mx*100}%" data-tip="${dshort(d)}: ${h} h"></i></div>`;}).join("")}
+          <div class="line" style="bottom:${line}%"><span>8 h day</span></div>
+        </div>
+        <div class="dlabels">${days.map(d=>`<span>${new Date(d+"T00:00:00").getDate()}</span>`).join("")}</div>
+      </div>
+      <p class="q"><b>Finding.</b> ${keyify(dd.finding)}</p>
+      <p class="q"><b>Context.</b> ${keyify(dd.context)}</p>
+      <p class="q"><b>Open question.</b> ${esc(dd.question)}</p>
+      <p class="q"><b>To verify.</b> ${esc(dd.verify)}</p>
+    </div>`;}).join("");
+
+  // method
+  $("#method").innerHTML = `
+    <p><b>Sources.</b> Jira Cloud site ${esc(D.meta.site)}, all ${D.kpis.projectsVisible} visible projects, pulled ${dshort(snap)} 2026. Issues: <code>${esc(D.meta.queries.issues)}</code>, ${fmt(D.kpis.issuesUpdated30)} rows, matching Jira's own count. Worklogs: <code>${esc(D.meta.queries.worklogs)}</code>, ${fmt(D.meta.counts.worklogIssues)} issues. Register: <code>${esc(D.meta.queries.register)}</code>. Confluence: the Tempo logging SOP and the Product Research &amp; Upload 30/60/90 plan.</p>
+    <p><b>Open issues all time.</b> ${fmt(D.kpis.openAllTime)} issues are not done across all projects. ${fmt(D.projects.find(p=>p.key==="HC")?.todo||0)} of the recent ones are the Hamara CRM backlog, created in bulk and not yet started.</p>
+    <p><b>What Jira cannot show.</b> Who logged each Tempo hour, because Tempo writes as its own app account. Recent overhead time on the ${q.overheadTicketsTruncated.length} shared Uvation Projects tickets (${q.overheadTicketsTruncated.join(", ")}), because Jira returns only their oldest 20 worklogs. Anmol Srivastava's testing report and the status-report risk list, which are outside Jira and Confluence.</p>
+    <p><b>Judgements.</b> Verdicts, root causes and suggested owners are the reviewer's reading of the tickets and comments cited next to them. They live in <code>content/curated.json</code> and should be confirmed with each owner.</p>
+    <p><b>Refresh.</b> Run <code>scripts/fetch_jira.py</code> with Jira credentials, and optionally a Tempo token for true per-person hours, then <code>scripts/build_dashboard.py</code>.</p>`;
+
+  // nav highlight
+  const links = [...document.querySelectorAll("nav.sections a")];
+  const secs = links.map(a=>document.querySelector(a.getAttribute("href")));
+  const onScroll = () => { let i=0; secs.forEach((s,k)=>{ if(s.getBoundingClientRect().top < 120) i=k; }); links.forEach((a,k)=>a.classList.toggle("on",k===i)); };
+  addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+  // tooltip
+  const tip = $("#tip");
+  document.addEventListener("pointerover", e=>{ const t=e.target.closest("[data-tip]"); if(!t){tip.hidden=true;return;} tip.textContent=t.dataset.tip; tip.hidden=false; });
+  document.addEventListener("pointermove", e=>{ if(tip.hidden) return; const x=Math.min(e.clientX+14, innerWidth-tip.offsetWidth-8); tip.style.left=x+"px"; tip.style.top=(e.clientY+16)+"px"; });
+  document.addEventListener("pointerout", e=>{ if(!e.relatedTarget || !e.relatedTarget.closest?.("[data-tip]")) tip.hidden=true; });
+})();
+</script>
