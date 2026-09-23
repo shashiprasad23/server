@@ -370,7 +370,7 @@ const D = /*__DATA__*/null;
 
   function renderEffort(){
     const logs = L.filter(l=>inProj(l.p));
-    $("#effort-note").innerHTML = `Tempo worklogs dated ${lab(M.effortStart)} to ${lab(M.effortEnd)}, the only window where every delivery worklog was pulled. Recent meeting and leave time on ${D.overheadTruncated.length} shared overhead tickets is missing, because Jira returns only their oldest 20 worklogs. Tempo does not expose who logged an hour, so person-level hours use the ticket's assignee.`;
+    $("#effort-note").innerHTML = `Tempo worklogs dated ${lab(M.effortStart)} to ${lab(M.effortEnd)}, the only window where every delivery worklog was pulled. ${D.overheadTruncated.length ? `Recent meeting and leave time on ${D.overheadTruncated.length} shared overhead tickets is missing, because Jira returns only their oldest 20 worklogs.` : `Meeting, stand-up and leave time sits on Uvation Projects overhead tickets, outside this report's scope.`} Tempo does not expose who logged an hour, so person-level hours use the ticket's assignee.`;
     const groups = state.project==="all" ? groupKeys : [grp(state.project)];
     const series = groups.map(g=>({name:grpName(g), type:"bar", stack:"h", barMaxWidth:22,
       data:EDAYS.map(d=>+logs.filter(l=>l.d===d && grp(l.p)===g).reduce((a,l)=>a+l.h,0).toFixed(1)),

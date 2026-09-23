@@ -546,7 +546,9 @@ const D = {"meta":{"snapshotDate":"2026-09-23","site":"uvation-devops.atlassian.
   $("#quality").innerHTML = [
     [`${genericPct}%`, `of ${fmt(q.worklogsInPeriod)} worklogs say only “time-tracking”. The SOP makes a description mandatory.`],
     [`${noEstPct}%`, `of ${q.ticketsWithTime} tickets with logged time have no Original Estimate, so planned versus actual cannot be measured.`],
-    [`${q.overheadTicketsTruncated.length}`, `overhead tickets hide recent meeting and leave time from Jira.`],
+    q.overheadTicketsTruncated.length
+      ? [`${q.overheadTicketsTruncated.length}`, `overhead tickets hide recent meeting and leave time from Jira.`]
+      : [`Out of scope`, `Meetings, stand-ups and leave sit on Uvation Projects overhead tickets, so they are not in these totals.`],
     q.projectsWithNoTempoHours.length ? [`${q.projectsWithNoTempoHours.length}`, `active projects have no Tempo hours in Jira: ${q.projectsWithNoTempoHours.map(p=>p.name).join(", ")}.`] : [`${D.projects.length}`, `boards in scope, and every one has Tempo hours in Jira for the window.`],
     [`${fmt(Math.round(q.unattributedHours))} h`, `logged on unassigned tickets, which cannot be credited to anyone.`]
   ].map(([b,s])=>`<div><b>${b}</b><span>${esc(s)}</span></div>`).join("");
@@ -590,7 +592,7 @@ const D = {"meta":{"snapshotDate":"2026-09-23","site":"uvation-devops.atlassian.
   $("#method").innerHTML = `
     <p><b>Sources.</b> Jira Cloud site ${esc(D.meta.site)}, all ${D.kpis.projectsVisible} visible projects, pulled ${dshort(snap)} 2026. Issues: <code>${esc(D.meta.queries.issues)}</code>, ${fmt(D.kpis.issuesUpdated30)} rows, matching Jira's own count. Worklogs: <code>${esc(D.meta.queries.worklogs)}</code>, ${fmt(D.meta.counts.worklogIssues)} issues. Register: <code>${esc(D.meta.queries.register)}</code>. Confluence: the Tempo logging SOP and the Product Research &amp; Upload 30/60/90 plan.</p>
     ${D.scope ? `<p><b>Scope.</b> ${esc(D.scope.label)}: Jira boards ${D.scope.projects.map(k=>`<code>${esc(k)}</code>`).join(", ")}. ${esc(D.scope.note||"")} Other projects are left out of every figure, including the risk register and hours. Rebuild with <code>--scope all</code> for the whole portfolio.</p>` : `<p><b>Open issues all time.</b> ${fmt(D.kpis.openAllTime)} issues are not done across all projects. ${fmt(D.projects.find(p=>p.key==="HC")?.todo||0)} of the recent ones are the Hamara CRM backlog, created in bulk and not yet started.</p>`}
-    <p><b>What Jira cannot show.</b> Who logged each Tempo hour, because Tempo writes as its own app account. Recent overhead time on the ${q.overheadTicketsTruncated.length} shared Uvation Projects tickets (${q.overheadTicketsTruncated.join(", ")}), because Jira returns only their oldest 20 worklogs. Anmol Srivastava's testing report and the status-report risk list, which are outside Jira and Confluence.</p>
+    <p><b>What Jira cannot show.</b> Who logged each Tempo hour, because Tempo writes as its own app account. ${q.overheadTicketsTruncated.length ? `Recent overhead time on the ${q.overheadTicketsTruncated.length} shared Uvation Projects tickets (${q.overheadTicketsTruncated.join(", ")}), because Jira returns only their oldest 20 worklogs.` : `Meeting, stand-up and leave time, which is logged on Uvation Projects overhead tickets outside this report's scope.`} Anmol Srivastava's testing report and the status-report risk list, which are outside Jira and Confluence.</p>
     <p><b>Judgements.</b> Verdicts, root causes and suggested owners are the reviewer's reading of the tickets and comments cited next to them. They live in <code>content/curated.json</code> and should be confirmed with each owner.</p>
     <p><b>Refresh.</b> Run <code>scripts/fetch_jira.py</code> with Jira credentials, and optionally a Tempo token for true per-person hours, then <code>scripts/build_dashboard.py</code>.</p>`;
 
