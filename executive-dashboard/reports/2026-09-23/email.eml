@@ -1,13 +1,13 @@
 To: s.prasad@uvation.com
 Subject: Status report 23 Sep 2026: Marketplace, Marketing, Services Platform,
  Conversational AI
-Date: Wed, 23 Sep 2026 09:59:08 +0000
+Date: Wed, 23 Sep 2026 09:59:19 +0000
 X-Unsent: 1
 MIME-Version: 1.0
 Content-Type: multipart/alternative;
- boundary="===============7016524450053295191=="
+ boundary="===============7922104582173612360=="
 
---===============7016524450053295191==
+--===============7922104582173612360==
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
@@ -343,7 +343,7 @@ duct also needed a tech-spec table, long description, short description and p=
 roduct-card copy in HTML. Across the window she validated 19 products for 4 b=
 rands, about 1.5 hours per product. To verify: Pull Suganya's Tempo timesheet=
  for 9=E2=80=9322 Sep and compare the total with 72 hours.
-- Sapavat Yadagiri: Jira credits Sapavat with 146.8 hours, including 26.8 hou=
+- Sapavat Yadagiri: Jira credits Sapavat with 120.8 hours, including 23.2 hou=
 rs on 9 Sep. That is impossible for one person and shows developer time on ti=
 ckets reassigned to QA. Sapavat's own QA tasks show 0.5 to 2 hours each. For =
 example, the navigation, homepage-module and facet UI updates for the categor=
@@ -355,7 +355,7 @@ btasks, not on development subtasks.
 Stored in shashiprasad23/server, branch claude/executive-dashboard-jira-revie=
 w-gclk36, executive-dashboard/reports/2026-09-23/.
 
---===============7016524450053295191==
+--===============7922104582173612360==
 Content-Type: text/html; charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
@@ -2122,7 +2122,7 @@ margin:3px 0;color:#16212C"><b>Open question.</b> Where are the other 3 or so=
 d compare the total with 72 hours.</li></ul><h3 style=3D"font-size:15px;margi=
 n:16px 0 4px">Sapavat Yadagiri</h3><ul style=3D"margin:4px 0 14px;padding-lef=
 t:20px"><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212=
-C"><b>Finding.</b> Jira credits Sapavat with 146.8 hours, including 26.8 hour=
+C"><b>Finding.</b> Jira credits Sapavat with 120.8 hours, including 23.2 hour=
 s on 9 Sep. That is impossible for one person and shows developer time on tic=
 kets reassigned to QA.</li><li style=3D"font-size:14px;line-height:1.5;margin=
 :3px 0;color:#16212C"><b>Context.</b> Sapavat&#x27;s own QA tasks show 0.5 to=
@@ -2160,4 +2160,4 @@ board-jira-review-gclk36, folder executive-dashboard/reports/2026-09-23/.</li=
 w report is generated every weekday at 7:00 PM Nepal time.</li></ul></div></b=
 ody></html>
 
---===============7016524450053295191==--
+--===============7922104582173612360==--
