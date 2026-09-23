@@ -666,5 +666,9 @@
         "verify": "Pull Sapavat's Tempo timesheet by worker. Check that QA time is logged on QA subtasks, not on development subtasks."
       }
     ]
+  },
+  "links": {
+    "daily": "https://claude.ai/artifact/K7m76XrnRRHWkGYqHtDySN",
+    "review": "https://claude.ai/artifact/R9gQ2oHPXkQaj2ZgrXCEAe"
   }
 }

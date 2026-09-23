@@ -365,7 +365,7 @@ const D = /*__DATA__*/null;
     `<span><b>Issues pulled</b> ${fmt(D.kpis.issuesUpdated30)} updated in 30 days</span>`,
     `<span><b>Worklogs</b> ${fmt(D.quality.worklogsInPeriod)} in window</span>`,
     `<span><b>Register</b> ${D.registerSummary.items} risks and dependencies</span>`
-  ].join("");
+  ].join("") + (D.links && D.links.daily ? `<span><a href="${esc(D.links.daily)}" target="_blank" rel="noopener">Open the day-by-day view</a></span>` : "");
 
   // KPIs
   const mp = D.marketplace, mk = D.marketingTesting;

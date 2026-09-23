@@ -212,7 +212,7 @@ def build(snapshot_dir: pathlib.Path):
         "reportedRisksNotInJira": cur["reportedRisksNotInJira"], "newRisks": cur["newRisks"],
         "issues": cur["issues"], "marketplace": cur["marketplace"], "marketingTesting": cur["marketingTesting"],
         "people": people, "quality": quality, "utilisationNotes": cur["utilisationNotes"],
-        "jiraBase": f"https://{meta['site']}/browse/",
+        "jiraBase": f"https://{meta['site']}/browse/", "links": cur.get("links", {}),
         "_refs": pick(["MT-1485", "MT-1528", "MR-1179", "MR-1165"]),
     }
 

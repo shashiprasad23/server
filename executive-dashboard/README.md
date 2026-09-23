@@ -11,6 +11,8 @@ A single-page dashboard that answers the four review points raised on the last s
 
 Open `dist/index.html` in a browser. It is self-contained, apart from Google Fonts.
 
+`dist/daily.html` is the day-by-day companion page. It covers issues created and resolved per day across all projects, Tempo hours per day by project and by person, per-person throughput heatmaps, a day explorer, small multiples per project, the Marketplace pipeline timeline, the category-disable burn-up, Figma defects raised against fixed, risk-register age and a dated event log. It loads ECharts 5.5.0 from cdnjs. Dated milestones live in `content/daily_events.json`.
+
 ## Snapshot used
 
 `data/snapshot/` holds the Jira pull taken on 23 Sep 2026:
@@ -32,6 +34,7 @@ export TEMPO_API_TOKEN=...         # optional; gives true per-person hours
 python3 scripts/fetch_jira.py      # writes data/snapshot/
 # edit content/curated.json: period dates, verdicts, issues
 python3 scripts/build_dashboard.py # writes dist/index.html and dist/dashboard-data.json
+python3 scripts/build_daily.py     # writes dist/daily.html
 ```
 
 `fetch_jira.py` uses only the standard library. It has not yet been run against the live site, because this snapshot was pulled through the Atlassian connector. Check its first run.
