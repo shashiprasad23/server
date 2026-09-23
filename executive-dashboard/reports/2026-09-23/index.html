@@ -1,0 +1,609 @@
+<title>Portfolio Status Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  --bg:#F3F5F7; --surface:#FFFFFF; --surface-2:#F8FAFB; --ink:#16212C; --ink-2:#3A4754; --muted:#5E6B78; --rule:#DCE2E8; --rule-2:#EBEFF3;
+  --accent:#1D5C84; --accent-ink:#174C6E; --accent-soft:#E2EDF4;
+  --seq-1:#C4DAE8; --seq-2:#6D9DC1; --seq-3:#1D5C84;
+  --good:#2C7A4D; --good-soft:#E3F2E9; --warn:#9A620E; --warn-soft:#FBEFD9; --bad:#B02B23; --bad-soft:#FBE4E2; --grey:#66727E; --grey-soft:#ECEFF2;
+  --focus:#1D5C84;
+  --font-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-display:"IBM Plex Sans Condensed","IBM Plex Sans","Arial Narrow",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0E141A; --surface:#151D25; --surface-2:#18222B; --ink:#E3E9EF; --ink-2:#C3CDD6; --muted:#93A0AD; --rule:#283540; --rule-2:#1F2A34;
+    --accent:#7DB6DC; --accent-ink:#9CCBEA; --accent-soft:#1B2E3C;
+    --seq-1:#2B4659; --seq-2:#4F86AE; --seq-3:#9CCBEA;
+    --good:#62C28B; --good-soft:#15291E; --warn:#E3A84E; --warn-soft:#2E2412; --bad:#F07D72; --bad-soft:#321716; --grey:#99A5B1; --grey-soft:#212B34;
+    --focus:#9CCBEA;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0E141A; --surface:#151D25; --surface-2:#18222B; --ink:#E3E9EF; --ink-2:#C3CDD6; --muted:#93A0AD; --rule:#283540; --rule-2:#1F2A34;
+  --accent:#7DB6DC; --accent-ink:#9CCBEA; --accent-soft:#1B2E3C;
+  --seq-1:#2B4659; --seq-2:#4F86AE; --seq-3:#9CCBEA;
+  --good:#62C28B; --good-soft:#15291E; --warn:#E3A84E; --warn-soft:#2E2412; --bad:#F07D72; --bad-soft:#321716; --grey:#99A5B1; --grey-soft:#212B34;
+  --focus:#9CCBEA;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.5;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:1180px;margin:0 auto}
+a{color:var(--accent-ink)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:4px}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;letter-spacing:-.005em}
+h1{font-size:clamp(28px,4.2vw,40px);font-weight:600;line-height:1.1}
+h2{font-size:26px;font-weight:600;line-height:1.15}
+h3{font-size:18px;font-weight:600;line-height:1.25}
+p{margin:0}
+.mono,.key{font-family:var(--font-mono);font-size:.86em}
+.num{font-variant-numeric:tabular-nums}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:500}
+.muted{color:var(--muted)}
+.lede{color:var(--ink-2);max-width:72ch}
+
+/* header */
+header.top{padding-block:32px 20px;display:grid;gap:10px}
+header.top .meta{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--muted);font-size:13px}
+header.top .meta span b{color:var(--ink-2);font-weight:500}
+
+/* nav */
+nav.sections{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--rule);margin-bottom:28px}
+nav.sections .wrap{display:flex;gap:4px;overflow-x:auto;padding-block:8px;scrollbar-width:none}
+nav.sections a{flex:0 0 auto;text-decoration:none;color:var(--ink-2);font-size:14px;font-weight:500;padding:6px 12px;border-radius:999px}
+nav.sections a:hover{background:var(--accent-soft);color:var(--accent-ink)}
+nav.sections a.on{background:var(--ink);color:var(--surface)}
+
+section.block{padding-block:12px 36px;display:grid;gap:18px;scroll-margin-top:64px}
+.section-head{display:grid;gap:6px;border-top:2px solid var(--ink);padding-top:14px}
+.section-head .ask{font-size:13px;color:var(--muted);max-width:80ch}
+.section-head .ask b{color:var(--ink-2);font-weight:500}
+
+/* kpis */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.kpi{background:var(--surface);padding:14px 16px;display:grid;gap:2px;align-content:start}
+.kpi .v{font-family:var(--font-display);font-size:30px;font-weight:600;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi .v small{font-size:15px;color:var(--muted);font-weight:500}
+.kpi .l{font-size:13px;color:var(--ink-2)}
+.kpi .s{font-size:12px;color:var(--muted)}
+.kpi.bad .v{color:var(--bad)} .kpi.warn .v{color:var(--warn)}
+
+/* panels */
+.panel{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:18px}
+.panel.flush{padding:0;overflow:hidden}
+.panel h3+p{margin-top:6px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+section.block>*,.two>*,.panel,.deep>*{min-width:0}
+
+/* decisions */
+.decisions{display:grid;gap:0}
+.decisions li{list-style:none;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:12px 0;border-top:1px solid var(--rule-2)}
+.decisions li:first-child{border-top:0;padding-top:0}
+.decisions ul{margin:0;padding:0}
+.decisions .t{font-weight:500}
+.decisions .d{grid-column:2;color:var(--muted);font-size:13.5px}
+
+/* pills */
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;line-height:1;padding:5px 9px 5px 8px;border-radius:999px;white-space:nowrap;background:var(--grey-soft);color:var(--grey)}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;flex:none}
+.pill.red{background:var(--bad-soft);color:var(--bad)} .pill.red::before{border-radius:1px;transform:rotate(45deg)}
+.pill.amber{background:var(--warn-soft);color:var(--warn)} .pill.amber::before{border-radius:0;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.pill.green{background:var(--good-soft);color:var(--good)}
+.pill.plain::before{display:none}
+.chip{display:inline-block;font-size:11.5px;padding:2px 7px;border-radius:4px;background:var(--surface-2);border:1px solid var(--rule);color:var(--ink-2);white-space:nowrap}
+.chip.hi{border-color:transparent;background:var(--bad-soft);color:var(--bad)}
+.chip.md{border-color:transparent;background:var(--warn-soft);color:var(--warn)}
+
+/* tables */
+.tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:500;text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);background:var(--surface-2);white-space:nowrap}
+td{padding:11px 12px;border-bottom:1px solid var(--rule-2);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right}
+td .sub{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+td .key{color:var(--accent-ink);text-decoration:none}
+td .key:hover{text-decoration:underline}
+.risk-table td:nth-child(1){min-width:250px}
+.risk-table td:nth-child(6){min-width:300px}
+details.more summary{cursor:pointer;color:var(--accent-ink);font-size:12.5px;margin-top:6px;list-style:none}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::before{content:"+ ";font-family:var(--font-mono)}
+details.more[open] summary::before{content:"− "}
+details.more ul{margin:6px 0 0;padding-left:18px;color:var(--ink-2);font-size:13px}
+details.more .cm{margin-top:6px;font-size:12.5px;color:var(--muted)}
+
+.filters{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.filters button{font:inherit;font-size:13px;border:1px solid var(--rule);background:var(--surface);color:var(--ink-2);padding:5px 12px;border-radius:999px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.filters .count{font-family:var(--font-mono);font-size:11.5px;opacity:.75;margin-left:4px}
+
+/* issues */
+.issue{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:16px 18px;display:grid;gap:12px}
+.issue header{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:baseline;justify-content:space-between}
+.issue header h3{font-size:17px;flex:1 1 360px}
+.issue .tags{display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:12.5px;color:var(--muted)}
+.issue dl{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px 20px}
+.issue dt{font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:500;margin-bottom:3px}
+.issue dd{margin:0;font-size:13.5px;color:var(--ink-2)}
+.issue .keys{font-family:var(--font-mono);font-size:12px}
+.issues-list{display:grid;gap:12px}
+
+/* pipeline */
+.pipe td.step{white-space:nowrap}
+.step-done{color:var(--good);font-weight:500}
+.step-done::before{content:"✓ ";}
+.pipe td .items{display:block;color:var(--muted);font-size:12px;margin-top:3px;max-width:44ch}
+.pipe tfoot td{font-weight:600;border-top:1px solid var(--rule);background:var(--surface-2)}
+
+/* meters */
+.meters{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px}
+.meter{display:grid;gap:6px}
+.meter .row{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.meter .row b{font-family:var(--font-display);font-size:22px;font-weight:600;font-variant-numeric:tabular-nums}
+.meter .bar{height:10px;border-radius:5px;background:var(--rule-2);overflow:hidden;display:flex}
+.meter .bar i{display:block;height:100%;background:var(--seq-3);border-radius:0 4px 4px 0}
+.meter .note{font-size:12.5px;color:var(--muted)}
+ul.clean{margin:0;padding-left:18px;display:grid;gap:6px;font-size:14px;color:var(--ink-2)}
+.callout{border:1px solid var(--rule);background:var(--surface-2);border-radius:8px;padding:12px 14px;font-size:13.5px;color:var(--ink-2)}
+.callout.warn{background:var(--warn-soft);border-color:transparent;color:var(--ink)}
+.callout b{font-weight:600}
+
+/* stacked bar */
+.stack{display:flex;height:12px;width:100%;min-width:120px;gap:2px}
+.stack span{display:block;height:100%}
+.stack span:first-child{border-radius:3px 0 0 3px}
+.stack span:last-child{border-radius:0 3px 3px 0}
+.stack span:only-child{border-radius:3px}
+.s1{background:var(--seq-1)} .s2{background:var(--seq-2)} .s3{background:var(--seq-3)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--muted);align-items:center}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+
+/* utilisation */
+.ubar{position:relative;height:12px;min-width:140px;background:var(--rule-2);border-radius:3px}
+.ubar i{position:absolute;left:0;top:0;bottom:0;background:var(--seq-3);border-radius:0 3px 3px 0}
+.ubar i.over{background:var(--grey)}
+.ubar b{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--ink);border-radius:1px}
+.flags{display:flex;gap:4px;flex-wrap:wrap}
+.daily{display:grid;grid-template-columns:repeat(9,1fr);gap:4px;align-items:end;height:96px;position:relative;padding-top:4px}
+.daily .col{display:grid;align-items:end;height:100%;position:relative}
+.daily .col i{display:block;background:var(--seq-3);border-radius:3px 3px 0 0;min-height:2px}
+.daily .col i.hot{background:var(--bad)}
+.daily .line{position:absolute;left:0;right:0;border-top:1.5px dashed var(--muted);pointer-events:none}
+.daily .line span{position:absolute;right:0;top:-17px;font-size:11px;color:var(--muted);background:var(--surface);padding:0 3px}
+.dlabels{display:grid;grid-template-columns:repeat(9,1fr);gap:4px;font-size:11px;color:var(--muted);text-align:center;font-family:var(--font-mono)}
+.deep{display:grid;gap:12px}
+.deep .q{font-size:13.5px;color:var(--ink-2)}
+.deep .q b{font-weight:600;color:var(--ink)}
+.nolog{display:flex;flex-wrap:wrap;gap:6px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.stats div{background:var(--surface);padding:12px 14px;display:grid;gap:2px}
+.stats b{font-family:var(--font-display);font-size:22px;font-weight:600;font-variant-numeric:tabular-nums}
+.stats span{font-size:12.5px;color:var(--muted)}
+
+/* tooltip */
+#tip{position:fixed;z-index:20;pointer-events:none;background:var(--ink);color:var(--surface);font-size:12.5px;line-height:1.4;padding:6px 9px;border-radius:6px;max-width:260px;box-shadow:0 4px 14px rgb(0 0 0 / .18)}
+[data-tip]{cursor:default}
+
+.scorecards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,540px),1fr));gap:16px}
+.scorecards>*{min-width:0}
+.sc{display:grid;gap:12px;align-content:start}
+.sc header{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline}
+.sc .boards{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+.sc .head{font-size:13.5px;color:var(--ink-2)}
+.sc .nums{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.sc .nums div{background:var(--surface-2);padding:8px 10px;display:grid}
+.sc .nums b{font-family:var(--font-display);font-size:20px;font-weight:600;font-variant-numeric:tabular-nums}
+.sc .nums span{font-size:11.5px;color:var(--muted)}
+.sc h4{margin:0;font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:500}
+.sc .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px 18px}
+.sc ul{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:5px;font-size:13px}
+.sc li{display:grid;grid-template-columns:auto 1fr;gap:0 8px;color:var(--ink-2)}
+.sc li .m{grid-column:2;font-size:11.5px;color:var(--muted)}
+.sc .roll{display:grid;grid-template-columns:minmax(0,1fr) 110px 44px;gap:8px;align-items:center;font-size:12.5px;color:var(--ink-2)}
+.sc .roll .bar{height:8px;border-radius:4px;background:var(--rule-2);overflow:hidden}
+.sc .roll .bar i{display:block;height:100%;background:var(--seq-3)}
+.sc .roll span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sc .empty{font-size:12.5px;color:var(--muted);margin-top:4px}
+@media (max-width:640px){ .sc .nums{grid-template-columns:repeat(3,1fr)} }
+footer.notes{font-size:13px;color:var(--muted);display:grid;gap:8px;max-width:90ch}
+footer.notes code{font-family:var(--font-mono);font-size:12px;background:var(--surface-2);border:1px solid var(--rule);padding:1px 5px;border-radius:4px;color:var(--ink-2)}
+
+@media (max-width:640px){
+  body{font-size:14.5px}
+  h2{font-size:22px}
+  .kpi .v{font-size:26px}
+  .panel{padding:14px}
+}
+@media (prefers-reduced-motion:no-preference){
+  nav.sections a{transition:background .15s,color .15s}
+}
+</style>
+
+<header class="top wrap">
+  <div class="eyebrow" id="eyebrow">Programme status</div>
+  <h1 id="title">Portfolio Status Review</h1>
+  <p class="lede" id="lede"></p>
+  <div class="meta" id="meta"></div>
+</header>
+
+<nav class="sections" aria-label="Sections">
+  <div class="wrap">
+    <a href="#summary">Summary</a>
+    <a href="#risks">1 · Risks</a>
+    <a href="#issues">2 · Issues &amp; prevention</a>
+    <a href="#projects">3 · Project progress</a>
+    <a href="#resources">4 · Resource utilisation</a>
+    <a href="#notes">Data notes</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="block" id="summary">
+    <div class="kpis" id="kpis"></div>
+    <div class="two">
+      <div class="panel">
+        <h3>Decisions needed this week</h3>
+        <p class="muted" style="font-size:13px;margin-top:4px">Red items from the risk review, the issues log and the new risks, most urgent first.</p>
+        <div class="decisions" style="margin-top:14px"><ul id="decisions"></ul></div>
+      </div>
+      <div class="panel">
+        <h3>Where the work went, last 30 days</h3>
+        <p class="muted" style="font-size:13px;margin-top:4px">Issues updated in each project, by current status. Hover a bar for counts.</p>
+        <div class="legend" style="margin-top:10px"><span><i class="s1"></i>To do</span><span><i class="s2"></i>In progress</span><span><i class="s3"></i>Done</span></div>
+        <div id="mini-portfolio" style="margin-top:12px;display:grid;gap:9px"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="risks">
+    <div class="section-head">
+      <span class="eyebrow">Review point 1</span>
+      <h2>Risks: impact, mitigation, owner and status</h2>
+      <p class="ask"><b>Asked for:</b> review every listed risk, state impact, mitigation, owner and current status, and drop the stale ones.</p>
+    </div>
+    <p class="lede" id="risk-lede"></p>
+    <div class="filters" id="risk-filters" role="group" aria-label="Filter by review verdict"></div>
+    <div class="panel flush"><div class="tscroll"><table class="risk-table" id="risk-table"></table></div></div>
+
+    <div class="two">
+      <div class="panel" id="reported-risk"></div>
+      <div class="panel">
+        <h3>New risks surfaced from Jira evidence</h3>
+        <p class="muted" style="font-size:13px;margin-top:4px">These are not in the register yet. Each one is backed by tickets.</p>
+        <div id="new-risks" style="margin-top:12px;display:grid;gap:0"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="issues">
+    <div class="section-head">
+      <span class="eyebrow">Review point 2</span>
+      <h2>Issues and preventive actions</h2>
+      <p class="ask"><b>Asked for:</b> every issue that surfaced, with impact, root cause, action taken and preventive measure. The UAT policy change must appear.</p>
+    </div>
+    <div class="issues-list" id="issues-list"></div>
+  </section>
+
+  <section class="block" id="projects">
+    <div class="section-head">
+      <span class="eyebrow">Review point 3</span>
+      <h2>Project-wise accomplishments</h2>
+      <p class="ask"><b>Asked for:</b> real progress per project. For Marketplace, what reached UAT and production, what is pending, open issues and the completion date. For Marketing, testing done against total scope.</p>
+    </div>
+    <div class="scorecards" id="scorecards"></div>
+
+    <div class="panel">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline">
+        <h3>Web-Marketplace · AI-server catalogue</h3>
+        <span class="pill amber" id="mp-eta"></span>
+      </div>
+      <p class="lede" style="margin-top:6px" id="mp-summary"></p>
+      <div class="tscroll" style="margin-top:14px"><table class="pipe" id="pipe"></table></div>
+      <div class="two" style="margin-top:16px">
+        <div><h3 style="font-size:15px">Still pending</h3><ul class="clean" id="mp-pending" style="margin-top:8px"></ul></div>
+        <div><h3 style="font-size:15px">Other Marketplace workstreams</h3><div class="tscroll" style="margin-top:8px"><table id="mp-streams"></table></div></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Web-Marketing · testing progress</h3>
+      <p class="lede" style="margin-top:6px" id="mk-summary"></p>
+      <div class="meters" id="mk-meters" style="margin-top:16px"></div>
+      <div class="two" style="margin-top:18px">
+        <div><h3 style="font-size:15px">Validated</h3><ul class="clean" id="mk-done" style="margin-top:8px"></ul></div>
+        <div><h3 style="font-size:15px">Still pending</h3><ul class="clean" id="mk-pending" style="margin-top:8px"></ul></div>
+      </div>
+      <div class="two" style="margin-top:14px" id="mk-gaps"></div>
+    </div>
+
+    <div class="panel flush">
+      <div style="padding:16px 18px 6px;display:grid;gap:6px">
+        <h3>All active projects</h3>
+        <p class="muted" style="font-size:13px">Every project with an issue updated in the last 30 days. Done in window counts issues resolved <span class="pshort"></span>. Hours are Tempo worklogs visible in Jira for the same window.</p>
+        <div class="legend"><span><i class="s1"></i>To do</span><span><i class="s2"></i>In progress</span><span><i class="s3"></i>Done</span></div>
+      </div>
+      <div class="tscroll"><table id="portfolio"></table></div>
+    </div>
+  </section>
+
+  <section class="block" id="resources">
+    <div class="section-head">
+      <span class="eyebrow">Review point 4</span>
+      <h2>Resource utilisation</h2>
+      <p class="ask"><b>Asked for:</b> allocation, planned versus actual work and available capacity per person. Explain the low-utilisation examples.</p>
+    </div>
+    <div class="callout warn" id="attrib"></div>
+    <div class="stats" id="quality"></div>
+    <div class="two" id="deep"></div>
+    <div class="panel flush">
+      <div style="padding:16px 18px 8px;display:grid;gap:6px">
+        <h3>Hours logged per person, <span class="pshort"></span></h3>
+        <p class="muted" style="font-size:13px" id="cap-note"></p>
+        <div class="legend"><span><i style="background:var(--seq-3)"></i>Hours on tickets now assigned to the person</span><span><i style="background:var(--grey)"></i>Has a day over 10 h: other people's hours or bulk logging</span><span><i style="background:var(--ink);width:2px;border-radius:0"></i>Capacity for the window</span></div>
+      </div>
+      <div class="tscroll"><table id="people"></table></div>
+    </div>
+    <div class="panel">
+      <h3>Completed work in Jira but no Tempo hours against it</h3>
+      <p class="muted" style="font-size:13px;margin-top:4px">These people closed or hold open tickets in the window, yet no Tempo worklog on their tickets reached Jira. Either they log elsewhere or they do not log.</p>
+      <div class="nolog" id="nolog" style="margin-top:12px"></div>
+    </div>
+  </section>
+
+  <section class="block" id="notes">
+    <div class="section-head">
+      <span class="eyebrow">Method</span>
+      <h2>Data notes</h2>
+    </div>
+    <footer class="notes" id="method"></footer>
+  </section>
+</main>
+<div id="tip" hidden></div>
+
+<script>
+const D = {"meta":{"snapshotDate":"2026-09-23","site":"uvation-devops.atlassian.net","projectsVisible":20,"queries":{"issues":"updated >= -30d (all projects)","worklogs":"worklogDate >= -14d","register":"summary ~ Risk|Dependency, created >= 2026-06-01, project != HC"},"counts":{"issuesUpdated30d":2422,"openAllTime":1850,"worklogIssues":379,"worklogEntries":1181,"registerItems":29}},"period":{"auto":true,"lengthDays":14,"holidays":["2026-09-14"],"holidayNote":"Days with no worklogs from anyone (for example Mon 14 Sep) are listed here and treated as non-working days.","start":"2026-09-09","end":"2026-09-22","workingDays":9,"workingDayList":["2026-09-09","2026-09-10","2026-09-11","2026-09-15","2026-09-16","2026-09-17","2026-09-18","2026-09-21","2026-09-22"],"short":"9 Sep–22 Sep","label":"Window 9 Sep–22 Sep 2026"},"capacityPolicy":{"source":"Confluence SOP: Resource Planning, Jira Management and Tempo Time Logging","fteHoursPerFortnight":80,"fteDevHoursPerFortnight":60,"contractorHoursPerFortnight":40,"utilisationTarget":"80–90%","hoursPerDay":8},"title":"Portfolio Status Review","kpis":{"projectsVisible":20,"projectsInScope":5,"projectsActive":5,"issuesUpdated30":1167,"done30":813,"doneInPeriod":626,"openAllTime":1850,"overdueOpen":46,"hoursInPeriod":930.9,"capacityPerPerson":72},"projects":[{"key":"USP","name":"Web-Uvation Services Platform","updated30":552,"created30":192,"todo":74,"inprog":70,"done":408,"doneInPeriod":361,"overdue":6,"openBugs":72,"hours":246.2},{"key":"MT","name":"Web-Marketplace","updated30":314,"created30":214,"todo":20,"inprog":67,"done":227,"doneInPeriod":152,"overdue":33,"openBugs":3,"hours":365.2},{"key":"MR","name":"Web-Marketing","updated30":204,"created30":153,"todo":28,"inprog":16,"done":160,"doneInPeriod":97,"overdue":0,"openBugs":5,"hours":203.7},{"key":"UC","name":"Uvation Conversational AI","updated30":91,"created30":64,"todo":50,"inprog":14,"done":27,"doneInPeriod":15,"overdue":6,"openBugs":0,"hours":87.8},{"key":"PC","name":"Web-Marketplace Product Catalog","updated30":6,"created30":4,"todo":4,"inprog":1,"done":1,"doneInPeriod":1,"overdue":1,"openBugs":0,"hours":28.0}],"register":[{"key":"MT-1093","project":"MT","projectName":"Web-Marketplace","kind":"Dependency","summary":"OEM/brand partner agreements must be in place before product listing","likelihood":"Medium","impact":"High","ownerTeam":"Product Team / Business Team","assignee":null,"jiraStatus":"TODO","updated":"2026-07-07","daysSinceUpdate":78,"context":"Product listings require signed OEM/brand partner agreements. This dependency is jointly owned by the Product and Business teams and is currently open.","mitigation":["Initiate OEM agreements in parallel with development work","Track agreement status via a procurement checklist","Block listing publication until agreement status is confirmed"],"lastComment":null,"verdict":"Keep – now critical","rag":"red","why":"27 AI-server listings for Dell, HPE, NVIDIA, Supermicro and Lenovo were moved to production between 16 and 22 Sep. The register's own mitigation says to block publication until OEM agreements are confirmed.","action":"Confirm OEM agreement status per brand before products are enabled.","suggestedOwner":"Anshul Bhargava"},{"key":"MT-1098","project":"MT","projectName":"Web-Marketplace","kind":"Risk","summary":"OEM pricing changes without notice impacting listed prices","likelihood":"Medium","impact":"Medium","ownerTeam":"Product Team","assignee":null,"jiraStatus":"TODO","updated":"2026-07-07","daysSinceUpdate":78,"context":"OEMs can change pricing without notice, and Marketplace listings can drift out of sync, creating pricing-accuracy risk.","mitigation":["Build automated price-sync jobs against OEM pricing feeds","Add \"starting from\" display guard logic where exact price can't be guaranteed","Alert Product team on large/unexpected price deltas"],"lastComment":null,"verdict":"Keep – now critical","rag":"red","why":"Listed AI-server prices depend on OEM pricing. Listings are now in production (disabled). Unassigned for 78 days.","action":"Agree the price-sync or 'price on request' rule before enablement.","suggestedOwner":"Anshul Bhargava"},{"key":"USP-3755","project":"USP","projectName":"Web-Uvation Services Platform","kind":"Risk","summary":"Scope creep from multiple managed service teams adding portal requirements","likelihood":"High","impact":"Medium","ownerTeam":"Product Team","assignee":"Livian Stefan Stan","jiraStatus":"TODO","updated":"2026-09-17","daysSinceUpdate":6,"context":"Multiple managed service teams are independently adding portal requirements, risking scope creep. Currently In Progress.","mitigation":["Enforce a formal change request process for new requirements","Require product owner gate approval before requirements enter the backlog","Use a phased delivery roadmap with MoSCoW prioritisation"],"lastComment":null,"verdict":"Keep – materialising","rag":"red","why":"Scope creep is visible now: 192 USP issues created in 30 days and 72 open bugs.","action":"Enforce the change-request gate named in the mitigation.","suggestedOwner":null},{"key":"MT-1094","project":"MT","projectName":"Web-Marketplace","kind":"Dependency","summary":"Gynger API sandbox access required before financing integration","likelihood":"Medium","impact":"Medium","ownerTeam":"Backend Team","assignee":null,"jiraStatus":"TODO","updated":"2026-07-07","daysSinceUpdate":78,"context":"Financing integration on the Marketplace requires Gynger API sandbox access, which has not yet been granted.","mitigation":["Request Gynger sandbox access as early as possible","Build a mock integration layer to unblock development while access is pending","Swap mock layer for real sandbox once access is granted"],"lastComment":null,"verdict":"Re-assess","rag":"amber","why":"Financing modal is part of the PDP story (MT-1217, in UAT). No Jira evidence that Gynger sandbox access was obtained.","action":"Confirm whether financing is in go-live scope. If not, close. If yes, assign an owner.","suggestedOwner":"Naveen Jangid"},{"key":"MT-1096","project":"MT","projectName":"Web-Marketplace","kind":"Risk","summary":"Identity provider (Azure AD B2C) outage affecting login","likelihood":"Low","impact":"High","ownerTeam":"Identity Team","assignee":null,"jiraStatus":"TODO","updated":"2026-07-07","daysSinceUpdate":78,"context":"An Azure AD B2C outage would prevent Marketplace login entirely if no fallback exists.","mitigation":["Maintain a fallback authentication path","Monitor Azure AD B2C via its published SLA","Surface a status page / clear error messaging on login failure"],"lastComment":null,"verdict":"Keep","rag":"amber","why":"Still valid for checkout go-live. Untouched and unassigned for 78 days.","action":"Assign to Identity lead and link to USP-3751, which covers the same outage.","suggestedOwner":"Saravana Kumar"},{"key":"MT-1097","project":"MT","projectName":"Web-Marketplace","kind":"Risk","summary":"Payment gateway downtime at checkout","likelihood":"Low","impact":"High","ownerTeam":"Backend Team","assignee":null,"jiraStatus":"TODO","updated":"2026-07-07","daysSinceUpdate":78,"context":"Checkout currently has no automatic failover if the primary payment gateway experiences downtime, risking lost orders.","mitigation":["Implement dual payment provider failover","Process orders asynchronously via a queue so brief outages don't lose transactions","Alert the Backend team on gateway failure"],"lastComment":null,"verdict":"Keep","rag":"amber","why":"Cart, PO upload and checkout stories are done (MT-1219), so payment gateway downtime is now a live exposure. Unassigned for 78 days.","action":"Assign an owner and confirm failover approach before checkout is enabled.","suggestedOwner":"Naveen Jangid"},{"key":"MT-1100","project":"MT","projectName":"Web-Marketplace","kind":"Risk","summary":"Data breach exposing customer PII or order history","likelihood":"Low","impact":"Critical","ownerTeam":"Security Team","assignee":"Naveen Jangid","jiraStatus":"IN PRODUCTION","updated":"2026-09-18","daysSinceUpdate":5,"context":"Customer PII and order history are high-value targets; a breach would have critical impact and reputational/legal consequences.","mitigation":["Enforce encryption at rest and in transit for all PII and order data","Enforce role-based access control (RBAC) across services touching this data","Maintain a SOC2 audit trail for access to sensitive data"],"lastComment":{"author":"Naveen Jangid","date":"2026-09-07","text":"@Saravana Kumar @Naman Bapna I have made the changes to user get_userinfo API to get user details instead of the claims for marketplace fe and pushed to development"},"verdict":"Close after sign-off","rag":"amber","why":"Userinfo API now used instead of token claims (7 Sep). Ticket is In Production. Claims-removal subtasks ID-679 to ID-683 are still in UAT.","action":"Close once ID-679 to ID-683 reach production and Security signs off.","suggestedOwner":"Naveen Jangid"},{"key":"MT-1101","project":"MT","projectName":"Web-Marketplace","kind":"Risk","summary":"Regulatory non-compliance (GDPR/CCPA) on cookie handling","likelihood":"Medium","impact":"High","ownerTeam":"Legal / Compliance","assignee":null,"jiraStatus":"TODO","updated":"2026-07-07","daysSinceUpdate":78,"context":"Cookie handling must comply with GDPR and CCPA; non-compliance carries regulatory and reputational risk.","mitigation":["Integrate a consent management platform for cookie handling","Conduct a quarterly compliance review","Document compliance status for Legal/Compliance sign-off"],"lastComment":null,"verdict":"Re-assess","rag":"amber","why":"Marketing site shipped GDPR cookie consent (MR-760, Done). No equivalent evidence for Marketplace.","action":"Confirm Marketplace consent coverage, then close or assign.","suggestedOwner":"Vishnu kumar yadav"},{"key":"USP-3750","project":"USP","projectName":"Web-Uvation Services Platform","kind":"Dependency","summary":"Uvation Rewards Platform API required for service credit sync","likelihood":"Medium","impact":"High","ownerTeam":"Backend Team","assignee":"Livian Stefan Stan","jiraStatus":"TODO","updated":"2026-09-17","daysSinceUpdate":6,"context":"Service credit sync depends on the Rewards Platform API, currently tracked as an open dependency.","mitigation":["Implement idempotent async processing via Service Bus","Run an hourly reconciliation job to catch missed/duplicate syncs","Alert Backend team on reconciliation discrepancies"],"lastComment":null,"verdict":"Keep","rag":"amber","why":"Depends on Rewards API. Same failure mode as MT-1099, which Marketplace has already mitigated.","action":"Reuse the Marketplace sync and reconciliation pattern.","suggestedOwner":null},{"key":"USP-3754","project":"USP","projectName":"Web-Uvation Services Platform","kind":"Risk","summary":"Service credit sync failure from Marketplace or Rewards","likelihood":"Medium","impact":"High","ownerTeam":"Backend Team","assignee":"Livian Stefan Stan","jiraStatus":"TODO","updated":"2026-09-17","daysSinceUpdate":6,"context":"Service credit sync from Marketplace or Rewards can fail, risking inconsistent balances for customers.","mitigation":["Implement idempotent async processing via Service Bus","Run an hourly reconciliation job","Alert on discrepancies detected during reconciliation"],"lastComment":null,"verdict":"Keep","rag":"amber","why":"Duplicate of USP-3750 in substance.","action":"Merge with USP-3750.","suggestedOwner":null},{"key":"MT-1092","project":"MT","projectName":"Web-Marketplace","kind":"Dependency","summary":"Azure AD B2C tenant config must be active before Marketplace auth works","likelihood":"Medium","impact":"High","ownerTeam":"Identity Team","assignee":null,"jiraStatus":"TODO","updated":"2026-07-07","daysSinceUpdate":78,"context":"Marketplace authentication depends on the Azure AD B2C tenant being active and correctly configured. This is currently an open dependency owned by the Identity Team.","mitigation":["Coordinate early with the Identity Team on tenant configuration and timeline","Monitor Azure AD B2C SLA for the tenant","Maintain a fallback authentication path in case the tenant is unavailable"],"lastComment":null,"verdict":"Close","rag":"green","why":"Azure AD B2C tenant is live. Marketplace login works in production and Identity is now removing token claims (ID-679 to ID-686).","action":"Close as realised dependency.","suggestedOwner":null},{"key":"MT-1095","project":"MT","projectName":"Web-Marketplace","kind":"Dependency","summary":"CDN infrastructure must be operational to serve product images","likelihood":"Low","impact":"Medium","ownerTeam":"DevOps Team","assignee":null,"jiraStatus":"TODO","updated":"2026-07-07","daysSinceUpdate":78,"context":"Product image delivery depends on CDN infrastructure being operational. This is owned by DevOps and currently open.","mitigation":["Validate CDN uptime SLA","Implement fallback image hosting for CDN outages","Monitor CDN health as part of standard observability"],"lastComment":null,"verdict":"Close","rag":"green","why":"Product images are served on production for all migrated products (MT-1528). CDN is operational.","action":"Close as realised dependency.","suggestedOwner":null},{"key":"MT-1099","project":"MT","projectName":"Web-Marketplace","kind":"Risk","summary":"Rewards platform sync failure leading to incorrect point balances","likelihood":"Medium","impact":"Medium","ownerTeam":"Backend Team","assignee":"Naveen Jangid","jiraStatus":"Done","updated":"2026-09-17","daysSinceUpdate":6,"context":"Sync failures between Marketplace and the Rewards platform can leave customers with incorrect point balances.","mitigation":["Implement idempotent, event-driven sync between Marketplace and Rewards","Add a manual reconciliation process for detected discrepancies","Alert Backend team on repeated sync failures"],"lastComment":{"author":"Naveen Jangid","date":"2026-09-16","text":"Event based sync mechanism is already implemented and manual sync of the orders are possible and rewards admin can also adjust the loyalty points balance through admin"},"verdict":"Close","rag":"green","why":"Mitigation delivered. Event-based sync, manual order sync and admin point adjustment exist (comment 16 Sep). Ticket is Done.","action":"Close in register.","suggestedOwner":null},{"key":"USP-3747","project":"USP","projectName":"Web-Uvation Services Platform","kind":"Dependency","summary":"Uvation Identity must remain single source of truth for USP auth","likelihood":"Low","impact":"High","ownerTeam":"Identity Team","assignee":"Livian Stefan Stan","jiraStatus":"TODO","updated":"2026-09-17","daysSinceUpdate":6,"context":"USP must not implement standalone authentication; all auth flows must delegate to Azure AD B2C via OAuth 2.0.","mitigation":["No standalone auth implementation exists in USP","All authentication delegated to Azure AD B2C via OAuth 2.0","Periodic audit confirms no auth bypass paths exist"],"lastComment":null,"verdict":"Keep","rag":"green","why":"Owned and dated.","action":"Run the periodic auth-bypass audit named in the mitigation.","suggestedOwner":null},{"key":"USP-3748","project":"USP","projectName":"Web-Uvation Services Platform","kind":"Dependency","summary":"Cloud partner APIs (Azure Monitor / GCP) must be accessible for dashboards","likelihood":"Medium","impact":"High","ownerTeam":"Engineering Team","assignee":"Livian Stefan Stan","jiraStatus":"TODO","updated":"2026-09-17","daysSinceUpdate":6,"context":"Phase 3 dashboard work depends on cloud partner API access being validated ahead of build start.","mitigation":["Validate partner API access against existing agreements","Confirm access before Phase 3 build kickoff","Document access/authentication method for the dashboard team"],"lastComment":null,"verdict":"Keep","rag":"green","why":"Owned and dated.","action":"Confirm partner API access before Phase 3.","suggestedOwner":null},{"key":"USP-3751","project":"USP","projectName":"Web-Uvation Services Platform","kind":"Risk","summary":"Azure AD B2C outage preventing USP portal login","likelihood":"Low","impact":"High","ownerTeam":"Identity Team","assignee":"Livian Stefan Stan","jiraStatus":"TODO","updated":"2026-09-17","daysSinceUpdate":6,"context":"An Azure AD B2C outage would block USP portal login entirely without mitigation in place.","mitigation":["Rely on Azure's 99.99% SLA as the baseline","Maintain cached session tokens so active sessions survive brief outages","Link a status page on the login error screen"],"lastComment":null,"verdict":"Keep","rag":"green","why":"Owned and dated.","action":"Merge with MT-1096 into one cross-platform identity risk.","suggestedOwner":null},{"key":"USP-3752","project":"USP","projectName":"Web-Uvation Services Platform","kind":"Risk","summary":"Cloud partner API rate limits blocking dashboard data","likelihood":"Medium","impact":"Medium","ownerTeam":"Engineering Team","assignee":"Livian Stefan Stan","jiraStatus":"TODO","updated":"2026-09-17","daysSinceUpdate":6,"context":"Cloud partner API rate limits can block real-time dashboard data from loading.","mitigation":["Implement a caching layer with a 5-minute TTL","Gracefully degrade to last-known data with a visible timestamp when rate-limited","Alert Engineering team when sustained rate-limiting is detected"],"lastComment":null,"verdict":"Keep","rag":"green","why":"Owned and dated.","action":"Review at 30 Sep.","suggestedOwner":null},{"key":"USP-3753","project":"USP","projectName":"Web-Uvation Services Platform","kind":"Risk","summary":"AI transcription service failure after advisory session","likelihood":"Medium","impact":"Medium","ownerTeam":"Engineering Team","assignee":"Livian Stefan Stan","jiraStatus":"TODO","updated":"2026-09-17","daysSinceUpdate":6,"context":"The AI transcription service can fail after an advisory session, currently flagged as needing verification of applicability.","mitigation":["Fall back to manual transcript delivery via email within a 4-hour SLA","Implement a retry queue for failed transcription jobs","Verify this failure mode's applicability with the advisory workflow owner (per register comment)"],"lastComment":null,"verdict":"Keep","rag":"green","why":"Owned and dated.","action":"Confirm the failure mode applies to the advisory workflow.","suggestedOwner":null},{"key":"USP-3756","project":"USP","projectName":"Web-Uvation Services Platform","kind":"Risk","summary":"Low adoption of self-service portal by clients used to manual engagement","likelihood":"Medium","impact":"High","ownerTeam":"Product Team","assignee":"Livian Stefan Stan","jiraStatus":"TODO","updated":"2026-09-17","daysSinceUpdate":6,"context":"Clients accustomed to manual engagement may be slow to adopt the self-service portal, risking underuse of the platform.","mitigation":["Build an in-portal guided onboarding tour","Have the Success Team run dedicated outreach to at-risk clients","Offer a demo-credit incentive to encourage first use"],"lastComment":null,"verdict":"Keep","rag":"green","why":"Owned and dated.","action":"Review at 30 Sep.","suggestedOwner":null},{"key":"USP-3757","project":"USP","projectName":"Web-Uvation Services Platform","kind":"Dependency","summary":"Vendor API approval delays blocking integrations","likelihood":"Medium","impact":"High","ownerTeam":"Engineering Team","assignee":"Livian Stefan Stan","jiraStatus":"TODO","updated":"2026-09-17","daysSinceUpdate":6,"context":"External vendor API approvals are on the critical path for several USP integrations and are prone to delay.","mitigation":["Coordinate early with external vendors on approval requirements","Track approval status weekly","Build mock APIs to unblock parallel development while approvals are pending"],"lastComment":null,"verdict":"Keep","rag":"green","why":"Owned and dated.","action":"Review at 30 Sep.","suggestedOwner":null},{"key":"MT-1091","project":"MT","projectName":"Web-Marketplace","kind":"Epic","summary":"Risk and Dependency Mitigation","likelihood":null,"impact":null,"ownerTeam":null,"assignee":null,"jiraStatus":"TODO","updated":"2026-07-07","daysSinceUpdate":78,"context":null,"mitigation":[],"lastComment":null,"verdict":"Keep","rag":"amber","why":"Parent epic for the Marketplace register. Children were never refreshed after 7 Jul.","action":"Refresh all children in the next status review and assign one owner per child.","suggestedOwner":null},{"key":"USP-3746","project":"USP","projectName":"Web-Uvation Services Platform","kind":"Epic","summary":"Risk and Dependency Mitigation","likelihood":null,"impact":null,"ownerTeam":null,"assignee":"Livian Stefan Stan","jiraStatus":"TODO","updated":"2026-08-26","daysSinceUpdate":28,"context":null,"mitigation":[],"lastComment":null,"verdict":"Keep","rag":"green","why":"USP register is actively owned. Children updated 17 Sep with 30 Sep due dates.","action":"Review at 30 Sep.","suggestedOwner":null}],"registerSummary":{"items":20,"risks":12,"dependencies":8,"unassigned":8,"stale30":8,"verdicts":{"Keep":14,"Re-assess":2,"Close":4}},"reportedRisksNotInJira":[{"title":"Hiring a Product Catalog resource","verdict":"Retire as a critical risk","rag":"green","evidence":["Suganya Murugaraj researched and validated attribute values for Dell, HPE, Supermicro and Lenovo between 15 and 22 Sep (PC-133). She has now moved on to NVIDIA Vera Rubin.","Naman Bapna created 27 AI-server listings on UAT and moved them all to production between 16 and 22 Sep (MT-1500 to MT-1512, MT-1528).","The Confluence 30/60/90 plan for the Product Research & Upload team already defines the roles this hire would fill."],"replaceWith":"Key-person dependency on Naman Bapna for Magento product creation and production migration. One researcher (Suganya) covers all brands.","action":"Cross-train one more person on CSV import and production migration before the NVIDIA Vera Rubin batch. Revisit hiring only if the pipeline grows past current throughput."}],"newRisks":[{"title":"Key-person dependency on Magento product migration","project":"Marketplace","likelihood":"Medium","impact":"High","rag":"red","evidence":["MT-1500–MT-1512","MT-1527","MT-1528"],"detail":"Every UAT product creation and the whole UAT-to-production CSV migration were done by one person.","mitigation":"Pair a second engineer on the next batch and document the CSV and attribute steps as an SOP.","suggestedOwner":"Naman Bapna"},{"title":"AI-server products are in production but disabled","project":"Marketplace","likelihood":"High","impact":"High","rag":"red","evidence":["MT-1528","MT-1484","MT-1529"],"detail":"All 27 migrated listings were verified and then disabled pending business approval. Cross-validation on UAT (MT-1529) is still in progress.","mitigation":"Set an approval date with the approver and a named enablement owner.","suggestedOwner":"Shashi Prasad K"},{"title":"Marketplace staging performance","project":"Marketplace","likelihood":"High","impact":"Medium","rag":"amber","evidence":["MT-1475"],"detail":"Lighthouse performance score on staging was 43 on 18 Sep, after categories were reduced. The ticket was routed to the wrong person first.","mitigation":"Performance baseline and fix plan before enabling products.","suggestedOwner":"Naveen Jangid"},{"title":"Sitemap exposes 250 of 500+ URLs","project":"Web-Marketing","likelihood":"High","impact":"Medium","rag":"amber","evidence":["MR-1199","MR-1165"],"detail":"The production sitemap lists 250 URLs. More than 500 are expected. This hurts SEO and caps automated test coverage.","mitigation":"Fix the sitemap generator, then extend Playwright coverage to the full URL list.","suggestedOwner":"Vishnu kumar yadav"},{"title":"Time-logging data cannot support utilisation reporting","project":"All","likelihood":"High","impact":"High","rag":"red","evidence":["Tempo worklogs"],"detail":"Every Tempo worklog in the window uses the generic description 'time-tracking'. Marketing content, Design, Infrastructure and Hamara CRM have no Tempo hours against Jira at all.","mitigation":"Enforce the SOP rule that a description is mandatory. Pull the weekly utilisation view from Tempo by worker, not by Jira assignee.","suggestedOwner":"Shashi Prasad K"},{"title":"Marketplace QA automation has no owner","project":"Marketplace","likelihood":"Medium","impact":"Medium","rag":"amber","evidence":["MT-1141"],"detail":"The end-to-end automation framework was moved to backlog after the assigned engineer left on 23 Jul. Web-Marketing has working Playwright automation (MR-1165) that could be reused.","mitigation":"Reuse the Web-Marketing Playwright setup for a Marketplace smoke suite.","suggestedOwner":"Kannan Elangovan"}],"issues":[{"id":"policy-uat","title":"Policy change identified during UAT is not recorded anywhere in Jira","project":"Marketplace","status":"Open – gap","rag":"red","keys":["MT-1116","MT-1180","MT-1181","MT-1187","MT-1286"],"surfaced":"UAT","impact":"Not measurable from Jira. The change is not logged, so its effect on scope, dates and effort cannot be traced.","rootCause":"No change-request ticket type, and no UAT sign-off step that captures business-policy changes. About 300 tickets mentioning policy or change requests across 8 projects were checked. The closest are the returns-policy use cases (MT-1116, MT-1180, MT-1181, MT-1187) and MT-1286, which made the return-eligibility window configurable on 2 Sep. None of them records a change found in UAT.","actionTaken":"None visible in Jira.","preventive":"Log it now as a Change Request with impact and effort, linked to the affected stories. Add a 'business rules confirmed' line to UAT sign-off covering returns, refunds, loyalty points and pricing. Open business-rule questions already exist on MT-978 (loyalty points) and MT-1488 (refund and exchange timelines).","owner":"Shashi Prasad K"},{"id":"pivot","title":"Marketplace scope changed mid-sprint to AI servers only","project":"Marketplace","status":"Largely delivered","rag":"amber","keys":["MT-1437","MT-1438","MT-1524"],"surfaced":"10 Sep","impact":"A 38-task category-disable plan was added on 10 Sep. 36 are done and about 43 hours were logged against it. The home page is being redesigned around B300, GB300 and Vera Rubin (MT-1524, due 30 Sep).","rootCause":"Business strategy change mid-sprint.","actionTaken":"Category disable executed in 12 days. URL disposition (MT-1447) and performance check (MT-1475) remain open.","preventive":"Route strategy changes through a change request with an impact estimate before tasks are raised."},{"id":"dell-config","title":"Dell products created with wrong parent-child configuration","project":"Marketplace","status":"Resolved","rag":"green","keys":["MT-1503","MT-1527"],"surfaced":"UAT review, 16 Sep","impact":"4 of 6 Dell products needed rework. One had to be recreated. Dell GPU values also needed correction (PC-133, 17 Sep).","rootCause":"No agreed standard for configurable versus standalone products before creation started.","actionTaken":"Fixed and verified on UAT on 17 Sep. Later brands were created as standalone products.","preventive":"Apply the pre-publish QA checklist in the Confluence 30/60/90 plan to every batch before production migration."},{"id":"product-inputs","title":"Product list and specs arrived late","project":"Marketplace","status":"Resolved","rag":"green","keys":["MT-1506","MT-1484"],"surfaced":"16–17 Sep","impact":"HPE creation waited a day for one product's details. Timelines could not be set until the final list existed.","rootCause":"Creation started before the approved product list was final.","actionTaken":"HPE completed 18 Sep.","preventive":"Require a signed approved-product list per batch before creation, as the 30/60/90 plan's approval gate specifies."},{"id":"go-live-approval","title":"Migrated products are disabled pending approval","project":"Marketplace","status":"Open","rag":"red","keys":["MT-1528","MT-1529"],"surfaced":"18–22 Sep","impact":"27 listings are in production but not visible to buyers.","rootCause":"Approval step sits after migration, with no date.","actionTaken":"Cross-validation on UAT in progress (MT-1529).","preventive":"Put a dated approval gate in the plan for each batch."},{"id":"lenovo-visibility","title":"Earlier Lenovo UAT products not visible, and ticket status not maintained","project":"Product Catalog","status":"Unclear","rag":"amber","keys":["PC-121"],"surfaced":"2 Sep","impact":"A manually created Lenovo product did not appear on the UAT storefront. PC-121 is still 'To Do' with 49.5 hours logged. It is not clear whether its Lenovo products were superseded by the 2 Lenovo products in MT-1512.","rootCause":"Not recorded.","actionTaken":"None recorded after 7 Sep.","preventive":"Close or re-scope PC-121 and state which Lenovo SKUs are in the go-live list."},{"id":"perf","title":"Staging performance score of 43","project":"Marketplace","status":"Open","rag":"amber","keys":["MT-1475"],"surfaced":"18 Sep","impact":"Slow pages on the reduced catalogue. Risk to conversion and SEO at go-live.","rootCause":"Not yet analysed. The ticket was first routed to the wrong person.","actionTaken":"Reassigned to Naveen Jangid on 22 Sep.","preventive":"Add a performance budget to the release checklist."},{"id":"sitemap","title":"Production sitemap lists 250 of 500+ URLs","project":"Web-Marketing","status":"Open","rag":"amber","keys":["MR-1199","MR-1200"],"surfaced":"22 Sep","impact":"Search engines and the Playwright suite both see only half the site.","rootCause":"Sitemap generation limit. Not yet confirmed.","actionTaken":"Raised as P1.","preventive":"Add a URL-count check to the automated smoke run."},{"id":"overdue-mt","title":"Marketplace buyer stories are past due","project":"Marketplace","status":"Open","rag":"amber","keys":["MT-1215","MT-1216","MT-1217","MT-1311","MT-1331"],"surfaced":"Due 31 Aug and 15 Sep","impact":"Home page and PDP are in UAT, and product listing is in development, all three due 31 Aug. Account hub and returns flow were due 15 Sep.","rootCause":"Not recorded. Due dates were not re-baselined after the AI-servers pivot.","actionTaken":"Returns flow is in testing. Account hub subtasks are in development.","preventive":"Re-baseline due dates when scope changes, per the SOP's Scenario 14."},{"id":"automation","title":"Marketplace automation framework parked after a resource exit","project":"Marketplace","status":"Open","rag":"amber","keys":["MT-1141"],"surfaced":"23 Jul","impact":"Marketplace regression testing stays manual.","rootCause":"Single owner left and work was not reassigned.","actionTaken":"Moved to backlog.","preventive":"Reuse the Web-Marketing Playwright suite and name a new owner."},{"id":"livechat","title":"Conflicting requirement on live chat","project":"Web-Marketing","status":"Open","rag":"amber","keys":["MR-754"],"surfaced":"15 Sep","impact":"The team was asked to build a widget that it had earlier been asked to remove.","rootCause":"Requirement changes are not recorded as decisions.","actionTaken":"Waiting on chatbot design and APIs.","preventive":"Keep a decision log per project and link reversals to the original decision."}],"marketplace":{"summary":"All five brands in the AI-servers batch were created on UAT and moved to production by 22 Sep. None are live yet because every migrated product was disabled pending approval.","expectedCompletion":"30 Sep 2026 (due date on MT-1485, MT-1488 and MT-1524)","brands":[{"brand":"Dell","products":6,"research":"Validated 16–17 Sep (PC-133)","uat":"Created 16 Sep (MT-1503), 4 fixed 17 Sep (MT-1527)","prod":"Moved 18 Sep (MT-1528)","live":"Disabled","items":["XE9780","XE9785","XE9780L","XE9780LAP","XE9785L","XE9712"]},{"brand":"HPE","products":3,"research":"Validated 18 Sep (PC-133)","uat":"Created 17–18 Sep (MT-1506)","prod":"Moved 18 Sep (MT-1528)","live":"Disabled","items":["XD690","XD685","GB300 NVL72"]},{"brand":"NVIDIA","products":8,"note":"One listing is a group of 17 products","research":"Reviewed 10–15 Sep (MT-1484, MT-1477)","uat":"Created by 15 Sep (MT-1484)","prod":"Moved 21 Sep (MT-1528)","live":"Disabled","items":["DGX B300","HGX B300","DGX GB300","GB300 NVL72","DGX SuperPOD with DGX GB300","DGX Station GB300","DGX Station for Windows","DGX Super POD group (17)"]},{"brand":"Supermicro","products":8,"research":"Validated 18 Sep (PC-133)","uat":"Created 21 Sep (MT-1509)","prod":"Moved by 22 Sep (MT-1528 closed)","live":"Disabled","items":["SYS-822GS-NB3RT","AS-8126GS-NB3RT","SYS-422GS-NB3RT-LCC","SYS-422GS-NB3RT-ALC","AS-4126GS-NB3RT-LCC","SYS-222GS-NB3OT-ALC","ARS-511GD-NB-LCC","SRS-GB300-NVL72"]},{"brand":"Lenovo","products":2,"research":"Validated 21 Sep (PC-133)","uat":"Created 21 Sep (MT-1512)","prod":"Moved by 22 Sep (MT-1528 closed)","live":"Disabled","items":["SR680a V4","GB300 NVL72 rack-scale"]}],"pending":["Business approval and enablement of all 27 listings.","Cross-validation and audit on UAT (MT-1529, in progress).","NVIDIA Vera Rubin research started 22 Sep (PC-133).","Status of the earlier Lenovo batch in PC-121 is unclear."],"otherWorkstreams":[{"name":"Category disable (AI servers only)","key":"MT-1438","state":"36 of 38 tasks done","open":"URL disposition (MT-1447), performance check (MT-1475)"},{"name":"Returns and refund flow","key":"MT-1331","state":"In testing. 7 of 12 subtasks done","open":"RMA email templates and backend support (MT-1365, MT-1487, MT-1488, due 30 Sep)"},{"name":"Account hub","key":"MT-1311","state":"In development. 1 of 10 subtasks done","open":"Due date 15 Sep has passed"},{"name":"Home page and PDP","key":"MT-1215, MT-1217","state":"In UAT","open":"Due date 31 Aug has passed. Home page redesign MT-1524 due 30 Sep"},{"name":"Product listing, filter and search","key":"MT-1216","state":"In development. 6 of 7 subtasks done or in production","open":"Due date 31 Aug has passed"},{"name":"Loyalty points logic","key":"MT-978","state":"Waiting on business rules","open":"Due 30 Sep"}]},"marketingTesting":{"summary":"Production smoke automation passes on every URL it can see, but it can see only 250 of more than 500 URLs. Page-wise Figma validation has raised 23 defects so far, and 7 are fixed.","scopeUrlsExpected":500,"scopeNote":"More than 500 URLs expected, per MR-1199","automatedUrls":250,"automatedChecks":2250,"automatedPassed":2250,"browserDeviceProjects":9,"manualCrossBrowserPages":40,"manualNote":"About 40 pages tested manually on macOS Chrome, Firefox and Safari and on iPhone, 3–9 Sep (MR-1100, MR-1101)","figmaDefects":{"raised":23,"done":7,"inProgress":2,"todo":14,"pagesCovered":16,"key":"MR-1179"},"siteVerification":{"key":"MR-1166","subtasks":5,"done":1},"validated":["250 production URLs load on 9 browser and device profiles, with 2,250 of 2,250 checks passing (21 Sep).","About 40 pages checked on macOS and iPhone browsers (3–9 Sep).","Page-by-page testing for People, GDPR, Nuclear Energy, Partnership, Rewards and Rewards Donations, with all issues fixed.","Cookie consent blocks analytics scripts until accepted (MR-1068)."],"pending":["Fix the sitemap (MR-1199), then extend automation from 250 URLs to the full list.","16 open Figma-vs-website defects (MR-1179).","Figma validation for the remaining pages. About 16 pages have been covered so far.","Playwright integration into the Azure production pipeline.","New home page design and API (MR-1169)."],"remainingEffort":"Not estimated in Jira. None of the testing tickets carry an Original Estimate.","targetDate":"Not set in Jira. The only dated item is MR-1168, due 30 Sep.","anmolNote":"Anmol Srivastava's detailed testing report is not in Jira or Confluence. The figures here come from the Jira testing tickets."},"people":[{"name":"Sapavat Yadagiri","hours":120.8,"daysLogged":9,"maxDay":23.2,"avgPerDay":13.4,"pctCapacity":168,"tickets":31,"doneInPeriod":33,"open":31,"overdue":21,"projects":{"MT":120.8},"daily":{"2026-09-09":23.2,"2026-09-10":11.0,"2026-09-11":12.5,"2026-09-15":15.5,"2026-09-16":14.8,"2026-09-17":15.0,"2026-09-18":14.8,"2026-09-21":8.0,"2026-09-22":6.0},"flags":["attribution"]},{"name":"r.jaiswal","hours":94.3,"daysLogged":9,"maxDay":31.1,"avgPerDay":10.5,"pctCapacity":131,"tickets":40,"doneInPeriod":46,"open":18,"overdue":0,"projects":{"USP":94.3},"daily":{"2026-09-09":6.0,"2026-09-10":1.2,"2026-09-11":6.0,"2026-09-15":5.0,"2026-09-16":11.0,"2026-09-17":14.0,"2026-09-18":31.1,"2026-09-21":10.5,"2026-09-22":9.5},"flags":["attribution"]},{"name":"Saurabh Jain","hours":78.8,"daysLogged":9,"maxDay":17.5,"avgPerDay":8.8,"pctCapacity":109,"tickets":17,"doneInPeriod":19,"open":9,"overdue":0,"projects":{"MT":55.8,"MR":23.0},"daily":{"2026-09-09":6.0,"2026-09-10":7.0,"2026-09-11":5.5,"2026-09-15":6.0,"2026-09-16":11.2,"2026-09-17":3.0,"2026-09-18":9.5,"2026-09-21":13.0,"2026-09-22":17.5},"flags":["attribution"]},{"name":"Kunal Jangid","hours":78.1,"daysLogged":9,"maxDay":14.9,"avgPerDay":8.7,"pctCapacity":108,"tickets":54,"doneInPeriod":58,"open":16,"overdue":0,"projects":{"MR":78.1},"daily":{"2026-09-09":11.5,"2026-09-10":6.9,"2026-09-11":9.0,"2026-09-15":14.9,"2026-09-16":3.6,"2026-09-17":13.0,"2026-09-18":5.8,"2026-09-21":5.0,"2026-09-22":8.5},"flags":["attribution"]},{"name":"Akhil Katiyar","hours":69.5,"daysLogged":8,"maxDay":15.2,"avgPerDay":8.7,"pctCapacity":97,"tickets":34,"doneInPeriod":90,"open":15,"overdue":0,"projects":{"USP":69.5},"daily":{"2026-09-09":11.5,"2026-09-10":3.8,"2026-09-11":7.5,"2026-09-15":10.5,"2026-09-16":7.5,"2026-09-17":10.5,"2026-09-18":15.2,"2026-09-22":3.0},"flags":["attribution"]},{"name":"Aman prakash","hours":67.9,"daysLogged":9,"maxDay":16.0,"avgPerDay":7.5,"pctCapacity":94,"tickets":21,"doneInPeriod":43,"open":13,"overdue":1,"projects":{"USP":67.9},"daily":{"2026-09-09":7.0,"2026-09-10":4.0,"2026-09-11":16.0,"2026-09-15":9.5,"2026-09-16":11.0,"2026-09-17":7.0,"2026-09-18":2.9,"2026-09-21":4.0,"2026-09-22":6.5},"flags":["attribution"]},{"name":"Naman Bapna","hours":61.3,"daysLogged":9,"maxDay":8.8,"avgPerDay":6.8,"pctCapacity":85,"tickets":27,"doneInPeriod":41,"open":1,"overdue":0,"projects":{"MT":61.3},"daily":{"2026-09-09":8.8,"2026-09-10":6.5,"2026-09-11":7.5,"2026-09-15":5.5,"2026-09-16":8.0,"2026-09-17":4.8,"2026-09-18":6.0,"2026-09-21":8.8,"2026-09-22":5.5},"flags":[]},{"name":"Vishnu kumar yadav","hours":60.8,"daysLogged":9,"maxDay":9.2,"avgPerDay":6.8,"pctCapacity":84,"tickets":24,"doneInPeriod":33,"open":15,"overdue":0,"projects":{"MR":60.0,"USP":0.5,"MT":0.2},"daily":{"2026-09-09":8.0,"2026-09-10":1.5,"2026-09-11":9.2,"2026-09-15":7.0,"2026-09-16":7.5,"2026-09-17":7.0,"2026-09-18":7.0,"2026-09-21":5.5,"2026-09-22":8.0},"flags":[]},{"name":"Ankit Saxena","hours":49.0,"daysLogged":8,"maxDay":7.0,"avgPerDay":6.1,"pctCapacity":68,"tickets":7,"doneInPeriod":17,"open":13,"overdue":0,"projects":{"UC":49.0},"daily":{"2026-09-09":6.5,"2026-09-11":4.0,"2026-09-15":7.0,"2026-09-16":7.0,"2026-09-17":7.0,"2026-09-18":7.0,"2026-09-21":4.0,"2026-09-22":6.5},"flags":[]},{"name":"Naveen Jangid","hours":44.5,"daysLogged":9,"maxDay":7.5,"avgPerDay":4.9,"pctCapacity":62,"tickets":16,"doneInPeriod":17,"open":19,"overdue":4,"projects":{"MT":44.5},"daily":{"2026-09-09":7.0,"2026-09-10":2.0,"2026-09-11":6.0,"2026-09-15":7.0,"2026-09-16":7.0,"2026-09-17":5.0,"2026-09-18":2.0,"2026-09-21":7.5,"2026-09-22":1.0},"flags":[]},{"name":"Kannan Elangovan","hours":41.1,"daysLogged":9,"maxDay":14.0,"avgPerDay":4.6,"pctCapacity":57,"tickets":10,"doneInPeriod":6,"open":9,"overdue":2,"projects":{"MR":41.1},"daily":{"2026-09-09":2.0,"2026-09-10":1.5,"2026-09-11":0.5,"2026-09-15":1.8,"2026-09-16":14.0,"2026-09-17":4.0,"2026-09-18":6.0,"2026-09-21":10.2,"2026-09-22":1.0},"flags":["attribution"]},{"name":"Nareddy Shiva Prasad Reddy","hours":38.8,"daysLogged":7,"maxDay":7.0,"avgPerDay":5.5,"pctCapacity":54,"tickets":5,"doneInPeriod":5,"open":5,"overdue":0,"projects":{"UC":38.8},"daily":{"2026-09-09":4.0,"2026-09-10":6.0,"2026-09-15":4.0,"2026-09-16":7.0,"2026-09-17":7.0,"2026-09-21":4.0,"2026-09-22":6.8},"flags":["low"]},{"name":"Suganya Murugaraj","hours":28.0,"daysLogged":6,"maxDay":6.5,"avgPerDay":4.7,"pctCapacity":39,"tickets":1,"doneInPeriod":1,"open":2,"overdue":0,"projects":{"PC":28.0},"daily":{"2026-09-15":1.5,"2026-09-16":6.5,"2026-09-17":5.5,"2026-09-18":4.5,"2026-09-21":4.5,"2026-09-22":5.5},"flags":["low"]},{"name":"shubham kuchwar","hours":27.0,"daysLogged":6,"maxDay":7.0,"avgPerDay":4.5,"pctCapacity":38,"tickets":4,"doneInPeriod":9,"open":6,"overdue":1,"projects":{"MT":27.0},"daily":{"2026-09-09":4.0,"2026-09-10":4.0,"2026-09-11":7.0,"2026-09-15":4.0,"2026-09-16":4.0,"2026-09-22":4.0},"flags":["low"]},{"name":"Nagamuni Valluri","hours":23.0,"daysLogged":5,"maxDay":7.0,"avgPerDay":4.6,"pctCapacity":32,"tickets":5,"doneInPeriod":1,"open":10,"overdue":3,"projects":{"MT":23.0},"daily":{"2026-09-10":0.5,"2026-09-17":5.0,"2026-09-18":3.5,"2026-09-21":7.0,"2026-09-22":7.0},"flags":["low"]},{"name":"Gourav Agnani","hours":14.0,"daysLogged":2,"maxDay":7.0,"avgPerDay":7.0,"pctCapacity":19,"tickets":2,"doneInPeriod":5,"open":7,"overdue":2,"projects":{"MT":8.0,"USP":6.0},"daily":{"2026-09-17":7.0,"2026-09-18":7.0},"flags":["low"]},{"name":"Ankit Sharma","hours":13.5,"daysLogged":3,"maxDay":7.0,"avgPerDay":4.5,"pctCapacity":19,"tickets":3,"doneInPeriod":66,"open":2,"overdue":0,"projects":{"MT":7.0,"USP":6.5},"daily":{"2026-09-10":7.0,"2026-09-21":4.0,"2026-09-22":2.5},"flags":["low"]},{"name":"Shashi Prasad K","hours":11.1,"daysLogged":3,"maxDay":9.6,"avgPerDay":3.7,"pctCapacity":15,"tickets":3,"doneInPeriod":4,"open":1,"overdue":1,"projects":{"MT":10.1,"MR":1.0},"daily":{"2026-09-09":1.0,"2026-09-10":9.6,"2026-09-18":0.5},"flags":["low"]},{"name":"Murali G","hours":3.0,"daysLogged":2,"maxDay":2.5,"avgPerDay":1.5,"pctCapacity":4,"tickets":2,"doneInPeriod":6,"open":0,"overdue":0,"projects":{"MT":2.5,"MR":0.5},"daily":{"2026-09-10":2.5,"2026-09-21":0.5},"flags":["low"]},{"name":"Anshul Bhargava","hours":2.5,"daysLogged":2,"maxDay":1.5,"avgPerDay":1.2,"pctCapacity":3,"tickets":1,"doneInPeriod":4,"open":7,"overdue":6,"projects":{"MT":2.5},"daily":{"2026-09-10":1.0,"2026-09-11":1.5},"flags":["low"]},{"name":"Parth","hours":2.5,"daysLogged":2,"maxDay":1.5,"avgPerDay":1.2,"pctCapacity":3,"tickets":1,"doneInPeriod":1,"open":2,"overdue":0,"projects":{"MT":2.5},"daily":{"2026-09-15":1.5,"2026-09-16":1.0},"flags":["low"]},{"name":"Cășvan Marcel","hours":1.5,"daysLogged":1,"maxDay":1.5,"avgPerDay":1.5,"pctCapacity":2,"tickets":3,"doneInPeriod":36,"open":21,"overdue":3,"projects":{"USP":1.5},"daily":{"2026-09-17":1.5},"flags":["low"]},{"name":"Andrei Momita","hours":0.0,"daysLogged":0,"maxDay":0,"avgPerDay":0,"pctCapacity":0,"tickets":0,"doneInPeriod":4,"open":0,"overdue":0,"projects":{},"daily":{},"flags":["nolog"]},{"name":"Arnab","hours":0.0,"daysLogged":0,"maxDay":0,"avgPerDay":0,"pctCapacity":0,"tickets":0,"doneInPeriod":0,"open":2,"overdue":1,"projects":{},"daily":{},"flags":["nolog"]},{"name":"Livian Stefan Stan","hours":0.0,"daysLogged":0,"maxDay":0,"avgPerDay":0,"pctCapacity":0,"tickets":0,"doneInPeriod":6,"open":41,"overdue":0,"projects":{},"daily":{},"flags":["nolog"]},{"name":"Raluca Conea","hours":0.0,"daysLogged":0,"maxDay":0,"avgPerDay":0,"pctCapacity":0,"tickets":0,"doneInPeriod":1,"open":1,"overdue":0,"projects":{},"daily":{},"flags":["nolog"]},{"name":"Shivam Dhoundiyal","hours":0.0,"daysLogged":0,"maxDay":0,"avgPerDay":0,"pctCapacity":0,"tickets":0,"doneInPeriod":36,"open":2,"overdue":0,"projects":{},"daily":{},"flags":["nolog"]},{"name":"Silviu Oltean","hours":0.0,"daysLogged":0,"maxDay":0,"avgPerDay":0,"pctCapacity":0,"tickets":0,"doneInPeriod":22,"open":27,"overdue":1,"projects":{},"daily":{},"flags":["nolog"]},{"name":"Yash Janeshwar","hours":0.0,"daysLogged":0,"maxDay":0,"avgPerDay":0,"pctCapacity":0,"tickets":0,"doneInPeriod":4,"open":1,"overdue":0,"projects":{},"daily":{},"flags":["nolog"]}],"quality":{"worklogsInPeriod":570,"genericDescriptions":570,"worklogAuthors":{"Timesheets by Tempo - Jira Time Tracking":570},"ticketsWithTime":311,"ticketsWithTimeNoEstimate":205,"unattributedHours":0.0,"overheadTicketsTruncated":["UP-12","UP-14","UP-15","UP-17","UP-20","UP-23","UP-28","UP-3","UP-30","UP-32","UP-4","UP-8","UP-9"],"projectsWithNoTempoHours":[],"totalHours":930.9},"utilisationNotes":{"attributionWarning":"Tempo writes every worklog to Jira under its own app account, so Jira cannot say who logged an hour. Hours here are credited to each ticket's current assignee. When a developer's ticket is handed to QA, the developer's hours move with it. Any day above 10 hours for one person is flagged for this reason.","overheadGap":"Meetings, stand-ups and leave are logged against 13 shared overhead tickets in Uvation Projects. Jira returns only the oldest 20 worklogs per ticket, so recent overhead time is invisible here.","deepDives":[{"person":"Suganya Murugaraj","finding":"Logged 28 hours on 6 days, all on PC-133. That averages 4.7 hours a day against an 8-hour day. No hours appear in Jira for 9, 10 and 11 Sep, and 15 Sep shows 1.5 hours.","context":"The 5.5 hours on 17 Sep covered Dell GPU corrections with Naman and then HPE validation, which is 3 products. Each product also needed a tech-spec table, long description, short description and product-card copy in HTML. Across the window she validated 19 products for 4 brands, about 1.5 hours per product.","question":"Where are the other 3 or so hours a day? They may be on overhead tickets, which Jira hides, or unlogged.","verify":"Pull Suganya's Tempo timesheet for 9–22 Sep and compare the total with 72 hours."},{"person":"Sapavat Yadagiri","finding":"Jira credits Sapavat with 146.8 hours, including 26.8 hours on 9 Sep. That is impossible for one person and shows developer time on tickets reassigned to QA.","context":"Sapavat's own QA tasks show 0.5 to 2 hours each. For example, the navigation, homepage-module and facet UI updates for the category disable took 1 hour each (MT-1455 to MT-1457). Functional test on staging took 1.5 hours and the toggle test 1.5 hours (MT-1471, MT-1473).","question":"Sapavat's real hours cannot be separated from developer hours in Jira. The Tempo worker report is the only reliable source.","verify":"Pull Sapavat's Tempo timesheet by worker. Check that QA time is logged on QA subtasks, not on development subtasks."}]},"jiraBase":"https://uvation-devops.atlassian.net/browse/","links":{"daily":"daily.html","review":"https://claude.ai/artifact/R9gQ2oHPXkQaj2ZgrXCEAe"},"_refs":[{"key":"MT-1485","summary":"Product creation on Magento for all AI servers","status":"In Progress"},{"key":"MT-1528","summary":"Move AI Server Products from UAT to Production via CSV","status":"Done"},{"key":"MR-1179","summary":"Figma vs Website – Complete Page-wise UI Validation","status":"In Progress"},{"key":"MR-1165","summary":"Playwright Automation – Validate 71 URLs","status":"In Progress"}],"scope":{"label":"Web platforms: Marketplace, Marketing, Services Platform and Conversational AI","short":"4 web programmes","note":"Web-Marketplace Product Catalog (PC) is reported with Web-Marketplace, because the AI-server catalogue work runs across both boards.","projects":["MT","PC","MR","USP","UC"],"names":["Web-Marketplace","Web-Marketplace Product Catalog","Web-Marketing","Web-Uvation Services Platform","Uvation Conversational AI"]},"scorecards":[{"id":"MT","name":"Web-Marketplace","projects":["MT","PC"],"headline":"27 AI-server listings reached production by 22 Sep, all disabled pending approval. Category disable is 36 of 38 tasks done. Returns flow is in testing. Home page, PDP and listing stories are past their 31 Aug due dates.","updated30":320,"created30":218,"done30":228,"doneInPeriod":153,"todo":24,"inprog":68,"done":228,"statuses":{"TODO":20,"IN PRODUCTION":17,"TESTING":16,"In Progress":15,"IN DEVELOPMENT":14,"UAT/STAGING":6,"To Do":4},"stories":{"delivered":18,"inflight":12,"planned":4},"delivered":[{"key":"MT-1224","summary":"As a team we need accessibility, SEO, analytics and QA so the build is production-ready","status":"Done","assignee":"Saurabh Jain","due":null,"resolved":"2026-09-17"},{"key":"MT-1314","summary":"Enhance Checkout, Sales, and Quote Workflow Emails Layouts","status":"Done","assignee":"Parth","due":"2026-09-15","resolved":"2026-09-17"},{"key":"MT-1478","summary":"Product Upload","status":"Done","assignee":"Anshul Bhargava","due":"2026-09-11","resolved":"2026-09-16"},{"key":"MT-1316","summary":"P2 - As a team we need accessibility, SEO, analytics and QA so the build is production-ready","status":"Done","assignee":"Saurabh Jain","due":"2026-09-15","resolved":"2026-09-16"},{"key":"MT-1340","summary":"P2 - As a logged-in user I want to manage orders, quotes, returns, addresses, rewards and credits so I can self-serve","status":"Done","assignee":"Saurabh Jain","due":"2026-09-15","resolved":"2026-09-16"},{"key":"MT-1385","summary":"P2 (Testing) - As a buyer I want to submit a request-for-quote so I can negotiate pricing on high-value orders","status":"Done","assignee":"Saurabh Jain","due":"2026-09-15","resolved":"2026-09-16"},{"key":"MT-1099","summary":"Risk: Rewards platform sync failure leading to incorrect point balances","status":"Done","assignee":"Naveen Jangid","due":"2026-09-15","resolved":"2026-09-16"},{"key":"MT-1298","summary":"Implement Azure Managed Identity Authentication for Webkul Azure Blob Storage Module","status":"Done","assignee":"shubham kuchwar","due":"2026-08-31","resolved":"2026-09-07"}],"inflight":[{"key":"MT-1215","summary":"As a buyer I want a responsive home page with hero, categories and featured products so I can start browsing","status":"UAT/STAGING","assignee":"Sapavat Yadagiri","due":"2026-08-31","resolved":""},{"key":"MT-1216","summary":"As a buyer I want to filter, sort and search products so I can find the right hardware quickly","status":"IN DEVELOPMENT","assignee":"Sapavat Yadagiri","due":"2026-08-31","resolved":""},{"key":"MT-1217","summary":"As a buyer I want complete product info, configuration, financing and a path to quote/cart so I can make a decision","status":"UAT/STAGING","assignee":"Sapavat Yadagiri","due":"2026-08-31","resolved":""},{"key":"MT-1438","summary":"Uvation Marketplace Category Disable Task List","status":"In Progress","assignee":"Shashi Prasad K","due":"2026-09-10","resolved":""},{"key":"MT-1100","summary":"Risk: Data breach exposing customer PII or order history","status":"IN PRODUCTION","assignee":"Naveen Jangid","due":"2026-09-15","resolved":""},{"key":"MT-1311","summary":"P2-As a logged-in user I want to manage orders, quotes, returns, addresses, rewards and credits so I can self-serve","status":"IN DEVELOPMENT","assignee":"Sapavat Yadagiri","due":"2026-09-15","resolved":""},{"key":"MT-1331","summary":"P2 - As a buyer I want to return items and get a refund or credit so I can resolve issues post-delivery","status":"TESTING","assignee":"Sapavat Yadagiri","due":"2026-09-15","resolved":""},{"key":"MT-1365","summary":"RMA – Review and Implement Figma Requirements (Backend) - Email Templates and Flow","status":"In Progress","assignee":"shubham kuchwar","due":"2026-09-15","resolved":""}],"overdue":[{"key":"PC-118","summary":"Product Research for AI/ML servers","status":"To Do","assignee":"Arnab","due":"2026-08-29","resolved":""},{"key":"MT-1052","summary":"Integrate FE Form URL in PO Order Confirmation Email","status":"IN PRODUCTION","assignee":"Kannan Elangovan","due":"2026-08-31","resolved":""},{"key":"MT-1053","summary":"Create Backend APIs for PO Order Details Form","status":"UAT/STAGING","assignee":"Sapavat Yadagiri","due":"2026-08-31","resolved":""},{"key":"MT-1215","summary":"As a buyer I want a responsive home page with hero, categories and featured products so I can start browsing","status":"UAT/STAGING","assignee":"Sapavat Yadagiri","due":"2026-08-31","resolved":""},{"key":"MT-1216","summary":"As a buyer I want to filter, sort and search products so I can find the right hardware quickly","status":"IN DEVELOPMENT","assignee":"Sapavat Yadagiri","due":"2026-08-31","resolved":""},{"key":"MT-1217","summary":"As a buyer I want complete product info, configuration, financing and a path to quote/cart so I can make a decision","status":"UAT/STAGING","assignee":"Sapavat Yadagiri","due":"2026-08-31","resolved":""},{"key":"MT-1231","summary":"[FE] Hero slider component (autoplay, controls, responsive)","status":"IN PRODUCTION","assignee":"Nagamuni Valluri","due":"2026-08-31","resolved":""},{"key":"MT-1232","summary":"[FE] Category tiles + featured product cards (responsive)","status":"IN PRODUCTION","assignee":"Nagamuni Valluri","due":"2026-08-31","resolved":""}],"overdueCount":34,"blocked":[],"rollups":[{"key":"MT-1438","summary":"Uvation Marketplace Category Disable Task List","status":"In Progress","done":36,"total":38},{"key":"MT-1365","summary":"RMA – Review and Implement Figma Requirements (Backend) - Email Templates and Flow","status":"In Progress","done":24,"total":28},{"key":"MT-1314","summary":"Enhance Checkout, Sales, and Quote Workflow Emails Layouts","status":"Done","done":19,"total":19},{"key":"MT-1485","summary":"Product creation on Magento for all AI servers","status":"In Progress","done":15,"total":16},{"key":"MT-1222","summary":"As a logged-in user I want to manage orders, quotes, returns, addresses, rewards and credits so I can self-serve","status":"Done","done":13,"total":13},{"key":"MT-1340","summary":"P2 - As a logged-in user I want to manage orders, quotes, returns, addresses, rewards and credits so I can self-serve","status":"Done","done":13,"total":13}],"openBugs":3,"bugSeverity":{"Unrated":3}},{"id":"MR","name":"Web-Marketing","projects":["MR"],"headline":"Production smoke tests pass on all 250 URLs the sitemap exposes, but more than 500 are expected. 23 Figma defects raised this sprint, 7 fixed. No open item is past its due date.","updated30":204,"created30":153,"done30":159,"doneInPeriod":97,"todo":28,"inprog":16,"done":160,"statuses":{"TODO":28,"In Progress":13,"Ready for Production":1,"TESTING":1,"IN DEVELOPMENT":1},"stories":{"delivered":7,"inflight":5,"planned":2},"delivered":[{"key":"MR-1066","summary":"Marketing Production site - Testing","status":"Done","assignee":"Saurabh Jain","due":"2026-09-15","resolved":"2026-09-17"},{"key":"MR-1076","summary":"Resolve SonarQube Code Quality and Maintainability Issues","status":"Done","assignee":"Vishnu kumar yadav","due":"2026-09-15","resolved":"2026-09-16"},{"key":"MR-1067","summary":"General","status":"Done","assignee":"Vishnu kumar yadav","due":"2026-09-15","resolved":"2026-09-16"},{"key":"MR-1021","summary":"General","status":"Done","assignee":"Kunal Jangid","due":null,"resolved":"2026-09-15"},{"key":"MR-755","summary":"Make contact form visible on page load and add calendar booking (Calendly) to contact page","status":"Done","assignee":"Kunal Jangid","due":null,"resolved":"2026-09-11"},{"key":"MR-753","summary":"Add waitlist / interest capture form to \"GPU as a Service\" coming soon section","status":"Done","assignee":"Kunal Jangid","due":"2026-09-15","resolved":"2026-09-08"},{"key":"MR-760","summary":"Implement GDPR-compliant cookie consent banner and newsletter double opt-in","status":"Done","assignee":"Kunal Jangid","due":"2026-09-15","resolved":"2026-09-08"}],"inflight":[{"key":"MR-1168","summary":"General","status":"In Progress","assignee":"Vishnu kumar yadav","due":"2026-09-30","resolved":""},{"key":"MR-1165","summary":"Playwright Automation – Validate 71 URLs","status":"In Progress","assignee":"Kannan Elangovan","due":null,"resolved":""},{"key":"MR-1166","summary":"Site verification and validation","status":"In Progress","assignee":"Kannan Elangovan","due":null,"resolved":""},{"key":"MR-1167","summary":"Bug fixes and design improvements","status":"In Progress","assignee":"Kunal Jangid","due":null,"resolved":""},{"key":"MR-1169","summary":"New Home Page design & API","status":"In Progress","assignee":"Saurabh Jain","due":null,"resolved":""}],"overdue":[],"overdueCount":0,"blocked":[],"rollups":[{"key":"MR-183","summary":"Parent last updated before the 30-day window","status":"","done":25,"total":27},{"key":"MR-1179","summary":"Figma vs Website – Complete Page-wise UI Validation","status":"In Progress","done":7,"total":23},{"key":"MR-1066","summary":"Marketing Production site - Testing","status":"Done","done":10,"total":10},{"key":"MR-1021","summary":"General","status":"Done","done":8,"total":8},{"key":"MR-1067","summary":"General","status":"Done","done":6,"total":6},{"key":"MR-1076","summary":"Resolve SonarQube Code Quality and Maintainability Issues","status":"Done","done":6,"total":6}],"openBugs":5,"bugSeverity":{"Unrated":5}},{"id":"USP","name":"Web-Uvation Services Platform","projects":["USP"],"headline":"Highest throughput in scope, with 400 issues closed in 30 days. That includes 278 older issues closed in one clean-up on 11 Sep. 72 bugs are still open, 2 of them S1. Platform Security & Access Control is a month past due, and two items are marked as blockers.","updated30":552,"created30":192,"done30":400,"doneInPeriod":361,"todo":74,"inprog":70,"done":408,"statuses":{"TODO":71,"Deployed In Prod":46,"In Progress":16,"Deployed In Dev":6,"BlOCKER":2,"Tested In Dev":2,"Backlog":1},"stories":{"delivered":47,"inflight":4,"planned":28},"delivered":[{"key":"USP-4081","summary":"Automation Onboarding & Familiarisation","status":"Done","assignee":"Andrei Momita","due":"2026-09-16","resolved":"2026-09-17"},{"key":"USP-4127","summary":"Unify the subscription lifecycle: fold instant purchases into the build flow","status":"Done","assignee":"Cășvan Marcel","due":"2026-09-30","resolved":"2026-09-17"},{"key":"USP-4102","summary":"Draft and publish MSA contract comments","status":"Done","assignee":"Cășvan Marcel","due":"2026-09-12","resolved":"2026-09-17"},{"key":"USP-4027","summary":"[FE] - Remove AI Assistant Tab","status":"Done","assignee":"Cășvan Marcel","due":"2026-09-15","resolved":"2026-09-17"},{"key":"USP-4026","summary":"[IAM/RBAC] Contract collaboration for customer team members (view + comment; signature)","status":"Done","assignee":"Cășvan Marcel","due":"2026-09-15","resolved":"2026-09-17"},{"key":"USP-4050","summary":"General","status":"Done","assignee":"Aman prakash","due":"2026-09-15","resolved":"2026-09-17"},{"key":"USP-3999","summary":"Unplug Rewards USP Wide","status":"Done","assignee":"Silviu Oltean","due":"2026-09-15","resolved":"2026-09-16"},{"key":"USP-3518","summary":"Operational Docs (Bare Minimum)","status":"Done","assignee":"Livian Stefan Stan","due":"2026-08-30","resolved":"2026-09-11"}],"inflight":[{"key":"USP-3572","summary":"Platform Security & Access Control","status":"In Progress","assignee":"Cășvan Marcel","due":"2026-08-15","resolved":""},{"key":"USP-4028","summary":"Support Hub","status":"In Progress","assignee":"Silviu Oltean","due":"2026-09-30","resolved":""},{"key":"USP-4179","summary":"General","status":"In Progress","assignee":"r.jaiswal","due":"2026-09-30","resolved":""},{"key":"USP-4205","summary":"MSA collaboration & IAM: author names in comment threads, no-shift review rail + phone commenting + guided tour, loop-back links","status":"In Progress","assignee":"Cășvan Marcel","due":"2026-10-02","resolved":""}],"overdue":[{"key":"USP-3572","summary":"Platform Security & Access Control","status":"In Progress","assignee":"Cășvan Marcel","due":"2026-08-15","resolved":""},{"key":"USP-4098","summary":"Engineer UI","status":"In Progress","assignee":"Silviu Oltean","due":"2026-09-11","resolved":""},{"key":"USP-4097","summary":"Customer UI","status":"In Progress","assignee":"Cășvan Marcel","due":"2026-09-15","resolved":""},{"key":"USP-4124","summary":"Remove B2C JWT profile claim usage — use Salesforce identity data","status":"In Progress","assignee":"Aman prakash","due":"2026-09-15","resolved":""},{"key":"USP-4200","summary":"  Invitation emails failures in notification backend","status":"In Progress","assignee":"Gourav Agnani","due":"2026-09-18","resolved":""},{"key":"USP-4214","summary":"MSA: signer details come from the signed-in user's Identity profile again","status":"Deployed In Dev","assignee":"Cășvan Marcel","due":"2026-09-22","resolved":""}],"overdueCount":6,"blocked":[{"key":"USP-3795","summary":"GPU as a Service","status":"BlOCKER","assignee":"Anshul Bhargava","due":"2026-09-30","resolved":""},{"key":"USP-3858","summary":"start date and end date of a subscription page","status":"BlOCKER","assignee":"Shivam Dhoundiyal","due":"2026-09-30","resolved":""}],"rollups":[{"key":"USP-1996","summary":"Parent last updated before the 30-day window","status":"","done":102,"total":103},{"key":"USP-3510","summary":"Parent last updated before the 30-day window","status":"","done":28,"total":29},{"key":"USP-3605","summary":"Parent last updated before the 30-day window","status":"","done":10,"total":22},{"key":"USP-3482","summary":"Parent last updated before the 30-day window","status":"","done":15,"total":20},{"key":"USP-3491","summary":"Parent last updated before the 30-day window","status":"","done":5,"total":17},{"key":"USP-4050","summary":"General","status":"Done","done":12,"total":12}],"openBugs":72,"bugSeverity":{"S1":2,"S2":10,"S3":40,"Unrated":20}},{"id":"UC","name":"Uvation Conversational AI","projects":["UC"],"headline":"Five delivery stories are done: the Marketing, Services Platform and Marketplace chatbots, conversational UX and the admin dashboard. Book a Meeting is overdue since 4 Sep. Eight new agent stories are in To Do with no due dates.","updated30":91,"created30":64,"done30":26,"doneInPeriod":15,"todo":50,"inprog":14,"done":27,"statuses":{"To Do":50,"In Dev":10,"IN PROGRESS":4},"stories":{"delivered":5,"inflight":3,"planned":8},"delivered":[{"key":"UC-20","summary":"Admin & support dashboard — monitoring, visitor records, analytics, content gaps","status":"Done","assignee":"Nareddy Shiva Prasad Reddy","due":"2026-09-15","resolved":"2026-09-16"},{"key":"UC-18","summary":"Cross-cutting conversational UX — refusal, multi-turn, feedback, language, mobile","status":"Done","assignee":"Ankit Saxena","due":"2026-09-15","resolved":"2026-09-16"},{"key":"UC-16","summary":"USP chatbot — self-service how-to & support deflection with handoff","status":"Done","assignee":"Ankit Saxena","due":"2026-09-15","resolved":"2026-09-16"},{"key":"UC-17","summary":"Marketplace chatbot — product discovery with clickable product cards","status":"Done","assignee":"Ankit Saxena","due":"2026-08-31","resolved":"2026-09-02"},{"key":"UC-15","summary":"Marketing chatbot — grounded solution answers & lead capture","status":"Done","assignee":"Ankit Saxena","due":"2026-08-31","resolved":"2026-09-02"}],"inflight":[{"key":"UC-161","summary":"Book a Meeting — Microsoft Graph scheduling with round-robin CSM assignment & cancellation flow","status":"In Dev","assignee":"Anshul Bhargava","due":"2026-09-04","resolved":""},{"key":"UC-215","summary":"Dashboard Teams app for CSM","status":"IN PROGRESS","assignee":"Ankit Saxena","due":"2026-09-30","resolved":""},{"key":"UC-216","summary":"logged in user marketplace","status":"IN PROGRESS","assignee":"Nareddy Shiva Prasad Reddy","due":null,"resolved":""}],"overdue":[{"key":"UC-161","summary":"Book a Meeting — Microsoft Graph scheduling with round-robin CSM assignment & cancellation flow","status":"In Dev","assignee":"Anshul Bhargava","due":"2026-09-04","resolved":""},{"key":"UC-162","summary":"Design & technical spec — Book a Meeting & cancellation flow","status":"In Dev","assignee":"Anshul Bhargava","due":"2026-09-04","resolved":""},{"key":"UC-163","summary":"Implementation — booking flow (name/email/timezone capture, round-robin slot selection, confirmation)","status":"In Dev","assignee":"Anshul Bhargava","due":"2026-09-04","resolved":""},{"key":"UC-164","summary":"Implementation — cancellation & email verification flow","status":"In Dev","assignee":"Anshul Bhargava","due":"2026-09-04","resolved":""},{"key":"UC-165","summary":"Integration & security review — MS Bookings auth, input validation & verification-code handling","status":"In Dev","assignee":"Anshul Bhargava","due":"2026-09-04","resolved":""},{"key":"UC-166","summary":"QA & validation — end-to-end booking & cancellation test pass","status":"In Dev","assignee":"Anshul Bhargava","due":"2026-09-04","resolved":""}],"overdueCount":6,"blocked":[],"rollups":[{"key":"UC-8","summary":"Parent last updated before the 30-day window","status":"","done":4,"total":6},{"key":"UC-161","summary":"Book a Meeting — Microsoft Graph scheduling with round-robin CSM assignment & cancellation flow","status":"In Dev","done":0,"total":5},{"key":"UC-167","summary":"Recommendation Agent — complementary product suggestions on add-to-cart","status":"To Do","done":0,"total":5},{"key":"UC-168","summary":"Quote Follow-Up Agent — scheduled low-pressure re-engagement after RFQ/quote","status":"To Do","done":0,"total":5},{"key":"UC-169","summary":"CSM AI Product Discovery Engine & Quote Console","status":"To Do","done":0,"total":5},{"key":"UC-170","summary":"Identity & Authorization Gateway — structural tool-registry enforcement","status":"To Do","done":0,"total":5}],"openBugs":0,"bugSeverity":{}}]};
+(function(){
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const fmt = n => Number(n).toLocaleString("en-GB");
+  const J = k => `<a class="key" href="${D.jiraBase}${encodeURIComponent(k)}" target="_blank" rel="noopener">${esc(k)}</a>`;
+  const keyify = t => esc(t).replace(/\b([A-Z]{2,6}-\d{1,5})\b/g, m => J(m));
+  const pill = (rag, text) => `<span class="pill ${rag||""}">${esc(text)}</span>`;
+  const dshort = iso => { if(!iso) return "—"; const d = new Date(iso+"T00:00:00"); return d.toLocaleDateString("en-GB",{day:"numeric",month:"short"}); };
+
+  document.querySelectorAll(".pshort").forEach(el=>el.textContent=D.period.short);
+  // header
+  const snap = D.meta.snapshotDate;
+  $("#eyebrow").textContent = `Programme status · Jira snapshot ${dshort(snap)} 2026`;
+  $("#title").textContent = D.title;
+  $("#lede").textContent = (D.scope ? `${D.scope.label}, from Jira on ${D.meta.site}. ${D.scope.note||""} ` : `All ${D.kpis.projectsVisible} Jira projects on ${D.meta.site}. `) + `Reviewed against the four points raised on the last status report. Figures come from Jira and Tempo worklogs. The judgements come from reading the tickets.`;
+  $("#meta").innerHTML = [
+    `<span><b>Window</b> ${esc(D.period.label)}</span>`,
+    `<span><b>Issues pulled</b> ${fmt(D.kpis.issuesUpdated30)} updated in 30 days</span>`,
+    `<span><b>Worklogs</b> ${fmt(D.quality.worklogsInPeriod)} in window</span>`,
+    `<span><b>Register</b> ${D.registerSummary.items} risks and dependencies</span>`
+  ].join("") + (D.links && D.links.daily ? `<span><a href="${esc(D.links.daily)}" target="_blank" rel="noopener">Open the day-by-day view</a></span>` : "");
+
+  // KPIs
+  const mp = D.marketplace, mk = D.marketingTesting;
+  const totalProducts = mp.brands.reduce((a,b)=>a+b.products,0);
+  const escal = D.register.filter(r=>r.kind!=="Epic" && r.rag==="red").length;
+  const kp = [
+    {v:fmt(D.kpis.issuesUpdated30), l:"Issues moved, last 30 days", s: D.scope ? `${D.scorecards.length} programmes, ${D.kpis.projectsInScope} Jira boards` : `${D.kpis.projectsActive} of ${D.kpis.projectsVisible} projects active`},
+    {v:fmt(D.kpis.doneInPeriod), l:`Issues completed ${D.period.short}`, s:`${fmt(D.kpis.done30)} in 30 days`},
+    {v:`0<small> / ${totalProducts}</small>`, l:"AI-server listings live", s:"All migrated to production, all disabled", c:"bad"},
+    {v:fmt(D.kpis.overdueOpen), l:"Open issues past due date", s:"Among issues active in 30 days", c:"warn"},
+    {v:`${escal}<small> / ${D.registerSummary.items}</small>`, l:"Register items rated red", s:`${D.registerSummary.unassigned} have no Jira assignee`, c:"bad"},
+    {v:`${fmt(Math.round(D.kpis.hoursInPeriod))}<small> h</small>`, l:"Tempo hours visible in Jira", s:"Author hidden on every entry", c:"warn"}
+  ];
+  $("#kpis").innerHTML = kp.map(k=>`<div class="kpi ${k.c||""}"><div class="v">${k.v}</div><div class="l">${esc(k.l)}</div><div class="s">${esc(k.s)}</div></div>`).join("");
+
+  // decisions
+  const dec = [];
+  D.issues.filter(i=>i.rag==="red").forEach(i=>dec.push({t:i.title, d:i.preventive.split(". ")[0]+".", tag:"Issue"}));
+  D.newRisks.filter(r=>r.rag==="red").forEach(r=>dec.push({t:r.title, d:r.mitigation, tag:"New risk"}));
+  const enKeys = D.register.filter(r=>r.project==="EN" && r.kind!=="Epic" && r.rag==="red").map(r=>r.key);
+  if(enKeys.length) dec.push({t:`Notification Service security risks unowned for ${D.register.find(r=>r.key===enKeys[0]).daysSinceUpdate} days`, d:`Assign an owner for ${enKeys.join(", ")} or formally accept them.`, tag:"Register"});
+  D.register.filter(r=>r.kind!=="Epic" && r.rag==="red" && r.project!=="EN").forEach(r=>dec.push({t:`${r.key}: ${r.summary}`, d:r.action, tag:"Register"}));
+  $("#decisions").innerHTML = dec.slice(0,8).map(x=>`<li><span class="pill red">${esc(x.tag)}</span><span class="t">${keyify(x.t)}</span><span class="d">${keyify(x.d)}</span></li>`).join("");
+
+  // mini portfolio
+  const projs = D.projects.filter(p=>p.key!=="UP");
+  const maxU = Math.max(...projs.map(p=>p.updated30));
+  const stack = (p, scaleMax) => {
+    const tot = p.todo+p.inprog+p.done; const w = scaleMax ? (tot/scaleMax*100) : 100;
+    const seg = (n,c,l) => n ? `<span class="${c}" style="flex:${n}" data-tip="${esc(p.name)}: ${n} ${l}"></span>` : "";
+    return `<div class="stack" style="width:${w}%">${seg(p.todo,"s1","to do")}${seg(p.inprog,"s2","in progress")}${seg(p.done,"s3","done")}</div>`;
+  };
+  $("#mini-portfolio").innerHTML = projs.slice(0,10).map(p=>`
+    <div style="display:grid;grid-template-columns:minmax(90px,150px) 1fr 44px;gap:10px;align-items:center;font-size:13px">
+      <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis" title="${esc(p.name)}">${esc(p.name)}</span>
+      ${stack(p,maxU)}
+      <span class="num muted" style="text-align:right">${p.updated30}</span>
+    </div>`).join("");
+
+  // risks
+  const rs = D.registerSummary;
+  $("#risk-lede").innerHTML = `The Jira register holds <b>${rs.risks} risks</b> and <b>${rs.dependencies} dependencies</b> across ${[...new Set(D.register.filter(r=>r.kind!=="Epic").map(r=>r.projectName))].join(" and ")}${D.scope?", the in-scope projects that keep one":""}. It was created on 7 Jul. <b>${rs.stale30}</b> items have not been updated in over 30 days, and <b>${rs.unassigned}</b> have no Jira assignee. Only the Services Platform set is actively owned.`;
+  const vgroup = v => v.startsWith("Escalate")?"Escalate":v.startsWith("Close")?"Close":v.startsWith("Re-assess")?"Re-assess":"Keep";
+  const items = D.register.filter(r=>r.kind!=="Epic");
+  const groups = ["All","Escalate","Keep","Re-assess","Close"];
+  let filt = "All";
+  const lvl = v => !v ? "" : `<span class="chip ${/high|critical/i.test(v)?"hi":/medium/i.test(v)?"md":""}">${esc(v)}</span>`;
+  function renderRisks(){
+    const rows = items.filter(r=>filt==="All"||vgroup(r.verdict)===filt);
+    $("#risk-filters").innerHTML = groups.map(g=>`<button type="button" id="rf-${g}" aria-pressed="${g===filt}" data-g="${g}">${g}<span class="count">${g==="All"?items.length:items.filter(r=>vgroup(r.verdict)===g).length}</span></button>`).join("");
+    $("#risk-table").innerHTML = `<thead><tr><th>Risk or dependency</th><th>Likelihood · Impact</th><th>Owner</th><th class="r">Last update</th><th>Review verdict</th><th>Why, and next action</th></tr></thead><tbody>${
+      rows.map(r=>`<tr>
+        <td>${J(r.key)} <span class="chip">${esc(r.kind)}</span><div style="margin-top:3px;font-weight:500">${esc(r.summary)}</div><span class="sub">${esc(r.projectName)}</span>
+          <details class="more"><summary>Impact and mitigation</summary>${r.context?`<div class="cm" style="color:var(--ink-2)">${esc(r.context)}</div>`:""}<ul>${r.mitigation.map(m=>`<li>${esc(m)}</li>`).join("")}</ul>${r.lastComment?`<div class="cm">Last comment, ${esc(r.lastComment.author)}, ${dshort(r.lastComment.date)}: “${esc(r.lastComment.text.slice(0,220))}${r.lastComment.text.length>220?"…":""}”</div>`:""}</details></td>
+        <td><div style="display:flex;gap:4px;flex-wrap:wrap">${lvl(r.likelihood)}${lvl(r.impact)}</div></td>
+        <td>${esc(r.ownerTeam||"—")}<span class="sub">Jira: ${r.assignee?esc(r.assignee):'<span style="color:var(--bad)">unassigned</span>'}</span>${r.suggestedOwner&&!r.assignee?`<span class="sub">Suggested: ${esc(r.suggestedOwner)}</span>`:""}</td>
+        <td class="r num">${r.daysSinceUpdate} d<span class="sub">${dshort(r.updated)} · ${esc(r.jiraStatus)}</span></td>
+        <td>${pill(r.rag, r.verdict)}</td>
+        <td>${keyify(r.why||"")}<span class="sub" style="color:var(--ink-2)"><b style="font-weight:600">Next:</b> ${keyify(r.action||"")}</span></td>
+      </tr>`).join("")}</tbody>`;
+    document.querySelectorAll("#risk-filters button").forEach(b=>b.onclick=()=>{filt=b.dataset.g; try{localStorage.setItem("riskFilter",filt)}catch(e){} renderRisks();});
+  }
+  try{ const f = localStorage.getItem("riskFilter"); if(groups.includes(f)) filt=f; }catch(e){}
+  renderRisks();
+
+  const rr = D.reportedRisksNotInJira[0];
+  $("#reported-risk").innerHTML = `
+    <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline"><h3>In the status report, not in Jira: “${esc(rr.title)}”</h3>${pill(rr.rag, rr.verdict)}</div>
+    <ul class="clean" style="margin-top:12px">${rr.evidence.map(e=>`<li>${keyify(e)}</li>`).join("")}</ul>
+    <div class="callout" style="margin-top:14px"><b>Replace it with:</b> ${esc(rr.replaceWith)}<br><b>Action:</b> ${esc(rr.action)}</div>`;
+  $("#new-risks").innerHTML = D.newRisks.map((r,i)=>`
+    <div style="display:grid;gap:4px;padding:12px 0;${i?"border-top:1px solid var(--rule-2)":"padding-top:0"}">
+      <div style="display:flex;gap:8px;justify-content:space-between;align-items:baseline;flex-wrap:wrap"><b style="font-weight:600">${esc(r.title)}</b>${pill(r.rag, `${r.likelihood} · ${r.impact}`)}</div>
+      <span style="font-size:13.5px;color:var(--ink-2)">${keyify(r.detail)}</span>
+      <span style="font-size:13px;color:var(--muted)"><b style="font-weight:600;color:var(--ink-2)">Mitigation:</b> ${esc(r.mitigation)} · <b style="font-weight:600;color:var(--ink-2)">Owner:</b> ${esc(r.suggestedOwner)} · ${r.evidence.map(e=>/^[A-Z]+-\d+$/.test(e)?J(e):esc(e)).join(", ")}</span>
+    </div>`).join("");
+
+  // issues
+  $("#issues-list").innerHTML = D.issues.map(i=>`
+    <article class="issue">
+      <header><h3>${esc(i.title)}</h3><div class="tags">${pill(i.rag, i.status)}<span>${esc(i.project)}</span><span>· surfaced ${esc(i.surfaced)}</span></div></header>
+      <dl>
+        <div><dt>Impact</dt><dd>${keyify(i.impact)}</dd></div>
+        <div><dt>Root cause</dt><dd>${keyify(i.rootCause)}</dd></div>
+        <div><dt>Action taken</dt><dd>${keyify(i.actionTaken)}</dd></div>
+        <div><dt>Preventive measure</dt><dd>${keyify(i.preventive)}</dd></div>
+      </dl>
+      ${i.keys.length?`<div class="keys">Evidence: ${i.keys.map(J).join(", ")}${i.owner?` · <span class="muted" style="font-family:var(--font-body)">Owner: ${esc(i.owner)}</span>`:""}</div>`:`<div class="keys muted" style="font-family:var(--font-body)">No ticket exists${i.owner?` · Owner: ${esc(i.owner)}`:""}</div>`}
+    </article>`).join("");
+
+  // scorecards
+  const scHost = $("#scorecards");
+  if (!D.scorecards || !D.scorecards.length) { scHost.hidden = true; } else {
+    const li = (i, meta) => `<li><span>${J(i.key)}</span><span>${esc(i.summary)}</span><span class="m">${meta}</span></li>`;
+    const list = (arr, metaFn, empty) => arr.length ? `<ul>${arr.map(i=>li(i, metaFn(i))).join("")}</ul>` : `<p class="empty">${esc(empty)}</p>`;
+    scHost.innerHTML = D.scorecards.map(c=>{
+      const sev = Object.entries(c.bugSeverity).map(([k,v])=>`<span class="chip ${k==="S1"?"hi":k==="S2"?"md":""}">${esc(k)} ${v}</span>`).join(" ");
+      const stack = `<div class="stack">${c.todo?`<span class="s1" style="flex:${c.todo}" data-tip="${c.todo} to do"></span>`:""}${c.inprog?`<span class="s2" style="flex:${c.inprog}" data-tip="${c.inprog} in progress"></span>`:""}${c.done?`<span class="s3" style="flex:${c.done}" data-tip="${c.done} done"></span>`:""}</div>`;
+      return `<article class="panel sc">
+        <header><h3>${esc(c.name)}</h3><span class="boards">${c.projects.join(" + ")}</span></header>
+        <p class="head">${keyify(c.headline)}</p>
+        <div class="nums">
+          <div><b>${fmt(c.updated30)}</b><span>moved, 30 d</span></div>
+          <div><b>${fmt(c.done30)}</b><span>closed, 30 d</span></div>
+          <div><b>${fmt(c.doneInPeriod)}</b><span>closed ${D.period.short}</span></div>
+          <div><b style="${c.overdueCount?"color:var(--bad)":""}">${c.overdueCount}</b><span>open past due</span></div>
+          <div><b>${c.openBugs}</b><span>open bugs</span></div>
+        </div>
+        <div>${stack}<span class="sub muted" style="font-size:12px">${c.todo} to do · ${c.inprog} in progress · ${c.done} done, among issues moved in 30 days${c.openBugs?` · bugs by severity: ${sev}`:""}</span></div>
+        <div class="cols">
+          <div><h4>Stories delivered, 30 d · ${c.stories.delivered}</h4>${list(c.delivered, i=>`${esc(i.assignee||"Unassigned")} · closed ${dshort(i.resolved)}`, "None in the last 30 days.")}</div>
+          <div><h4>In flight · ${c.stories.inflight}, planned · ${c.stories.planned}</h4>${list(c.inflight, i=>`${esc(i.status)} · ${esc(i.assignee||"Unassigned")}${i.due?` · due ${dshort(i.due)}`:" · no due date"}`, "No stories in progress.")}</div>
+        </div>
+        <div class="cols">
+          <div><h4>Past due · ${c.overdueCount}</h4>${list(c.overdue, i=>`${esc(i.status)} · due ${dshort(i.due)} · ${esc(i.assignee||"Unassigned")}`, "Nothing open is past its due date.")}</div>
+          <div><h4>Blocked or on hold · ${c.blocked.length}</h4>${list(c.blocked, i=>`${esc(i.status)} · ${esc(i.assignee||"Unassigned")}`, "Nothing is marked blocked.")}</div>
+        </div>
+        <div><h4>Largest parents, child tasks done</h4><div style="display:grid;gap:6px;margin-top:8px">${c.rollups.map(r=>`<div class="roll"><span title="${esc(r.summary)}">${J(r.key)} ${esc(r.summary)}</span><div class="bar" data-tip="${r.done} of ${r.total} done"><i style="width:${r.done/r.total*100}%"></i></div><span class="num" style="text-align:right">${r.done}/${r.total}</span></div>`).join("")}</div></div>
+      </article>`; }).join("");
+  }
+
+  // marketplace
+  $("#mp-eta").textContent = "Target: " + mp.expectedCompletion.split(" (")[0];
+  $("#mp-summary").textContent = mp.summary + " Expected completion: " + mp.expectedCompletion + ".";
+  const step = t => `<span class="step-done">${keyify(t)}</span>`;
+  $("#pipe").innerHTML = `<thead><tr><th>Brand</th><th class="r">Listings</th><th>Research and validation</th><th>Created on UAT</th><th>Moved to production</th><th>Live to buyers</th></tr></thead>
+    <tbody>${mp.brands.map(b=>`<tr><td><b style="font-weight:600">${esc(b.brand)}</b><span class="items">${esc(b.items.join(" · "))}</span></td><td class="r num">${b.products}${b.note?`<span class="sub">${esc(b.note)}</span>`:""}</td><td class="step">${step(b.research)}</td><td class="step">${step(b.uat)}</td><td class="step">${step(b.prod)}</td><td>${pill("red", b.live)}</td></tr>`).join("")}</tbody>
+    <tfoot><tr><td>Total</td><td class="r num">${totalProducts}</td><td>${mp.brands.length} of ${mp.brands.length} brands</td><td>${totalProducts} of ${totalProducts}</td><td>${totalProducts} of ${totalProducts}</td><td>0 of ${totalProducts}</td></tr></tfoot>`;
+  $("#mp-pending").innerHTML = mp.pending.map(p=>`<li>${keyify(p)}</li>`).join("");
+  $("#mp-streams").innerHTML = `<thead><tr><th>Workstream</th><th>State</th><th>Open</th></tr></thead><tbody>${mp.otherWorkstreams.map(w=>`<tr><td>${esc(w.name)}<span class="sub">${keyify(w.key)}</span></td><td>${esc(w.state)}</td><td>${keyify(w.open)}</td></tr>`).join("")}</tbody>`;
+
+  // marketing
+  $("#mk-summary").textContent = mk.summary;
+  const meter = (label, a, b, note, pct) => `<div class="meter"><div class="row"><span style="font-size:13px;color:var(--ink-2)">${esc(label)}</span><b>${a}<span style="font-size:14px;color:var(--muted)"> / ${b}</span></b></div><div class="bar" data-tip="${esc(label)}: ${a} of ${b}"><i style="width:${Math.min(100,pct)}%"></i></div><span class="note">${keyify(note)}</span></div>`;
+  const fd = mk.figmaDefects;
+  $("#mk-meters").innerHTML = [
+    meter("URLs under automated smoke test", fmt(mk.automatedUrls), fmt(mk.scopeUrlsExpected)+"+", `${mk.scopeNote}. Capped by the sitemap bug.`, mk.automatedUrls/mk.scopeUrlsExpected*100),
+    meter("Automated checks passing", fmt(mk.automatedPassed), fmt(mk.automatedChecks), `${mk.browserDeviceProjects} browser and device profiles, MR-1165`, mk.automatedPassed/mk.automatedChecks*100),
+    meter("Figma defects fixed", fd.done, fd.raised, `${fd.inProgress} in progress, ${fd.todo} to do, ${fd.pagesCovered} pages covered, ${fd.key}`, fd.done/fd.raised*100),
+    meter("Site verification checks closed", mk.siteVerification.done, mk.siteVerification.subtasks, mk.siteVerification.key, mk.siteVerification.done/mk.siteVerification.subtasks*100)
+  ].join("");
+  $("#mk-done").innerHTML = mk.validated.map(p=>`<li>${keyify(p)}</li>`).join("");
+  $("#mk-pending").innerHTML = mk.pending.map(p=>`<li>${keyify(p)}</li>`).join("");
+  $("#mk-gaps").innerHTML = `<div class="callout warn"><b>Remaining effort:</b> ${keyify(mk.remainingEffort)}<br><b>Target date:</b> ${keyify(mk.targetDate)}</div><div class="callout">${esc(mk.anmolNote)}</div>`;
+
+  // portfolio table
+  $("#portfolio").innerHTML = `<thead><tr><th>Project</th><th class="r">Moved, 30 d</th><th style="min-width:160px">Status mix</th><th class="r">Created, 30 d</th><th class="r">Done in window</th><th class="r">Overdue</th><th class="r">Open bugs</th><th class="r">Tempo hours</th></tr></thead><tbody>${
+    D.projects.map(p=>`<tr><td>${esc(p.name)}<span class="sub mono">${esc(p.key)}</span></td><td class="r num">${p.updated30}</td><td style="vertical-align:middle">${stack(p,0)}<span class="sub num">${p.todo} · ${p.inprog} · ${p.done}</span></td><td class="r num">${p.created30}</td><td class="r num">${p.doneInPeriod}</td><td class="r num" style="${p.overdue>=10?"color:var(--bad);font-weight:600":""}">${p.overdue}</td><td class="r num">${p.openBugs}</td><td class="r num" style="${p.hours===0&&p.key!=="UP"?"color:var(--muted)":""}">${p.hours?fmt(Math.round(p.hours)):"—"}</td></tr>`).join("")}</tbody>`;
+
+  // resources
+  const cap = D.kpis.capacityPerPerson, cp = D.capacityPolicy, q = D.quality, un = D.utilisationNotes;
+  $("#attrib").innerHTML = `<b>Read this before the table.</b> ${esc(un.attributionWarning)} ${esc(un.overheadGap)}`;
+  const genericPct = Math.round(100*q.genericDescriptions/q.worklogsInPeriod);
+  const noEstPct = Math.round(100*q.ticketsWithTimeNoEstimate/q.ticketsWithTime);
+  $("#quality").innerHTML = [
+    [`${genericPct}%`, `of ${fmt(q.worklogsInPeriod)} worklogs say only “time-tracking”. The SOP makes a description mandatory.`],
+    [`${noEstPct}%`, `of ${q.ticketsWithTime} tickets with logged time have no Original Estimate, so planned versus actual cannot be measured.`],
+    [`${q.overheadTicketsTruncated.length}`, `overhead tickets hide recent meeting and leave time from Jira.`],
+    q.projectsWithNoTempoHours.length ? [`${q.projectsWithNoTempoHours.length}`, `active projects have no Tempo hours in Jira: ${q.projectsWithNoTempoHours.map(p=>p.name).join(", ")}.`] : [`${D.projects.length}`, `boards in scope, and every one has Tempo hours in Jira for the window.`],
+    [`${fmt(Math.round(q.unattributedHours))} h`, `logged on unassigned tickets, which cannot be credited to anyone.`]
+  ].map(([b,s])=>`<div><b>${b}</b><span>${esc(s)}</span></div>`).join("");
+  $("#cap-note").textContent = `Capacity is ${cap} hours per full-time person for the window: ${D.period.workingDays} working days at ${cp.hoursPerDay} hours. The SOP expects ${cp.fteDevHoursPerFortnight} of every ${cp.fteHoursPerFortnight} hours on development and sets a utilisation target of ${cp.utilisationTarget}. Contractors have half this capacity. Contract status is not in Jira, so every row uses the full-time figure.`;
+  const flagTxt = {attribution:["red","A day over 10 h"], low:["amber","Below 60% of capacity"], nolog:["grey","No Tempo hours"]};
+  const logged = D.people.filter(p=>p.hours>0);
+  const scaleMax = Math.max(cap*1.1, ...logged.map(p=>p.hours));
+  $("#people").innerHTML = `<thead><tr><th>Person</th><th style="min-width:180px">Hours vs ${cap} h capacity</th><th class="r">Hours</th><th class="r">% cap.</th><th class="r">Days logged</th><th class="r">Peak day</th><th class="r">Done</th><th class="r">Open</th><th class="r">Overdue</th><th>Flag</th></tr></thead><tbody>${
+    logged.map(p=>{
+      const over = p.flags.includes("attribution");
+      return `<tr><td>${esc(p.name)}<span class="sub">${Object.entries(p.projects).map(([k,v])=>`${k} ${v}h`).join(" · ")}</span></td>
+        <td style="vertical-align:middle"><div class="ubar" data-tip="${esc(p.name)}: ${p.hours} h logged, ${p.daysLogged} days, peak ${p.maxDay} h"><i class="${over?"over":""}" style="width:${p.hours/scaleMax*100}%"></i><b style="left:${cap/scaleMax*100}%"></b></div></td>
+        <td class="r num">${p.hours}</td><td class="r num">${p.pctCapacity}%</td><td class="r num">${p.daysLogged}</td><td class="r num" style="${p.maxDay>10?"color:var(--bad);font-weight:600":""}">${p.maxDay}</td>
+        <td class="r num">${p.doneInPeriod}</td><td class="r num">${p.open}</td><td class="r num">${p.overdue}</td>
+        <td><div class="flags">${p.flags.map(f=>pill(flagTxt[f][0], flagTxt[f][1])).join("")}</div></td></tr>`;}).join("")}</tbody>`;
+  const nolog = D.people.filter(p=>p.flags.includes("nolog")).sort((a,b)=>b.doneInPeriod-a.doneInPeriod);
+  $("#nolog").innerHTML = nolog.map(p=>`<span class="chip" data-tip="${esc(p.name)}: ${p.doneInPeriod} done in window, ${p.open} open">${esc(p.name)} · ${p.doneInPeriod} done</span>`).join("");
+
+  // deep dives
+  const days = D.period.workingDayList;
+  $("#deep").innerHTML = un.deepDives.map(dd=>{
+    const p = D.people.find(x=>x.name===dd.person) || {daily:{},hours:0};
+    const mx = Math.max(10, ...Object.values(p.daily));
+    const line = 8/mx*100;
+    return `<div class="panel deep">
+      <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline"><h3>${esc(dd.person)}</h3><span class="muted num" style="font-size:13px">${p.hours} h in Jira · ${cap} h capacity</span></div>
+      <div>
+        <div class="daily" style="grid-template-columns:repeat(${days.length},1fr)" role="img" aria-label="Hours per day for ${esc(dd.person)}">
+          ${days.map(d=>{const h=p.daily[d]||0; return `<div class="col"><i class="${h>10?"hot":""}" style="height:${h/mx*100}%" data-tip="${dshort(d)}: ${h} h"></i></div>`;}).join("")}
+          <div class="line" style="bottom:${line}%"><span>8 h day</span></div>
+        </div>
+        <div class="dlabels" style="grid-template-columns:repeat(${days.length},1fr)">${days.map(d=>`<span>${new Date(d+"T00:00:00").getDate()}</span>`).join("")}</div>
+      </div>
+      <p class="q"><b>Finding.</b> ${keyify(dd.finding)}</p>
+      <p class="q"><b>Context.</b> ${keyify(dd.context)}</p>
+      <p class="q"><b>Open question.</b> ${esc(dd.question)}</p>
+      <p class="q"><b>To verify.</b> ${esc(dd.verify)}</p>
+    </div>`;}).join("");
+
+  // method
+  $("#method").innerHTML = `
+    <p><b>Sources.</b> Jira Cloud site ${esc(D.meta.site)}, all ${D.kpis.projectsVisible} visible projects, pulled ${dshort(snap)} 2026. Issues: <code>${esc(D.meta.queries.issues)}</code>, ${fmt(D.kpis.issuesUpdated30)} rows, matching Jira's own count. Worklogs: <code>${esc(D.meta.queries.worklogs)}</code>, ${fmt(D.meta.counts.worklogIssues)} issues. Register: <code>${esc(D.meta.queries.register)}</code>. Confluence: the Tempo logging SOP and the Product Research &amp; Upload 30/60/90 plan.</p>
+    ${D.scope ? `<p><b>Scope.</b> ${esc(D.scope.label)}: Jira boards ${D.scope.projects.map(k=>`<code>${esc(k)}</code>`).join(", ")}. ${esc(D.scope.note||"")} Other projects are left out of every figure, including the risk register and hours. Rebuild with <code>--scope all</code> for the whole portfolio.</p>` : `<p><b>Open issues all time.</b> ${fmt(D.kpis.openAllTime)} issues are not done across all projects. ${fmt(D.projects.find(p=>p.key==="HC")?.todo||0)} of the recent ones are the Hamara CRM backlog, created in bulk and not yet started.</p>`}
+    <p><b>What Jira cannot show.</b> Who logged each Tempo hour, because Tempo writes as its own app account. Recent overhead time on the ${q.overheadTicketsTruncated.length} shared Uvation Projects tickets (${q.overheadTicketsTruncated.join(", ")}), because Jira returns only their oldest 20 worklogs. Anmol Srivastava's testing report and the status-report risk list, which are outside Jira and Confluence.</p>
+    <p><b>Judgements.</b> Verdicts, root causes and suggested owners are the reviewer's reading of the tickets and comments cited next to them. They live in <code>content/curated.json</code> and should be confirmed with each owner.</p>
+    <p><b>Refresh.</b> Run <code>scripts/fetch_jira.py</code> with Jira credentials, and optionally a Tempo token for true per-person hours, then <code>scripts/build_dashboard.py</code>.</p>`;
+
+  // nav highlight
+  const links = [...document.querySelectorAll("nav.sections a")];
+  const secs = links.map(a=>document.querySelector(a.getAttribute("href")));
+  const onScroll = () => { let i=0; secs.forEach((s,k)=>{ if(s.getBoundingClientRect().top < 120) i=k; }); links.forEach((a,k)=>a.classList.toggle("on",k===i)); };
+  addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+  // tooltip
+  const tip = $("#tip");
+  document.addEventListener("pointerover", e=>{ const t=e.target.closest("[data-tip]"); if(!t){tip.hidden=true;return;} tip.textContent=t.dataset.tip; tip.hidden=false; });
+  document.addEventListener("pointermove", e=>{ if(tip.hidden) return; const x=Math.min(e.clientX+14, innerWidth-tip.offsetWidth-8); tip.style.left=x+"px"; tip.style.top=(e.clientY+16)+"px"; });
+  document.addEventListener("pointerout", e=>{ if(!e.relatedTarget || !e.relatedTarget.closest?.("[data-tip]")) tip.hidden=true; });
+})();
+</script>

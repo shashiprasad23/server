@@ -1,11 +1,12 @@
 {
   "reportTitle": "Portfolio Status Review",
   "period": {
-    "label": "Sprint window 9–22 Sep 2026",
-    "start": "2026-09-09",
-    "end": "2026-09-22",
-    "workingDays": 9,
-    "holidayNote": "No worklogs exist on Mon 14 Sep for any person, so it is treated as a non-working day."
+    "auto": true,
+    "lengthDays": 14,
+    "holidays": [
+      "2026-09-14"
+    ],
+    "holidayNote": "Days with no worklogs from anyone (for example Mon 14 Sep) are listed here and treated as non-working days."
   },
   "capacityPolicy": {
     "source": "Confluence SOP: Resource Planning, Jira Management and Tempo Time Logging",

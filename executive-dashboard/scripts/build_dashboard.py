@@ -47,6 +47,23 @@ def days_between(a, b):
     return (dt.date.fromisoformat(b) - dt.date.fromisoformat(a)).days
 
 
+def resolve_period(snapshot_date, period, extra_holidays=()):
+    """Fixed period from curated.json, or with "auto": the N days ending the day before the snapshot."""
+    p = dict(period)
+    holidays = set(p.get("holidays", [])) | set(extra_holidays)
+    if p.get("auto"):
+        end = dt.date.fromisoformat(snapshot_date) - dt.timedelta(days=1)
+        start = end - dt.timedelta(days=int(p.get("lengthDays", 14)) - 1)
+        p["start"], p["end"] = start.isoformat(), end.isoformat()
+    s, e = dt.date.fromisoformat(p["start"]), dt.date.fromisoformat(p["end"])
+    days = [(s + dt.timedelta(days=k)).isoformat() for k in range((e - s).days + 1)]
+    work = [d for d in days if dt.date.fromisoformat(d).weekday() < 5 and d not in holidays]
+    fmt = lambda d: f"{dt.date.fromisoformat(d).day} {dt.date.fromisoformat(d).strftime('%b')}"
+    p.update({"workingDays": len(work), "workingDayList": work, "holidays": sorted(holidays),
+              "short": f"{fmt(p['start'])}–{fmt(p['end'])}", "label": f"Window {fmt(p['start'])}–{fmt(p['end'])} {e.year}"})
+    return p
+
+
 def load_scope(arg):
     """Return the scope dict, or None for every project."""
     if not arg or arg == "all":
@@ -60,6 +77,8 @@ def build(snapshot_dir: pathlib.Path, scope=None):
     wl = load(snapshot_dir / "worklogs.json")
     register = load(snapshot_dir / "register.json")
     cur = load(ROOT / "content" / "curated.json")
+    ev_path = ROOT / "content" / "daily_events.json"
+    cur["period"] = resolve_period(meta["snapshotDate"], cur["period"], load(ev_path).get("holidays", []) if ev_path.exists() else [])
     # Overhead truncation is measured on the full pull: meetings sit on shared tickets outside any one project.
     truncated_all = [i["key"] for i in wl["issues"] if (i.get("worklogTotal") or 0) > (i.get("worklogsReturned") or 0)]
     for i in issues:
@@ -298,8 +317,11 @@ def main():
     ap.add_argument("--snapshot", default=str(ROOT / "data" / "snapshot"))
     ap.add_argument("--out", default=str(ROOT / "dist" / "index.html"))
     ap.add_argument("--scope", default=str(ROOT / "content" / "scope.json"), help="scope JSON file, or 'all' for every project")
+    ap.add_argument("--daily-url", default=None, help="override the link to the day-by-day page")
     args = ap.parse_args()
     data = build(pathlib.Path(args.snapshot), load_scope(args.scope))
+    if args.daily_url is not None:
+        data["links"] = {**data.get("links", {}), "daily": args.daily_url}
     tpl = (ROOT / "templates" / "dashboard.html").read_text(encoding="utf-8")
     payload = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     out = pathlib.Path(args.out)

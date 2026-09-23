@@ -1908,7 +1908,7 @@
  },
  "jiraBase": "https://uvation-devops.atlassian.net/browse/",
  "links": {
-  "daily": "https://claude.ai/artifact/K7m76XrnRRHWkGYqHtDySN",
+  "daily": "daily.html",
   "review": "https://claude.ai/artifact/R9gQ2oHPXkQaj2ZgrXCEAe"
  },
  "_refs": [

@@ -17,6 +17,19 @@ Both pages are scoped by `content/scope.json` to four programmes: Web-Marketplac
 
 `dist/daily.html` is the day-by-day companion page. It covers issues created and resolved per day across all projects, Tempo hours per day by project and by person, per-person throughput heatmaps, a day explorer, small multiples per project, the Marketplace pipeline timeline, the category-disable burn-up, Figma defects raised against fixed, risk-register age and a dated event log. It loads ECharts 5.5.0 from cdnjs. Dated milestones live in `content/daily_events.json`.
 
+## Scheduled daily run
+
+A routine runs every weekday (Monday to Friday) at 7:00 PM Nepal time and follows `RUNBOOK.md`. Each run:
+
+1. Pulls the in-scope Jira data through the Atlassian connector.
+2. Turns it into a snapshot with `scripts/ingest_mcp.py`.
+3. Refreshes the programme headlines.
+4. Stores the day's report with `scripts/store_report.py`.
+5. Commits and pushes to this branch.
+6. Updates the two live pages.
+
+Stored reports live in `reports/<date>/`, and `reports/index.html` lists them all with their headline figures. The report window rolls forward on its own: the 14 days ending the day before the run, less weekends and listed holidays.
+
 ## Snapshot used
 
 `data/snapshot/` holds the Jira pull taken on 23 Sep 2026:

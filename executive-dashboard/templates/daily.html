@@ -509,7 +509,8 @@ const D = /*__DATA__*/null;
   // ---------- milestone tracks ----------
   function renderTracks(){
     const G = D.pipeline, stages = ["Research and content","Created on UAT","Moved to production"], sc = [css("--seq-250"),css("--seq-450"),css("--seq-650")];
-    const tDays = range("2026-09-09", M.windowEnd);
+    const firstStage = G.flatMap(g=>g.stages.map(s=>s.start)).sort()[0] || M.effortStart;
+    const tDays = range(addDays(firstStage,-1) < M.windowStart ? M.windowStart : addDays(firstStage,-1), M.windowEnd);
     const items = []; G.forEach((g,y)=>g.stages.forEach(s=>items.push({value:[tDays.indexOf(s.start), tDays.indexOf(s.end), y, stages.indexOf(s.stage)], brand:g.brand, s})));
     const c = chart("c-gantt");
     c.setOption({...base(), grid:{left:120,right:20,top:30,bottom:34},
@@ -525,7 +526,8 @@ const D = /*__DATA__*/null;
 
     // burn-up category disable
     const kids = I.filter(i=>i.parent==="MT-1438");
-    const bDays = range("2026-09-10", M.windowEnd);
+    const bStart = kids.map(i=>i.cr).sort()[0] || M.effortStart;
+    const bDays = range(bStart < M.windowStart ? M.windowStart : bStart, M.windowEnd);
     const done = bDays.map(d=>kids.filter(i=>i.rs && i.rs<=d).length);
     const b = chart("c-burn");
     b.setOption({...base(), grid:{...base().grid,right:86},
@@ -538,7 +540,8 @@ const D = /*__DATA__*/null;
 
     // figma defects
     const fk = I.filter(i=>i.parent==="MR-1179");
-    const fDays = range("2026-09-15", M.windowEnd);
+    const fFirst = fk.map(i=>i.cr).sort()[0] || M.effortStart;
+    const fDays = range(addDays(fFirst,-2) < M.windowStart ? M.windowStart : addDays(fFirst,-2), M.windowEnd);
     const raised = fDays.map(d=>fk.filter(i=>i.cr<=d).length), fixed = fDays.map(d=>fk.filter(i=>i.rs && i.rs<=d).length);
     const f = chart("c-figma");
     f.setOption({...base(), grid:{...base().grid,right:60},

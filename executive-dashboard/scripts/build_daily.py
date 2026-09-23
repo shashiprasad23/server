@@ -47,7 +47,8 @@ def main():
     today = dt.date.fromisoformat(meta["snapshotDate"])
     win_end = today - dt.timedelta(days=1)
     win_start = today - dt.timedelta(days=30)
-    eff_start, eff_end = cur["period"]["start"], cur["period"]["end"]
+    period = review["period"]
+    eff_start, eff_end = period["start"], period["end"]
 
     rows = []
     issues = [i for i in issues if inscope(i["project"])]
@@ -74,7 +75,7 @@ def main():
         "meta": {
             "snapshot": meta["snapshotDate"], "site": meta["site"], "jiraBase": review["jiraBase"],
             "windowStart": win_start.isoformat(), "windowEnd": win_end.isoformat(),
-            "effortStart": eff_start, "effortEnd": eff_end, "holidays": daily.get("holidays", []),
+            "effortStart": eff_start, "effortEnd": eff_end, "holidays": period["holidays"], "periodShort": period["short"],
             "reviewUrl": a.review_url or cur.get("links", {}).get("review", ""), "capacityPerDay": cur["capacityPolicy"]["hoursPerDay"],
             "scopeLabel": scope["label"] if scope else "", "scopeNote": (scope or {}).get("note", ""),
         },

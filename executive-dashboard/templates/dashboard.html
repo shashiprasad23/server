@@ -325,7 +325,7 @@ footer.notes code{font-family:var(--font-mono);font-size:12px;background:var(--s
     <div class="panel flush">
       <div style="padding:16px 18px 6px;display:grid;gap:6px">
         <h3>All active projects</h3>
-        <p class="muted" style="font-size:13px">Every project with an issue updated in the last 30 days. Done in window counts issues resolved 9–22 Sep. Hours are Tempo worklogs visible in Jira for the same window.</p>
+        <p class="muted" style="font-size:13px">Every project with an issue updated in the last 30 days. Done in window counts issues resolved <span class="pshort"></span>. Hours are Tempo worklogs visible in Jira for the same window.</p>
         <div class="legend"><span><i class="s1"></i>To do</span><span><i class="s2"></i>In progress</span><span><i class="s3"></i>Done</span></div>
       </div>
       <div class="tscroll"><table id="portfolio"></table></div>
@@ -343,7 +343,7 @@ footer.notes code{font-family:var(--font-mono);font-size:12px;background:var(--s
     <div class="two" id="deep"></div>
     <div class="panel flush">
       <div style="padding:16px 18px 8px;display:grid;gap:6px">
-        <h3>Hours logged per person, 9–22 Sep</h3>
+        <h3>Hours logged per person, <span class="pshort"></span></h3>
         <p class="muted" style="font-size:13px" id="cap-note"></p>
         <div class="legend"><span><i style="background:var(--seq-3)"></i>Hours on tickets now assigned to the person</span><span><i style="background:var(--grey)"></i>Has a day over 10 h: other people's hours or bulk logging</span><span><i style="background:var(--ink);width:2px;border-radius:0"></i>Capacity for the window</span></div>
       </div>
@@ -377,6 +377,7 @@ const D = /*__DATA__*/null;
   const pill = (rag, text) => `<span class="pill ${rag||""}">${esc(text)}</span>`;
   const dshort = iso => { if(!iso) return "—"; const d = new Date(iso+"T00:00:00"); return d.toLocaleDateString("en-GB",{day:"numeric",month:"short"}); };
 
+  document.querySelectorAll(".pshort").forEach(el=>el.textContent=D.period.short);
   // header
   const snap = D.meta.snapshotDate;
   $("#eyebrow").textContent = `Programme status · Jira snapshot ${dshort(snap)} 2026`;
@@ -395,7 +396,7 @@ const D = /*__DATA__*/null;
   const escal = D.register.filter(r=>r.kind!=="Epic" && r.rag==="red").length;
   const kp = [
     {v:fmt(D.kpis.issuesUpdated30), l:"Issues moved, last 30 days", s: D.scope ? `${D.scorecards.length} programmes, ${D.kpis.projectsInScope} Jira boards` : `${D.kpis.projectsActive} of ${D.kpis.projectsVisible} projects active`},
-    {v:fmt(D.kpis.doneInPeriod), l:"Issues completed 9–22 Sep", s:`${fmt(D.kpis.done30)} in 30 days`},
+    {v:fmt(D.kpis.doneInPeriod), l:`Issues completed ${D.period.short}`, s:`${fmt(D.kpis.done30)} in 30 days`},
     {v:`0<small> / ${totalProducts}</small>`, l:"AI-server listings live", s:"All migrated to production, all disabled", c:"bad"},
     {v:fmt(D.kpis.overdueOpen), l:"Open issues past due date", s:"Among issues active in 30 days", c:"warn"},
     {v:`${escal}<small> / ${D.registerSummary.items}</small>`, l:"Register items rated red", s:`${D.registerSummary.unassigned} have no Jira assignee`, c:"bad"},
@@ -492,7 +493,7 @@ const D = /*__DATA__*/null;
         <div class="nums">
           <div><b>${fmt(c.updated30)}</b><span>moved, 30 d</span></div>
           <div><b>${fmt(c.done30)}</b><span>closed, 30 d</span></div>
-          <div><b>${fmt(c.doneInPeriod)}</b><span>closed 9–22 Sep</span></div>
+          <div><b>${fmt(c.doneInPeriod)}</b><span>closed ${D.period.short}</span></div>
           <div><b style="${c.overdueCount?"color:var(--bad)":""}">${c.overdueCount}</b><span>open past due</span></div>
           <div><b>${c.openBugs}</b><span>open bugs</span></div>
         </div>
@@ -565,7 +566,7 @@ const D = /*__DATA__*/null;
   $("#nolog").innerHTML = nolog.map(p=>`<span class="chip" data-tip="${esc(p.name)}: ${p.doneInPeriod} done in window, ${p.open} open">${esc(p.name)} · ${p.doneInPeriod} done</span>`).join("");
 
   // deep dives
-  const days = ["2026-09-09","2026-09-10","2026-09-11","2026-09-15","2026-09-16","2026-09-17","2026-09-18","2026-09-21","2026-09-22"];
+  const days = D.period.workingDayList;
   $("#deep").innerHTML = un.deepDives.map(dd=>{
     const p = D.people.find(x=>x.name===dd.person) || {daily:{},hours:0};
     const mx = Math.max(10, ...Object.values(p.daily));
@@ -573,11 +574,11 @@ const D = /*__DATA__*/null;
     return `<div class="panel deep">
       <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline"><h3>${esc(dd.person)}</h3><span class="muted num" style="font-size:13px">${p.hours} h in Jira · ${cap} h capacity</span></div>
       <div>
-        <div class="daily" role="img" aria-label="Hours per day for ${esc(dd.person)}">
+        <div class="daily" style="grid-template-columns:repeat(${days.length},1fr)" role="img" aria-label="Hours per day for ${esc(dd.person)}">
           ${days.map(d=>{const h=p.daily[d]||0; return `<div class="col"><i class="${h>10?"hot":""}" style="height:${h/mx*100}%" data-tip="${dshort(d)}: ${h} h"></i></div>`;}).join("")}
           <div class="line" style="bottom:${line}%"><span>8 h day</span></div>
         </div>
-        <div class="dlabels">${days.map(d=>`<span>${new Date(d+"T00:00:00").getDate()}</span>`).join("")}</div>
+        <div class="dlabels" style="grid-template-columns:repeat(${days.length},1fr)">${days.map(d=>`<span>${new Date(d+"T00:00:00").getDate()}</span>`).join("")}</div>
       </div>
       <p class="q"><b>Finding.</b> ${keyify(dd.finding)}</p>
       <p class="q"><b>Context.</b> ${keyify(dd.context)}</p>
