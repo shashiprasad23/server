@@ -73,6 +73,14 @@ python3 scripts/store_report.py
 
 This writes `reports/$DATE/` (the review page, the day-by-day page, the figures and a gzipped in-scope snapshot), appends to `reports/history.json`, rewrites `reports/index.html` and refreshes `dist/`.
 
+## 4b. Prepare the email
+
+```bash
+python3 scripts/build_email.py --to s.prasad@uvation.com
+```
+
+This writes `email.html`, `email.txt` and `email.eml` into `reports/$DATE/`. If a Gmail or Outlook connector is available in the session, send `email.html` as the body to s.prasad@uvation.com, with the subject from the `.eml`. If not, say in the summary that the email is ready in the folder and was not sent.
+
 ## 5. Commit and push
 
 ```bash
