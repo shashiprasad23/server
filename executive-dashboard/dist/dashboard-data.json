@@ -4,16 +4,17 @@
   "site": "uvation-devops.atlassian.net",
   "projectsVisible": 20,
   "queries": {
-   "issues": "updated >= -30d (all projects)",
+   "issues": "updated >= -30d (MT, PC, MR, USP, UC)",
    "worklogs": "worklogDate >= -14d",
-   "register": "summary ~ Risk|Dependency, created >= 2026-06-01, project != HC"
+   "register": "summary ~ Risk|Dependency"
   },
   "counts": {
-   "issuesUpdated30d": 2422,
-   "openAllTime": 1850,
-   "worklogIssues": 379,
-   "worklogEntries": 1181,
-   "registerItems": 29
+   "issuesUpdated30d": 1181,
+   "openAllTime": 704,
+   "worklogIssues": 311,
+   "worklogEntries": 749,
+   "registerItems": 22,
+   "expectedIssues": 1180
   }
  },
  "period": {
@@ -53,25 +54,25 @@
   "projectsVisible": 20,
   "projectsInScope": 5,
   "projectsActive": 5,
-  "issuesUpdated30": 1167,
-  "done30": 813,
-  "doneInPeriod": 626,
-  "openAllTime": 1850,
-  "overdueOpen": 46,
-  "hoursInPeriod": 930.9,
+  "issuesUpdated30": 1181,
+  "done30": 815,
+  "doneInPeriod": 625,
+  "openAllTime": 704,
+  "overdueOpen": 45,
+  "hoursInPeriod": 936.9,
   "capacityPerPerson": 72
  },
  "projects": [
   {
    "key": "USP",
    "name": "Web-Uvation Services Platform",
-   "updated30": 552,
-   "created30": 192,
-   "todo": 74,
-   "inprog": 70,
+   "updated30": 556,
+   "created30": 196,
+   "todo": 77,
+   "inprog": 71,
    "done": 408,
-   "doneInPeriod": 361,
-   "overdue": 6,
+   "doneInPeriod": 360,
+   "overdue": 7,
    "openBugs": 72,
    "hours": 246.2
   },
@@ -80,20 +81,20 @@
    "name": "Web-Marketplace",
    "updated30": 314,
    "created30": 214,
-   "todo": 20,
+   "todo": 18,
    "inprog": 67,
-   "done": 227,
+   "done": 229,
    "doneInPeriod": 152,
-   "overdue": 33,
+   "overdue": 31,
    "openBugs": 3,
-   "hours": 365.2
+   "hours": 371.2
   },
   {
    "key": "MR",
    "name": "Web-Marketing",
-   "updated30": 204,
-   "created30": 153,
-   "todo": 28,
+   "updated30": 214,
+   "created30": 163,
+   "todo": 38,
    "inprog": 16,
    "done": 160,
    "doneInPeriod": 97,
@@ -1124,7 +1125,7 @@
   ]
  },
  "marketingTesting": {
-  "summary": "Production smoke automation passes on every URL it can see, but it can see only 250 of more than 500 URLs. Page-wise Figma validation has raised 23 defects so far, and 7 are fixed.",
+  "summary": "Production smoke automation passes on every URL it can see, but it can see only 250 of more than 500 URLs. Page-wise Figma validation has raised 31 defects so far, 8 of them on 23 Sep, and 7 are fixed.",
   "scopeUrlsExpected": 500,
   "scopeNote": "More than 500 URLs expected, per MR-1199",
   "automatedUrls": 250,
@@ -1134,11 +1135,11 @@
   "manualCrossBrowserPages": 40,
   "manualNote": "About 40 pages tested manually on macOS Chrome, Firefox and Safari and on iPhone, 3–9 Sep (MR-1100, MR-1101)",
   "figmaDefects": {
-   "raised": 23,
+   "raised": 31,
    "done": 7,
    "inProgress": 2,
-   "todo": 14,
-   "pagesCovered": 16,
+   "todo": 22,
+   "pagesCovered": 15,
    "key": "MR-1179"
   },
   "siteVerification": {
@@ -1154,8 +1155,8 @@
   ],
   "pending": [
    "Fix the sitemap (MR-1199), then extend automation from 250 URLs to the full list.",
-   "16 open Figma-vs-website defects (MR-1179).",
-   "Figma validation for the remaining pages. About 16 pages have been covered so far.",
+   "24 open Figma-vs-website defects (MR-1179), 8 of them raised on 23 Sep.",
+   "Figma validation for the remaining pages. About 15 pages have defects logged so far.",
    "Playwright integration into the Azure production pipeline.",
    "New home page design and API (MR-1169)."
   ],
@@ -1173,8 +1174,8 @@
    "pctCapacity": 168,
    "tickets": 31,
    "doneInPeriod": 33,
-   "open": 31,
-   "overdue": 21,
+   "open": 29,
+   "overdue": 19,
    "projects": {
     "MT": 120.8
    },
@@ -1223,6 +1224,35 @@
    ]
   },
   {
+   "name": "Kunal Jangid",
+   "hours": 79.1,
+   "daysLogged": 9,
+   "maxDay": 14.9,
+   "avgPerDay": 8.8,
+   "pctCapacity": 110,
+   "tickets": 55,
+   "doneInPeriod": 58,
+   "open": 27,
+   "overdue": 0,
+   "projects": {
+    "MR": 79.1
+   },
+   "daily": {
+    "2026-09-09": 11.5,
+    "2026-09-10": 6.9,
+    "2026-09-11": 9.0,
+    "2026-09-15": 14.9,
+    "2026-09-16": 3.6,
+    "2026-09-17": 13.0,
+    "2026-09-18": 5.8,
+    "2026-09-21": 5.0,
+    "2026-09-22": 9.5
+   },
+   "flags": [
+    "attribution"
+   ]
+  },
+  {
    "name": "Saurabh Jain",
    "hours": 78.8,
    "daysLogged": 9,
@@ -1253,35 +1283,6 @@
    ]
   },
   {
-   "name": "Kunal Jangid",
-   "hours": 78.1,
-   "daysLogged": 9,
-   "maxDay": 14.9,
-   "avgPerDay": 8.7,
-   "pctCapacity": 108,
-   "tickets": 54,
-   "doneInPeriod": 58,
-   "open": 16,
-   "overdue": 0,
-   "projects": {
-    "MR": 78.1
-   },
-   "daily": {
-    "2026-09-09": 11.5,
-    "2026-09-10": 6.9,
-    "2026-09-11": 9.0,
-    "2026-09-15": 14.9,
-    "2026-09-16": 3.6,
-    "2026-09-17": 13.0,
-    "2026-09-18": 5.8,
-    "2026-09-21": 5.0,
-    "2026-09-22": 8.5
-   },
-   "flags": [
-    "attribution"
-   ]
-  },
-  {
    "name": "Akhil Katiyar",
    "hours": 69.5,
    "daysLogged": 8,
@@ -1290,7 +1291,7 @@
    "pctCapacity": 97,
    "tickets": 34,
    "doneInPeriod": 90,
-   "open": 15,
+   "open": 17,
    "overdue": 0,
    "projects": {
     "USP": 69.5
@@ -1317,9 +1318,9 @@
    "avgPerDay": 7.5,
    "pctCapacity": 94,
    "tickets": 21,
-   "doneInPeriod": 43,
+   "doneInPeriod": 42,
    "open": 13,
-   "overdue": 1,
+   "overdue": 2,
    "projects": {
     "USP": 67.9
    },
@@ -1367,17 +1368,17 @@
   },
   {
    "name": "Vishnu kumar yadav",
-   "hours": 60.8,
+   "hours": 59.8,
    "daysLogged": 9,
    "maxDay": 9.2,
-   "avgPerDay": 6.8,
-   "pctCapacity": 84,
-   "tickets": 24,
+   "avgPerDay": 6.6,
+   "pctCapacity": 83,
+   "tickets": 23,
    "doneInPeriod": 33,
-   "open": 15,
+   "open": 14,
    "overdue": 0,
    "projects": {
-    "MR": 60.0,
+    "MR": 59.0,
     "USP": 0.5,
     "MT": 0.2
    },
@@ -1390,7 +1391,34 @@
     "2026-09-17": 7.0,
     "2026-09-18": 7.0,
     "2026-09-21": 5.5,
-    "2026-09-22": 8.0
+    "2026-09-22": 7.0
+   },
+   "flags": []
+  },
+  {
+   "name": "Naveen Jangid",
+   "hours": 50.5,
+   "daysLogged": 9,
+   "maxDay": 7.5,
+   "avgPerDay": 5.6,
+   "pctCapacity": 70,
+   "tickets": 16,
+   "doneInPeriod": 17,
+   "open": 19,
+   "overdue": 4,
+   "projects": {
+    "MT": 50.5
+   },
+   "daily": {
+    "2026-09-09": 7.0,
+    "2026-09-10": 2.0,
+    "2026-09-11": 6.0,
+    "2026-09-15": 7.0,
+    "2026-09-16": 7.0,
+    "2026-09-17": 5.0,
+    "2026-09-18": 2.0,
+    "2026-09-21": 7.5,
+    "2026-09-22": 7.0
    },
    "flags": []
   },
@@ -1417,33 +1445,6 @@
     "2026-09-18": 7.0,
     "2026-09-21": 4.0,
     "2026-09-22": 6.5
-   },
-   "flags": []
-  },
-  {
-   "name": "Naveen Jangid",
-   "hours": 44.5,
-   "daysLogged": 9,
-   "maxDay": 7.5,
-   "avgPerDay": 4.9,
-   "pctCapacity": 62,
-   "tickets": 16,
-   "doneInPeriod": 17,
-   "open": 19,
-   "overdue": 4,
-   "projects": {
-    "MT": 44.5
-   },
-   "daily": {
-    "2026-09-09": 7.0,
-    "2026-09-10": 2.0,
-    "2026-09-11": 6.0,
-    "2026-09-15": 7.0,
-    "2026-09-16": 7.0,
-    "2026-09-17": 5.0,
-    "2026-09-18": 2.0,
-    "2026-09-21": 7.5,
-    "2026-09-22": 1.0
    },
    "flags": []
   },
@@ -1748,7 +1749,7 @@
    "pctCapacity": 0,
    "tickets": 0,
    "doneInPeriod": 4,
-   "open": 0,
+   "open": 2,
    "overdue": 0,
    "projects": {},
    "daily": {},
@@ -1860,31 +1861,17 @@
   }
  ],
  "quality": {
-  "worklogsInPeriod": 570,
-  "genericDescriptions": 570,
+  "worklogsInPeriod": 572,
+  "genericDescriptions": 572,
   "worklogAuthors": {
-   "Timesheets by Tempo - Jira Time Tracking": 570
+   "Timesheets by Tempo - Jira Time Tracking": 572
   },
   "ticketsWithTime": 311,
   "ticketsWithTimeNoEstimate": 205,
   "unattributedHours": 0.0,
-  "overheadTicketsTruncated": [
-   "UP-12",
-   "UP-14",
-   "UP-15",
-   "UP-17",
-   "UP-20",
-   "UP-23",
-   "UP-28",
-   "UP-3",
-   "UP-30",
-   "UP-32",
-   "UP-4",
-   "UP-8",
-   "UP-9"
-  ],
+  "overheadTicketsTruncated": [],
   "projectsWithNoTempoHours": [],
-  "totalHours": 930.9
+  "totalHours": 936.9
  },
  "utilisationNotes": {
   "attributionWarning": "Tempo writes every worklog to Jira under its own app account, so Jira cannot say who logged an hour. Hours here are credited to each ticket's current assignee. When a developer's ticket is handed to QA, the developer's hours move with it. Any day above 10 hours for one person is flagged for this reason.",
@@ -1960,20 +1947,20 @@
     "MT",
     "PC"
    ],
-   "headline": "27 AI-server listings reached production by 22 Sep, all disabled pending approval. Category disable is 36 of 38 tasks done. Returns flow is in testing. Home page, PDP and listing stories are past their 31 Aug due dates.",
+   "headline": "27 AI-server listings reached production by 22 Sep, all disabled pending approval. Category disable is 36 of 38 tasks done. Returns flow is in testing, and wizard steps 2 and 3 closed on 23 Sep. Home page, PDP and listing stories are still past their 31 Aug due dates.",
    "updated30": 320,
    "created30": 218,
-   "done30": 228,
+   "done30": 230,
    "doneInPeriod": 153,
-   "todo": 24,
+   "todo": 22,
    "inprog": 68,
-   "done": 228,
+   "done": 230,
    "statuses": {
-    "TODO": 20,
+    "TODO": 18,
     "IN PRODUCTION": 17,
-    "TESTING": 16,
-    "In Progress": 15,
+    "In Progress": 17,
     "IN DEVELOPMENT": 14,
+    "TESTING": 14,
     "UAT/STAGING": 6,
     "To Do": 4
    },
@@ -2180,7 +2167,7 @@
      "resolved": ""
     }
    ],
-   "overdueCount": 34,
+   "overdueCount": 32,
    "blocked": [],
    "rollups": [
     {
@@ -2237,16 +2224,16 @@
    "projects": [
     "MR"
    ],
-   "headline": "Production smoke tests pass on all 250 URLs the sitemap exposes, but more than 500 are expected. 23 Figma defects raised this sprint, 7 fixed. No open item is past its due date.",
-   "updated30": 204,
-   "created30": 153,
+   "headline": "Production smoke tests pass on all 250 URLs the sitemap exposes, but more than 500 are expected. Figma validation has raised 31 defects, 8 of them on 23 Sep, and 7 are fixed. No open item is past its due date.",
+   "updated30": 214,
+   "created30": 163,
    "done30": 159,
    "doneInPeriod": 97,
-   "todo": 28,
+   "todo": 38,
    "inprog": 16,
    "done": 160,
    "statuses": {
-    "TODO": 28,
+    "TODO": 38,
     "In Progress": 13,
     "Ready for Production": 1,
     "TESTING": 1,
@@ -2362,18 +2349,18 @@
    "blocked": [],
    "rollups": [
     {
+     "key": "MR-1179",
+     "summary": "Figma vs Website – Complete Page-wise UI Validation",
+     "status": "In Progress",
+     "done": 7,
+     "total": 31
+    },
+    {
      "key": "MR-183",
      "summary": "Parent last updated before the 30-day window",
      "status": "",
      "done": 25,
      "total": 27
-    },
-    {
-     "key": "MR-1179",
-     "summary": "Figma vs Website – Complete Page-wise UI Validation",
-     "status": "In Progress",
-     "done": 7,
-     "total": 23
     },
     {
      "key": "MR-1066",
@@ -2390,15 +2377,15 @@
      "total": 8
     },
     {
-     "key": "MR-1067",
+     "key": "MR-1168",
      "summary": "General",
-     "status": "Done",
-     "done": 6,
-     "total": 6
+     "status": "In Progress",
+     "done": 4,
+     "total": 8
     },
     {
-     "key": "MR-1076",
-     "summary": "Resolve SonarQube Code Quality and Maintainability Issues",
+     "key": "MR-1067",
+     "summary": "General",
      "status": "Done",
      "done": 6,
      "total": 6
@@ -2415,19 +2402,19 @@
    "projects": [
     "USP"
    ],
-   "headline": "Highest throughput in scope, with 400 issues closed in 30 days. That includes 278 older issues closed in one clean-up on 11 Sep. 72 bugs are still open, 2 of them S1. Platform Security & Access Control is a month past due, and two items are marked as blockers.",
-   "updated30": 552,
-   "created30": 192,
+   "headline": "Highest throughput in scope, with 400 issues closed in 30 days. That includes 278 older issues closed in one clean-up on 11 Sep. 72 bugs are still open, 2 of them S1. Seven items are past due, including Platform Security & Access Control since 15 Aug, and two are marked as blockers.",
+   "updated30": 556,
+   "created30": 196,
    "done30": 400,
-   "doneInPeriod": 361,
-   "todo": 74,
-   "inprog": 70,
+   "doneInPeriod": 360,
+   "todo": 77,
+   "inprog": 71,
    "done": 408,
    "statuses": {
-    "TODO": 71,
+    "TODO": 74,
     "Deployed In Prod": 46,
     "In Progress": 16,
-    "Deployed In Dev": 6,
+    "Deployed In Dev": 7,
     "BlOCKER": 2,
     "Tested In Dev": 2,
     "Backlog": 1
@@ -2571,6 +2558,14 @@
      "resolved": ""
     },
     {
+     "key": "USP-4142",
+     "summary": "Update AI Servers in Traditional AI Factory – Remove Older Servers and Add Latest Models",
+     "status": "Deployed In Dev",
+     "assignee": "Aman prakash",
+     "due": "2026-09-15",
+     "resolved": ""
+    },
+    {
      "key": "USP-4200",
      "summary": "  Invitation emails failures in notification backend",
      "status": "In Progress",
@@ -2587,7 +2582,7 @@
      "resolved": ""
     }
    ],
-   "overdueCount": 6,
+   "overdueCount": 7,
    "blocked": [
     {
      "key": "USP-3795",
@@ -2646,7 +2641,7 @@
      "key": "USP-4050",
      "summary": "General",
      "status": "Done",
-     "done": 12,
+     "done": 11,
      "total": 12
     }
    ],

@@ -3,15 +3,16 @@
  "site": "uvation-devops.atlassian.net",
  "projectsVisible": 20,
  "queries": {
-  "issues": "updated >= -30d (all projects)",
+  "issues": "updated >= -30d (MT, PC, MR, USP, UC)",
   "worklogs": "worklogDate >= -14d",
-  "register": "summary ~ Risk|Dependency, created >= 2026-06-01, project != HC"
+  "register": "summary ~ Risk|Dependency"
  },
  "counts": {
-  "issuesUpdated30d": 2422,
-  "openAllTime": 1850,
-  "worklogIssues": 379,
-  "worklogEntries": 1181,
-  "registerItems": 29
+  "issuesUpdated30d": 1181,
+  "openAllTime": 704,
+  "worklogIssues": 311,
+  "worklogEntries": 749,
+  "registerItems": 22,
+  "expectedIssues": 1180
  }
 }

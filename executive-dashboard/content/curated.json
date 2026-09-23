@@ -609,7 +609,7 @@
     ]
   },
   "marketingTesting": {
-    "summary": "Production smoke automation passes on every URL it can see, but it can see only 250 of more than 500 URLs. Page-wise Figma validation has raised 23 defects so far, and 7 are fixed.",
+    "summary": "Production smoke automation passes on every URL it can see, but it can see only 250 of more than 500 URLs. Page-wise Figma validation has raised 31 defects so far, 8 of them on 23 Sep, and 7 are fixed.",
     "scopeUrlsExpected": 500,
     "scopeNote": "More than 500 URLs expected, per MR-1199",
     "automatedUrls": 250,
@@ -619,11 +619,11 @@
     "manualCrossBrowserPages": 40,
     "manualNote": "About 40 pages tested manually on macOS Chrome, Firefox and Safari and on iPhone, 3–9 Sep (MR-1100, MR-1101)",
     "figmaDefects": {
-      "raised": 23,
+      "raised": 31,
       "done": 7,
       "inProgress": 2,
-      "todo": 14,
-      "pagesCovered": 16,
+      "todo": 22,
+      "pagesCovered": 15,
       "key": "MR-1179"
     },
     "siteVerification": {
@@ -639,8 +639,8 @@
     ],
     "pending": [
       "Fix the sitemap (MR-1199), then extend automation from 250 URLs to the full list.",
-      "16 open Figma-vs-website defects (MR-1179).",
-      "Figma validation for the remaining pages. About 16 pages have been covered so far.",
+      "24 open Figma-vs-website defects (MR-1179), 8 of them raised on 23 Sep.",
+      "Figma validation for the remaining pages. About 15 pages have defects logged so far.",
       "Playwright integration into the Azure production pipeline.",
       "New home page design and API (MR-1169)."
     ],

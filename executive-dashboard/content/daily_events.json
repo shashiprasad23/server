@@ -1,63 +1,488 @@
 {
-  "holidays": ["2026-09-14"],
+  "holidays": [
+    "2026-09-14"
+  ],
   "bulk": [
-    {"date": "2026-09-02", "project": "HC", "kind": "created", "count": 578, "label": "Hamara CRM backlog created in bulk (578)"},
-    {"date": "2026-09-11", "project": "USP", "kind": "resolved", "count": 278, "label": "Services Platform backlog clean-up (278 closed)"}
+    {
+      "date": "2026-09-02",
+      "project": "HC",
+      "kind": "created",
+      "count": 578,
+      "label": "Hamara CRM backlog created in bulk (578)"
+    },
+    {
+      "date": "2026-09-11",
+      "project": "USP",
+      "kind": "resolved",
+      "count": 278,
+      "label": "Services Platform backlog clean-up (278 closed)"
+    }
   ],
   "pipeline": [
-    {"brand": "NVIDIA", "products": 8, "stages": [
-      {"stage": "Research and content", "start": "2026-09-10", "end": "2026-09-15", "keys": ["MT-1477", "MT-1484"]},
-      {"stage": "Created on UAT", "start": "2026-09-11", "end": "2026-09-15", "keys": ["MT-1484", "MT-1500"]},
-      {"stage": "Moved to production", "start": "2026-09-21", "end": "2026-09-21", "keys": ["MT-1528"]}]},
-    {"brand": "Dell", "products": 6, "stages": [
-      {"stage": "Research and content", "start": "2026-09-16", "end": "2026-09-17", "keys": ["PC-133"]},
-      {"stage": "Created on UAT", "start": "2026-09-16", "end": "2026-09-17", "keys": ["MT-1503", "MT-1527"]},
-      {"stage": "Moved to production", "start": "2026-09-18", "end": "2026-09-18", "keys": ["MT-1528"]}]},
-    {"brand": "HPE", "products": 3, "stages": [
-      {"stage": "Research and content", "start": "2026-09-17", "end": "2026-09-18", "keys": ["PC-133"]},
-      {"stage": "Created on UAT", "start": "2026-09-17", "end": "2026-09-18", "keys": ["MT-1506"]},
-      {"stage": "Moved to production", "start": "2026-09-18", "end": "2026-09-18", "keys": ["MT-1528"]}]},
-    {"brand": "Supermicro", "products": 8, "stages": [
-      {"stage": "Research and content", "start": "2026-09-18", "end": "2026-09-18", "keys": ["PC-133"]},
-      {"stage": "Created on UAT", "start": "2026-09-21", "end": "2026-09-21", "keys": ["MT-1509"]},
-      {"stage": "Moved to production", "start": "2026-09-22", "end": "2026-09-22", "keys": ["MT-1528"]}]},
-    {"brand": "Lenovo", "products": 2, "stages": [
-      {"stage": "Research and content", "start": "2026-09-21", "end": "2026-09-21", "keys": ["PC-133"]},
-      {"stage": "Created on UAT", "start": "2026-09-21", "end": "2026-09-21", "keys": ["MT-1512"]},
-      {"stage": "Moved to production", "start": "2026-09-22", "end": "2026-09-22", "keys": ["MT-1528"]}]}
+    {
+      "brand": "NVIDIA",
+      "products": 8,
+      "stages": [
+        {
+          "stage": "Research and content",
+          "start": "2026-09-10",
+          "end": "2026-09-15",
+          "keys": [
+            "MT-1477",
+            "MT-1484"
+          ]
+        },
+        {
+          "stage": "Created on UAT",
+          "start": "2026-09-11",
+          "end": "2026-09-15",
+          "keys": [
+            "MT-1484",
+            "MT-1500"
+          ]
+        },
+        {
+          "stage": "Moved to production",
+          "start": "2026-09-21",
+          "end": "2026-09-21",
+          "keys": [
+            "MT-1528"
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Dell",
+      "products": 6,
+      "stages": [
+        {
+          "stage": "Research and content",
+          "start": "2026-09-16",
+          "end": "2026-09-17",
+          "keys": [
+            "PC-133"
+          ]
+        },
+        {
+          "stage": "Created on UAT",
+          "start": "2026-09-16",
+          "end": "2026-09-17",
+          "keys": [
+            "MT-1503",
+            "MT-1527"
+          ]
+        },
+        {
+          "stage": "Moved to production",
+          "start": "2026-09-18",
+          "end": "2026-09-18",
+          "keys": [
+            "MT-1528"
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "HPE",
+      "products": 3,
+      "stages": [
+        {
+          "stage": "Research and content",
+          "start": "2026-09-17",
+          "end": "2026-09-18",
+          "keys": [
+            "PC-133"
+          ]
+        },
+        {
+          "stage": "Created on UAT",
+          "start": "2026-09-17",
+          "end": "2026-09-18",
+          "keys": [
+            "MT-1506"
+          ]
+        },
+        {
+          "stage": "Moved to production",
+          "start": "2026-09-18",
+          "end": "2026-09-18",
+          "keys": [
+            "MT-1528"
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Supermicro",
+      "products": 8,
+      "stages": [
+        {
+          "stage": "Research and content",
+          "start": "2026-09-18",
+          "end": "2026-09-18",
+          "keys": [
+            "PC-133"
+          ]
+        },
+        {
+          "stage": "Created on UAT",
+          "start": "2026-09-21",
+          "end": "2026-09-21",
+          "keys": [
+            "MT-1509"
+          ]
+        },
+        {
+          "stage": "Moved to production",
+          "start": "2026-09-22",
+          "end": "2026-09-22",
+          "keys": [
+            "MT-1528"
+          ]
+        }
+      ]
+    },
+    {
+      "brand": "Lenovo",
+      "products": 2,
+      "stages": [
+        {
+          "stage": "Research and content",
+          "start": "2026-09-21",
+          "end": "2026-09-21",
+          "keys": [
+            "PC-133"
+          ]
+        },
+        {
+          "stage": "Created on UAT",
+          "start": "2026-09-21",
+          "end": "2026-09-21",
+          "keys": [
+            "MT-1512"
+          ]
+        },
+        {
+          "stage": "Moved to production",
+          "start": "2026-09-22",
+          "end": "2026-09-22",
+          "keys": [
+            "MT-1528"
+          ]
+        }
+      ]
+    }
   ],
   "events": [
-    {"date": "2026-09-01", "project": "PC", "type": "progress", "title": "First configurable Lenovo products created on UAT from CSV", "keys": ["PC-121"]},
-    {"date": "2026-09-01", "project": "MR", "type": "progress", "title": "Cookie consent verified to block analytics until accepted", "keys": ["MR-1068", "MR-760"]},
-    {"date": "2026-09-02", "project": "HC", "type": "bulk", "title": "578 Hamara CRM backlog issues created in one day", "keys": []},
-    {"date": "2026-09-02", "project": "PC", "type": "issue", "title": "Manually created Lenovo product not visible on the UAT storefront", "keys": ["PC-121"]},
-    {"date": "2026-09-02", "project": "MT", "type": "progress", "title": "Return eligibility window now read from the admin RMA policy setting", "keys": ["MT-1286"]},
-    {"date": "2026-09-03", "project": "IN", "type": "risk", "title": "Production autoscaling configured at 80% CPU, mitigating the scaling risk", "keys": ["IN-986"]},
-    {"date": "2026-09-03", "project": "MR", "type": "testing", "title": "Cross-browser testing on macOS starts: Chrome, Firefox and Safari", "keys": ["MR-1100"]},
-    {"date": "2026-09-04", "project": "MR", "type": "testing", "title": "iPhone browser testing starts", "keys": ["MR-1101"]},
-    {"date": "2026-09-07", "project": "MT", "type": "risk", "title": "Marketplace switched to the userinfo API instead of token claims (PII risk)", "keys": ["MT-1100"]},
-    {"date": "2026-09-09", "project": "MR", "type": "testing", "title": "Manual cross-browser round complete, about 40 pages on macOS and iPhone", "keys": ["MR-1100", "MR-1101"]},
-    {"date": "2026-09-10", "project": "MT", "type": "change", "title": "Scope pivot: Marketplace to show AI servers only. 38-task category-disable plan raised", "keys": ["MT-1437", "MT-1438"]},
-    {"date": "2026-09-10", "project": "MT", "type": "progress", "title": "Product upload process agreed. First Supermicro product imported by CSV", "keys": ["MT-1478", "MT-1476"]},
-    {"date": "2026-09-10", "project": "MT", "type": "progress", "title": "NVIDIA GB300 NVL72 images, specs and catalogue content prepared", "keys": ["MT-1477"]},
-    {"date": "2026-09-11", "project": "USP", "type": "bulk", "title": "278 Services Platform issues closed in one day (backlog clean-up)", "keys": []},
-    {"date": "2026-09-11", "project": "MT", "type": "progress", "title": "All 16 product attributes created on UAT. NVIDIA DGX GB300 created on UAT", "keys": ["MT-1476", "MT-1484"]},
-    {"date": "2026-09-15", "project": "MT", "type": "progress", "title": "NVIDIA products validated on UAT, waiting for approval", "keys": ["MT-1484"]},
-    {"date": "2026-09-15", "project": "PC", "type": "progress", "title": "Attribute research for AI servers starts", "keys": ["PC-133"]},
-    {"date": "2026-09-16", "project": "MT", "type": "progress", "title": "6 Dell products created on UAT", "keys": ["MT-1503"]},
-    {"date": "2026-09-16", "project": "MT", "type": "risk", "title": "Rewards sync mitigation confirmed in place", "keys": ["MT-1099"]},
-    {"date": "2026-09-17", "project": "MT", "type": "issue", "title": "Dell UAT review: 4 of 6 products had wrong child configuration, fixed same day", "keys": ["MT-1527"]},
-    {"date": "2026-09-17", "project": "MR", "type": "testing", "title": "Playwright smoke test: 71 URLs, 639 of 639 checks pass", "keys": ["MR-1165"]},
-    {"date": "2026-09-17", "project": "MR", "type": "testing", "title": "13 Figma-vs-website defects raised", "keys": ["MR-1179"]},
-    {"date": "2026-09-17", "project": "USP", "type": "risk", "title": "Services Platform risk register refreshed, due 30 Sep", "keys": ["USP-3751", "USP-3755"]},
-    {"date": "2026-09-18", "project": "MT", "type": "milestone", "title": "Dell (6) and HPE (3) moved to production, then disabled", "keys": ["MT-1528"]},
-    {"date": "2026-09-18", "project": "MT", "type": "issue", "title": "Staging Lighthouse performance score of 43", "keys": ["MT-1475"]},
-    {"date": "2026-09-21", "project": "MT", "type": "milestone", "title": "NVIDIA (8 listings) moved to production, then disabled", "keys": ["MT-1528"]},
-    {"date": "2026-09-21", "project": "MT", "type": "progress", "title": "Supermicro (8) and Lenovo (2) created on UAT", "keys": ["MT-1509", "MT-1512"]},
-    {"date": "2026-09-21", "project": "MR", "type": "testing", "title": "Smoke test widened to 250 URLs: 2,250 of 2,250 checks pass", "keys": ["MR-1165"]},
-    {"date": "2026-09-22", "project": "MT", "type": "milestone", "title": "All 27 AI-server listings in production. Migration ticket closed", "keys": ["MT-1528"]},
-    {"date": "2026-09-22", "project": "MR", "type": "issue", "title": "Sitemap lists only 250 of 500+ URLs, capping test coverage", "keys": ["MR-1199"]},
-    {"date": "2026-09-22", "project": "MR", "type": "testing", "title": "10 more Figma-vs-website defects raised", "keys": ["MR-1179"]},
-    {"date": "2026-09-22", "project": "PC", "type": "progress", "title": "NVIDIA Vera Rubin research starts", "keys": ["PC-133"]}
+    {
+      "date": "2026-09-01",
+      "project": "PC",
+      "type": "progress",
+      "title": "First configurable Lenovo products created on UAT from CSV",
+      "keys": [
+        "PC-121"
+      ]
+    },
+    {
+      "date": "2026-09-01",
+      "project": "MR",
+      "type": "progress",
+      "title": "Cookie consent verified to block analytics until accepted",
+      "keys": [
+        "MR-1068",
+        "MR-760"
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "project": "HC",
+      "type": "bulk",
+      "title": "578 Hamara CRM backlog issues created in one day",
+      "keys": []
+    },
+    {
+      "date": "2026-09-02",
+      "project": "PC",
+      "type": "issue",
+      "title": "Manually created Lenovo product not visible on the UAT storefront",
+      "keys": [
+        "PC-121"
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "project": "MT",
+      "type": "progress",
+      "title": "Return eligibility window now read from the admin RMA policy setting",
+      "keys": [
+        "MT-1286"
+      ]
+    },
+    {
+      "date": "2026-09-03",
+      "project": "IN",
+      "type": "risk",
+      "title": "Production autoscaling configured at 80% CPU, mitigating the scaling risk",
+      "keys": [
+        "IN-986"
+      ]
+    },
+    {
+      "date": "2026-09-03",
+      "project": "MR",
+      "type": "testing",
+      "title": "Cross-browser testing on macOS starts: Chrome, Firefox and Safari",
+      "keys": [
+        "MR-1100"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "project": "MR",
+      "type": "testing",
+      "title": "iPhone browser testing starts",
+      "keys": [
+        "MR-1101"
+      ]
+    },
+    {
+      "date": "2026-09-07",
+      "project": "MT",
+      "type": "risk",
+      "title": "Marketplace switched to the userinfo API instead of token claims (PII risk)",
+      "keys": [
+        "MT-1100"
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "project": "MR",
+      "type": "testing",
+      "title": "Manual cross-browser round complete, about 40 pages on macOS and iPhone",
+      "keys": [
+        "MR-1100",
+        "MR-1101"
+      ]
+    },
+    {
+      "date": "2026-09-10",
+      "project": "MT",
+      "type": "change",
+      "title": "Scope pivot: Marketplace to show AI servers only. 38-task category-disable plan raised",
+      "keys": [
+        "MT-1437",
+        "MT-1438"
+      ]
+    },
+    {
+      "date": "2026-09-10",
+      "project": "MT",
+      "type": "progress",
+      "title": "Product upload process agreed. First Supermicro product imported by CSV",
+      "keys": [
+        "MT-1478",
+        "MT-1476"
+      ]
+    },
+    {
+      "date": "2026-09-10",
+      "project": "MT",
+      "type": "progress",
+      "title": "NVIDIA GB300 NVL72 images, specs and catalogue content prepared",
+      "keys": [
+        "MT-1477"
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "project": "USP",
+      "type": "bulk",
+      "title": "278 Services Platform issues closed in one day (backlog clean-up)",
+      "keys": []
+    },
+    {
+      "date": "2026-09-11",
+      "project": "MT",
+      "type": "progress",
+      "title": "All 16 product attributes created on UAT. NVIDIA DGX GB300 created on UAT",
+      "keys": [
+        "MT-1476",
+        "MT-1484"
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "project": "MT",
+      "type": "progress",
+      "title": "NVIDIA products validated on UAT, waiting for approval",
+      "keys": [
+        "MT-1484"
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "project": "PC",
+      "type": "progress",
+      "title": "Attribute research for AI servers starts",
+      "keys": [
+        "PC-133"
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "project": "MT",
+      "type": "progress",
+      "title": "6 Dell products created on UAT",
+      "keys": [
+        "MT-1503"
+      ]
+    },
+    {
+      "date": "2026-09-16",
+      "project": "MT",
+      "type": "risk",
+      "title": "Rewards sync mitigation confirmed in place",
+      "keys": [
+        "MT-1099"
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "project": "MT",
+      "type": "issue",
+      "title": "Dell UAT review: 4 of 6 products had wrong child configuration, fixed same day",
+      "keys": [
+        "MT-1527"
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "project": "MR",
+      "type": "testing",
+      "title": "Playwright smoke test: 71 URLs, 639 of 639 checks pass",
+      "keys": [
+        "MR-1165"
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "project": "MR",
+      "type": "testing",
+      "title": "13 Figma-vs-website defects raised",
+      "keys": [
+        "MR-1179"
+      ]
+    },
+    {
+      "date": "2026-09-17",
+      "project": "USP",
+      "type": "risk",
+      "title": "Services Platform risk register refreshed, due 30 Sep",
+      "keys": [
+        "USP-3751",
+        "USP-3755"
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "project": "MT",
+      "type": "milestone",
+      "title": "Dell (6) and HPE (3) moved to production, then disabled",
+      "keys": [
+        "MT-1528"
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "project": "MT",
+      "type": "issue",
+      "title": "Staging Lighthouse performance score of 43",
+      "keys": [
+        "MT-1475"
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "project": "MT",
+      "type": "milestone",
+      "title": "NVIDIA (8 listings) moved to production, then disabled",
+      "keys": [
+        "MT-1528"
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "project": "MT",
+      "type": "progress",
+      "title": "Supermicro (8) and Lenovo (2) created on UAT",
+      "keys": [
+        "MT-1509",
+        "MT-1512"
+      ]
+    },
+    {
+      "date": "2026-09-21",
+      "project": "MR",
+      "type": "testing",
+      "title": "Smoke test widened to 250 URLs: 2,250 of 2,250 checks pass",
+      "keys": [
+        "MR-1165"
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "project": "MT",
+      "type": "milestone",
+      "title": "All 27 AI-server listings in production. Migration ticket closed",
+      "keys": [
+        "MT-1528"
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "project": "MR",
+      "type": "issue",
+      "title": "Sitemap lists only 250 of 500+ URLs, capping test coverage",
+      "keys": [
+        "MR-1199"
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "project": "MR",
+      "type": "testing",
+      "title": "10 more Figma-vs-website defects raised",
+      "keys": [
+        "MR-1179"
+      ]
+    },
+    {
+      "date": "2026-09-22",
+      "project": "PC",
+      "type": "progress",
+      "title": "NVIDIA Vera Rubin research starts",
+      "keys": [
+        "PC-133"
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "project": "MR",
+      "type": "testing",
+      "title": "8 more Figma-vs-website defects raised, 31 in total",
+      "keys": [
+        "MR-1179"
+      ]
+    },
+    {
+      "date": "2026-09-23",
+      "project": "MT",
+      "type": "progress",
+      "title": "Returns wizard steps 2 and 3 closed",
+      "keys": [
+        "MT-1333",
+        "MT-1334"
+      ]
+    }
   ]
 }
