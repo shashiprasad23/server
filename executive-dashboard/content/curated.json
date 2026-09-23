@@ -661,7 +661,7 @@
       },
       {
         "person": "Sapavat Yadagiri",
-        "finding": "Jira credits Sapavat with 146.8 hours, including 26.8 hours on 9 Sep. That is impossible for one person and shows developer time on tickets reassigned to QA.",
+        "finding": "Jira credits Sapavat with 120.8 hours, including 23.2 hours on 9 Sep. That is impossible for one person and shows developer time on tickets reassigned to QA.",
         "context": "Sapavat's own QA tasks show 0.5 to 2 hours each. For example, the navigation, homepage-module and facet UI updates for the category disable took 1 hour each (MT-1455 to MT-1457). Functional test on staging took 1.5 hours and the toggle test 1.5 hours (MT-1471, MT-1473).",
         "question": "Sapavat's real hours cannot be separated from developer hours in Jira. The Tempo worker report is the only reliable source.",
         "verify": "Pull Sapavat's Tempo timesheet by worker. Check that QA time is logged on QA subtasks, not on development subtasks."

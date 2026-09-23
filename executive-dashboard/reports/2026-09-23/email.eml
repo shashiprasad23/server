@@ -1,13 +1,13 @@
 To: s.prasad@uvation.com
 Subject: Status report 23 Sep 2026: Marketplace, Marketing, Services Platform,
  Conversational AI
-Date: Wed, 23 Sep 2026 09:41:30 +0000
+Date: Wed, 23 Sep 2026 09:59:08 +0000
 X-Unsent: 1
 MIME-Version: 1.0
 Content-Type: multipart/alternative;
- boundary="===============5756298276882054597=="
+ boundary="===============7016524450053295191=="
 
---===============5756298276882054597==
+--===============7016524450053295191==
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
@@ -355,7 +355,7 @@ btasks, not on development subtasks.
 Stored in shashiprasad23/server, branch claude/executive-dashboard-jira-revie=
 w-gclk36, executive-dashboard/reports/2026-09-23/.
 
---===============5756298276882054597==
+--===============7016524450053295191==
 Content-Type: text/html; charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
@@ -2142,20 +2142,22 @@ of 572 worklogs in the window say only =E2=80=9Ctime-tracking=E2=80=9D. The S=
 OP makes a description mandatory.</li><li style=3D"font-size:14px;line-height=
 :1.5;margin:3px 0;color:#16212C">66% of 311 tickets with logged time have no =
 Original Estimate, so planned versus actual cannot be measured.</li><li style=
-=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C">0 shared overh=
-ead tickets hide recent meeting and leave time from Jira.</li></ul><h2 style=
-=3D"font-size:18px;margin:26px 0 6px;color:#16212C;border-top:2px solid #1621=
-2C;padding-top:10px">Data notes</h2><ul style=3D"margin:4px 0 14px;padding-le=
-ft:20px"><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#1621=
-2C">Source: Jira Cloud uvation-devops.atlassian.net, boards MT, PC, MR, USP, =
-UC. 1,181 issues updated in 30 days were pulled, against Jira's own count of =
-1180.</li><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#162=
-12C">Verdicts, root causes and suggested owners are the reviewer's reading of=
- the tickets cited. Confirm them with each owner.</li><li style=3D"font-size:=
-14px;line-height:1.5;margin:3px 0;color:#16212C">This report is stored in the=
- repository shashiprasad23/server, branch claude/executive-dashboard-jira-rev=
-iew-gclk36, folder executive-dashboard/reports/2026-09-23/.</li><li style=3D"=
-font-size:14px;line-height:1.5;margin:3px 0;color:#16212C">A new report is ge=
-nerated every weekday at 7:00 PM Nepal time.</li></ul></div></body></html>
+=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C">Meetings, stan=
+d-ups and leave are logged on shared overhead tickets in Uvation Projects, wh=
+ich is outside this report's scope, so that time is not in these totals.</li>=
+</ul><h2 style=3D"font-size:18px;margin:26px 0 6px;color:#16212C;border-top:2=
+px solid #16212C;padding-top:10px">Data notes</h2><ul style=3D"margin:4px 0 1=
+4px;padding-left:20px"><li style=3D"font-size:14px;line-height:1.5;margin:3px=
+ 0;color:#16212C">Source: Jira Cloud uvation-devops.atlassian.net, boards MT,=
+ PC, MR, USP, UC. 1,181 issues updated in 30 days were pulled, against Jira's=
+ own count of 1180.</li><li style=3D"font-size:14px;line-height:1.5;margin:3p=
+x 0;color:#16212C">Verdicts, root causes and suggested owners are the reviewe=
+r's reading of the tickets cited. Confirm them with each owner.</li><li style=
+=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C">This report is=
+ stored in the repository shashiprasad23/server, branch claude/executive-dash=
+board-jira-review-gclk36, folder executive-dashboard/reports/2026-09-23/.</li=
+><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C">A ne=
+w report is generated every weekday at 7:00 PM Nepal time.</li></ul></div></b=
+ody></html>
 
---===============5756298276882054597==--
+--===============7016524450053295191==--

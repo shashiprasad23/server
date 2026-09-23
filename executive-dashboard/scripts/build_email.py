@@ -197,7 +197,9 @@ def build(date, to):
     H.append(ul([
         f"{round(100 * q['genericDescriptions'] / max(1, q['worklogsInPeriod']))}% of {q['worklogsInPeriod']} worklogs in the window say only “time-tracking”. The SOP makes a description mandatory.",
         f"{round(100 * q['ticketsWithTimeNoEstimate'] / max(1, q['ticketsWithTime']))}% of {q['ticketsWithTime']} tickets with logged time have no Original Estimate, so planned versus actual cannot be measured.",
-        f"{len(q['overheadTicketsTruncated'])} shared overhead tickets hide recent meeting and leave time from Jira.",
+        (f"{len(q['overheadTicketsTruncated'])} shared overhead tickets hide recent meeting and leave time from Jira."
+         if q['overheadTicketsTruncated'] else
+         "Meetings, stand-ups and leave are logged on shared overhead tickets in Uvation Projects, which is outside this report's scope, so that time is not in these totals."),
     ]))
 
     H.append(h2("Data notes"))
