@@ -147,7 +147,7 @@ section>*{min-width:0}
 <div class="controls">
   <div class="wrap">
     <label for="f-project">Project <select id="f-project"></select></label>
-    <label class="switch" for="f-bulk"><input type="checkbox" id="f-bulk" checked> Leave out the two bulk events</label>
+    <label class="switch" for="f-bulk"><input type="checkbox" id="f-bulk" checked> <span id="bulk-label">Leave out bulk events</span></label>
     <span class="daypill">Selected day <b id="day-label"></b></span>
     <nav aria-label="Sections"><a href="#flow">Flow</a><a href="#effort">Effort</a><a href="#people">People</a><a href="#explorer">Day explorer</a><a href="#projects">Projects</a><a href="#tracks">Milestones</a><a href="#risk">Risk age</a><a href="#log">Event log</a></nav>
   </div>
@@ -244,7 +244,7 @@ const D = /*__DATA__*/null;
   const I = D.issues.map(r=>({key:r[0],p:r[1],type:r[2],cat:r[3],who:r[4],cr:r[5],rs:r[6],due:r[7],sum:r[8],parent:r[9],prio:r[10],status:r[11]}));
   const L = D.logs.map(r=>({key:r[0],d:r[1],h:r[2],who:r[3],p:r[4]}));
   const byKey = Object.fromEntries(I.map(i=>[i.key,i]));
-  const groupKeys = [...D.projects.filter(p=>p.slot).sort((a,b)=>a.slot-b.slot).map(p=>p.key), "Other"];
+  const groupKeys = [...D.projects.filter(p=>p.slot).sort((a,b)=>a.slot-b.slot).map(p=>p.key), ...(D.projects.some(p=>!p.slot)?["Other"]:[])];
   const grp = p => PROJ[p]?.slot ? p : "Other";
   const grpName = g => g==="Other" ? "Other projects" : PROJ[g].name;
   const colorOf = g => g==="Other" ? css("--other") : css(`--series-${PROJ[g].slot}`);
@@ -265,10 +265,12 @@ const D = /*__DATA__*/null;
   sel.value = state.project;
   sel.onchange = () => { state.project = sel.value; save(); renderAll(); };
   const bulkBox = $("#f-bulk"); bulkBox.checked = state.noBulk;
+  $("#bulk-label").textContent = D.bulk.length===1 ? "Leave out the bulk clean-up day" : `Leave out the ${D.bulk.length} bulk events`;
+  if(!D.bulk.length) bulkBox.closest("label").hidden = true;
   bulkBox.onchange = () => { state.noBulk = bulkBox.checked; save(); renderAll(); };
 
   $("#eyebrow").textContent = `Jira snapshot ${lab(M.snapshot)} 2026 · ${M.site}`;
-  $("#lede").innerHTML = `Every issue created, resolved and logged against across all Jira projects, day by day from ${lab(M.windowStart)} to ${lab(M.windowEnd)}. ${M.reviewUrl?`The judgements behind these numbers are in the <a href="${esc(M.reviewUrl)}" target="_blank" rel="noopener">Portfolio Status Review</a>.`:""}`;
+  $("#lede").innerHTML = `Every issue created, resolved and logged against ${M.scopeLabel ? "in "+esc(M.scopeLabel.split(":")[0].toLowerCase())+" ("+D.projects.map(p=>esc(p.name)).join(", ")+")" : "across all Jira projects"}, day by day from ${lab(M.windowStart)} to ${lab(M.windowEnd)}. ${M.reviewUrl?`The judgements behind these numbers are in the <a href="${esc(M.reviewUrl)}" target="_blank" rel="noopener">Portfolio Status Review</a>.`:""}`;
 
   // ---------- echarts helpers ----------
   const charts = {};

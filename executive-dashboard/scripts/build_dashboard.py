@@ -12,12 +12,14 @@ Output
   dist/index.html               self-contained page (data embedded)
 
 Usage
-  python3 scripts/build_dashboard.py [--snapshot data/snapshot] [--out dist/index.html]
+  python3 scripts/build_dashboard.py [--snapshot data/snapshot] [--out dist/index.html] [--scope content/scope.json|all]
 """
 import argparse
 import collections
 import datetime as dt
+import html
 import json
+import re
 import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -45,12 +47,29 @@ def days_between(a, b):
     return (dt.date.fromisoformat(b) - dt.date.fromisoformat(a)).days
 
 
-def build(snapshot_dir: pathlib.Path):
+def load_scope(arg):
+    """Return the scope dict, or None for every project."""
+    if not arg or arg == "all":
+        return None
+    return load(pathlib.Path(arg))
+
+
+def build(snapshot_dir: pathlib.Path, scope=None):
     meta = load(snapshot_dir / "meta.json")
     issues = load(snapshot_dir / "issues.json")
     wl = load(snapshot_dir / "worklogs.json")
     register = load(snapshot_dir / "register.json")
     cur = load(ROOT / "content" / "curated.json")
+    # Overhead truncation is measured on the full pull: meetings sit on shared tickets outside any one project.
+    truncated_all = [i["key"] for i in wl["issues"] if (i.get("worklogTotal") or 0) > (i.get("worklogsReturned") or 0)]
+    for i in issues:
+        i["summary"] = html.unescape(i.get("summary") or "")
+    if scope:
+        keep = set(scope["projects"])
+        issues = [i for i in issues if i["project"] in keep]
+        wl = {"issues": [i for i in wl["issues"] if i["project"] in keep],
+              "worklogs": [w for w in wl["worklogs"] if w["key"].split("-")[0] in keep]}
+        register = [r for r in register if r["project"] in keep]
 
     today = meta["snapshotDate"]
     p_start, p_end = cur["period"]["start"], cur["period"]["end"]
@@ -147,7 +166,7 @@ def build(snapshot_dir: pathlib.Path):
     generic = sum(1 for w in logs if w["comment"].strip().lower() in ("", "time-tracking", "working on issue"))
     wl_with_time = [i for i in wl["issues"] if i.get("spent")]
     no_est = sum(1 for i in wl_with_time if not i.get("est"))
-    truncated = [i["key"] for i in wl["issues"] if (i.get("worklogTotal") or 0) > (i.get("worklogsReturned") or 0)]
+    truncated = truncated_all
     authors = collections.Counter(w["author"] for w in logs)
     silent_projects = [p["key"] for p in projects if p["hours"] == 0 and p["updated30"] >= 20 and p["key"] != "UP"]
     quality = {
@@ -192,6 +211,7 @@ def build(snapshot_dir: pathlib.Path):
     # ---------- headline KPIs ----------
     kpis = {
         "projectsVisible": meta["projectsVisible"],
+        "projectsInScope": len(scope["projects"]) if scope else meta["projectsVisible"],
         "projectsActive": len(projects),
         "issuesUpdated30": len(issues),
         "done30": sum(1 for i in issues if i["statusCat"] == "done" and i.get("resolved") and day(i["resolved"]) >= d30),
@@ -201,6 +221,8 @@ def build(snapshot_dir: pathlib.Path):
         "hoursInPeriod": quality["totalHours"],
         "capacityPerPerson": cap_hours,
     }
+
+    scorecards = build_scorecards(issues, scope, today, p_start, p_end, d30) if scope else []
 
     def pick(keys):
         return [{"key": k, "summary": by_key[k]["summary"], "status": by_key[k]["status"]} for k in keys if k in by_key]
@@ -214,15 +236,70 @@ def build(snapshot_dir: pathlib.Path):
         "people": people, "quality": quality, "utilisationNotes": cur["utilisationNotes"],
         "jiraBase": f"https://{meta['site']}/browse/", "links": cur.get("links", {}),
         "_refs": pick(["MT-1485", "MT-1528", "MR-1179", "MR-1165"]),
+        "scope": ({"label": scope["label"], "short": scope.get("short"), "note": scope.get("note"),
+                   "projects": scope["projects"], "names": [PROJECT_NAMES.get(p, p) for p in scope["projects"]]} if scope else None),
+        "scorecards": scorecards,
     }
+
+
+def build_scorecards(issues, scope, today, p_start, p_end, d30):
+    """One card per programme: throughput, delivered and in-flight stories, overdue, blocked, roll-ups, bugs."""
+    by_key = {i["key"]: i for i in issues}
+    cards = []
+    for prog in scope.get("programmes", []):
+        xs = [i for i in issues if i["project"] in prog["projects"]]
+        top = [i for i in xs if not i["subtask"] and i["type"] in ("Epic", "Story", "Feature")]
+        open_ = [i for i in xs if i["statusCat"] != "done"]
+        def row(i):
+            return {"key": i["key"], "summary": i["summary"], "status": i["status"], "assignee": i.get("assignee"), "due": i.get("due"),
+                    "resolved": (i.get("resolved") or "")[:10]}
+        delivered = sorted([i for i in top if i["statusCat"] == "done" and i.get("resolved") and day(i["resolved"]) >= d30],
+                           key=lambda i: i["resolved"], reverse=True)
+        inflight = sorted([i for i in top if i["statusCat"] == "indeterminate"], key=lambda i: (i.get("due") or "9999", i["key"]))
+        planned = [i for i in top if i["statusCat"] == "new"]
+        overdue = sorted([i for i in open_ if i.get("due") and i["due"] < today], key=lambda i: i["due"])
+        blocked = [i for i in xs if re.search(r"block|hold", i["status"], re.I) and i["statusCat"] != "done"]
+        kids = collections.defaultdict(list)
+        for i in xs:
+            if i.get("parent"):
+                kids[i["parent"]].append(i)
+        rollups = []
+        for pk, ch in kids.items():
+            if len(ch) < 4:
+                continue
+            p = by_key.get(pk)
+            rollups.append({"key": pk, "summary": (p["summary"] if p else "Parent last updated before the 30-day window"),
+                            "status": p["status"] if p else "", "done": sum(c["statusCat"] == "done" for c in ch), "total": len(ch)})
+        rollups.sort(key=lambda r: (-r["total"], r["key"]))
+        sev = collections.Counter()
+        for i in open_:
+            if i["type"] == "Bug":
+                m = re.search(r"\[(S\d)\]", i["summary"])
+                sev[m.group(1) if m else "Unrated"] += 1
+        cards.append({
+            "id": prog["id"], "name": prog["name"], "projects": prog["projects"], "headline": prog.get("headline", ""),
+            "updated30": len(xs), "created30": sum(1 for i in xs if day(i["created"]) >= d30),
+            "done30": sum(1 for i in xs if i["statusCat"] == "done" and i.get("resolved") and day(i["resolved"]) >= d30),
+            "doneInPeriod": sum(1 for i in xs if i["statusCat"] == "done" and i.get("resolved") and p_start <= day(i["resolved"]) <= p_end),
+            "todo": sum(1 for i in xs if i["statusCat"] == "new"), "inprog": sum(1 for i in xs if i["statusCat"] == "indeterminate"),
+            "done": sum(1 for i in xs if i["statusCat"] == "done"),
+            "statuses": dict(collections.Counter(i["status"] for i in open_).most_common()),
+            "stories": {"delivered": len(delivered), "inflight": len(inflight), "planned": len(planned)},
+            "delivered": [row(i) for i in delivered[:8]], "inflight": [row(i) for i in inflight[:8]],
+            "overdue": [row(i) for i in overdue[:8]], "overdueCount": len(overdue),
+            "blocked": [row(i) for i in blocked], "rollups": rollups[:6],
+            "openBugs": sum(sev.values()), "bugSeverity": dict(sorted(sev.items())),
+        })
+    return cards
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--snapshot", default=str(ROOT / "data" / "snapshot"))
     ap.add_argument("--out", default=str(ROOT / "dist" / "index.html"))
+    ap.add_argument("--scope", default=str(ROOT / "content" / "scope.json"), help="scope JSON file, or 'all' for every project")
     args = ap.parse_args()
-    data = build(pathlib.Path(args.snapshot))
+    data = build(pathlib.Path(args.snapshot), load_scope(args.scope))
     tpl = (ROOT / "templates" / "dashboard.html").read_text(encoding="utf-8")
     payload = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     out = pathlib.Path(args.out)

@@ -34,29 +34,17 @@
  "title": "Portfolio Status Review",
  "kpis": {
   "projectsVisible": 20,
-  "projectsActive": 14,
-  "issuesUpdated30": 2422,
-  "done30": 1208,
-  "doneInPeriod": 794,
+  "projectsInScope": 5,
+  "projectsActive": 5,
+  "issuesUpdated30": 1167,
+  "done30": 813,
+  "doneInPeriod": 626,
   "openAllTime": 1850,
-  "overdueOpen": 106,
-  "hoursInPeriod": 1250.2,
+  "overdueOpen": 46,
+  "hoursInPeriod": 930.9,
   "capacityPerPerson": 72
  },
  "projects": [
-  {
-   "key": "HC",
-   "name": "Hamara CRM",
-   "updated30": 578,
-   "created30": 578,
-   "todo": 578,
-   "inprog": 0,
-   "done": 0,
-   "doneInPeriod": 0,
-   "overdue": 0,
-   "openBugs": 0,
-   "hours": 0.0
-  },
   {
    "key": "USP",
    "name": "Web-Uvation Services Platform",
@@ -69,19 +57,6 @@
    "overdue": 6,
    "openBugs": 72,
    "hours": 246.2
-  },
-  {
-   "key": "DMI",
-   "name": "Marketing",
-   "updated30": 314,
-   "created30": 248,
-   "todo": 57,
-   "inprog": 14,
-   "done": 243,
-   "doneInPeriod": 101,
-   "overdue": 9,
-   "openBugs": 0,
-   "hours": 0.0
   },
   {
    "key": "MT",
@@ -110,19 +85,6 @@
    "hours": 203.7
   },
   {
-   "key": "IT",
-   "name": "Infrastructure",
-   "updated30": 119,
-   "created30": 98,
-   "todo": 73,
-   "inprog": 39,
-   "done": 7,
-   "doneInPeriod": 3,
-   "overdue": 9,
-   "openBugs": 0,
-   "hours": 0.0
-  },
-  {
    "key": "UC",
    "name": "Uvation Conversational AI",
    "updated30": 91,
@@ -136,71 +98,6 @@
    "hours": 87.8
   },
   {
-   "key": "VTN",
-   "name": "Design & Creative",
-   "updated30": 82,
-   "created30": 63,
-   "todo": 8,
-   "inprog": 13,
-   "done": 61,
-   "doneInPeriod": 24,
-   "overdue": 21,
-   "openBugs": 0,
-   "hours": 0.0
-  },
-  {
-   "key": "IN",
-   "name": "Devops",
-   "updated30": 57,
-   "created30": 47,
-   "todo": 9,
-   "inprog": 5,
-   "done": 43,
-   "doneInPeriod": 22,
-   "overdue": 4,
-   "openBugs": 2,
-   "hours": 171.5
-  },
-  {
-   "key": "ID",
-   "name": "Web-Identity",
-   "updated30": 51,
-   "created30": 32,
-   "todo": 5,
-   "inprog": 14,
-   "done": 32,
-   "doneInPeriod": 13,
-   "overdue": 9,
-   "openBugs": 2,
-   "hours": 114.8
-  },
-  {
-   "key": "UP",
-   "name": "Uvation Projects (overhead)",
-   "updated30": 27,
-   "created30": 2,
-   "todo": 2,
-   "inprog": 25,
-   "done": 0,
-   "doneInPeriod": 0,
-   "overdue": 0,
-   "openBugs": 0,
-   "hours": 28.5
-  },
-  {
-   "key": "DM",
-   "name": "Design Marketing Development Collab",
-   "updated30": 25,
-   "created30": 9,
-   "todo": 0,
-   "inprog": 10,
-   "done": 15,
-   "doneInPeriod": 5,
-   "overdue": 8,
-   "openBugs": 0,
-   "hours": 4.5
-  },
-  {
    "key": "PC",
    "name": "Web-Marketplace Product Catalog",
    "updated30": 6,
@@ -212,100 +109,9 @@
    "overdue": 1,
    "openBugs": 0,
    "hours": 28.0
-  },
-  {
-   "key": "INF",
-   "name": "Infrastructure-test",
-   "updated30": 2,
-   "created30": 2,
-   "todo": 1,
-   "inprog": 1,
-   "done": 0,
-   "doneInPeriod": 0,
-   "overdue": 0,
-   "openBugs": 0,
-   "hours": 0.0
   }
  ],
  "register": [
-  {
-   "key": "EN-17",
-   "project": "EN",
-   "projectName": "Web-Email Notifications",
-   "kind": "Risk",
-   "summary": "No automated tests in Notification Service — changes must be verified manually",
-   "likelihood": "High",
-   "impact": "High",
-   "ownerTeam": "Engineering Team",
-   "assignee": null,
-   "jiraStatus": "To Do",
-   "updated": "2026-07-07",
-   "daysSinceUpdate": 78,
-   "context": "The Notification Service currently has no automated tests, so every change must be verified manually, slowing delivery and increasing regression risk.",
-   "mitigation": [
-    "Introduce a test framework for the service",
-    "Add unit and integration test coverage for core notification flows",
-    "Block PRs that don't include adequate test coverage"
-   ],
-   "lastComment": null,
-   "verdict": "Escalate",
-   "rag": "red",
-   "why": "High likelihood and high impact. No automated tests. Unowned for 78 days.",
-   "action": "Assign owner and add to next sprint.",
-   "suggestedOwner": null
-  },
-  {
-   "key": "EN-18",
-   "project": "EN",
-   "projectName": "Web-Email Notifications",
-   "kind": "Risk",
-   "summary": "SQL injection risk in Notification Service via string interpolation in raw SQL",
-   "likelihood": "High",
-   "impact": "Critical",
-   "ownerTeam": "Security Team",
-   "assignee": null,
-   "jiraStatus": "To Do",
-   "updated": "2026-07-07",
-   "daysSinceUpdate": 78,
-   "context": "Raw SQL built via string interpolation was found in the Notification Service, creating a critical SQL injection exposure.",
-   "mitigation": [
-    "Replace all string-interpolated SQL with parameterised queries",
-    "Conduct a security code review of the affected modules",
-    "Add a lint/CI check to catch future raw string SQL interpolation"
-   ],
-   "lastComment": null,
-   "verdict": "Escalate",
-   "rag": "red",
-   "why": "SQL injection via string interpolation. High likelihood, critical impact. Unowned for 78 days.",
-   "action": "Treat as a security defect, not a register entry. Fix before any further Notification Service release.",
-   "suggestedOwner": null
-  },
-  {
-   "key": "EN-19",
-   "project": "EN",
-   "projectName": "Web-Email Notifications",
-   "kind": "Risk",
-   "summary": "Open public mutation endpoints in Notification Service accepting writes without auth",
-   "likelihood": "High",
-   "impact": "Critical",
-   "ownerTeam": "Security Team",
-   "assignee": null,
-   "jiraStatus": "To Do",
-   "updated": "2026-07-07",
-   "daysSinceUpdate": 78,
-   "context": "Some public mutation endpoints in the Notification Service currently accept writes without authentication or input validation, a critical exposure.",
-   "mitigation": [
-    "Enforce authentication and input validation on all public endpoints",
-    "Review and re-enable RBAC checks on affected endpoints",
-    "Add automated tests confirming unauthenticated writes are rejected"
-   ],
-   "lastComment": null,
-   "verdict": "Escalate",
-   "rag": "red",
-   "why": "Public mutation endpoints accept writes without auth. High likelihood, critical impact. Unowned for 78 days.",
-   "action": "Treat as a security defect. Fix before any further Notification Service release.",
-   "suggestedOwner": null
-  },
   {
    "key": "MT-1093",
    "project": "MT",
@@ -382,32 +188,6 @@
    "rag": "red",
    "why": "Scope creep is visible now: 192 USP issues created in 30 days and 72 open bugs.",
    "action": "Enforce the change-request gate named in the mitigation.",
-   "suggestedOwner": null
-  },
-  {
-   "key": "EN-20",
-   "project": "EN",
-   "projectName": "Web-Email Notifications",
-   "kind": "Risk",
-   "summary": "No CI/CD config found in Notification Service repo — deployment handled outside repo",
-   "likelihood": "High",
-   "impact": "High",
-   "ownerTeam": "DevOps Team",
-   "assignee": null,
-   "jiraStatus": "To Do",
-   "updated": "2026-07-07",
-   "daysSinceUpdate": 78,
-   "context": "The Notification Service repo has no CI/CD configuration; deployment currently happens outside the repo, which is inconsistent with the standard DevOps pipeline.",
-   "mitigation": [
-    "Add a Dockerfile for the service",
-    "Add CI/CD pipeline configuration aligned to the standard DevOps pipeline",
-    "Migrate deployment off any manual/out-of-repo process"
-   ],
-   "lastComment": null,
-   "verdict": "Keep",
-   "rag": "amber",
-   "why": "Deployment still runs outside the repo pipeline. Unowned for 78 days.",
-   "action": "Assign to DevOps with a date.",
    "suggestedOwner": null
   },
   {
@@ -594,36 +374,6 @@
    "rag": "amber",
    "why": "Duplicate of USP-3750 in substance.",
    "action": "Merge with USP-3750.",
-   "suggestedOwner": null
-  },
-  {
-   "key": "IN-986",
-   "project": "IN",
-   "projectName": "Devops",
-   "kind": "Risk",
-   "summary": "Infrastructure scaling risk causing performance degradation",
-   "likelihood": "Medium",
-   "impact": "High",
-   "ownerTeam": "DevOps Team",
-   "assignee": "k.kishore",
-   "jiraStatus": "Done",
-   "updated": "2026-09-07",
-   "daysSinceUpdate": 16,
-   "context": "Current infrastructure capacity is not proven against peak load scenarios, risking performance degradation.",
-   "mitigation": [
-    "Complete capacity planning against expected peak load",
-    "Configure AKS horizontal pod autoscaler for key services",
-    "Run load testing before each production release"
-   ],
-   "lastComment": {
-    "author": "k.kishore",
-    "date": "2026-09-03",
-    "text": "Configured Horizontal Pod Autoscalar for production environment when there is high utilization exceeding 80% CPU the pod will be autoscaled. "
-   },
-   "verdict": "Close with condition",
-   "rag": "green",
-   "why": "Horizontal pod autoscaling configured in production at 80% CPU (3 Sep). Ticket is Done. Load testing before release is not evidenced.",
-   "action": "Close risk. Keep 'load test before each production release' as a release checklist item.",
    "suggestedOwner": null
   },
   {
@@ -891,50 +641,6 @@
    "suggestedOwner": null
   },
   {
-   "key": "EN-16",
-   "project": "EN",
-   "projectName": "Web-Email Notifications",
-   "kind": "Epic",
-   "summary": "Risk and Dependency Mitigation",
-   "likelihood": null,
-   "impact": null,
-   "ownerTeam": null,
-   "assignee": null,
-   "jiraStatus": "To Do",
-   "updated": "2026-07-07",
-   "daysSinceUpdate": 78,
-   "context": null,
-   "mitigation": [],
-   "lastComment": null,
-   "verdict": "Escalate",
-   "rag": "red",
-   "why": "Notification Service register has had no owner and no update since 7 Jul.",
-   "action": "Assign an engineering owner this week or formally accept the risks.",
-   "suggestedOwner": null
-  },
-  {
-   "key": "IN-985",
-   "project": "IN",
-   "projectName": "Devops",
-   "kind": "Epic",
-   "summary": "Risk and Dependency Mitigation",
-   "likelihood": null,
-   "impact": null,
-   "ownerTeam": null,
-   "assignee": null,
-   "jiraStatus": "To Do",
-   "updated": "2026-07-07",
-   "daysSinceUpdate": 78,
-   "context": null,
-   "mitigation": [],
-   "lastComment": null,
-   "verdict": "Keep",
-   "rag": "amber",
-   "why": "Parent epic for the Devops register.",
-   "action": "Close once IN-986 load-test evidence is attached.",
-   "suggestedOwner": null
-  },
-  {
    "key": "MT-1091",
    "project": "MT",
    "projectName": "Web-Marketplace",
@@ -980,16 +686,15 @@
   }
  ],
  "registerSummary": {
-  "items": 25,
-  "risks": 17,
+  "items": 20,
+  "risks": 12,
   "dependencies": 8,
-  "unassigned": 12,
-  "stale30": 12,
+  "unassigned": 8,
+  "stale30": 8,
   "verdicts": {
-   "Escalate": 3,
-   "Keep": 15,
+   "Keep": 14,
    "Re-assess": 2,
-   "Close": 5
+   "Close": 4
   }
  },
  "reportedRisksNotInJira": [
@@ -1444,58 +1149,28 @@
  "people": [
   {
    "name": "Sapavat Yadagiri",
-   "hours": 146.8,
+   "hours": 120.8,
    "daysLogged": 9,
-   "maxDay": 26.8,
-   "avgPerDay": 16.3,
-   "pctCapacity": 204,
-   "tickets": 40,
-   "doneInPeriod": 34,
-   "open": 39,
-   "overdue": 29,
+   "maxDay": 23.2,
+   "avgPerDay": 13.4,
+   "pctCapacity": 168,
+   "tickets": 31,
+   "doneInPeriod": 33,
+   "open": 31,
+   "overdue": 21,
    "projects": {
-    "MT": 120.8,
-    "ID": 26.0
+    "MT": 120.8
    },
    "daily": {
-    "2026-09-09": 26.8,
-    "2026-09-10": 14.5,
-    "2026-09-11": 20.5,
-    "2026-09-15": 25.5,
+    "2026-09-09": 23.2,
+    "2026-09-10": 11.0,
+    "2026-09-11": 12.5,
+    "2026-09-15": 15.5,
     "2026-09-16": 14.8,
     "2026-09-17": 15.0,
     "2026-09-18": 14.8,
     "2026-09-21": 8.0,
-    "2026-09-22": 7.0
-   },
-   "flags": [
-    "attribution"
-   ]
-  },
-  {
-   "name": "b.kumar",
-   "hours": 120.0,
-   "daysLogged": 9,
-   "maxDay": 14.0,
-   "avgPerDay": 13.3,
-   "pctCapacity": 167,
-   "tickets": 10,
-   "doneInPeriod": 9,
-   "open": 3,
-   "overdue": 0,
-   "projects": {
-    "IN": 120.0
-   },
-   "daily": {
-    "2026-09-09": 14.0,
-    "2026-09-10": 14.0,
-    "2026-09-11": 14.0,
-    "2026-09-15": 14.0,
-    "2026-09-16": 14.0,
-    "2026-09-17": 14.0,
-    "2026-09-18": 14.0,
-    "2026-09-21": 14.0,
-    "2026-09-22": 8.0
+    "2026-09-22": 6.0
    },
    "flags": [
     "attribution"
@@ -1648,18 +1323,17 @@
   },
   {
    "name": "Naman Bapna",
-   "hours": 61.8,
+   "hours": 61.3,
    "daysLogged": 9,
    "maxDay": 8.8,
-   "avgPerDay": 6.9,
-   "pctCapacity": 86,
-   "tickets": 28,
+   "avgPerDay": 6.8,
+   "pctCapacity": 85,
+   "tickets": 27,
    "doneInPeriod": 41,
-   "open": 2,
+   "open": 1,
    "overdue": 0,
    "projects": {
-    "MT": 61.3,
-    "DM": 0.5
+    "MT": 61.3
    },
    "daily": {
     "2026-09-09": 8.8,
@@ -1670,7 +1344,7 @@
     "2026-09-17": 4.8,
     "2026-09-18": 6.0,
     "2026-09-21": 8.8,
-    "2026-09-22": 6.0
+    "2026-09-22": 5.5
    },
    "flags": []
   },
@@ -1700,33 +1374,6 @@
     "2026-09-18": 7.0,
     "2026-09-21": 5.5,
     "2026-09-22": 8.0
-   },
-   "flags": []
-  },
-  {
-   "name": "Yash Janeshwar",
-   "hours": 57.0,
-   "daysLogged": 9,
-   "maxDay": 7.0,
-   "avgPerDay": 6.3,
-   "pctCapacity": 79,
-   "tickets": 10,
-   "doneInPeriod": 14,
-   "open": 6,
-   "overdue": 0,
-   "projects": {
-    "ID": 57.0
-   },
-   "daily": {
-    "2026-09-09": 7.0,
-    "2026-09-10": 4.0,
-    "2026-09-11": 4.0,
-    "2026-09-15": 7.0,
-    "2026-09-16": 7.0,
-    "2026-09-17": 7.0,
-    "2026-09-18": 7.0,
-    "2026-09-21": 7.0,
-    "2026-09-22": 7.0
    },
    "flags": []
   },
@@ -1782,32 +1429,6 @@
     "2026-09-22": 1.0
    },
    "flags": []
-  },
-  {
-   "name": "Sarath Chandra",
-   "hours": 41.5,
-   "daysLogged": 6,
-   "maxDay": 8.0,
-   "avgPerDay": 6.9,
-   "pctCapacity": 58,
-   "tickets": 5,
-   "doneInPeriod": 11,
-   "open": 3,
-   "overdue": 1,
-   "projects": {
-    "IN": 41.5
-   },
-   "daily": {
-    "2026-09-09": 7.0,
-    "2026-09-10": 7.0,
-    "2026-09-11": 5.0,
-    "2026-09-15": 8.0,
-    "2026-09-16": 8.0,
-    "2026-09-21": 6.5
-   },
-   "flags": [
-    "low"
-   ]
   },
   {
    "name": "Kannan Elangovan",
@@ -1892,32 +1513,6 @@
    ]
   },
   {
-   "name": "Ankit Sharma",
-   "hours": 27.5,
-   "daysLogged": 4,
-   "maxDay": 9.0,
-   "avgPerDay": 6.9,
-   "pctCapacity": 38,
-   "tickets": 6,
-   "doneInPeriod": 68,
-   "open": 3,
-   "overdue": 0,
-   "projects": {
-    "ID": 14.0,
-    "MT": 7.0,
-    "USP": 6.5
-   },
-   "daily": {
-    "2026-09-10": 8.0,
-    "2026-09-11": 9.0,
-    "2026-09-21": 4.0,
-    "2026-09-22": 6.5
-   },
-   "flags": [
-    "low"
-   ]
-  },
-  {
    "name": "shubham kuchwar",
    "hours": 27.0,
    "daysLogged": 6,
@@ -1969,32 +1564,6 @@
    ]
   },
   {
-   "name": "Saravana Kumar",
-   "hours": 17.8,
-   "daysLogged": 6,
-   "maxDay": 3.5,
-   "avgPerDay": 3.0,
-   "pctCapacity": 25,
-   "tickets": 3,
-   "doneInPeriod": 0,
-   "open": 5,
-   "overdue": 1,
-   "projects": {
-    "ID": 17.8
-   },
-   "daily": {
-    "2026-09-10": 3.5,
-    "2026-09-15": 3.5,
-    "2026-09-16": 3.5,
-    "2026-09-18": 3.5,
-    "2026-09-21": 0.8,
-    "2026-09-22": 3.0
-   },
-   "flags": [
-    "low"
-   ]
-  },
-  {
    "name": "Gourav Agnani",
    "hours": 14.0,
    "daysLogged": 2,
@@ -2018,25 +1587,47 @@
    ]
   },
   {
+   "name": "Ankit Sharma",
+   "hours": 13.5,
+   "daysLogged": 3,
+   "maxDay": 7.0,
+   "avgPerDay": 4.5,
+   "pctCapacity": 19,
+   "tickets": 3,
+   "doneInPeriod": 66,
+   "open": 2,
+   "overdue": 0,
+   "projects": {
+    "MT": 7.0,
+    "USP": 6.5
+   },
+   "daily": {
+    "2026-09-10": 7.0,
+    "2026-09-21": 4.0,
+    "2026-09-22": 2.5
+   },
+   "flags": [
+    "low"
+   ]
+  },
+  {
    "name": "Shashi Prasad K",
-   "hours": 13.1,
-   "daysLogged": 4,
+   "hours": 11.1,
+   "daysLogged": 3,
    "maxDay": 9.6,
-   "avgPerDay": 3.3,
-   "pctCapacity": 18,
-   "tickets": 4,
-   "doneInPeriod": 8,
-   "open": 4,
-   "overdue": 4,
+   "avgPerDay": 3.7,
+   "pctCapacity": 15,
+   "tickets": 3,
+   "doneInPeriod": 4,
+   "open": 1,
+   "overdue": 1,
    "projects": {
     "MT": 10.1,
-    "DM": 2.0,
     "MR": 1.0
    },
    "daily": {
     "2026-09-09": 1.0,
     "2026-09-10": 9.6,
-    "2026-09-17": 2.0,
     "2026-09-18": 0.5
    },
    "flags": [
@@ -2045,24 +1636,22 @@
   },
   {
    "name": "Murali G",
-   "hours": 5.0,
-   "daysLogged": 3,
+   "hours": 3.0,
+   "daysLogged": 2,
    "maxDay": 2.5,
-   "avgPerDay": 1.7,
-   "pctCapacity": 7,
-   "tickets": 4,
-   "doneInPeriod": 7,
-   "open": 3,
-   "overdue": 1,
+   "avgPerDay": 1.5,
+   "pctCapacity": 4,
+   "tickets": 2,
+   "doneInPeriod": 6,
+   "open": 0,
+   "overdue": 0,
    "projects": {
     "MT": 2.5,
-    "DM": 2.0,
     "MR": 0.5
    },
    "daily": {
     "2026-09-10": 2.5,
-    "2026-09-21": 0.5,
-    "2026-09-22": 2.0
+    "2026-09-21": 0.5
    },
    "flags": [
     "low"
@@ -2134,40 +1723,6 @@
    ]
   },
   {
-   "name": "Abhishek",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 0,
-   "open": 3,
-   "overdue": 0,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "Ajinkya Gosavi",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 11,
-   "open": 4,
-   "overdue": 1,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
    "name": "Andrei Momita",
    "hours": 0.0,
    "daysLogged": 0,
@@ -2202,91 +1757,6 @@
    ]
   },
   {
-   "name": "Deepak Sabharwal",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 10,
-   "open": 6,
-   "overdue": 0,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "Ivan Divjakovic",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 6,
-   "open": 2,
-   "overdue": 2,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "Kevan Carbaugh",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 0,
-   "open": 6,
-   "overdue": 2,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "Kuldeep Raghuwanshi",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 0,
-   "open": 3,
-   "overdue": 0,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "Lalit Kumar",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 0,
-   "open": 2,
-   "overdue": 0,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
    "name": "Livian Stefan Stan",
    "hours": 0.0,
    "daysLogged": 0,
@@ -2304,125 +1774,6 @@
    ]
   },
   {
-   "name": "Milica Stojkovic",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 6,
-   "open": 2,
-   "overdue": 2,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "Milos Janjic",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 8,
-   "open": 4,
-   "overdue": 0,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "Parul Singh",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 2,
-   "open": 5,
-   "overdue": 2,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "Pradeep Kumar",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 0,
-   "open": 12,
-   "overdue": 0,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "Prashanth Naikar",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 30,
-   "open": 14,
-   "overdue": 1,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "RAGHAVENDRA KARRI",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 0,
-   "open": 3,
-   "overdue": 2,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "Rajesh R",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 23,
-   "open": 22,
-   "overdue": 3,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
    "name": "Raluca Conea",
    "hours": 0.0,
    "daysLogged": 0,
@@ -2430,60 +1781,9 @@
    "avgPerDay": 0,
    "pctCapacity": 0,
    "tickets": 0,
-   "doneInPeriod": 7,
-   "open": 9,
-   "overdue": 8,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "Reen Singh",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 0,
+   "doneInPeriod": 1,
    "open": 1,
    "overdue": 0,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "Sahil Sehgal",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 0,
-   "open": 2,
-   "overdue": 0,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "Sanjay Singh",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 3,
-   "open": 12,
-   "overdue": 3,
    "projects": {},
    "daily": {},
    "flags": [
@@ -2525,143 +1825,7 @@
    ]
   },
   {
-   "name": "Ujjwal Koul",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 0,
-   "open": 12,
-   "overdue": 2,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "Valeriia",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 2,
-   "open": 5,
-   "overdue": 5,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "Vinamre Sood",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 0,
-   "open": 55,
-   "overdue": 0,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "Yotam Abramovich",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 9,
-   "open": 7,
-   "overdue": 1,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "Zuber Siddiqui",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 0,
-   "open": 1,
-   "overdue": 0,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "a.kaushal",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 5,
-   "open": 8,
-   "overdue": 8,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "h.chauhan",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 3,
-   "open": 6,
-   "overdue": 0,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "k.kishore",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 0,
-   "open": 2,
-   "overdue": 1,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "z.amirkhan",
+   "name": "Yash Janeshwar",
    "hours": 0.0,
    "daysLogged": 0,
    "maxDay": 0,
@@ -2669,8 +1833,8 @@
    "pctCapacity": 0,
    "tickets": 0,
    "doneInPeriod": 4,
-   "open": 2,
-   "overdue": 1,
+   "open": 1,
+   "overdue": 0,
    "projects": {},
    "daily": {},
    "flags": [
@@ -2679,14 +1843,14 @@
   }
  ],
  "quality": {
-  "worklogsInPeriod": 674,
-  "genericDescriptions": 674,
+  "worklogsInPeriod": 570,
+  "genericDescriptions": 570,
   "worklogAuthors": {
-   "Timesheets by Tempo - Jira Time Tracking": 674
+   "Timesheets by Tempo - Jira Time Tracking": 570
   },
-  "ticketsWithTime": 379,
-  "ticketsWithTimeNoEstimate": 264,
-  "unattributedHours": 38.5,
+  "ticketsWithTime": 311,
+  "ticketsWithTimeNoEstimate": 205,
+  "unattributedHours": 0.0,
   "overheadTicketsTruncated": [
    "UP-12",
    "UP-14",
@@ -2702,29 +1866,8 @@
    "UP-8",
    "UP-9"
   ],
-  "projectsWithNoTempoHours": [
-   {
-    "key": "DMI",
-    "name": "Marketing",
-    "updated30": 314
-   },
-   {
-    "key": "HC",
-    "name": "Hamara CRM",
-    "updated30": 578
-   },
-   {
-    "key": "IT",
-    "name": "Infrastructure",
-    "updated30": 119
-   },
-   {
-    "key": "VTN",
-    "name": "Design & Creative",
-    "updated30": 82
-   }
-  ],
-  "totalHours": 1250.2
+  "projectsWithNoTempoHours": [],
+  "totalHours": 930.9
  },
  "utilisationNotes": {
   "attributionWarning": "Tempo writes every worklog to Jira under its own app account, so Jira cannot say who logged an hour. Hours here are credited to each ticket's current assignee. When a developer's ticket is handed to QA, the developer's hours move with it. Any day above 10 hours for one person is flagged for this reason.",
@@ -2771,6 +1914,923 @@
    "key": "MR-1165",
    "summary": "Playwright Automation – Validate 71 URLs",
    "status": "In Progress"
+  }
+ ],
+ "scope": {
+  "label": "Web platforms: Marketplace, Marketing, Services Platform and Conversational AI",
+  "short": "4 web programmes",
+  "note": "Web-Marketplace Product Catalog (PC) is reported with Web-Marketplace, because the AI-server catalogue work runs across both boards.",
+  "projects": [
+   "MT",
+   "PC",
+   "MR",
+   "USP",
+   "UC"
+  ],
+  "names": [
+   "Web-Marketplace",
+   "Web-Marketplace Product Catalog",
+   "Web-Marketing",
+   "Web-Uvation Services Platform",
+   "Uvation Conversational AI"
+  ]
+ },
+ "scorecards": [
+  {
+   "id": "MT",
+   "name": "Web-Marketplace",
+   "projects": [
+    "MT",
+    "PC"
+   ],
+   "headline": "27 AI-server listings reached production by 22 Sep, all disabled pending approval. Category disable is 36 of 38 tasks done. Returns flow is in testing. Home page, PDP and listing stories are past their 31 Aug due dates.",
+   "updated30": 320,
+   "created30": 218,
+   "done30": 228,
+   "doneInPeriod": 153,
+   "todo": 24,
+   "inprog": 68,
+   "done": 228,
+   "statuses": {
+    "TODO": 20,
+    "IN PRODUCTION": 17,
+    "TESTING": 16,
+    "In Progress": 15,
+    "IN DEVELOPMENT": 14,
+    "UAT/STAGING": 6,
+    "To Do": 4
+   },
+   "stories": {
+    "delivered": 18,
+    "inflight": 12,
+    "planned": 4
+   },
+   "delivered": [
+    {
+     "key": "MT-1224",
+     "summary": "As a team we need accessibility, SEO, analytics and QA so the build is production-ready",
+     "status": "Done",
+     "assignee": "Saurabh Jain",
+     "due": null,
+     "resolved": "2026-09-17"
+    },
+    {
+     "key": "MT-1314",
+     "summary": "Enhance Checkout, Sales, and Quote Workflow Emails Layouts",
+     "status": "Done",
+     "assignee": "Parth",
+     "due": "2026-09-15",
+     "resolved": "2026-09-17"
+    },
+    {
+     "key": "MT-1478",
+     "summary": "Product Upload",
+     "status": "Done",
+     "assignee": "Anshul Bhargava",
+     "due": "2026-09-11",
+     "resolved": "2026-09-16"
+    },
+    {
+     "key": "MT-1316",
+     "summary": "P2 - As a team we need accessibility, SEO, analytics and QA so the build is production-ready",
+     "status": "Done",
+     "assignee": "Saurabh Jain",
+     "due": "2026-09-15",
+     "resolved": "2026-09-16"
+    },
+    {
+     "key": "MT-1340",
+     "summary": "P2 - As a logged-in user I want to manage orders, quotes, returns, addresses, rewards and credits so I can self-serve",
+     "status": "Done",
+     "assignee": "Saurabh Jain",
+     "due": "2026-09-15",
+     "resolved": "2026-09-16"
+    },
+    {
+     "key": "MT-1385",
+     "summary": "P2 (Testing) - As a buyer I want to submit a request-for-quote so I can negotiate pricing on high-value orders",
+     "status": "Done",
+     "assignee": "Saurabh Jain",
+     "due": "2026-09-15",
+     "resolved": "2026-09-16"
+    },
+    {
+     "key": "MT-1099",
+     "summary": "Risk: Rewards platform sync failure leading to incorrect point balances",
+     "status": "Done",
+     "assignee": "Naveen Jangid",
+     "due": "2026-09-15",
+     "resolved": "2026-09-16"
+    },
+    {
+     "key": "MT-1298",
+     "summary": "Implement Azure Managed Identity Authentication for Webkul Azure Blob Storage Module",
+     "status": "Done",
+     "assignee": "shubham kuchwar",
+     "due": "2026-08-31",
+     "resolved": "2026-09-07"
+    }
+   ],
+   "inflight": [
+    {
+     "key": "MT-1215",
+     "summary": "As a buyer I want a responsive home page with hero, categories and featured products so I can start browsing",
+     "status": "UAT/STAGING",
+     "assignee": "Sapavat Yadagiri",
+     "due": "2026-08-31",
+     "resolved": ""
+    },
+    {
+     "key": "MT-1216",
+     "summary": "As a buyer I want to filter, sort and search products so I can find the right hardware quickly",
+     "status": "IN DEVELOPMENT",
+     "assignee": "Sapavat Yadagiri",
+     "due": "2026-08-31",
+     "resolved": ""
+    },
+    {
+     "key": "MT-1217",
+     "summary": "As a buyer I want complete product info, configuration, financing and a path to quote/cart so I can make a decision",
+     "status": "UAT/STAGING",
+     "assignee": "Sapavat Yadagiri",
+     "due": "2026-08-31",
+     "resolved": ""
+    },
+    {
+     "key": "MT-1438",
+     "summary": "Uvation Marketplace Category Disable Task List",
+     "status": "In Progress",
+     "assignee": "Shashi Prasad K",
+     "due": "2026-09-10",
+     "resolved": ""
+    },
+    {
+     "key": "MT-1100",
+     "summary": "Risk: Data breach exposing customer PII or order history",
+     "status": "IN PRODUCTION",
+     "assignee": "Naveen Jangid",
+     "due": "2026-09-15",
+     "resolved": ""
+    },
+    {
+     "key": "MT-1311",
+     "summary": "P2-As a logged-in user I want to manage orders, quotes, returns, addresses, rewards and credits so I can self-serve",
+     "status": "IN DEVELOPMENT",
+     "assignee": "Sapavat Yadagiri",
+     "due": "2026-09-15",
+     "resolved": ""
+    },
+    {
+     "key": "MT-1331",
+     "summary": "P2 - As a buyer I want to return items and get a refund or credit so I can resolve issues post-delivery",
+     "status": "TESTING",
+     "assignee": "Sapavat Yadagiri",
+     "due": "2026-09-15",
+     "resolved": ""
+    },
+    {
+     "key": "MT-1365",
+     "summary": "RMA – Review and Implement Figma Requirements (Backend) - Email Templates and Flow",
+     "status": "In Progress",
+     "assignee": "shubham kuchwar",
+     "due": "2026-09-15",
+     "resolved": ""
+    }
+   ],
+   "overdue": [
+    {
+     "key": "PC-118",
+     "summary": "Product Research for AI/ML servers",
+     "status": "To Do",
+     "assignee": "Arnab",
+     "due": "2026-08-29",
+     "resolved": ""
+    },
+    {
+     "key": "MT-1052",
+     "summary": "Integrate FE Form URL in PO Order Confirmation Email",
+     "status": "IN PRODUCTION",
+     "assignee": "Kannan Elangovan",
+     "due": "2026-08-31",
+     "resolved": ""
+    },
+    {
+     "key": "MT-1053",
+     "summary": "Create Backend APIs for PO Order Details Form",
+     "status": "UAT/STAGING",
+     "assignee": "Sapavat Yadagiri",
+     "due": "2026-08-31",
+     "resolved": ""
+    },
+    {
+     "key": "MT-1215",
+     "summary": "As a buyer I want a responsive home page with hero, categories and featured products so I can start browsing",
+     "status": "UAT/STAGING",
+     "assignee": "Sapavat Yadagiri",
+     "due": "2026-08-31",
+     "resolved": ""
+    },
+    {
+     "key": "MT-1216",
+     "summary": "As a buyer I want to filter, sort and search products so I can find the right hardware quickly",
+     "status": "IN DEVELOPMENT",
+     "assignee": "Sapavat Yadagiri",
+     "due": "2026-08-31",
+     "resolved": ""
+    },
+    {
+     "key": "MT-1217",
+     "summary": "As a buyer I want complete product info, configuration, financing and a path to quote/cart so I can make a decision",
+     "status": "UAT/STAGING",
+     "assignee": "Sapavat Yadagiri",
+     "due": "2026-08-31",
+     "resolved": ""
+    },
+    {
+     "key": "MT-1231",
+     "summary": "[FE] Hero slider component (autoplay, controls, responsive)",
+     "status": "IN PRODUCTION",
+     "assignee": "Nagamuni Valluri",
+     "due": "2026-08-31",
+     "resolved": ""
+    },
+    {
+     "key": "MT-1232",
+     "summary": "[FE] Category tiles + featured product cards (responsive)",
+     "status": "IN PRODUCTION",
+     "assignee": "Nagamuni Valluri",
+     "due": "2026-08-31",
+     "resolved": ""
+    }
+   ],
+   "overdueCount": 34,
+   "blocked": [],
+   "rollups": [
+    {
+     "key": "MT-1438",
+     "summary": "Uvation Marketplace Category Disable Task List",
+     "status": "In Progress",
+     "done": 36,
+     "total": 38
+    },
+    {
+     "key": "MT-1365",
+     "summary": "RMA – Review and Implement Figma Requirements (Backend) - Email Templates and Flow",
+     "status": "In Progress",
+     "done": 24,
+     "total": 28
+    },
+    {
+     "key": "MT-1314",
+     "summary": "Enhance Checkout, Sales, and Quote Workflow Emails Layouts",
+     "status": "Done",
+     "done": 19,
+     "total": 19
+    },
+    {
+     "key": "MT-1485",
+     "summary": "Product creation on Magento for all AI servers",
+     "status": "In Progress",
+     "done": 15,
+     "total": 16
+    },
+    {
+     "key": "MT-1222",
+     "summary": "As a logged-in user I want to manage orders, quotes, returns, addresses, rewards and credits so I can self-serve",
+     "status": "Done",
+     "done": 13,
+     "total": 13
+    },
+    {
+     "key": "MT-1340",
+     "summary": "P2 - As a logged-in user I want to manage orders, quotes, returns, addresses, rewards and credits so I can self-serve",
+     "status": "Done",
+     "done": 13,
+     "total": 13
+    }
+   ],
+   "openBugs": 3,
+   "bugSeverity": {
+    "Unrated": 3
+   }
+  },
+  {
+   "id": "MR",
+   "name": "Web-Marketing",
+   "projects": [
+    "MR"
+   ],
+   "headline": "Production smoke tests pass on all 250 URLs the sitemap exposes, but more than 500 are expected. 23 Figma defects raised this sprint, 7 fixed. No open item is past its due date.",
+   "updated30": 204,
+   "created30": 153,
+   "done30": 159,
+   "doneInPeriod": 97,
+   "todo": 28,
+   "inprog": 16,
+   "done": 160,
+   "statuses": {
+    "TODO": 28,
+    "In Progress": 13,
+    "Ready for Production": 1,
+    "TESTING": 1,
+    "IN DEVELOPMENT": 1
+   },
+   "stories": {
+    "delivered": 7,
+    "inflight": 5,
+    "planned": 2
+   },
+   "delivered": [
+    {
+     "key": "MR-1066",
+     "summary": "Marketing Production site - Testing",
+     "status": "Done",
+     "assignee": "Saurabh Jain",
+     "due": "2026-09-15",
+     "resolved": "2026-09-17"
+    },
+    {
+     "key": "MR-1076",
+     "summary": "Resolve SonarQube Code Quality and Maintainability Issues",
+     "status": "Done",
+     "assignee": "Vishnu kumar yadav",
+     "due": "2026-09-15",
+     "resolved": "2026-09-16"
+    },
+    {
+     "key": "MR-1067",
+     "summary": "General",
+     "status": "Done",
+     "assignee": "Vishnu kumar yadav",
+     "due": "2026-09-15",
+     "resolved": "2026-09-16"
+    },
+    {
+     "key": "MR-1021",
+     "summary": "General",
+     "status": "Done",
+     "assignee": "Kunal Jangid",
+     "due": null,
+     "resolved": "2026-09-15"
+    },
+    {
+     "key": "MR-755",
+     "summary": "Make contact form visible on page load and add calendar booking (Calendly) to contact page",
+     "status": "Done",
+     "assignee": "Kunal Jangid",
+     "due": null,
+     "resolved": "2026-09-11"
+    },
+    {
+     "key": "MR-753",
+     "summary": "Add waitlist / interest capture form to \"GPU as a Service\" coming soon section",
+     "status": "Done",
+     "assignee": "Kunal Jangid",
+     "due": "2026-09-15",
+     "resolved": "2026-09-08"
+    },
+    {
+     "key": "MR-760",
+     "summary": "Implement GDPR-compliant cookie consent banner and newsletter double opt-in",
+     "status": "Done",
+     "assignee": "Kunal Jangid",
+     "due": "2026-09-15",
+     "resolved": "2026-09-08"
+    }
+   ],
+   "inflight": [
+    {
+     "key": "MR-1168",
+     "summary": "General",
+     "status": "In Progress",
+     "assignee": "Vishnu kumar yadav",
+     "due": "2026-09-30",
+     "resolved": ""
+    },
+    {
+     "key": "MR-1165",
+     "summary": "Playwright Automation – Validate 71 URLs",
+     "status": "In Progress",
+     "assignee": "Kannan Elangovan",
+     "due": null,
+     "resolved": ""
+    },
+    {
+     "key": "MR-1166",
+     "summary": "Site verification and validation",
+     "status": "In Progress",
+     "assignee": "Kannan Elangovan",
+     "due": null,
+     "resolved": ""
+    },
+    {
+     "key": "MR-1167",
+     "summary": "Bug fixes and design improvements",
+     "status": "In Progress",
+     "assignee": "Kunal Jangid",
+     "due": null,
+     "resolved": ""
+    },
+    {
+     "key": "MR-1169",
+     "summary": "New Home Page design & API",
+     "status": "In Progress",
+     "assignee": "Saurabh Jain",
+     "due": null,
+     "resolved": ""
+    }
+   ],
+   "overdue": [],
+   "overdueCount": 0,
+   "blocked": [],
+   "rollups": [
+    {
+     "key": "MR-183",
+     "summary": "Parent last updated before the 30-day window",
+     "status": "",
+     "done": 25,
+     "total": 27
+    },
+    {
+     "key": "MR-1179",
+     "summary": "Figma vs Website – Complete Page-wise UI Validation",
+     "status": "In Progress",
+     "done": 7,
+     "total": 23
+    },
+    {
+     "key": "MR-1066",
+     "summary": "Marketing Production site - Testing",
+     "status": "Done",
+     "done": 10,
+     "total": 10
+    },
+    {
+     "key": "MR-1021",
+     "summary": "General",
+     "status": "Done",
+     "done": 8,
+     "total": 8
+    },
+    {
+     "key": "MR-1067",
+     "summary": "General",
+     "status": "Done",
+     "done": 6,
+     "total": 6
+    },
+    {
+     "key": "MR-1076",
+     "summary": "Resolve SonarQube Code Quality and Maintainability Issues",
+     "status": "Done",
+     "done": 6,
+     "total": 6
+    }
+   ],
+   "openBugs": 5,
+   "bugSeverity": {
+    "Unrated": 5
+   }
+  },
+  {
+   "id": "USP",
+   "name": "Web-Uvation Services Platform",
+   "projects": [
+    "USP"
+   ],
+   "headline": "Highest throughput in scope, with 400 issues closed in 30 days. That includes 278 older issues closed in one clean-up on 11 Sep. 72 bugs are still open, 2 of them S1. Platform Security & Access Control is a month past due, and two items are marked as blockers.",
+   "updated30": 552,
+   "created30": 192,
+   "done30": 400,
+   "doneInPeriod": 361,
+   "todo": 74,
+   "inprog": 70,
+   "done": 408,
+   "statuses": {
+    "TODO": 71,
+    "Deployed In Prod": 46,
+    "In Progress": 16,
+    "Deployed In Dev": 6,
+    "BlOCKER": 2,
+    "Tested In Dev": 2,
+    "Backlog": 1
+   },
+   "stories": {
+    "delivered": 47,
+    "inflight": 4,
+    "planned": 28
+   },
+   "delivered": [
+    {
+     "key": "USP-4081",
+     "summary": "Automation Onboarding & Familiarisation",
+     "status": "Done",
+     "assignee": "Andrei Momita",
+     "due": "2026-09-16",
+     "resolved": "2026-09-17"
+    },
+    {
+     "key": "USP-4127",
+     "summary": "Unify the subscription lifecycle: fold instant purchases into the build flow",
+     "status": "Done",
+     "assignee": "Cășvan Marcel",
+     "due": "2026-09-30",
+     "resolved": "2026-09-17"
+    },
+    {
+     "key": "USP-4102",
+     "summary": "Draft and publish MSA contract comments",
+     "status": "Done",
+     "assignee": "Cășvan Marcel",
+     "due": "2026-09-12",
+     "resolved": "2026-09-17"
+    },
+    {
+     "key": "USP-4027",
+     "summary": "[FE] - Remove AI Assistant Tab",
+     "status": "Done",
+     "assignee": "Cășvan Marcel",
+     "due": "2026-09-15",
+     "resolved": "2026-09-17"
+    },
+    {
+     "key": "USP-4026",
+     "summary": "[IAM/RBAC] Contract collaboration for customer team members (view + comment; signature)",
+     "status": "Done",
+     "assignee": "Cășvan Marcel",
+     "due": "2026-09-15",
+     "resolved": "2026-09-17"
+    },
+    {
+     "key": "USP-4050",
+     "summary": "General",
+     "status": "Done",
+     "assignee": "Aman prakash",
+     "due": "2026-09-15",
+     "resolved": "2026-09-17"
+    },
+    {
+     "key": "USP-3999",
+     "summary": "Unplug Rewards USP Wide",
+     "status": "Done",
+     "assignee": "Silviu Oltean",
+     "due": "2026-09-15",
+     "resolved": "2026-09-16"
+    },
+    {
+     "key": "USP-3518",
+     "summary": "Operational Docs (Bare Minimum)",
+     "status": "Done",
+     "assignee": "Livian Stefan Stan",
+     "due": "2026-08-30",
+     "resolved": "2026-09-11"
+    }
+   ],
+   "inflight": [
+    {
+     "key": "USP-3572",
+     "summary": "Platform Security & Access Control",
+     "status": "In Progress",
+     "assignee": "Cășvan Marcel",
+     "due": "2026-08-15",
+     "resolved": ""
+    },
+    {
+     "key": "USP-4028",
+     "summary": "Support Hub",
+     "status": "In Progress",
+     "assignee": "Silviu Oltean",
+     "due": "2026-09-30",
+     "resolved": ""
+    },
+    {
+     "key": "USP-4179",
+     "summary": "General",
+     "status": "In Progress",
+     "assignee": "r.jaiswal",
+     "due": "2026-09-30",
+     "resolved": ""
+    },
+    {
+     "key": "USP-4205",
+     "summary": "MSA collaboration & IAM: author names in comment threads, no-shift review rail + phone commenting + guided tour, loop-back links",
+     "status": "In Progress",
+     "assignee": "Cășvan Marcel",
+     "due": "2026-10-02",
+     "resolved": ""
+    }
+   ],
+   "overdue": [
+    {
+     "key": "USP-3572",
+     "summary": "Platform Security & Access Control",
+     "status": "In Progress",
+     "assignee": "Cășvan Marcel",
+     "due": "2026-08-15",
+     "resolved": ""
+    },
+    {
+     "key": "USP-4098",
+     "summary": "Engineer UI",
+     "status": "In Progress",
+     "assignee": "Silviu Oltean",
+     "due": "2026-09-11",
+     "resolved": ""
+    },
+    {
+     "key": "USP-4097",
+     "summary": "Customer UI",
+     "status": "In Progress",
+     "assignee": "Cășvan Marcel",
+     "due": "2026-09-15",
+     "resolved": ""
+    },
+    {
+     "key": "USP-4124",
+     "summary": "Remove B2C JWT profile claim usage — use Salesforce identity data",
+     "status": "In Progress",
+     "assignee": "Aman prakash",
+     "due": "2026-09-15",
+     "resolved": ""
+    },
+    {
+     "key": "USP-4200",
+     "summary": "  Invitation emails failures in notification backend",
+     "status": "In Progress",
+     "assignee": "Gourav Agnani",
+     "due": "2026-09-18",
+     "resolved": ""
+    },
+    {
+     "key": "USP-4214",
+     "summary": "MSA: signer details come from the signed-in user's Identity profile again",
+     "status": "Deployed In Dev",
+     "assignee": "Cășvan Marcel",
+     "due": "2026-09-22",
+     "resolved": ""
+    }
+   ],
+   "overdueCount": 6,
+   "blocked": [
+    {
+     "key": "USP-3795",
+     "summary": "GPU as a Service",
+     "status": "BlOCKER",
+     "assignee": "Anshul Bhargava",
+     "due": "2026-09-30",
+     "resolved": ""
+    },
+    {
+     "key": "USP-3858",
+     "summary": "start date and end date of a subscription page",
+     "status": "BlOCKER",
+     "assignee": "Shivam Dhoundiyal",
+     "due": "2026-09-30",
+     "resolved": ""
+    }
+   ],
+   "rollups": [
+    {
+     "key": "USP-1996",
+     "summary": "Parent last updated before the 30-day window",
+     "status": "",
+     "done": 102,
+     "total": 103
+    },
+    {
+     "key": "USP-3510",
+     "summary": "Parent last updated before the 30-day window",
+     "status": "",
+     "done": 28,
+     "total": 29
+    },
+    {
+     "key": "USP-3605",
+     "summary": "Parent last updated before the 30-day window",
+     "status": "",
+     "done": 10,
+     "total": 22
+    },
+    {
+     "key": "USP-3482",
+     "summary": "Parent last updated before the 30-day window",
+     "status": "",
+     "done": 15,
+     "total": 20
+    },
+    {
+     "key": "USP-3491",
+     "summary": "Parent last updated before the 30-day window",
+     "status": "",
+     "done": 5,
+     "total": 17
+    },
+    {
+     "key": "USP-4050",
+     "summary": "General",
+     "status": "Done",
+     "done": 12,
+     "total": 12
+    }
+   ],
+   "openBugs": 72,
+   "bugSeverity": {
+    "S1": 2,
+    "S2": 10,
+    "S3": 40,
+    "Unrated": 20
+   }
+  },
+  {
+   "id": "UC",
+   "name": "Uvation Conversational AI",
+   "projects": [
+    "UC"
+   ],
+   "headline": "Five delivery stories are done: the Marketing, Services Platform and Marketplace chatbots, conversational UX and the admin dashboard. Book a Meeting is overdue since 4 Sep. Eight new agent stories are in To Do with no due dates.",
+   "updated30": 91,
+   "created30": 64,
+   "done30": 26,
+   "doneInPeriod": 15,
+   "todo": 50,
+   "inprog": 14,
+   "done": 27,
+   "statuses": {
+    "To Do": 50,
+    "In Dev": 10,
+    "IN PROGRESS": 4
+   },
+   "stories": {
+    "delivered": 5,
+    "inflight": 3,
+    "planned": 8
+   },
+   "delivered": [
+    {
+     "key": "UC-20",
+     "summary": "Admin & support dashboard — monitoring, visitor records, analytics, content gaps",
+     "status": "Done",
+     "assignee": "Nareddy Shiva Prasad Reddy",
+     "due": "2026-09-15",
+     "resolved": "2026-09-16"
+    },
+    {
+     "key": "UC-18",
+     "summary": "Cross-cutting conversational UX — refusal, multi-turn, feedback, language, mobile",
+     "status": "Done",
+     "assignee": "Ankit Saxena",
+     "due": "2026-09-15",
+     "resolved": "2026-09-16"
+    },
+    {
+     "key": "UC-16",
+     "summary": "USP chatbot — self-service how-to & support deflection with handoff",
+     "status": "Done",
+     "assignee": "Ankit Saxena",
+     "due": "2026-09-15",
+     "resolved": "2026-09-16"
+    },
+    {
+     "key": "UC-17",
+     "summary": "Marketplace chatbot — product discovery with clickable product cards",
+     "status": "Done",
+     "assignee": "Ankit Saxena",
+     "due": "2026-08-31",
+     "resolved": "2026-09-02"
+    },
+    {
+     "key": "UC-15",
+     "summary": "Marketing chatbot — grounded solution answers & lead capture",
+     "status": "Done",
+     "assignee": "Ankit Saxena",
+     "due": "2026-08-31",
+     "resolved": "2026-09-02"
+    }
+   ],
+   "inflight": [
+    {
+     "key": "UC-161",
+     "summary": "Book a Meeting — Microsoft Graph scheduling with round-robin CSM assignment & cancellation flow",
+     "status": "In Dev",
+     "assignee": "Anshul Bhargava",
+     "due": "2026-09-04",
+     "resolved": ""
+    },
+    {
+     "key": "UC-215",
+     "summary": "Dashboard Teams app for CSM",
+     "status": "IN PROGRESS",
+     "assignee": "Ankit Saxena",
+     "due": "2026-09-30",
+     "resolved": ""
+    },
+    {
+     "key": "UC-216",
+     "summary": "logged in user marketplace",
+     "status": "IN PROGRESS",
+     "assignee": "Nareddy Shiva Prasad Reddy",
+     "due": null,
+     "resolved": ""
+    }
+   ],
+   "overdue": [
+    {
+     "key": "UC-161",
+     "summary": "Book a Meeting — Microsoft Graph scheduling with round-robin CSM assignment & cancellation flow",
+     "status": "In Dev",
+     "assignee": "Anshul Bhargava",
+     "due": "2026-09-04",
+     "resolved": ""
+    },
+    {
+     "key": "UC-162",
+     "summary": "Design & technical spec — Book a Meeting & cancellation flow",
+     "status": "In Dev",
+     "assignee": "Anshul Bhargava",
+     "due": "2026-09-04",
+     "resolved": ""
+    },
+    {
+     "key": "UC-163",
+     "summary": "Implementation — booking flow (name/email/timezone capture, round-robin slot selection, confirmation)",
+     "status": "In Dev",
+     "assignee": "Anshul Bhargava",
+     "due": "2026-09-04",
+     "resolved": ""
+    },
+    {
+     "key": "UC-164",
+     "summary": "Implementation — cancellation & email verification flow",
+     "status": "In Dev",
+     "assignee": "Anshul Bhargava",
+     "due": "2026-09-04",
+     "resolved": ""
+    },
+    {
+     "key": "UC-165",
+     "summary": "Integration & security review — MS Bookings auth, input validation & verification-code handling",
+     "status": "In Dev",
+     "assignee": "Anshul Bhargava",
+     "due": "2026-09-04",
+     "resolved": ""
+    },
+    {
+     "key": "UC-166",
+     "summary": "QA & validation — end-to-end booking & cancellation test pass",
+     "status": "In Dev",
+     "assignee": "Anshul Bhargava",
+     "due": "2026-09-04",
+     "resolved": ""
+    }
+   ],
+   "overdueCount": 6,
+   "blocked": [],
+   "rollups": [
+    {
+     "key": "UC-8",
+     "summary": "Parent last updated before the 30-day window",
+     "status": "",
+     "done": 4,
+     "total": 6
+    },
+    {
+     "key": "UC-161",
+     "summary": "Book a Meeting — Microsoft Graph scheduling with round-robin CSM assignment & cancellation flow",
+     "status": "In Dev",
+     "done": 0,
+     "total": 5
+    },
+    {
+     "key": "UC-167",
+     "summary": "Recommendation Agent — complementary product suggestions on add-to-cart",
+     "status": "To Do",
+     "done": 0,
+     "total": 5
+    },
+    {
+     "key": "UC-168",
+     "summary": "Quote Follow-Up Agent — scheduled low-pressure re-engagement after RFQ/quote",
+     "status": "To Do",
+     "done": 0,
+     "total": 5
+    },
+    {
+     "key": "UC-169",
+     "summary": "CSM AI Product Discovery Engine & Quote Console",
+     "status": "To Do",
+     "done": 0,
+     "total": 5
+    },
+    {
+     "key": "UC-170",
+     "summary": "Identity & Authorization Gateway — structural tool-registry enforcement",
+     "status": "To Do",
+     "done": 0,
+     "total": 5
+    }
+   ],
+   "openBugs": 0,
+   "bugSeverity": {}
   }
  ]
 }

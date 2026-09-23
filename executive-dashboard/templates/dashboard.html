@@ -190,6 +190,27 @@ ul.clean{margin:0;padding-left:18px;display:grid;gap:6px;font-size:14px;color:va
 #tip{position:fixed;z-index:20;pointer-events:none;background:var(--ink);color:var(--surface);font-size:12.5px;line-height:1.4;padding:6px 9px;border-radius:6px;max-width:260px;box-shadow:0 4px 14px rgb(0 0 0 / .18)}
 [data-tip]{cursor:default}
 
+.scorecards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,540px),1fr));gap:16px}
+.scorecards>*{min-width:0}
+.sc{display:grid;gap:12px;align-content:start}
+.sc header{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline}
+.sc .boards{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+.sc .head{font-size:13.5px;color:var(--ink-2)}
+.sc .nums{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.sc .nums div{background:var(--surface-2);padding:8px 10px;display:grid}
+.sc .nums b{font-family:var(--font-display);font-size:20px;font-weight:600;font-variant-numeric:tabular-nums}
+.sc .nums span{font-size:11.5px;color:var(--muted)}
+.sc h4{margin:0;font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:500}
+.sc .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px 18px}
+.sc ul{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:5px;font-size:13px}
+.sc li{display:grid;grid-template-columns:auto 1fr;gap:0 8px;color:var(--ink-2)}
+.sc li .m{grid-column:2;font-size:11.5px;color:var(--muted)}
+.sc .roll{display:grid;grid-template-columns:minmax(0,1fr) 110px 44px;gap:8px;align-items:center;font-size:12.5px;color:var(--ink-2)}
+.sc .roll .bar{height:8px;border-radius:4px;background:var(--rule-2);overflow:hidden}
+.sc .roll .bar i{display:block;height:100%;background:var(--seq-3)}
+.sc .roll span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sc .empty{font-size:12.5px;color:var(--muted);margin-top:4px}
+@media (max-width:640px){ .sc .nums{grid-template-columns:repeat(3,1fr)} }
 footer.notes{font-size:13px;color:var(--muted);display:grid;gap:8px;max-width:90ch}
 footer.notes code{font-family:var(--font-mono);font-size:12px;background:var(--surface-2);border:1px solid var(--rule);padding:1px 5px;border-radius:4px;color:var(--ink-2)}
 
@@ -275,6 +296,7 @@ footer.notes code{font-family:var(--font-mono);font-size:12px;background:var(--s
       <h2>Project-wise accomplishments</h2>
       <p class="ask"><b>Asked for:</b> real progress per project. For Marketplace, what reached UAT and production, what is pending, open issues and the completion date. For Marketing, testing done against total scope.</p>
     </div>
+    <div class="scorecards" id="scorecards"></div>
 
     <div class="panel">
       <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline">
@@ -359,7 +381,7 @@ const D = /*__DATA__*/null;
   const snap = D.meta.snapshotDate;
   $("#eyebrow").textContent = `Programme status · Jira snapshot ${dshort(snap)} 2026`;
   $("#title").textContent = D.title;
-  $("#lede").textContent = `All ${D.kpis.projectsVisible} Jira projects on ${D.meta.site}, reviewed against the four points raised on the last status report. Figures come from Jira and Tempo worklogs. The judgements come from reading the tickets.`;
+  $("#lede").textContent = (D.scope ? `${D.scope.label}, from Jira on ${D.meta.site}. ${D.scope.note||""} ` : `All ${D.kpis.projectsVisible} Jira projects on ${D.meta.site}. `) + `Reviewed against the four points raised on the last status report. Figures come from Jira and Tempo worklogs. The judgements come from reading the tickets.`;
   $("#meta").innerHTML = [
     `<span><b>Window</b> ${esc(D.period.label)}</span>`,
     `<span><b>Issues pulled</b> ${fmt(D.kpis.issuesUpdated30)} updated in 30 days</span>`,
@@ -372,7 +394,7 @@ const D = /*__DATA__*/null;
   const totalProducts = mp.brands.reduce((a,b)=>a+b.products,0);
   const escal = D.register.filter(r=>r.kind!=="Epic" && r.rag==="red").length;
   const kp = [
-    {v:fmt(D.kpis.issuesUpdated30), l:"Issues moved, last 30 days", s:`${D.kpis.projectsActive} of ${D.kpis.projectsVisible} projects active`},
+    {v:fmt(D.kpis.issuesUpdated30), l:"Issues moved, last 30 days", s: D.scope ? `${D.scorecards.length} programmes, ${D.kpis.projectsInScope} Jira boards` : `${D.kpis.projectsActive} of ${D.kpis.projectsVisible} projects active`},
     {v:fmt(D.kpis.doneInPeriod), l:"Issues completed 9–22 Sep", s:`${fmt(D.kpis.done30)} in 30 days`},
     {v:`0<small> / ${totalProducts}</small>`, l:"AI-server listings live", s:"All migrated to production, all disabled", c:"bad"},
     {v:fmt(D.kpis.overdueOpen), l:"Open issues past due date", s:"Among issues active in 30 days", c:"warn"},
@@ -407,7 +429,7 @@ const D = /*__DATA__*/null;
 
   // risks
   const rs = D.registerSummary;
-  $("#risk-lede").innerHTML = `The Jira register holds <b>${rs.risks} risks</b> and <b>${rs.dependencies} dependencies</b> across Marketplace, Services Platform, Devops and Email Notifications. It was created on 7 Jul. <b>${rs.stale30}</b> items have not been updated in over 30 days, and <b>${rs.unassigned}</b> have no Jira assignee. Only the Services Platform set is actively owned.`;
+  $("#risk-lede").innerHTML = `The Jira register holds <b>${rs.risks} risks</b> and <b>${rs.dependencies} dependencies</b> across ${[...new Set(D.register.filter(r=>r.kind!=="Epic").map(r=>r.projectName))].join(" and ")}${D.scope?", the in-scope projects that keep one":""}. It was created on 7 Jul. <b>${rs.stale30}</b> items have not been updated in over 30 days, and <b>${rs.unassigned}</b> have no Jira assignee. Only the Services Platform set is actively owned.`;
   const vgroup = v => v.startsWith("Escalate")?"Escalate":v.startsWith("Close")?"Close":v.startsWith("Re-assess")?"Re-assess":"Keep";
   const items = D.register.filter(r=>r.kind!=="Epic");
   const groups = ["All","Escalate","Keep","Re-assess","Close"];
@@ -456,6 +478,37 @@ const D = /*__DATA__*/null;
       ${i.keys.length?`<div class="keys">Evidence: ${i.keys.map(J).join(", ")}${i.owner?` · <span class="muted" style="font-family:var(--font-body)">Owner: ${esc(i.owner)}</span>`:""}</div>`:`<div class="keys muted" style="font-family:var(--font-body)">No ticket exists${i.owner?` · Owner: ${esc(i.owner)}`:""}</div>`}
     </article>`).join("");
 
+  // scorecards
+  const scHost = $("#scorecards");
+  if (!D.scorecards || !D.scorecards.length) { scHost.hidden = true; } else {
+    const li = (i, meta) => `<li><span>${J(i.key)}</span><span>${esc(i.summary)}</span><span class="m">${meta}</span></li>`;
+    const list = (arr, metaFn, empty) => arr.length ? `<ul>${arr.map(i=>li(i, metaFn(i))).join("")}</ul>` : `<p class="empty">${esc(empty)}</p>`;
+    scHost.innerHTML = D.scorecards.map(c=>{
+      const sev = Object.entries(c.bugSeverity).map(([k,v])=>`<span class="chip ${k==="S1"?"hi":k==="S2"?"md":""}">${esc(k)} ${v}</span>`).join(" ");
+      const stack = `<div class="stack">${c.todo?`<span class="s1" style="flex:${c.todo}" data-tip="${c.todo} to do"></span>`:""}${c.inprog?`<span class="s2" style="flex:${c.inprog}" data-tip="${c.inprog} in progress"></span>`:""}${c.done?`<span class="s3" style="flex:${c.done}" data-tip="${c.done} done"></span>`:""}</div>`;
+      return `<article class="panel sc">
+        <header><h3>${esc(c.name)}</h3><span class="boards">${c.projects.join(" + ")}</span></header>
+        <p class="head">${keyify(c.headline)}</p>
+        <div class="nums">
+          <div><b>${fmt(c.updated30)}</b><span>moved, 30 d</span></div>
+          <div><b>${fmt(c.done30)}</b><span>closed, 30 d</span></div>
+          <div><b>${fmt(c.doneInPeriod)}</b><span>closed 9–22 Sep</span></div>
+          <div><b style="${c.overdueCount?"color:var(--bad)":""}">${c.overdueCount}</b><span>open past due</span></div>
+          <div><b>${c.openBugs}</b><span>open bugs</span></div>
+        </div>
+        <div>${stack}<span class="sub muted" style="font-size:12px">${c.todo} to do · ${c.inprog} in progress · ${c.done} done, among issues moved in 30 days${c.openBugs?` · bugs by severity: ${sev}`:""}</span></div>
+        <div class="cols">
+          <div><h4>Stories delivered, 30 d · ${c.stories.delivered}</h4>${list(c.delivered, i=>`${esc(i.assignee||"Unassigned")} · closed ${dshort(i.resolved)}`, "None in the last 30 days.")}</div>
+          <div><h4>In flight · ${c.stories.inflight}, planned · ${c.stories.planned}</h4>${list(c.inflight, i=>`${esc(i.status)} · ${esc(i.assignee||"Unassigned")}${i.due?` · due ${dshort(i.due)}`:" · no due date"}`, "No stories in progress.")}</div>
+        </div>
+        <div class="cols">
+          <div><h4>Past due · ${c.overdueCount}</h4>${list(c.overdue, i=>`${esc(i.status)} · due ${dshort(i.due)} · ${esc(i.assignee||"Unassigned")}`, "Nothing open is past its due date.")}</div>
+          <div><h4>Blocked or on hold · ${c.blocked.length}</h4>${list(c.blocked, i=>`${esc(i.status)} · ${esc(i.assignee||"Unassigned")}`, "Nothing is marked blocked.")}</div>
+        </div>
+        <div><h4>Largest parents, child tasks done</h4><div style="display:grid;gap:6px;margin-top:8px">${c.rollups.map(r=>`<div class="roll"><span title="${esc(r.summary)}">${J(r.key)} ${esc(r.summary)}</span><div class="bar" data-tip="${r.done} of ${r.total} done"><i style="width:${r.done/r.total*100}%"></i></div><span class="num" style="text-align:right">${r.done}/${r.total}</span></div>`).join("")}</div></div>
+      </article>`; }).join("");
+  }
+
   // marketplace
   $("#mp-eta").textContent = "Target: " + mp.expectedCompletion.split(" (")[0];
   $("#mp-summary").textContent = mp.summary + " Expected completion: " + mp.expectedCompletion + ".";
@@ -493,7 +546,7 @@ const D = /*__DATA__*/null;
     [`${genericPct}%`, `of ${fmt(q.worklogsInPeriod)} worklogs say only “time-tracking”. The SOP makes a description mandatory.`],
     [`${noEstPct}%`, `of ${q.ticketsWithTime} tickets with logged time have no Original Estimate, so planned versus actual cannot be measured.`],
     [`${q.overheadTicketsTruncated.length}`, `overhead tickets hide recent meeting and leave time from Jira.`],
-    [`${q.projectsWithNoTempoHours.length}`, `active projects have no Tempo hours in Jira: ${q.projectsWithNoTempoHours.map(p=>p.name).join(", ")}.`],
+    q.projectsWithNoTempoHours.length ? [`${q.projectsWithNoTempoHours.length}`, `active projects have no Tempo hours in Jira: ${q.projectsWithNoTempoHours.map(p=>p.name).join(", ")}.`] : [`${D.projects.length}`, `boards in scope, and every one has Tempo hours in Jira for the window.`],
     [`${fmt(Math.round(q.unattributedHours))} h`, `logged on unassigned tickets, which cannot be credited to anyone.`]
   ].map(([b,s])=>`<div><b>${b}</b><span>${esc(s)}</span></div>`).join("");
   $("#cap-note").textContent = `Capacity is ${cap} hours per full-time person for the window: ${D.period.workingDays} working days at ${cp.hoursPerDay} hours. The SOP expects ${cp.fteDevHoursPerFortnight} of every ${cp.fteHoursPerFortnight} hours on development and sets a utilisation target of ${cp.utilisationTarget}. Contractors have half this capacity. Contract status is not in Jira, so every row uses the full-time figure.`;
@@ -535,7 +588,7 @@ const D = /*__DATA__*/null;
   // method
   $("#method").innerHTML = `
     <p><b>Sources.</b> Jira Cloud site ${esc(D.meta.site)}, all ${D.kpis.projectsVisible} visible projects, pulled ${dshort(snap)} 2026. Issues: <code>${esc(D.meta.queries.issues)}</code>, ${fmt(D.kpis.issuesUpdated30)} rows, matching Jira's own count. Worklogs: <code>${esc(D.meta.queries.worklogs)}</code>, ${fmt(D.meta.counts.worklogIssues)} issues. Register: <code>${esc(D.meta.queries.register)}</code>. Confluence: the Tempo logging SOP and the Product Research &amp; Upload 30/60/90 plan.</p>
-    <p><b>Open issues all time.</b> ${fmt(D.kpis.openAllTime)} issues are not done across all projects. ${fmt(D.projects.find(p=>p.key==="HC")?.todo||0)} of the recent ones are the Hamara CRM backlog, created in bulk and not yet started.</p>
+    ${D.scope ? `<p><b>Scope.</b> ${esc(D.scope.label)}: Jira boards ${D.scope.projects.map(k=>`<code>${esc(k)}</code>`).join(", ")}. ${esc(D.scope.note||"")} Other projects are left out of every figure, including the risk register and hours. Rebuild with <code>--scope all</code> for the whole portfolio.</p>` : `<p><b>Open issues all time.</b> ${fmt(D.kpis.openAllTime)} issues are not done across all projects. ${fmt(D.projects.find(p=>p.key==="HC")?.todo||0)} of the recent ones are the Hamara CRM backlog, created in bulk and not yet started.</p>`}
     <p><b>What Jira cannot show.</b> Who logged each Tempo hour, because Tempo writes as its own app account. Recent overhead time on the ${q.overheadTicketsTruncated.length} shared Uvation Projects tickets (${q.overheadTicketsTruncated.join(", ")}), because Jira returns only their oldest 20 worklogs. Anmol Srivastava's testing report and the status-report risk list, which are outside Jira and Confluence.</p>
     <p><b>Judgements.</b> Verdicts, root causes and suggested owners are the reviewer's reading of the tickets and comments cited next to them. They live in <code>content/curated.json</code> and should be confirmed with each owner.</p>
     <p><b>Refresh.</b> Run <code>scripts/fetch_jira.py</code> with Jira credentials, and optionally a Tempo token for true per-person hours, then <code>scripts/build_dashboard.py</code>.</p>`;
