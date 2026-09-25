@@ -10,6 +10,7 @@ Writes
   reports/<date>/snapshot.json.gz    the in-scope Jira snapshot the figures came from
   reports/history.json               one row of headline figures per stored day
   reports/index.html                 list of every stored report
+  dist/calendar/<date>.json          one report per weekday for the calendar on the review page
 Also refreshes dist/index.html and dist/daily.html (the pages that get published).
 """
 import argparse
@@ -45,7 +46,7 @@ def main():
     run("scripts/build_dashboard.py", "--snapshot", str(snap), "--scope", a.scope)
     run("scripts/build_daily.py", "--snapshot", str(snap), "--scope", a.scope)
     # Stored copies (links point at each other inside the dated folder)
-    run("scripts/build_dashboard.py", "--snapshot", str(snap), "--scope", a.scope, "--out", str(out / "index.html"), "--daily-url", "daily.html")
+    run("scripts/build_dashboard.py", "--snapshot", str(snap), "--scope", a.scope, "--out", str(out / "index.html"), "--daily-url", "daily.html", "--no-calendar")
     run("scripts/build_daily.py", "--snapshot", str(snap), "--scope", a.scope, "--out", str(out / "daily.html"), "--review-url", "index.html")
 
     data = json.loads((out / "dashboard-data.json").read_text())
@@ -76,6 +77,10 @@ def main():
     hist_p.write_text(json.dumps(hist, indent=1))
     write_index(hist)
     print(f"stored reports/{date}/ ({len(hist)} report(s) in history)")
+
+    # Calendar: one report per weekday, then rebuild the published page so its calendar includes today.
+    run("scripts/build_calendar.py", "--scope", a.scope)
+    run("scripts/build_dashboard.py", "--snapshot", str(snap), "--scope", a.scope)
 
 
 def write_index(hist):

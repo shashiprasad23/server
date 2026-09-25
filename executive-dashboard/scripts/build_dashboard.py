@@ -12,7 +12,10 @@ Output
   dist/index.html               self-contained page (data embedded)
 
 Usage
-  python3 scripts/build_dashboard.py [--snapshot data/snapshot] [--out dist/index.html] [--scope content/scope.json|all]
+  python3 scripts/build_dashboard.py [--snapshot data/snapshot] [--out dist/index.html] [--scope content/scope.json|all] [--no-calendar]
+
+The review page carries a report calendar: one entry per weekday, built by scripts/build_calendar.py
+into dist/calendar/<date>.json and published next to the page.
 """
 import argparse
 import collections
@@ -318,6 +321,7 @@ def main():
     ap.add_argument("--out", default=str(ROOT / "dist" / "index.html"))
     ap.add_argument("--scope", default=str(ROOT / "content" / "scope.json"), help="scope JSON file, or 'all' for every project")
     ap.add_argument("--daily-url", default=None, help="override the link to the day-by-day page")
+    ap.add_argument("--no-calendar", action="store_true", help="leave out the report calendar (for stored copies)")
     args = ap.parse_args()
     data = build(pathlib.Path(args.snapshot), load_scope(args.scope))
     if args.daily_url is not None:
@@ -326,7 +330,14 @@ def main():
     payload = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     out = pathlib.Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(tpl.replace("/*__DATA__*/null", payload), encoding="utf-8")
+    cal = []
+    if not args.no_calendar:
+        import build_calendar  # local module; lists the dates the calendar offers
+        cal = build_calendar.calendar_dates()
+        if cal and data["meta"]["snapshotDate"] not in {c["date"] for c in cal}:
+            cal = []  # the page's own date has no stored run yet; store_report rebuilds once it does
+    page = tpl.replace("/*__DATA__*/null", payload).replace("/*__CAL__*/[]", json.dumps(cal, separators=(",", ":")))
+    out.write_text(page, encoding="utf-8")
     (out.parent / "dashboard-data.json").write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
     k = data["kpis"]
     print(f"wrote {out} ({out.stat().st_size // 1024} KB): {k['issuesUpdated30']} issues, "

@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>Portfolio Status Review</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +49,37 @@ p{margin:0}
 .lede{color:var(--ink-2);max-width:72ch}
 
 /* header */
-header.top{padding-block:32px 20px;display:grid;gap:10px}
+header.top{padding-block:32px 20px;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px 36px;align-items:start}
+header.top .intro{display:grid;gap:10px;min-width:0}
+@media (max-width:880px){ header.top{grid-template-columns:minmax(0,1fr)} }
+
+/* report calendar */
+.cal{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:12px 12px 10px;display:grid;gap:8px;width:100%;max-width:360px}
+.cal[hidden]{display:none}
+.cal-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.cal-head b{font-size:14px;font-weight:600}
+.cal-head .t{display:grid;gap:1px}
+.cal-head .t span{font-size:11.5px;color:var(--muted)}
+.cal-head button{font:inherit;font-size:16px;line-height:1;border:1px solid var(--rule);background:var(--surface);color:var(--ink-2);width:32px;height:32px;border-radius:8px;cursor:pointer}
+.cal-head button:disabled{opacity:.35;cursor:default}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;text-align:center}
+.cal-grid .dow{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding-bottom:2px}
+.cal-grid .d{height:36px;display:grid;place-items:center;font-size:13px;border-radius:7px;font-variant-numeric:tabular-nums;position:relative}
+.cal-grid span.d{color:var(--muted);opacity:.5}
+.cal-grid button.d{font:inherit;font-size:13px;border:1px solid var(--rule);background:var(--surface-2);color:var(--ink);cursor:pointer;padding:0}
+.cal-grid button.d:hover{border-color:var(--ink-2)}
+.cal-grid button.d.run{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+.cal-grid button.d[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.cal-grid button.d.busy{opacity:.55;cursor:progress}
+.cal-legend{display:flex;gap:12px;flex-wrap:wrap;font-size:11.5px;color:var(--muted)}
+.cal-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-2px;margin-right:5px;border:1px solid var(--rule);background:var(--surface-2)}
+.cal-legend i.run{background:var(--accent-soft);border-color:var(--accent)}
+.cal-status{font-size:12px;color:var(--muted);min-height:1.2em}
+.cal-status.err{color:var(--bad)}
+.asof{margin:0 0 20px;display:flex;gap:10px 16px;flex-wrap:wrap;align-items:flex-start;justify-content:space-between}
+.asof[hidden]{display:none}
+.asof p{max-width:92ch}
+.asof button{font:inherit;font-size:13px;border:1px solid var(--rule);background:var(--surface);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
 header.top .meta{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--muted);font-size:13px}
 header.top .meta span b{color:var(--ink-2);font-weight:500}
 
@@ -226,10 +257,22 @@ footer.notes code{font-family:var(--font-mono);font-size:12px;background:var(--s
 </style>
 
 <header class="top wrap">
-  <div class="eyebrow" id="eyebrow">Programme status</div>
-  <h1 id="title">Portfolio Status Review</h1>
-  <p class="lede" id="lede"></p>
-  <div class="meta" id="meta"></div>
+  <div class="intro">
+    <div class="eyebrow" id="eyebrow">Programme status</div>
+    <h1 id="title">Portfolio Status Review</h1>
+    <p class="lede" id="lede"></p>
+    <div class="meta" id="meta"></div>
+  </div>
+  <aside class="cal" id="cal" aria-label="Report calendar" hidden>
+    <div class="cal-head">
+      <button type="button" id="cal-prev" aria-label="Previous month">‹</button>
+      <div class="t" style="text-align:center"><b id="cal-month"></b><span>Pick a date to open its report</span></div>
+      <button type="button" id="cal-next" aria-label="Next month">›</button>
+    </div>
+    <div class="cal-grid" id="cal-grid"></div>
+    <div class="cal-legend"><span><i class="run"></i>Evening run</span><span><i></i>Rebuilt from Jira</span></div>
+    <p class="cal-status" id="cal-status" aria-live="polite"></p>
+  </aside>
 </header>
 
 <nav class="sections" aria-label="Sections">
@@ -244,6 +287,7 @@ footer.notes code{font-family:var(--font-mono);font-size:12px;background:var(--s
 </nav>
 
 <main class="wrap">
+  <div class="callout warn asof" id="asof" hidden></div>
   <section class="block" id="summary">
     <div class="kpis" id="kpis"></div>
     <div class="two">
@@ -367,7 +411,8 @@ footer.notes code{font-family:var(--font-mono);font-size:12px;background:var(--s
 <div id="tip" hidden></div>
 
 <script>
-const D = /*__DATA__*/null;
+let D = /*__DATA__*/null;
+const CAL = /*__CAL__*/[];
 (function(){
   const $ = s => document.querySelector(s);
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -376,15 +421,37 @@ const D = /*__DATA__*/null;
   const keyify = t => esc(t).replace(/\b([A-Z]{2,6}-\d{1,5})\b/g, m => J(m));
   const pill = (rag, text) => `<span class="pill ${rag||""}">${esc(text)}</span>`;
   const dshort = iso => { if(!iso) return "—"; const d = new Date(iso+"T00:00:00"); return d.toLocaleDateString("en-GB",{day:"numeric",month:"short"}); };
+  const dlong = iso => new Date(iso+"T00:00:00").toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short",year:"numeric"});
+  const LATEST = D;
+
+  function render(){
 
   document.querySelectorAll(".pshort").forEach(el=>el.textContent=D.period.short);
   // header
   const snap = D.meta.snapshotDate;
-  $("#eyebrow").textContent = `Programme status · Jira snapshot ${dshort(snap)} 2026`;
+  const asOf = D.asOf || {kind:"run", date:snap};
+  $("#eyebrow").textContent = asOf.kind==="rebuilt" ? `Programme status · rebuilt as of ${dlong(snap)}` : `Programme status · Jira snapshot ${dlong(snap)}`;
+  const banner = $("#asof");
+  if (D === LATEST) { banner.hidden = true; banner.innerHTML = ""; }
+  else {
+    const back = `<button type="button" id="asof-back">Back to the latest report, ${dshort(LATEST.meta.snapshotDate)}</button>`;
+    let t;
+    if (asOf.kind === "rebuilt") {
+      t = `<b>Rebuilt report for ${esc(dlong(snap))}.</b> No evening run was saved that day, so these figures come from the ${esc(dshort(asOf.base))} Jira snapshot wound back to the end of ${esc(dshort(snap))}: work created later is left out, and work finished later counts as open. Tested against the saved 23 Sep run, rebuilt totals land within about 5%. Risk verdicts, the issues log and programme notes are from the ${esc(dshort(asOf.base))} report and can mention later events.`;
+      const lookback = new Date(new Date(snap+"T00:00:00").getTime()-30*864e5).toISOString().slice(0,10);
+      if (asOf.issuesFrom && lookback < asOf.issuesFrom) t += ` The 30-day counts only include issues touched since ${esc(dshort(asOf.issuesFrom))}, so they read low.`;
+      if (asOf.hoursPartial) t += ` Tempo hours before ${esc(dshort(asOf.hoursFrom))} are incomplete, so hours for this window read low.`;
+    } else {
+      t = `<b>Evening run saved on ${esc(dlong(snap))}.</b> This is the report exactly as it was generated that day.`;
+    }
+    banner.innerHTML = `<p>${t}</p>${back}`;
+    banner.hidden = false;
+    $("#asof-back").onclick = () => openDate(LATEST.meta.snapshotDate);
+  }
   $("#title").textContent = D.title;
   $("#lede").textContent = (D.scope ? `${D.scope.label}, from Jira on ${D.meta.site}. ${D.scope.note||""} ` : `All ${D.kpis.projectsVisible} Jira projects on ${D.meta.site}. `) + `Reviewed against the four points raised on the last status report. Figures come from Jira and Tempo worklogs. The judgements come from reading the tickets.`;
   $("#meta").innerHTML = [
-    `<span><b>Window</b> ${esc(D.period.label)}</span>`,
+    `<span><b>Window</b> ${esc(D.period.label.replace(/^Window /,""))}</span>`,
     `<span><b>Issues pulled</b> ${fmt(D.kpis.issuesUpdated30)} updated in 30 days</span>`,
     `<span><b>Worklogs</b> ${fmt(D.quality.worklogsInPeriod)} in window</span>`,
     `<span><b>Register</b> ${D.registerSummary.items} risks and dependencies</span>`
@@ -596,6 +663,64 @@ const D = /*__DATA__*/null;
     <p><b>What Jira cannot show.</b> Who logged each Tempo hour, because Tempo writes as its own app account. ${q.overheadTicketsTruncated.length ? `Recent overhead time on the ${q.overheadTicketsTruncated.length} shared Uvation Projects tickets (${q.overheadTicketsTruncated.join(", ")}), because Jira returns only their oldest 20 worklogs.` : `Meeting, stand-up and leave time, which is logged on Uvation Projects overhead tickets outside this report's scope.`} Anmol Srivastava's testing report and the status-report risk list, which are outside Jira and Confluence.</p>
     <p><b>Judgements.</b> Verdicts, root causes and suggested owners are the reviewer's reading of the tickets and comments cited next to them. They live in <code>content/curated.json</code> and should be confirmed with each owner.</p>
     <p><b>Refresh.</b> Run <code>scripts/fetch_jira.py</code> with Jira credentials, and optionally a Tempo token for true per-person hours, then <code>scripts/build_dashboard.py</code>.</p>`;
+
+  }
+  render();
+
+  // report calendar
+  const calEl = $("#cal"), cache = new Map([[LATEST.meta.snapshotDate, LATEST]]);
+  const byDate = new Map(CAL.map(c=>[c.date, c]));
+  const months = [...new Set(CAL.map(c=>c.date.slice(0,7)))].sort();
+  let month = (D.meta.snapshotDate||"").slice(0,7), busy = null;
+  const status = (msg, err) => { const el = $("#cal-status"); el.textContent = msg || ""; el.classList.toggle("err", !!err); };
+  function drawCal(){
+    if (!months.length) return;
+    if (!months.includes(month)) month = months[months.length-1];
+    const [y, m] = month.split("-").map(Number);
+    const first = new Date(Date.UTC(y, m-1, 1)), days = new Date(Date.UTC(y, m, 0)).getUTCDate();
+    const lead = (first.getUTCDay()+6)%7;
+    $("#cal-month").textContent = first.toLocaleDateString("en-GB",{month:"long",year:"numeric",timeZone:"UTC"});
+    const cells = ["Mo","Tu","We","Th","Fr","Sa","Su"].map(d=>`<span class="dow" aria-hidden="true">${d}</span>`);
+    for (let i=0;i<lead;i++) cells.push(`<span></span>`);
+    const cur = D.meta.snapshotDate;
+    for (let d=1; d<=days; d++){
+      const iso = `${month}-${String(d).padStart(2,"0")}`, c = byDate.get(iso);
+      if (!c) { cells.push(`<span class="d">${d}</span>`); continue; }
+      const kind = c.kind==="run" ? "evening run" : "rebuilt from Jira";
+      cells.push(`<button type="button" class="d ${c.kind==="run"?"run":""} ${busy===iso?"busy":""}" data-d="${iso}" aria-pressed="${iso===cur}" aria-label="${esc(dlong(iso))}, ${kind}" data-tip="${esc(dlong(iso))} · ${kind}">${d}</button>`);
+    }
+    $("#cal-grid").innerHTML = cells.join("");
+    $("#cal-prev").disabled = month === months[0];
+    $("#cal-next").disabled = month === months[months.length-1];
+  }
+  async function openDate(iso){
+    if (busy) return;
+    if (iso === D.meta.snapshotDate) return;
+    let data = cache.get(iso);
+    if (!data) {
+      busy = iso; drawCal(); status(`Loading the report for ${dlong(iso)}…`);
+      try {
+        const r = await fetch(`calendar/${iso}.json`, {cache:"no-cache"});
+        if (!r.ok) throw new Error(r.status);
+        data = await r.json();
+        cache.set(iso, data);
+      } catch (e) {
+        busy = null; drawCal(); status(`The report for ${dlong(iso)} could not be loaded. Try again.`, true); return;
+      }
+      busy = null;
+    }
+    D = data; month = iso.slice(0,7);
+    render(); drawCal();
+    status(iso === LATEST.meta.snapshotDate ? "Showing the latest report." : `Showing the report for ${dlong(iso)}.`);
+    scrollTo({top:0, behavior:"smooth"});
+  }
+  if (CAL.length) {
+    calEl.hidden = false;
+    $("#cal-grid").addEventListener("click", e => { const b = e.target.closest("button[data-d]"); if (b) openDate(b.dataset.d); });
+    $("#cal-prev").onclick = () => { const i = months.indexOf(month); if (i>0) { month = months[i-1]; drawCal(); } };
+    $("#cal-next").onclick = () => { const i = months.indexOf(month); if (i<months.length-1) { month = months[i+1]; drawCal(); } };
+    drawCal();
+  }
 
   // nav highlight
   const links = [...document.querySelectorAll("nav.sections a")];
