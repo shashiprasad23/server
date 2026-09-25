@@ -73,7 +73,7 @@ python3 scripts/store_report.py
 
 This writes `reports/$DATE/` (the review page, the day-by-day page, the figures and a gzipped in-scope snapshot), appends to `reports/history.json`, rewrites `reports/index.html` and refreshes `dist/`.
 
-It also rebuilds the report calendar: `dist/calendar/<date>.json`, one report per weekday. Days with a stored evening run use that run. Other weekdays are rebuilt from the nearest later snapshot, wound back to the end of that day (`scripts/build_calendar.py`).
+It also rebuilds the report calendar: `dist/calendar/<date>.json` (review page) and `dist/calendar/daily-<date>.json` (day-by-day page), one of each per weekday. Days with a stored evening run use that run. Other weekdays are rebuilt from the nearest later snapshot, wound back to the end of that day (`scripts/build_calendar.py`).
 
 ## 4b. Prepare the email
 
@@ -94,7 +94,10 @@ git push -u origin claude/executive-dashboard-jira-review-gclk36   # retry up to
 
 ## 6. Update the live pages
 
-Read each artifact first, then publish the rebuilt file to the same URL. The review page must be published with its calendar files: pass `files` mapping `calendar/<date>.json` to `executive-dashboard/dist/calendar/<date>.json` for every file in that folder (include `calendar/index.json`). Without them, clicking a date shows "could not be loaded".
+Read each artifact first, then publish the rebuilt file to the same URL. Both pages carry the report calendar and must be published with their calendar files, or clicking a date shows "could not be loaded":
+
+- Review page: `files` maps `calendar/<date>.json` to `executive-dashboard/dist/calendar/<date>.json` for every date file, plus `calendar/index.json`.
+- Daily page: `files` maps `calendar/daily-<date>.json` to `executive-dashboard/dist/calendar/daily-<date>.json` for every daily file, plus `calendar/index.json`.
 
 | Page | File | URL |
 | --- | --- | --- |

@@ -47,7 +47,7 @@ def main():
     run("scripts/build_daily.py", "--snapshot", str(snap), "--scope", a.scope)
     # Stored copies (links point at each other inside the dated folder)
     run("scripts/build_dashboard.py", "--snapshot", str(snap), "--scope", a.scope, "--out", str(out / "index.html"), "--daily-url", "daily.html", "--no-calendar")
-    run("scripts/build_daily.py", "--snapshot", str(snap), "--scope", a.scope, "--out", str(out / "daily.html"), "--review-url", "index.html")
+    run("scripts/build_daily.py", "--snapshot", str(snap), "--scope", a.scope, "--out", str(out / "daily.html"), "--review-url", "index.html", "--no-calendar")
 
     data = json.loads((out / "dashboard-data.json").read_text())
     keep = set(data["scope"]["projects"]) if data.get("scope") else None
@@ -81,6 +81,7 @@ def main():
     # Calendar: one report per weekday, then rebuild the published page so its calendar includes today.
     run("scripts/build_calendar.py", "--scope", a.scope)
     run("scripts/build_dashboard.py", "--snapshot", str(snap), "--scope", a.scope)
+    run("scripts/build_daily.py", "--snapshot", str(snap), "--scope", a.scope)
 
 
 def write_index(hist):

@@ -10,7 +10,8 @@ are reopened, worklogs after the day are dropped), then run through build_dashbo
 The narrative (verdicts, issues log, programme notes) comes from that snapshot's report.
 
 Writes
-  dist/calendar/<date>.json   one report per weekday, loaded when the date is clicked
+  dist/calendar/<date>.json        review-page report per weekday, loaded when the date is clicked
+  dist/calendar/daily-<date>.json  day-by-day page data for the same date
   dist/calendar/index.json    the list of dates and how each one was made
 """
 import argparse
@@ -23,6 +24,7 @@ import tempfile
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import build_dashboard as bd  # noqa: E402
+import build_daily  # noqa: E402
 
 ROOT = bd.ROOT
 OUT = ROOT / "dist" / "calendar"
@@ -139,35 +141,46 @@ def main():
         old.unlink()
     for c in dates:
         x, base = c["date"], c["base"]
-        if c["kind"] == "run":
-            data = dict(reports[x])
-            data["asOf"] = {"kind": "run", "date": x}
-        else:
-            meta, issues, wl, reg = rewind(bundles[base], x, all_wl)
-            with tempfile.TemporaryDirectory() as tmp:
-                t = pathlib.Path(tmp)
-                for name, obj in (("meta", meta), ("issues", issues), ("worklogs", wl), ("register", reg)):
-                    (t / f"{name}.json").write_text(json.dumps(obj))
-                data = bd.build(t, scope)
-            src = reports[base]
-            for k in NARRATIVE:
-                if k in src:
-                    data[k] = src[k]
-            verdicts = {r["key"]: r for r in src.get("register", [])}
-            for r in data["register"]:
-                v = verdicts.get(r["key"])
-                if v:
-                    for k in ("verdict", "rag", "why", "action", "suggestedOwner"):
-                        r[k] = v.get(k)
-            heads = {s["id"]: s.get("headline", "") for s in src.get("scorecards", [])}
-            for s in data.get("scorecards", []):
-                s["headline"] = heads.get(s["id"], s.get("headline", ""))
-            p = data["period"]
-            data["asOf"] = {"kind": "rebuilt", "date": x, "base": base,
-                            "hoursPartial": p["start"] < hours_from, "hoursFrom": hours_from,
-                            "issuesFrom": (dt.date.fromisoformat(base) - dt.timedelta(days=30)).isoformat()}
-        data["links"] = {**data.get("links", {}), **links}
+        # Rewound snapshot for this day. For a stored run it is that run's own snapshot, unchanged.
+        wl_src = all_wl if c["kind"] == "rebuilt" else bundles[x]["worklogs"]["worklogs"]
+        meta, issues, wl, reg = rewind(bundles[base], x, wl_src)
+        with tempfile.TemporaryDirectory() as tmp:
+            t = pathlib.Path(tmp)
+            for name, obj in (("meta", meta), ("issues", issues), ("worklogs", wl), ("register", reg)):
+                (t / f"{name}.json").write_text(json.dumps(obj))
+            rebuilt = bd.build(t, scope)
+            if c["kind"] == "run":
+                data = dict(reports[x])
+                data["asOf"] = {"kind": "run", "date": x}
+            else:
+                data = rebuilt
+                src = reports[base]
+                for k in NARRATIVE:
+                    if k in src:
+                        data[k] = src[k]
+                verdicts = {r["key"]: r for r in src.get("register", [])}
+                for r in data["register"]:
+                    v = verdicts.get(r["key"])
+                    if v:
+                        for k in ("verdict", "rag", "why", "action", "suggestedOwner"):
+                            r[k] = v.get(k)
+                heads = {s["id"]: s.get("headline", "") for s in src.get("scorecards", [])}
+                for s in data.get("scorecards", []):
+                    s["headline"] = heads.get(s["id"], s.get("headline", ""))
+                p = data["period"]
+                data["asOf"] = {"kind": "rebuilt", "date": x, "base": base,
+                                "hoursPartial": p["start"] < hours_from, "hoursFrom": hours_from,
+                                "issuesFrom": (dt.date.fromisoformat(base) - dt.timedelta(days=30)).isoformat()}
+            data["links"] = {**data.get("links", {}), **links}
+            # Day-by-day page for the same date, carrying the same verdicts and as-of note.
+            daily = build_daily.build_daily(t, scope, review={**rebuilt, "register": data["register"]})
+        daily["asOf"] = data["asOf"]
+        if x != dates[-1]["date"]:
+            d0 = dt.date.fromisoformat(x)
+            daily["pipelineNote"] = f"Stages recorded up to the end of {d0.day} {d0.strftime('%b')}."
         (OUT / f"{x}.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        (OUT / f"daily-{x}.json").write_text(json.dumps(daily, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
     (OUT / "index.json").write_text(json.dumps(dates, indent=1))
     n_run = sum(c["kind"] == "run" for c in dates)
     print(f"wrote {len(dates)} calendar reports to {OUT.relative_to(ROOT)}/ ({n_run} daily runs, {len(dates) - n_run} rebuilt), "

@@ -52,7 +52,37 @@ p{margin:0}
 .key{font-family:var(--font-mono);font-size:.86em;color:var(--accent);text-decoration:none}
 .key:hover{text-decoration:underline}
 
-header.top{padding-block:30px 16px;display:grid;gap:8px}
+header.top{padding-block:30px 16px;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:12px 36px;align-items:start}
+header.top .intro{display:grid;gap:8px;min-width:0}
+@media (max-width:880px){ header.top{grid-template-columns:minmax(0,1fr)} }
+/* report calendar */
+.cal{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:12px 12px 10px;display:grid;gap:8px;width:100%;max-width:360px}
+.cal[hidden]{display:none}
+.cal-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.cal-head .t{display:grid;gap:1px;text-align:center}
+.cal-head .t b{font-size:14px;font-weight:600}
+.cal-head .t span{font-size:11.5px;color:var(--muted)}
+.cal-head button{font:inherit;font-size:16px;line-height:1;border:1px solid var(--rule);background:var(--surface);color:var(--ink-2);width:32px;height:32px;border-radius:8px;cursor:pointer}
+.cal-head button:disabled{opacity:.35;cursor:default}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;text-align:center}
+.cal-grid .dow{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;padding-bottom:2px}
+.cal-grid .d{height:36px;display:grid;place-items:center;font-size:13px;border-radius:7px;font-variant-numeric:tabular-nums}
+.cal-grid span.d{color:var(--muted);opacity:.5}
+.cal-grid button.d{font:inherit;font-size:13px;border:1px solid var(--rule);background:var(--surface-2);color:var(--ink);cursor:pointer;padding:0}
+.cal-grid button.d:hover{border-color:var(--ink-2)}
+.cal-grid button.d.run{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);font-weight:600}
+.cal-grid button.d[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.cal-grid button.d.busy{opacity:.55;cursor:progress}
+.cal-legend{display:flex;gap:12px;flex-wrap:wrap;font-size:11.5px;color:var(--muted)}
+.cal-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-2px;margin-right:5px;border:1px solid var(--rule);background:var(--surface-2)}
+.cal-legend i.run{background:var(--accent-soft);border-color:var(--accent)}
+.cal-status{font-size:12px;color:var(--muted);min-height:1.2em}
+.cal-status.err{color:var(--bad-ink)}
+.asof{margin:0 0 18px;display:flex;gap:10px 16px;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;background:color-mix(in srgb,var(--warning) 14%,var(--surface));border:1px solid var(--rule);border-radius:10px;padding:12px 14px;font-size:13.5px;color:var(--ink-2)}
+.asof[hidden]{display:none}
+.asof p{max-width:92ch}
+.asof b{color:var(--ink)}
+.asof button{font:inherit;font-size:13px;border:1px solid var(--rule);background:var(--surface);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
 header.top .lede{color:var(--ink-2);max-width:78ch}
 
 .controls{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--rule);margin-bottom:20px}
@@ -140,9 +170,21 @@ section>*{min-width:0}
 </style>
 
 <header class="top wrap">
-  <div class="eyebrow" id="eyebrow"></div>
-  <h1>Daily Delivery Pulse</h1>
-  <p class="lede" id="lede"></p>
+  <div class="intro">
+    <div class="eyebrow" id="eyebrow"></div>
+    <h1>Daily Delivery Pulse</h1>
+    <p class="lede" id="lede"></p>
+  </div>
+  <aside class="cal" id="cal" aria-label="Report calendar" hidden>
+    <div class="cal-head">
+      <button type="button" id="cal-prev" aria-label="Previous month">‹</button>
+      <div class="t"><b id="cal-month"></b><span>Pick a date to open its report</span></div>
+      <button type="button" id="cal-next" aria-label="Next month">›</button>
+    </div>
+    <div class="cal-grid" id="cal-grid"></div>
+    <div class="cal-legend"><span><i class="run"></i>Evening run</span><span><i></i>Rebuilt from Jira</span></div>
+    <p class="cal-status" id="cal-status" aria-live="polite"></p>
+  </aside>
 </header>
 
 <div class="controls">
@@ -155,6 +197,7 @@ section>*{min-width:0}
 </div>
 
 <main class="wrap">
+  <div class="asof" id="asof" hidden></div>
   <div class="kpis" id="kpis"></div>
 
   <section id="flow">
@@ -221,8 +264,13 @@ section>*{min-width:0}
 </main>
 
 <script>
-const D = /*__DATA__*/null;
+let D = /*__DATA__*/null;
+const CAL = /*__CAL__*/[];
 (function(){
+  const LATEST = D;
+  let live = null;
+  function boot(){
+  if (window.echarts) document.querySelectorAll("[_echarts_instance_]").forEach(el=>echarts.dispose(el));
   const $ = s => document.querySelector(s);
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const J = k => `<a class="key" href="${D.jiraBase}${encodeURIComponent(k)}" target="_blank" rel="noopener">${esc(k)}</a>`;
@@ -244,6 +292,7 @@ const D = /*__DATA__*/null;
   const PROJ = Object.fromEntries(D.projects.map(p=>[p.key,p]));
   const I = D.issues.map(r=>({key:r[0],p:r[1],type:r[2],cat:r[3],who:r[4],cr:r[5],rs:r[6],due:r[7],sum:r[8],parent:r[9],prio:r[10],status:r[11]}));
   const L = D.logs.map(r=>({key:r[0],d:r[1],h:r[2],who:r[3],p:r[4]}));
+  const LE = L.filter(l=>l.d>=M.effortStart && l.d<=M.effortEnd);  // the effort window; L also holds the report day itself
   const byKey = Object.fromEntries(I.map(i=>[i.key,i]));
   const groupKeys = [...D.projects.filter(p=>p.slot).sort((a,b)=>a.slot-b.slot).map(p=>p.key), ...(D.projects.some(p=>!p.slot)?["Other"]:[])];
   const grp = p => PROJ[p]?.slot ? p : "Other";
@@ -270,7 +319,22 @@ const D = /*__DATA__*/null;
   if(!D.bulk.length) bulkBox.closest("label").hidden = true;
   bulkBox.onchange = () => { state.noBulk = bulkBox.checked; save(); renderAll(); };
 
-  $("#eyebrow").textContent = `Jira snapshot ${lab(M.snapshot)} 2026 · ${M.site}`;
+  const asOf = D.asOf || {kind:"run", date:M.snapshot};
+  $("#eyebrow").textContent = `${asOf.kind==="rebuilt" ? "Rebuilt as of" : "Jira snapshot"} ${labW(M.snapshot)} 2026 · ${M.site}`;
+  const banner = $("#asof");
+  if (D === LATEST) { banner.hidden = true; banner.innerHTML = ""; }
+  else {
+    let t;
+    if (asOf.kind === "rebuilt") {
+      t = `<b>Rebuilt view for ${esc(labW(M.snapshot))} 2026.</b> No evening run was saved that day, so this comes from the ${esc(lab(asOf.base))} Jira snapshot wound back to the end of ${esc(lab(M.snapshot))}: issues created later are left out, and issues finished later count as open. Risk verdicts are from the ${esc(lab(asOf.base))} report.`;
+      if (asOf.hoursPartial) t += ` Tempo hours before ${esc(lab(asOf.hoursFrom))} are incomplete, so effort reads low.`;
+    } else {
+      t = `<b>View for ${esc(labW(M.snapshot))} 2026,</b> built from the Jira snapshot saved on that evening's run.`;
+    }
+    banner.innerHTML = `<p>${t}</p><button type="button" id="asof-back">Back to the latest, ${esc(lab(LATEST.meta.snapshot))}</button>`;
+    banner.hidden = false;
+    $("#asof-back").onclick = () => openDate(LATEST.meta.snapshot);
+  }
   $("#lede").innerHTML = `Every issue created, resolved and logged against ${M.scopeLabel ? "in "+esc(M.scopeLabel.split(":")[0].toLowerCase())+" ("+D.projects.map(p=>esc(p.name)).join(", ")+")" : "across all Jira projects"}, day by day from ${lab(M.windowStart)} to ${lab(M.windowEnd)}. ${M.reviewUrl?`The judgements behind these numbers are in the <a href="${esc(M.reviewUrl)}" target="_blank" rel="noopener">Portfolio Status Review</a>.`:""}`;
 
   // ---------- echarts helpers ----------
@@ -296,7 +360,7 @@ const D = /*__DATA__*/null;
     const tc = cre.reduce((a,b)=>a+b,0), tr = res.reduce((a,b)=>a+b,0);
     const work = DAYS.filter(d=>!isOff(d)).length;
     let bi=0; res.forEach((v,k)=>{ if(v>res[bi]) bi=k; });
-    const hrs = L.filter(l=>inProj(l.p)); const th = hrs.reduce((a,l)=>a+l.h,0);
+    const hrs = LE.filter(l=>inProj(l.p)); const th = hrs.reduce((a,l)=>a+l.h,0);
     const eWork = EDAYS.filter(d=>!isOff(d)).length;
     const people = new Set(hrs.map(l=>l.who).filter(Boolean)).size;
     const k = [
@@ -370,7 +434,7 @@ const D = /*__DATA__*/null;
   }
 
   function renderEffort(){
-    const logs = L.filter(l=>inProj(l.p));
+    const logs = LE.filter(l=>inProj(l.p));
     $("#effort-note").innerHTML = `Tempo worklogs dated ${lab(M.effortStart)} to ${lab(M.effortEnd)}, the only window where every delivery worklog was pulled. ${D.overheadTruncated.length ? `Recent meeting and leave time on ${D.overheadTruncated.length} shared overhead tickets is missing, because Jira returns only their oldest 20 worklogs.` : `Meeting, stand-up and leave time sits on Uvation Projects overhead tickets, outside this report's scope.`} Tempo does not expose who logged an hour, so person-level hours use the ticket's assignee.`;
     const groups = state.project==="all" ? groupKeys : [grp(state.project)];
     const series = groups.map(g=>({name:grpName(g), type:"bar", stack:"h", barMaxWidth:22,
@@ -584,13 +648,73 @@ const D = /*__DATA__*/null;
     renderKPIs(); renderFlow(); renderResProj(); renderEffort(); renderPeople(); renderStrip(); renderExplorer(); renderMultiples(); renderTracks(); renderRisk(); renderFeed();
   }
 
-  // default day: last working day in window
-  state.day = DAYS.slice().reverse().find(d=>!isOff(d));
+  // default day: the report day when it is a working day, else the last working day in the window
+  state.day = (DAYS.includes(M.snapshot) && !isOff(M.snapshot)) ? M.snapshot : DAYS.slice().reverse().find(d=>!isOff(d));
   renderAll();
+  live = {renderAll, charts, minis};
+  }
+  boot();
 
-  let t; addEventListener("resize", ()=>{ clearTimeout(t); t=setTimeout(()=>{ Object.values(charts).forEach(c=>c.resize()); Object.values(minis).forEach(c=>c.resize()); },120); });
-  const rerender = () => renderAll();
+  let t; addEventListener("resize", ()=>{ clearTimeout(t); t=setTimeout(()=>{ Object.values(live.charts).forEach(c=>c.resize()); Object.values(live.minis).forEach(c=>c.resize()); },120); });
+  const rerender = () => live.renderAll();
   matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change", rerender);
   new MutationObserver(rerender).observe(document.documentElement, {attributes:true, attributeFilter:["data-theme"]});
+
+  // ---------- report calendar ----------
+  const q = s => document.querySelector(s);
+  const escH = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const dlong = iso => new Date(iso+"T00:00:00Z").toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short",year:"numeric",timeZone:"UTC"});
+  const cache = new Map([[LATEST.meta.snapshot, LATEST]]);
+  const byDate = new Map(CAL.map(c=>[c.date, c]));
+  const months = [...new Set(CAL.map(c=>c.date.slice(0,7)))].sort();
+  let month = LATEST.meta.snapshot.slice(0,7), busy = null;
+  const status = (msg, err) => { const el = q("#cal-status"); el.textContent = msg || ""; el.classList.toggle("err", !!err); };
+  function drawCal(){
+    if (!months.length) return;
+    if (!months.includes(month)) month = months[months.length-1];
+    const [y, m] = month.split("-").map(Number);
+    const first = new Date(Date.UTC(y, m-1, 1)), days = new Date(Date.UTC(y, m, 0)).getUTCDate();
+    const lead = (first.getUTCDay()+6)%7;
+    q("#cal-month").textContent = first.toLocaleDateString("en-GB",{month:"long",year:"numeric",timeZone:"UTC"});
+    const cells = ["Mo","Tu","We","Th","Fr","Sa","Su"].map(d=>`<span class="dow" aria-hidden="true">${d}</span>`);
+    for (let i=0;i<lead;i++) cells.push(`<span></span>`);
+    const cur = D.meta.snapshot;
+    for (let d=1; d<=days; d++){
+      const iso = `${month}-${String(d).padStart(2,"0")}`, c = byDate.get(iso);
+      if (!c) { cells.push(`<span class="d">${d}</span>`); continue; }
+      const kind = c.kind==="run" ? "evening run" : "rebuilt from Jira";
+      cells.push(`<button type="button" class="d ${c.kind==="run"?"run":""} ${busy===iso?"busy":""}" data-d="${iso}" aria-pressed="${iso===cur}" aria-label="${escH(dlong(iso))}, ${kind}" title="${escH(dlong(iso))} · ${kind}">${d}</button>`);
+    }
+    q("#cal-grid").innerHTML = cells.join("");
+    q("#cal-prev").disabled = month === months[0];
+    q("#cal-next").disabled = month === months[months.length-1];
+  }
+  async function openDate(iso){
+    if (busy || iso === D.meta.snapshot) return;
+    let data = cache.get(iso);
+    if (!data) {
+      busy = iso; drawCal(); status(`Loading ${dlong(iso)}…`);
+      try {
+        const r = await fetch(`calendar/daily-${iso}.json`, {cache:"no-cache"});
+        if (!r.ok) throw new Error(r.status);
+        data = await r.json();
+        cache.set(iso, data);
+      } catch (e) {
+        busy = null; drawCal(); status(`The view for ${dlong(iso)} could not be loaded. Try again.`, true); return;
+      }
+      busy = null;
+    }
+    D = data; month = iso.slice(0,7);
+    boot(); drawCal();
+    status(iso === LATEST.meta.snapshot ? "Showing the latest view." : `Showing ${dlong(iso)}.`);
+    scrollTo({top:0, behavior:"smooth"});
+  }
+  if (CAL.length) {
+    q("#cal").hidden = false;
+    q("#cal-grid").addEventListener("click", e => { const b = e.target.closest("button[data-d]"); if (b) openDate(b.dataset.d); });
+    q("#cal-prev").onclick = () => { const i = months.indexOf(month); if (i>0) { month = months[i-1]; drawCal(); } };
+    q("#cal-next").onclick = () => { const i = months.indexOf(month); if (i<months.length-1) { month = months[i+1]; drawCal(); } };
+    drawCal();
+  }
 })();
 </script>
