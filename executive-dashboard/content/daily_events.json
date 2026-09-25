@@ -171,6 +171,31 @@
           ]
         }
       ]
+    },
+    {
+      "brand": "Vera Rubin",
+      "products": 8,
+      "stages": [
+        {
+          "stage": "Research and content",
+          "start": "2026-09-22",
+          "end": "2026-09-24",
+          "keys": [
+            "PC-133",
+            "MT-1530",
+            "MT-1531"
+          ]
+        },
+        {
+          "stage": "Created on UAT",
+          "start": "2026-09-25",
+          "end": "2026-09-25",
+          "keys": [
+            "MT-1532",
+            "PC-135"
+          ]
+        }
+      ]
     }
   ],
   "events": [
@@ -469,7 +494,7 @@
       "date": "2026-09-23",
       "project": "MR",
       "type": "testing",
-      "title": "8 more Figma-vs-website defects raised, 31 in total",
+      "title": "15 more Figma-vs-website defects raised, 38 in total",
       "keys": [
         "MR-1179"
       ]
@@ -483,6 +508,68 @@
         "MT-1333",
         "MT-1334"
       ]
+    },
+    {
+      "date": "2026-09-23",
+      "project": "MT",
+      "type": "risk",
+      "title": "Four register items closed with reasons (CDN, payment gateway, OEM pricing, PII). Four others no longer appear in Jira",
+      "keys": [
+        "MT-1095",
+        "MT-1097",
+        "MT-1098",
+        "MT-1100",
+        "MT-1093"
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "project": "MT",
+      "type": "milestone",
+      "title": "Product listing and PDP stories closed, 24 days after their 31 Aug due date",
+      "keys": [
+        "MT-1216",
+        "MT-1217"
+      ]
+    },
+    {
+      "date": "2026-09-24",
+      "project": "USP",
+      "type": "issue",
+      "title": "Two new S2 bugs: notification APIs failing in UAT, usage data missing",
+      "keys": [
+        "USP-4222",
+        "USP-4224"
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "project": "MT",
+      "type": "milestone",
+      "title": "Home page story closed after QA validation",
+      "keys": [
+        "MT-1215"
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "project": "MT",
+      "type": "progress",
+      "title": "8 NVIDIA Vera Rubin products created and validated on UAT",
+      "keys": [
+        "MT-1532",
+        "PC-135"
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "project": "MR",
+      "type": "testing",
+      "title": "9 Figma-vs-website defects fixed, 16 of 48 now done",
+      "keys": [
+        "MR-1179"
+      ]
     }
-  ]
+  ],
+  "pipelineNote": "The first 27 listings reached production by 22 Sep. <b>None are live</b>: each was disabled after verification, pending approval. The 8 Vera Rubin products were created and validated on UAT on 25 Sep and have not moved to production."
 }

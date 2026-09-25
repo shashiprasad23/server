@@ -20,8 +20,8 @@
     "MT-1091": {
       "verdict": "Keep",
       "rag": "amber",
-      "why": "Parent epic for the Marketplace register. Children were never refreshed after 7 Jul.",
-      "action": "Refresh all children in the next status review and assign one owner per child."
+      "why": "Parent for the Marketplace register. On 23 Sep four children were closed with reasons and four (MT-1092, MT-1093, MT-1096, MT-1101) stopped appearing in Jira. Only MT-1094 is still open.",
+      "action": "Record what happened to MT-1092, MT-1093, MT-1096 and MT-1101, and decide on MT-1094."
     },
     "MT-1092": {
       "verdict": "Close",
@@ -39,15 +39,15 @@
     "MT-1094": {
       "verdict": "Re-assess",
       "rag": "amber",
-      "why": "Financing modal is part of the PDP story (MT-1217, in UAT). No Jira evidence that Gynger sandbox access was obtained.",
+      "why": "Financing modal was part of the PDP story (MT-1217), which closed on 24 Sep. No Jira evidence that Gynger sandbox access was obtained.",
       "action": "Confirm whether financing is in go-live scope. If not, close. If yes, assign an owner.",
       "suggestedOwner": "Naveen Jangid"
     },
     "MT-1095": {
-      "verdict": "Close",
+      "verdict": "Closed",
       "rag": "green",
-      "why": "Product images are served on production for all migrated products (MT-1528). CDN is operational.",
-      "action": "Close as realised dependency."
+      "why": "Closed 23 Sep by Shashi Prasad K: CDN is up and serving product images for all migrated products (MT-1528).",
+      "action": "None. Closed with a reason."
     },
     "MT-1096": {
       "verdict": "Keep",
@@ -57,18 +57,16 @@
       "suggestedOwner": "Saravana Kumar"
     },
     "MT-1097": {
-      "verdict": "Keep",
-      "rag": "amber",
-      "why": "Cart, PO upload and checkout stories are done (MT-1219), so payment gateway downtime is now a live exposure. Unassigned for 78 days.",
-      "action": "Assign an owner and confirm failover approach before checkout is enabled.",
-      "suggestedOwner": "Naveen Jangid"
+      "verdict": "Closed",
+      "rag": "green",
+      "why": "Closed 23 Sep by Shashi Prasad K: payments are recorded manually, so the online payment-gateway feature is being deprecated.",
+      "action": "Revisit only if an online payment gateway is brought back into scope."
     },
     "MT-1098": {
-      "verdict": "Keep – now critical",
-      "rag": "red",
-      "why": "Listed AI-server prices depend on OEM pricing. Listings are now in production (disabled). Unassigned for 78 days.",
-      "action": "Agree the price-sync or 'price on request' rule before enablement.",
-      "suggestedOwner": "Anshul Bhargava"
+      "verdict": "Closed",
+      "rag": "green",
+      "why": "Closed 23 Sep by Shashi Prasad K: every catalogue product is sold as request-for-quote, so no OEM list price is shown to buyers.",
+      "action": "Reopen if any product is enabled with a fixed listed price."
     },
     "MT-1099": {
       "verdict": "Close",
@@ -77,11 +75,10 @@
       "action": "Close in register."
     },
     "MT-1100": {
-      "verdict": "Close after sign-off",
-      "rag": "amber",
-      "why": "Userinfo API now used instead of token claims (7 Sep). Ticket is In Production. Claims-removal subtasks ID-679 to ID-683 are still in UAT.",
-      "action": "Close once ID-679 to ID-683 reach production and Security signs off.",
-      "suggestedOwner": "Naveen Jangid"
+      "verdict": "Closed",
+      "rag": "green",
+      "why": "Closed 23 Sep. Marketplace reads user details from the userinfo API instead of token claims (7 Sep). Identity claim-removal subtasks ID-679 to ID-683 sit in another project.",
+      "action": "Confirm with Security that ID-679 to ID-683 reached production."
     },
     "MT-1101": {
       "verdict": "Re-assess",
@@ -160,7 +157,7 @@
       "verdict": "Keep",
       "rag": "green",
       "why": "Owned and dated.",
-      "action": "Merge with MT-1096 into one cross-platform identity risk."
+      "action": "Now the only open identity-outage risk, since MT-1096 no longer appears in Jira. Extend it to cover Marketplace login."
     },
     "USP-3752": {
       "verdict": "Keep",
@@ -183,7 +180,7 @@
     "USP-3755": {
       "verdict": "Keep – materialising",
       "rag": "red",
-      "why": "Scope creep is visible now: 192 USP issues created in 30 days and 72 open bugs.",
+      "why": "Scope creep is visible now: 195 USP issues created in 30 days and 66 open bugs, with two new S2 bugs on 24 Sep.",
       "action": "Enforce the change-request gate named in the mitigation."
     },
     "USP-3756": {
@@ -223,9 +220,10 @@
       "evidence": [
         "MT-1500–MT-1512",
         "MT-1527",
-        "MT-1528"
+        "MT-1528",
+        "MT-1530–MT-1532"
       ],
-      "detail": "Every UAT product creation and the whole UAT-to-production CSV migration were done by one person.",
+      "detail": "Every UAT product creation and the whole UAT-to-production CSV migration were done by one person, and the same person created the 8 Vera Rubin products on 24–25 Sep (MT-1530 to MT-1532).",
       "mitigation": "Pair a second engineer on the next batch and document the CSV and attribute steps as an SOP.",
       "suggestedOwner": "Naman Bapna"
     },
@@ -240,7 +238,7 @@
         "MT-1484",
         "MT-1529"
       ],
-      "detail": "All 27 migrated listings were verified and then disabled pending business approval. Cross-validation on UAT (MT-1529) is still in progress.",
+      "detail": "All 27 migrated listings were verified and then disabled pending business approval. Cross-validation on UAT (MT-1529) is still in progress, and 8 Vera Rubin products are now waiting on UAT behind the same approval.",
       "mitigation": "Set an approval date with the approver and a named enablement owner.",
       "suggestedOwner": "Shashi Prasad K"
     },
@@ -317,6 +315,25 @@
       "rootCause": "No change-request ticket type, and no UAT sign-off step that captures business-policy changes. About 300 tickets mentioning policy or change requests across 8 projects were checked. The closest are the returns-policy use cases (MT-1116, MT-1180, MT-1181, MT-1187) and MT-1286, which made the return-eligibility window configurable on 2 Sep. None of them records a change found in UAT.",
       "actionTaken": "None visible in Jira.",
       "preventive": "Log it now as a Change Request with impact and effort, linked to the affected stories. Add a 'business rules confirmed' line to UAT sign-off covering returns, refunds, loyalty points and pricing. Open business-rule questions already exist on MT-978 (loyalty points) and MT-1488 (refund and exchange timelines).",
+      "owner": "Shashi Prasad K"
+    },
+    {
+      "id": "register-removed",
+      "title": "Four Marketplace register items no longer appear in Jira, including the red OEM-agreement dependency",
+      "project": "Marketplace",
+      "status": "Open",
+      "rag": "red",
+      "keys": [
+        "MT-1093",
+        "MT-1092",
+        "MT-1096",
+        "MT-1101"
+      ],
+      "surfaced": "Register refresh, 23–25 Sep",
+      "impact": "MT-1093 (OEM/brand partner agreements before listing) was rated red while 27 AI-server listings sit in production. With the ticket gone there is no record of whether OEM agreements were confirmed. MT-1096 (identity outage) and MT-1101 (GDPR/CCPA cookie handling) were still open.",
+      "rootCause": "A search by key returns none of the four tickets, so they were deleted or moved where this account cannot see them. The four items closed the same evening (MT-1095, MT-1097, MT-1098, MT-1100) each got a closing comment. These four did not.",
+      "actionTaken": "None recorded.",
+      "preventive": "Close register items with a reason instead of deleting them. Record the OEM-agreement decision for each brand before any listing is enabled.",
       "owner": "Shashi Prasad K"
     },
     {
@@ -411,7 +428,7 @@
       "surfaced": "18 Sep",
       "impact": "Slow pages on the reduced catalogue. Risk to conversion and SEO at go-live.",
       "rootCause": "Not yet analysed. The ticket was first routed to the wrong person.",
-      "actionTaken": "Reassigned to Naveen Jangid on 22 Sep.",
+      "actionTaken": "Reassigned to Naveen Jangid on 22 Sep. Now in UAT/staging (last updated 23 Sep). No new score recorded.",
       "preventive": "Add a performance budget to the release checklist."
     },
     {
@@ -432,9 +449,9 @@
     },
     {
       "id": "overdue-mt",
-      "title": "Marketplace buyer stories are past due",
+      "title": "Marketplace buyer stories were past due",
       "project": "Marketplace",
-      "status": "Open",
+      "status": "Partly resolved",
       "rag": "amber",
       "keys": [
         "MT-1215",
@@ -444,9 +461,9 @@
         "MT-1331"
       ],
       "surfaced": "Due 31 Aug and 15 Sep",
-      "impact": "Home page and PDP are in UAT, and product listing is in development, all three due 31 Aug. Account hub and returns flow were due 15 Sep.",
+      "impact": "Home page, product listing and PDP were due 31 Aug and closed on 24–25 Sep, 24 to 25 days late. Account hub (MT-1311) and returns flow (MT-1331) were due 15 Sep and are still in testing.",
       "rootCause": "Not recorded. Due dates were not re-baselined after the AI-servers pivot.",
-      "actionTaken": "Returns flow is in testing. Account hub subtasks are in development.",
+      "actionTaken": "MT-1216 and MT-1217 closed 24 Sep, MT-1215 closed 25 Sep after QA validation. Account hub and returns are in testing.",
       "preventive": "Re-baseline due dates when scope changes, per the SOP's Scenario 14."
     },
     {
@@ -481,7 +498,7 @@
     }
   ],
   "marketplace": {
-    "summary": "All five brands in the AI-servers batch were created on UAT and moved to production by 22 Sep. None are live yet because every migrated product was disabled pending approval.",
+    "summary": "All five brands in the first AI-servers batch (27 listings) were moved to production by 22 Sep and are still disabled pending approval. A second NVIDIA batch, 8 Vera Rubin products, was created and validated on UAT on 25 Sep and has not been moved to production.",
     "expectedCompletion": "30 Sep 2026 (due date on MT-1485, MT-1488 and MT-1524)",
     "brands": [
       {
@@ -561,12 +578,32 @@
           "SR680a V4",
           "GB300 NVL72 rack-scale"
         ]
+      },
+      {
+        "brand": "NVIDIA Vera Rubin",
+        "products": 8,
+        "research": "Researched 22–24 Sep (PC-133, MT-1530, MT-1531)",
+        "uat": "Created 25 Sep (MT-1532), validated 25 Sep (PC-135)",
+        "prod": "Not moved yet",
+        "live": "Not in production",
+        "items": [
+          "DGX Rubin NVL8",
+          "DGX Vera Rubin NVL72 rack-scale",
+          "Vera Rubin NVL72 OEM-integrated rack",
+          "HGX Rubin NVL8",
+          "Vera Rubin NVL4 module",
+          "DGX SuperPOD with DGX Rubin NVL8 (72 systems)",
+          "DGX Vera Rubin NVL72 + Quantum-X800 InfiniBand",
+          "DGX Vera Rubin NVL72 + Spectrum-X Ethernet"
+        ],
+        "inProd": false
       }
     ],
     "pending": [
-      "Business approval and enablement of all 27 listings.",
-      "Cross-validation and audit on UAT (MT-1529, in progress).",
-      "NVIDIA Vera Rubin research started 22 Sep (PC-133).",
+      "Business approval and enablement of the 27 listings already in production.",
+      "Move the 8 Vera Rubin products from UAT to production after approval (MT-1485, 18 of 19 subtasks done).",
+      "Cross-validation and audit on UAT (MT-1529, in progress, no comments yet).",
+      "Record the OEM-agreement decision per brand. The register item for it (MT-1093) no longer appears in Jira.",
       "Status of the earlier Lenovo batch in PC-121 is unclear."
     ],
     "otherWorkstreams": [
@@ -574,31 +611,31 @@
         "name": "Category disable (AI servers only)",
         "key": "MT-1438",
         "state": "36 of 38 tasks done",
-        "open": "URL disposition (MT-1447), performance check (MT-1475)"
+        "open": "URL disposition (MT-1447, to do), performance check (MT-1475, now on UAT/staging)"
       },
       {
         "name": "Returns and refund flow",
         "key": "MT-1331",
-        "state": "In testing. 7 of 12 subtasks done",
-        "open": "RMA email templates and backend support (MT-1365, MT-1487, MT-1488, due 30 Sep)"
+        "state": "In testing. 10 of 12 subtasks done",
+        "open": "RMA email templates and backend support (MT-1365 24 of 28 done, MT-1488 due 30 Sep). Due date 15 Sep has passed"
       },
       {
         "name": "Account hub",
         "key": "MT-1311",
-        "state": "In development. 1 of 10 subtasks done",
+        "state": "In testing. 1 of 10 subtasks done, 9 in progress",
         "open": "Due date 15 Sep has passed"
       },
       {
         "name": "Home page and PDP",
         "key": "MT-1215, MT-1217",
-        "state": "In UAT",
-        "open": "Due date 31 Aug has passed. Home page redesign MT-1524 due 30 Sep"
+        "state": "Done. Closed 24 and 25 Sep",
+        "open": "Home page redesign for AI servers (MT-1524) not started, due 30 Sep. Text-overflow fix on new product pages in testing (MT-1533)"
       },
       {
         "name": "Product listing, filter and search",
         "key": "MT-1216",
-        "state": "In development. 6 of 7 subtasks done or in production",
-        "open": "Due date 31 Aug has passed"
+        "state": "Done. Closed 24 Sep",
+        "open": "None"
       },
       {
         "name": "Loyalty points logic",
@@ -609,7 +646,7 @@
     ]
   },
   "marketingTesting": {
-    "summary": "Production smoke automation passes on every URL it can see, but it can see only 250 of more than 500 URLs. Page-wise Figma validation has raised 31 defects so far, 8 of them on 23 Sep, and 7 are fixed.",
+    "summary": "Production smoke automation passes on every URL it can see, but it can see only 250 of more than 500 URLs. Page-wise Figma validation has raised 48 defects so far, and 16 are fixed, 9 of them on 25 Sep.",
     "scopeUrlsExpected": 500,
     "scopeNote": "More than 500 URLs expected, per MR-1199",
     "automatedUrls": 250,
@@ -619,10 +656,10 @@
     "manualCrossBrowserPages": 40,
     "manualNote": "About 40 pages tested manually on macOS Chrome, Firefox and Safari and on iPhone, 3–9 Sep (MR-1100, MR-1101)",
     "figmaDefects": {
-      "raised": 31,
-      "done": 7,
-      "inProgress": 2,
-      "todo": 22,
+      "raised": 48,
+      "done": 16,
+      "inProgress": 28,
+      "todo": 4,
       "pagesCovered": 15,
       "key": "MR-1179"
     },
@@ -639,7 +676,7 @@
     ],
     "pending": [
       "Fix the sitemap (MR-1199), then extend automation from 250 URLs to the full list.",
-      "24 open Figma-vs-website defects (MR-1179), 8 of them raised on 23 Sep.",
+      "32 open Figma-vs-website defects (MR-1179), 28 of them in progress. 10 more were raised on 24–25 Sep, some from Raluca's design feedback.",
       "Figma validation for the remaining pages. About 15 pages have defects logged so far.",
       "Playwright integration into the Azure production pipeline.",
       "New home page design and API (MR-1169)."
@@ -650,18 +687,18 @@
   },
   "utilisationNotes": {
     "attributionWarning": "Tempo writes every worklog to Jira under its own app account, so Jira cannot say who logged an hour. Hours here are credited to each ticket's current assignee. When a developer's ticket is handed to QA, the developer's hours move with it. Any day above 10 hours for one person is flagged for this reason.",
-    "overheadGap": "Meetings, stand-ups and leave are logged against 13 shared overhead tickets in Uvation Projects. Jira returns only the oldest 20 worklogs per ticket, so recent overhead time is invisible here.",
+    "overheadGap": "Meetings, stand-ups and leave are logged on 13 shared overhead tickets in Uvation Projects, which is outside this report's scope, so that time is not in these totals.",
     "deepDives": [
       {
         "person": "Suganya Murugaraj",
-        "finding": "Logged 28 hours on 6 days, all on PC-133. That averages 4.7 hours a day against an 8-hour day. No hours appear in Jira for 9, 10 and 11 Sep, and 15 Sep shows 1.5 hours.",
-        "context": "The 5.5 hours on 17 Sep covered Dell GPU corrections with Naman and then HPE validation, which is 3 products. Each product also needed a tech-spec table, long description, short description and product-card copy in HTML. Across the window she validated 19 products for 4 brands, about 1.5 hours per product.",
+        "finding": "Logged 36 hours on 8 days, all on PC-133. That averages 4.5 hours a day against an 8-hour day, or 50% of the 72-hour capacity. No hours appear in Jira for 11 Sep, and 15 Sep shows 1.5 hours.",
+        "context": "The 5.5 hours on 17 Sep covered Dell GPU corrections with Naman and then HPE validation, which is 3 products. Each product also needed a tech-spec table, long description, short description and product-card copy in HTML. Between 15 and 24 Sep she validated 19 products for 4 brands and started the 8 Vera Rubin products, about 1.5 hours per product.",
         "question": "Where are the other 3 or so hours a day? They may be on overhead tickets, which Jira hides, or unlogged.",
-        "verify": "Pull Suganya's Tempo timesheet for 9–22 Sep and compare the total with 72 hours."
+        "verify": "Pull Suganya's Tempo timesheet for 11–24 Sep and compare the total with 72 hours."
       },
       {
         "person": "Sapavat Yadagiri",
-        "finding": "Jira credits Sapavat with 120.8 hours, including 23.2 hours on 9 Sep. That is impossible for one person and shows developer time on tickets reassigned to QA.",
+        "finding": "Jira credits Sapavat with 100.5 hours, 140% of capacity, with five days between 12.5 and 15.5 hours (11–18 Sep). That is not plausible for one person and shows developer time on tickets reassigned to QA. From 21 Sep the daily figure drops to 6–8 hours.",
         "context": "Sapavat's own QA tasks show 0.5 to 2 hours each. For example, the navigation, homepage-module and facet UI updates for the category disable took 1 hour each (MT-1455 to MT-1457). Functional test on staging took 1.5 hours and the toggle test 1.5 hours (MT-1471, MT-1473).",
         "question": "Sapavat's real hours cannot be separated from developer hours in Jira. The Tempo worker report is the only reliable source.",
         "verify": "Pull Sapavat's Tempo timesheet by worker. Check that QA time is logged on QA subtasks, not on development subtasks."

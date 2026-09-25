@@ -17,7 +17,7 @@
         "MT",
         "PC"
       ],
-      "headline": "27 AI-server listings reached production by 22 Sep, all disabled pending approval. Category disable is 36 of 38 tasks done. Returns flow is in testing, and wizard steps 2 and 3 closed on 23 Sep. Home page, PDP and listing stories are still past their 31 Aug due dates."
+      "headline": "Home page, product listing and PDP closed on 24–25 Sep, 24 to 25 days after their 31 Aug due date. 27 AI-server listings are in production but still disabled pending approval, and 8 NVIDIA Vera Rubin products were created and validated on UAT on 25 Sep. Account hub and returns are in testing, past their 15 Sep due date. 23 open items are past due, down from 32."
     },
     {
       "id": "MR",
@@ -25,7 +25,7 @@
       "projects": [
         "MR"
       ],
-      "headline": "Production smoke tests pass on all 250 URLs the sitemap exposes, but more than 500 are expected. Figma validation has raised 31 defects, 8 of them on 23 Sep, and 7 are fixed. No open item is past its due date."
+      "headline": "Production smoke tests pass on all 250 URLs the sitemap exposes, but more than 500 are expected, and the sitemap fix (MR-1199) has not started. Figma validation now has 48 defects, 16 fixed, 9 of them on 25 Sep. No open item is past its due date."
     },
     {
       "id": "USP",
@@ -33,7 +33,7 @@
       "projects": [
         "USP"
       ],
-      "headline": "Highest throughput in scope, with 400 issues closed in 30 days. That includes 278 older issues closed in one clean-up on 11 Sep. 72 bugs are still open, 2 of them S1. Seven items are past due, including Platform Security & Access Control since 15 Aug, and two are marked as blockers."
+      "headline": "404 issues closed in 30 days, including 278 older issues closed in one clean-up on 11 Sep. Billing, payment-method and dashboard UI fixes closed on 23–25 Sep. 66 bugs are open, down from 72, and two new S2 bugs were raised on 24 Sep for failing notification APIs and missing usage data. Six items are past due."
     },
     {
       "id": "UC",
@@ -41,7 +41,7 @@
       "projects": [
         "UC"
       ],
-      "headline": "Five delivery stories are done: the Marketing, Services Platform and Marketplace chatbots, conversational UX and the admin dashboard. Book a Meeting is overdue since 4 Sep. Eight new agent stories are in To Do with no due dates."
+      "headline": "Five delivery stories are done: the Marketing, Services Platform and Marketplace chatbots, conversational UX and the admin dashboard. Book a Meeting has been overdue since 4 Sep with no update since 2 Sep. Eight new agent stories are in To Do with no due dates."
     }
   ]
 }

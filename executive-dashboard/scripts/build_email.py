@@ -63,6 +63,7 @@ def build(date, to):
     reass = [r for r in items if r["verdict"].startswith("Re-assess")]
     mp, mk, un, q = d["marketplace"], d["marketingTesting"], d["utilisationNotes"], d["quality"]
     total_products = sum(b["products"] for b in mp["brands"])
+    prod_products = sum(b["products"] for b in mp["brands"] if b.get("inProd", True))
     nice_date = dt.date.fromisoformat(date).strftime("%d %b %Y").lstrip("0")
     scope_names = ", ".join(c["name"] for c in d["scorecards"])
 
@@ -90,7 +91,7 @@ def build(date, to):
         ["Open issues (all time, in scope)", f"{k['openAllTime']:,}"],
         ["Open issues past their due date", f"{k['overdueOpen']}" + delta("pastDue", k["overdueOpen"])],
         [f"Tempo hours logged {per['short']}", f"{round(k['hoursInPeriod']):,} h" + delta("hours", k["hoursInPeriod"])],
-        ["AI-server listings live to buyers", f"0 of {total_products} (all moved to production, all disabled pending approval)"],
+        ["AI-server listings live to buyers", (f"0 of {total_products} (all moved to production, all disabled pending approval)" if prod_products == total_products else f"0 of {total_products} ({prod_products} in production but disabled pending approval, {total_products - prod_products} on UAT)")],
         ["Risk-register items rated red", f"{len(red)} of {rs['items']}"],
     ]))
 
@@ -156,7 +157,7 @@ def build(date, to):
     H.append(table(["Brand", "Listings", "Research", "Created on UAT", "Moved to production", "Live"], [
         [f"<b>{e(b['brand'])}</b><br><span style=\"color:{MUTED}\">{e(' · '.join(b['items']))}</span>", f"{b['products']}" + (f"<br><span style=\"color:{MUTED}\">{e(b['note'])}</span>" if b.get("note") else ""),
          e(b["research"]), e(b["uat"]), e(b["prod"]), pill("red", b["live"])] for b in mp["brands"]] +
-        [[f"<b>Total</b>", f"<b>{total_products}</b>", f"{len(mp['brands'])} of {len(mp['brands'])} brands", f"{total_products} of {total_products}", f"{total_products} of {total_products}", f"0 of {total_products}"]]))
+        [[f"<b>Total</b>", f"<b>{total_products}</b>", f"{len(mp['brands'])} of {len(mp['brands'])} brands", f"{total_products} of {total_products}", f"{prod_products} of {total_products}", f"0 of {total_products}"]]))
     H.append(p("<b>Still pending:</b>"))
     H.append(ul([e(x) for x in mp["pending"]]))
     H.append(table(["Workstream", "State", "Open"], [[f"{e(w['name'])}<br><span style=\"color:{MUTED}\">{e(w['key'])}</span>", e(w["state"]), e(w["open"])] for w in mp["otherWorkstreams"]]))
@@ -221,7 +222,7 @@ def build(date, to):
          f"- Issues moved, 30 days: {k['issuesUpdated30']:,}", f"- Issues closed, 30 days: {k['done30']:,}",
          f"- Issues closed {per['short']}: {k['doneInPeriod']:,}", f"- Open issues (all time): {k['openAllTime']:,}",
          f"- Open and past due: {k['overdueOpen']}", f"- Tempo hours {per['short']}: {round(k['hoursInPeriod']):,}",
-         f"- AI-server listings live: 0 of {total_products}", f"- Red register items: {len(red)} of {rs['items']}", "", "DECISIONS NEEDED"]
+         f"- AI-server listings live: 0 of {total_products} ({prod_products} in production, disabled)", f"- Red register items: {len(red)} of {rs['items']}", "", "DECISIONS NEEDED"]
     T += [f"- {html.unescape(x.replace('<b>', '').replace('</b>', ''))}" for x in dec]
     T += ["", "1. RISKS", f"{rs['risks']} risks and {rs['dependencies']} dependencies; {rs['stale30']} not updated in 30+ days; {rs['unassigned']} unassigned."]
     T += [f"- {r['key']} {r['summary']} [{r['likelihood']}/{r['impact']}, {r['ownerTeam']}, Jira: {r['assignee'] or 'unassigned'}, {r['daysSinceUpdate']} d] -> {r['verdict']}. {r['why']} Next: {r['action']}" for r in items]

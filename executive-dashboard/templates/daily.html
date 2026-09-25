@@ -200,7 +200,7 @@ section>*{min-width:0}
 
   <section id="tracks">
     <div class="shead"><h2>Milestone tracks</h2><p>Day-by-day progress on the three workstreams raised in the review.</p></div>
-    <div class="card"><h3>Marketplace AI-server catalogue: research to production</h3><div class="legend"><span><i style="background:var(--seq-250)"></i>Research and content</span><span><i style="background:var(--seq-450)"></i>Created on UAT</span><span><i style="background:var(--seq-650)"></i>Moved to production</span></div><p class="note">All 27 listings reached production by 22 Sep. <b>None are live</b>: each was disabled after verification, pending approval.</p><div class="chart" id="c-gantt" style="height:320px" role="img" aria-label="Timeline of the AI-server product pipeline by brand"></div></div>
+    <div class="card"><h3>Marketplace AI-server catalogue: research to production</h3><div class="legend"><span><i style="background:var(--seq-250)"></i>Research and content</span><span><i style="background:var(--seq-450)"></i>Created on UAT</span><span><i style="background:var(--seq-650)"></i>Moved to production</span></div><p class="note" id="gantt-note"></p><div class="chart" id="c-gantt" style="height:320px" role="img" aria-label="Timeline of the AI-server product pipeline by brand"></div></div>
     <div class="grid">
       <div class="card"><h3>Category disable, tasks closed per day</h3><p class="sub">MT-1438, the AI-servers-only pivot raised on 10 Sep.</p><div class="chart" id="c-burn" role="img" aria-label="Cumulative category-disable tasks closed"></div></div>
       <div class="card"><h3>Web-Marketing Figma defects: raised against fixed</h3><p class="sub">Subtasks of MR-1179, cumulative.</p><div class="legend"><span><i class="line" style="background:var(--created)"></i>Raised</span><span><i class="line" style="background:var(--resolved)"></i>Fixed</span></div><div class="chart" id="c-figma" role="img" aria-label="Figma defects raised and fixed"></div></div>
@@ -510,10 +510,13 @@ const D = /*__DATA__*/null;
   function renderTracks(){
     const G = D.pipeline, stages = ["Research and content","Created on UAT","Moved to production"], sc = [css("--seq-250"),css("--seq-450"),css("--seq-650")];
     const firstStage = G.flatMap(g=>g.stages.map(s=>s.start)).sort()[0] || M.effortStart;
-    const tDays = range(addDays(firstStage,-1) < M.windowStart ? M.windowStart : addDays(firstStage,-1), M.windowEnd);
+    const lastStage = G.flatMap(g=>g.stages.map(s=>s.end)).sort().pop() || M.windowEnd;
+    const tEnd = lastStage > M.windowEnd ? lastStage : M.windowEnd;
+    const tDays = range(addDays(firstStage,-1) < M.windowStart ? M.windowStart : addDays(firstStage,-1), tEnd);
+    $("#gantt-note").innerHTML = D.pipelineNote || "";
     const items = []; G.forEach((g,y)=>g.stages.forEach(s=>items.push({value:[tDays.indexOf(s.start), tDays.indexOf(s.end), y, stages.indexOf(s.stage)], brand:g.brand, s})));
     const c = chart("c-gantt");
-    c.setOption({...base(), grid:{left:120,right:20,top:30,bottom:34},
+    c.setOption({...base(), grid:{left:150,right:20,top:30,bottom:34},
       tooltip:{...base().tooltip, formatter:p=>{ const it=items[p.dataIndex]; return `<b>${esc(it.brand)}</b> · ${esc(it.s.stage)}<br>${lab(it.s.start)}${it.s.end!==it.s.start?" to "+lab(it.s.end):""}<br>${it.s.keys.join(", ")}`; }},
       xAxis:{...axisCat(tDays), boundaryGap:true},
       yAxis:{type:"category", data:G.map(g=>g.brand), inverse:true, axisLine:{show:false}, axisTick:{show:false}, axisLabel:{color:css("--ink-2"),fontSize:12,formatter:(v,k)=>`${v}  ·  ${G[k].products}`}},
@@ -521,7 +524,7 @@ const D = /*__DATA__*/null;
         renderItem:(params, api)=>{ const x0=api.coord([api.value(0),api.value(2)]), x1=api.coord([api.value(1),api.value(2)]); const band=api.size([1,1]); const lane=api.value(3);
           const h=band[1]*0.8/3; const top=x0[1]-band[1]*0.4+lane*h;
           return {type:"rect", shape:{x:x0[0]-band[0]*0.45, y:top+1, width:(x1[0]-x0[0])+band[0]*0.9, height:h-2, r:3}, style:{fill:sc[lane]}}; },
-        markLine:{silent:true,symbol:"none",lineStyle:{color:css("--critical"),type:"dashed",width:1.5},label:{formatter:"All still disabled",color:css("--bad-ink"),fontSize:11,position:"end"},data:[{xAxis:M.windowEnd}]}}]}, true);
+        markLine:{silent:true,symbol:"none",lineStyle:{color:css("--critical"),type:"dashed",width:1.5},label:{formatter:"All still disabled",color:css("--bad-ink"),fontSize:11,position:"start"},data:[{xAxis:tEnd}]}}]}, true);
     c.off("click"); c.on("click", p=>setDay(tDays[items[p.dataIndex].value[0]], true));
 
     // burn-up category disable

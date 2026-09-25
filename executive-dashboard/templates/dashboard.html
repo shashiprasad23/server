@@ -393,11 +393,12 @@ const D = /*__DATA__*/null;
   // KPIs
   const mp = D.marketplace, mk = D.marketingTesting;
   const totalProducts = mp.brands.reduce((a,b)=>a+b.products,0);
+  const prodProducts = mp.brands.filter(b=>b.inProd!==false).reduce((a,b)=>a+b.products,0);
   const escal = D.register.filter(r=>r.kind!=="Epic" && r.rag==="red").length;
   const kp = [
     {v:fmt(D.kpis.issuesUpdated30), l:"Issues moved, last 30 days", s: D.scope ? `${D.scorecards.length} programmes, ${D.kpis.projectsInScope} Jira boards` : `${D.kpis.projectsActive} of ${D.kpis.projectsVisible} projects active`},
     {v:fmt(D.kpis.doneInPeriod), l:`Issues completed ${D.period.short}`, s:`${fmt(D.kpis.done30)} in 30 days`},
-    {v:`0<small> / ${totalProducts}</small>`, l:"AI-server listings live", s:"All migrated to production, all disabled", c:"bad"},
+    {v:`0<small> / ${totalProducts}</small>`, l:"AI-server listings live", s:prodProducts===totalProducts?"All migrated to production, all disabled":`${prodProducts} in production but disabled, ${totalProducts-prodProducts} on UAT`, c:"bad"},
     {v:fmt(D.kpis.overdueOpen), l:"Open issues past due date", s:"Among issues active in 30 days", c:"warn"},
     {v:`${escal}<small> / ${D.registerSummary.items}</small>`, l:"Register items rated red", s:`${D.registerSummary.unassigned} have no Jira assignee`, c:"bad"},
     {v:`${fmt(Math.round(D.kpis.hoursInPeriod))}<small> h</small>`, l:"Tempo hours visible in Jira", s:"Author hidden on every entry", c:"warn"}
@@ -516,7 +517,7 @@ const D = /*__DATA__*/null;
   const step = t => `<span class="step-done">${keyify(t)}</span>`;
   $("#pipe").innerHTML = `<thead><tr><th>Brand</th><th class="r">Listings</th><th>Research and validation</th><th>Created on UAT</th><th>Moved to production</th><th>Live to buyers</th></tr></thead>
     <tbody>${mp.brands.map(b=>`<tr><td><b style="font-weight:600">${esc(b.brand)}</b><span class="items">${esc(b.items.join(" · "))}</span></td><td class="r num">${b.products}${b.note?`<span class="sub">${esc(b.note)}</span>`:""}</td><td class="step">${step(b.research)}</td><td class="step">${step(b.uat)}</td><td class="step">${step(b.prod)}</td><td>${pill("red", b.live)}</td></tr>`).join("")}</tbody>
-    <tfoot><tr><td>Total</td><td class="r num">${totalProducts}</td><td>${mp.brands.length} of ${mp.brands.length} brands</td><td>${totalProducts} of ${totalProducts}</td><td>${totalProducts} of ${totalProducts}</td><td>0 of ${totalProducts}</td></tr></tfoot>`;
+    <tfoot><tr><td>Total</td><td class="r num">${totalProducts}</td><td>${mp.brands.length} of ${mp.brands.length} brands</td><td>${totalProducts} of ${totalProducts}</td><td>${prodProducts} of ${totalProducts}</td><td>0 of ${totalProducts}</td></tr></tfoot>`;
   $("#mp-pending").innerHTML = mp.pending.map(p=>`<li>${keyify(p)}</li>`).join("");
   $("#mp-streams").innerHTML = `<thead><tr><th>Workstream</th><th>State</th><th>Open</th></tr></thead><tbody>${mp.otherWorkstreams.map(w=>`<tr><td>${esc(w.name)}<span class="sub">${keyify(w.key)}</span></td><td>${esc(w.state)}</td><td>${keyify(w.open)}</td></tr>`).join("")}</tbody>`;
 

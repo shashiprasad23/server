@@ -85,6 +85,7 @@ def main():
         "events": [e for e in daily["events"] if inscope(e["project"])],
         "bulk": [b for b in daily["bulk"] if inscope(b["project"])],
         "pipeline": daily["pipeline"],
+        "pipelineNote": daily.get("pipelineNote", ""),
         "register": [{k: r[k] for k in ("key", "project", "kind", "summary", "verdict", "rag", "updated", "daysSinceUpdate", "assignee")}
                      for r in review["register"] if r["kind"] != "Epic"],
         "overheadTruncated": review["quality"]["overheadTicketsTruncated"],
