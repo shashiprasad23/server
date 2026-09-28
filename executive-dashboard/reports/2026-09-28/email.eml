@@ -1,0 +1,2189 @@
+To: s.prasad@uvation.com
+Subject: Status report 28 Sep 2026: Marketplace, Marketing, Services Platform,
+ Conversational AI
+Date: Mon, 28 Sep 2026 15:04:44 +0000
+X-Unsent: 1
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============8733005839030590744=="
+
+--===============8733005839030590744==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+STATUS REPORT =C2=B7 28 Sep 2026
+Web programmes: risks, issues, progress and utilisation
+
+Scope: Web-Marketplace, Web-Marketing, Web-Uvation Services Platform, Uvation=
+ Conversational AI (Web-Marketplace includes the Product Catalog board).
+Window for hours: 14 Sep=E2=80=9327 Sep (9 working days). Throughput: last 30=
+ days.
+
+Portfolio Status Review: https://claude.ai/artifact/R9gQ2oHPXkQaj2ZgrXCEAe
+Daily Delivery Pulse:   https://claude.ai/artifact/K7m76XrnRRHWkGYqHtDySN
+
+HEADLINE FIGURES
+- Issues moved, 30 days: 1,205
+- Issues closed, 30 days: 824
+- Issues closed 14 Sep=E2=80=9327 Sep: 344
+- Open issues (all time): 707
+- Open and past due: 37
+- Tempo hours 14 Sep=E2=80=9327 Sep: 972
+- AI-server listings live: 0 of 35 (35 in production, disabled)
+- Red register items: 1 of 16
+
+DECISIONS NEEDED
+- Policy change identified during UAT is not recorded anywhere in Jira. Log i=
+t now as a Change Request with impact and effort, linked to the affected stor=
+ies.
+- AI Factory final prices calculated wrongly in production. Add the price-cal=
+culation checks to the automated regression run before each production releas=
+e.
+- Four Marketplace register items no longer appear in Jira, including the red=
+ OEM-agreement dependency. Close register items with a reason instead of dele=
+ting them.
+- Migrated products are disabled pending approval. Put a dated approval gate =
+in the plan for each batch.
+- USP-3755 Scope creep from multiple managed service teams adding portal requ=
+irements. Enforce the change-request gate named in the mitigation.
+- Key-person dependency on Magento product migration. Pair a second engineer =
+on the next batch and document the CSV and attribute steps as an SOP. Suggest=
+ed owner: Naman Bapna.
+- AI-server products are in production but disabled. Set an approval date wit=
+h the approver and a named enablement owner. Suggested owner: Shashi Prasad K.
+- Time-logging data cannot support utilisation reporting. Enforce the SOP rul=
+e that a description is mandatory. Pull the weekly utilisation view from Temp=
+o by worker, not by Jira assignee. Suggested owner: Shashi Prasad K.
+
+1. RISKS
+10 risks and 6 dependencies; 1 not updated in 30+ days; 2 unassigned.
+- USP-3755 Scope creep from multiple managed service teams adding portal requ=
+irements [High/Medium, Product Team, Jira: Livian Stefan Stan, 11 d] -> Keep =
+=E2=80=93 materialising. Scope creep is visible now: 195 USP issues created i=
+n 30 days and 63 open bugs, including 5 S1 bugs after three new ones on 25 an=
+d 28 Sep. Next: Enforce the change-request gate named in the mitigation.
+- MT-1094 Gynger API sandbox access required before financing integration [Me=
+dium/Medium, Backend Team, Jira: unassigned, 83 d] -> Re-assess. Financing mo=
+dal was part of the PDP story (MT-1217), which closed on 24 Sep. No Jira evid=
+ence that Gynger sandbox access was obtained. Next: Confirm whether financing=
+ is in go-live scope. If not, close. If yes, assign an owner.
+- USP-3750 Uvation Rewards Platform API required for service credit sync [Med=
+ium/High, Backend Team, Jira: Livian Stefan Stan, 11 d] -> Keep. Depends on R=
+ewards API. Same failure mode as MT-1099, which Marketplace has already mitig=
+ated. Next: Reuse the Marketplace sync and reconciliation pattern.
+- USP-3754 Service credit sync failure from Marketplace or Rewards [Medium/Hi=
+gh, Backend Team, Jira: Livian Stefan Stan, 11 d] -> Keep. Duplicate of USP-3=
+750 in substance. Next: Merge with USP-3750.
+- MT-1095 CDN infrastructure must be operational to serve product images [Low=
+/Medium, DevOps Team, Jira: Shashi Prasad K, 5 d] -> Closed. Closed 23 Sep by=
+ Shashi Prasad K: CDN is up and serving product images for all migrated produ=
+cts (MT-1528). Next: None. Closed with a reason.
+- MT-1097 Payment gateway downtime at checkout [Low/High, Backend Team, Jira:=
+ Shashi Prasad K, 5 d] -> Closed. Closed 23 Sep by Shashi Prasad K: payments =
+are recorded manually, so the online payment-gateway feature is being depreca=
+ted. Next: Revisit only if an online payment gateway is brought back into sco=
+pe.
+- MT-1098 OEM pricing changes without notice impacting listed prices [Medium/=
+Medium, Product Team, Jira: unassigned, 5 d] -> Closed. Closed 23 Sep by Shas=
+hi Prasad K: every catalogue product is sold as request-for-quote, so no OEM =
+list price is shown to buyers. Next: Reopen if any product is enabled with a =
+fixed listed price.
+- MT-1099 Rewards platform sync failure leading to incorrect point balances [=
+Medium/Medium, Backend Team, Jira: Naveen Jangid, 11 d] -> Close. Mitigation =
+delivered. Event-based sync, manual order sync and admin point adjustment exi=
+st (comment 16 Sep). Ticket is Done. Next: Close in register.
+- MT-1100 Data breach exposing customer PII or order history [Low/Critical, S=
+ecurity Team, Jira: Naveen Jangid, 5 d] -> Closed. Closed 23 Sep. Marketplace=
+ reads user details from the userinfo API instead of token claims (7 Sep). Id=
+entity claim-removal subtasks ID-679 to ID-683 sit in another project. Next: =
+Confirm with Security that ID-679 to ID-683 reached production.
+- USP-3747 Uvation Identity must remain single source of truth for USP auth [=
+Low/High, Identity Team, Jira: Livian Stefan Stan, 11 d] -> Keep. Owned and d=
+ated. Next: Run the periodic auth-bypass audit named in the mitigation.
+- USP-3748 Cloud partner APIs (Azure Monitor / GCP) must be accessible for da=
+shboards [Medium/High, Engineering Team, Jira: Livian Stefan Stan, 11 d] -> K=
+eep. Owned and dated. Next: Confirm partner API access before Phase 3.
+- USP-3751 Azure AD B2C outage preventing USP portal login [Low/High, Identit=
+y Team, Jira: Livian Stefan Stan, 11 d] -> Keep. Owned and dated. Next: Now t=
+he only open identity-outage risk, since MT-1096 no longer appears in Jira. E=
+xtend it to cover Marketplace login.
+- USP-3752 Cloud partner API rate limits blocking dashboard data [Medium/Medi=
+um, Engineering Team, Jira: Livian Stefan Stan, 11 d] -> Keep. Owned and date=
+d. Next: Review at 30 Sep.
+- USP-3753 AI transcription service failure after advisory session [Medium/Me=
+dium, Engineering Team, Jira: Livian Stefan Stan, 11 d] -> Keep. Owned and da=
+ted. Next: Confirm the failure mode applies to the advisory workflow.
+- USP-3756 Low adoption of self-service portal by clients used to manual enga=
+gement [Medium/High, Product Team, Jira: Livian Stefan Stan, 11 d] -> Keep. O=
+wned and dated. Next: Review at 30 Sep.
+- USP-3757 Vendor API approval delays blocking integrations [Medium/High, Eng=
+ineering Team, Jira: Livian Stefan Stan, 11 d] -> Keep. Owned and dated. Next=
+: Review at 30 Sep.
+- Not in Jira: Hiring a Product Catalog resource -> Retire as a critical risk=
+. Replace with: Key-person dependency on Naman Bapna for Magento product crea=
+tion and production migration. One researcher (Suganya) covers all brands.
+- New: Key-person dependency on Magento product migration (Medium/High). Ever=
+y UAT product creation and every UAT-to-production migration was done by one =
+person, including the 8 Vera Rubin products created on 25 Sep and moved to pr=
+oduction on 28 Sep (MT-1532, MT-1535). Mitigation: Pair a second engineer on =
+the next batch and document the CSV and attribute steps as an SOP.
+- New: AI-server products are in production but disabled (High/High). All 35 =
+migrated listings, including the 8 Vera Rubin products moved on 28 Sep, were =
+verified and then disabled pending business approval. The UAT cross-validatio=
+n closed on 28 Sep. Mitigation: Set an approval date with the approver and a =
+named enablement owner.
+- New: Marketplace staging performance (High/Medium). Lighthouse performance =
+score on staging was 43 on 18 Sep, after categories were reduced. The ticket =
+was routed to the wrong person first. Mitigation: Performance baseline and fi=
+x plan before enabling products.
+- New: Sitemap exposes 250 of 500+ URLs (High/Medium). The production sitemap=
+ lists 250 URLs. More than 500 are expected. This hurts SEO and caps automate=
+d test coverage. Mitigation: Fix the sitemap generator, then extend Playwrigh=
+t coverage to the full URL list.
+- New: Time-logging data cannot support utilisation reporting (High/High). Ev=
+ery Tempo worklog in the window uses the generic description 'time-tracking'.=
+ Marketing content, Design, Infrastructure and Hamara CRM have no Tempo hours=
+ against Jira at all. Mitigation: Enforce the SOP rule that a description is =
+mandatory. Pull the weekly utilisation view from Tempo by worker, not by Jira=
+ assignee.
+- New: Marketplace QA automation has no owner (Medium/Medium). The end-to-end=
+ automation framework was moved to backlog after the assigned engineer left o=
+n 23 Jul. Web-Marketing has working Playwright automation (MR-1165) that coul=
+d be reused. Mitigation: Reuse the Web-Marketing Playwright setup for a Marke=
+tplace smoke suite.
+
+2. ISSUES AND PREVENTIVE ACTIONS
+- Policy change identified during UAT is not recorded anywhere in Jira [Open =
+=E2=80=93 gap] (Marketplace, surfaced UAT)
+  Impact: Not measurable from Jira. The change is not logged, so its effect o=
+n scope, dates and effort cannot be traced.
+  Root cause: No change-request ticket type, and no UAT sign-off step that ca=
+ptures business-policy changes. About 300 tickets mentioning policy or change=
+ requests across 8 projects were checked. The closest are the returns-policy =
+use cases (MT-1116, MT-1180, MT-1181, MT-1187) and MT-1286, which made the re=
+turn-eligibility window configurable on 2 Sep. None of them records a change =
+found in UAT.
+  Action: None visible in Jira.
+  Prevention: Log it now as a Change Request with impact and effort, linked t=
+o the affected stories. Add a 'business rules confirmed' line to UAT sign-off=
+ covering returns, refunds, loyalty points and pricing. Open business-rule qu=
+estions already exist on MT-978 (loyalty points) and MT-1488 (refund and exch=
+ange timelines).
+- AI Factory final prices calculated wrongly in production [Open] (Services P=
+latform, surfaced 25 and 28 Sep, production)
+  Impact: The subscription price API returns the wrong final price for every =
+billing and term combination in the Traditional, Modular and Nuclear AI Facto=
+ry. One logged example expected 174,420 and got 150,660, about 14% low. A sep=
+arate S1 has the Document API failing with a 502 on the first request.
+  Root cause: Not recorded yet. The Document API failure is suspected to be t=
+he API gateway blocking the first request (comment on USP-4231, 28 Sep).
+  Action: All three are S1 and still in To Do. No fix recorded.
+  Prevention: Add the price-calculation checks to the automated regression ru=
+n before each production release.
+- Four Marketplace register items no longer appear in Jira, including the red=
+ OEM-agreement dependency [Open] (Marketplace, surfaced Register refresh, 23=
+=E2=80=9325 Sep)
+  Impact: MT-1093 (OEM/brand partner agreements before listing) was rated red=
+ while 27 AI-server listings sit in production. With the ticket gone there is=
+ no record of whether OEM agreements were confirmed. MT-1096 (identity outage=
+) and MT-1101 (GDPR/CCPA cookie handling) were still open.
+  Root cause: A search by key returns none of the four tickets, so they were =
+deleted or moved where this account cannot see them. The four items closed th=
+e same evening (MT-1095, MT-1097, MT-1098, MT-1100) each got a closing commen=
+t. These four did not.
+  Action: None recorded.
+  Prevention: Close register items with a reason instead of deleting them. Re=
+cord the OEM-agreement decision for each brand before any listing is enabled.
+- Marketplace scope changed mid-sprint to AI servers only [Largely delivered]=
+ (Marketplace, surfaced 10 Sep)
+  Impact: A 38-task category-disable plan was added on 10 Sep. 36 are done an=
+d about 43 hours were logged against it. The home page is being redesigned ar=
+ound B300, GB300 and Vera Rubin (MT-1524, due 30 Sep).
+  Root cause: Business strategy change mid-sprint.
+  Action: Category disable executed in 12 days. URL disposition (MT-1447) and=
+ performance check (MT-1475) remain open.
+  Prevention: Route strategy changes through a change request with an impact =
+estimate before tasks are raised.
+- Dell products created with wrong parent-child configuration [Resolved] (Mar=
+ketplace, surfaced UAT review, 16 Sep)
+  Impact: 4 of 6 Dell products needed rework. One had to be recreated. Dell G=
+PU values also needed correction (PC-133, 17 Sep).
+  Root cause: No agreed standard for configurable versus standalone products =
+before creation started.
+  Action: Fixed and verified on UAT on 17 Sep. Later brands were created as s=
+tandalone products.
+  Prevention: Apply the pre-publish QA checklist in the Confluence 30/60/90 p=
+lan to every batch before production migration.
+- Product list and specs arrived late [Resolved] (Marketplace, surfaced 16=E2=
+=80=9317 Sep)
+  Impact: HPE creation waited a day for one product's details. Timelines coul=
+d not be set until the final list existed.
+  Root cause: Creation started before the approved product list was final.
+  Action: HPE completed 18 Sep.
+  Prevention: Require a signed approved-product list per batch before creatio=
+n, as the 30/60/90 plan's approval gate specifies.
+- Migrated products are disabled pending approval [Open] (Marketplace, surfac=
+ed 18=E2=80=9322 Sep)
+  Impact: 35 listings are in production but not visible to buyers: 27 since 1=
+8=E2=80=9322 Sep and 8 Vera Rubin since 28 Sep.
+  Root cause: Approval step sits after migration, with no date.
+  Action: Cross-validation on UAT closed on 28 Sep (MT-1529). A full catalogu=
+e re-check is due 30 Sep (PC-136).
+  Prevention: Put a dated approval gate in the plan for each batch.
+- Earlier Lenovo UAT products not visible, and ticket status not maintained [=
+Unclear] (Product Catalog, surfaced 2 Sep)
+  Impact: A manually created Lenovo product did not appear on the UAT storefr=
+ont. PC-121 is still 'To Do' with 49.5 hours logged. It is not clear whether =
+its Lenovo products were superseded by the 2 Lenovo products in MT-1512.
+  Root cause: Not recorded.
+  Action: None recorded after 7 Sep.
+  Prevention: Close or re-scope PC-121 and state which Lenovo SKUs are in the=
+ go-live list.
+- Staging performance score of 43 [Open] (Marketplace, surfaced 18 Sep)
+  Impact: Slow pages on the reduced catalogue. Risk to conversion and SEO at =
+go-live.
+  Root cause: Not yet analysed. The ticket was first routed to the wrong pers=
+on.
+  Action: Reassigned to Naveen Jangid on 22 Sep. Now in UAT/staging (last upd=
+ated 23 Sep). No new score recorded.
+  Prevention: Add a performance budget to the release checklist.
+- Production sitemap lists 250 of 500+ URLs [Open] (Web-Marketing, surfaced 2=
+2 Sep)
+  Impact: Search engines and the Playwright suite both see only half the site.
+  Root cause: Sitemap generation limit. Not yet confirmed.
+  Action: Raised as P1.
+  Prevention: Add a URL-count check to the automated smoke run.
+- Marketplace buyer stories were past due [Partly resolved] (Marketplace, sur=
+faced Due 31 Aug and 15 Sep)
+  Impact: Home page, product listing and PDP were due 31 Aug and closed on 24=
+=E2=80=9325 Sep, 24 to 25 days late. Account hub (MT-1311) and returns flow (=
+MT-1331) were due 15 Sep and are still in testing.
+  Root cause: Not recorded. Due dates were not re-baselined after the AI-serv=
+ers pivot.
+  Action: MT-1216 and MT-1217 closed 24 Sep, MT-1215 closed 25 Sep after QA v=
+alidation. Account hub and returns are in testing.
+  Prevention: Re-baseline due dates when scope changes, per the SOP's Scenari=
+o 14.
+- Marketplace automation framework parked after a resource exit [Open] (Marke=
+tplace, surfaced 23 Jul)
+  Impact: Marketplace regression testing stays manual.
+  Root cause: Single owner left and work was not reassigned.
+  Action: Moved to backlog.
+  Prevention: Reuse the Web-Marketing Playwright suite and name a new owner.
+- Conflicting requirement on live chat [Open] (Web-Marketing, surfaced 15 Sep)
+  Impact: The team was asked to build a widget that it had earlier been asked=
+ to remove.
+  Root cause: Requirement changes are not recorded as decisions.
+  Action: Waiting on chatbot design and APIs.
+  Prevention: Keep a decision log per project and link reversals to the origi=
+nal decision.
+
+3. PROJECT PROGRESS
+- Web-Marketplace: 328 moved, 246 closed (30 d), 23 past due, 0 blocked, 1 op=
+en bugs. All 35 AI-server listings are now in production after the 8 Vera Rub=
+in products moved on 28 Sep, and all are disabled pending approval. The UAT c=
+ross-validation audit closed on 28 Sep, and a full catalogue re-check is due =
+30 Sep. Free-shipping and delivery-estimate text was removed from production =
+on 28 Sep. Account hub and returns are still in testing past their 15 Sep due=
+ date, and 23 open items are past due.
+- Web-Marketing: 225 moved, 141 closed (30 d), 0 past due, 0 blocked, 8 open =
+bugs. Figma validation now has 54 defects, 16 fixed, with 10 more raised on 2=
+8 Sep. The sitemap fix (MR-1199) has not started, so smoke tests still cover =
+250 of 500+ URLs. AI Factory pages and the GDPR and Careers redesigns are in =
+progress. No open item is past its due date.
+- Web-Uvation Services Platform: 562 moved, 411 closed (30 d), 8 past due, 2 =
+blocked, 63 open bugs. Three new S1 bugs in production: wrong final prices ac=
+ross the Traditional, Modular and Nuclear AI Factory (25 Sep) and a Document =
+API 502 on first request (28 Sep). Open S1 bugs rose from 2 to 5, with 63 bug=
+s open in total. An IAM security hardening story with 9 subtasks started on 2=
+8 Sep under Platform Security. Eight items are past due.
+- Uvation Conversational AI: 90 moved, 26 closed (30 d), 6 past due, 0 blocke=
+d, 0 open bugs. Five delivery stories are done: the Marketing, Services Platf=
+orm and Marketplace chatbots, conversational UX and the admin dashboard. Book=
+ a Meeting has been overdue since 4 Sep with no update since 2 Sep. The CSM T=
+eams dashboard (UC-215) moved into development, due 30 Sep.
+- Marketplace pipeline: Dell 6 (Moved 18 Sep (MT-1528), Disabled); HPE 3 (Mov=
+ed 18 Sep (MT-1528), Disabled); NVIDIA 8 (Moved 21 Sep (MT-1528), Disabled); =
+Supermicro 8 (Moved by 22 Sep (MT-1528 closed), Disabled); Lenovo 2 (Moved by=
+ 22 Sep (MT-1528 closed), Disabled); NVIDIA Vera Rubin 8 (Moved 28 Sep (MT-15=
+35), Disabled)
+  Expected completion: 30 Sep 2026 (due date on MT-1485, MT-1488 and MT-1524)
+- Marketing testing: 250 of 500+ URLs automated; 2250/2250 checks pass; Figma=
+ defects 16 fixed of 54. Remaining effort: Not estimated in Jira. None of the=
+ testing tickets carry an Original Estimate. Target date: Not set in Jira. Th=
+e only dated item is MR-1168, due 30 Sep.
+
+4. RESOURCE UTILISATION
+Capacity 72 h per person for the window. Tempo writes every worklog to Jira u=
+nder its own app account, so Jira cannot say who logged an hour. Hours here a=
+re credited to each ticket's current assignee. When a developer's ticket is h=
+anded to QA, the developer's hours move with it. Any day above 10 hours for o=
+ne person is flagged for this reason.
+- Sapavat Yadagiri: 115.0 h (160%), 9 days, peak 17.0 h =E2=80=94 A day over =
+10 h (other people's hours or bulk logging)
+- r.jaiswal: 107.6 h (149%), 9 days, peak 31.1 h =E2=80=94 A day over 10 h (o=
+ther people's hours or bulk logging)
+- Kunal Jangid: 101.6 h (141%), 9 days, peak 20.2 h =E2=80=94 A day over 10 h=
+ (other people's hours or bulk logging)
+- Saurabh Jain: 89.4 h (124%), 9 days, peak 17.5 h =E2=80=94 A day over 10 h =
+(other people's hours or bulk logging)
+- Aman prakash: 64.9 h (90%), 9 days, peak 11.0 h =E2=80=94 A day over 10 h (=
+other people's hours or bulk logging)
+- Naman Bapna: 61.6 h (86%), 9 days, peak 11.0 h =E2=80=94 A day over 10 h (o=
+ther people's hours or bulk logging)
+- Vishnu kumar yadav: 60.7 h (84%), 9 days, peak 8.7 h
+- Akhil Katiyar: 60.2 h (84%), 8 days, peak 15.2 h =E2=80=94 A day over 10 h =
+(other people's hours or bulk logging)
+- Ankit Saxena: 58.0 h (81%), 9 days, peak 8.5 h
+- Naveen Jangid: 56.5 h (78%), 9 days, peak 7.5 h
+- Nareddy Shiva Prasad Reddy: 48.5 h (67%), 8 days, peak 7.0 h
+- Suganya Murugaraj: 40.0 h (56%), 9 days, peak 6.5 h =E2=80=94 Below 60% of =
+capacity
+- Kannan Elangovan: 37.1 h (52%), 6 days, peak 14.0 h =E2=80=94 A day over 10=
+ h (other people's hours or bulk logging)
+- Nagamuni Valluri: 25.2 h (35%), 6 days, peak 7.0 h =E2=80=94 Below 60% of c=
+apacity
+- shubham kuchwar: 19.5 h (27%), 5 days, peak 4.0 h =E2=80=94 Below 60% of ca=
+pacity
+- Gourav Agnani: 14.0 h (19%), 2 days, peak 7.0 h =E2=80=94 Below 60% of capa=
+city
+- Ankit Sharma: 6.5 h (9%), 2 days, peak 4.0 h =E2=80=94 Below 60% of capacity
+- Parth: 2.5 h (3%), 2 days, peak 1.5 h =E2=80=94 Below 60% of capacity
+- C=C4=83=C8=99van Marcel: 1.5 h (2%), 1 days, peak 1.5 h =E2=80=94 Below 60%=
+ of capacity
+- Shashi Prasad K: 1.5 h (2%), 2 days, peak 1.0 h =E2=80=94 Below 60% of capa=
+city
+- Murali G: 0.5 h (1%), 1 days, peak 0.5 h =E2=80=94 Below 60% of capacity
+- Suganya Murugaraj: Logged 40 hours on 9 days, all on PC-133. That averages =
+4.4 hours a day against an 8-hour day, or 56% of the 72-hour capacity. 15 Sep=
+ shows 1.5 hours. The 5.5 hours on 17 Sep covered Dell GPU corrections with N=
+aman and then HPE validation, which is 3 products. Each product also needed a=
+ tech-spec table, long description, short description and product-card copy i=
+n HTML. Between 15 and 24 Sep she validated 19 products for 4 brands and star=
+ted the 8 Vera Rubin products, about 1.5 hours per product. To verify: Pull S=
+uganya's Tempo timesheet for 14=E2=80=9327 Sep and compare the total with 72 =
+hours. Note that a full catalogue re-check (PC-136) is now assigned to her, d=
+ue 30 Sep.
+- Sapavat Yadagiri: Jira credits Sapavat with 115 hours, 160% of capacity, wi=
+th seven days between 11.8 and 17 hours (15=E2=80=9318 and 23=E2=80=9325 Sep)=
+. That is not plausible for one person and shows developer time on tickets re=
+assigned to QA. Sapavat's own QA tasks show 0.5 to 2 hours each. For example,=
+ the navigation, homepage-module and facet UI updates for the category disabl=
+e took 1 hour each (MT-1455 to MT-1457). Functional test on staging took 1.5 =
+hours and the toggle test 1.5 hours (MT-1471, MT-1473). To verify: Pull Sapav=
+at's Tempo timesheet by worker. Check that QA time is logged on QA subtasks, =
+not on development subtasks.
+
+Stored in shashiprasad23/server, branch claude/executive-dashboard-jira-revie=
+w-gclk36, executive-dashboard/reports/2026-09-28/.
+
+--===============8733005839030590744==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<!doctype html><html><body><div style=3D"font-family:Segoe UI,Arial,sans-seri=
+f;max-width:860px;margin:0 auto;color:#16212C"><p style=3D"font-size:12px;let=
+ter-spacing:.08em;text-transform:uppercase;color:#5E6B78;margin:0">Status rep=
+ort =C2=B7 28 Sep 2026</p><h1 style=3D"font-size:26px;margin:4px 0 8px">Web p=
+rogrammes: risks, issues, progress and utilisation</h1><p style=3D"margin:6px=
+ 0 10px;font-size:14px;line-height:1.55;color:#16212C">Scope: Web-Marketplace=
+, Web-Marketing, Web-Uvation Services Platform, Uvation Conversational AI. We=
+b-Marketplace includes the Product Catalog board. Figures come from Jira and =
+Tempo, pulled on 28 Sep 2026. Throughput counts use the last 30 days, and hou=
+rs use the window 14 Sep=E2=80=9327 Sep (9 working days).</p><table role=3D"p=
+resentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"bord=
+er-collapse:collapse;border:1px solid #DCE2E8;margin:8px 0 18px"><tr><th alig=
+n=3D"left" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;backgrou=
+nd:#F4F6F8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color=
+:#5E6B78;font-weight:600">Live page</th><th align=3D"left" style=3D"padding:8=
+px 10px;border-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;let=
+ter-spacing:.05em;text-transform:uppercase;color:#5E6B78;font-weight:600">Lin=
+k</th><th align=3D"left" style=3D"padding:8px 10px;border-bottom:1px solid #D=
+CE2E8;background:#F4F6F8;font-size:11px;letter-spacing:.05em;text-transform:u=
+ppercase;color:#5E6B78;font-weight:600">What it shows</th></tr><tr><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">Portfolio Status Review</td><td valign=3D"top" style=3D"p=
+adding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"=
+><a href=3D"https://claude.ai/artifact/R9gQ2oHPXkQaj2ZgrXCEAe" style=3D"color=
+:#1D5C84">https://claude.ai/artifact/R9gQ2oHPXkQaj2ZgrXCEAe</a></td><td valig=
+n=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size=
+:13px;color:#16212C">Risk review, issues log, programme scorecards, Marketpla=
+ce pipeline, Marketing testing and utilisation</td></tr><tr><td valign=3D"top=
+" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;co=
+lor:#16212C">Daily Delivery Pulse</td><td valign=3D"top" style=3D"padding:8px=
+ 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><a href=
+=3D"https://claude.ai/artifact/K7m76XrnRRHWkGYqHtDySN" style=3D"color:#1D5C84=
+">https://claude.ai/artifact/K7m76XrnRRHWkGYqHtDySN</a></td><td valign=3D"top=
+" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;co=
+lor:#16212C">Day-by-day flow, effort, people heatmaps, day explorer, mileston=
+e tracks and risk age</td></tr></table><h2 style=3D"font-size:18px;margin:26p=
+x 0 6px;color:#16212C;border-top:2px solid #16212C;padding-top:10px">Headline=
+ figures</h2><table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"100%" style=3D"border-collapse:collapse;border:1px solid #DCE2E8;ma=
+rgin:8px 0 18px"><tr><th align=3D"left" style=3D"padding:8px 10px;border-bott=
+om:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;letter-spacing:.05em;t=
+ext-transform:uppercase;color:#5E6B78;font-weight:600">Measure</th><th align=
+=3D"left" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;backgroun=
+d:#F4F6F8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:=
+#5E6B78;font-weight:600">Value</th></tr><tr><td valign=3D"top" style=3D"paddi=
+ng:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Iss=
+ues moved in the last 30 days</td><td valign=3D"top" style=3D"padding:8px 10p=
+x;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">1,205 <span s=
+tyle=3D"color:#5E6B78;font-size:12px">(+12 vs 2026-09-25)</span></td></tr><tr=
+><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8=
+;font-size:13px;color:#16212C">Issues closed in the last 30 days</td><td vali=
+gn=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-siz=
+e:13px;color:#16212C">824 <span style=3D"color:#5E6B78;font-size:12px">(-11 v=
+s 2026-09-25)</span></td></tr><tr><td valign=3D"top" style=3D"padding:8px 10p=
+x;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Issues closed=
+ 14 Sep=E2=80=9327 Sep</td><td valign=3D"top" style=3D"padding:8px 10px;borde=
+r-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">344 <span style=3D"c=
+olor:#5E6B78;font-size:12px">(-278 vs 2026-09-25)</span></td></tr><tr><td val=
+ign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-si=
+ze:13px;color:#16212C">Open issues (all time, in scope)</td><td valign=3D"top=
+" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;co=
+lor:#16212C">707</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;bo=
+rder-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Open issues past =
+their due date</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom=
+:1px solid #DCE2E8;font-size:13px;color:#16212C">37 <span style=3D"color:#5E6=
+B78;font-size:12px">(+2 vs 2026-09-25)</span></td></tr><tr><td valign=3D"top"=
+ style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;col=
+or:#16212C">Tempo hours logged 14 Sep=E2=80=9327 Sep</td><td valign=3D"top" s=
+tyle=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color=
+:#16212C">972 h <span style=3D"color:#5E6B78;font-size:12px">(+12.1 vs 2026-0=
+9-25)</span></td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border=
+-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">AI-server listings li=
+ve to buyers</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1=
+px solid #DCE2E8;font-size:13px;color:#16212C">0 of 35 (all moved to producti=
+on, all disabled pending approval)</td></tr><tr><td valign=3D"top" style=3D"p=
+adding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"=
+>Risk-register items rated red</td><td valign=3D"top" style=3D"padding:8px 10=
+px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">1 of 16</td>=
+</tr></table><h2 style=3D"font-size:18px;margin:26px 0 6px;color:#16212C;bord=
+er-top:2px solid #16212C;padding-top:10px">Decisions needed</h2><ul style=3D"=
+margin:4px 0 14px;padding-left:20px"><li style=3D"font-size:14px;line-height:=
+1.5;margin:3px 0;color:#16212C"><b>Policy change identified during UAT is not=
+ recorded anywhere in Jira.</b> Log it now as a Change Request with impact an=
+d effort, linked to the affected stories.</li><li style=3D"font-size:14px;lin=
+e-height:1.5;margin:3px 0;color:#16212C"><b>AI Factory final prices calculate=
+d wrongly in production.</b> Add the price-calculation checks to the automate=
+d regression run before each production release.</li><li style=3D"font-size:1=
+4px;line-height:1.5;margin:3px 0;color:#16212C"><b>Four Marketplace register =
+items no longer appear in Jira, including the red OEM-agreement dependency.</=
+b> Close register items with a reason instead of deleting them.</li><li style=
+=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C"><b>Migrated pr=
+oducts are disabled pending approval.</b> Put a dated approval gate in the pl=
+an for each batch.</li><li style=3D"font-size:14px;line-height:1.5;margin:3px=
+ 0;color:#16212C"><b>USP-3755 Scope creep from multiple managed service teams=
+ adding portal requirements.</b> Enforce the change-request gate named in the=
+ mitigation.</li><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;col=
+or:#16212C"><b>Key-person dependency on Magento product migration.</b> Pair a=
+ second engineer on the next batch and document the CSV and attribute steps a=
+s an SOP. Suggested owner: Naman Bapna.</li><li style=3D"font-size:14px;line-=
+height:1.5;margin:3px 0;color:#16212C"><b>AI-server products are in productio=
+n but disabled.</b> Set an approval date with the approver and a named enable=
+ment owner. Suggested owner: Shashi Prasad K.</li><li style=3D"font-size:14px=
+;line-height:1.5;margin:3px 0;color:#16212C"><b>Time-logging data cannot supp=
+ort utilisation reporting.</b> Enforce the SOP rule that a description is man=
+datory. Pull the weekly utilisation view from Tempo by worker, not by Jira as=
+signee. Suggested owner: Shashi Prasad K.</li></ul><h2 style=3D"font-size:18p=
+x;margin:26px 0 6px;color:#16212C;border-top:2px solid #16212C;padding-top:10=
+px">1. Risks: impact, mitigation, owner and status</h2><p style=3D"margin:6px=
+ 0 10px;font-size:14px;line-height:1.55;color:#16212C">The Jira register hold=
+s 10 risks and 6 dependencies for the in-scope projects. It was created on 7 =
+Jul. 1 items have not been updated in over 30 days, and 2 have no Jira assign=
+ee. The Services Platform set is the only one actively owned.</p><table role=
+=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D=
+"border-collapse:collapse;border:1px solid #DCE2E8;margin:8px 0 18px"><tr><th=
+ align=3D"left" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;bac=
+kground:#F4F6F8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;=
+color:#5E6B78;font-weight:600">Item</th><th align=3D"left" style=3D"padding:8=
+px 10px;border-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;let=
+ter-spacing:.05em;text-transform:uppercase;color:#5E6B78;font-weight:600">Lik=
+elihood =C2=B7 Impact</th><th align=3D"left" style=3D"padding:8px 10px;border=
+-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;letter-spacing:.0=
+5em;text-transform:uppercase;color:#5E6B78;font-weight:600">Owner</th><th ali=
+gn=3D"left" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;backgro=
+und:#F4F6F8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;colo=
+r:#5E6B78;font-weight:600">Last update</th><th align=3D"left" style=3D"paddin=
+g:8px 10px;border-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;=
+letter-spacing:.05em;text-transform:uppercase;color:#5E6B78;font-weight:600">=
+Verdict</th><th align=3D"left" style=3D"padding:8px 10px;border-bottom:1px so=
+lid #DCE2E8;background:#F4F6F8;font-size:11px;letter-spacing:.05em;text-trans=
+form:uppercase;color:#5E6B78;font-weight:600">Why, and next action</th></tr><=
+tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2=
+E8;font-size:13px;color:#16212C"><b>USP-3755</b> Risk<br>Scope creep from mul=
+tiple managed service teams adding portal requirements<br><span style=3D"colo=
+r:#5E6B78">Web-Uvation Services Platform</span></td><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C">High =C2=B7 Medium</td><td valign=3D"top" style=3D"padding:8px 10px;bor=
+der-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Product Team<br><s=
+pan style=3D"color:#5E6B78">Jira: Livian Stefan Stan</span></td><td valign=3D=
+"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13p=
+x;color:#16212C">11 days<br><span style=3D"color:#5E6B78">TODO</span></td><td=
+ valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;fon=
+t-size:13px;color:#16212C"><span style=3D"display:inline-block;padding:2px 8p=
+x;border-radius:10px;background:#FBE4E2;color:#B02B23;font-size:12px;font-wei=
+ght:600;white-space:nowrap">Keep =E2=80=93 materialising</span></td><td valig=
+n=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size=
+:13px;color:#16212C">Scope creep is visible now: 195 USP issues created in 30=
+ days and 63 open bugs, including 5 S1 bugs after three new ones on 25 and 28=
+ Sep.<br><b>Next:</b> Enforce the change-request gate named in the mitigation=
+.</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px=
+ solid #DCE2E8;font-size:13px;color:#16212C"><b>MT-1094</b> Dependency<br>Gyn=
+ger API sandbox access required before financing integration<br><span style=
+=3D"color:#5E6B78">Web-Marketplace</span></td><td valign=3D"top" style=3D"pad=
+ding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">M=
+edium =C2=B7 Medium</td><td valign=3D"top" style=3D"padding:8px 10px;border-b=
+ottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Backend Team<br><span s=
+tyle=3D"color:#5E6B78">Jira: unassigned =C2=B7 suggested Naveen Jangid</span>=
+</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DC=
+E2E8;font-size:13px;color:#16212C">83 days<br><span style=3D"color:#5E6B78">T=
+ODO</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px=
+ solid #DCE2E8;font-size:13px;color:#16212C"><span style=3D"display:inline-bl=
+ock;padding:2px 8px;border-radius:10px;background:#FBEFD9;color:#8A5A00;font-=
+size:12px;font-weight:600;white-space:nowrap">Re-assess</span></td><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">Financing modal was part of the PDP story (MT-1217), whic=
+h closed on 24 Sep. No Jira evidence that Gynger sandbox access was obtained.=
+<br><b>Next:</b> Confirm whether financing is in go-live scope. If not, close=
+. If yes, assign an owner.</td></tr><tr><td valign=3D"top" style=3D"padding:8=
+px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>USP-=
+3750</b> Dependency<br>Uvation Rewards Platform API required for service cred=
+it sync<br><span style=3D"color:#5E6B78">Web-Uvation Services Platform</span>=
+</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DC=
+E2E8;font-size:13px;color:#16212C">Medium =C2=B7 High</td><td valign=3D"top" =
+style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;colo=
+r:#16212C">Backend Team<br><span style=3D"color:#5E6B78">Jira: Livian Stefan =
+Stan</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1p=
+x solid #DCE2E8;font-size:13px;color:#16212C">11 days<br><span style=3D"color=
+:#5E6B78">TODO</span></td><td valign=3D"top" style=3D"padding:8px 10px;border=
+-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><span style=3D"displa=
+y:inline-block;padding:2px 8px;border-radius:10px;background:#FBEFD9;color:#8=
+A5A00;font-size:12px;font-weight:600;white-space:nowrap">Keep</span></td><td =
+valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font=
+-size:13px;color:#16212C">Depends on Rewards API. Same failure mode as MT-109=
+9, which Marketplace has already mitigated.<br><b>Next:</b> Reuse the Marketp=
+lace sync and reconciliation pattern.</td></tr><tr><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C"><b>USP-3754</b> Risk<br>Service credit sync failure from Marketplace or=
+ Rewards<br><span style=3D"color:#5E6B78">Web-Uvation Services Platform</span=
+></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #D=
+CE2E8;font-size:13px;color:#16212C">Medium =C2=B7 High</td><td valign=3D"top"=
+ style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;col=
+or:#16212C">Backend Team<br><span style=3D"color:#5E6B78">Jira: Livian Stefan=
+ Stan</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1=
+px solid #DCE2E8;font-size:13px;color:#16212C">11 days<br><span style=3D"colo=
+r:#5E6B78">TODO</span></td><td valign=3D"top" style=3D"padding:8px 10px;borde=
+r-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><span style=3D"displ=
+ay:inline-block;padding:2px 8px;border-radius:10px;background:#FBEFD9;color:#=
+8A5A00;font-size:12px;font-weight:600;white-space:nowrap">Keep</span></td><td=
+ valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;fon=
+t-size:13px;color:#16212C">Duplicate of USP-3750 in substance.<br><b>Next:</b=
+> Merge with USP-3750.</td></tr><tr><td valign=3D"top" style=3D"padding:8px 1=
+0px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>MT-1095<=
+/b> Dependency<br>CDN infrastructure must be operational to serve product ima=
+ges<br><span style=3D"color:#5E6B78">Web-Marketplace</span></td><td valign=3D=
+"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13p=
+x;color:#16212C">Low =C2=B7 Medium</td><td valign=3D"top" style=3D"padding:8p=
+x 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">DevOps T=
+eam<br><span style=3D"color:#5E6B78">Jira: Shashi Prasad K</span></td><td val=
+ign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-si=
+ze:13px;color:#16212C">5 days<br><span style=3D"color:#5E6B78">Done</span></t=
+d><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E=
+8;font-size:13px;color:#16212C"><span style=3D"display:inline-block;padding:2=
+px 8px;border-radius:10px;background:#E3F2E9;color:#2C7A4D;font-size:12px;fon=
+t-weight:600;white-space:nowrap">Closed</span></td><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C">Closed 23 Sep by Shashi Prasad K: CDN is up and serving product images =
+for all migrated products (MT-1528).<br><b>Next:</b> None. Closed with a reas=
+on.</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1=
+px solid #DCE2E8;font-size:13px;color:#16212C"><b>MT-1097</b> Risk<br>Payment=
+ gateway downtime at checkout<br><span style=3D"color:#5E6B78">Web-Marketplac=
+e</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px s=
+olid #DCE2E8;font-size:13px;color:#16212C">Low =C2=B7 High</td><td valign=3D"=
+top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px=
+;color:#16212C">Backend Team<br><span style=3D"color:#5E6B78">Jira: Shashi Pr=
+asad K</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:=
+1px solid #DCE2E8;font-size:13px;color:#16212C">5 days<br><span style=3D"colo=
+r:#5E6B78">Done</span></td><td valign=3D"top" style=3D"padding:8px 10px;borde=
+r-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><span style=3D"displ=
+ay:inline-block;padding:2px 8px;border-radius:10px;background:#E3F2E9;color:#=
+2C7A4D;font-size:12px;font-weight:600;white-space:nowrap">Closed</span></td><=
+td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;f=
+ont-size:13px;color:#16212C">Closed 23 Sep by Shashi Prasad K: payments are r=
+ecorded manually, so the online payment-gateway feature is being deprecated.<=
+br><b>Next:</b> Revisit only if an online payment gateway is brought back int=
+o scope.</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bot=
+tom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>MT-1098</b> Risk<br>OE=
+M pricing changes without notice impacting listed prices<br><span style=3D"co=
+lor:#5E6B78">Web-Marketplace</span></td><td valign=3D"top" style=3D"padding:8=
+px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Medium =
+=C2=B7 Medium</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:=
+1px solid #DCE2E8;font-size:13px;color:#16212C">Product Team<br><span style=
+=3D"color:#5E6B78">Jira: unassigned</span></td><td valign=3D"top" style=3D"pa=
+dding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">=
+5 days<br><span style=3D"color:#5E6B78">Done</span></td><td valign=3D"top" st=
+yle=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:=
+#16212C"><span style=3D"display:inline-block;padding:2px 8px;border-radius:10=
+px;background:#E3F2E9;color:#2C7A4D;font-size:12px;font-weight:600;white-spac=
+e:nowrap">Closed</span></td><td valign=3D"top" style=3D"padding:8px 10px;bord=
+er-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Closed 23 Sep by Sh=
+ashi Prasad K: every catalogue product is sold as request-for-quote, so no OE=
+M list price is shown to buyers.<br><b>Next:</b> Reopen if any product is ena=
+bled with a fixed listed price.</td></tr><tr><td valign=3D"top" style=3D"padd=
+ing:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b=
+>MT-1099</b> Risk<br>Rewards platform sync failure leading to incorrect point=
+ balances<br><span style=3D"color:#5E6B78">Web-Marketplace</span></td><td val=
+ign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-si=
+ze:13px;color:#16212C">Medium =C2=B7 Medium</td><td valign=3D"top" style=3D"p=
+adding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"=
+>Backend Team<br><span style=3D"color:#5E6B78">Jira: Naveen Jangid</span></td=
+><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8=
+;font-size:13px;color:#16212C">11 days<br><span style=3D"color:#5E6B78">Done<=
+/span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px sol=
+id #DCE2E8;font-size:13px;color:#16212C"><span style=3D"display:inline-block;=
+padding:2px 8px;border-radius:10px;background:#E3F2E9;color:#2C7A4D;font-size=
+:12px;font-weight:600;white-space:nowrap">Close</span></td><td valign=3D"top"=
+ style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;col=
+or:#16212C">Mitigation delivered. Event-based sync, manual order sync and adm=
+in point adjustment exist (comment 16 Sep). Ticket is Done.<br><b>Next:</b> C=
+lose in register.</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;b=
+order-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>MT-1100</b> R=
+isk<br>Data breach exposing customer PII or order history<br><span style=3D"c=
+olor:#5E6B78">Web-Marketplace</span></td><td valign=3D"top" style=3D"padding:=
+8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Low =
+=C2=B7 Critical</td><td valign=3D"top" style=3D"padding:8px 10px;border-botto=
+m:1px solid #DCE2E8;font-size:13px;color:#16212C">Security Team<br><span styl=
+e=3D"color:#5E6B78">Jira: Naveen Jangid</span></td><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C">5 days<br><span style=3D"color:#5E6B78">Done</span></td><td valign=3D"t=
+op" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;=
+color:#16212C"><span style=3D"display:inline-block;padding:2px 8px;border-rad=
+ius:10px;background:#E3F2E9;color:#2C7A4D;font-size:12px;font-weight:600;whit=
+e-space:nowrap">Closed</span></td><td valign=3D"top" style=3D"padding:8px 10p=
+x;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Closed 23 Sep=
+. Marketplace reads user details from the userinfo API instead of token claim=
+s (7 Sep). Identity claim-removal subtasks ID-679 to ID-683 sit in another pr=
+oject.<br><b>Next:</b> Confirm with Security that ID-679 to ID-683 reached pr=
+oduction.</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bo=
+ttom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>USP-3747</b> Dependen=
+cy<br>Uvation Identity must remain single source of truth for USP auth<br><sp=
+an style=3D"color:#5E6B78">Web-Uvation Services Platform</span></td><td valig=
+n=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size=
+:13px;color:#16212C">Low =C2=B7 High</td><td valign=3D"top" style=3D"padding:=
+8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Identi=
+ty Team<br><span style=3D"color:#5E6B78">Jira: Livian Stefan Stan</span></td>=
+<td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;=
+font-size:13px;color:#16212C">11 days<br><span style=3D"color:#5E6B78">TODO</=
+span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px soli=
+d #DCE2E8;font-size:13px;color:#16212C"><span style=3D"display:inline-block;p=
+adding:2px 8px;border-radius:10px;background:#E3F2E9;color:#2C7A4D;font-size:=
+12px;font-weight:600;white-space:nowrap">Keep</span></td><td valign=3D"top" s=
+tyle=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color=
+:#16212C">Owned and dated.<br><b>Next:</b> Run the periodic auth-bypass audit=
+ named in the mitigation.</td></tr><tr><td valign=3D"top" style=3D"padding:8p=
+x 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>USP-3=
+748</b> Dependency<br>Cloud partner APIs (Azure Monitor / GCP) must be access=
+ible for dashboards<br><span style=3D"color:#5E6B78">Web-Uvation Services Pla=
+tform</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1=
+px solid #DCE2E8;font-size:13px;color:#16212C">Medium =C2=B7 High</td><td val=
+ign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-si=
+ze:13px;color:#16212C">Engineering Team<br><span style=3D"color:#5E6B78">Jira=
+: Livian Stefan Stan</span></td><td valign=3D"top" style=3D"padding:8px 10px;=
+border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">11 days<br><spa=
+n style=3D"color:#5E6B78">TODO</span></td><td valign=3D"top" style=3D"padding=
+:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><span=
+ style=3D"display:inline-block;padding:2px 8px;border-radius:10px;background:=
+#E3F2E9;color:#2C7A4D;font-size:12px;font-weight:600;white-space:nowrap">Keep=
+</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px so=
+lid #DCE2E8;font-size:13px;color:#16212C">Owned and dated.<br><b>Next:</b> Co=
+nfirm partner API access before Phase 3.</td></tr><tr><td valign=3D"top" styl=
+e=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#1=
+6212C"><b>USP-3751</b> Risk<br>Azure AD B2C outage preventing USP portal logi=
+n<br><span style=3D"color:#5E6B78">Web-Uvation Services Platform</span></td><=
+td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;f=
+ont-size:13px;color:#16212C">Low =C2=B7 High</td><td valign=3D"top" style=3D"=
+padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C=
+">Identity Team<br><span style=3D"color:#5E6B78">Jira: Livian Stefan Stan</sp=
+an></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid =
+#DCE2E8;font-size:13px;color:#16212C">11 days<br><span style=3D"color:#5E6B78=
+">TODO</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:=
+1px solid #DCE2E8;font-size:13px;color:#16212C"><span style=3D"display:inline=
+-block;padding:2px 8px;border-radius:10px;background:#E3F2E9;color:#2C7A4D;fo=
+nt-size:12px;font-weight:600;white-space:nowrap">Keep</span></td><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">Owned and dated.<br><b>Next:</b> Now the only open identi=
+ty-outage risk, since MT-1096 no longer appears in Jira. Extend it to cover M=
+arketplace login.</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;b=
+order-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>USP-3752</b> =
+Risk<br>Cloud partner API rate limits blocking dashboard data<br><span style=
+=3D"color:#5E6B78">Web-Uvation Services Platform</span></td><td valign=3D"top=
+" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;co=
+lor:#16212C">Medium =C2=B7 Medium</td><td valign=3D"top" style=3D"padding:8px=
+ 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Engineeri=
+ng Team<br><span style=3D"color:#5E6B78">Jira: Livian Stefan Stan</span></td>=
+<td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;=
+font-size:13px;color:#16212C">11 days<br><span style=3D"color:#5E6B78">TODO</=
+span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px soli=
+d #DCE2E8;font-size:13px;color:#16212C"><span style=3D"display:inline-block;p=
+adding:2px 8px;border-radius:10px;background:#E3F2E9;color:#2C7A4D;font-size:=
+12px;font-weight:600;white-space:nowrap">Keep</span></td><td valign=3D"top" s=
+tyle=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color=
+:#16212C">Owned and dated.<br><b>Next:</b> Review at 30 Sep.</td></tr><tr><td=
+ valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;fon=
+t-size:13px;color:#16212C"><b>USP-3753</b> Risk<br>AI transcription service f=
+ailure after advisory session<br><span style=3D"color:#5E6B78">Web-Uvation Se=
+rvices Platform</span></td><td valign=3D"top" style=3D"padding:8px 10px;borde=
+r-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Medium =C2=B7 Medium=
+</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DC=
+E2E8;font-size:13px;color:#16212C">Engineering Team<br><span style=3D"color:#=
+5E6B78">Jira: Livian Stefan Stan</span></td><td valign=3D"top" style=3D"paddi=
+ng:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">11 =
+days<br><span style=3D"color:#5E6B78">TODO</span></td><td valign=3D"top" styl=
+e=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#1=
+6212C"><span style=3D"display:inline-block;padding:2px 8px;border-radius:10px=
+;background:#E3F2E9;color:#2C7A4D;font-size:12px;font-weight:600;white-space:=
+nowrap">Keep</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-b=
+ottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Owned and dated.<br><b>=
+Next:</b> Confirm the failure mode applies to the advisory workflow.</td></tr=
+><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DC=
+E2E8;font-size:13px;color:#16212C"><b>USP-3756</b> Risk<br>Low adoption of se=
+lf-service portal by clients used to manual engagement<br><span style=3D"colo=
+r:#5E6B78">Web-Uvation Services Platform</span></td><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C">Medium =C2=B7 High</td><td valign=3D"top" style=3D"padding:8px 10px;bor=
+der-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Product Team<br><s=
+pan style=3D"color:#5E6B78">Jira: Livian Stefan Stan</span></td><td valign=3D=
+"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13p=
+x;color:#16212C">11 days<br><span style=3D"color:#5E6B78">TODO</span></td><td=
+ valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;fon=
+t-size:13px;color:#16212C"><span style=3D"display:inline-block;padding:2px 8p=
+x;border-radius:10px;background:#E3F2E9;color:#2C7A4D;font-size:12px;font-wei=
+ght:600;white-space:nowrap">Keep</span></td><td valign=3D"top" style=3D"paddi=
+ng:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Own=
+ed and dated.<br><b>Next:</b> Review at 30 Sep.</td></tr><tr><td valign=3D"to=
+p" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;c=
+olor:#16212C"><b>USP-3757</b> Dependency<br>Vendor API approval delays blocki=
+ng integrations<br><span style=3D"color:#5E6B78">Web-Uvation Services Platfor=
+m</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px s=
+olid #DCE2E8;font-size:13px;color:#16212C">Medium =C2=B7 High</td><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">Engineering Team<br><span style=3D"color:#5E6B78">Jira: L=
+ivian Stefan Stan</span></td><td valign=3D"top" style=3D"padding:8px 10px;bor=
+der-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">11 days<br><span s=
+tyle=3D"color:#5E6B78">TODO</span></td><td valign=3D"top" style=3D"padding:8p=
+x 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><span st=
+yle=3D"display:inline-block;padding:2px 8px;border-radius:10px;background:#E3=
+F2E9;color:#2C7A4D;font-size:12px;font-weight:600;white-space:nowrap">Keep</s=
+pan></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid=
+ #DCE2E8;font-size:13px;color:#16212C">Owned and dated.<br><b>Next:</b> Revie=
+w at 30 Sep.</td></tr></table><p style=3D"margin:6px 0 10px;font-size:14px;li=
+ne-height:1.55;color:#16212C"><b>Status-report risk not in Jira: =E2=80=9CHir=
+ing a Product Catalog resource=E2=80=9D.</b> Verdict: Retire as a critical ri=
+sk.</p><ul style=3D"margin:4px 0 14px;padding-left:20px"><li style=3D"font-si=
+ze:14px;line-height:1.5;margin:3px 0;color:#16212C">Suganya Murugaraj researc=
+hed and validated attribute values for Dell, HPE, Supermicro and Lenovo betwe=
+en 15 and 22 Sep (PC-133). She has now moved on to NVIDIA Vera Rubin.</li><li=
+ style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C">Naman Ba=
+pna created 27 AI-server listings on UAT and moved them all to production bet=
+ween 16 and 22 Sep (MT-1500 to MT-1512, MT-1528).</li><li style=3D"font-size:=
+14px;line-height:1.5;margin:3px 0;color:#16212C">The Confluence 30/60/90 plan=
+ for the Product Research &amp; Upload team already defines the roles this hi=
+re would fill.</li><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;c=
+olor:#16212C"><b>Replace it with:</b> Key-person dependency on Naman Bapna fo=
+r Magento product creation and production migration. One researcher (Suganya)=
+ covers all brands.</li><li style=3D"font-size:14px;line-height:1.5;margin:3p=
+x 0;color:#16212C"><b>Action:</b> Cross-train one more person on CSV import a=
+nd production migration before the NVIDIA Vera Rubin batch. Revisit hiring on=
+ly if the pipeline grows past current throughput.</li></ul><p style=3D"margin=
+:6px 0 10px;font-size:14px;line-height:1.55;color:#16212C"><b>New risks found=
+ in Jira evidence</b> (not yet in the register):</p><table role=3D"presentati=
+on" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collap=
+se:collapse;border:1px solid #DCE2E8;margin:8px 0 18px"><tr><th align=3D"left=
+" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;background:#F4F6F=
+8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#5E6B78;=
+font-weight:600">Risk</th><th align=3D"left" style=3D"padding:8px 10px;border=
+-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;letter-spacing:.0=
+5em;text-transform:uppercase;color:#5E6B78;font-weight:600">Likelihood =C2=B7=
+ Impact</th><th align=3D"left" style=3D"padding:8px 10px;border-bottom:1px so=
+lid #DCE2E8;background:#F4F6F8;font-size:11px;letter-spacing:.05em;text-trans=
+form:uppercase;color:#5E6B78;font-weight:600">Detail</th><th align=3D"left" s=
+tyle=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;background:#F4F6F8;f=
+ont-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#5E6B78;fon=
+t-weight:600">Mitigation</th><th align=3D"left" style=3D"padding:8px 10px;bor=
+der-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;letter-spacing=
+:.05em;text-transform:uppercase;color:#5E6B78;font-weight:600">Owner</th></tr=
+><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DC=
+E2E8;font-size:13px;color:#16212C"><b>Key-person dependency on Magento produc=
+t migration</b><br><span style=3D"color:#5E6B78">Marketplace</span></td><td v=
+align=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-=
+size:13px;color:#16212C"><span style=3D"display:inline-block;padding:2px 8px;=
+border-radius:10px;background:#FBE4E2;color:#B02B23;font-size:12px;font-weigh=
+t:600;white-space:nowrap">Medium =C2=B7 High</span></td><td valign=3D"top" st=
+yle=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:=
+#16212C">Every UAT product creation and every UAT-to-production migration was=
+ done by one person, including the 8 Vera Rubin products created on 25 Sep an=
+d moved to production on 28 Sep (MT-1532, MT-1535).</td><td valign=3D"top" st=
+yle=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:=
+#16212C">Pair a second engineer on the next batch and document the CSV and at=
+tribute steps as an SOP.</td><td valign=3D"top" style=3D"padding:8px 10px;bor=
+der-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Naman Bapna</td></=
+tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #=
+DCE2E8;font-size:13px;color:#16212C"><b>AI-server products are in production =
+but disabled</b><br><span style=3D"color:#5E6B78">Marketplace</span></td><td =
+valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font=
+-size:13px;color:#16212C"><span style=3D"display:inline-block;padding:2px 8px=
+;border-radius:10px;background:#FBE4E2;color:#B02B23;font-size:12px;font-weig=
+ht:600;white-space:nowrap">High =C2=B7 High</span></td><td valign=3D"top" sty=
+le=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#=
+16212C">All 35 migrated listings, including the 8 Vera Rubin products moved o=
+n 28 Sep, were verified and then disabled pending business approval. The UAT =
+cross-validation closed on 28 Sep.</td><td valign=3D"top" style=3D"padding:8p=
+x 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Set an a=
+pproval date with the approver and a named enablement owner.</td><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">Shashi Prasad K</td></tr><tr><td valign=3D"top" style=3D"=
+padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C=
+"><b>Marketplace staging performance</b><br><span style=3D"color:#5E6B78">Mar=
+ketplace</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-botto=
+m:1px solid #DCE2E8;font-size:13px;color:#16212C"><span style=3D"display:inli=
+ne-block;padding:2px 8px;border-radius:10px;background:#FBEFD9;color:#8A5A00;=
+font-size:12px;font-weight:600;white-space:nowrap">High =C2=B7 Medium</span><=
+/td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE=
+2E8;font-size:13px;color:#16212C">Lighthouse performance score on staging was=
+ 43 on 18 Sep, after categories were reduced. The ticket was routed to the wr=
+ong person first.</td><td valign=3D"top" style=3D"padding:8px 10px;border-bot=
+tom:1px solid #DCE2E8;font-size:13px;color:#16212C">Performance baseline and =
+fix plan before enabling products.</td><td valign=3D"top" style=3D"padding:8p=
+x 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Naveen J=
+angid</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom=
+:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>Sitemap exposes 250 of 50=
+0+ URLs</b><br><span style=3D"color:#5E6B78">Web-Marketing</span></td><td val=
+ign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-si=
+ze:13px;color:#16212C"><span style=3D"display:inline-block;padding:2px 8px;bo=
+rder-radius:10px;background:#FBEFD9;color:#8A5A00;font-size:12px;font-weight:=
+600;white-space:nowrap">High =C2=B7 Medium</span></td><td valign=3D"top" styl=
+e=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#1=
+6212C">The production sitemap lists 250 URLs. More than 500 are expected. Thi=
+s hurts SEO and caps automated test coverage.</td><td valign=3D"top" style=3D=
+"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212=
+C">Fix the sitemap generator, then extend Playwright coverage to the full URL=
+ list.</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px sol=
+id #DCE2E8;font-size:13px;color:#16212C">Vishnu kumar yadav</td></tr><tr><td =
+valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font=
+-size:13px;color:#16212C"><b>Time-logging data cannot support utilisation rep=
+orting</b><br><span style=3D"color:#5E6B78">All</span></td><td valign=3D"top"=
+ style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;col=
+or:#16212C"><span style=3D"display:inline-block;padding:2px 8px;border-radius=
+:10px;background:#FBE4E2;color:#B02B23;font-size:12px;font-weight:600;white-s=
+pace:nowrap">High =C2=B7 High</span></td><td valign=3D"top" style=3D"padding:=
+8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Every =
+Tempo worklog in the window uses the generic description &#x27;time-tracking&=
+#x27;. Marketing content, Design, Infrastructure and Hamara CRM have no Tempo=
+ hours against Jira at all.</td><td valign=3D"top" style=3D"padding:8px 10px;=
+border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Enforce the SOP=
+ rule that a description is mandatory. Pull the weekly utilisation view from =
+Tempo by worker, not by Jira assignee.</td><td valign=3D"top" style=3D"paddin=
+g:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Shas=
+hi Prasad K</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-=
+bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>Marketplace QA auto=
+mation has no owner</b><br><span style=3D"color:#5E6B78">Marketplace</span></=
+td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2=
+E8;font-size:13px;color:#16212C"><span style=3D"display:inline-block;padding:=
+2px 8px;border-radius:10px;background:#FBEFD9;color:#8A5A00;font-size:12px;fo=
+nt-weight:600;white-space:nowrap">Medium =C2=B7 Medium</span></td><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">The end-to-end automation framework was moved to backlog =
+after the assigned engineer left on 23 Jul. Web-Marketing has working Playwri=
+ght automation (MR-1165) that could be reused.</td><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C">Reuse the Web-Marketing Playwright setup for a Marketplace smoke suite.=
+</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DC=
+E2E8;font-size:13px;color:#16212C">Kannan Elangovan</td></tr></table><h2 styl=
+e=3D"font-size:18px;margin:26px 0 6px;color:#16212C;border-top:2px solid #162=
+12C;padding-top:10px">2. Issues and preventive actions</h2><table role=3D"pre=
+sentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border=
+-collapse:collapse;border:1px solid #DCE2E8;margin:8px 0 18px"><tr><th align=
+=3D"left" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;backgroun=
+d:#F4F6F8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:=
+#5E6B78;font-weight:600">Issue</th><th align=3D"left" style=3D"padding:8px 10=
+px;border-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;letter-s=
+pacing:.05em;text-transform:uppercase;color:#5E6B78;font-weight:600">Status</=
+th><th align=3D"left" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2=
+E8;background:#F4F6F8;font-size:11px;letter-spacing:.05em;text-transform:uppe=
+rcase;color:#5E6B78;font-weight:600">Impact</th><th align=3D"left" style=3D"p=
+adding:8px 10px;border-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:=
+11px;letter-spacing:.05em;text-transform:uppercase;color:#5E6B78;font-weight:=
+600">Root cause</th><th align=3D"left" style=3D"padding:8px 10px;border-botto=
+m:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;letter-spacing:.05em;te=
+xt-transform:uppercase;color:#5E6B78;font-weight:600">Action taken</th><th al=
+ign=3D"left" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;backgr=
+ound:#F4F6F8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;col=
+or:#5E6B78;font-weight:600">Preventive measure</th></tr><tr><td valign=3D"top=
+" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;co=
+lor:#16212C"><b>Policy change identified during UAT is not recorded anywhere =
+in Jira</b><br><span style=3D"color:#5E6B78">Marketplace =C2=B7 surfaced UAT =
+=C2=B7 MT-1116, MT-1180, MT-1181, MT-1187, MT-1286</span></td><td valign=3D"t=
+op" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;=
+color:#16212C"><span style=3D"display:inline-block;padding:2px 8px;border-rad=
+ius:10px;background:#FBE4E2;color:#B02B23;font-size:12px;font-weight:600;whit=
+e-space:nowrap">Open =E2=80=93 gap</span></td><td valign=3D"top" style=3D"pad=
+ding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">N=
+ot measurable from Jira. The change is not logged, so its effect on scope, da=
+tes and effort cannot be traced.</td><td valign=3D"top" style=3D"padding:8px =
+10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">No change-=
+request ticket type, and no UAT sign-off step that captures business-policy c=
+hanges. About 300 tickets mentioning policy or change requests across 8 proje=
+cts were checked. The closest are the returns-policy use cases (MT-1116, MT-1=
+180, MT-1181, MT-1187) and MT-1286, which made the return-eligibility window =
+configurable on 2 Sep. None of them records a change found in UAT.</td><td va=
+lign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-s=
+ize:13px;color:#16212C">None visible in Jira.</td><td valign=3D"top" style=3D=
+"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212=
+C">Log it now as a Change Request with impact and effort, linked to the affec=
+ted stories. Add a &#x27;business rules confirmed&#x27; line to UAT sign-off =
+covering returns, refunds, loyalty points and pricing. Open business-rule que=
+stions already exist on MT-978 (loyalty points) and MT-1488 (refund and excha=
+nge timelines).</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;bor=
+der-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>AI Factory fina=
+l prices calculated wrongly in production</b><br><span style=3D"color:#5E6B78=
+">Services Platform =C2=B7 surfaced 25 and 28 Sep, production =C2=B7 USP-4229=
+, USP-4230, USP-4231</span></td><td valign=3D"top" style=3D"padding:8px 10px;=
+border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><span style=3D"=
+display:inline-block;padding:2px 8px;border-radius:10px;background:#FBE4E2;co=
+lor:#B02B23;font-size:12px;font-weight:600;white-space:nowrap">Open</span></t=
+d><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E=
+8;font-size:13px;color:#16212C">The subscription price API returns the wrong =
+final price for every billing and term combination in the Traditional, Modula=
+r and Nuclear AI Factory. One logged example expected 174,420 and got 150,660=
+, about 14% low. A separate S1 has the Document API failing with a 502 on the=
+ first request.</td><td valign=3D"top" style=3D"padding:8px 10px;border-botto=
+m:1px solid #DCE2E8;font-size:13px;color:#16212C">Not recorded yet. The Docum=
+ent API failure is suspected to be the API gateway blocking the first request=
+ (comment on USP-4231, 28 Sep).</td><td valign=3D"top" style=3D"padding:8px 1=
+0px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">All three a=
+re S1 and still in To Do. No fix recorded.</td><td valign=3D"top" style=3D"pa=
+dding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">=
+Add the price-calculation checks to the automated regression run before each =
+production release.</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px=
+;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>Four Market=
+place register items no longer appear in Jira, including the red OEM-agreemen=
+t dependency</b><br><span style=3D"color:#5E6B78">Marketplace =C2=B7 surfaced=
+ Register refresh, 23=E2=80=9325 Sep =C2=B7 MT-1093, MT-1092, MT-1096, MT-110=
+1</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px s=
+olid #DCE2E8;font-size:13px;color:#16212C"><span style=3D"display:inline-bloc=
+k;padding:2px 8px;border-radius:10px;background:#FBE4E2;color:#B02B23;font-si=
+ze:12px;font-weight:600;white-space:nowrap">Open</span></td><td valign=3D"top=
+" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;co=
+lor:#16212C">MT-1093 (OEM/brand partner agreements before listing) was rated =
+red while 27 AI-server listings sit in production. With the ticket gone there=
+ is no record of whether OEM agreements were confirmed. MT-1096 (identity out=
+age) and MT-1101 (GDPR/CCPA cookie handling) were still open.</td><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">A search by key returns none of the four tickets, so they=
+ were deleted or moved where this account cannot see them. The four items clo=
+sed the same evening (MT-1095, MT-1097, MT-1098, MT-1100) each got a closing =
+comment. These four did not.</td><td valign=3D"top" style=3D"padding:8px 10px=
+;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">None recorded.=
+</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DC=
+E2E8;font-size:13px;color:#16212C">Close register items with a reason instead=
+ of deleting them. Record the OEM-agreement decision for each brand before an=
+y listing is enabled.</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10=
+px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>Marketpla=
+ce scope changed mid-sprint to AI servers only</b><br><span style=3D"color:#5=
+E6B78">Marketplace =C2=B7 surfaced 10 Sep =C2=B7 MT-1437, MT-1438, MT-1524</s=
+pan></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid=
+ #DCE2E8;font-size:13px;color:#16212C"><span style=3D"display:inline-block;pa=
+dding:2px 8px;border-radius:10px;background:#FBEFD9;color:#8A5A00;font-size:1=
+2px;font-weight:600;white-space:nowrap">Largely delivered</span></td><td vali=
+gn=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-siz=
+e:13px;color:#16212C">A 38-task category-disable plan was added on 10 Sep. 36=
+ are done and about 43 hours were logged against it. The home page is being r=
+edesigned around B300, GB300 and Vera Rubin (MT-1524, due 30 Sep).</td><td va=
+lign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-s=
+ize:13px;color:#16212C">Business strategy change mid-sprint.</td><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">Category disable executed in 12 days. URL disposition (MT=
+-1447) and performance check (MT-1475) remain open.</td><td valign=3D"top" st=
+yle=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:=
+#16212C">Route strategy changes through a change request with an impact estim=
+ate before tasks are raised.</td></tr><tr><td valign=3D"top" style=3D"padding=
+:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>De=
+ll products created with wrong parent-child configuration</b><br><span style=
+=3D"color:#5E6B78">Marketplace =C2=B7 surfaced UAT review, 16 Sep =C2=B7 MT-1=
+503, MT-1527</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-b=
+ottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><span style=3D"display:=
+inline-block;padding:2px 8px;border-radius:10px;background:#E3F2E9;color:#2C7=
+A4D;font-size:12px;font-weight:600;white-space:nowrap">Resolved</span></td><t=
+d valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;fo=
+nt-size:13px;color:#16212C">4 of 6 Dell products needed rework. One had to be=
+ recreated. Dell GPU values also needed correction (PC-133, 17 Sep).</td><td =
+valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font=
+-size:13px;color:#16212C">No agreed standard for configurable versus standalo=
+ne products before creation started.</td><td valign=3D"top" style=3D"padding:=
+8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Fixed =
+and verified on UAT on 17 Sep. Later brands were created as standalone produc=
+ts.</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid =
+#DCE2E8;font-size:13px;color:#16212C">Apply the pre-publish QA checklist in t=
+he Confluence 30/60/90 plan to every batch before production migration.</td><=
+/tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid =
+#DCE2E8;font-size:13px;color:#16212C"><b>Product list and specs arrived late<=
+/b><br><span style=3D"color:#5E6B78">Marketplace =C2=B7 surfaced 16=E2=80=931=
+7 Sep =C2=B7 MT-1506, MT-1484</span></td><td valign=3D"top" style=3D"padding:=
+8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><span =
+style=3D"display:inline-block;padding:2px 8px;border-radius:10px;background:#=
+E3F2E9;color:#2C7A4D;font-size:12px;font-weight:600;white-space:nowrap">Resol=
+ved</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px=
+ solid #DCE2E8;font-size:13px;color:#16212C">HPE creation waited a day for on=
+e product&#x27;s details. Timelines could not be set until the final list exi=
+sted.</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px soli=
+d #DCE2E8;font-size:13px;color:#16212C">Creation started before the approved =
+product list was final.</td><td valign=3D"top" style=3D"padding:8px 10px;bord=
+er-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">HPE completed 18 Se=
+p.</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #=
+DCE2E8;font-size:13px;color:#16212C">Require a signed approved-product list p=
+er batch before creation, as the 30/60/90 plan&#x27;s approval gate specifies=
+.</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px=
+ solid #DCE2E8;font-size:13px;color:#16212C"><b>Migrated products are disable=
+d pending approval</b><br><span style=3D"color:#5E6B78">Marketplace =C2=B7 su=
+rfaced 18=E2=80=9322 Sep =C2=B7 MT-1528, MT-1529</span></td><td valign=3D"top=
+" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;co=
+lor:#16212C"><span style=3D"display:inline-block;padding:2px 8px;border-radiu=
+s:10px;background:#FBE4E2;color:#B02B23;font-size:12px;font-weight:600;white-=
+space:nowrap">Open</span></td><td valign=3D"top" style=3D"padding:8px 10px;bo=
+rder-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">35 listings are i=
+n production but not visible to buyers: 27 since 18=E2=80=9322 Sep and 8 Vera=
+ Rubin since 28 Sep.</td><td valign=3D"top" style=3D"padding:8px 10px;border-=
+bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Approval step sits aft=
+er migration, with no date.</td><td valign=3D"top" style=3D"padding:8px 10px;=
+border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Cross-validatio=
+n on UAT closed on 28 Sep (MT-1529). A full catalogue re-check is due 30 Sep =
+(PC-136).</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px =
+solid #DCE2E8;font-size:13px;color:#16212C">Put a dated approval gate in the =
+plan for each batch.</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10p=
+x;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>Earlier Le=
+novo UAT products not visible, and ticket status not maintained</b><br><span =
+style=3D"color:#5E6B78">Product Catalog =C2=B7 surfaced 2 Sep =C2=B7 PC-121</=
+span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px soli=
+d #DCE2E8;font-size:13px;color:#16212C"><span style=3D"display:inline-block;p=
+adding:2px 8px;border-radius:10px;background:#FBEFD9;color:#8A5A00;font-size:=
+12px;font-weight:600;white-space:nowrap">Unclear</span></td><td valign=3D"top=
+" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;co=
+lor:#16212C">A manually created Lenovo product did not appear on the UAT stor=
+efront. PC-121 is still &#x27;To Do&#x27; with 49.5 hours logged. It is not c=
+lear whether its Lenovo products were superseded by the 2 Lenovo products in =
+MT-1512.</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px s=
+olid #DCE2E8;font-size:13px;color:#16212C">Not recorded.</td><td valign=3D"to=
+p" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;c=
+olor:#16212C">None recorded after 7 Sep.</td><td valign=3D"top" style=3D"padd=
+ing:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Cl=
+ose or re-scope PC-121 and state which Lenovo SKUs are in the go-live list.</=
+td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px so=
+lid #DCE2E8;font-size:13px;color:#16212C"><b>Staging performance score of 43<=
+/b><br><span style=3D"color:#5E6B78">Marketplace =C2=B7 surfaced 18 Sep =C2=
+=B7 MT-1475</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bo=
+ttom:1px solid #DCE2E8;font-size:13px;color:#16212C"><span style=3D"display:i=
+nline-block;padding:2px 8px;border-radius:10px;background:#FBEFD9;color:#8A5A=
+00;font-size:12px;font-weight:600;white-space:nowrap">Open</span></td><td val=
+ign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-si=
+ze:13px;color:#16212C">Slow pages on the reduced catalogue. Risk to conversio=
+n and SEO at go-live.</td><td valign=3D"top" style=3D"padding:8px 10px;border=
+-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Not yet analysed. The=
+ ticket was first routed to the wrong person.</td><td valign=3D"top" style=3D=
+"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212=
+C">Reassigned to Naveen Jangid on 22 Sep. Now in UAT/staging (last updated 23=
+ Sep). No new score recorded.</td><td valign=3D"top" style=3D"padding:8px 10p=
+x;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Add a perform=
+ance budget to the release checklist.</td></tr><tr><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C"><b>Production sitemap lists 250 of 500+ URLs</b><br><span style=3D"colo=
+r:#5E6B78">Web-Marketing =C2=B7 surfaced 22 Sep =C2=B7 MR-1199, MR-1200</span=
+></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #D=
+CE2E8;font-size:13px;color:#16212C"><span style=3D"display:inline-block;paddi=
+ng:2px 8px;border-radius:10px;background:#FBEFD9;color:#8A5A00;font-size:12px=
+;font-weight:600;white-space:nowrap">Open</span></td><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C">Search engines and the Playwright suite both see only half the site.</t=
+d><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E=
+8;font-size:13px;color:#16212C">Sitemap generation limit. Not yet confirmed.<=
+/td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE=
+2E8;font-size:13px;color:#16212C">Raised as P1.</td><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C">Add a URL-count check to the automated smoke run.</td></tr><tr><td vali=
+gn=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-siz=
+e:13px;color:#16212C"><b>Marketplace buyer stories were past due</b><br><span=
+ style=3D"color:#5E6B78">Marketplace =C2=B7 surfaced Due 31 Aug and 15 Sep =
+=C2=B7 MT-1215, MT-1216, MT-1217, MT-1311, MT-1331</span></td><td valign=3D"t=
+op" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;=
+color:#16212C"><span style=3D"display:inline-block;padding:2px 8px;border-rad=
+ius:10px;background:#FBEFD9;color:#8A5A00;font-size:12px;font-weight:600;whit=
+e-space:nowrap">Partly resolved</span></td><td valign=3D"top" style=3D"paddin=
+g:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Home=
+ page, product listing and PDP were due 31 Aug and closed on 24=E2=80=9325 Se=
+p, 24 to 25 days late. Account hub (MT-1311) and returns flow (MT-1331) were =
+due 15 Sep and are still in testing.</td><td valign=3D"top" style=3D"padding:=
+8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Not re=
+corded. Due dates were not re-baselined after the AI-servers pivot.</td><td v=
+align=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-=
+size:13px;color:#16212C">MT-1216 and MT-1217 closed 24 Sep, MT-1215 closed 25=
+ Sep after QA validation. Account hub and returns are in testing.</td><td val=
+ign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-si=
+ze:13px;color:#16212C">Re-baseline due dates when scope changes, per the SOP&=
+#x27;s Scenario 14.</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px=
+;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>Marketplace=
+ automation framework parked after a resource exit</b><br><span style=3D"colo=
+r:#5E6B78">Marketplace =C2=B7 surfaced 23 Jul =C2=B7 MT-1141</span></td><td v=
+align=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-=
+size:13px;color:#16212C"><span style=3D"display:inline-block;padding:2px 8px;=
+border-radius:10px;background:#FBEFD9;color:#8A5A00;font-size:12px;font-weigh=
+t:600;white-space:nowrap">Open</span></td><td valign=3D"top" style=3D"padding=
+:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Marke=
+tplace regression testing stays manual.</td><td valign=3D"top" style=3D"paddi=
+ng:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Sin=
+gle owner left and work was not reassigned.</td><td valign=3D"top" style=3D"p=
+adding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"=
+>Moved to backlog.</td><td valign=3D"top" style=3D"padding:8px 10px;border-bo=
+ttom:1px solid #DCE2E8;font-size:13px;color:#16212C">Reuse the Web-Marketing =
+Playwright suite and name a new owner.</td></tr><tr><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C"><b>Conflicting requirement on live chat</b><br><span style=3D"color:#5E=
+6B78">Web-Marketing =C2=B7 surfaced 15 Sep =C2=B7 MR-754</span></td><td valig=
+n=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size=
+:13px;color:#16212C"><span style=3D"display:inline-block;padding:2px 8px;bord=
+er-radius:10px;background:#FBEFD9;color:#8A5A00;font-size:12px;font-weight:60=
+0;white-space:nowrap">Open</span></td><td valign=3D"top" style=3D"padding:8px=
+ 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">The team =
+was asked to build a widget that it had earlier been asked to remove.</td><td=
+ valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;fon=
+t-size:13px;color:#16212C">Requirement changes are not recorded as decisions.=
+</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DC=
+E2E8;font-size:13px;color:#16212C">Waiting on chatbot design and APIs.</td><t=
+d valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;fo=
+nt-size:13px;color:#16212C">Keep a decision log per project and link reversal=
+s to the original decision.</td></tr></table><h2 style=3D"font-size:18px;marg=
+in:26px 0 6px;color:#16212C;border-top:2px solid #16212C;padding-top:10px">3.=
+ Project-wise accomplishments</h2><table role=3D"presentation" cellpadding=3D=
+"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:collapse;border=
+:1px solid #DCE2E8;margin:8px 0 18px"><tr><th align=3D"left" style=3D"padding=
+:8px 10px;border-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;l=
+etter-spacing:.05em;text-transform:uppercase;color:#5E6B78;font-weight:600">P=
+rogramme</th><th align=3D"left" style=3D"padding:8px 10px;border-bottom:1px s=
+olid #DCE2E8;background:#F4F6F8;font-size:11px;letter-spacing:.05em;text-tran=
+sform:uppercase;color:#5E6B78;font-weight:600">Moved 30 d</th><th align=3D"le=
+ft" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;background:#F4F=
+6F8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#5E6B7=
+8;font-weight:600">Closed 30 d</th><th align=3D"left" style=3D"padding:8px 10=
+px;border-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;letter-s=
+pacing:.05em;text-transform:uppercase;color:#5E6B78;font-weight:600">Closed 1=
+4 Sep=E2=80=9327 Sep</th><th align=3D"left" style=3D"padding:8px 10px;border-=
+bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;letter-spacing:.05=
+em;text-transform:uppercase;color:#5E6B78;font-weight:600">Past due</th><th a=
+lign=3D"left" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;backg=
+round:#F4F6F8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;co=
+lor:#5E6B78;font-weight:600">Blocked</th><th align=3D"left" style=3D"padding:=
+8px 10px;border-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;le=
+tter-spacing:.05em;text-transform:uppercase;color:#5E6B78;font-weight:600">Op=
+en bugs</th><th align=3D"left" style=3D"padding:8px 10px;border-bottom:1px so=
+lid #DCE2E8;background:#F4F6F8;font-size:11px;letter-spacing:.05em;text-trans=
+form:uppercase;color:#5E6B78;font-weight:600">Stories delivered / in flight /=
+ planned</th></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bot=
+tom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>Web-Marketplace</b><br=
+><span style=3D"color:#5E6B78">MT + PC</span></td><td valign=3D"top" style=3D=
+"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212=
+C">328</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px sol=
+id #DCE2E8;font-size:13px;color:#16212C">246</td><td valign=3D"top" style=3D"=
+padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C=
+">142</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px soli=
+d #DCE2E8;font-size:13px;color:#16212C">23</td><td valign=3D"top" style=3D"pa=
+dding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">=
+0</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #D=
+CE2E8;font-size:13px;color:#16212C">1<br><span style=3D"color:#5E6B78">Unrate=
+d 1</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px=
+ solid #DCE2E8;font-size:13px;color:#16212C">25 / 10 / 2</td></tr><tr><td val=
+ign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-si=
+ze:13px;color:#16212C"><b>Web-Marketing</b><br><span style=3D"color:#5E6B78">=
+MR</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px =
+solid #DCE2E8;font-size:13px;color:#16212C">225</td><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C">141</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px =
+solid #DCE2E8;font-size:13px;color:#16212C">90</td><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C">0</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px so=
+lid #DCE2E8;font-size:13px;color:#16212C">0</td><td valign=3D"top" style=3D"p=
+adding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"=
+>8<br><span style=3D"color:#5E6B78">Unrated 8</span></td><td valign=3D"top" s=
+tyle=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color=
+:#16212C">7 / 6 / 2</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px=
+;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>Web-Uvation=
+ Services Platform</b><br><span style=3D"color:#5E6B78">USP</span></td><td va=
+lign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-s=
+ize:13px;color:#16212C">562</td><td valign=3D"top" style=3D"padding:8px 10px;=
+border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">411</td><td val=
+ign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-si=
+ze:13px;color:#16212C">97</td><td valign=3D"top" style=3D"padding:8px 10px;bo=
+rder-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">8</td><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">2</td><td valign=3D"top" style=3D"padding:8px 10px;border=
+-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">63<br><span style=3D"=
+color:#5E6B78">S1 5, S2 12, S3 26, Unrated 20</span></td><td valign=3D"top" s=
+tyle=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color=
+:#16212C">41 / 4 / 24</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10=
+px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>Uvation C=
+onversational AI</b><br><span style=3D"color:#5E6B78">UC</span></td><td valig=
+n=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size=
+:13px;color:#16212C">90</td><td valign=3D"top" style=3D"padding:8px 10px;bord=
+er-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">26</td><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">15</td><td valign=3D"top" style=3D"padding:8px 10px;borde=
+r-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">6</td><td valign=3D"=
+top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px=
+;color:#16212C">0</td><td valign=3D"top" style=3D"padding:8px 10px;border-bot=
+tom:1px solid #DCE2E8;font-size:13px;color:#16212C">0</td><td valign=3D"top" =
+style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;colo=
+r:#16212C">5 / 3 / 8</td></tr></table><h3 style=3D"font-size:15px;margin:16px=
+ 0 4px">Web-Marketplace</h3><p style=3D"margin:6px 0 10px;font-size:14px;line=
+-height:1.55;color:#16212C">All 35 AI-server listings are now in production a=
+fter the 8 Vera Rubin products moved on 28 Sep, and all are disabled pending =
+approval. The UAT cross-validation audit closed on 28 Sep, and a full catalog=
+ue re-check is due 30 Sep. Free-shipping and delivery-estimate text was remov=
+ed from production on 28 Sep. Account hub and returns are still in testing pa=
+st their 15 Sep due date, and 23 open items are past due.</p><table role=3D"p=
+resentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"bord=
+er-collapse:collapse;border:1px solid #DCE2E8;margin:8px 0 18px"><tr><th alig=
+n=3D"left" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;backgrou=
+nd:#F4F6F8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color=
+:#5E6B78;font-weight:600"></th><th align=3D"left" style=3D"padding:8px 10px;b=
+order-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;letter-spaci=
+ng:.05em;text-transform:uppercase;color:#5E6B78;font-weight:600">Detail</th><=
+/tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid =
+#DCE2E8;font-size:13px;color:#16212C">Delivered (30 d)</td><td valign=3D"top"=
+ style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;col=
+or:#16212C"><b>MT-1215</b> As a buyer I want a responsive home page with hero=
+, categories and featured products so I can start browsing <span style=3D"col=
+or:#5E6B78">=C2=B7 Sapavat Yadagiri, closed 2026-09-25</span><br><b>MT-1217</=
+b> As a buyer I want complete product info, configuration, financing and a pa=
+th to quote/cart so I can make a decision <span style=3D"color:#5E6B78">=C2=
+=B7 Sapavat Yadagiri, closed 2026-09-24</span><br><b>MT-1216</b> As a buyer I=
+ want to filter, sort and search products so I can find the right hardware qu=
+ickly <span style=3D"color:#5E6B78">=C2=B7 Sapavat Yadagiri, closed 2026-09-2=
+4</span><br><b>MT-1097</b> Risk: Payment gateway downtime at checkout <span s=
+tyle=3D"color:#5E6B78">=C2=B7 Shashi Prasad K, closed 2026-09-23</span><br><b=
+>MT-1095</b> Dependency: CDN infrastructure must be operational to serve prod=
+uct images <span style=3D"color:#5E6B78">=C2=B7 Shashi Prasad K, closed 2026-=
+09-23</span><br><b>MT-1100</b> Risk: Data breach exposing customer PII or ord=
+er history <span style=3D"color:#5E6B78">=C2=B7 Naveen Jangid, closed 2026-09=
+-23</span></td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-b=
+ottom:1px solid #DCE2E8;font-size:13px;color:#16212C">In flight</td><td valig=
+n=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size=
+:13px;color:#16212C"><b>MT-1438</b> Uvation Marketplace Category Disable Task=
+ List <span style=3D"color:#5E6B78">=C2=B7 CODE REVIEW, Shashi Prasad K, due =
+2026-09-10</span><br><b>MT-1311</b> P2-As a logged-in user I want to manage o=
+rders, quotes, returns, addresses, rewards and credits so I can self-serve <s=
+pan style=3D"color:#5E6B78">=C2=B7 TESTING, Sapavat Yadagiri, due 2026-09-15<=
+/span><br><b>MT-1331</b> P2 - As a buyer I want to return items and get a ref=
+und or credit so I can resolve issues post-delivery <span style=3D"color:#5E6=
+B78">=C2=B7 TESTING, Sapavat Yadagiri, due 2026-09-15</span><br><b>MT-1365</b=
+> RMA =E2=80=93 Review and Implement Figma Requirements (Backend) - Email Tem=
+plates and Flow <span style=3D"color:#5E6B78">=C2=B7 In Progress, shubham kuc=
+hwar, due 2026-09-15</span><br><b>MT-1485</b> Product creation on Magento for=
+ all AI servers <span style=3D"color:#5E6B78">=C2=B7 In Progress, Naman Bapna=
+, due 2026-09-30</span><br><b>MT-1488</b> RMA- Backend Support <span style=3D=
+"color:#5E6B78">=C2=B7 In Progress, shubham kuchwar, due 2026-09-30</span></t=
+d></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px sol=
+id #DCE2E8;font-size:13px;color:#16212C">Past due (23)</td><td valign=3D"top"=
+ style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;col=
+or:#16212C"><b>PC-118</b> Product Research for AI/ML servers <span style=3D"c=
+olor:#5E6B78">=C2=B7 due 2026-08-29, To Do</span><br><b>MT-1052</b> Integrate=
+ FE Form URL in PO Order Confirmation Email <span style=3D"color:#5E6B78">=C2=
+=B7 due 2026-08-31, IN PRODUCTION</span><br><b>MT-1053</b> Create Backend API=
+s for PO Order Details Form <span style=3D"color:#5E6B78">=C2=B7 due 2026-08-=
+31, UAT/STAGING</span><br><b>MT-990</b> Build payment confirmation form UI &a=
+mp; validation <span style=3D"color:#5E6B78">=C2=B7 due 2026-08-31, IN DEVELO=
+PMENT</span><br><b>MT-991</b> Backend: PO Payment Details Edit Access Eligibi=
+lity <span style=3D"color:#5E6B78">=C2=B7 due 2026-08-31, IN PRODUCTION</span=
+><br><b>MT-992</b> Update PO email layout structure <span style=3D"color:#5E6=
+B78">=C2=B7 due 2026-08-31, UAT/STAGING</span></td></tr><tr><td valign=3D"top=
+" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;co=
+lor:#16212C">Largest parents</td><td valign=3D"top" style=3D"padding:8px 10px=
+;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>MT-1438</b>=
+ Uvation Marketplace Category Disable Task List <span style=3D"color:#5E6B78"=
+>=C2=B7 36 of 38 child tasks done</span><br><b>MT-1365</b> RMA =E2=80=93 Revi=
+ew and Implement Figma Requirements (Backend) - Email Templates and Flow <spa=
+n style=3D"color:#5E6B78">=C2=B7 24 of 28 child tasks done</span><br><b>MT-14=
+85</b> Product creation on Magento for all AI servers <span style=3D"color:#5=
+E6B78">=C2=B7 20 of 20 child tasks done</span><br><b>MT-1314</b> Enhance Chec=
+kout, Sales, and Quote Workflow Emails Layouts <span style=3D"color:#5E6B78">=
+=C2=B7 19 of 19 child tasks done</span></td></tr></table><h3 style=3D"font-si=
+ze:15px;margin:16px 0 4px">Web-Marketing</h3><p style=3D"margin:6px 0 10px;fo=
+nt-size:14px;line-height:1.55;color:#16212C">Figma validation now has 54 defe=
+cts, 16 fixed, with 10 more raised on 28 Sep. The sitemap fix (MR-1199) has n=
+ot started, so smoke tests still cover 250 of 500+ URLs. AI Factory pages and=
+ the GDPR and Careers redesigns are in progress. No open item is past its due=
+ date.</p><table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" style=3D"border-collapse:collapse;border:1px solid #DCE2E8;margi=
+n:8px 0 18px"><tr><th align=3D"left" style=3D"padding:8px 10px;border-bottom:=
+1px solid #DCE2E8;background:#F4F6F8;font-size:11px;letter-spacing:.05em;text=
+-transform:uppercase;color:#5E6B78;font-weight:600"></th><th align=3D"left" s=
+tyle=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;background:#F4F6F8;f=
+ont-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#5E6B78;fon=
+t-weight:600">Detail</th></tr><tr><td valign=3D"top" style=3D"padding:8px 10p=
+x;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Delivered (30=
+ d)</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid =
+#DCE2E8;font-size:13px;color:#16212C"><b>MR-1066</b> Marketing Production sit=
+e - Testing <span style=3D"color:#5E6B78">=C2=B7 Saurabh Jain, closed 2026-09=
+-17</span><br><b>MR-1076</b> Resolve SonarQube Code Quality and Maintainabili=
+ty Issues <span style=3D"color:#5E6B78">=C2=B7 Vishnu kumar yadav, closed 202=
+6-09-16</span><br><b>MR-1067</b> General <span style=3D"color:#5E6B78">=C2=B7=
+ Vishnu kumar yadav, closed 2026-09-16</span><br><b>MR-1021</b> General <span=
+ style=3D"color:#5E6B78">=C2=B7 Kunal Jangid, closed 2026-09-15</span><br><b>=
+MR-755</b> Make contact form visible on page load and add calendar booking (C=
+alendly) to contact page <span style=3D"color:#5E6B78">=C2=B7 Kunal Jangid, c=
+losed 2026-09-11</span><br><b>MR-753</b> Add waitlist / interest capture form=
+ to &quot;GPU as a Service&quot; coming soon section <span style=3D"color:#5E=
+6B78">=C2=B7 Kunal Jangid, closed 2026-09-08</span></td></tr><tr><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">In flight</td><td valign=3D"top" style=3D"padding:8px 10p=
+x;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>MR-1168</b=
+> General <span style=3D"color:#5E6B78">=C2=B7 In Progress, Vishnu kumar yada=
+v, due 2026-09-30</span><br><b>MR-1165</b> Playwright Automation =E2=80=93 Va=
+lidate 71 URLs <span style=3D"color:#5E6B78">=C2=B7 In Progress, Kannan Elang=
+ovan, no due date</span><br><b>MR-1166</b> Site verification and validation <=
+span style=3D"color:#5E6B78">=C2=B7 In Progress, Kannan Elangovan, no due dat=
+e</span><br><b>MR-1167</b> Bug fixes and design improvements <span style=3D"c=
+olor:#5E6B78">=C2=B7 In Progress, Kunal Jangid, no due date</span><br><b>MR-1=
+169</b> New Home Page design &amp; API <span style=3D"color:#5E6B78">=C2=B7 I=
+n Progress, Saurabh Jain, no due date</span><br><b>MR-1179</b> Figma vs Websi=
+te =E2=80=93 Complete Page-wise UI Validation <span style=3D"color:#5E6B78">=
+=C2=B7 In Progress, Kunal Jangid, no due date</span></td></tr><tr><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">Largest parents</td><td valign=3D"top" style=3D"padding:8=
+px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>MR-1=
+179</b> Figma vs Website =E2=80=93 Complete Page-wise UI Validation <span sty=
+le=3D"color:#5E6B78">=C2=B7 16 of 54 child tasks done</span><br><b>MR-1168</b=
+> General <span style=3D"color:#5E6B78">=C2=B7 4 of 15 child tasks done</span=
+><br><b>MR-1066</b> Marketing Production site - Testing <span style=3D"color:=
+#5E6B78">=C2=B7 10 of 10 child tasks done</span><br><b>MR-1021</b> General <s=
+pan style=3D"color:#5E6B78">=C2=B7 6 of 6 child tasks done</span></td></tr></=
+table><h3 style=3D"font-size:15px;margin:16px 0 4px">Web-Uvation Services Pla=
+tform</h3><p style=3D"margin:6px 0 10px;font-size:14px;line-height:1.55;color=
+:#16212C">Three new S1 bugs in production: wrong final prices across the Trad=
+itional, Modular and Nuclear AI Factory (25 Sep) and a Document API 502 on fi=
+rst request (28 Sep). Open S1 bugs rose from 2 to 5, with 63 bugs open in tot=
+al. An IAM security hardening story with 9 subtasks started on 28 Sep under P=
+latform Security. Eight items are past due.</p><table role=3D"presentation" c=
+ellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:co=
+llapse;border:1px solid #DCE2E8;margin:8px 0 18px"><tr><th align=3D"left" sty=
+le=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;background:#F4F6F8;fon=
+t-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#5E6B78;font-=
+weight:600"></th><th align=3D"left" style=3D"padding:8px 10px;border-bottom:1=
+px solid #DCE2E8;background:#F4F6F8;font-size:11px;letter-spacing:.05em;text-=
+transform:uppercase;color:#5E6B78;font-weight:600">Detail</th></tr><tr><td va=
+lign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-s=
+ize:13px;color:#16212C">Delivered (30 d)</td><td valign=3D"top" style=3D"padd=
+ing:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b=
+>USP-4081</b> Automation Onboarding &amp; Familiarisation <span style=3D"colo=
+r:#5E6B78">=C2=B7 Andrei Momita, closed 2026-09-17</span><br><b>USP-4127</b> =
+Unify the subscription lifecycle: fold instant purchases into the build flow =
+<span style=3D"color:#5E6B78">=C2=B7 C=C4=83=C8=99van Marcel, closed 2026-09-=
+17</span><br><b>USP-4102</b> Draft and publish MSA contract comments <span st=
+yle=3D"color:#5E6B78">=C2=B7 C=C4=83=C8=99van Marcel, closed 2026-09-17</span=
+><br><b>USP-4027</b> [FE] - Remove AI Assistant Tab <span style=3D"color:#5E6=
+B78">=C2=B7 C=C4=83=C8=99van Marcel, closed 2026-09-17</span><br><b>USP-4026<=
+/b> [IAM/RBAC] Contract collaboration for customer team members (view + comme=
+nt; signature) <span style=3D"color:#5E6B78">=C2=B7 C=C4=83=C8=99van Marcel, =
+closed 2026-09-17</span><br><b>USP-4050</b> General <span style=3D"color:#5E6=
+B78">=C2=B7 Aman prakash, closed 2026-09-17</span></td></tr><tr><td valign=3D=
+"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13p=
+x;color:#16212C">In flight</td><td valign=3D"top" style=3D"padding:8px 10px;b=
+order-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>USP-4028</b> =
+Support Hub <span style=3D"color:#5E6B78">=C2=B7 In Progress, Silviu Oltean, =
+due 2026-09-30</span><br><b>USP-4179</b> General <span style=3D"color:#5E6B78=
+">=C2=B7 In Progress, r.jaiswal, due 2026-09-30</span><br><b>USP-4205</b> MSA=
+ collaboration &amp; IAM: author names in comment threads, no-shift review ra=
+il + phone commenting + guided tour, loop-back links <span style=3D"color:#5E=
+6B78">=C2=B7 Deployed In Dev, C=C4=83=C8=99van Marcel, due 2026-10-02</span><=
+br><b>USP-4234</b> [IAM] Customer role refinements and IAM security foundatio=
+n hardening <span style=3D"color:#5E6B78">=C2=B7 In Progress, C=C4=83=C8=99va=
+n Marcel, due 2026-10-02</span></td></tr><tr><td valign=3D"top" style=3D"padd=
+ing:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Pa=
+st due (8)</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px=
+ solid #DCE2E8;font-size:13px;color:#16212C"><b>USP-4098</b> Engineer UI <spa=
+n style=3D"color:#5E6B78">=C2=B7 due 2026-09-11, In Progress</span><br><b>USP=
+-4097</b> Customer UI <span style=3D"color:#5E6B78">=C2=B7 due 2026-09-15, In=
+ Progress</span><br><b>USP-4124</b> Remove B2C JWT profile claim usage =E2=80=
+=94 use Salesforce identity data <span style=3D"color:#5E6B78">=C2=B7 due 202=
+6-09-15, Deployed In UAT/Staging</span><br><b>USP-4142</b> Update AI Servers =
+in Traditional AI Factory =E2=80=93 Remove Older Servers and Add Latest Model=
+s <span style=3D"color:#5E6B78">=C2=B7 due 2026-09-15, Deployed In Dev</span>=
+<br><b>USP-4200</b>   Invitation emails failures in notification backend <spa=
+n style=3D"color:#5E6B78">=C2=B7 due 2026-09-18, In Progress</span><br><b>USP=
+-4214</b> MSA: signer details come from the signed-in user&#x27;s Identity pr=
+ofile again <span style=3D"color:#5E6B78">=C2=B7 due 2026-09-22, Deployed In =
+Dev</span></td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-b=
+ottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Blocked</td><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C"><b>USP-3795</b> GPU as a Service <span style=3D"color:#5E=
+6B78">=C2=B7 BlOCKER</span><br><b>USP-3858</b> start date and end date of a s=
+ubscription page <span style=3D"color:#5E6B78">=C2=B7 BlOCKER</span></td></tr=
+><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DC=
+E2E8;font-size:13px;color:#16212C">Largest parents</td><td valign=3D"top" sty=
+le=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#=
+16212C"><b>USP-1996</b> Parent last updated before the 30-day window <span st=
+yle=3D"color:#5E6B78">=C2=B7 102 of 103 child tasks done</span><br><b>USP-351=
+0</b> Parent last updated before the 30-day window <span style=3D"color:#5E6B=
+78">=C2=B7 24 of 25 child tasks done</span><br><b>USP-3605</b> Parent last up=
+dated before the 30-day window <span style=3D"color:#5E6B78">=C2=B7 9 of 21 c=
+hild tasks done</span><br><b>USP-3482</b> Parent last updated before the 30-d=
+ay window <span style=3D"color:#5E6B78">=C2=B7 15 of 20 child tasks done</spa=
+n></td></tr></table><h3 style=3D"font-size:15px;margin:16px 0 4px">Uvation Co=
+nversational AI</h3><p style=3D"margin:6px 0 10px;font-size:14px;line-height:=
+1.55;color:#16212C">Five delivery stories are done: the Marketing, Services P=
+latform and Marketplace chatbots, conversational UX and the admin dashboard. =
+Book a Meeting has been overdue since 4 Sep with no update since 2 Sep. The C=
+SM Teams dashboard (UC-215) moved into development, due 30 Sep.</p><table rol=
+e=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=
+=3D"border-collapse:collapse;border:1px solid #DCE2E8;margin:8px 0 18px"><tr>=
+<th align=3D"left" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;=
+background:#F4F6F8;font-size:11px;letter-spacing:.05em;text-transform:upperca=
+se;color:#5E6B78;font-weight:600"></th><th align=3D"left" style=3D"padding:8p=
+x 10px;border-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;lett=
+er-spacing:.05em;text-transform:uppercase;color:#5E6B78;font-weight:600">Deta=
+il</th></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1p=
+x solid #DCE2E8;font-size:13px;color:#16212C">Delivered (30 d)</td><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C"><b>UC-20</b> Admin &amp; support dashboard =E2=80=94 moni=
+toring, visitor records, analytics, content gaps <span style=3D"color:#5E6B78=
+">=C2=B7 Nareddy Shiva Prasad Reddy, closed 2026-09-16</span><br><b>UC-18</b>=
+ Cross-cutting conversational UX =E2=80=94 refusal, multi-turn, feedback, lan=
+guage, mobile <span style=3D"color:#5E6B78">=C2=B7 Ankit Saxena, closed 2026-=
+09-16</span><br><b>UC-16</b> USP chatbot =E2=80=94 self-service how-to &amp; =
+support deflection with handoff <span style=3D"color:#5E6B78">=C2=B7 Ankit Sa=
+xena, closed 2026-09-16</span><br><b>UC-17</b> Marketplace chatbot =E2=80=94 =
+product discovery with clickable product cards <span style=3D"color:#5E6B78">=
+=C2=B7 Ankit Saxena, closed 2026-09-02</span><br><b>UC-15</b> Marketing chatb=
+ot =E2=80=94 grounded solution answers &amp; lead capture <span style=3D"colo=
+r:#5E6B78">=C2=B7 Ankit Saxena, closed 2026-09-02</span></td></tr><tr><td val=
+ign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-si=
+ze:13px;color:#16212C">In flight</td><td valign=3D"top" style=3D"padding:8px =
+10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>UC-161<=
+/b> Book a Meeting =E2=80=94 Microsoft Graph scheduling with round-robin CSM =
+assignment &amp; cancellation flow <span style=3D"color:#5E6B78">=C2=B7 In De=
+v, Anshul Bhargava, due 2026-09-04</span><br><b>UC-215</b> Dashboard Teams ap=
+p for CSM <span style=3D"color:#5E6B78">=C2=B7 In Dev, Ankit Saxena, due 2026=
+-09-30</span><br><b>UC-216</b> logged in user marketplace <span style=3D"colo=
+r:#5E6B78">=C2=B7 IN PROGRESS, Nareddy Shiva Prasad Reddy, no due date</span>=
+</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px =
+solid #DCE2E8;font-size:13px;color:#16212C">Past due (6)</td><td valign=3D"to=
+p" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;c=
+olor:#16212C"><b>UC-161</b> Book a Meeting =E2=80=94 Microsoft Graph scheduli=
+ng with round-robin CSM assignment &amp; cancellation flow <span style=3D"col=
+or:#5E6B78">=C2=B7 due 2026-09-04, In Dev</span><br><b>UC-162</b> Design &amp=
+; technical spec =E2=80=94 Book a Meeting &amp; cancellation flow <span style=
+=3D"color:#5E6B78">=C2=B7 due 2026-09-04, In Dev</span><br><b>UC-163</b> Impl=
+ementation =E2=80=94 booking flow (name/email/timezone capture, round-robin s=
+lot selection, confirmation) <span style=3D"color:#5E6B78">=C2=B7 due 2026-09=
+-04, In Dev</span><br><b>UC-164</b> Implementation =E2=80=94 cancellation &am=
+p; email verification flow <span style=3D"color:#5E6B78">=C2=B7 due 2026-09-0=
+4, In Dev</span><br><b>UC-165</b> Integration &amp; security review =E2=80=94=
+ MS Bookings auth, input validation &amp; verification-code handling <span st=
+yle=3D"color:#5E6B78">=C2=B7 due 2026-09-04, In Dev</span><br><b>UC-166</b> Q=
+A &amp; validation =E2=80=94 end-to-end booking &amp; cancellation test pass =
+<span style=3D"color:#5E6B78">=C2=B7 due 2026-09-04, In Dev</span></td></tr><=
+tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2=
+E8;font-size:13px;color:#16212C">Largest parents</td><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C"><b>UC-8</b> Parent last updated before the 30-day window <span style=3D=
+"color:#5E6B78">=C2=B7 4 of 6 child tasks done</span><br><b>UC-161</b> Book a=
+ Meeting =E2=80=94 Microsoft Graph scheduling with round-robin CSM assignment=
+ &amp; cancellation flow <span style=3D"color:#5E6B78">=C2=B7 0 of 5 child ta=
+sks done</span><br><b>UC-167</b> Recommendation Agent =E2=80=94 complementary=
+ product suggestions on add-to-cart <span style=3D"color:#5E6B78">=C2=B7 0 of=
+ 5 child tasks done</span><br><b>UC-168</b> Quote Follow-Up Agent =E2=80=94 s=
+cheduled low-pressure re-engagement after RFQ/quote <span style=3D"color:#5E6=
+B78">=C2=B7 0 of 5 child tasks done</span></td></tr></table><h3 style=3D"font=
+-size:15px;margin:16px 0 4px">Web-Marketplace: AI-server catalogue, research =
+to production</h3><p style=3D"margin:6px 0 10px;font-size:14px;line-height:1.=
+55;color:#16212C">All 35 AI-server listings are now in production: 27 moved b=
+etween 18 and 22 Sep, and the 8 NVIDIA Vera Rubin products on 28 Sep. Every o=
+ne was disabled again after validation and is waiting for approval. The UAT c=
+ross-validation audit closed on 28 Sep, and a full catalogue re-check is due =
+by 30 Sep. Expected completion: 30 Sep 2026 (due date on MT-1485, MT-1488 and=
+ MT-1524).</p><table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"100%" style=3D"border-collapse:collapse;border:1px solid #DCE2E8;m=
+argin:8px 0 18px"><tr><th align=3D"left" style=3D"padding:8px 10px;border-bot=
+tom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;letter-spacing:.05em;=
+text-transform:uppercase;color:#5E6B78;font-weight:600">Brand</th><th align=
+=3D"left" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;backgroun=
+d:#F4F6F8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:=
+#5E6B78;font-weight:600">Listings</th><th align=3D"left" style=3D"padding:8px=
+ 10px;border-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;lette=
+r-spacing:.05em;text-transform:uppercase;color:#5E6B78;font-weight:600">Resea=
+rch</th><th align=3D"left" style=3D"padding:8px 10px;border-bottom:1px solid =
+#DCE2E8;background:#F4F6F8;font-size:11px;letter-spacing:.05em;text-transform=
+:uppercase;color:#5E6B78;font-weight:600">Created on UAT</th><th align=3D"lef=
+t" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;background:#F4F6=
+F8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#5E6B78=
+;font-weight:600">Moved to production</th><th align=3D"left" style=3D"padding=
+:8px 10px;border-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;l=
+etter-spacing:.05em;text-transform:uppercase;color:#5E6B78;font-weight:600">L=
+ive</th></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1=
+px solid #DCE2E8;font-size:13px;color:#16212C"><b>Dell</b><br><span style=3D"=
+color:#5E6B78">XE9780 =C2=B7 XE9785 =C2=B7 XE9780L =C2=B7 XE9780LAP =C2=B7 XE=
+9785L =C2=B7 XE9712</span></td><td valign=3D"top" style=3D"padding:8px 10px;b=
+order-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">6</td><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">Validated 16=E2=80=9317 Sep (PC-133)</td><td valign=3D"to=
+p" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;c=
+olor:#16212C">Created 16 Sep (MT-1503), 4 fixed 17 Sep (MT-1527)</td><td vali=
+gn=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-siz=
+e:13px;color:#16212C">Moved 18 Sep (MT-1528)</td><td valign=3D"top" style=3D"=
+padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C=
+"><span style=3D"display:inline-block;padding:2px 8px;border-radius:10px;back=
+ground:#FBE4E2;color:#B02B23;font-size:12px;font-weight:600;white-space:nowra=
+p">Disabled</span></td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;=
+border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>HPE</b><br><=
+span style=3D"color:#5E6B78">XD690 =C2=B7 XD685 =C2=B7 GB300 NVL72</span></td=
+><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8=
+;font-size:13px;color:#16212C">3</td><td valign=3D"top" style=3D"padding:8px =
+10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Validated =
+18 Sep (PC-133)</td><td valign=3D"top" style=3D"padding:8px 10px;border-botto=
+m:1px solid #DCE2E8;font-size:13px;color:#16212C">Created 17=E2=80=9318 Sep (=
+MT-1506)</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px s=
+olid #DCE2E8;font-size:13px;color:#16212C">Moved 18 Sep (MT-1528)</td><td val=
+ign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-si=
+ze:13px;color:#16212C"><span style=3D"display:inline-block;padding:2px 8px;bo=
+rder-radius:10px;background:#FBE4E2;color:#B02B23;font-size:12px;font-weight:=
+600;white-space:nowrap">Disabled</span></td></tr><tr><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C"><b>NVIDIA</b><br><span style=3D"color:#5E6B78">DGX B300 =C2=B7 HGX B300=
+ =C2=B7 DGX GB300 =C2=B7 GB300 NVL72 =C2=B7 DGX SuperPOD with DGX GB300 =C2=
+=B7 DGX Station GB300 =C2=B7 DGX Station for Windows =C2=B7 DGX Super POD gro=
+up (17)</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom=
+:1px solid #DCE2E8;font-size:13px;color:#16212C">8<br><span style=3D"color:#5=
+E6B78">One listing is a group of 17 products</span></td><td valign=3D"top" st=
+yle=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:=
+#16212C">Reviewed 10=E2=80=9315 Sep (MT-1484, MT-1477)</td><td valign=3D"top"=
+ style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;col=
+or:#16212C">Created by 15 Sep (MT-1484)</td><td valign=3D"top" style=3D"paddi=
+ng:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Mov=
+ed 21 Sep (MT-1528)</td><td valign=3D"top" style=3D"padding:8px 10px;border-b=
+ottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><span style=3D"display:=
+inline-block;padding:2px 8px;border-radius:10px;background:#FBE4E2;color:#B02=
+B23;font-size:12px;font-weight:600;white-space:nowrap">Disabled</span></td></=
+tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #=
+DCE2E8;font-size:13px;color:#16212C"><b>Supermicro</b><br><span style=3D"colo=
+r:#5E6B78">SYS-822GS-NB3RT =C2=B7 AS-8126GS-NB3RT =C2=B7 SYS-422GS-NB3RT-LCC =
+=C2=B7 SYS-422GS-NB3RT-ALC =C2=B7 AS-4126GS-NB3RT-LCC =C2=B7 SYS-222GS-NB3OT-=
+ALC =C2=B7 ARS-511GD-NB-LCC =C2=B7 SRS-GB300-NVL72</span></td><td valign=3D"t=
+op" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;=
+color:#16212C">8</td><td valign=3D"top" style=3D"padding:8px 10px;border-bott=
+om:1px solid #DCE2E8;font-size:13px;color:#16212C">Validated 18 Sep (PC-133)<=
+/td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE=
+2E8;font-size:13px;color:#16212C">Created 21 Sep (MT-1509)</td><td valign=3D"=
+top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px=
+;color:#16212C">Moved by 22 Sep (MT-1528 closed)</td><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C"><span style=3D"display:inline-block;padding:2px 8px;border-radius:10px;=
+background:#FBE4E2;color:#B02B23;font-size:12px;font-weight:600;white-space:n=
+owrap">Disabled</span></td></tr><tr><td valign=3D"top" style=3D"padding:8px 1=
+0px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>Lenovo</=
+b><br><span style=3D"color:#5E6B78">SR680a V4 =C2=B7 GB300 NVL72 rack-scale</=
+span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px soli=
+d #DCE2E8;font-size:13px;color:#16212C">2</td><td valign=3D"top" style=3D"pad=
+ding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">V=
+alidated 21 Sep (PC-133)</td><td valign=3D"top" style=3D"padding:8px 10px;bor=
+der-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Created 21 Sep (MT=
+-1512)</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px sol=
+id #DCE2E8;font-size:13px;color:#16212C">Moved by 22 Sep (MT-1528 closed)</td=
+><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8=
+;font-size:13px;color:#16212C"><span style=3D"display:inline-block;padding:2p=
+x 8px;border-radius:10px;background:#FBE4E2;color:#B02B23;font-size:12px;font=
+-weight:600;white-space:nowrap">Disabled</span></td></tr><tr><td valign=3D"to=
+p" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;c=
+olor:#16212C"><b>NVIDIA Vera Rubin</b><br><span style=3D"color:#5E6B78">DGX R=
+ubin NVL8 =C2=B7 DGX Vera Rubin NVL72 rack-scale =C2=B7 Vera Rubin NVL72 OEM-=
+integrated rack =C2=B7 HGX Rubin NVL8 =C2=B7 Vera Rubin NVL4 module =C2=B7 DG=
+X SuperPOD with DGX Rubin NVL8 (72 systems) =C2=B7 DGX Vera Rubin NVL72 + Qua=
+ntum-X800 InfiniBand =C2=B7 DGX Vera Rubin NVL72 + Spectrum-X Ethernet</span>=
+</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DC=
+E2E8;font-size:13px;color:#16212C">8</td><td valign=3D"top" style=3D"padding:=
+8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Resear=
+ched 22=E2=80=9324 Sep (PC-133, MT-1530, MT-1531)</td><td valign=3D"top" styl=
+e=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#1=
+6212C">Created 25 Sep (MT-1532), validated 25 Sep (PC-135)</td><td valign=3D"=
+top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px=
+;color:#16212C">Moved 28 Sep (MT-1535)</td><td valign=3D"top" style=3D"paddin=
+g:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><spa=
+n style=3D"display:inline-block;padding:2px 8px;border-radius:10px;background=
+:#FBE4E2;color:#B02B23;font-size:12px;font-weight:600;white-space:nowrap">Dis=
+abled</span></td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border=
+-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"><b>Total</b></td><td =
+valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font=
+-size:13px;color:#16212C"><b>35</b></td><td valign=3D"top" style=3D"padding:8=
+px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">6 of 6 =
+brands</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px sol=
+id #DCE2E8;font-size:13px;color:#16212C">35 of 35</td><td valign=3D"top" styl=
+e=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#1=
+6212C">35 of 35</td><td valign=3D"top" style=3D"padding:8px 10px;border-botto=
+m:1px solid #DCE2E8;font-size:13px;color:#16212C">0 of 35</td></tr></table><p=
+ style=3D"margin:6px 0 10px;font-size:14px;line-height:1.55;color:#16212C"><b=
+>Still pending:</b></p><ul style=3D"margin:4px 0 14px;padding-left:20px"><li =
+style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C">Business =
+approval and enablement of all 35 listings.</li><li style=3D"font-size:14px;l=
+ine-height:1.5;margin:3px 0;color:#16212C">Full re-check of every product cre=
+ated on UAT, due 30 Sep (PC-136, not started).</li><li style=3D"font-size:14p=
+x;line-height:1.5;margin:3px 0;color:#16212C">Record the OEM-agreement decisi=
+on per brand. The register item for it (MT-1093) no longer appears in Jira.</=
+li><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C">St=
+atus of the earlier Lenovo batch in PC-121 is unclear.</li></ul><table role=
+=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D=
+"border-collapse:collapse;border:1px solid #DCE2E8;margin:8px 0 18px"><tr><th=
+ align=3D"left" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;bac=
+kground:#F4F6F8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;=
+color:#5E6B78;font-weight:600">Workstream</th><th align=3D"left" style=3D"pad=
+ding:8px 10px;border-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11=
+px;letter-spacing:.05em;text-transform:uppercase;color:#5E6B78;font-weight:60=
+0">State</th><th align=3D"left" style=3D"padding:8px 10px;border-bottom:1px s=
+olid #DCE2E8;background:#F4F6F8;font-size:11px;letter-spacing:.05em;text-tran=
+sform:uppercase;color:#5E6B78;font-weight:600">Open</th></tr><tr><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">Category disable (AI servers only)<br><span style=3D"colo=
+r:#5E6B78">MT-1438</span></td><td valign=3D"top" style=3D"padding:8px 10px;bo=
+rder-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">36 of 38 tasks do=
+ne</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #=
+DCE2E8;font-size:13px;color:#16212C">URL disposition (MT-1447, to do), perfor=
+mance check (MT-1475, now on UAT/staging)</td></tr><tr><td valign=3D"top" sty=
+le=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#=
+16212C">Returns and refund flow<br><span style=3D"color:#5E6B78">MT-1331</spa=
+n></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #=
+DCE2E8;font-size:13px;color:#16212C">In testing. 10 of 12 subtasks done</td><=
+td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;f=
+ont-size:13px;color:#16212C">RMA email templates and backend support (MT-1365=
+ 24 of 28 done, MT-1488 due 30 Sep). Due date 15 Sep has passed</td></tr><tr>=
+<td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;=
+font-size:13px;color:#16212C">Account hub<br><span style=3D"color:#5E6B78">MT=
+-1311</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1=
+px solid #DCE2E8;font-size:13px;color:#16212C">In testing. 1 of 10 subtasks d=
+one, 9 in progress</td><td valign=3D"top" style=3D"padding:8px 10px;border-bo=
+ttom:1px solid #DCE2E8;font-size:13px;color:#16212C">Due date 15 Sep has pass=
+ed</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1p=
+x solid #DCE2E8;font-size:13px;color:#16212C">Home page and PDP<br><span styl=
+e=3D"color:#5E6B78">MT-1215, MT-1217</span></td><td valign=3D"top" style=3D"p=
+adding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"=
+>Done. Closed 24 and 25 Sep</td><td valign=3D"top" style=3D"padding:8px 10px;=
+border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Home page redes=
+ign for AI servers (MT-1524) in progress since 28 Sep, due 30 Sep. Text-overf=
+low fix on new product pages in testing (MT-1533)</td></tr><tr><td valign=3D"=
+top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px=
+;color:#16212C">Product listing, filter and search<br><span style=3D"color:#5=
+E6B78">MT-1216</span></td><td valign=3D"top" style=3D"padding:8px 10px;border=
+-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Done. Closed 24 Sep</=
+td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2=
+E8;font-size:13px;color:#16212C">None</td></tr><tr><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C">Loyalty points logic<br><span style=3D"color:#5E6B78">MT-978</span></td=
+><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8=
+;font-size:13px;color:#16212C">Waiting on business rules</td><td valign=3D"to=
+p" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;c=
+olor:#16212C">Due 30 Sep</td></tr><tr><td valign=3D"top" style=3D"padding:8px=
+ 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Shipping =
+and delivery text<br><span style=3D"color:#5E6B78">MT-1534</span></td><td val=
+ign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-si=
+ze:13px;color:#16212C">Done. Removed from production on 28 Sep</td><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">Checkout still shows Free Shipping at $0 as the shipping =
+method</td></tr></table><h3 style=3D"font-size:15px;margin:16px 0 4px">Web-Ma=
+rketing: testing done against total scope</h3><p style=3D"margin:6px 0 10px;f=
+ont-size:14px;line-height:1.55;color:#16212C">Production smoke automation pas=
+ses on every URL it can see, but it can see only 250 of more than 500 URLs. P=
+age-wise Figma validation has raised 54 defects, 10 of them on 28 Sep, and 16=
+ are fixed.</p><table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"border-collapse:collapse;border:1px solid #DCE2E8;=
+margin:8px 0 18px"><tr><th align=3D"left" style=3D"padding:8px 10px;border-bo=
+ttom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;letter-spacing:.05em=
+;text-transform:uppercase;color:#5E6B78;font-weight:600">Measure</th><th alig=
+n=3D"left" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;backgrou=
+nd:#F4F6F8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color=
+:#5E6B78;font-weight:600">Done</th><th align=3D"left" style=3D"padding:8px 10=
+px;border-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;letter-s=
+pacing:.05em;text-transform:uppercase;color:#5E6B78;font-weight:600">Scope</t=
+h><th align=3D"left" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E=
+8;background:#F4F6F8;font-size:11px;letter-spacing:.05em;text-transform:upper=
+case;color:#5E6B78;font-weight:600">Note</th></tr><tr><td valign=3D"top" styl=
+e=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#1=
+6212C">URLs under automated smoke test</td><td valign=3D"top" style=3D"paddin=
+g:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">250<=
+/td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE=
+2E8;font-size:13px;color:#16212C">500+</td><td valign=3D"top" style=3D"paddin=
+g:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">More=
+ than 500 URLs expected, per MR-1199. Capped by the sitemap bug (MR-1199).</t=
+d></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px sol=
+id #DCE2E8;font-size:13px;color:#16212C">Automated checks passing</td><td val=
+ign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-si=
+ze:13px;color:#16212C">2,250</td><td valign=3D"top" style=3D"padding:8px 10px=
+;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">2,250</td><td =
+valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font=
+-size:13px;color:#16212C">9 browser and device profiles (MR-1165)</td></tr><t=
+r><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E=
+8;font-size:13px;color:#16212C">Figma defects fixed</td><td valign=3D"top" st=
+yle=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:=
+#16212C">16</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1p=
+x solid #DCE2E8;font-size:13px;color:#16212C">54</td><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C">28 in progress, 10 to do, about 15 pages (MR-1179)</td></tr><tr><td val=
+ign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-si=
+ze:13px;color:#16212C">Site verification checks closed</td><td valign=3D"top"=
+ style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;col=
+or:#16212C">1</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:=
+1px solid #DCE2E8;font-size:13px;color:#16212C">5</td><td valign=3D"top" styl=
+e=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#1=
+6212C">MR-1166</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;bord=
+er-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Pages tested by han=
+d across browsers</td><td valign=3D"top" style=3D"padding:8px 10px;border-bot=
+tom:1px solid #DCE2E8;font-size:13px;color:#16212C">about 40</td><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C"></td><td valign=3D"top" style=3D"padding:8px 10px;border-=
+bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">About 40 pages tested =
+manually on macOS Chrome, Firefox and Safari and on iPhone, 3=E2=80=939 Sep (=
+MR-1100, MR-1101)</td></tr></table><p style=3D"margin:6px 0 10px;font-size:14=
+px;line-height:1.55;color:#16212C"><b>Validated:</b></p><ul style=3D"margin:4=
+px 0 14px;padding-left:20px"><li style=3D"font-size:14px;line-height:1.5;marg=
+in:3px 0;color:#16212C">250 production URLs load on 9 browser and device prof=
+iles, with 2,250 of 2,250 checks passing (21 Sep).</li><li style=3D"font-size=
+:14px;line-height:1.5;margin:3px 0;color:#16212C">About 40 pages checked on m=
+acOS and iPhone browsers (3=E2=80=939 Sep).</li><li style=3D"font-size:14px;l=
+ine-height:1.5;margin:3px 0;color:#16212C">Page-by-page testing for People, G=
+DPR, Nuclear Energy, Partnership, Rewards and Rewards Donations, with all iss=
+ues fixed.</li><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;color=
+:#16212C">Cookie consent blocks analytics scripts until accepted (MR-1068).</=
+li></ul><p style=3D"margin:6px 0 10px;font-size:14px;line-height:1.55;color:#=
+16212C"><b>Still pending:</b></p><ul style=3D"margin:4px 0 14px;padding-left:=
+20px"><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C"=
+>Fix the sitemap (MR-1199), then extend automation from 250 URLs to the full =
+list.</li><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#162=
+12C">38 open Figma-vs-website defects (MR-1179): 28 in progress and 10 new on=
+ 28 Sep. A separate Contact page design fix (MR-1246) was raised the same day=
+.</li><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C"=
+>Figma validation for the remaining pages. About 15 pages have defects logged=
+ so far.</li><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#=
+16212C">Playwright integration into the Azure production pipeline.</li><li st=
+yle=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C">New home pa=
+ge design and API (MR-1169).</li></ul><p style=3D"margin:6px 0 10px;font-size=
+:14px;line-height:1.55;color:#16212C"><b>Remaining effort:</b> Not estimated =
+in Jira. None of the testing tickets carry an Original Estimate. <b>Target da=
+te:</b> Not set in Jira. The only dated item is MR-1168, due 30 Sep.</p><p st=
+yle=3D"margin:6px 0 10px;font-size:14px;line-height:1.55;color:#5E6B78">Anmol=
+ Srivastava&#x27;s detailed testing report is not in Jira or Confluence. The =
+figures here come from the Jira testing tickets.</p><h2 style=3D"font-size:18=
+px;margin:26px 0 6px;color:#16212C;border-top:2px solid #16212C;padding-top:1=
+0px">4. Resource utilisation</h2><p style=3D"margin:6px 0 10px;font-size:14px=
+;line-height:1.55;color:#16212C">Capacity is 72 hours per full-time person fo=
+r the window: 9 working days at 8 hours. The SOP sets a utilisation target of=
+ 80=E2=80=9390%, with 60 of every 80 hours on development. Contract status is=
+ not in Jira, so every row uses the full-time figure.</p><p style=3D"margin:6=
+px 0 10px;font-size:14px;line-height:1.55;color:#16212C"><b>Read this before =
+the table.</b> Tempo writes every worklog to Jira under its own app account, =
+so Jira cannot say who logged an hour. Hours here are credited to each ticket=
+&#x27;s current assignee. When a developer&#x27;s ticket is handed to QA, the=
+ developer&#x27;s hours move with it. Any day above 10 hours for one person i=
+s flagged for this reason. Meetings, stand-ups and leave are logged on 13 sha=
+red overhead tickets in Uvation Projects, which is outside this report&#x27;s=
+ scope, so that time is not in these totals.</p><table role=3D"presentation" =
+cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"border-collapse:c=
+ollapse;border:1px solid #DCE2E8;margin:8px 0 18px"><tr><th align=3D"left" st=
+yle=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;background:#F4F6F8;fo=
+nt-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#5E6B78;font=
+-weight:600">Person</th><th align=3D"left" style=3D"padding:8px 10px;border-b=
+ottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;letter-spacing:.05e=
+m;text-transform:uppercase;color:#5E6B78;font-weight:600">Hours</th><th align=
+=3D"left" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;backgroun=
+d:#F4F6F8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:=
+#5E6B78;font-weight:600">% of capacity</th><th align=3D"left" style=3D"paddin=
+g:8px 10px;border-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;=
+letter-spacing:.05em;text-transform:uppercase;color:#5E6B78;font-weight:600">=
+Days logged</th><th align=3D"left" style=3D"padding:8px 10px;border-bottom:1p=
+x solid #DCE2E8;background:#F4F6F8;font-size:11px;letter-spacing:.05em;text-t=
+ransform:uppercase;color:#5E6B78;font-weight:600">Peak day</th><th align=3D"l=
+eft" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;background:#F4=
+F6F8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:#5E6B=
+78;font-weight:600">Closed</th><th align=3D"left" style=3D"padding:8px 10px;b=
+order-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px;letter-spaci=
+ng:.05em;text-transform:uppercase;color:#5E6B78;font-weight:600">Open</th><th=
+ align=3D"left" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;bac=
+kground:#F4F6F8;font-size:11px;letter-spacing:.05em;text-transform:uppercase;=
+color:#5E6B78;font-weight:600">Past due</th><th align=3D"left" style=3D"paddi=
+ng:8px 10px;border-bottom:1px solid #DCE2E8;background:#F4F6F8;font-size:11px=
+;letter-spacing:.05em;text-transform:uppercase;color:#5E6B78;font-weight:600"=
+>Flag</th></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom=
+:1px solid #DCE2E8;font-size:13px;color:#16212C">Sapavat Yadagiri<br><span st=
+yle=3D"color:#5E6B78">MT 115.0h</span></td><td valign=3D"top" style=3D"paddin=
+g:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">115.=
+0</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #D=
+CE2E8;font-size:13px;color:#16212C">160%</td><td valign=3D"top" style=3D"padd=
+ing:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">9<=
+/td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE=
+2E8;font-size:13px;color:#16212C">17.0</td><td valign=3D"top" style=3D"paddin=
+g:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">37</=
+td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2=
+E8;font-size:13px;color:#16212C">28</td><td valign=3D"top" style=3D"padding:8=
+px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">14</td>=
+<td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;=
+font-size:13px;color:#16212C">A day over 10 h (other people's hours or bulk l=
+ogging)</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bott=
+om:1px solid #DCE2E8;font-size:13px;color:#16212C">r.jaiswal<br><span style=
+=3D"color:#5E6B78">USP 107.6h</span></td><td valign=3D"top" style=3D"padding:=
+8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">107.6<=
+/td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE=
+2E8;font-size:13px;color:#16212C">149%</td><td valign=3D"top" style=3D"paddin=
+g:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">9</t=
+d><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E=
+8;font-size:13px;color:#16212C">31.1</td><td valign=3D"top" style=3D"padding:=
+8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">30</td=
+><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8=
+;font-size:13px;color:#16212C">5</td><td valign=3D"top" style=3D"padding:8px =
+10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">0</td><td =
+valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font=
+-size:13px;color:#16212C">A day over 10 h (other people's hours or bulk loggi=
+ng)</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1=
+px solid #DCE2E8;font-size:13px;color:#16212C">Kunal Jangid<br><span style=3D=
+"color:#5E6B78">MR 101.6h</span></td><td valign=3D"top" style=3D"padding:8px =
+10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">101.6</td>=
+<td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;=
+font-size:13px;color:#16212C">141%</td><td valign=3D"top" style=3D"padding:8p=
+x 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">9</td><t=
+d valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;fo=
+nt-size:13px;color:#16212C">20.2</td><td valign=3D"top" style=3D"padding:8px =
+10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">54</td><td=
+ valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;fon=
+t-size:13px;color:#16212C">48</td><td valign=3D"top" style=3D"padding:8px 10p=
+x;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">0</td><td val=
+ign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-si=
+ze:13px;color:#16212C">A day over 10 h (other people's hours or bulk logging)=
+</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px =
+solid #DCE2E8;font-size:13px;color:#16212C">Saurabh Jain<br><span style=3D"co=
+lor:#5E6B78">MT 72.8h =C2=B7 MR 16.7h</span></td><td valign=3D"top" style=3D"=
+padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C=
+">89.4</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px sol=
+id #DCE2E8;font-size:13px;color:#16212C">124%</td><td valign=3D"top" style=3D=
+"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212=
+C">9</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid=
+ #DCE2E8;font-size:13px;color:#16212C">17.5</td><td valign=3D"top" style=3D"p=
+adding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"=
+>15</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid =
+#DCE2E8;font-size:13px;color:#16212C">10</td><td valign=3D"top" style=3D"padd=
+ing:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">0<=
+/td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE=
+2E8;font-size:13px;color:#16212C">A day over 10 h (other people's hours or bu=
+lk logging)</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-=
+bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Aman prakash<br><span =
+style=3D"color:#5E6B78">USP 64.9h</span></td><td valign=3D"top" style=3D"padd=
+ing:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">64=
+.9</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #=
+DCE2E8;font-size:13px;color:#16212C">90%</td><td valign=3D"top" style=3D"padd=
+ing:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">9<=
+/td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE=
+2E8;font-size:13px;color:#16212C">11.0</td><td valign=3D"top" style=3D"paddin=
+g:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">20</=
+td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2=
+E8;font-size:13px;color:#16212C">10</td><td valign=3D"top" style=3D"padding:8=
+px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">2</td><=
+td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;f=
+ont-size:13px;color:#16212C">A day over 10 h (other people's hours or bulk lo=
+gging)</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-botto=
+m:1px solid #DCE2E8;font-size:13px;color:#16212C">Naman Bapna<br><span style=
+=3D"color:#5E6B78">MT 61.6h</span></td><td valign=3D"top" style=3D"padding:8p=
+x 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">61.6</td=
+><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8=
+;font-size:13px;color:#16212C">86%</td><td valign=3D"top" style=3D"padding:8p=
+x 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">9</td><t=
+d valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;fo=
+nt-size:13px;color:#16212C">11.0</td><td valign=3D"top" style=3D"padding:8px =
+10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">33</td><td=
+ valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;fon=
+t-size:13px;color:#16212C">2</td><td valign=3D"top" style=3D"padding:8px 10px=
+;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">0</td><td vali=
+gn=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-siz=
+e:13px;color:#16212C">A day over 10 h (other people's hours or bulk logging)<=
+/td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px s=
+olid #DCE2E8;font-size:13px;color:#16212C">Vishnu kumar yadav<br><span style=
+=3D"color:#5E6B78">MR 60.2h =C2=B7 USP 0.5h</span></td><td valign=3D"top" sty=
+le=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#=
+16212C">60.7</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1=
+px solid #DCE2E8;font-size:13px;color:#16212C">84%</td><td valign=3D"top" sty=
+le=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#=
+16212C">9</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px =
+solid #DCE2E8;font-size:13px;color:#16212C">8.7</td><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C">24</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px s=
+olid #DCE2E8;font-size:13px;color:#16212C">17</td><td valign=3D"top" style=3D=
+"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212=
+C">0</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid=
+ #DCE2E8;font-size:13px;color:#16212C"></td></tr><tr><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C">Akhil Katiyar<br><span style=3D"color:#5E6B78">USP 60.2h</span></td><td=
+ valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;fon=
+t-size:13px;color:#16212C">60.2</td><td valign=3D"top" style=3D"padding:8px 1=
+0px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">84%</td><td=
+ valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;fon=
+t-size:13px;color:#16212C">8</td><td valign=3D"top" style=3D"padding:8px 10px=
+;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">15.2</td><td v=
+align=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-=
+size:13px;color:#16212C">18</td><td valign=3D"top" style=3D"padding:8px 10px;=
+border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">14</td><td vali=
+gn=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-siz=
+e:13px;color:#16212C">0</td><td valign=3D"top" style=3D"padding:8px 10px;bord=
+er-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">A day over 10 h (ot=
+her people's hours or bulk logging)</td></tr><tr><td valign=3D"top" style=3D"=
+padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C=
+">Ankit Saxena<br><span style=3D"color:#5E6B78">UC 58.0h</span></td><td valig=
+n=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size=
+:13px;color:#16212C">58.0</td><td valign=3D"top" style=3D"padding:8px 10px;bo=
+rder-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">81%</td><td valig=
+n=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size=
+:13px;color:#16212C">9</td><td valign=3D"top" style=3D"padding:8px 10px;borde=
+r-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">8.5</td><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">10</td><td valign=3D"top" style=3D"padding:8px 10px;borde=
+r-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">13</td><td valign=3D=
+"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13p=
+x;color:#16212C">0</td><td valign=3D"top" style=3D"padding:8px 10px;border-bo=
+ttom:1px solid #DCE2E8;font-size:13px;color:#16212C"></td></tr><tr><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">Naveen Jangid<br><span style=3D"color:#5E6B78">MT 56.5h</=
+span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px soli=
+d #DCE2E8;font-size:13px;color:#16212C">56.5</td><td valign=3D"top" style=3D"=
+padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C=
+">78%</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px soli=
+d #DCE2E8;font-size:13px;color:#16212C">9</td><td valign=3D"top" style=3D"pad=
+ding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">7=
+.5</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #=
+DCE2E8;font-size:13px;color:#16212C">18</td><td valign=3D"top" style=3D"paddi=
+ng:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">15<=
+/td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE=
+2E8;font-size:13px;color:#16212C">3</td><td valign=3D"top" style=3D"padding:8=
+px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"></td></=
+tr><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #=
+DCE2E8;font-size:13px;color:#16212C">Nareddy Shiva Prasad Reddy<br><span styl=
+e=3D"color:#5E6B78">UC 48.5h</span></td><td valign=3D"top" style=3D"padding:8=
+px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">48.5</t=
+d><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E=
+8;font-size:13px;color:#16212C">67%</td><td valign=3D"top" style=3D"padding:8=
+px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">8</td><=
+td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;f=
+ont-size:13px;color:#16212C">7.0</td><td valign=3D"top" style=3D"padding:8px =
+10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">5</td><td =
+valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font=
+-size:13px;color:#16212C">5</td><td valign=3D"top" style=3D"padding:8px 10px;=
+border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">0</td><td valig=
+n=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size=
+:13px;color:#16212C"></td></tr><tr><td valign=3D"top" style=3D"padding:8px 10=
+px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Suganya Muru=
+garaj<br><span style=3D"color:#5E6B78">PC 40.0h</span></td><td valign=3D"top"=
+ style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;col=
+or:#16212C">40.0</td><td valign=3D"top" style=3D"padding:8px 10px;border-bott=
+om:1px solid #DCE2E8;font-size:13px;color:#16212C">56%</td><td valign=3D"top"=
+ style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;col=
+or:#16212C">9</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:=
+1px solid #DCE2E8;font-size:13px;color:#16212C">6.5</td><td valign=3D"top" st=
+yle=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:=
+#16212C">1</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px=
+ solid #DCE2E8;font-size:13px;color:#16212C">3</td><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C">0</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px so=
+lid #DCE2E8;font-size:13px;color:#16212C">Below 60% of capacity</td></tr><tr>=
+<td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;=
+font-size:13px;color:#16212C">Kannan Elangovan<br><span style=3D"color:#5E6B7=
+8">MR 37.1h</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bo=
+ttom:1px solid #DCE2E8;font-size:13px;color:#16212C">37.1</td><td valign=3D"t=
+op" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;=
+color:#16212C">52%</td><td valign=3D"top" style=3D"padding:8px 10px;border-bo=
+ttom:1px solid #DCE2E8;font-size:13px;color:#16212C">6</td><td valign=3D"top"=
+ style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;col=
+or:#16212C">14.0</td><td valign=3D"top" style=3D"padding:8px 10px;border-bott=
+om:1px solid #DCE2E8;font-size:13px;color:#16212C">6</td><td valign=3D"top" s=
+tyle=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color=
+:#16212C">10</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1=
+px solid #DCE2E8;font-size:13px;color:#16212C">2</td><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C">A day over 10 h (other people's hours or bulk logging)</td></tr><tr><td=
+ valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;fon=
+t-size:13px;color:#16212C">Nagamuni Valluri<br><span style=3D"color:#5E6B78">=
+MT 25.2h</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-botto=
+m:1px solid #DCE2E8;font-size:13px;color:#16212C">25.2</td><td valign=3D"top"=
+ style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;col=
+or:#16212C">35%</td><td valign=3D"top" style=3D"padding:8px 10px;border-botto=
+m:1px solid #DCE2E8;font-size:13px;color:#16212C">6</td><td valign=3D"top" st=
+yle=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:=
+#16212C">7.0</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1=
+px solid #DCE2E8;font-size:13px;color:#16212C">4</td><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C">5</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px so=
+lid #DCE2E8;font-size:13px;color:#16212C">0</td><td valign=3D"top" style=3D"p=
+adding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C"=
+>Below 60% of capacity</td></tr><tr><td valign=3D"top" style=3D"padding:8px 1=
+0px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">shubham kuc=
+hwar<br><span style=3D"color:#5E6B78">MT 19.5h</span></td><td valign=3D"top" =
+style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;colo=
+r:#16212C">19.5</td><td valign=3D"top" style=3D"padding:8px 10px;border-botto=
+m:1px solid #DCE2E8;font-size:13px;color:#16212C">27%</td><td valign=3D"top" =
+style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;colo=
+r:#16212C">5</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1=
+px solid #DCE2E8;font-size:13px;color:#16212C">4.0</td><td valign=3D"top" sty=
+le=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#=
+16212C">9</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px =
+solid #DCE2E8;font-size:13px;color:#16212C">5</td><td valign=3D"top" style=3D=
+"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212=
+C">1</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid=
+ #DCE2E8;font-size:13px;color:#16212C">Below 60% of capacity</td></tr><tr><td=
+ valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;fon=
+t-size:13px;color:#16212C">Gourav Agnani<br><span style=3D"color:#5E6B78">MT =
+8.0h =C2=B7 USP 6.0h</span></td><td valign=3D"top" style=3D"padding:8px 10px;=
+border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">14.0</td><td va=
+lign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-s=
+ize:13px;color:#16212C">19%</td><td valign=3D"top" style=3D"padding:8px 10px;=
+border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">2</td><td valig=
+n=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size=
+:13px;color:#16212C">7.0</td><td valign=3D"top" style=3D"padding:8px 10px;bor=
+der-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">4</td><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">8</td><td valign=3D"top" style=3D"padding:8px 10px;border=
+-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">2</td><td valign=3D"t=
+op" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;=
+color:#16212C">Below 60% of capacity</td></tr><tr><td valign=3D"top" style=3D=
+"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212=
+C">Ankit Sharma<br><span style=3D"color:#5E6B78">USP 6.5h</span></td><td vali=
+gn=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-siz=
+e:13px;color:#16212C">6.5</td><td valign=3D"top" style=3D"padding:8px 10px;bo=
+rder-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">9%</td><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">2</td><td valign=3D"top" style=3D"padding:8px 10px;border=
+-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">4.0</td><td valign=3D=
+"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13p=
+x;color:#16212C">8</td><td valign=3D"top" style=3D"padding:8px 10px;border-bo=
+ttom:1px solid #DCE2E8;font-size:13px;color:#16212C">2</td><td valign=3D"top"=
+ style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;col=
+or:#16212C">0</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:=
+1px solid #DCE2E8;font-size:13px;color:#16212C">Below 60% of capacity</td></t=
+r><tr><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #D=
+CE2E8;font-size:13px;color:#16212C">Parth<br><span style=3D"color:#5E6B78">MT=
+ 2.5h</span></td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1=
+px solid #DCE2E8;font-size:13px;color:#16212C">2.5</td><td valign=3D"top" sty=
+le=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#=
+16212C">3%</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px=
+ solid #DCE2E8;font-size:13px;color:#16212C">2</td><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C">1.5</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px =
+solid #DCE2E8;font-size:13px;color:#16212C">1</td><td valign=3D"top" style=3D=
+"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212=
+C">1</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid=
+ #DCE2E8;font-size:13px;color:#16212C">0</td><td valign=3D"top" style=3D"padd=
+ing:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">Be=
+low 60% of capacity</td></tr><tr><td valign=3D"top" style=3D"padding:8px 10px=
+;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">C=C4=83=C8=99v=
+an Marcel<br><span style=3D"color:#5E6B78">USP 1.5h</span></td><td valign=3D"=
+top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px=
+;color:#16212C">1.5</td><td valign=3D"top" style=3D"padding:8px 10px;border-b=
+ottom:1px solid #DCE2E8;font-size:13px;color:#16212C">2%</td><td valign=3D"to=
+p" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;c=
+olor:#16212C">1</td><td valign=3D"top" style=3D"padding:8px 10px;border-botto=
+m:1px solid #DCE2E8;font-size:13px;color:#16212C">1.5</td><td valign=3D"top" =
+style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;colo=
+r:#16212C">17</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:=
+1px solid #DCE2E8;font-size:13px;color:#16212C">30</td><td valign=3D"top" sty=
+le=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#=
+16212C">2</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px =
+solid #DCE2E8;font-size:13px;color:#16212C">Below 60% of capacity</td></tr><t=
+r><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E=
+8;font-size:13px;color:#16212C">Shashi Prasad K<br><span style=3D"color:#5E6B=
+78">PC 1.0h =C2=B7 MT 0.5h</span></td><td valign=3D"top" style=3D"padding:8px=
+ 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">1.5</td><=
+td valign=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;f=
+ont-size:13px;color:#16212C">2%</td><td valign=3D"top" style=3D"padding:8px 1=
+0px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">2</td><td v=
+align=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-=
+size:13px;color:#16212C">1.0</td><td valign=3D"top" style=3D"padding:8px 10px=
+;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">4</td><td vali=
+gn=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-siz=
+e:13px;color:#16212C">1</td><td valign=3D"top" style=3D"padding:8px 10px;bord=
+er-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">1</td><td valign=3D=
+"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13p=
+x;color:#16212C">Below 60% of capacity</td></tr><tr><td valign=3D"top" style=
+=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;color:#16=
+212C">Murali G<br><span style=3D"color:#5E6B78">MR 0.5h</span></td><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">0.5</td><td valign=3D"top" style=3D"padding:8px 10px;bord=
+er-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">1%</td><td valign=
+=3D"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:=
+13px;color:#16212C">1</td><td valign=3D"top" style=3D"padding:8px 10px;border=
+-bottom:1px solid #DCE2E8;font-size:13px;color:#16212C">0.5</td><td valign=3D=
+"top" style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13p=
+x;color:#16212C">1</td><td valign=3D"top" style=3D"padding:8px 10px;border-bo=
+ttom:1px solid #DCE2E8;font-size:13px;color:#16212C">0</td><td valign=3D"top"=
+ style=3D"padding:8px 10px;border-bottom:1px solid #DCE2E8;font-size:13px;col=
+or:#16212C">0</td><td valign=3D"top" style=3D"padding:8px 10px;border-bottom:=
+1px solid #DCE2E8;font-size:13px;color:#16212C">Below 60% of capacity</td></t=
+r></table><p style=3D"margin:6px 0 10px;font-size:14px;line-height:1.55;color=
+:#16212C"><b>People with tickets in the window but no Tempo hours on them:</b=
+> Andrei Momita (5 closed), Silviu Oltean (3 closed), Anshul Bhargava (2 clos=
+ed), Livian Stefan Stan (1 closed), Raluca Conea (1 closed), Arnab (0 closed)=
+, Shivam Dhoundiyal (0 closed), Yash Janeshwar (0 closed)</p><h3 style=3D"fon=
+t-size:15px;margin:16px 0 4px">Suganya Murugaraj</h3><ul style=3D"margin:4px =
+0 14px;padding-left:20px"><li style=3D"font-size:14px;line-height:1.5;margin:=
+3px 0;color:#16212C"><b>Finding.</b> Logged 40 hours on 9 days, all on PC-133=
+. That averages 4.4 hours a day against an 8-hour day, or 56% of the 72-hour =
+capacity. 15 Sep shows 1.5 hours.</li><li style=3D"font-size:14px;line-height=
+:1.5;margin:3px 0;color:#16212C"><b>Context.</b> The 5.5 hours on 17 Sep cove=
+red Dell GPU corrections with Naman and then HPE validation, which is 3 produ=
+cts. Each product also needed a tech-spec table, long description, short desc=
+ription and product-card copy in HTML. Between 15 and 24 Sep she validated 19=
+ products for 4 brands and started the 8 Vera Rubin products, about 1.5 hours=
+ per product.</li><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;co=
+lor:#16212C"><b>Open question.</b> Where are the other 3 or so hours a day? T=
+hey may be on overhead tickets, which Jira hides, or unlogged.</li><li style=
+=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C"><b>To verify.<=
+/b> Pull Suganya&#x27;s Tempo timesheet for 14=E2=80=9327 Sep and compare the=
+ total with 72 hours. Note that a full catalogue re-check (PC-136) is now ass=
+igned to her, due 30 Sep.</li></ul><h3 style=3D"font-size:15px;margin:16px 0 =
+4px">Sapavat Yadagiri</h3><ul style=3D"margin:4px 0 14px;padding-left:20px"><=
+li style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C"><b>Fin=
+ding.</b> Jira credits Sapavat with 115 hours, 160% of capacity, with seven d=
+ays between 11.8 and 17 hours (15=E2=80=9318 and 23=E2=80=9325 Sep). That is =
+not plausible for one person and shows developer time on tickets reassigned t=
+o QA.</li><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#162=
+12C"><b>Context.</b> Sapavat&#x27;s own QA tasks show 0.5 to 2 hours each. Fo=
+r example, the navigation, homepage-module and facet UI updates for the categ=
+ory disable took 1 hour each (MT-1455 to MT-1457). Functional test on staging=
+ took 1.5 hours and the toggle test 1.5 hours (MT-1471, MT-1473).</li><li sty=
+le=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C"><b>Open ques=
+tion.</b> Sapavat&#x27;s real hours cannot be separated from developer hours =
+in Jira. The Tempo worker report is the only reliable source.</li><li style=
+=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C"><b>To verify.<=
+/b> Pull Sapavat&#x27;s Tempo timesheet by worker. Check that QA time is logg=
+ed on QA subtasks, not on development subtasks.</li></ul><p style=3D"margin:6=
+px 0 10px;font-size:14px;line-height:1.55;color:#16212C"><b>Time-logging qual=
+ity:</b></p><ul style=3D"margin:4px 0 14px;padding-left:20px"><li style=3D"fo=
+nt-size:14px;line-height:1.5;margin:3px 0;color:#16212C">100% of 581 worklogs=
+ in the window say only =E2=80=9Ctime-tracking=E2=80=9D. The SOP makes a desc=
+ription mandatory.</li><li style=3D"font-size:14px;line-height:1.5;margin:3px=
+ 0;color:#16212C">68% of 307 tickets with logged time have no Original Estima=
+te, so planned versus actual cannot be measured.</li><li style=3D"font-size:1=
+4px;line-height:1.5;margin:3px 0;color:#16212C">Meetings, stand-ups and leave=
+ are logged on shared overhead tickets in Uvation Projects, which is outside =
+this report's scope, so that time is not in these totals.</li></ul><h2 style=
+=3D"font-size:18px;margin:26px 0 6px;color:#16212C;border-top:2px solid #1621=
+2C;padding-top:10px">Data notes</h2><ul style=3D"margin:4px 0 14px;padding-le=
+ft:20px"><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#1621=
+2C">Source: Jira Cloud uvation-devops.atlassian.net, boards MT, PC, MR, USP, =
+UC. 1,205 issues updated in 30 days were pulled, against Jira's own count of =
+1205.</li><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#162=
+12C">Verdicts, root causes and suggested owners are the reviewer's reading of=
+ the tickets cited. Confirm them with each owner.</li><li style=3D"font-size:=
+14px;line-height:1.5;margin:3px 0;color:#16212C">This report is stored in the=
+ repository shashiprasad23/server, branch claude/executive-dashboard-jira-rev=
+iew-gclk36, folder executive-dashboard/reports/2026-09-28/.</li><li style=3D"=
+font-size:14px;line-height:1.5;margin:3px 0;color:#16212C">A new report is ge=
+nerated every weekday at 7:00 PM Nepal time.</li></ul></div></body></html>
+
+--===============8733005839030590744==--

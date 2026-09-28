@@ -194,6 +194,14 @@
             "MT-1532",
             "PC-135"
           ]
+        },
+        {
+          "stage": "Moved to production",
+          "start": "2026-09-28",
+          "end": "2026-09-28",
+          "keys": [
+            "MT-1535"
+          ]
         }
       ]
     }
@@ -569,7 +577,72 @@
       "keys": [
         "MR-1179"
       ]
+    },
+    {
+      "date": "2026-09-25",
+      "project": "USP",
+      "type": "issue",
+      "title": "Two S1 bugs: AI Factory final prices wrong in production for every billing and term combination",
+      "keys": [
+        "USP-4229",
+        "USP-4230"
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "project": "MT",
+      "type": "milestone",
+      "title": "8 Vera Rubin products moved to production and disabled again after validation",
+      "keys": [
+        "MT-1535"
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "project": "MT",
+      "type": "progress",
+      "title": "UAT cross-validation audit closed; full catalogue re-check due 30 Sep",
+      "keys": [
+        "MT-1529",
+        "PC-136"
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "project": "MT",
+      "type": "change",
+      "title": "Free-shipping and delivery-estimate text removed from production",
+      "keys": [
+        "MT-1534"
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "project": "USP",
+      "type": "issue",
+      "title": "S1: Document API returns 502 on first request in production",
+      "keys": [
+        "USP-4231"
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "project": "USP",
+      "type": "progress",
+      "title": "IAM security hardening story started with 9 subtasks",
+      "keys": [
+        "USP-4234"
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "project": "MR",
+      "type": "testing",
+      "title": "10 more Figma-vs-website defects raised, 54 in total",
+      "keys": [
+        "MR-1179"
+      ]
     }
   ],
-  "pipelineNote": "The first 27 listings reached production by 22 Sep. <b>None are live</b>: each was disabled after verification, pending approval. The 8 Vera Rubin products were created and validated on UAT on 25 Sep and have not moved to production."
+  "pipelineNote": "All 35 listings are in production: 27 moved by 22 Sep and the 8 Vera Rubin products on 28 Sep. <b>None are live</b>: each was disabled after validation, pending approval."
 }

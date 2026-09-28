@@ -180,7 +180,7 @@
     "USP-3755": {
       "verdict": "Keep – materialising",
       "rag": "red",
-      "why": "Scope creep is visible now: 195 USP issues created in 30 days and 66 open bugs, with two new S2 bugs on 24 Sep.",
+      "why": "Scope creep is visible now: 195 USP issues created in 30 days and 63 open bugs, including 5 S1 bugs after three new ones on 25 and 28 Sep.",
       "action": "Enforce the change-request gate named in the mitigation."
     },
     "USP-3756": {
@@ -221,9 +221,10 @@
         "MT-1500–MT-1512",
         "MT-1527",
         "MT-1528",
-        "MT-1530–MT-1532"
+        "MT-1530–MT-1532",
+        "MT-1535"
       ],
-      "detail": "Every UAT product creation and the whole UAT-to-production CSV migration were done by one person, and the same person created the 8 Vera Rubin products on 24–25 Sep (MT-1530 to MT-1532).",
+      "detail": "Every UAT product creation and every UAT-to-production migration was done by one person, including the 8 Vera Rubin products created on 25 Sep and moved to production on 28 Sep (MT-1532, MT-1535).",
       "mitigation": "Pair a second engineer on the next batch and document the CSV and attribute steps as an SOP.",
       "suggestedOwner": "Naman Bapna"
     },
@@ -238,7 +239,7 @@
         "MT-1484",
         "MT-1529"
       ],
-      "detail": "All 27 migrated listings were verified and then disabled pending business approval. Cross-validation on UAT (MT-1529) is still in progress, and 8 Vera Rubin products are now waiting on UAT behind the same approval.",
+      "detail": "All 35 migrated listings, including the 8 Vera Rubin products moved on 28 Sep, were verified and then disabled pending business approval. The UAT cross-validation closed on 28 Sep.",
       "mitigation": "Set an approval date with the approver and a named enablement owner.",
       "suggestedOwner": "Shashi Prasad K"
     },
@@ -316,6 +317,24 @@
       "actionTaken": "None visible in Jira.",
       "preventive": "Log it now as a Change Request with impact and effort, linked to the affected stories. Add a 'business rules confirmed' line to UAT sign-off covering returns, refunds, loyalty points and pricing. Open business-rule questions already exist on MT-978 (loyalty points) and MT-1488 (refund and exchange timelines).",
       "owner": "Shashi Prasad K"
+    },
+    {
+      "id": "usp-price",
+      "title": "AI Factory final prices calculated wrongly in production",
+      "project": "Services Platform",
+      "status": "Open",
+      "rag": "red",
+      "keys": [
+        "USP-4229",
+        "USP-4230",
+        "USP-4231"
+      ],
+      "surfaced": "25 and 28 Sep, production",
+      "impact": "The subscription price API returns the wrong final price for every billing and term combination in the Traditional, Modular and Nuclear AI Factory. One logged example expected 174,420 and got 150,660, about 14% low. A separate S1 has the Document API failing with a 502 on the first request.",
+      "rootCause": "Not recorded yet. The Document API failure is suspected to be the API gateway blocking the first request (comment on USP-4231, 28 Sep).",
+      "actionTaken": "All three are S1 and still in To Do. No fix recorded.",
+      "preventive": "Add the price-calculation checks to the automated regression run before each production release.",
+      "owner": "Livian Stefan Stan"
     },
     {
       "id": "register-removed",
@@ -396,9 +415,9 @@
         "MT-1529"
       ],
       "surfaced": "18–22 Sep",
-      "impact": "27 listings are in production but not visible to buyers.",
+      "impact": "35 listings are in production but not visible to buyers: 27 since 18–22 Sep and 8 Vera Rubin since 28 Sep.",
       "rootCause": "Approval step sits after migration, with no date.",
-      "actionTaken": "Cross-validation on UAT in progress (MT-1529).",
+      "actionTaken": "Cross-validation on UAT closed on 28 Sep (MT-1529). A full catalogue re-check is due 30 Sep (PC-136).",
       "preventive": "Put a dated approval gate in the plan for each batch."
     },
     {
@@ -498,7 +517,7 @@
     }
   ],
   "marketplace": {
-    "summary": "All five brands in the first AI-servers batch (27 listings) were moved to production by 22 Sep and are still disabled pending approval. A second NVIDIA batch, 8 Vera Rubin products, was created and validated on UAT on 25 Sep and has not been moved to production.",
+    "summary": "All 35 AI-server listings are now in production: 27 moved between 18 and 22 Sep, and the 8 NVIDIA Vera Rubin products on 28 Sep. Every one was disabled again after validation and is waiting for approval. The UAT cross-validation audit closed on 28 Sep, and a full catalogue re-check is due by 30 Sep.",
     "expectedCompletion": "30 Sep 2026 (due date on MT-1485, MT-1488 and MT-1524)",
     "brands": [
       {
@@ -584,8 +603,8 @@
         "products": 8,
         "research": "Researched 22–24 Sep (PC-133, MT-1530, MT-1531)",
         "uat": "Created 25 Sep (MT-1532), validated 25 Sep (PC-135)",
-        "prod": "Not moved yet",
-        "live": "Not in production",
+        "prod": "Moved 28 Sep (MT-1535)",
+        "live": "Disabled",
         "items": [
           "DGX Rubin NVL8",
           "DGX Vera Rubin NVL72 rack-scale",
@@ -595,14 +614,12 @@
           "DGX SuperPOD with DGX Rubin NVL8 (72 systems)",
           "DGX Vera Rubin NVL72 + Quantum-X800 InfiniBand",
           "DGX Vera Rubin NVL72 + Spectrum-X Ethernet"
-        ],
-        "inProd": false
+        ]
       }
     ],
     "pending": [
-      "Business approval and enablement of the 27 listings already in production.",
-      "Move the 8 Vera Rubin products from UAT to production after approval (MT-1485, 18 of 19 subtasks done).",
-      "Cross-validation and audit on UAT (MT-1529, in progress, no comments yet).",
+      "Business approval and enablement of all 35 listings.",
+      "Full re-check of every product created on UAT, due 30 Sep (PC-136, not started).",
       "Record the OEM-agreement decision per brand. The register item for it (MT-1093) no longer appears in Jira.",
       "Status of the earlier Lenovo batch in PC-121 is unclear."
     ],
@@ -629,7 +646,7 @@
         "name": "Home page and PDP",
         "key": "MT-1215, MT-1217",
         "state": "Done. Closed 24 and 25 Sep",
-        "open": "Home page redesign for AI servers (MT-1524) not started, due 30 Sep. Text-overflow fix on new product pages in testing (MT-1533)"
+        "open": "Home page redesign for AI servers (MT-1524) in progress since 28 Sep, due 30 Sep. Text-overflow fix on new product pages in testing (MT-1533)"
       },
       {
         "name": "Product listing, filter and search",
@@ -642,11 +659,17 @@
         "key": "MT-978",
         "state": "Waiting on business rules",
         "open": "Due 30 Sep"
+      },
+      {
+        "name": "Shipping and delivery text",
+        "key": "MT-1534",
+        "state": "Done. Removed from production on 28 Sep",
+        "open": "Checkout still shows Free Shipping at $0 as the shipping method"
       }
     ]
   },
   "marketingTesting": {
-    "summary": "Production smoke automation passes on every URL it can see, but it can see only 250 of more than 500 URLs. Page-wise Figma validation has raised 48 defects so far, and 16 are fixed, 9 of them on 25 Sep.",
+    "summary": "Production smoke automation passes on every URL it can see, but it can see only 250 of more than 500 URLs. Page-wise Figma validation has raised 54 defects, 10 of them on 28 Sep, and 16 are fixed.",
     "scopeUrlsExpected": 500,
     "scopeNote": "More than 500 URLs expected, per MR-1199",
     "automatedUrls": 250,
@@ -656,10 +679,10 @@
     "manualCrossBrowserPages": 40,
     "manualNote": "About 40 pages tested manually on macOS Chrome, Firefox and Safari and on iPhone, 3–9 Sep (MR-1100, MR-1101)",
     "figmaDefects": {
-      "raised": 48,
+      "raised": 54,
       "done": 16,
       "inProgress": 28,
-      "todo": 4,
+      "todo": 10,
       "pagesCovered": 15,
       "key": "MR-1179"
     },
@@ -676,7 +699,7 @@
     ],
     "pending": [
       "Fix the sitemap (MR-1199), then extend automation from 250 URLs to the full list.",
-      "32 open Figma-vs-website defects (MR-1179), 28 of them in progress. 10 more were raised on 24–25 Sep, some from Raluca's design feedback.",
+      "38 open Figma-vs-website defects (MR-1179): 28 in progress and 10 new on 28 Sep. A separate Contact page design fix (MR-1246) was raised the same day.",
       "Figma validation for the remaining pages. About 15 pages have defects logged so far.",
       "Playwright integration into the Azure production pipeline.",
       "New home page design and API (MR-1169)."
@@ -691,14 +714,14 @@
     "deepDives": [
       {
         "person": "Suganya Murugaraj",
-        "finding": "Logged 36 hours on 8 days, all on PC-133. That averages 4.5 hours a day against an 8-hour day, or 50% of the 72-hour capacity. No hours appear in Jira for 11 Sep, and 15 Sep shows 1.5 hours.",
+        "finding": "Logged 40 hours on 9 days, all on PC-133. That averages 4.4 hours a day against an 8-hour day, or 56% of the 72-hour capacity. 15 Sep shows 1.5 hours.",
         "context": "The 5.5 hours on 17 Sep covered Dell GPU corrections with Naman and then HPE validation, which is 3 products. Each product also needed a tech-spec table, long description, short description and product-card copy in HTML. Between 15 and 24 Sep she validated 19 products for 4 brands and started the 8 Vera Rubin products, about 1.5 hours per product.",
         "question": "Where are the other 3 or so hours a day? They may be on overhead tickets, which Jira hides, or unlogged.",
-        "verify": "Pull Suganya's Tempo timesheet for 11–24 Sep and compare the total with 72 hours."
+        "verify": "Pull Suganya's Tempo timesheet for 14–27 Sep and compare the total with 72 hours. Note that a full catalogue re-check (PC-136) is now assigned to her, due 30 Sep."
       },
       {
         "person": "Sapavat Yadagiri",
-        "finding": "Jira credits Sapavat with 100.5 hours, 140% of capacity, with five days between 12.5 and 15.5 hours (11–18 Sep). That is not plausible for one person and shows developer time on tickets reassigned to QA. From 21 Sep the daily figure drops to 6–8 hours.",
+        "finding": "Jira credits Sapavat with 115 hours, 160% of capacity, with seven days between 11.8 and 17 hours (15–18 and 23–25 Sep). That is not plausible for one person and shows developer time on tickets reassigned to QA.",
         "context": "Sapavat's own QA tasks show 0.5 to 2 hours each. For example, the navigation, homepage-module and facet UI updates for the category disable took 1 hour each (MT-1455 to MT-1457). Functional test on staging took 1.5 hours and the toggle test 1.5 hours (MT-1471, MT-1473).",
         "question": "Sapavat's real hours cannot be separated from developer hours in Jira. The Tempo worker report is the only reliable source.",
         "verify": "Pull Sapavat's Tempo timesheet by worker. Check that QA time is logged on QA subtasks, not on development subtasks."
