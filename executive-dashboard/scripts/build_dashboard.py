@@ -245,6 +245,7 @@ def build(snapshot_dir: pathlib.Path, scope=None):
     }
 
     scorecards = build_scorecards(issues, scope, today, p_start, p_end, d30) if scope else []
+    spotlight = build_spotlight(snapshot_dir, cur, scope, today, p_start, p_end, d30)
 
     def pick(keys):
         return [{"key": k, "summary": by_key[k]["summary"], "status": by_key[k]["status"]} for k in keys if k in by_key]
@@ -261,7 +262,57 @@ def build(snapshot_dir: pathlib.Path, scope=None):
         "scope": ({"label": scope["label"], "short": scope.get("short"), "note": scope.get("note"),
                    "projects": scope["projects"], "names": [PROJECT_NAMES.get(p, p) for p in scope["projects"]]} if scope else None),
         "scorecards": scorecards,
+        "spotlight": spotlight,
     }
+
+
+def build_spotlight(snapshot_dir, cur, scope, today, p_start, p_end, d30):
+    """Named people across every Jira project: what they hold, what they logged, what they raised.
+
+    Reads people.json (scripts/ingest_people.py). Their work can sit outside the report boards, or on
+    tickets raised for other people, so the scoped figures alone would show them as idle.
+    """
+    path = snapshot_dir / "people.json"
+    if not path.exists():
+        return []
+    notes = cur.get("peopleSpotlight", {})
+    inscope = set(scope["projects"]) if scope else None
+    out = []
+    for p in load(path)["people"]:
+        A, R = p["assigned"], p["reported"]
+        open_ = [a for a in A if a["statusCat"] != "done"]
+        overdue = sorted([a for a in open_ if a.get("due") and a["due"] < today], key=lambda a: a["due"])
+        daily = collections.defaultdict(float)
+        proj_h = collections.defaultdict(float)
+        for a in A:
+            for d, h in a.get("logs", []):
+                if p_start <= d <= p_end:
+                    daily[d] += h
+                    proj_h[a["project"]] += h
+        raised = sorted([r for r in R if r["created"] >= d30], key=lambda r: (r["created"], r["key"]), reverse=True)
+        row = lambda a: {"key": a["key"], "project": a["project"], "summary": html.unescape(a["summary"])[:110], "status": a["status"],
+                         "due": a.get("due"), "assignee": a.get("assignee"), "created": a.get("created"), "resolved": a.get("resolved")}
+        out.append({
+            "name": p["name"],
+            "assigned": len(A), "open": len(open_),
+            "inProgress": sum(1 for a in open_ if a["statusCat"] == "indeterminate"),
+            "overdueCount": len(overdue), "overdue": [row(a) for a in overdue[:8]],
+            "closed30": sum(1 for a in A if a.get("resolved") and a["resolved"] >= d30),
+            "closedInPeriod": sum(1 for a in A if a.get("resolved") and p_start <= a["resolved"] <= p_end),
+            "assignedByProject": dict(collections.Counter(a["project"] for a in A).most_common()),
+            "outOfScope": sum(1 for a in A if inscope is not None and a["project"] not in inscope),
+            "hours": round(sum(daily.values()), 1), "hoursByProject": {k: round(v, 1) for k, v in sorted(proj_h.items(), key=lambda x: -x[1])},
+            "daily": {k: round(v, 1) for k, v in sorted(daily.items())},
+            "openItems": [row(a) for a in sorted(open_, key=lambda a: (a.get("due") or "9999", a["key"]))[:8]],
+            "raised30": len(raised), "raisedDone": sum(1 for r in raised if r["statusCat"] == "done"),
+            "raisedByProject": dict(collections.Counter(r["project"] for r in raised).most_common()),
+            "raisedByDay": dict(sorted(collections.Counter(r["created"] for r in raised).items())),
+            "raisedRecent": [row(r) for r in raised[:8]],
+            "raisedOpenOlder": [row(r) for r in R if r["created"] < d30 and r["statusCat"] != "done"][:5],
+            "lastRaised": max((r["created"] for r in R), default=None),
+            "note": notes.get(p["name"], {}),
+        })
+    return out
 
 
 def build_scorecards(issues, scope, today, p_start, p_end, d30):

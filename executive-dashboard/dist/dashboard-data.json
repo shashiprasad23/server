@@ -2827,5 +2827,517 @@
    "openBugs": 0,
    "bugSeverity": {}
   }
+ ],
+ "spotlight": [
+  {
+   "name": "Anshul Bhargava",
+   "assigned": 20,
+   "open": 16,
+   "inProgress": 7,
+   "overdueCount": 6,
+   "overdue": [
+    {
+     "key": "UC-161",
+     "project": "UC",
+     "summary": "Book a Meeting — Microsoft Graph scheduling with round-robin CSM assignment & cancellation flow",
+     "status": "In Dev",
+     "due": "2026-09-04",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-09-02",
+     "resolved": null
+    },
+    {
+     "key": "UC-162",
+     "project": "UC",
+     "summary": "Design & technical spec — Book a Meeting & cancellation flow",
+     "status": "In Dev",
+     "due": "2026-09-04",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-09-02",
+     "resolved": null
+    },
+    {
+     "key": "UC-163",
+     "project": "UC",
+     "summary": "Implementation — booking flow (name/email/timezone capture, round-robin slot selection, confirmation)",
+     "status": "In Dev",
+     "due": "2026-09-04",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-09-02",
+     "resolved": null
+    },
+    {
+     "key": "UC-164",
+     "project": "UC",
+     "summary": "Implementation — cancellation & email verification flow",
+     "status": "In Dev",
+     "due": "2026-09-04",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-09-02",
+     "resolved": null
+    },
+    {
+     "key": "UC-165",
+     "project": "UC",
+     "summary": "Integration & security review — MS Bookings auth, input validation & verification-code handling",
+     "status": "In Dev",
+     "due": "2026-09-04",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-09-02",
+     "resolved": null
+    },
+    {
+     "key": "UC-166",
+     "project": "UC",
+     "summary": "QA & validation — end-to-end booking & cancellation test pass",
+     "status": "In Dev",
+     "due": "2026-09-04",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-09-02",
+     "resolved": null
+    }
+   ],
+   "closed30": 4,
+   "closedInPeriod": 2,
+   "assignedByProject": {
+    "UC": 13,
+    "MT": 4,
+    "ATLAS": 1,
+    "IN": 1,
+    "USP": 1
+   },
+   "outOfScope": 2,
+   "hours": 1.5,
+   "hoursByProject": {
+    "IN": 1.5
+   },
+   "daily": {
+    "2026-09-25": 1.5
+   },
+   "openItems": [
+    {
+     "key": "UC-161",
+     "project": "UC",
+     "summary": "Book a Meeting — Microsoft Graph scheduling with round-robin CSM assignment & cancellation flow",
+     "status": "In Dev",
+     "due": "2026-09-04",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-09-02",
+     "resolved": null
+    },
+    {
+     "key": "UC-162",
+     "project": "UC",
+     "summary": "Design & technical spec — Book a Meeting & cancellation flow",
+     "status": "In Dev",
+     "due": "2026-09-04",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-09-02",
+     "resolved": null
+    },
+    {
+     "key": "UC-163",
+     "project": "UC",
+     "summary": "Implementation — booking flow (name/email/timezone capture, round-robin slot selection, confirmation)",
+     "status": "In Dev",
+     "due": "2026-09-04",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-09-02",
+     "resolved": null
+    },
+    {
+     "key": "UC-164",
+     "project": "UC",
+     "summary": "Implementation — cancellation & email verification flow",
+     "status": "In Dev",
+     "due": "2026-09-04",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-09-02",
+     "resolved": null
+    },
+    {
+     "key": "UC-165",
+     "project": "UC",
+     "summary": "Integration & security review — MS Bookings auth, input validation & verification-code handling",
+     "status": "In Dev",
+     "due": "2026-09-04",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-09-02",
+     "resolved": null
+    },
+    {
+     "key": "UC-166",
+     "project": "UC",
+     "summary": "QA & validation — end-to-end booking & cancellation test pass",
+     "status": "In Dev",
+     "due": "2026-09-04",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-09-02",
+     "resolved": null
+    },
+    {
+     "key": "IN-1119",
+     "project": "IN",
+     "summary": "Pulse admin Improvement and bug fixes",
+     "status": "In Progress",
+     "due": "2026-09-29",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-09-25",
+     "resolved": null
+    },
+    {
+     "key": "USP-3795",
+     "project": "USP",
+     "summary": "GPU as a Service",
+     "status": "BlOCKER",
+     "due": "2026-09-30",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-07-10",
+     "resolved": null
+    }
+   ],
+   "raised30": 72,
+   "raisedDone": 3,
+   "raisedByProject": {
+    "UC": 54,
+    "IN": 10,
+    "MR": 3,
+    "ID": 2,
+    "MT": 2,
+    "ATLAS": 1
+   },
+   "raisedByDay": {
+    "2026-08-31": 3,
+    "2026-09-02": 7,
+    "2026-09-03": 48,
+    "2026-09-07": 2,
+    "2026-09-08": 1,
+    "2026-09-10": 1,
+    "2026-09-16": 8,
+    "2026-09-25": 1,
+    "2026-09-28": 1
+   },
+   "raisedRecent": [
+    {
+     "key": "ATLAS-1",
+     "project": "ATLAS",
+     "summary": "R&D on CRM for MVP",
+     "status": "To Do",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "created": "2026-09-28",
+     "resolved": null
+    },
+    {
+     "key": "IN-1119",
+     "project": "IN",
+     "summary": "Pulse admin Improvement and bug fixes",
+     "status": "In Progress",
+     "due": "2026-09-29",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-09-25",
+     "resolved": null
+    },
+    {
+     "key": "IN-1104",
+     "project": "IN",
+     "summary": "Write runbook and configure alert routing for status-platform",
+     "status": "To Do",
+     "due": "2026-09-30",
+     "assignee": null,
+     "created": "2026-09-16",
+     "resolved": null
+    },
+    {
+     "key": "IN-1103",
+     "project": "IN",
+     "summary": "End-to-end smoke testing of status-platform on production",
+     "status": "To Do",
+     "due": "2026-09-28",
+     "assignee": null,
+     "created": "2026-09-16",
+     "resolved": null
+    },
+    {
+     "key": "IN-1102",
+     "project": "IN",
+     "summary": "Wire telemetry ingestion and tune rollup thresholds for production",
+     "status": "To Do",
+     "due": "2026-09-25",
+     "assignee": null,
+     "created": "2026-09-16",
+     "resolved": null
+    },
+    {
+     "key": "IN-1101",
+     "project": "IN",
+     "summary": "Set up ingress, DNS, TLS, and Azure Front Door for status-platform",
+     "status": "To Do",
+     "due": "2026-09-23",
+     "assignee": null,
+     "created": "2026-09-16",
+     "resolved": null
+    },
+    {
+     "key": "IN-1100",
+     "project": "IN",
+     "summary": "Integration of two applications Metrics in pulse Dashboard",
+     "status": "In Progress",
+     "due": "2026-09-25",
+     "assignee": "Sarath Chandra",
+     "created": "2026-09-16",
+     "resolved": null
+    },
+    {
+     "key": "IN-1099",
+     "project": "IN",
+     "summary": "Fix metrics poison message (collector → Redpanda → writer)",
+     "status": "In Progress",
+     "due": "2026-09-18",
+     "assignee": null,
+     "created": "2026-09-16",
+     "resolved": null
+    }
+   ],
+   "raisedOpenOlder": [
+    {
+     "key": "IN-990",
+     "project": "IN",
+     "summary": "Configure Azure Virtual Desktop (AVD) Environment",
+     "status": "BLOCKER",
+     "due": "2026-07-29",
+     "assignee": "k.kishore",
+     "created": "2026-07-15",
+     "resolved": null
+    },
+    {
+     "key": "UC-10",
+     "project": "UC",
+     "summary": "Live Agent Handoff — Agent Console & Queue (Channel-Agnostic)",
+     "status": "To Do",
+     "due": "2027-01-24",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-08-13",
+     "resolved": null
+    },
+    {
+     "key": "UC-11",
+     "project": "UC",
+     "summary": "Live Agent Handoff via Microsoft Teams",
+     "status": "To Do",
+     "due": "2027-02-21",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-08-13",
+     "resolved": null
+    },
+    {
+     "key": "UC-12",
+     "project": "UC",
+     "summary": "Commerce — RFQ Submission & Send-a-Quote",
+     "status": "To Do",
+     "due": "2027-03-21",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-08-13",
+     "resolved": null
+    },
+    {
+     "key": "UC-13",
+     "project": "UC",
+     "summary": "Extended Admin Analytics & LLM Model-Selection Control",
+     "status": "To Do",
+     "due": "2027-04-18",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-08-13",
+     "resolved": null
+    }
+   ],
+   "lastRaised": "2026-09-28",
+   "note": {
+    "finding": "Holds 20 tickets across five projects, 16 of them open. Six are past due: the Book a Meeting story and its five subtasks (UC-161 to UC-166), In Dev since 2 Sep and due 4 Sep. Only 1.5 hours landed on his tickets in the window (IN-1119, 25 Sep), 2% of the 72-hour capacity.",
+    "context": "Most of his Jira activity is raising and shaping work for others: 72 tickets in 30 days, including the eight Conversational AI agent stories with 40 subtasks on 3 Sep and the Pulse telemetry rollout in DevOps (IN-1098 to IN-1104) on 16 Sep. He also gives technical direction in comments, for example the API-gateway lead on the S1 Document API bug (USP-4231, 28 Sep). GPU as a Service (USP-3795) sits with him marked BLOCKER.",
+    "question": "Is Book a Meeting still his to deliver, and where is his time logged? Planning and review time does not reach Jira unless it is logged on a ticket.",
+    "verify": "Pull his Tempo timesheet by worker for 14–27 Sep. Re-date or reassign UC-161 to UC-166, and confirm who owns USP-3795."
+   }
+  },
+  {
+   "name": "Anmol Srivastava",
+   "assigned": 0,
+   "open": 0,
+   "inProgress": 0,
+   "overdueCount": 0,
+   "overdue": [],
+   "closed30": 0,
+   "closedInPeriod": 0,
+   "assignedByProject": {},
+   "outOfScope": 0,
+   "hours": 0,
+   "hoursByProject": {},
+   "daily": {},
+   "openItems": [],
+   "raised30": 49,
+   "raisedDone": 41,
+   "raisedByProject": {
+    "MT": 44,
+    "UP": 3,
+    "INF": 2
+   },
+   "raisedByDay": {
+    "2026-09-10": 43,
+    "2026-09-21": 2,
+    "2026-09-22": 1,
+    "2026-09-24": 1,
+    "2026-09-28": 2
+   },
+   "raisedRecent": [
+    {
+     "key": "UP-38",
+     "project": "UP",
+     "summary": "Tempo setup for infra",
+     "status": "Backlog",
+     "due": null,
+     "assignee": null,
+     "created": "2026-09-28",
+     "resolved": null
+    },
+    {
+     "key": "MT-1534",
+     "project": "MT",
+     "summary": "Remove \"free shipping\",   estimated delivery and order-processing text from the UI ",
+     "status": "Done",
+     "due": "2026-09-28",
+     "assignee": "Shashi Prasad K",
+     "created": "2026-09-28",
+     "resolved": "2026-09-28"
+    },
+    {
+     "key": "UP-37",
+     "project": "UP",
+     "summary": "MoM Creation",
+     "status": "Backlog",
+     "due": null,
+     "assignee": null,
+     "created": "2026-09-24",
+     "resolved": null
+    },
+    {
+     "key": "UP-36",
+     "project": "UP",
+     "summary": "Dashboard creation",
+     "status": "Backlog",
+     "due": null,
+     "assignee": null,
+     "created": "2026-09-22",
+     "resolved": null
+    },
+    {
+     "key": "INF-2",
+     "project": "INF",
+     "summary": "XYZ",
+     "status": "Open",
+     "due": null,
+     "assignee": null,
+     "created": "2026-09-21",
+     "resolved": null
+    },
+    {
+     "key": "INF-1",
+     "project": "INF",
+     "summary": "Test",
+     "status": "Waiting for support",
+     "due": null,
+     "assignee": null,
+     "created": "2026-09-21",
+     "resolved": null
+    },
+    {
+     "key": "MT-1483",
+     "project": "MT",
+     "summary": "Collate team questions and doubts on AI/ML server product configurations",
+     "status": "Done",
+     "due": "2026-09-10",
+     "assignee": "Shashi Prasad K",
+     "created": "2026-09-10",
+     "resolved": "2026-09-10"
+    },
+    {
+     "key": "MT-1482",
+     "project": "MT",
+     "summary": "Share CSV format with all product assignees for configuration updates",
+     "status": "Done",
+     "due": "2026-09-11",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-09-10",
+     "resolved": "2026-09-10"
+    }
+   ],
+   "raisedOpenOlder": [],
+   "lastRaised": "2026-09-28",
+   "note": {
+    "finding": "Holds no tickets in any Jira project, so no Tempo hours can be credited to her. She raised 49 tickets in 30 days, and 41 of them are done.",
+    "context": "On 10 Sep she wrote the 38-task category-disable plan (MT-1438, 36 of 38 done) and the product upload subtasks (MT-1478). On 28 Sep she raised the free-shipping removal (MT-1534), done the same day. Her three Uvation Projects subtasks, Dashboard creation (UP-36, 22 Sep), MoM creation (UP-37, 24 Sep) and Tempo setup for infra (UP-38, 28 Sep), are unassigned in Backlog. Her detailed testing report is still not in Jira or Confluence.",
+    "question": "Her planning, coordination and testing effort lands on other people's tickets. How much of the week does it take?",
+    "verify": "Pull her Tempo timesheet by worker. Assign UP-36 to UP-38 to her so her own work and hours show in Jira."
+   }
+  },
+  {
+   "name": "Rupkatha",
+   "assigned": 0,
+   "open": 0,
+   "inProgress": 0,
+   "overdueCount": 0,
+   "overdue": [],
+   "closed30": 0,
+   "closedInPeriod": 0,
+   "assignedByProject": {},
+   "outOfScope": 0,
+   "hours": 0,
+   "hoursByProject": {},
+   "daily": {},
+   "openItems": [],
+   "raised30": 0,
+   "raisedDone": 0,
+   "raisedByProject": {},
+   "raisedByDay": {},
+   "raisedRecent": [],
+   "raisedOpenOlder": [
+    {
+     "key": "PC-118",
+     "project": "PC",
+     "summary": "Product Research for AI/ML servers",
+     "status": "To Do",
+     "due": "2026-08-29",
+     "assignee": "Arnab",
+     "created": "2026-08-06",
+     "resolved": null
+    },
+    {
+     "key": "PC-122",
+     "project": "PC",
+     "summary": "Product attibute finalisation",
+     "status": "To Do",
+     "due": null,
+     "assignee": "Arnab",
+     "created": "2026-08-26",
+     "resolved": null
+    },
+    {
+     "key": "PC-123",
+     "project": "PC",
+     "summary": "Validate the product upload process through CSV and identify any issues impacting the successful upload of pro",
+     "status": "To Do",
+     "due": null,
+     "assignee": null,
+     "created": "2026-08-26",
+     "resolved": null
+    }
+   ],
+   "lastRaised": "2026-08-26",
+   "note": {
+    "finding": "Holds no tickets in any Jira project and has logged no hours against Jira. She raised three Product Catalog tickets, all still To Do, and nothing in Jira has changed on them since 4 Sep.",
+    "context": "PC-118 (AI/ML server product research, raised 6 Aug, due 29 Aug) and PC-122 (attribute finalisation, 26 Aug) are assigned to Arnab, who also shows no hours. PC-123 (CSV upload validation, 26 Aug) is unassigned. The same work was later done elsewhere: research on PC-133 (Suganya), attributes on UAT (MT-1476, 11 Sep) and the CSV upload process (MT-1478, closed 16 Sep).",
+    "question": "Is she still allocated to the Product Catalog work? Jira shows no activity from her in the last 24 days.",
+    "verify": "Confirm her allocation. Close PC-118, PC-122 and PC-123 as superseded, or reassign them with dates."
+   }
+  }
  ]
 }

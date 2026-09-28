@@ -47,6 +47,24 @@ python3 scripts/ingest_mcp.py add --work $W --kind issues <saved-or-written-file
 
 Keep the same `ORDER BY key ASC` and follow the token. Never restart a pull with a `key >` filter, because Jira sorts keys as text.
 
+### 1b. Named people (Anshul, Anmol, Rupkatha)
+
+The people and their account ids are in `content/scope.json` under `spotlight`. Their work sits outside the report boards or on tickets raised for others, so pull it from every project:
+
+| Pull | JQL | Extra |
+| --- | --- | --- |
+| Held | `assignee in (<ids>) AND (updated >= -30d OR statusCategory != Done) ORDER BY key ASC` | fields above plus `"worklog"` |
+| Raised | `reporter in (<ids>) AND (created >= -30d OR updated >= -30d) ORDER BY key ASC` | fields above (page until done) |
+| Rupkatha's open | `reporter = "<Rupkatha id>" AND statusCategory != Done ORDER BY key ASC` | fields above |
+
+Save every page (write inline results to a file), then:
+
+```bash
+python3 scripts/ingest_people.py --date $DATE --out data/snapshot/people.json <all saved files>
+```
+
+Refresh `peopleSpotlight` in `content/curated.json` only where the numbers changed.
+
 ## 2. Build the snapshot
 
 ```bash

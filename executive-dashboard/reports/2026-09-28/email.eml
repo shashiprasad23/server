@@ -1,13 +1,13 @@
 To: s.prasad@uvation.com
 Subject: Status report 28 Sep 2026: Marketplace, Marketing, Services Platform,
  Conversational AI
-Date: Mon, 28 Sep 2026 15:04:44 +0000
+Date: Mon, 28 Sep 2026 15:22:05 +0000
 X-Unsent: 1
 MIME-Version: 1.0
 Content-Type: multipart/alternative;
- boundary="===============8733005839030590744=="
+ boundary="===============2615418960536306338=="
 
---===============8733005839030590744==
+--===============2615418960536306338==
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
@@ -373,11 +373,28 @@ e took 1 hour each (MT-1455 to MT-1457). Functional test on staging took 1.5 =
 hours and the toggle test 1.5 hours (MT-1471, MT-1473). To verify: Pull Sapav=
 at's Tempo timesheet by worker. Check that QA time is logged on QA subtasks, =
 not on development subtasks.
+- Anshul Bhargava (all Jira projects): 20 held, 16 open, 6 past due, 1.5 h, 7=
+2 raised in 30 days. Holds 20 tickets across five projects, 16 of them open. =
+Six are past due: the Book a Meeting story and its five subtasks (UC-161 to U=
+C-166), In Dev since 2 Sep and due 4 Sep. Only 1.5 hours landed on his ticket=
+s in the window (IN-1119, 25 Sep), 2% of the 72-hour capacity. To verify: Pul=
+l his Tempo timesheet by worker for 14=E2=80=9327 Sep. Re-date or reassign UC=
+-161 to UC-166, and confirm who owns USP-3795.
+- Anmol Srivastava (all Jira projects): 0 held, 0 open, 0 past due, 0 h, 49 r=
+aised in 30 days. Holds no tickets in any Jira project, so no Tempo hours can=
+ be credited to her. She raised 49 tickets in 30 days, and 41 of them are don=
+e. To verify: Pull her Tempo timesheet by worker. Assign UP-36 to UP-38 to he=
+r so her own work and hours show in Jira.
+- Rupkatha (all Jira projects): 0 held, 0 open, 0 past due, 0 h, 0 raised in =
+30 days. Holds no tickets in any Jira project and has logged no hours against=
+ Jira. She raised three Product Catalog tickets, all still To Do, and nothing=
+ in Jira has changed on them since 4 Sep. To verify: Confirm her allocation. =
+Close PC-118, PC-122 and PC-123 as superseded, or reassign them with dates.
 
 Stored in shashiprasad23/server, branch claude/executive-dashboard-jira-revie=
 w-gclk36, executive-dashboard/reports/2026-09-28/.
 
---===============8733005839030590744==
+--===============2615418960536306338==
 Content-Type: text/html; charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 MIME-Version: 1.0
@@ -2161,29 +2178,91 @@ tion.</b> Sapavat&#x27;s real hours cannot be separated from developer hours =
 in Jira. The Tempo worker report is the only reliable source.</li><li style=
 =3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C"><b>To verify.<=
 /b> Pull Sapavat&#x27;s Tempo timesheet by worker. Check that QA time is logg=
-ed on QA subtasks, not on development subtasks.</li></ul><p style=3D"margin:6=
-px 0 10px;font-size:14px;line-height:1.55;color:#16212C"><b>Time-logging qual=
-ity:</b></p><ul style=3D"margin:4px 0 14px;padding-left:20px"><li style=3D"fo=
-nt-size:14px;line-height:1.5;margin:3px 0;color:#16212C">100% of 581 worklogs=
- in the window say only =E2=80=9Ctime-tracking=E2=80=9D. The SOP makes a desc=
-ription mandatory.</li><li style=3D"font-size:14px;line-height:1.5;margin:3px=
- 0;color:#16212C">68% of 307 tickets with logged time have no Original Estima=
-te, so planned versus actual cannot be measured.</li><li style=3D"font-size:1=
-4px;line-height:1.5;margin:3px 0;color:#16212C">Meetings, stand-ups and leave=
- are logged on shared overhead tickets in Uvation Projects, which is outside =
-this report's scope, so that time is not in these totals.</li></ul><h2 style=
-=3D"font-size:18px;margin:26px 0 6px;color:#16212C;border-top:2px solid #1621=
-2C;padding-top:10px">Data notes</h2><ul style=3D"margin:4px 0 14px;padding-le=
-ft:20px"><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#1621=
-2C">Source: Jira Cloud uvation-devops.atlassian.net, boards MT, PC, MR, USP, =
-UC. 1,205 issues updated in 30 days were pulled, against Jira's own count of =
-1205.</li><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#162=
-12C">Verdicts, root causes and suggested owners are the reviewer's reading of=
- the tickets cited. Confirm them with each owner.</li><li style=3D"font-size:=
-14px;line-height:1.5;margin:3px 0;color:#16212C">This report is stored in the=
- repository shashiprasad23/server, branch claude/executive-dashboard-jira-rev=
-iew-gclk36, folder executive-dashboard/reports/2026-09-28/.</li><li style=3D"=
-font-size:14px;line-height:1.5;margin:3px 0;color:#16212C">A new report is ge=
-nerated every weekday at 7:00 PM Nepal time.</li></ul></div></body></html>
+ed on QA subtasks, not on development subtasks.</li></ul><h3 style=3D"font-si=
+ze:15px;margin:16px 0 4px">Anshul Bhargava =C2=B7 across every Jira project</=
+h3><p style=3D"margin:6px 0 10px;font-size:14px;line-height:1.55;color:#16212=
+C">20 tickets held (16 open, 6 past due) =C2=B7 1.5 h on their tickets 14 Sep=
+=E2=80=9327 Sep =C2=B7 72 tickets raised in 30 days (3 done).</p><ul style=3D=
+"margin:4px 0 14px;padding-left:20px"><li style=3D"font-size:14px;line-height=
+:1.5;margin:3px 0;color:#16212C"><b>Finding.</b> Holds 20 tickets across five=
+ projects, 16 of them open. Six are past due: the Book a Meeting story and it=
+s five subtasks (UC-161 to UC-166), In Dev since 2 Sep and due 4 Sep. Only 1.=
+5 hours landed on his tickets in the window (IN-1119, 25 Sep), 2% of the 72-h=
+our capacity.</li><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;co=
+lor:#16212C"><b>Context.</b> Most of his Jira activity is raising and shaping=
+ work for others: 72 tickets in 30 days, including the eight Conversational A=
+I agent stories with 40 subtasks on 3 Sep and the Pulse telemetry rollout in =
+DevOps (IN-1098 to IN-1104) on 16 Sep. He also gives technical direction in c=
+omments, for example the API-gateway lead on the S1 Document API bug (USP-423=
+1, 28 Sep). GPU as a Service (USP-3795) sits with him marked BLOCKER.</li><li=
+ style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C"><b>Open =
+question.</b> Is Book a Meeting still his to deliver, and where is his time l=
+ogged? Planning and review time does not reach Jira unless it is logged on a =
+ticket.</li><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#1=
+6212C"><b>To verify.</b> Pull his Tempo timesheet by worker for 14=E2=80=9327=
+ Sep. Re-date or reassign UC-161 to UC-166, and confirm who owns USP-3795.</l=
+i></ul><h3 style=3D"font-size:15px;margin:16px 0 4px">Anmol Srivastava =C2=B7=
+ across every Jira project</h3><p style=3D"margin:6px 0 10px;font-size:14px;l=
+ine-height:1.55;color:#16212C">0 tickets held (0 open, 0 past due) =C2=B7 0 h=
+ on their tickets 14 Sep=E2=80=9327 Sep =C2=B7 49 tickets raised in 30 days (=
+41 done).</p><ul style=3D"margin:4px 0 14px;padding-left:20px"><li style=3D"f=
+ont-size:14px;line-height:1.5;margin:3px 0;color:#16212C"><b>Finding.</b> Hol=
+ds no tickets in any Jira project, so no Tempo hours can be credited to her. =
+She raised 49 tickets in 30 days, and 41 of them are done.</li><li style=3D"f=
+ont-size:14px;line-height:1.5;margin:3px 0;color:#16212C"><b>Context.</b> On =
+10 Sep she wrote the 38-task category-disable plan (MT-1438, 36 of 38 done) a=
+nd the product upload subtasks (MT-1478). On 28 Sep she raised the free-shipp=
+ing removal (MT-1534), done the same day. Her three Uvation Projects subtasks=
+, Dashboard creation (UP-36, 22 Sep), MoM creation (UP-37, 24 Sep) and Tempo =
+setup for infra (UP-38, 28 Sep), are unassigned in Backlog. Her detailed test=
+ing report is still not in Jira or Confluence.</li><li style=3D"font-size:14p=
+x;line-height:1.5;margin:3px 0;color:#16212C"><b>Open question.</b> Her plann=
+ing, coordination and testing effort lands on other people&#x27;s tickets. Ho=
+w much of the week does it take?</li><li style=3D"font-size:14px;line-height:=
+1.5;margin:3px 0;color:#16212C"><b>To verify.</b> Pull her Tempo timesheet by=
+ worker. Assign UP-36 to UP-38 to her so her own work and hours show in Jira.=
+</li></ul><h3 style=3D"font-size:15px;margin:16px 0 4px">Rupkatha =C2=B7 acro=
+ss every Jira project</h3><p style=3D"margin:6px 0 10px;font-size:14px;line-h=
+eight:1.55;color:#16212C">0 tickets held (0 open, 0 past due) =C2=B7 0 h on t=
+heir tickets 14 Sep=E2=80=9327 Sep =C2=B7 0 tickets raised in 30 days (0 done=
+).</p><ul style=3D"margin:4px 0 14px;padding-left:20px"><li style=3D"font-siz=
+e:14px;line-height:1.5;margin:3px 0;color:#16212C"><b>Finding.</b> Holds no t=
+ickets in any Jira project and has logged no hours against Jira. She raised t=
+hree Product Catalog tickets, all still To Do, and nothing in Jira has change=
+d on them since 4 Sep.</li><li style=3D"font-size:14px;line-height:1.5;margin=
+:3px 0;color:#16212C"><b>Context.</b> PC-118 (AI/ML server product research, =
+raised 6 Aug, due 29 Aug) and PC-122 (attribute finalisation, 26 Aug) are ass=
+igned to Arnab, who also shows no hours. PC-123 (CSV upload validation, 26 Au=
+g) is unassigned. The same work was later done elsewhere: research on PC-133 =
+(Suganya), attributes on UAT (MT-1476, 11 Sep) and the CSV upload process (MT=
+-1478, closed 16 Sep).</li><li style=3D"font-size:14px;line-height:1.5;margin=
+:3px 0;color:#16212C"><b>Open question.</b> Is she still allocated to the Pro=
+duct Catalog work? Jira shows no activity from her in the last 24 days.</li><=
+li style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C"><b>To =
+verify.</b> Confirm her allocation. Close PC-118, PC-122 and PC-123 as supers=
+eded, or reassign them with dates.</li></ul><p style=3D"margin:6px 0 10px;fon=
+t-size:14px;line-height:1.55;color:#16212C"><b>Time-logging quality:</b></p><=
+ul style=3D"margin:4px 0 14px;padding-left:20px"><li style=3D"font-size:14px;=
+line-height:1.5;margin:3px 0;color:#16212C">100% of 581 worklogs in the windo=
+w say only =E2=80=9Ctime-tracking=E2=80=9D. The SOP makes a description manda=
+tory.</li><li style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#162=
+12C">68% of 307 tickets with logged time have no Original Estimate, so planne=
+d versus actual cannot be measured.</li><li style=3D"font-size:14px;line-heig=
+ht:1.5;margin:3px 0;color:#16212C">Meetings, stand-ups and leave are logged o=
+n shared overhead tickets in Uvation Projects, which is outside this report's=
+ scope, so that time is not in these totals.</li></ul><h2 style=3D"font-size:=
+18px;margin:26px 0 6px;color:#16212C;border-top:2px solid #16212C;padding-top=
+:10px">Data notes</h2><ul style=3D"margin:4px 0 14px;padding-left:20px"><li s=
+tyle=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C">Source: Ji=
+ra Cloud uvation-devops.atlassian.net, boards MT, PC, MR, USP, UC. 1,205 issu=
+es updated in 30 days were pulled, against Jira's own count of 1205.</li><li =
+style=3D"font-size:14px;line-height:1.5;margin:3px 0;color:#16212C">Verdicts,=
+ root causes and suggested owners are the reviewer's reading of the tickets c=
+ited. Confirm them with each owner.</li><li style=3D"font-size:14px;line-heig=
+ht:1.5;margin:3px 0;color:#16212C">This report is stored in the repository sh=
+ashiprasad23/server, branch claude/executive-dashboard-jira-review-gclk36, fo=
+lder executive-dashboard/reports/2026-09-28/.</li><li style=3D"font-size:14px=
+;line-height:1.5;margin:3px 0;color:#16212C">A new report is generated every =
+weekday at 7:00 PM Nepal time.</li></ul></div></body></html>
 
---===============8733005839030590744==--
+--===============2615418960536306338==--

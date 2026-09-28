@@ -213,6 +213,20 @@ ul.clean{margin:0;padding-left:18px;display:grid;gap:6px;font-size:14px;color:va
 .deep .q b{font-weight:600;color:var(--ink)}
 .nolog{display:flex;flex-wrap:wrap;gap:6px}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.spot{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+.spot>article{border:1px solid var(--rule);border-radius:10px;padding:14px 16px;display:grid;gap:10px;align-content:start;background:var(--surface);min-width:0}
+.spot .nums{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.spot .nums div{background:var(--surface-2);padding:8px 10px;display:grid}
+.spot .nums b{font-family:var(--font-display);font-size:20px;font-weight:600;font-variant-numeric:tabular-nums}
+.spot .nums span{font-size:11.5px;color:var(--muted)}
+.spot h4{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:500;margin:0}
+.spot ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:5px;font-size:13px}
+.spot li{display:grid;grid-template-columns:auto 1fr;gap:1px 8px}
+.spot li .m{grid-column:2;color:var(--muted);font-size:12px}
+.spot .chips{display:flex;flex-wrap:wrap;gap:4px}
+.spot p.q{font-size:13.5px;color:var(--ink-2);margin:0}
+.spot p.q b{color:var(--ink);font-weight:600}
+@media (max-width:640px){ .spot .nums{grid-template-columns:repeat(2,1fr)} }
 .stats div{background:var(--surface);padding:12px 14px;display:grid;gap:2px}
 .stats b{font-family:var(--font-display);font-size:22px;font-weight:600;font-variant-numeric:tabular-nums}
 .stats span{font-size:12.5px;color:var(--muted)}
@@ -385,6 +399,11 @@ footer.notes code{font-family:var(--font-mono);font-size:12px;background:var(--s
     <div class="callout warn" id="attrib"></div>
     <div class="stats" id="quality"></div>
     <div class="two" id="deep"></div>
+    <div class="panel" id="spot-wrap" hidden>
+      <h3>Named people, across every Jira project</h3>
+      <p class="muted" style="font-size:13px;margin-top:4px;max-width:90ch">Their work sits outside the report boards or on tickets raised for other people, so the table below cannot show it. These figures come from every Jira project: tickets they hold, Tempo hours on those tickets in the window, and tickets they raised.</p>
+      <div class="spot" id="spotlight" style="margin-top:14px"></div>
+    </div>
     <div class="panel flush">
       <div style="padding:16px 18px 8px;display:grid;gap:6px">
         <h3>Hours logged per person, <span class="pshort"></span></h3>
@@ -655,6 +674,32 @@ const CAL = /*__CAL__*/[];
       <p class="q"><b>Open question.</b> ${esc(dd.question)}</p>
       <p class="q"><b>To verify.</b> ${esc(dd.verify)}</p>
     </div>`;}).join("");
+
+  // named people
+  const SP = D.spotlight || [];
+  $("#spot-wrap").hidden = !SP.length;
+  const spRow = (i, meta) => `<li><span>${J(i.key)}</span><span>${esc(i.summary)}</span><span class="m">${meta}</span></li>`;
+  const chipsOf = (obj, suffix) => Object.entries(obj||{}).map(([k,v])=>`<span class="chip">${esc(k)} ${v}${suffix||""}</span>`).join(" ");
+  $("#spotlight").innerHTML = SP.map(p=>{
+    const n = p.note || {};
+    const raisedBlock = p.raised30
+      ? `<div><h4>Raised in 30 days · ${p.raised30}, ${p.raisedDone} done</h4><div class="chips" style="margin-top:6px">${chipsOf(p.raisedByProject)}</div><ul>${p.raisedRecent.slice(0,5).map(i=>spRow(i, `${esc(i.status)} · raised ${dshort(i.created)} · ${esc(i.assignee||"unassigned")}`)).join("")}</ul></div>`
+      : `<div><h4>Raised in 30 days · 0</h4>${p.raisedOpenOlder.length?`<ul>${p.raisedOpenOlder.map(i=>spRow(i, `${esc(i.status)} · raised ${dshort(i.created)} · ${esc(i.assignee||"unassigned")}${i.due?` · due ${dshort(i.due)}`:""}`)).join("")}</ul>`:""}<p class="muted" style="font-size:12.5px;margin-top:6px">Last ticket raised ${p.lastRaised?dshort(p.lastRaised):"—"}.</p></div>`;
+    return `<article>
+      <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline"><h3 style="font-size:16px">${esc(p.name)}</h3><span class="muted" style="font-size:12.5px">${p.assigned?`${p.assigned} tickets held · ${chipsOf(p.assignedByProject)}`:"No tickets held in any project"}</span></div>
+      <div class="nums">
+        <div><b>${p.open}</b><span>open, held</span></div>
+        <div><b style="${p.overdueCount?"color:var(--bad)":""}">${p.overdueCount}</b><span>past due</span></div>
+        <div><b>${p.hours}<small style="font-size:12px;color:var(--muted)"> h</small></b><span>hours, ${esc(D.period.short)}</span></div>
+        <div><b>${p.raised30}</b><span>raised, 30 d</span></div>
+      </div>
+      ${p.openItems.length?`<div><h4>Open tickets held</h4><ul>${p.openItems.slice(0,5).map(i=>spRow(i, `${esc(i.status)}${i.due?` · due ${dshort(i.due)}`:""}`)).join("")}</ul></div>`:""}
+      ${raisedBlock}
+      ${n.finding?`<p class="q"><b>Finding.</b> ${keyify(n.finding)}</p>`:""}
+      ${n.context?`<p class="q"><b>Context.</b> ${keyify(n.context)}</p>`:""}
+      ${n.question?`<p class="q"><b>Open question.</b> ${esc(n.question)}</p>`:""}
+      ${n.verify?`<p class="q"><b>To verify.</b> ${keyify(n.verify)}</p>`:""}
+    </article>`;}).join("");
 
   // method
   $("#method").innerHTML = `

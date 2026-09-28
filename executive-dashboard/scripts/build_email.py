@@ -194,6 +194,15 @@ def build(date, to):
     for dd in un["deepDives"]:
         H.append(f'<h3 style="font-size:15px;margin:16px 0 4px">{e(dd["person"])}</h3>')
         H.append(ul([f"<b>Finding.</b> {e(dd['finding'])}", f"<b>Context.</b> {e(dd['context'])}", f"<b>Open question.</b> {e(dd['question'])}", f"<b>To verify.</b> {e(dd['verify'])}"]))
+    for sp in d.get("spotlight", []):
+        n = sp.get("note", {})
+        H.append(f'<h3 style="font-size:15px;margin:16px 0 4px">{e(sp["name"])} · across every Jira project</h3>')
+        H.append(p(f"{sp['assigned']} tickets held ({sp['open']} open, {sp['overdueCount']} past due) · {sp['hours']} h on their tickets {e(d['period']['short'])} · {sp['raised30']} tickets raised in 30 days ({sp['raisedDone']} done)."))
+        H.append(ul([x for x in (
+            f"<b>Finding.</b> {e(n['finding'])}" if n.get("finding") else "",
+            f"<b>Context.</b> {e(n['context'])}" if n.get("context") else "",
+            f"<b>Open question.</b> {e(n['question'])}" if n.get("question") else "",
+            f"<b>To verify.</b> {e(n['verify'])}" if n.get("verify") else "") if x]))
     H.append(p("<b>Time-logging quality:</b>"))
     H.append(ul([
         f"{round(100 * q['genericDescriptions'] / max(1, q['worklogsInPeriod']))}% of {q['worklogsInPeriod']} worklogs in the window say only “time-tracking”. The SOP makes a description mandatory.",
@@ -239,6 +248,8 @@ def build(date, to):
     T += ["", "4. RESOURCE UTILISATION", f"Capacity {cap} h per person for the window. {un['attributionWarning']}"]
     T += [f"- {x['name']}: {x['hours']} h ({x['pctCapacity']}%), {x['daysLogged']} days, peak {x['maxDay']} h{(' — ' + ', '.join(flag[f] for f in x['flags'])) if x['flags'] else ''}" for x in d["people"] if x["hours"] > 0]
     T += [f"- {dd['person']}: {dd['finding']} {dd['context']} To verify: {dd['verify']}" for dd in un["deepDives"]]
+    T += [f"- {sp['name']} (all Jira projects): {sp['assigned']} held, {sp['open']} open, {sp['overdueCount']} past due, {sp['hours']} h, {sp['raised30']} raised in 30 days. "
+          f"{sp.get('note', {}).get('finding', '')} To verify: {sp.get('note', {}).get('verify', '')}" for sp in d.get("spotlight", [])]
     T += ["", f"Stored in shashiprasad23/server, branch claude/executive-dashboard-jira-review-gclk36, executive-dashboard/reports/{date}/."]
     text_body = "\n".join(T)
 

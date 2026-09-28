@@ -43,5 +43,19 @@
       ],
       "headline": "Five delivery stories are done: the Marketing, Services Platform and Marketplace chatbots, conversational UX and the admin dashboard. Book a Meeting has been overdue since 4 Sep with no update since 2 Sep. The CSM Teams dashboard (UC-215) moved into development, due 30 Sep."
     }
+  ],
+  "spotlight": [
+    {
+      "name": "Anshul Bhargava",
+      "accountId": "639e77fdd3aeefa4053fda7a"
+    },
+    {
+      "name": "Anmol Srivastava",
+      "accountId": "712020:630c75ca-4378-4036-8a73-1743a4b2dbac"
+    },
+    {
+      "name": "Rupkatha",
+      "accountId": "712020:a25f3fea-9d56-4939-9eae-801bd5a4b0f3"
+    }
   ]
 }

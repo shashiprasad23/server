@@ -62,6 +62,8 @@ def main():
             obj = {"issues": [i for i in obj["issues"] if i["project"] in keep],
                    "worklogs": [w for w in obj["worklogs"] if w["key"].split("-")[0] in keep]}
         bundle[name] = obj
+    if (snap / "people.json").exists():
+        bundle["people"] = json.loads((snap / "people.json").read_text())
     with gzip.open(out / "snapshot.json.gz", "wt", encoding="utf-8") as f:
         json.dump(bundle, f, separators=(",", ":"))
 
