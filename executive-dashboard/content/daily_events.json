@@ -642,6 +642,56 @@
       "keys": [
         "MR-1179"
       ]
+    },
+    {
+      "date": "2026-09-28",
+      "project": "UC",
+      "type": "change",
+      "title": "New PULSE project: 329 tickets for the Pulse platform created and assigned to Anshul Bhargava (28–29 Sep)",
+      "keys": [
+        "PULSE-1"
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "project": "UC",
+      "type": "milestone",
+      "title": "Book a Meeting closed with its five subtasks, 25 days after its due date",
+      "keys": [
+        "UC-161"
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "project": "MT",
+      "type": "progress",
+      "title": "Account hub, RMA email templates and home page sections closed; catalogue re-check started",
+      "keys": [
+        "MT-1428",
+        "MT-1494",
+        "MT-1526",
+        "PC-136"
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "project": "MR",
+      "type": "issue",
+      "title": "P1 on AI Factory pages raised with 14 subtasks, one Blocker",
+      "keys": [
+        "MR-1260",
+        "MR-1265"
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "project": "MR",
+      "type": "testing",
+      "title": "7 Figma defects fixed (23 of 56); smoke, security and privacy test tasks added",
+      "keys": [
+        "MR-1179",
+        "MR-1277"
+      ]
     }
   ],
   "pipelineNote": "All 35 listings are in production: 27 moved by 22 Sep and the 8 Vera Rubin products on 28 Sep. <b>None are live</b>: each was disabled after validation, pending approval."

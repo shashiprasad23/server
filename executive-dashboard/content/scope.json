@@ -17,7 +17,7 @@
         "MT",
         "PC"
       ],
-      "headline": "All 35 AI-server listings are now in production after the 8 Vera Rubin products moved on 28 Sep, and all are disabled pending approval. The UAT cross-validation audit closed on 28 Sep, and a full catalogue re-check is due 30 Sep. Free-shipping and delivery-estimate text was removed from production on 28 Sep. Account hub and returns are still in testing past their 15 Sep due date, and 23 open items are past due."
+      "headline": "All 35 AI-server listings are in production and disabled pending approval. A full catalogue re-check started on 29 Sep, due 30 Sep. Account hub moved to 4 of 10 subtasks done, RMA email templates and refund and exchange timelines closed, and the home page category and filter sections are done, all on 29 Sep. A new bug has the approved-quote email showing an unformatted total (MT-1539). 20 open items are past due."
     },
     {
       "id": "MR",
@@ -25,7 +25,7 @@
       "projects": [
         "MR"
       ],
-      "headline": "Figma validation now has 54 defects, 16 fixed, with 10 more raised on 28 Sep. The sitemap fix (MR-1199) has not started, so smoke tests still cover 250 of 500+ URLs. AI Factory pages and the GDPR and Careers redesigns are in progress. No open item is past its due date."
+      "headline": "Figma validation now has 56 defects, 23 fixed. A P1 bug on the new AI Factory pages (MR-1260) was raised on 29 Sep with 14 subtasks, one marked Blocker. Smoke regression, security and privacy test tasks were added the same day. The sitemap fix (MR-1199) has not started, so automation still covers 250 of 500+ URLs."
     },
     {
       "id": "USP",
@@ -33,7 +33,7 @@
       "projects": [
         "USP"
       ],
-      "headline": "Three new S1 bugs in production: wrong final prices across the Traditional, Modular and Nuclear AI Factory (25 Sep) and a Document API 502 on first request (28 Sep). Open S1 bugs rose from 2 to 5, with 63 bugs open in total. An IAM security hardening story with 9 subtasks started on 28 Sep under Platform Security. Eight items are past due."
+      "headline": "The three S1 production bugs from 25 and 28 Sep (wrong AI Factory prices and a Document API 502) are still in To Do and due 30 Sep. Four UI bugs closed on 29 Sep, leaving 59 open bugs, 5 of them S1. The IAM security hardening story (9 subtasks) is in progress. Eight items are past due."
     },
     {
       "id": "UC",
@@ -41,7 +41,7 @@
       "projects": [
         "UC"
       ],
-      "headline": "Five delivery stories are done: the Marketing, Services Platform and Marketplace chatbots, conversational UX and the admin dashboard. Book a Meeting has been overdue since 4 Sep with no update since 2 Sep. The CSM Teams dashboard (UC-215) moved into development, due 30 Sep."
+      "headline": "Book a Meeting and its five subtasks closed on 29 Sep, 25 days after the 4 Sep due date, so nothing in the programme is past due. The CSM Teams dashboard (UC-215) is in testing, due 30 Sep. Eight agent stories are still in To Do with no due dates."
     }
   ],
   "spotlight": [
