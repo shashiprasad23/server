@@ -71,7 +71,9 @@ def build_daily(snap, scope, review=None, review_url=""):
         "meta": {
             "snapshot": meta["snapshotDate"], "site": meta["site"], "jiraBase": review["jiraBase"],
             "windowStart": win_start.isoformat(), "windowEnd": win_end.isoformat(),
-            "effortStart": eff_start, "effortEnd": eff_end, "holidays": period["holidays"], "periodShort": period["short"],
+            # Effort runs through the report day itself (counted up to the pull), not just the review window.
+            "effortStart": eff_start, "effortEnd": win_end.isoformat(), "reviewEffortEnd": eff_end,
+            "holidays": period["holidays"], "periodShort": period["short"],
             "reviewUrl": review_url or cur.get("links", {}).get("review", ""), "capacityPerDay": cur["capacityPolicy"]["hoursPerDay"],
             "scopeLabel": scope["label"] if scope else "", "scopeNote": (scope or {}).get("note", ""),
         },
@@ -85,8 +87,22 @@ def build_daily(snap, scope, review=None, review_url=""):
         "register": [{k: r[k] for k in ("key", "project", "kind", "summary", "verdict", "rag", "updated", "daysSinceUpdate", "assignee")}
                      for r in review["register"] if r["kind"] != "Epic"],
         "overheadTruncated": review["quality"]["overheadTicketsTruncated"],
+        "spotlightLogs": spotlight_logs(snap, eff_start, win_end.isoformat()),
+        "throughputExclude": (scope or {}).get("throughputExclude", []),
     }
     return data
+
+
+def spotlight_logs(snap, start, end):
+    """Tempo hours on the named people's tickets in every Jira project (people.json), for the hours heatmap."""
+    path = pathlib.Path(snap) / "people.json"
+    if not path.exists():
+        return []
+    out = []
+    for p in load(path)["people"]:
+        logs = [[d, h, a["project"]] for a in p["assigned"] for d, h in a.get("logs", []) if start <= d <= end]
+        out.append({"name": p["name"], "held": len(p["assigned"]), "logs": logs})
+    return out
 
 
 def clip_pipeline(pipeline, x):

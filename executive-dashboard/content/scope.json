@@ -57,5 +57,12 @@
       "name": "Rupkatha",
       "accountId": "712020:a25f3fea-9d56-4939-9eae-801bd5a4b0f3"
     }
+  ],
+  "throughputExclude": [
+    "Livian Stefan Stan",
+    "Murali G",
+    "Silviu Oltean",
+    "Cășvan Marcel",
+    "Andrei Momita"
   ]
 }

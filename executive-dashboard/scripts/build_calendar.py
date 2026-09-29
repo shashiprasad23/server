@@ -148,6 +148,9 @@ def main():
             t = pathlib.Path(tmp)
             for name, obj in (("meta", meta), ("issues", issues), ("worklogs", wl), ("register", reg)):
                 (t / f"{name}.json").write_text(json.dumps(obj))
+            if "people" in bundles[base]:
+                # named people's tickets across Jira; their hours are clipped to the day by the builders
+                (t / "people.json").write_text(json.dumps(bundles[base]["people"]))
             rebuilt = bd.build(t, scope)
             if c["kind"] == "run":
                 data = dict(reports[x])
