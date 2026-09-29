@@ -218,7 +218,7 @@ section>*{min-width:0}
       <div class="card"><h3>Hours logged per day by project</h3><div class="legend" id="lg-proj2"></div><div class="chart" id="c-hours" role="img" aria-label="Hours per day stacked by project"></div></div>
       <div class="card"><h3>Hours per day, rolled up by week</h3><p class="sub">Total hours and the number of people with any hours on their tickets.</p><div class="chart" id="c-week" role="img" aria-label="Weekly hours"></div></div>
     </div>
-    <div class="card"><h3>Hours per person per day</h3><p class="sub">Credited to each ticket's assignee. A cell marked with a value is over 10 hours, which means other people's hours or bulk logging. Rows marked "all projects" (top) are the named people: hours on tickets they hold anywhere in Jira, because their work sits outside the report boards.</p><div class="chart tall" id="c-hheat" role="img" aria-label="Heatmap of hours per person per day"></div></div>
+    <div class="card"><h3>Hours per person per day</h3><p class="sub">Credited to each ticket's assignee. A cell marked with a value is over 10 hours, which means other people's hours or bulk logging. Rows marked "all projects" (top) are the named people: hours on tickets they hold anywhere in Jira, because their work sits outside the report boards.</p><p class="sub" id="hours-ex"></p><div class="chart tall" id="c-hheat" role="img" aria-label="Heatmap of hours per person per day"></div></div>
   </section>
 
   <section id="people">
@@ -460,8 +460,10 @@ const CAL = /*__CAL__*/[];
     // heatmap hours person x day
     // Named people get their own rows from every Jira project; their scoped rows are replaced, not added to.
     const SPL = D.spotlightLogs || [], spNames = new Set(SPL.map(s=>s.name)), spLabel = n => `${n} · all projects`;
-    const tot = {}; logs.forEach(l=>{ if(l.who && !spNames.has(l.who)) tot[l.who]=(tot[l.who]||0)+l.h; });
-    const cell = {}; logs.forEach(l=>{ if(!l.who || spNames.has(l.who)) return; const k=l.who+"|"+l.d; cell[k]=(cell[k]||0)+l.h; });
+    const HX = new Set(D.hoursExclude || []);
+    $("#hours-ex").textContent = HX.size ? `Leaves out ${[...HX].join(", ")}.` : "";
+    const tot = {}; logs.forEach(l=>{ if(l.who && !spNames.has(l.who) && !HX.has(l.who)) tot[l.who]=(tot[l.who]||0)+l.h; });
+    const cell = {}; logs.forEach(l=>{ if(!l.who || spNames.has(l.who) || HX.has(l.who)) return; const k=l.who+"|"+l.d; cell[k]=(cell[k]||0)+l.h; });
     const spTot = {};
     SPL.forEach(s=>{ const nm=spLabel(s.name); spTot[nm]=0; s.logs.forEach(([d,h,p])=>{ if(state.project!=="all" && p!==state.project) return; if(d<M.effortStart||d>M.effortEnd) return; spTot[nm]+=h; cell[nm+"|"+d]=(cell[nm+"|"+d]||0)+h; }); });
     const ppl = [...Object.keys(tot).sort((a,b)=>tot[b]-tot[a]).slice(0,30).reverse(), ...Object.keys(spTot)];

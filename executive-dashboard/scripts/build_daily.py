@@ -89,6 +89,7 @@ def build_daily(snap, scope, review=None, review_url=""):
         "overheadTruncated": review["quality"]["overheadTicketsTruncated"],
         "spotlightLogs": spotlight_logs(snap, eff_start, win_end.isoformat()),
         "throughputExclude": (scope or {}).get("throughputExclude", []),
+        "hoursExclude": (scope or {}).get("hoursExclude", []),
     }
     return data
 
