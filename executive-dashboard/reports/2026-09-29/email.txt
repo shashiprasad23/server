@@ -1,19 +1,19 @@
 STATUS REPORT · 29 Sep 2026
 Web programmes: risks, issues, progress and utilisation
 
-Scope: Web-Marketplace, Web-Marketing, Web-Uvation Services Platform, Uvation Conversational AI (Web-Marketplace includes the Product Catalog board).
+Scope: Web-Marketplace, Web-Marketing, Web-Uvation Services Platform, Uvation Conversational AI, Uvation Pulse, Atlas CRM (Web-Marketplace includes the Product Catalog board).
 Window for hours: 15 Sep–28 Sep (10 working days). Throughput: last 30 days.
 
 Portfolio Status Review: https://claude.ai/artifact/R9gQ2oHPXkQaj2ZgrXCEAe
 Daily Delivery Pulse:   https://claude.ai/artifact/K7m76XrnRRHWkGYqHtDySN
 
 HEADLINE FIGURES
-- Issues moved, 30 days: 1,232
+- Issues moved, 30 days: 1,562
 - Issues closed, 30 days: 854
 - Issues closed 15 Sep–28 Sep: 358
-- Open issues (all time): 704
+- Open issues (all time): 1,034
 - Open and past due: 28
-- Tempo hours 15 Sep–28 Sep: 1,078
+- Tempo hours 15 Sep–28 Sep: 1,080
 - AI-server listings live: 0 of 35 (35 in production, disabled)
 - Red register items: 1 of 16
 
@@ -125,6 +125,8 @@ DECISIONS NEEDED
 - Web-Marketing: 247 moved, 149 closed (30 d), 0 past due, 1 blocked, 9 open bugs. Figma validation now has 56 defects, 23 fixed. A P1 bug on the new AI Factory pages (MR-1260) was raised on 29 Sep with 14 subtasks, one marked Blocker. Smoke regression, security and privacy test tasks were added the same day. The sitemap fix (MR-1199) has not started, so automation still covers 250 of 500+ URLs.
 - Web-Uvation Services Platform: 564 moved, 416 closed (30 d), 8 past due, 2 blocked, 59 open bugs. The three S1 production bugs from 25 and 28 Sep (wrong AI Factory prices and a Document API 502) are still in To Do and due 30 Sep. Four UI bugs closed on 29 Sep, leaving 59 open bugs, 5 of them S1. The IAM security hardening story (9 subtasks) is in progress. Eight items are past due.
 - Uvation Conversational AI: 90 moved, 32 closed (30 d), 0 past due, 0 blocked, 0 open bugs. Book a Meeting and its five subtasks closed on 29 Sep, 25 days after the 4 Sep due date, so nothing in the programme is past due. The CSM Teams dashboard (UC-215) is in testing, due 30 Sep. Eight agent stories are still in To Do with no due dates.
+- Uvation Pulse: 329 moved, 0 closed (30 d), 0 past due, 0 blocked, 1 open bugs. The board was set up on 28 and 29 Sep: 8 epics, 64 stories, 256 subtasks and 1 bug, all held by Anshul Bhargava. 247 items were moved to In Progress within a day of creation, 6 of the 8 epics among them, and none are done. No item has a due date. Only 1.5 h is logged in Tempo, on PULSE-70 and the new telemetry-ingest bug PULSE-329, so the In Progress count does not reflect effort yet.
+- Atlas CRM: 1 moved, 0 closed (30 d), 0 past due, 0 blocked, 0 open bugs. One story, ATLAS-1 'R&D on CRM for MVP', created 28 Sep and held by Anshul Bhargava. It is still in To Do with no due date, and 2.75 h is logged against it (2 h on 28 Sep, 45 min on 29 Sep).
 - Marketplace pipeline: Dell 6 (Moved 18 Sep (MT-1528), Disabled); HPE 3 (Moved 18 Sep (MT-1528), Disabled); NVIDIA 8 (Moved 21 Sep (MT-1528), Disabled); Supermicro 8 (Moved by 22 Sep (MT-1528 closed), Disabled); Lenovo 2 (Moved by 22 Sep (MT-1528 closed), Disabled); NVIDIA Vera Rubin 8 (Moved 28 Sep (MT-1535), Disabled)
   Expected completion: 30 Sep 2026 (due date on MT-1485, MT-1488 and MT-1524)
 - Marketing testing: 250 of 500+ URLs automated; 2250/2250 checks pass; Figma defects 23 fixed of 56. Remaining effort: Not estimated in Jira. None of the testing tickets carry an Original Estimate. Target date: Not set in Jira. The only dated item is MR-1168, due 30 Sep.
@@ -151,6 +153,7 @@ Capacity 80 h per person for the window. Tempo writes every worklog to Jira unde
 - Ankit Sharma: 6.5 h (8%), 2 days, peak 4.0 h — Below 60% of capacity
 - Shivam Dhoundiyal: 6.5 h (8%), 1 days, peak 6.5 h — Below 60% of capacity
 - Parth: 2.5 h (3%), 2 days, peak 1.5 h — Below 60% of capacity
+- Anshul Bhargava: 2.0 h (2%), 1 days, peak 2.0 h — Below 60% of capacity
 - Cășvan Marcel: 1.5 h (2%), 1 days, peak 1.5 h — Below 60% of capacity
 - Murali G: 0.5 h (1%), 1 days, peak 0.5 h — Below 60% of capacity
 - Suganya Murugaraj: Logged 40.5 hours on 10 days, all on PC-133. That averages about 4 hours a day against an 8-hour day, or 51% of the 80-hour capacity. 15 Sep shows 1.5 hours and 28 Sep 0.5 hours. The 5.5 hours on 17 Sep covered Dell GPU corrections with Naman and then HPE validation, which is 3 products. Each product also needed a tech-spec table, long description, short description and product-card copy in HTML. Between 15 and 24 Sep she validated 19 products for 4 brands and started the 8 Vera Rubin products, about 1.5 hours per product. To verify: Pull Suganya's Tempo timesheet for 15–28 Sep and compare the total with 80 hours. The full catalogue re-check (PC-136) she started on 29 Sep is due 30 Sep.

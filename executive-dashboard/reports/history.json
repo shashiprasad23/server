@@ -98,11 +98,11 @@
  {
   "date": "2026-09-29",
   "window": "15 Sep\u201328 Sep",
-  "issuesMoved30": 1232,
+  "issuesMoved30": 1562,
   "closed30": 854,
   "closedWindow": 358,
   "pastDue": 28,
-  "hours": 1077.5,
+  "hours": 1079.5,
   "registerRed": 1,
   "programmes": {
    "MT": {
@@ -122,6 +122,16 @@
    },
    "UC": {
     "closed30": 32,
+    "pastDue": 0,
+    "openBugs": 0
+   },
+   "PULSE": {
+    "closed30": 0,
+    "pastDue": 0,
+    "openBugs": 1
+   },
+   "ATLAS": {
+    "closed30": 0,
     "pastDue": 0,
     "openBugs": 0
    }

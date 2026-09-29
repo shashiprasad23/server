@@ -8,11 +8,11 @@
   "register": "summary ~ Risk|Dependency"
  },
  "counts": {
-  "issuesUpdated30d": 1232,
-  "openAllTime": 704,
-  "worklogIssues": 333,
-  "worklogEntries": 930,
+  "issuesUpdated30d": 1562,
+  "openAllTime": 1034,
+  "worklogIssues": 336,
+  "worklogEntries": 934,
   "registerItems": 18,
-  "expectedIssues": 1232
+  "expectedIssues": 1562
  }
 }

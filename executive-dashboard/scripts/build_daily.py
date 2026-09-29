@@ -24,7 +24,7 @@ from build_dashboard import PROJECT_NAMES, build, load, load_scope  # noqa: E402
 
 # Fixed project -> categorical slot. Colour follows the project on every chart.
 SLOTS_ALL = ["MT", "USP", "MR", "DMI", "HC", "IT", "UC"]  # everything else folds to "Other"
-SLOTS_SCOPED = ["MT", "USP", "MR", "UC", "PC"]
+SLOTS_SCOPED = ["MT", "USP", "MR", "UC", "PC", "PULSE", "ATLAS"]
 
 
 def build_daily(snap, scope, review=None, review_url=""):

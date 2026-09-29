@@ -28,6 +28,7 @@ import pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 PROJECT_NAMES = {
+    "ATLAS": "Atlas CRM", "PULSE": "Uvation Pulse",
     "DM": "Design Marketing Development Collab", "DMI": "Marketing", "EN": "Web-Email Notifications",
     "HC": "Hamara CRM", "ID": "Web-Identity", "IN": "Devops", "INF": "Infrastructure-test",
     "IT": "Infrastructure", "MR": "Web-Marketing", "MT": "Web-Marketplace",

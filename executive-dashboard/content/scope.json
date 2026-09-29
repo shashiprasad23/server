@@ -1,12 +1,14 @@
 {
-  "label": "Web platforms: Marketplace, Marketing, Services Platform and Conversational AI",
-  "short": "4 web programmes",
+  "label": "Web platforms: Marketplace, Marketing, Services Platform and Conversational AI, plus Uvation Pulse and Atlas CRM",
+  "short": "6 programmes",
   "projects": [
     "MT",
     "PC",
     "MR",
     "USP",
-    "UC"
+    "UC",
+    "PULSE",
+    "ATLAS"
   ],
   "note": "Web-Marketplace Product Catalog (PC) is reported with Web-Marketplace, because the AI-server catalogue work runs across both boards.",
   "programmes": [
@@ -42,6 +44,22 @@
         "UC"
       ],
       "headline": "Book a Meeting and its five subtasks closed on 29 Sep, 25 days after the 4 Sep due date, so nothing in the programme is past due. The CSM Teams dashboard (UC-215) is in testing, due 30 Sep. Eight agent stories are still in To Do with no due dates."
+    },
+    {
+      "id": "PULSE",
+      "name": "Uvation Pulse",
+      "projects": [
+        "PULSE"
+      ],
+      "headline": "The board was set up on 28 and 29 Sep: 8 epics, 64 stories, 256 subtasks and 1 bug, all held by Anshul Bhargava. 247 items were moved to In Progress within a day of creation, 6 of the 8 epics among them, and none are done. No item has a due date. Only 1.5 h is logged in Tempo, on PULSE-70 and the new telemetry-ingest bug PULSE-329, so the In Progress count does not reflect effort yet."
+    },
+    {
+      "id": "ATLAS",
+      "name": "Atlas CRM",
+      "projects": [
+        "ATLAS"
+      ],
+      "headline": "One story, ATLAS-1 'R&D on CRM for MVP', created 28 Sep and held by Anshul Bhargava. It is still in To Do with no due date, and 2.75 h is logged against it (2 h on 28 Sep, 45 min on 29 Sep)."
     }
   ],
   "spotlight": [

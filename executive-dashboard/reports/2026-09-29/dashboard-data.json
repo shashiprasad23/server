@@ -9,12 +9,12 @@
    "register": "summary ~ Risk|Dependency"
   },
   "counts": {
-   "issuesUpdated30d": 1232,
-   "openAllTime": 704,
-   "worklogIssues": 333,
-   "worklogEntries": 930,
+   "issuesUpdated30d": 1562,
+   "openAllTime": 1034,
+   "worklogIssues": 336,
+   "worklogEntries": 934,
    "registerItems": 18,
-   "expectedIssues": 1232
+   "expectedIssues": 1562
   }
  },
  "period": {
@@ -53,14 +53,14 @@
  "title": "Portfolio Status Review",
  "kpis": {
   "projectsVisible": 20,
-  "projectsInScope": 5,
-  "projectsActive": 5,
-  "issuesUpdated30": 1232,
+  "projectsInScope": 7,
+  "projectsActive": 7,
+  "issuesUpdated30": 1562,
   "done30": 854,
   "doneInPeriod": 358,
-  "openAllTime": 704,
+  "openAllTime": 1034,
   "overdueOpen": 28,
-  "hoursInPeriod": 1077.5,
+  "hoursInPeriod": 1079.5,
   "capacityPerPerson": 80
  },
  "projects": [
@@ -76,6 +76,19 @@
    "overdue": 8,
    "openBugs": 59,
    "hours": 267.8
+  },
+  {
+   "key": "PULSE",
+   "name": "Uvation Pulse",
+   "updated30": 329,
+   "created30": 329,
+   "todo": 82,
+   "inprog": 247,
+   "done": 0,
+   "doneInPeriod": 0,
+   "overdue": 0,
+   "openBugs": 1,
+   "hours": 0.0
   },
   {
    "key": "MT",
@@ -128,6 +141,19 @@
    "overdue": 1,
    "openBugs": 0,
    "hours": 41.5
+  },
+  {
+   "key": "ATLAS",
+   "name": "Atlas CRM",
+   "updated30": 1,
+   "created30": 1,
+   "todo": 1,
+   "inprog": 0,
+   "done": 0,
+   "doneInPeriod": 0,
+   "overdue": 0,
+   "openBugs": 0,
+   "hours": 2.0
   }
  ],
  "register": [
@@ -1684,6 +1710,27 @@
    ]
   },
   {
+   "name": "Anshul Bhargava",
+   "hours": 2.0,
+   "daysLogged": 1,
+   "maxDay": 2.0,
+   "avgPerDay": 2.0,
+   "pctCapacity": 2,
+   "tickets": 1,
+   "doneInPeriod": 2,
+   "open": 332,
+   "overdue": 0,
+   "projects": {
+    "ATLAS": 2.0
+   },
+   "daily": {
+    "2026-09-28": 2.0
+   },
+   "flags": [
+    "low"
+   ]
+  },
+  {
    "name": "Cășvan Marcel",
    "hours": 1.5,
    "daysLogged": 1,
@@ -1734,23 +1781,6 @@
    "pctCapacity": 0,
    "tickets": 0,
    "doneInPeriod": 5,
-   "open": 2,
-   "overdue": 0,
-   "projects": {},
-   "daily": {},
-   "flags": [
-    "nolog"
-   ]
-  },
-  {
-   "name": "Anshul Bhargava",
-   "hours": 0.0,
-   "daysLogged": 0,
-   "maxDay": 0,
-   "avgPerDay": 0,
-   "pctCapacity": 0,
-   "tickets": 0,
-   "doneInPeriod": 2,
    "open": 2,
    "overdue": 0,
    "projects": {},
@@ -1846,17 +1876,23 @@
   }
  ],
  "quality": {
-  "worklogsInPeriod": 649,
-  "genericDescriptions": 649,
+  "worklogsInPeriod": 650,
+  "genericDescriptions": 650,
   "worklogAuthors": {
-   "Timesheets by Tempo - Jira Time Tracking": 649
+   "Timesheets by Tempo - Jira Time Tracking": 650
   },
-  "ticketsWithTime": 333,
-  "ticketsWithTimeNoEstimate": 230,
+  "ticketsWithTime": 336,
+  "ticketsWithTimeNoEstimate": 233,
   "unattributedHours": 0.0,
   "overheadTicketsTruncated": [],
-  "projectsWithNoTempoHours": [],
-  "totalHours": 1077.5
+  "projectsWithNoTempoHours": [
+   {
+    "key": "PULSE",
+    "name": "Uvation Pulse",
+    "updated30": 329
+   }
+  ],
+  "totalHours": 1079.5
  },
  "utilisationNotes": {
   "attributionWarning": "Tempo writes every worklog to Jira under its own app account, so Jira cannot say who logged an hour. Hours here are credited to each ticket's current assignee. When a developer's ticket is handed to QA, the developer's hours move with it. Any day above 10 hours for one person is flagged for this reason.",
@@ -1906,22 +1942,26 @@
   }
  ],
  "scope": {
-  "label": "Web platforms: Marketplace, Marketing, Services Platform and Conversational AI",
-  "short": "4 web programmes",
+  "label": "Web platforms: Marketplace, Marketing, Services Platform and Conversational AI, plus Uvation Pulse and Atlas CRM",
+  "short": "6 programmes",
   "note": "Web-Marketplace Product Catalog (PC) is reported with Web-Marketplace, because the AI-server catalogue work runs across both boards.",
   "projects": [
    "MT",
    "PC",
    "MR",
    "USP",
-   "UC"
+   "UC",
+   "PULSE",
+   "ATLAS"
   ],
   "names": [
    "Web-Marketplace",
    "Web-Marketplace Product Catalog",
    "Web-Marketing",
    "Web-Uvation Services Platform",
-   "Uvation Conversational AI"
+   "Uvation Conversational AI",
+   "Uvation Pulse",
+   "Atlas CRM"
   ]
  },
  "scorecards": [
@@ -2809,6 +2849,179 @@
    ],
    "openBugs": 0,
    "bugSeverity": {}
+  },
+  {
+   "id": "PULSE",
+   "name": "Uvation Pulse",
+   "projects": [
+    "PULSE"
+   ],
+   "headline": "The board was set up on 28 and 29 Sep: 8 epics, 64 stories, 256 subtasks and 1 bug, all held by Anshul Bhargava. 247 items were moved to In Progress within a day of creation, 6 of the 8 epics among them, and none are done. No item has a due date. Only 1.5 h is logged in Tempo, on PULSE-70 and the new telemetry-ingest bug PULSE-329, so the In Progress count does not reflect effort yet.",
+   "updated30": 329,
+   "created30": 329,
+   "done30": 0,
+   "doneInPeriod": 0,
+   "todo": 82,
+   "inprog": 247,
+   "done": 0,
+   "statuses": {
+    "In Progress": 247,
+    "To Do": 82
+   },
+   "stories": {
+    "delivered": 0,
+    "inflight": 60,
+    "planned": 12
+   },
+   "delivered": [],
+   "inflight": [
+    {
+     "key": "PULSE-1",
+     "summary": "EP01 — Platform foundation, CI, and delivery controls",
+     "status": "In Progress",
+     "assignee": "Anshul Bhargava",
+     "due": null,
+     "resolved": ""
+    },
+    {
+     "key": "PULSE-10",
+     "summary": "03.02 — [DevOps] CI verification and release gates",
+     "status": "In Progress",
+     "assignee": "Anshul Bhargava",
+     "due": null,
+     "resolved": ""
+    },
+    {
+     "key": "PULSE-11",
+     "summary": "04.03 — [Backend] Service health and dependency readiness",
+     "status": "In Progress",
+     "assignee": "Anshul Bhargava",
+     "due": null,
+     "resolved": ""
+    },
+    {
+     "key": "PULSE-12",
+     "summary": "05.04 — [Backend] Migration and bootstrap ordering",
+     "status": "In Progress",
+     "assignee": "Anshul Bhargava",
+     "due": null,
+     "resolved": ""
+    },
+    {
+     "key": "PULSE-13",
+     "summary": "06.05 — [Backend] Versioned OpenAPI and route contracts",
+     "status": "In Progress",
+     "assignee": "Anshul Bhargava",
+     "due": null,
+     "resolved": ""
+    },
+    {
+     "key": "PULSE-14",
+     "summary": "07.06 — [QA] Regression and integration test harness",
+     "status": "In Progress",
+     "assignee": "Anshul Bhargava",
+     "due": null,
+     "resolved": ""
+    },
+    {
+     "key": "PULSE-15",
+     "summary": "08.07 — [DevOps] Reproducible local data plane",
+     "status": "In Progress",
+     "assignee": "Anshul Bhargava",
+     "due": null,
+     "resolved": ""
+    },
+    {
+     "key": "PULSE-16",
+     "summary": "09.08 — [DevOps] Release evidence and change control",
+     "status": "In Progress",
+     "assignee": "Anshul Bhargava",
+     "due": null,
+     "resolved": ""
+    }
+   ],
+   "overdue": [],
+   "overdueCount": 0,
+   "blocked": [],
+   "rollups": [
+    {
+     "key": "PULSE-1",
+     "summary": "EP01 — Platform foundation, CI, and delivery controls",
+     "status": "In Progress",
+     "done": 0,
+     "total": 8
+    },
+    {
+     "key": "PULSE-2",
+     "summary": "EP02 — Backend identity, tenancy, RLS, and service trust",
+     "status": "In Progress",
+     "done": 0,
+     "total": 8
+    },
+    {
+     "key": "PULSE-3",
+     "summary": "EP03 — Backend telemetry ingestion and data platform",
+     "status": "In Progress",
+     "done": 0,
+     "total": 8
+    },
+    {
+     "key": "PULSE-4",
+     "summary": "EP04 — Backend query and observability data services",
+     "status": "In Progress",
+     "done": 0,
+     "total": 8
+    },
+    {
+     "key": "PULSE-5",
+     "summary": "EP05 — Frontend Pulse workspace and portal experiences",
+     "status": "In Progress",
+     "done": 0,
+     "total": 8
+    },
+    {
+     "key": "PULSE-6",
+     "summary": "EP06 — Backend alerts, SLOs, incidents, RCA, and status",
+     "status": "In Progress",
+     "done": 0,
+     "total": 8
+    }
+   ],
+   "openBugs": 1,
+   "bugSeverity": {
+    "Unrated": 1
+   }
+  },
+  {
+   "id": "ATLAS",
+   "name": "Atlas CRM",
+   "projects": [
+    "ATLAS"
+   ],
+   "headline": "One story, ATLAS-1 'R&D on CRM for MVP', created 28 Sep and held by Anshul Bhargava. It is still in To Do with no due date, and 2.75 h is logged against it (2 h on 28 Sep, 45 min on 29 Sep).",
+   "updated30": 1,
+   "created30": 1,
+   "done30": 0,
+   "doneInPeriod": 0,
+   "todo": 1,
+   "inprog": 0,
+   "done": 0,
+   "statuses": {
+    "To Do": 1
+   },
+   "stories": {
+    "delivered": 0,
+    "inflight": 0,
+    "planned": 1
+   },
+   "delivered": [],
+   "inflight": [],
+   "overdue": [],
+   "overdueCount": 0,
+   "blocked": [],
+   "rollups": [],
+   "openBugs": 0,
+   "bugSeverity": {}
   }
  ],
  "spotlight": [
@@ -2829,7 +3042,7 @@
     "IN": 1,
     "USP": 1
    },
-   "outOfScope": 331,
+   "outOfScope": 1,
    "hours": 3.5,
    "hoursByProject": {
     "ATLAS": 2.0,
@@ -3082,7 +3295,7 @@
    "lastRaised": "2026-09-29",
    "note": {
     "finding": "Now holds 350 tickets, 340 of them open, after he created a new PULSE project on 28 and 29 Sep: 8 epics, 64 stories and 256 subtasks, all assigned to himself, 247 already marked In Progress and none with a due date. Book a Meeting (UC-161 to UC-166), overdue since 4 Sep, closed on 29 Sep. Only 3.5 hours landed on his tickets in the window (ATLAS-1 and IN-1119), 4% of the 80-hour capacity.",
-    "context": "PULSE is the Pulse observability platform plan (platform foundation, telemetry ingestion, alerts and SLOs, integrations, governance). It replaces the smaller DevOps rollout he raised on 16 Sep (IN-1098 to IN-1104) and sits outside the four report programmes. He also raised 54 Conversational AI tickets on 3 Sep, and on 29 Sep took on checking the AI/ML product list for the Services Platform (MT-1538). GPU as a Service (USP-3795) is still with him marked BLOCKER, due 30 Sep.",
+    "context": "PULSE is the Pulse observability platform plan (platform foundation, telemetry ingestion, alerts and SLOs, integrations, governance). It replaces the smaller DevOps rollout he raised on 16 Sep (IN-1098 to IN-1104). PULSE and his Atlas CRM story (ATLAS-1) are now report programmes, with their own scorecards. On 29 Sep, after the review window, 1.5 h was logged on PULSE-70 and PULSE-329 and 45 min on ATLAS-1. He also raised 54 Conversational AI tickets on 3 Sep, and on 29 Sep took on checking the AI/ML product list for the Services Platform (MT-1538). GPU as a Service (USP-3795) is still with him marked BLOCKER, due 30 Sep.",
     "question": "Who delivers PULSE? 329 tickets held by one person, most marked In Progress on the day they were created, cannot show real progress. Where is his time logged?",
     "verify": "Assign PULSE stories to the people doing the work, move untouched items back to To Do and add due dates. Pull his Tempo timesheet by worker for 15–28 Sep, and confirm who owns USP-3795."
    }

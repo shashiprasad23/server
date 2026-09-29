@@ -33,11 +33,11 @@ Fields for the issues and worklog pulls:
 
 | Pull | JQL | Extra | Ingest kind |
 | --- | --- | --- | --- |
-| Count (once) | `project in (MT, PC, MR, USP, UC) AND updated >= -30d` | `searchResultMode: "count"` | Note the total as EXPECTED |
-| Open count (once) | `project in (MT, PC, MR, USP, UC) AND statusCategory != Done` | `searchResultMode: "count"` | Note as OPEN |
-| Issues | `project in (MT, PC, MR, USP, UC) AND updated >= -30d ORDER BY key ASC` | fields above | `issues` |
-| Worklogs | `project in (MT, PC, MR, USP, UC) AND worklogDate >= -14d ORDER BY key ASC` | fields above plus `"worklog"` | `worklogs` |
-| Register | `project in (MT, PC, MR, USP, UC) AND (summary ~ "Risk" OR summary ~ "Dependency") ORDER BY key ASC` | fields above plus `"description","comment"`, `responseContentFormat: "markdown"` | `register` |
+| Count (once) | `project in (MT, PC, MR, USP, UC, PULSE, ATLAS) AND updated >= -30d` | `searchResultMode: "count"` | Note the total as EXPECTED |
+| Open count (once) | `project in (MT, PC, MR, USP, UC, PULSE, ATLAS) AND statusCategory != Done` | `searchResultMode: "count"` | Note as OPEN |
+| Issues | `project in (MT, PC, MR, USP, UC, PULSE, ATLAS) AND updated >= -30d ORDER BY key ASC` | fields above | `issues` |
+| Worklogs | `project in (MT, PC, MR, USP, UC, PULSE, ATLAS) AND worklogDate >= -14d ORDER BY key ASC` | fields above plus `"worklog"` | `worklogs` |
+| Register | `project in (MT, PC, MR, USP, UC, PULSE, ATLAS) AND (summary ~ "Risk" OR summary ~ "Dependency") ORDER BY key ASC` | fields above plus `"description","comment"`, `responseContentFormat: "markdown"` | `register` |
 
 After each page:
 
