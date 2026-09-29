@@ -218,12 +218,12 @@ section>*{min-width:0}
       <div class="card"><h3>Hours logged per day by project</h3><div class="legend" id="lg-proj2"></div><div class="chart" id="c-hours" role="img" aria-label="Hours per day stacked by project"></div></div>
       <div class="card"><h3>Hours per day, rolled up by week</h3><p class="sub">Total hours and the number of people with any hours on their tickets.</p><div class="chart" id="c-week" role="img" aria-label="Weekly hours"></div></div>
     </div>
-    <div class="card"><h3>Hours per person per day</h3><p class="sub">Credited to each ticket's assignee. A cell marked with a value is over 10 hours, which means other people's hours or bulk logging. Rows marked "all projects" (top) are the named people: hours on tickets they hold anywhere in Jira, because their work sits outside the report boards.</p><p class="sub" id="hours-ex"></p><div class="chart tall" id="c-hheat" role="img" aria-label="Heatmap of hours per person per day"></div></div>
+    <div class="card"><h3>Hours per person per day</h3><p class="sub">Credited to each ticket's assignee. A cell marked with a value is over 10 hours, which means other people's hours or bulk logging. Rows marked "all projects" (bottom) are the named people: hours on tickets they hold anywhere in Jira, because their work sits outside the report boards.</p><div class="chart tall" id="c-hheat" role="img" aria-label="Heatmap of hours per person per day"></div></div>
   </section>
 
   <section id="people">
     <div class="shead"><h2>Daily throughput per person</h2><p>Issues each assignee resolved on each day, for the 25 busiest people under the current filter.</p></div>
-    <div class="card"><p class="sub" id="people-ex"></p><div class="chart tall" id="c-pheat" role="img" aria-label="Heatmap of issues resolved per person per day"></div></div>
+    <div class="card"><div class="chart tall" id="c-pheat" role="img" aria-label="Heatmap of issues resolved per person per day"></div></div>
   </section>
 
   <section id="explorer">
@@ -461,12 +461,12 @@ const CAL = [{"date":"2026-08-31","kind":"rebuilt","base":"2026-09-23"},{"date":
     // Named people get their own rows from every Jira project; their scoped rows are replaced, not added to.
     const SPL = D.spotlightLogs || [], spNames = new Set(SPL.map(s=>s.name)), spLabel = n => `${n} · all projects`;
     const HX = new Set(D.hoursExclude || []);
-    $("#hours-ex").textContent = HX.size ? `Leaves out ${[...HX].join(", ")}.` : "";
     const tot = {}; logs.forEach(l=>{ if(l.who && !spNames.has(l.who) && !HX.has(l.who)) tot[l.who]=(tot[l.who]||0)+l.h; });
     const cell = {}; logs.forEach(l=>{ if(!l.who || spNames.has(l.who) || HX.has(l.who)) return; const k=l.who+"|"+l.d; cell[k]=(cell[k]||0)+l.h; });
     const spTot = {};
     SPL.forEach(s=>{ const nm=spLabel(s.name); spTot[nm]=0; s.logs.forEach(([d,h,p])=>{ if(state.project!=="all" && p!==state.project) return; if(d<M.effortStart||d>M.effortEnd) return; spTot[nm]+=h; cell[nm+"|"+d]=(cell[nm+"|"+d]||0)+h; }); });
-    const ppl = [...Object.keys(tot).sort((a,b)=>tot[b]-tot[a]).slice(0,30).reverse(), ...Object.keys(spTot)];
+    // named people sit at the bottom (the category axis draws its first entry lowest)
+    const ppl = [...Object.keys(spTot).reverse(), ...Object.keys(tot).sort((a,b)=>tot[b]-tot[a]).slice(0,30).reverse()];
     Object.assign(tot, spTot);
     const data = []; ppl.forEach((p,y)=>EDAYS.forEach((d,x)=>{ const v=+(cell[p+"|"+d]||0).toFixed(1); data.push([x,y,v]); }));
     const hh = chart("c-hheat");
@@ -485,7 +485,6 @@ const CAL = [{"date":"2026-08-31","kind":"rebuilt","base":"2026-09-23"},{"date":
 
   function renderPeople(){
     const EX = new Set(D.throughputExclude || []);
-    $("#people-ex").textContent = EX.size ? `Leaves out ${[...EX].join(", ")}.` : "";
     const res = I.filter(i=>i.rs && DAYS.includes(i.rs) && resolvedF(i) && i.who && !EX.has(i.who));
     const tot = {}; res.forEach(i=>tot[i.who]=(tot[i.who]||0)+1);
     const ppl = Object.keys(tot).sort((a,b)=>tot[b]-tot[a]).slice(0,25).reverse();
