@@ -692,6 +692,71 @@
         "MR-1179",
         "MR-1277"
       ]
+    },
+    {
+      "date": "2026-09-30",
+      "project": "MT",
+      "type": "milestone",
+      "title": "Product creation for all AI servers and home page redesign closed; RMA backend in production",
+      "keys": [
+        "MT-1485",
+        "MT-1524",
+        "MT-1488"
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "project": "MT",
+      "type": "issue",
+      "title": "Catalogue re-check missed its 30 Sep date; 3 attribute corrections and 2 product-import bugs raised",
+      "keys": [
+        "PC-136",
+        "PC-138",
+        "MT-1559",
+        "MT-1560"
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "project": "MR",
+      "type": "testing",
+      "title": "30 Figma defects moved to UAT for retest (25 of 56 fixed); sitemap fix started",
+      "keys": [
+        "MR-1179",
+        "MR-1199",
+        "MR-1253"
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "project": "USP",
+      "type": "progress",
+      "title": "10 items deployed to production, including notification API and MSA fixes",
+      "keys": [
+        "USP-4222",
+        "USP-4214",
+        "USP-4205"
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "project": "USP",
+      "type": "risk",
+      "title": "Three S1 price and Document API bugs still in To Do on their due date",
+      "keys": [
+        "USP-4229",
+        "USP-4230",
+        "USP-4231"
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "project": "PULSE",
+      "type": "progress",
+      "title": "First PULSE item done: telemetry-ingest 401 bug fixed",
+      "keys": [
+        "PULSE-329"
+      ]
     }
   ],
   "pipelineNote": "All 35 listings are in production: 27 moved by 22 Sep and the 8 Vera Rubin products on 28 Sep. <b>None are live</b>: each was disabled after validation, pending approval."

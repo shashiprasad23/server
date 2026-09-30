@@ -19,7 +19,7 @@
         "MT",
         "PC"
       ],
-      "headline": "All 35 AI-server listings are in production and disabled pending approval. A full catalogue re-check started on 29 Sep, due 30 Sep. Account hub moved to 4 of 10 subtasks done, RMA email templates and refund and exchange timelines closed, and the home page category and filter sections are done, all on 29 Sep. A new bug has the approved-quote email showing an unformatted total (MT-1539). 20 open items are past due."
+      "headline": "19 items closed on 30 Sep, including product creation for all AI servers (MT-1485) and the home page redesign (MT-1524), both on their due date, the approved-quote email bug (MT-1539) and 11 RMA and email-template subtasks. The RMA backend (MT-1488) reached production. The full catalogue re-check (PC-136), also due 30 Sep, is still in progress. Four new bugs were raised, two on product import (MT-1559, MT-1560), plus smoke, security and privacy test stories. 17 open items are past due, down from 20."
     },
     {
       "id": "MR",
@@ -27,7 +27,7 @@
       "projects": [
         "MR"
       ],
-      "headline": "Figma validation now has 56 defects, 23 fixed. A P1 bug on the new AI Factory pages (MR-1260) was raised on 29 Sep with 14 subtasks, one marked Blocker. Smoke regression, security and privacy test tasks were added the same day. The sitemap fix (MR-1199) has not started, so automation still covers 250 of 500+ URLs."
+      "headline": "30 Figma defects moved to UAT/staging for retest on 30 Sep, so 25 of 56 are fixed, 30 await retest and 1 is blocked (GDPR design, MR-1253). The sitemap fix (MR-1199) started the same day. The AI Factory P1 (MR-1260) is in progress with 2 of 15 subtasks fixed and one blocked (MR-1265). Nothing is past due; 10 bugs are open, none rated."
     },
     {
       "id": "USP",
@@ -35,7 +35,7 @@
       "projects": [
         "USP"
       ],
-      "headline": "The three S1 production bugs from 25 and 28 Sep (wrong AI Factory prices and a Document API 502) are still in To Do and due 30 Sep. Four UI bugs closed on 29 Sep, leaving 59 open bugs, 5 of them S1. The IAM security hardening story (9 subtasks) is in progress. Eight items are past due."
+      "headline": "Ten items reached production on 30 Sep, including the S2 notification API failures (USP-4222) and the MSA signer and collaboration fixes. The three S1 production bugs from 25 and 28 Sep (wrong AI Factory prices and a Document API 502) are still in To Do on their 30 Sep due date, and the S1 Calculate Subscription 500 error (USP-4204) is in progress, also due today. 59 bugs are open, 5 of them S1, and 8 items are past due."
     },
     {
       "id": "UC",
@@ -43,7 +43,7 @@
       "projects": [
         "UC"
       ],
-      "headline": "Book a Meeting and its five subtasks closed on 29 Sep, 25 days after the 4 Sep due date, so nothing in the programme is past due. The CSM Teams dashboard (UC-215) is in testing, due 30 Sep. Eight agent stories are still in To Do with no due dates."
+      "headline": "No changes on 30 Sep. Book a Meeting and its five subtasks closed on 29 Sep, so nothing in the programme is past due. The CSM Teams dashboard (UC-215) is still in testing on its 30 Sep due date. Eight agent stories are still in To Do with no due dates."
     },
     {
       "id": "PULSE",
@@ -51,7 +51,7 @@
       "projects": [
         "PULSE"
       ],
-      "headline": "The board was set up on 28 and 29 Sep: 8 epics, 64 stories, 256 subtasks and 1 bug, all held by Anshul Bhargava. 247 items were moved to In Progress within a day of creation, 6 of the 8 epics among them, and none are done. No item has a due date. Only 1.5 h is logged in Tempo, on PULSE-70 and the new telemetry-ingest bug PULSE-329, so the In Progress count does not reflect effort yet."
+      "headline": "The only PULSE bug, the telemetry-ingest 401 (PULSE-329), closed on 30 Sep: the first done item on the board. The other 328 items (8 epics, 64 stories, 256 subtasks) are all held by Anshul Bhargava, 246 In Progress and 82 To Do, and none has a due date. Tempo shows 2.5 h in total (29 and 30 Sep), so the In Progress count does not reflect effort yet."
     },
     {
       "id": "ATLAS",
@@ -59,7 +59,7 @@
       "projects": [
         "ATLAS"
       ],
-      "headline": "One story, ATLAS-1 'R&D on CRM for MVP', created 28 Sep and held by Anshul Bhargava. It is still in To Do with no due date, and 2.75 h is logged against it (2 h on 28 Sep, 45 min on 29 Sep)."
+      "headline": "No changes on 30 Sep. One story, ATLAS-1 'R&D on CRM for MVP', created 28 Sep and held by Anshul Bhargava, is still in To Do with no due date. 2.75 h is logged against it (2 h on 28 Sep, 45 min on 29 Sep)."
     }
   ],
   "spotlight": [

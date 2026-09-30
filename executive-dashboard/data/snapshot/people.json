@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-09-29",
+ "snapshotDate": "2026-09-30",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -117,10 +117,10 @@
      "project": "MT",
      "summary": "Verify the AI/ML PRODUCTS for USP on the Excel Sheet created by Product team",
      "type": "Task",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-09-29",
-     "resolved": null,
+     "resolved": "2026-09-30",
      "due": "2026-09-29",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.67,
@@ -3706,17 +3706,21 @@
      "project": "PULSE",
      "summary": "Developement: telemetry-ingest service assertion sends null subscriptionIds and receives 401",
      "type": "Bug",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-09-29",
-     "resolved": null,
+     "resolved": "2026-09-30",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.5,
+     "spentHours": 1.5,
      "logs": [
       [
        "2026-09-29",
        0.5
+      ],
+      [
+       "2026-09-30",
+       1.0
       ]
      ]
     },
@@ -5085,12 +5089,12 @@
     {
      "key": "IN-1098",
      "project": "IN",
-     "summary": "Deploy and validate Pulse telemetry platform on production VM",
+     "summary": "Deploy and validate Pulse telemetry platform on developemnt  VM",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-09-16",
-     "resolved": null,
+     "resolved": "2026-09-30",
      "due": "2026-09-30",
      "assignee": "Sarath Chandra"
     },
@@ -5099,22 +5103,22 @@
      "project": "IN",
      "summary": "Fix metrics poison message (collector → Redpanda → writer)",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-09-16",
-     "resolved": null,
+     "resolved": "2026-09-30",
      "due": "2026-09-18",
-     "assignee": null
+     "assignee": "Sarath Chandra"
     },
     {
      "key": "IN-1100",
      "project": "IN",
      "summary": "Integration of two applications Metrics in pulse Dashboard",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-09-16",
-     "resolved": null,
+     "resolved": "2026-09-30",
      "due": "2026-09-25",
      "assignee": "Sarath Chandra"
     },
@@ -5123,48 +5127,48 @@
      "project": "IN",
      "summary": "Set up ingress, DNS, TLS, and Azure Front Door for status-platform",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-09-16",
-     "resolved": null,
+     "resolved": "2026-09-30",
      "due": "2026-09-23",
-     "assignee": null
+     "assignee": "Sarath Chandra"
     },
     {
      "key": "IN-1102",
      "project": "IN",
      "summary": "Wire telemetry ingestion and tune rollup thresholds for production",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-09-16",
-     "resolved": null,
+     "resolved": "2026-09-30",
      "due": "2026-09-25",
-     "assignee": null
+     "assignee": "Sarath Chandra"
     },
     {
      "key": "IN-1103",
      "project": "IN",
      "summary": "End-to-end smoke testing of status-platform on production",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-09-16",
-     "resolved": null,
+     "resolved": "2026-09-30",
      "due": "2026-09-28",
-     "assignee": null
+     "assignee": "Sarath Chandra"
     },
     {
      "key": "IN-1104",
      "project": "IN",
      "summary": "Write runbook and configure alert routing for status-platform",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-09-16",
-     "resolved": null,
+     "resolved": "2026-09-30",
      "due": "2026-09-30",
-     "assignee": null
+     "assignee": "Sarath Chandra"
     },
     {
      "key": "IN-1119",
@@ -5195,48 +5199,12 @@
      "project": "INF",
      "summary": "Request for VM Provisioning for Pulse Deployment",
      "type": "[System] Service request",
-     "status": "Waiting for support",
-     "statusCat": "indeterminate",
+     "status": "Closed",
+     "statusCat": "done",
      "created": "2026-09-29",
-     "resolved": null,
+     "resolved": "2026-09-29",
      "due": null,
-     "assignee": "Abhishek"
-    },
-    {
-     "key": "MR-1073",
-     "project": "MR",
-     "summary": "Resolve Sonar maintainability issues in uvation-cms API code",
-     "type": "Story",
-     "status": "TODO",
-     "statusCat": "new",
-     "created": "2026-08-31",
-     "resolved": null,
-     "due": null,
-     "assignee": null
-    },
-    {
-     "key": "MR-1074",
-     "project": "MR",
-     "summary": "Resolve duplicated literals and naming/unused-code Sonar findings",
-     "type": "Subtask",
-     "status": "TODO",
-     "statusCat": "new",
-     "created": "2026-08-31",
-     "resolved": null,
-     "due": null,
-     "assignee": null
-    },
-    {
-     "key": "MR-1075",
-     "project": "MR",
-     "summary": "Refactor complex API functions and reduce excessive returns",
-     "type": "Subtask",
-     "status": "TODO",
-     "statusCat": "new",
-     "created": "2026-08-31",
-     "resolved": null,
-     "due": null,
-     "assignee": null
+     "assignee": "Sanjay Singh"
     },
     {
      "key": "MT-1426",
@@ -5267,10 +5235,10 @@
      "project": "MT",
      "summary": "Verify the AI/ML PRODUCTS for USP on the Excel Sheet created by Product team",
      "type": "Task",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-09-29",
-     "resolved": null,
+     "resolved": "2026-09-30",
      "due": "2026-09-29",
      "assignee": "Anshul Bhargava"
     },
@@ -8339,10 +8307,10 @@
      "project": "PULSE",
      "summary": "Developement: telemetry-ingest service assertion sends null subscriptionIds and receives 401",
      "type": "Bug",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-09-29",
-     "resolved": null,
+     "resolved": "2026-09-30",
      "due": null,
      "assignee": "Anshul Bhargava"
     },
@@ -10255,18 +10223,6 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "UP-16",
-     "project": "UP",
-     "summary": "Daily Bridge call",
-     "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
-     "created": "2026-06-29",
-     "resolved": null,
-     "due": null,
-     "assignee": null
-    },
-    {
      "key": "UP-28",
      "project": "UP",
      "summary": "Tempo Logging ",
@@ -10955,7 +10911,7 @@
     {
      "key": "PC-123",
      "project": "PC",
-     "summary": "Validate the product upload process through CSV and identify any issues impacting the successful upload of products",
+     "summary": "Validate the product upload process through CSV and identify any issues impacting the successful upload of products. Analyse the root cause of the identified issues and implement the required fixes to ensure products can be uploaded successfully.",
      "type": "Sub-task",
      "status": "To Do",
      "statusCat": "new",
