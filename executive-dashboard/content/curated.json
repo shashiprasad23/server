@@ -133,7 +133,7 @@
       "verdict": "Keep",
       "rag": "green",
       "why": "USP register is actively owned. Children updated 17 Sep with 30 Sep due dates.",
-      "action": "Review at 30 Sep."
+      "action": "The 30 Sep review is not recorded: the ticket is unchanged in Jira since 26 Aug. Record the review or set a new date."
     },
     "USP-3747": {
       "verdict": "Keep",
@@ -163,7 +163,7 @@
       "verdict": "Keep",
       "rag": "green",
       "why": "Owned and dated.",
-      "action": "Review at 30 Sep."
+      "action": "The 30 Sep review is not recorded: the ticket is unchanged in Jira since 17 Sep. Record the review or set a new date."
     },
     "USP-3753": {
       "verdict": "Keep",
@@ -180,20 +180,20 @@
     "USP-3755": {
       "verdict": "Keep – materialising",
       "rag": "red",
-      "why": "Scope creep is visible now: 198 USP issues created in 30 days and 59 open bugs, including 5 S1 bugs raised on 25 and 28 Sep and still in To Do.",
+      "why": "Scope creep is visible: 188 USP issues created in 30 days and 53 open bugs, 5 of them S1. 102 open USP items were due on 30 Sep and missed that date (68 still in To Do), and the three S1 price and Document API bugs from 25 and 28 Sep are still in To Do.",
       "action": "Enforce the change-request gate named in the mitigation."
     },
     "USP-3756": {
       "verdict": "Keep",
       "rag": "green",
       "why": "Owned and dated.",
-      "action": "Review at 30 Sep."
+      "action": "The 30 Sep review is not recorded: the ticket is unchanged in Jira since 17 Sep. Record the review or set a new date."
     },
     "USP-3757": {
       "verdict": "Keep",
       "rag": "green",
       "why": "Owned and dated.",
-      "action": "Review at 30 Sep."
+      "action": "The 30 Sep review is not recorded: the ticket is unchanged in Jira since 17 Sep. Record the review or set a new date."
     }
   },
   "reportedRisksNotInJira": [
@@ -332,7 +332,7 @@
       "surfaced": "25 and 28 Sep, production",
       "impact": "The subscription price API returns the wrong final price for every billing and term combination in the Traditional, Modular and Nuclear AI Factory. One logged example expected 174,420 and got 150,660, about 14% low. A separate S1 has the Document API failing with a 502 on the first request.",
       "rootCause": "Not recorded yet. The Document API failure is suspected to be the API gateway blocking the first request (comment on USP-4231, 28 Sep).",
-      "actionTaken": "All three are S1 and were still in To Do on 30 Sep, their due date. No fix recorded.",
+      "actionTaken": "All three are S1 and still in To Do on 1 Oct, a day past their 30 Sep due date. No fix recorded.",
       "preventive": "Add the price-calculation checks to the automated regression run before each production release.",
       "owner": "Livian Stefan Stan"
     },
@@ -417,7 +417,7 @@
       "surfaced": "18–22 Sep",
       "impact": "35 listings are in production but not visible to buyers: 27 since 18–22 Sep and 8 Vera Rubin since 28 Sep.",
       "rootCause": "Approval step sits after migration, with no date.",
-      "actionTaken": "Cross-validation on UAT closed on 28 Sep (MT-1529). A full catalogue re-check (PC-136) was due 30 Sep and is still In Progress.",
+      "actionTaken": "Cross-validation on UAT closed on 28 Sep (MT-1529). A full catalogue re-check (PC-136) was due 30 Sep and was still In Progress on 1 Oct.",
       "preventive": "Put a dated approval gate in the plan for each batch."
     },
     {
@@ -463,7 +463,7 @@
       "surfaced": "22 Sep",
       "impact": "Search engines and the Playwright suite both see only half the site.",
       "rootCause": "Sitemap generation limit. Not yet confirmed.",
-      "actionTaken": "Raised as P1. Moved to In Progress on 30 Sep (Kannan Elangovan).",
+      "actionTaken": "Raised as P1. Started 30 Sep and moved to Ready for Prod on 1 Oct (MR-1199, MR-1200), not yet released.",
       "preventive": "Add a URL-count check to the automated smoke run."
     },
     {
@@ -517,8 +517,8 @@
     }
   ],
   "marketplace": {
-    "summary": "All 35 AI-server listings are now in production: 27 moved between 18 and 22 Sep, and the 8 NVIDIA Vera Rubin products on 28 Sep. Every one was disabled again after validation and is waiting for approval. The UAT cross-validation audit closed on 28 Sep. Product creation for all AI servers (MT-1485) closed on 30 Sep; the full catalogue re-check (PC-136), due the same day, is still In Progress, and three attribute corrections for B300 and GB300 products were raised on 30 Sep (PC-138 to PC-140).",
-    "expectedCompletion": "MT-1485 and MT-1524 closed on 30 Sep, their due date. MT-1488 (RMA backend) reached production on 30 Sep. Go-live still waits on approval to enable the listings.",
+    "summary": "All 35 AI-server listings are now in production: 27 moved between 18 and 22 Sep, and the 8 NVIDIA Vera Rubin products on 28 Sep. Every one was disabled again after validation and is waiting for approval. The UAT cross-validation audit closed on 28 Sep. Product creation for all AI servers (MT-1485) closed on 30 Sep; the full catalogue re-check (PC-136), due the same day, was still In Progress on 1 Oct. Attribute corrections for three B300 and GB300 products (PC-138 to PC-140) were raised on 30 Sep and done on 1 Oct, and a fourth (PC-141) was raised.",
+    "expectedCompletion": "MT-1485 and MT-1524 closed on 30 Sep, their due date. MT-1488 (RMA backend) reached production on 30 Sep and closed on 1 Oct. Go-live still waits on approval to enable the listings.",
     "brands": [
       {
         "brand": "Dell",
@@ -619,7 +619,7 @@
     ],
     "pending": [
       "Business approval and enablement of all 35 listings.",
-      "Full re-check of every product created on UAT (PC-136): due 30 Sep, still In Progress. Attribute corrections for three B300/GB300 products (PC-138 to PC-140), raised 30 Sep.",
+      "Full re-check of every product created on UAT (PC-136): due 30 Sep, still In Progress on 1 Oct. Attribute correction for the DGX SuperPOD with GB300 (PC-141), raised 1 Oct.",
       "Record the OEM-agreement decision per brand. The register item for it (MT-1093) no longer appears in Jira.",
       "Status of the earlier Lenovo batch in PC-121 is unclear."
     ],
@@ -646,7 +646,7 @@
         "name": "Home page and PDP",
         "key": "MT-1215, MT-1217",
         "state": "Done. Closed 24 and 25 Sep",
-        "open": "Home page redesign for AI servers (MT-1524) closed 30 Sep. Text-overflow fix (MT-1533) ready for production"
+        "open": "Home page redesign for AI servers (MT-1524) closed 30 Sep. Text-overflow fix (MT-1533) closed 1 Oct"
       },
       {
         "name": "Product listing, filter and search",
@@ -669,7 +669,7 @@
     ]
   },
   "marketingTesting": {
-    "summary": "Production smoke automation passes on every URL it can see, but it can see only 250 of more than 500 URLs; the sitemap fix (MR-1199) started on 30 Sep. Page-wise Figma validation has raised 56 defects: 25 are fixed, 30 are in UAT/staging for retest (moved there on 30 Sep) and 1 is blocked (GDPR design, MR-1253). The P1 on the new AI Factory pages (MR-1260) now has 15 subtasks, 2 fixed.",
+    "summary": "Production smoke automation passes on every URL it can see, but it can see only 250 of more than 500 URLs; the sitemap fix (MR-1199) moved to Ready for Prod on 1 Oct. Page-wise Figma validation has raised 56 defects: 27 are fixed and 29 are Ready for Prod after retest, including the GDPR design fix (MR-1253) that was blocked on 30 Sep. The P1 on the new AI Factory pages (MR-1260) has 15 subtasks: 4 fixed, 10 Ready for Prod and 1 blocked (MR-1265).",
     "scopeUrlsExpected": 500,
     "scopeNote": "More than 500 URLs expected, per MR-1199",
     "automatedUrls": 250,
@@ -680,8 +680,8 @@
     "manualNote": "About 40 pages tested manually on macOS Chrome, Firefox and Safari and on iPhone, 3–9 Sep (MR-1100, MR-1101)",
     "figmaDefects": {
       "raised": 56,
-      "done": 25,
-      "inProgress": 31,
+      "done": 27,
+      "inProgress": 29,
       "todo": 0,
       "pagesCovered": 15,
       "key": "MR-1179"
@@ -698,16 +698,16 @@
       "Cookie consent blocks analytics scripts until accepted (MR-1068)."
     ],
     "pending": [
-      "Finish the sitemap fix (MR-1199, in progress since 30 Sep), then extend automation from 250 URLs to the full list.",
-      "31 open Figma-vs-website defects (MR-1179): 30 in UAT/staging for retest and 1 blocked (GDPR design, MR-1253).",
-      "AI Factory pages P1 (MR-1260): 15 subtasks, 2 fixed, 9 in To Do, and 1 marked Blocker (related products content missing, MR-1265).",
+      "Release the sitemap fix (MR-1199, Ready for Prod since 1 Oct), then extend automation from 250 URLs to the full list.",
+      "Release the 29 Figma-vs-website fixes that are Ready for Prod (MR-1179).",
+      "AI Factory pages P1 (MR-1260): 10 subtasks Ready for Prod, and related products content still blocked (MR-1265).",
       "Figma validation for the remaining pages. About 15 pages have defects logged so far.",
       "Playwright integration into the Azure production pipeline.",
       "New home page design and API (MR-1169).",
-      "Functional smoke, security and privacy test tasks raised on 29 Sep (MR-1277 to MR-1279) got 15 subtasks on 30 Sep (MR-1281 to MR-1295), none started."
+      "Functional smoke, security and privacy test tasks (MR-1277 to MR-1279, 15 subtasks MR-1281 to MR-1295), none started."
     ],
     "remainingEffort": "Not estimated in Jira. None of the testing tickets carry an Original Estimate.",
-    "targetDate": "Not set in Jira. The only dated item is MR-1168, due 30 Sep.",
+    "targetDate": "Not set in Jira. The only dated item is MR-1168, due 30 Sep and still In Progress on 1 Oct.",
     "anmolNote": "Anmol Srivastava's detailed testing report is not in Jira or Confluence. The figures here come from the Jira testing tickets."
   },
   "utilisationNotes": {
@@ -716,14 +716,14 @@
     "deepDives": [
       {
         "person": "Suganya Murugaraj",
-        "finding": "Logged 43.5 hours on 10 days in the 16–29 Sep window, on PC-133 and PC-136. That averages about 4.3 hours a day against an 8-hour day, or 54% of the 80-hour capacity. 28 Sep shows 0.5 hours.",
+        "finding": "Logged 43.3 hours on 10 days in the 17–30 Sep window, on PC-133 and PC-136. That averages about 4.3 hours a day against an 8-hour day, or 54% of the 80-hour capacity. 28 Sep shows 0.5 hours.",
         "context": "The 5.5 hours on 17 Sep covered Dell GPU corrections with Naman and then HPE validation, which is 3 products. Each product also needed a tech-spec table, long description, short description and product-card copy in HTML. Between 15 and 24 Sep Suganya validated 19 products for 4 brands and started the 8 Vera Rubin products, about 1.5 hours per product. PC-133 closed on 30 Sep.",
         "question": "Where are the other 3 or so hours a day? They may be on overhead tickets, which Jira hides, or unlogged.",
-        "verify": "Pull Suganya's Tempo timesheet for 16–29 Sep and compare the total with 80 hours. The full catalogue re-check (PC-136), started 29 Sep and due 30 Sep, was still In Progress on 30 Sep."
+        "verify": "Pull Suganya's Tempo timesheet for 17–30 Sep and compare the total with 80 hours. The full catalogue re-check (PC-136), started 29 Sep and due 30 Sep, was still In Progress on 1 Oct."
       },
       {
         "person": "Sapavat Yadagiri",
-        "finding": "Jira credits Sapavat with 92.5 hours in the 16–29 Sep window, 116% of the 80-hour capacity, with four days between 11 and 14.8 hours (16–18 and 28 Sep). That is not plausible for one person and shows developer time on tickets reassigned to QA.",
+        "finding": "Jira credits Sapavat with 116.8 hours in the 17–30 Sep window, 146% of the 80-hour capacity, with five days between 11.8 and 18 hours (17, 18, 23, 25 and 28 Sep). That is not plausible for one person: 12 Marketplace tickets closed on 1 Oct are assigned to Sapavat and carry developer hours.",
         "context": "Sapavat's own QA tasks show 0.5 to 2 hours each. For example, the navigation, homepage-module and facet UI updates for the category disable took 1 hour each (MT-1455 to MT-1457). Functional test on staging took 1.5 hours and the toggle test 1.5 hours (MT-1471, MT-1473).",
         "question": "Sapavat's real hours cannot be separated from developer hours in Jira. The Tempo worker report is the only reliable source.",
         "verify": "Pull Sapavat's Tempo timesheet by worker. Check that QA time is logged on QA subtasks, not on development subtasks."
@@ -736,10 +736,10 @@
   },
   "peopleSpotlight": {
     "Anshul Bhargava": {
-      "finding": "Holds 350 tickets, 338 of them open, after creating the PULSE project on 28 and 29 Sep: 8 epics, 64 stories and 256 subtasks, all self-assigned, 246 marked In Progress and none with a due date. The one PULSE bug (PULSE-329) closed on 30 Sep. 6.4 hours landed on these tickets in the 16–29 Sep window (ATLAS-1 2.8 h, IN-1119 1.5 h, PULSE 1.5 h, MT-1538 0.7 h), 8% of the 80-hour capacity.",
-      "context": "PULSE is the Pulse observability platform plan (platform foundation, telemetry ingestion, alerts and SLOs, integrations, governance). It replaces the smaller DevOps rollout raised on 16 Sep (IN-1098 to IN-1104). PULSE and the Atlas CRM story (ATLAS-1) are report programmes with their own scorecards. Anshul also raised 54 Conversational AI tickets on 3 Sep, and checked the AI/ML product list for the Services Platform (MT-1538), which closed on 30 Sep. GPU as a Service (USP-3795) is still assigned to Anshul, marked BLOCKER and due 30 Sep.",
+      "finding": "Holds 350 tickets, 338 of them open, after creating the PULSE project on 28 and 29 Sep: 8 epics, 64 stories and 256 subtasks, all self-assigned, 246 marked In Progress and none with a due date. The one PULSE bug (PULSE-329) closed on 30 Sep. 7.4 hours landed on these tickets in the 17–30 Sep window (ATLAS-1 2.8 h, PULSE 2.5 h, IN-1119 1.5 h, MT-1538 0.7 h), 9% of the 80-hour capacity.",
+      "context": "PULSE is the Pulse observability platform plan (platform foundation, telemetry ingestion, alerts and SLOs, integrations, governance). It replaces the smaller DevOps rollout raised on 16 Sep (IN-1098 to IN-1104). PULSE and the Atlas CRM story (ATLAS-1) are report programmes with their own scorecards. Anshul also raised 54 Conversational AI tickets on 3 Sep, and checked the AI/ML product list for the Services Platform (MT-1538), which closed on 30 Sep. GPU as a Service (USP-3795) is still assigned to Anshul and marked BLOCKER, now past its 30 Sep due date.",
       "question": "Who delivers PULSE? 329 tickets held by one person, most marked In Progress on the day they were created, cannot show real progress. Where is the rest of Anshul's time logged?",
-      "verify": "Assign PULSE stories to the people doing the work, move untouched items back to To Do and add due dates. Pull Anshul's Tempo timesheet by worker for 16–29 Sep, and confirm who owns USP-3795."
+      "verify": "Assign PULSE stories to the people doing the work, move untouched items back to To Do and add due dates. Pull Anshul's Tempo timesheet by worker for 17–30 Sep, and confirm who owns USP-3795."
     },
     "Anmol Srivastava": {
       "finding": "Holds no tickets in any Jira project, so Tempo has nowhere to credit Anmol's hours. Anmol raised 49 tickets in 30 days, and 41 of them are done.",

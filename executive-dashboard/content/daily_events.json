@@ -757,6 +757,59 @@
       "keys": [
         "PULSE-329"
       ]
+    },
+    {
+      "date": "2026-10-01",
+      "project": "MT",
+      "type": "milestone",
+      "title": "RMA backend, its email triggers and the customer account area closed",
+      "keys": [
+        "MT-1488",
+        "MT-1520",
+        "MT-1311"
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "project": "MR",
+      "type": "testing",
+      "title": "29 Figma fixes, sitemap fix and GDPR design fix moved to Ready for Prod",
+      "keys": [
+        "MR-1179",
+        "MR-1199",
+        "MR-1253"
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "project": "MR",
+      "type": "change",
+      "title": "Board workflow renamed; five June tasks moved into a new 'In Prod1' status",
+      "keys": [
+        "MR-735",
+        "MR-740"
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "project": "USP",
+      "type": "risk",
+      "title": "102 items missed the 30 Sep sprint end; past due rises from 8 to 108",
+      "keys": [
+        "USP-4229",
+        "USP-3795",
+        "USP-3858"
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "project": "UC",
+      "type": "milestone",
+      "title": "CSM Teams dashboard and logged-in marketplace user delivered",
+      "keys": [
+        "UC-215",
+        "UC-216"
+      ]
     }
   ],
   "pipelineNote": "All 35 listings are in production: 27 moved by 22 Sep and the 8 Vera Rubin products on 28 Sep. <b>None are live</b>: each was disabled after validation, pending approval."
