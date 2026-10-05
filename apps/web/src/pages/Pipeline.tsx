@@ -1,207 +1,137 @@
-import { useCallback, useEffect, useState } from 'react';
-import { ApiError, Json, api, money, when } from '../api';
+import { useMemo, useState } from 'react';
+import { Cpu, Search, ShieldAlert, Snowflake, Wind } from 'lucide-react';
+import { api, compactMoney, date, label, type Json } from '@/api';
+import { useSession } from '@/lib/session';
+import { useTheme } from '@/lib/theme';
+import { MagicCard } from '@/components/magicui/magic-card';
+import { CHANNEL_COLORS, CHANNEL_LABEL, RiskMeter } from '@/components/charts';
+import { Badge, ErrorNote, PageHeader, Spinner, useData } from '@/components/ui';
+import { cn } from '@/lib/utils';
 
-interface Stage {
+export interface Stage {
   key: string;
   label: string;
   is_closed: boolean;
+  is_won: boolean;
   entry_rules: string[];
 }
 
-const SIGNAL_FIELDS: [string, string][] = [
-  ['workload', 'Workload'],
-  ['gpu_model', 'GPU model'],
-  ['gpu_count', 'GPUs'],
-  ['node_count', 'Nodes'],
-  ['oem', 'OEM'],
-  ['deployment_location', 'Deploys at'],
-  ['cooling', 'Cooling'],
-  ['kw_per_rack', 'kW per rack'],
-  ['destination_country', 'Ship to'],
-  ['end_user', 'End user'],
-];
-
-export function Pipeline({ roles }: { roles: string[] }) {
-  const [stages, setStages] = useState<Stage[]>([]);
-  const [opps, setOpps] = useState<Json[]>([]);
-  const [open, setOpen] = useState<string | null>(null);
+export function Pipeline() {
+  const { openDeal, version, me } = useSession();
+  const { resolved } = useTheme();
   const [q, setQ] = useState('');
+  const [channel, setChannel] = useState('all');
+  const [mine, setMine] = useState(false);
+  const [showClosed, setShowClosed] = useState(false);
+  const { data, error } = useData(
+    () => Promise.all([api<Stage[]>('/v1/metadata/stages'), api<{ items: Json[] }>(`/v1/records/opportunities?limit=200${q ? `&q=${encodeURIComponent(q)}` : ''}`)]),
+    [q, version],
+    15000,
+  );
 
-  const load = useCallback(async () => {
-    const [s, o] = await Promise.all([api<Stage[]>('/v1/metadata/stages'), api<{ items: Json[] }>(`/v1/records/opportunities?limit=200${q ? `&q=${encodeURIComponent(q)}` : ''}`)]);
-    setStages(s);
-    setOpps(o.items);
-  }, [q]);
-
-  useEffect(() => {
-    load();
-    const t = setInterval(load, 8000);
-    return () => clearInterval(t);
-  }, [load]);
-
-  const total = opps.filter((o) => !stages.find((s) => s.key === o.stage_key)?.is_closed).reduce((a, o) => a + Number(o.expected_value ?? 0), 0);
+  const [stages, opps] = data ?? [[], { items: [] }];
+  const visible = useMemo(
+    () => opps.items.filter((o) => (channel === 'all' || o.channel === channel) && (!mine || o.owner_id === me.actorId)),
+    [opps, channel, mine, me.actorId],
+  );
+  const open = visible.filter((o) => !stages.find((s) => s.key === o.stage_key)?.is_closed);
+  const total = open.reduce((a, o) => a + Number(o.expected_value ?? 0), 0);
+  const columns = stages.filter((s) => showClosed || !s.is_closed);
 
   return (
     <>
-      <header>
-        <h2>Pipeline</h2>
-        <span className="muted">
-          {opps.length} opportunities · open value {money(total)}
-        </span>
-        <input placeholder="Search" value={q} onChange={(e) => setQ(e.target.value)} />
-      </header>
-      <div className="board">
-        {stages.map((s) => {
-          const items = opps.filter((o) => o.stage_key === s.key);
-          return (
-            <section key={s.key} className="column">
-              <h3>
-                {s.label} <span className="muted">{items.length}</span>
-              </h3>
-              {items.map((o) => (
-                <article key={o.id} className="card" onClick={() => setOpen(o.id)}>
-                  <strong>{o.name}</strong>
-                  <div className="muted small">
-                    {[o.gpu_count && `${o.gpu_count} x`, o.gpu_model].filter(Boolean).join(' ') || 'Requirements not captured yet'}
-                  </div>
-                  <div className="row small">
-                    <span className={`chip ch-${o.channel}`}>{o.channel}</span>
-                    <span>{money(o.expected_value, o.currency)}</span>
-                  </div>
-                  {o.compliance_status !== 'not_screened' && <div className={`small cs-${o.compliance_status}`}>Compliance: {o.compliance_status}</div>}
-                </article>
+      <PageHeader
+        title="Pipeline"
+        subtitle={
+          <>
+            {open.length} open deals · {compactMoney(total)} open value. Stage gates are enforced; agents fill requirements from email, Teams and the portals.
+          </>
+        }
+        actions={
+          <>
+            <div className="relative">
+              <Search className="absolute top-1/2 left-2.5 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground" />
+              <input className="h-8 w-48 rounded-md border border-border bg-card pr-2 pl-7 text-sm" placeholder="Search deals" value={q} onChange={(e) => setQ(e.target.value)} />
+            </div>
+            <select className="h-8 rounded-md border border-border bg-card px-2 text-sm" value={channel} onChange={(e) => setChannel(e.target.value)} aria-label="Channel">
+              <option value="all">All channels</option>
+              {Object.entries(CHANNEL_LABEL).map(([k, v]) => (
+                <option key={k} value={k}>
+                  {v}
+                </option>
               ))}
+            </select>
+            <label className="flex items-center gap-1.5 text-sm">
+              <input type="checkbox" checked={mine} onChange={(e) => setMine(e.target.checked)} /> Mine
+            </label>
+            <label className="flex items-center gap-1.5 text-sm">
+              <input type="checkbox" checked={showClosed} onChange={(e) => setShowClosed(e.target.checked)} /> Closed
+            </label>
+          </>
+        }
+      />
+      <ErrorNote error={error} />
+      {!data && <Spinner />}
+      <div className="-mx-4 flex gap-3 overflow-x-auto px-4 pb-4 md:-mx-6 md:px-6">
+        {columns.map((s) => {
+          const items = visible.filter((o) => o.stage_key === s.key);
+          const sum = items.reduce((a, o) => a + Number(o.expected_value ?? 0), 0);
+          return (
+            <section key={s.key} className="flex w-72 shrink-0 flex-col rounded-xl bg-muted/60 p-2">
+              <header className="mb-2 flex items-baseline justify-between px-1.5">
+                <h3 className="text-sm font-medium">{s.label}</h3>
+                <span className="text-xs text-muted-foreground tabular-nums">
+                  {items.length} · {compactMoney(sum)}
+                </span>
+              </header>
+              {s.entry_rules.length > 0 && <p className="mb-2 px-1.5 text-[11px] text-muted-foreground">Needs: {s.entry_rules.map(label).join(', ')}</p>}
+              <div className="flex flex-col gap-2">
+                {items.map((o) => (
+                  <MagicCard
+                    key={o.id}
+                    className="cursor-pointer rounded-lg"
+                    gradientColor={resolved === 'dark' ? '#262a33' : '#e7eefb'}
+                    gradientFrom="#2a78d6"
+                    gradientTo="#eb6834"
+                    gradientSize={160}
+                  >
+                    <button className="relative z-30 block w-full p-3 text-left" onClick={() => openDeal(o.id)}>
+                      <div className="flex items-start justify-between gap-2">
+                        <strong className="text-sm leading-snug">{o.name}</strong>
+                        <span className="mt-0.5 h-2 w-2 shrink-0 rounded-full" title={CHANNEL_LABEL[o.channel] ?? o.channel} style={{ background: CHANNEL_COLORS[o.channel] ?? 'var(--muted-foreground)' }} />
+                      </div>
+                      <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-muted-foreground">
+                        <span className="inline-flex items-center gap-1">
+                          <Cpu className="h-3 w-3" />
+                          {[o.gpu_count && `${o.gpu_count} ×`, o.gpu_model].filter(Boolean).join(' ') || 'requirements pending'}
+                        </span>
+                        {o.cooling && (
+                          <span className="inline-flex items-center gap-1">
+                            {o.cooling === 'liquid' ? <Snowflake className="h-3 w-3" /> : <Wind className="h-3 w-3" />}
+                            {o.cooling}
+                          </span>
+                        )}
+                        {o.expected_ship_date && <span>ships {date(o.expected_ship_date)}</span>}
+                      </div>
+                      <div className="mt-2 flex items-center justify-between">
+                        <span className="text-sm font-medium tabular-nums">{compactMoney(o.expected_value)}</span>
+                        {!s.is_closed && <RiskMeter value={o.risk_score} />}
+                      </div>
+                      {['flagged', 'blocked', 'screening'].includes(o.compliance_status) && (
+                        <div className={cn('mt-2 flex items-center gap-1 text-xs', o.compliance_status === 'screening' ? 'text-muted-foreground' : 'text-bad')}>
+                          <ShieldAlert className="h-3 w-3" />
+                          Compliance: <Badge>{o.compliance_status}</Badge>
+                        </div>
+                      )}
+                    </button>
+                  </MagicCard>
+                ))}
+                {!items.length && <div className="rounded-lg border border-dashed border-border p-3 text-center text-xs text-muted-foreground">No deals</div>}
+              </div>
             </section>
           );
         })}
       </div>
-      {open && <OpportunityDrawer id={open} stages={stages} roles={roles} onClose={() => setOpen(null)} onChanged={load} />}
     </>
-  );
-}
-
-function OpportunityDrawer({ id, stages, roles, onClose, onChanged }: { id: string; stages: Stage[]; roles: string[]; onClose: () => void; onChanged: () => void }) {
-  const [opp, setOpp] = useState<Json | null>(null);
-  const [history, setHistory] = useState<Json[]>([]);
-  const [error, setError] = useState<string | null>(null);
-  const [draft, setDraft] = useState<Json>({});
-
-  const load = useCallback(async () => {
-    const [o, h] = await Promise.all([api(`/v1/records/opportunities/${id}`), api<Json[]>(`/v1/records/opportunities/${id}/history`)]);
-    setOpp(o);
-    setHistory(h);
-    setDraft({});
-  }, [id]);
-  useEffect(() => {
-    load();
-  }, [load]);
-
-  const save = async (patch: Json) => {
-    setError(null);
-    try {
-      await api(`/v1/records/opportunities/${id}`, { method: 'PATCH', body: patch, headers: { 'if-match': String(opp?.version) } });
-      await load();
-      onChanged();
-    } catch (e) {
-      const err = e as ApiError;
-      const details = Array.isArray(err.details) ? ' ' + (err.details as Json[]).map((d) => d.message).join('; ') : '';
-      setError(err.message + details);
-    }
-  };
-
-  if (!opp) return null;
-  const sourceOf = (field: string) => history.find((h) => h.field === field);
-
-  return (
-    <aside className="drawer">
-      <button className="close" onClick={onClose}>
-        ×
-      </button>
-      <h2>{opp.name}</h2>
-      <div className="row">
-        <select value={opp.stage_key} onChange={(e) => save({ stage_key: e.target.value })}>
-          {stages.map((s) => (
-            <option key={s.key} value={s.key}>
-              {s.label}
-            </option>
-          ))}
-        </select>
-        <span className={`chip ch-${opp.channel}`}>{opp.channel}</span>
-        <span className="muted small">v{opp.version}</span>
-      </div>
-      {error && <div className="error">{error}</div>}
-
-      <h4>Requirements</h4>
-      <table className="fields">
-        <tbody>
-          {SIGNAL_FIELDS.map(([f, label]) => {
-            const src = sourceOf(f);
-            return (
-              <tr key={f}>
-                <th>{label}</th>
-                <td>
-                  <input
-                    value={draft[f] ?? opp[f] ?? ''}
-                    placeholder="insufficient evidence"
-                    onChange={(e) => setDraft({ ...draft, [f]: e.target.value })}
-                    onBlur={() => {
-                      if (draft[f] === undefined || draft[f] === (opp[f] ?? '')) return;
-                      const v = draft[f] === '' ? null : ['gpu_count', 'node_count'].includes(f) || f === 'kw_per_rack' ? Number(draft[f]) : draft[f];
-                      save({ [f]: v });
-                    }}
-                  />
-                </td>
-                <td className="small muted" title={src?.evidence?.[0]?.quote ?? ''}>
-                  {src ? `${src.source === 'agent' ? `AI (${src.actor_id})` : src.source}${src.confidence ? ` · ${Number(src.confidence).toFixed(2)}` : ''}` : ''}
-                  {src?.evidence?.[0]?.quote && <div className="quote">“{src.evidence[0].quote}”</div>}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-
-      <h4>Commercial</h4>
-      <table className="fields">
-        <tbody>
-          <tr>
-            <th>Expected value</th>
-            <td>{money(opp.expected_value, opp.currency)}</td>
-          </tr>
-          {'est_margin' in opp && (
-            <tr>
-              <th>Est. margin</th>
-              <td>{money(opp.est_margin, opp.currency)}</td>
-            </tr>
-          )}
-          <tr>
-            <th>Compliance</th>
-            <td>
-              {opp.compliance_status}
-              {(roles.includes('trade_compliance') || roles.includes('admin')) && opp.compliance_status !== 'cleared' && (
-                <button className="small-btn" onClick={() => save({ compliance_status: 'cleared' })}>
-                  Clear
-                </button>
-              )}
-            </td>
-          </tr>
-          <tr>
-            <th>NetSuite sales order</th>
-            <td>{opp.netsuite_sales_order_id ?? opp.order_reference ?? '—'}</td>
-          </tr>
-        </tbody>
-      </table>
-      <p className="muted small">Orders, invoices and payments live in NetSuite; ATLAS-I keeps only the reference.</p>
-
-      <h4>Field history</h4>
-      <ul className="history">
-        {history.slice(0, 25).map((h, i) => (
-          <li key={i}>
-            <span className="small muted">{when(h.created_at)}</span> <b>{h.field}</b> → {JSON.stringify(h.new_value)}{' '}
-            <span className="small muted">({h.source === 'agent' ? h.actor_id : h.source})</span>
-          </li>
-        ))}
-      </ul>
-    </aside>
   );
 }

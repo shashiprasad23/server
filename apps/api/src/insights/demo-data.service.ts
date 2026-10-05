@@ -135,8 +135,12 @@ export class DemoDataService {
       }
 
       // A won deal with installed base near renewal, and older systems due a refresh.
-      const zephyr = await this.records.create(db, sys, 'accounts', { name: 'Zephyr AI', domain: 'zephyr-ai.com', segment: 'ai_native', hq_country: 'Singapore', channel_first_seen: 'marketplace' });
-      const zc = await this.records.create(db, sys, 'contacts', { account_id: zephyr.id, name: 'Mia Chen', email: 'mia@zephyr-ai.com', title: 'Platform Lead', committee_role: 'economic_buyer' });
+      const zephyr =
+        (await one<{ id: string }>(db, "SELECT id FROM accounts WHERE lower(domain) = 'zephyr-ai.com' AND deleted_at IS NULL")) ??
+        (await this.records.create(db, sys, 'accounts', { name: 'Zephyr AI', domain: 'zephyr-ai.com', segment: 'ai_native', hq_country: 'Singapore', channel_first_seen: 'marketplace' }));
+      const zc =
+        (await one<{ id: string }>(db, "SELECT id FROM contacts WHERE lower(email) = 'mia@zephyr-ai.com' AND deleted_at IS NULL")) ??
+        (await this.records.create(db, sys, 'contacts', { account_id: zephyr.id, name: 'Mia Chen', email: 'mia@zephyr-ai.com', title: 'Platform Lead', committee_role: 'economic_buyer' }));
       const won = await this.records.create(db, sys, 'opportunities', {
         account_id: zephyr.id,
         primary_contact_id: zc.id,

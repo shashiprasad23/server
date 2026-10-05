@@ -210,6 +210,12 @@ describe('ATLAS-I modules end to end', () => {
       const brief = (await ctx.http.get(`/v1/opportunities/${redHarbor.id}/brief`).set(auth(rep)).expect(200)).body;
       expect(brief.headline).toMatch(/risk/);
       expect(brief.nextActions.length).toBeGreaterThan(0);
+
+      // Nothing changed, so a second run logs no new coach actions.
+      const latest = async () => (await ctx.http.get('/v1/agents/actions?agentId=deal_coach').set(auth(leader)).expect(200)).body[0]?.id;
+      const before = await latest();
+      await ctx.http.post('/v1/agents/deal_coach/run').set(auth(leader)).expect(201);
+      expect(await latest()).toBe(before);
     });
 
     it('forecasts by month with a confidence range and rep call', async () => {

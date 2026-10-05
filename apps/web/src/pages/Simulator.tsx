@@ -1,5 +1,10 @@
 import { useState } from 'react';
-import { ApiError, api } from '../api';
+import { Mail, MessagesSquare, Radio, ShoppingCart, Store, Wrench } from 'lucide-react';
+import { ApiError, api, type Json } from '@/api';
+import { useSession } from '@/lib/session';
+import { AnimatedList } from '@/components/magicui/animated-list';
+import { ShimmerButton } from '@/components/magicui/shimmer-button';
+import { Badge, Button, Card, ErrorNote, PageHeader, useAction } from '@/components/ui';
 
 const id = (p: string) => `${p}-${Date.now()}`;
 const now = () => new Date().toISOString();
@@ -79,6 +84,21 @@ const SAMPLES: Record<string, { source: string; label: string; build: () => unkn
       createdDateTime: now(),
     }),
   },
+  redflag: {
+    source: 'outlook',
+    label: 'Red-flag email (compliance)',
+    build: () => ({
+      kind: 'message',
+      id: id('graph'),
+      conversationId: 'conv-nimbus',
+      mailbox: 'asha.rep@uvation.com',
+      subject: 'Re: H200 cluster shipping',
+      body: { contentType: 'text', content: 'Small change: the end user is confidential and our freight forwarder will handle onward shipping.' },
+      from: { emailAddress: { address: 'priya@nimbus-ai.com', name: 'Priya Shah' } },
+      toRecipients: [{ emailAddress: { address: 'asha.rep@uvation.com' } }],
+      sentDateTime: now(),
+    }),
+  },
   internal: {
     source: 'outlook',
     label: 'Internal-only email (skipped)',
@@ -95,31 +115,79 @@ const SAMPLES: Record<string, { source: string; label: string; build: () => unkn
   },
 };
 
+const ICONS: Record<string, typeof Store> = { rfq: Store, cart: ShoppingCart, order: Store, service: Wrench, email: Mail, teams: MessagesSquare, redflag: Mail, internal: Mail };
+
 export function Simulator() {
-  const [log, setLog] = useState<string[]>([]);
+  const { has, touch } = useSession();
+  const [log, setLog] = useState<{ at: string; label: string; status: string; detail: string }[]>([]);
+  const act = useAction();
   const send = async (key: string) => {
     const s = SAMPLES[key];
     try {
-      const r = await api(`/v1/channel-events/dev/simulate/${s.source}`, { body: s.build() });
-      setLog((l) => [`${s.label}: ${r.status}${r.skipReason ? ` (${r.skipReason})` : ''} ${JSON.stringify(r.linked ?? {})}`, ...l]);
+      const r = await api<Json>(`/v1/channel-events/dev/simulate/${s.source}`, { body: s.build() });
+      setLog((l) => [{ at: new Date().toLocaleTimeString(), label: s.label, status: r.status, detail: r.skipReason ?? Object.keys(r.linked ?? {}).map((k) => `linked ${k}`).join(', ') }, ...l]);
+      touch();
     } catch (e) {
-      setLog((l) => [`${s.label}: ${(e as ApiError).message}`, ...l]);
+      setLog((l) => [{ at: new Date().toLocaleTimeString(), label: s.label, status: 'failed', detail: (e as ApiError).message }, ...l]);
     }
   };
   return (
     <>
-      <header>
-        <h2>Channel simulator</h2>
-        <span className="muted">Development only: inject events as if they came from the Marketplace, USP, Outlook or Teams.</span>
-      </header>
-      <div className="row wrap">
-        {Object.entries(SAMPLES).map(([k, s]) => (
-          <button key={k} onClick={() => send(k)}>
-            {s.label}
-          </button>
-        ))}
+      <PageHeader
+        title="Channel simulator"
+        subtitle="Development only: inject events exactly as the Uvation Marketplace, the Service Portal, Outlook and Teams would send them. Agents react within a second; watch Home, Pipeline and Approvals."
+        actions={
+          has('sales_leader') && (
+            <ShimmerButton
+              className="h-9 px-4 text-sm"
+              onClick={() =>
+                act.run('demo', async () => {
+                  const r = await api<Json>('/v1/dev/demo-data', { body: {} });
+                  setLog((l) => [{ at: new Date().toLocaleTimeString(), label: 'Demo pipeline', status: r.loaded ? 'processed' : 'skipped', detail: r.reason ?? `${r.opportunities} opportunities` }, ...l]);
+                  touch();
+                })
+              }
+            >
+              {act.busy ? 'Loading…' : 'Load demo pipeline'}
+            </ShimmerButton>
+          )
+        }
+      />
+      <ErrorNote error={act.error} />
+      <div className="grid gap-4 lg:grid-cols-2">
+        <Card title="Send an event">
+          <div className="grid gap-2 sm:grid-cols-2">
+            {Object.entries(SAMPLES).map(([k, s]) => {
+              const Icon = ICONS[k] ?? Radio;
+              return (
+                <Button key={k} variant="secondary" className="h-auto justify-start py-2 text-left" onClick={() => send(k)}>
+                  <Icon className="h-4 w-4 shrink-0 text-primary" />
+                  <span>
+                    <span className="block">{s.label}</span>
+                    <span className="block text-[11px] font-normal text-muted-foreground">via {s.source}</span>
+                  </span>
+                </Button>
+              );
+            })}
+          </div>
+        </Card>
+        <Card title="What happened">
+          {!log.length && <p className="text-sm text-muted-foreground">Events you send appear here.</p>}
+          <AnimatedList delay={50}>
+            {[...log].reverse().map((l, i) => (
+              <div key={i} className="rounded-lg border border-border bg-background p-2 text-sm">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-medium">{l.label}</span>
+                  <Badge>{l.status}</Badge>
+                </div>
+                <div className="text-xs text-muted-foreground">
+                  {l.at} · {l.detail || 'accepted'}
+                </div>
+              </div>
+            ))}
+          </AnimatedList>
+        </Card>
       </div>
-      <pre className="email">{log.join('\n') || 'Events you send appear here. Agents react within a second.'}</pre>
     </>
   );
 }

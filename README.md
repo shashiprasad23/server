@@ -2,7 +2,7 @@
 
 ATLAS-I runs Uvation's AI-server sales pipeline with AI agents doing the routine work and people approving anything binding. It is the internal first phase of Project ATLAS; the requirements, FRS, SRS, roadmap and sprint plan are in the [ATLAS-I requirements doc](https://claude.ai/code/artifact/b406178a-7da6-4004-a619-850d2cb3f701).
 
-This repository holds the **foundation release**: the platform every later sprint builds on, plus the first two governed agents.
+This repository holds the platform plus the end-to-end sales modules from the requirements doc: capture, CPQ for AI servers, supply and deal registration, export compliance, deal coaching, forecasting, renewals and Ask-the-CRM, all run by governed agents.
 
 | Area | What is here | Requirements |
 | --- | --- | --- |
@@ -13,9 +13,17 @@ This repository holds the **foundation release**: the platform every later sprin
 | Built-in agents | Capture agent (fills deals from emails, chats, calls and transcripts with cited quotes); Inbound SDR agent (explainable scoring, routing, drafted first reply) | FR-CAP-07, FR-LEAD-02..05 |
 | NetSuite boundary | No sales transactions stored (guardrail rejects or strips them), NetSuite reference fields editable only by Finance, manual close flow, adapter interface for the later integration | FR-NS-01..06 |
 | Compliance gate | Only Trade Compliance can clear a deal; Closed won needs clearance plus a NetSuite sales order or Marketplace order reference | FR-CMP-04, FR-PIPE-01 |
-| Web app | Pipeline board, opportunity drawer with field sources and quotes, accounts with timeline, approvals, agents and audit trail, channel simulator | |
+| CPQ | Illustrative AI-server catalogue and price-list import; configurator that builds a valid BOM (servers, InfiniBand/Ethernet fabric, optics, storage, racks, PDUs, NVIDIA AI Enterprise, services, support) from GPUs, cooling and kW per rack; versioned quotes with freight, margin and an approval matrix; printable proposal without cost or margin; publish to Marketplace, USP or email | FR-CPQ-01..10 |
+| Supply and deal registration | Stock net of other deals' holds with alternatives, time-boxed holds, OEM deal registrations, supply vs weighted demand by GPU and quarter | FR-SUP-01..05 |
+| Site readiness and delivery | Power, cooling and access checks with a hosting offer when the site cannot take the configuration, presales tasks, mutual action plan | FR-DC-01..04 |
+| Export compliance | Automatic restricted-party screening (fuzzy name match), embargo and licence-review destinations, classification on quote lines, red-flag scan of customer messages, end-user statements, Trade Compliance decision | FR-CMP-01..06 |
+| Deal coach agent | Explainable risk score, win probability and next best actions per deal; account health from tickets, RMAs and engagement | FR-PIPE-03/05, FR-CS-03 |
+| Quote and renewal agents | Draft the BOM, quote and OEM registration when a deal reaches solution design; open renewals 120 days before support or licences end; flag ageing GPUs for refresh | FR-CPQ, FR-CS-01..04 |
+| Forecast and insights | AI forecast with a range against the rep call, by rep, GPU and channel; deal inspection; revenue-leak finder; weekly summary; dashboard KPIs | FR-FCST-01..06, FR-AN |
+| Ask ATLAS | Plain-English questions become a pipeline filter (Claude structured output, rules offline), with cited deals | FR-AI-10 |
+| Web app | Magic UI bento dashboard, pipeline board, deal drawer (brief, requirement sheet with evidence, configure and quote, compliance, site and plan, history), accounts, quotes, supply, compliance queue, forecast, renewals, approvals, tasks, agents, channel simulator, settings; light and dark themes | |
 
-Not built yet (later sprints, per the sprint plan): configurator, supply and deal registration, quoting and proposals, forecasting, renewals, restricted-party screening service, the live Microsoft Graph connector process, Entra ID SSO, and the NetSuite adapter.
+Not built yet (later sprints, per the sprint plan): the live Microsoft Graph connector process, Entra ID SSO, live OEM and distributor feeds, a licensed restricted-party list service, and the NetSuite adapter. Catalogue prices, restricted parties and compliance rules in the seed are illustrative: Procurement and Trade Compliance must load and confirm the real ones.
 
 ## Architecture
 
@@ -29,7 +37,7 @@ Marketplace / USP / Outlook / Teams / WhatsApp
                      transaction guardrail, stage gates, provenance)
                                     │ transactional outbox
                                     ▼
-                  agents (capture, inbound SDR) ──► policy engine
+  agents (capture, SDR, quote, deal coach, renewal) ──► policy engine
                                     │            execute │ queue │ block
                                     ▼                    ▼
                          audit trail + rollback     approval queue
@@ -38,7 +46,7 @@ Marketplace / USP / Outlook / Teams / WhatsApp
 ```
 
 - `apps/api`: NestJS + PostgreSQL 16 (plain SQL migrations, `pg`), zod validation, Anthropic SDK behind an LLM gateway.
-- `apps/web`: React + Vite.
+- `apps/web`: React + Vite, Tailwind CSS v4, and [Magic UI](https://magicui.design) components (MIT, vendored in `src/components/magicui`): bento grid, number ticker, border beam, magic card, animated list, marquee, shimmer button.
 - People, agents and integrations all write through the same records engine, so every change gets the same checks and a provenance row (`field_provenance`: old value, new value, source, actor, agent action, confidence, evidence).
 
 ## Run it locally
@@ -58,7 +66,7 @@ npm run dev:api        # http://localhost:3000, OpenAPI at /docs
 npm run dev:web        # http://localhost:5173
 ```
 
-Sign in with one of the seeded users (development sign-in), open **Channel simulator** and send a Marketplace RFQ, an Outlook email and a Teams transcript. Then watch the pipeline, the approvals queue and the agents' audit trail.
+Sign in as **VP Sales** (development sign-in) and press **Load demo pipeline** on Home or in the Channel simulator: it creates deals across every stage, quotes, a compliance hit, a won deal with installed base near renewal, and a rep forecast call. Then open a deal from the pipeline, or send a Marketplace RFQ, an Outlook email or a Teams transcript from the simulator and watch the agents react. Switch persona (Deal Desk, Trade Compliance, Finance Ops) to see approvals, clearance and the NetSuite close from their side.
 
 Or with Docker: `docker compose up --build`, then open http://localhost:8080. The stack has been built and run end to end with Docker 29 (Postgres 16, API, nginx-served web app).
 
@@ -100,12 +108,23 @@ Privacy rules (`capture.rules` setting): internal-only threads, items marked pri
 | `GET /v1/approvals`, `POST /v1/approvals/{id}/approve or reject` | Approval queue (approve can carry an edited payload) |
 | `GET /v1/agents`, `GET /v1/agents/actions`, `POST /v1/agents/actions/{id}/rollback`, `POST /v1/agents/{id}/kill or resume`, `PUT /v1/agents/{id}/overrides`, `GET /v1/agents/usage` | Agent governance |
 | `POST /v1/opportunities/{id}/close-request`, `POST /v1/opportunities/{id}/close-confirm` | NetSuite-ready close flow (Finance confirms with the sales order ID) |
+| `GET /v1/catalog`, `POST /v1/catalog/import` | Catalogue with free and held stock (cost visible to restricted roles only); price-list import |
+| `POST /v1/opportunities/{id}/configure`, `GET /v1/opportunities/{id}/readiness`, `POST .../readiness/tasks` | BOM from the requirement sheet with supply per line; datacentre readiness |
+| `GET /v1/supply/holds`, `POST /v1/opportunities/{id}/holds`, `DELETE /v1/supply/holds/{id}` | Stock holds |
+| `GET /v1/deal-registrations`, `POST /v1/opportunities/{id}/deal-registrations`, `POST /v1/deal-registrations/{id}/submit or approve or reject` | OEM deal registration |
+| `GET /v1/quotes`, `POST /v1/opportunities/{id}/quotes`, `GET /v1/quotes/{id}`, `POST /v1/quotes/{id}/submit, approve, reject, publish, accept, revalidate`, `GET /v1/quotes/{id}/proposal` | Quotes, approvals and the printable proposal |
+| `GET/POST /v1/opportunities/{id}/milestones`, `POST .../milestones/default`, `PATCH /v1/milestones/{id}` | Mutual action plan |
+| `GET /v1/compliance/queue`, `GET /v1/compliance/opportunities/{id}`, `POST .../screen`, `POST .../eus/request or receive`, `POST .../decision` | Export compliance |
+| `GET /v1/insights/dashboard, forecast, supply-demand, leaks, inspection, weekly-summary`, `POST /v1/insights/forecast/calls` | Dashboard, forecast and inspection |
+| `POST /v1/ask`, `GET /v1/opportunities/{id}/insights`, `GET /v1/opportunities/{id}/brief`, `GET /v1/accounts/{id}/committee` | Ask ATLAS, deal score and brief, buying committee |
+| `GET /v1/installed-base`, `POST /v1/agents/renewal_agent/run`, `POST /v1/agents/deal_coach/run`, `GET /v1/timeline/tasks`, `POST /v1/tasks/{id}/complete` | Renewals, agent runs, tasks |
+| `POST /v1/dev/demo-data` | Development only: load the demo pipeline |
 
 ## Extending it
 
 - **Custom field**: `POST /v1/metadata/fields` (admin). Transaction-like keys are refused.
 - **Stage or gate**: edit `pipeline_stages`; gate rules are named in `apps/api/src/records/stage-rules.ts`.
-- **Agent**: add a definition (scope, templates, threshold, reviewer) to `agents/agent-definitions.ts`, subscribe to an event, and call `AgentRuntime.propose()`. The runtime handles policy, audit, approvals and rollback.
+- **Agent**: add a definition (allowed actions, writable fields, templates, threshold, reviewer) to `agents/agent-definitions.ts`, subscribe to an event, and call `AgentRuntime.propose()`. The runtime handles policy, audit, approvals and rollback.
 - **Channel**: add a source to `ingestion/normalized-event.ts`, a schema and mapping in `normalizers.ts`, and a secret in config.
 - **NetSuite**: implement `FinanceSystemAdapter` (`adapters/finance-system.adapter.ts`) and bind it in `app.module.ts`; the close flow switches to automatic.
 
@@ -116,4 +135,4 @@ createdb -U postgres -O atlas atlas_test
 npm test
 ```
 
-Unit tests cover the policy engine, the transaction guardrail, capture rules, extraction and scoring. End-to-end tests run the real app against Postgres: ingestion and identity, idempotency, privacy skips and redaction, agent scoring with citations, approval and sending, rollback with conflict detection, human corrections never overwritten, the kill switch, custom fields, field-level security, optimistic locking, the compliance and NetSuite close gate, Marketplace order stripping, tenant isolation, and validation.
+Unit tests cover the policy engine, the transaction guardrail, capture rules, extraction, lead and deal scoring, the configurator, restricted-party matching and the question parser. End-to-end tests run the real app against Postgres: ingestion and identity, idempotency, privacy skips and redaction, agent scoring with citations, approval and sending, rollback with conflict detection, human corrections never overwritten, the kill switch, custom fields, field-level security, optimistic locking, the compliance and NetSuite close gate, Marketplace order stripping, tenant isolation, and validation; plus quotes and the approval matrix, holds, deal registration, the quote agent and its rollback, screening and red flags, demo data, the deal coach, forecast, Ask, leaks, renewals and installed base on win.

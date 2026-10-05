@@ -6,7 +6,10 @@ import { scoreHealth } from '../../insights/scoring';
 import { RecordsService } from '../../records/records.service';
 import { AgentRuntime } from '../agent-runtime.service';
 
-const same = (a: unknown, b: unknown) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+/** Key-order independent: jsonb hands objects back with sorted keys. */
+const stable = (v: unknown): unknown =>
+  Array.isArray(v) ? v.map(stable) : v && typeof v === 'object' ? Object.fromEntries(Object.keys(v).sort().map((k) => [k, stable((v as Record<string, unknown>)[k])])) : (v ?? null);
+const same = (a: unknown, b: unknown) => JSON.stringify(stable(a)) === JSON.stringify(stable(b));
 
 /**
  * Deal coach agent (FR-PIPE-03/05, FR-FCST-02, FR-CS-03): keeps risk score, win probability and

@@ -334,10 +334,10 @@ export class InsightsService {
     }
     const renewals = await many<Record<string, unknown>>(
       db,
-      `SELECT ia.id, ia.description, ia.support_end, ia.qty, a.name FROM installed_assets ia JOIN accounts a ON a.id = ia.account_id
+      `SELECT ia.id, ia.description, to_char(coalesce(ia.support_end, ia.licence_end), 'YYYY-MM-DD') AS ends, ia.support_end IS NULL AS licence, ia.qty, a.name FROM installed_assets ia JOIN accounts a ON a.id = ia.account_id
         WHERE ia.renewal_opportunity_id IS NULL AND coalesce(ia.support_end, ia.licence_end) < current_date + 120`,
     );
-    for (const r of renewals) out.push({ kind: 'renewal_not_started', title: `Support ends ${String(r.support_end ?? '').slice(0, 10)} with no renewal: ${String(r.name)}`, value: num(r.qty) * 18000, record: { object: 'installed_assets', id: String(r.id) }, action: 'Open the renewal and send a quote' });
+    for (const r of renewals) out.push({ kind: 'renewal_not_started', title: `${r.licence ? 'Licences end' : 'Support ends'} ${String(r.ends)} with no renewal: ${String(r.name)}`, value: num(r.qty) * 18000, record: { object: 'installed_assets', id: String(r.id) }, action: 'Open the renewal and send a quote' });
     const holds = await many<Record<string, unknown>>(
       db,
       `SELECT h.id, p.sku, h.qty, o.name, o.id AS opp FROM supply_holds h JOIN products p ON p.id = h.product_id JOIN opportunities o ON o.id = h.opportunity_id
