@@ -1,0 +1,29 @@
+name: CI
+on:
+  push:
+    branches: [master, main, 'claude/**']
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: atlas
+          POSTGRES_PASSWORD: atlas
+          POSTGRES_DB: atlas_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U atlas" --health-interval 3s --health-retries 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - name: Create the runtime role (no BYPASSRLS)
+        run: psql postgres://atlas:atlas@localhost:5432/atlas_test -c "CREATE ROLE atlas_app LOGIN PASSWORD 'atlas_app' NOSUPERUSER NOBYPASSRLS;"
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build

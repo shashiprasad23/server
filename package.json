@@ -1,0 +1,17 @@
+{
+  "name": "atlas-i",
+  "private": true,
+  "version": "0.1.0",
+  "description": "ATLAS-I: AI-native internal sales CRM for Uvation",
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "migrate": "npm run migrate -w apps/api",
+    "seed": "npm run seed -w apps/api",
+    "dev:api": "npm run dev -w apps/api",
+    "dev:web": "npm run dev -w apps/web"
+  },
+  "engines": { "node": ">=20" }
+}
