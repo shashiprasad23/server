@@ -1,8 +1,8 @@
 # Daily report runbook
 
-The scheduled routine follows this file every weekday at 7:00 PM Nepal time (13:15 UTC). One run pulls Jira for the four in-scope programmes, rebuilds both pages, stores a dated copy in the repo, pushes it and updates the two live pages.
+The scheduled routine follows this file every day at 9:00 PM IST (15:30 UTC). It fires into the original working session, which holds the Atlassian connector. One run pulls Jira for the in-scope programmes, rebuilds both pages, stores a dated copy in the repo, pushes it and updates the two live pages.
 
-Scope comes from `content/scope.json`: Web-Marketplace (`MT`, `PC`), Web-Marketing (`MR`), Web-Uvation Services Platform (`USP`) and Uvation Conversational AI (`UC`).
+Scope comes from `content/scope.json`: Web-Marketplace (`MT`, `PC`), Web-Marketing (`MR`), Web-Uvation Services Platform (`USP`), Uvation Conversational AI (`UC`), Uvation Pulse (`PULSE`) and Atlas CRM (`ATLAS`).
 
 ## 0. Prepare
 
@@ -13,7 +13,6 @@ git checkout claude/executive-dashboard-jira-review-gclk36
 git pull --ff-only origin claude/executive-dashboard-jira-review-gclk36
 cd executive-dashboard
 DATE=$(TZ=Asia/Kathmandu date +%F)
-TZ=Asia/Kathmandu date +%u    # 6 or 7 = weekend: stop here, nothing to do
 W=$(mktemp -d)                # work folder for raw pages
 ```
 
