@@ -60,7 +60,7 @@ npm run dev:web        # http://localhost:5173
 
 Sign in with one of the seeded users (development sign-in), open **Channel simulator** and send a Marketplace RFQ, an Outlook email and a Teams transcript. Then watch the pipeline, the approvals queue and the agents' audit trail.
 
-Or with Docker: `docker compose up --build`, then open http://localhost:8080. The compose file and Dockerfiles are written but have not yet been built in CI.
+Or with Docker: `docker compose up --build`, then open http://localhost:8080. The stack has been built and run end to end with Docker 29 (Postgres 16, API, nginx-served web app).
 
 ### Using Claude for extraction
 
