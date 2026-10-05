@@ -62,7 +62,7 @@ createdb -U postgres -O atlas atlas_dev
 npm install
 cp apps/api/.env.example apps/api/.env
 npm run migrate && npm run seed
-npm run dev:api        # http://localhost:3000, OpenAPI at /docs
+npm run dev:api        # http://localhost:3000, OpenAPI at /docs (reads apps/api/.env)
 npm run dev:web        # http://localhost:5173
 ```
 

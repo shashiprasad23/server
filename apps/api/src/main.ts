@@ -1,7 +1,8 @@
-import { loadConfig } from './config/config';
+import { loadConfig, loadDotEnv } from './config/config';
 import { createApp } from './app.factory';
 
 async function main() {
+  loadDotEnv();
   const config = loadConfig();
   const app = await createApp(config);
   await app.listen(config.PORT);

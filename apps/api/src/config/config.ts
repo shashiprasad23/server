@@ -1,3 +1,5 @@
+import { existsSync } from 'fs';
+import { join } from 'path';
 import { z } from 'zod';
 
 const bool = z
@@ -37,6 +39,14 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
     if (parsed.data.AUTH_DEV_TOKENS) throw new Error('AUTH_DEV_TOKENS must be off in production');
   }
   return parsed.data;
+}
+
+/**
+ * For the local entrypoints (API, migrate, seed): loads apps/api/.env if present.
+ * Variables already set in the environment win, so Docker and CI settings are unaffected.
+ */
+export function loadDotEnv(file = join(__dirname, '..', '..', '.env')) {
+  if (existsSync(file) && typeof process.loadEnvFile === 'function') process.loadEnvFile(file);
 }
 
 export const CONFIG = Symbol('CONFIG');

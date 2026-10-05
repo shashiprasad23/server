@@ -1,5 +1,5 @@
 import { Client } from 'pg';
-import { loadConfig } from '../config/config';
+import { loadConfig, loadDotEnv } from '../config/config';
 import { DEMO_CATALOG, DEMO_RESTRICTED_PARTIES } from '../cpq/catalog-seed';
 
 export const SEED = {
@@ -92,6 +92,7 @@ export async function seed(connectionString: string): Promise<void> {
 }
 
 if (require.main === module) {
+  loadDotEnv();
   const config = loadConfig();
   seed(config.MIGRATION_DATABASE_URL)
     .then(() => console.log('seed complete'))

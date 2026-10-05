@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
 import { Client } from 'pg';
-import { loadConfig } from '../config/config';
+import { loadConfig, loadDotEnv } from '../config/config';
 
 /** Applies migrations/*.sql in order as the owner role, then grants the runtime role DML access. */
 export async function migrate(connectionString: string, appRole: string, log = console.log): Promise<void> {
@@ -35,6 +35,7 @@ export async function migrate(connectionString: string, appRole: string, log = c
 }
 
 if (require.main === module) {
+  loadDotEnv();
   const config = loadConfig();
   migrate(config.MIGRATION_DATABASE_URL, config.APP_DB_ROLE)
     .then(() => console.log('migrations complete'))
