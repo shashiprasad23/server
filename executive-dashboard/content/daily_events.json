@@ -1,6 +1,7 @@
 {
   "holidays": [
-    "2026-09-14"
+    "2026-09-14",
+    "2026-10-02"
   ],
   "bulk": [
     {
@@ -809,6 +810,46 @@
       "keys": [
         "UC-215",
         "UC-216"
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "project": "USP",
+      "type": "change",
+      "title": "78 missed sprint items and 10 register risks re-dated from 30 Sep to 30 Oct",
+      "keys": [
+        "USP-4229",
+        "USP-3755"
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "project": "USP",
+      "type": "progress",
+      "title": "Email triggering and notification backend fixes closed",
+      "keys": [
+        "USP-4206",
+        "USP-3960"
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "project": "MT",
+      "type": "progress",
+      "title": "GB300 attribute corrections finished; Dell AI server images and attributes updated",
+      "keys": [
+        "PC-141",
+        "PC-143"
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "project": "MR",
+      "type": "issue",
+      "title": "Five UAT bugs raised, two High (wrong CTA redirects)",
+      "keys": [
+        "MR-1304",
+        "MR-1307"
       ]
     }
   ],
