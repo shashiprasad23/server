@@ -53,6 +53,29 @@ export interface SettingsMap {
     rep_pool: string[];
   };
   'agents.defaults': { confidence_threshold: number; approval_ttl_hours: number };
+  'approval.matrix': {
+    /** Discount a rep may give without approval, in percent. */
+    rep_max_discount_pct: number;
+    /** Above this discount a sales leader must approve; between the two, deal desk. */
+    deal_desk_max_discount_pct: number;
+    margin_floor_pct: number;
+    large_deal_value: number;
+    non_standard_payment_terms: string[];
+  };
+  'cpq.defaults': {
+    quote_validity_days: number;
+    hold_days: number;
+    revalidation_price_pct: number;
+    revalidation_lead_time_weeks: number;
+    default_freight_pct: number;
+  };
+  'compliance.rules': {
+    /** Destinations where shipping controlled items needs a licence decision (confirm with Trade Compliance). */
+    licence_review_countries: string[];
+    embargoed_countries: string[];
+    controlled_classes: string[];
+    red_flag_phrases: string[];
+  };
 }
 
 /** Known tenant settings with their defaults. Stored as JSON so they change without a deploy. */
@@ -75,6 +98,39 @@ export const DEFAULT_SETTINGS: SettingsMap = {
   'agents.defaults': {
     confidence_threshold: 0.75,
     approval_ttl_hours: 48,
+  },
+  'approval.matrix': {
+    rep_max_discount_pct: 5,
+    deal_desk_max_discount_pct: 15,
+    margin_floor_pct: 8,
+    large_deal_value: 1000000,
+    non_standard_payment_terms: ['Net 60', 'Net 90', 'Milestone billing'],
+  },
+  'cpq.defaults': {
+    quote_validity_days: 14,
+    hold_days: 7,
+    revalidation_price_pct: 3,
+    revalidation_lead_time_weeks: 2,
+    default_freight_pct: 1.5,
+  },
+  // Illustrative defaults only: Trade Compliance owns and must confirm these lists.
+  'compliance.rules': {
+    licence_review_countries: ['China', 'Hong Kong', 'Macau', 'Russia', 'Belarus', 'Venezuela'],
+    embargoed_countries: ['Iran', 'North Korea', 'Syria', 'Cuba'],
+    controlled_classes: ['3A090', '4A090', '5A992'],
+    red_flag_phrases: [
+      're-export',
+      'reexport',
+      'transship',
+      'end user is confidential',
+      'cannot disclose the end user',
+      "can't disclose the end user",
+      'military',
+      'weapons',
+      'ship to a different country',
+      'freight forwarder will handle',
+      'avoid export',
+    ],
   },
 };
 export type SettingKey = keyof SettingsMap;

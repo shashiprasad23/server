@@ -50,8 +50,15 @@ describe('evaluatePolicy', () => {
     expect(d.reason).toMatch(/off_template/);
   });
 
+  it('blocks action types the agent is not allowed to take', () => {
+    const d = evaluatePolicy(sdr, state(), { type: 'draft_quote', payload: {}, confidence: 1, summary: 'q' });
+    expect(d.decision).toBe('block');
+    expect(d.reason).toMatch(/may not draft_quote/);
+  });
+
   it('routes binding actions to deal desk and refuses regulated ones outright', () => {
-    expect(evaluatePolicy(sdr, state(), { type: 'submit_quote', payload: {}, confidence: 1, summary: 'q' })).toMatchObject({
+    const withQuotes = { ...sdr, allowedActions: [...sdr.allowedActions, 'submit_quote' as const] };
+    expect(evaluatePolicy(withQuotes, state(), { type: 'submit_quote', payload: {}, confidence: 1, summary: 'q' })).toMatchObject({
       decision: 'queue',
       reviewerRole: 'deal_desk',
     });

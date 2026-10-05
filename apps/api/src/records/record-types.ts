@@ -52,6 +52,8 @@ export const RECORD_TYPES: Record<ObjectName, RecordType> = {
       // NetSuite references only (FR-NS-05): editable by Finance until the adapter is live.
       netsuite_customer_id: { type: 'string', writeRoles: ['finance'], humanOnly: true },
       credit_hold: { type: 'boolean', writeRoles: ['finance'], humanOnly: true },
+      health_score: { type: 'int' },
+      health_reasons: { type: 'json' },
     },
   },
   contacts: {
@@ -136,6 +138,8 @@ export const RECORD_TYPES: Record<ObjectName, RecordType> = {
       probability: { type: 'int' },
       ai_probability: { type: 'int' },
       risk_score: { type: 'int' },
+      risk_reasons: { type: 'json' },
+      eus_status: { type: 'enum', values: ['not_requested', 'requested', 'received'], humanOnly: true },
       lost_reason: { type: 'string' },
       closed_at: { type: 'datetime', readOnly: true },
     },

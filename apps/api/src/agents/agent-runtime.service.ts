@@ -16,7 +16,13 @@ export type ActionWrite =
   | { kind: 'field'; object: ObjectName; id: string; field: string; old: unknown; new: unknown }
   | { kind: 'create'; object: ObjectName; id: string }
   | { kind: 'task'; id: string }
-  | { kind: 'outbound'; id: string };
+  | { kind: 'outbound'; id: string }
+  | { kind: 'row'; table: string; id: string; label?: string };
+
+/** Executes a module-specific action type (quotes, deal registrations) and returns its reversible effects. */
+export type ActionExecutor = (db: Db, tenantId: string, agentId: string, actionId: string, action: ProposedAction) => Promise<ActionWrite[]>;
+/** Undoes one 'row' write during rollback; returns false if it can no longer be undone. */
+export type RowUndo = (db: Db, id: string) => Promise<boolean>;
 
 export interface AgentActionRow {
   id: string;
@@ -55,6 +61,8 @@ export const agentPrincipal = (tenantId: string, agentId: string): Principal => 
 @Injectable()
 export class AgentRuntime {
   private readonly log = new Logger('AgentRuntime');
+  private readonly executors = new Map<string, ActionExecutor>();
+  private readonly undoers = new Map<string, RowUndo>();
 
   constructor(
     private readonly dbs: DbService,
@@ -63,6 +71,14 @@ export class AgentRuntime {
     private readonly metadata: MetadataService,
     private readonly events: EventBus,
   ) {}
+
+  registerExecutor(type: ProposedAction['type'], fn: ActionExecutor) {
+    this.executors.set(type, fn);
+  }
+
+  registerUndo(table: string, fn: RowUndo) {
+    this.undoers.set(table, fn);
+  }
 
   definitions(): AgentDefinition[] {
     return AGENTS;
@@ -183,6 +199,11 @@ export class AgentRuntime {
       case 'submit_quote':
       case 'clear_compliance':
         throw forbidden('not_executable', `${action.type} is not executable by the agent runtime`);
+      default: {
+        const fn = this.executors.get(action.type);
+        if (!fn) throw forbidden('not_executable', `No executor registered for ${action.type}`);
+        return fn(db, tenantId, agentId, actionId, action);
+      }
     }
   }
 
@@ -250,6 +271,12 @@ export class AgentRuntime {
           if (await this.outbound.recall(db, w.id)) reverted.push(`message ${w.id} recalled`);
           else skipped.push(`message ${w.id}: already sent, cannot be recalled`);
           break;
+        case 'row': {
+          const undo = this.undoers.get(w.table);
+          if (undo && (await undo(db, w.id))) reverted.push(`${w.label ?? w.table} ${w.id} withdrawn`);
+          else skipped.push(`${w.label ?? w.table} ${w.id}: already used, cannot be withdrawn`);
+          break;
+        }
       }
     }
     await db.query("UPDATE agent_actions SET decision = 'rolled_back', rolled_back_at = now(), reason = coalesce(reason,'') || $2 WHERE id = $1", [

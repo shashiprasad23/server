@@ -26,6 +26,16 @@ import { FINANCE_SYSTEM, FinanceSystemAdapter, ManualFinanceSystem } from './ada
 import { CloseController } from './deals/close.controller';
 import { WorkersService } from './workers/workers.service';
 import { HealthController } from './health.controller';
+import { CpqService } from './cpq/cpq.service';
+import { CpqController } from './cpq/cpq.controller';
+import { ComplianceService } from './compliance/compliance.service';
+import { ComplianceController } from './compliance/compliance.controller';
+import { InsightsService } from './insights/insights.service';
+import { InsightsController } from './insights/insights.controller';
+import { DemoDataService } from './insights/demo-data.service';
+import { InstalledBaseService } from './cs/installed-base.service';
+import { DealCoachAgent } from './agents/builtin/deal-coach.agent';
+import { QuoteAgent } from './agents/builtin/quote.agent';
 
 export interface AppOverrides {
   mailSender?: MailSender;
@@ -52,6 +62,9 @@ export class AppModule {
         ApprovalsController,
         IngestionController,
         CloseController,
+        CpqController,
+        ComplianceController,
+        InsightsController,
       ],
       providers: [
         { provide: APP_GUARD, useClass: AuthGuard },
@@ -69,6 +82,13 @@ export class AppModule {
         IdentityService,
         PipelineService,
         WorkersService,
+        CpqService,
+        ComplianceService,
+        InsightsService,
+        DemoDataService,
+        InstalledBaseService,
+        DealCoachAgent,
+        QuoteAgent,
       ],
     };
   }

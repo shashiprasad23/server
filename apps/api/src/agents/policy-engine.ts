@@ -54,6 +54,9 @@ export function evaluatePolicy(base: AgentDefinition, state: AgentState, action:
   if (HUMAN_ONLY_ACTIONS.has(action.type)) {
     return { decision: 'block', reversibility, reason: `human_only: agents may not perform ${action.type}` };
   }
+  if (!def.allowedActions.includes(action.type)) {
+    return { decision: 'block', reversibility, reason: `out_of_scope: ${def.id} may not ${action.type}` };
+  }
   if (state.actionsToday >= def.dailyActionCap) {
     return { decision: 'block', reversibility, reason: `daily_cap: ${def.dailyActionCap} actions per day reached` };
   }

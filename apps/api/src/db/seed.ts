@@ -1,5 +1,6 @@
 import { Client } from 'pg';
 import { loadConfig } from '../config/config';
+import { DEMO_CATALOG, DEMO_RESTRICTED_PARTIES } from '../cpq/catalog-seed';
 
 export const SEED = {
   tenantId: '00000000-0000-0000-0000-000000000001',
@@ -60,6 +61,27 @@ export async function seed(connectionString: string): Promise<void> {
        ON CONFLICT (tenant_id, object, key) DO NOTHING`,
       [SEED.tenantId, JSON.stringify(['none', 'registered', 'preferred', 'elite'])],
     );
+    for (const p of DEMO_CATALOG) {
+      await c.query(
+        `INSERT INTO products (tenant_id, sku, name, category, oem, gpu_model, gpus_per_unit, power_kw, rack_units, cooling, unit,
+                               list_price, cost, stock, lead_time_weeks, export_class, price_valid_until, source, attrs)
+         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16, current_date + 30, 'demo_price_list', $17)
+         ON CONFLICT (tenant_id, sku) DO NOTHING`,
+        [
+          SEED.tenantId, p.sku, p.name, p.category, p.oem ?? null, p.gpu_model ?? null, p.gpus_per_unit ?? 0, p.power_kw ?? 0,
+          p.rack_units ?? 0, p.cooling ?? 'air', p.unit ?? 'each', p.list_price, p.cost, p.stock, p.lead_time_weeks, p.export_class,
+          JSON.stringify(p.attrs ?? {}),
+        ],
+      );
+    }
+    const rp = await c.query('SELECT count(*)::int AS n FROM restricted_parties WHERE tenant_id = $1', [SEED.tenantId]);
+    if (rp.rows[0].n === 0) {
+      for (const r of DEMO_RESTRICTED_PARTIES) {
+        await c.query('INSERT INTO restricted_parties (tenant_id, name, country, list_name, aliases) VALUES ($1,$2,$3,$4,$5)', [
+          SEED.tenantId, r.name, r.country, r.list_name, r.aliases,
+        ]);
+      }
+    }
     await c.query('COMMIT');
   } catch (err) {
     await c.query('ROLLBACK');
