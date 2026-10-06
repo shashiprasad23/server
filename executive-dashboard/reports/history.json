@@ -262,5 +262,47 @@
     "openBugs": 0
    }
   }
+ },
+ {
+  "date": "2026-10-06",
+  "window": "22 Sep\u20135 Oct",
+  "issuesMoved30": 1543,
+  "closed30": 883,
+  "closedWindow": 194,
+  "pastDue": 41,
+  "hours": 914.8,
+  "registerRed": 1,
+  "programmes": {
+   "MT": {
+    "closed30": 260,
+    "pastDue": 4,
+    "openBugs": 4
+   },
+   "MR": {
+    "closed30": 159,
+    "pastDue": 6,
+    "openBugs": 18
+   },
+   "USP": {
+    "closed30": 431,
+    "pastDue": 31,
+    "openBugs": 45
+   },
+   "UC": {
+    "closed30": 32,
+    "pastDue": 0,
+    "openBugs": 0
+   },
+   "PULSE": {
+    "closed30": 1,
+    "pastDue": 0,
+    "openBugs": 0
+   },
+   "ATLAS": {
+    "closed30": 0,
+    "pastDue": 0,
+    "openBugs": 0
+   }
+  }
  }
 ]

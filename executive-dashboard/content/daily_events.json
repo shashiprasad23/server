@@ -851,6 +851,46 @@
         "MR-1304",
         "MR-1307"
       ]
+    },
+    {
+      "date": "2026-10-06",
+      "project": "MT",
+      "type": "milestone",
+      "title": "Product grid, filters and product page front end closed; category-disable plan closed",
+      "keys": [
+        "MT-1234",
+        "MT-1241",
+        "MT-1438"
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "project": "MT",
+      "type": "change",
+      "title": "Live chat widget story added; seven NVIDIA AI server fixes raised",
+      "keys": [
+        "MT-1577",
+        "PC-146"
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "project": "MR",
+      "type": "testing",
+      "title": "Chatbot QA bug raised with three subtasks; four page bugs, two fixed the same day",
+      "keys": [
+        "MR-1309",
+        "MR-1313"
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "project": "ATLAS",
+      "type": "progress",
+      "title": "CRM MVP scope and specification subtask added",
+      "keys": [
+        "ATLAS-2"
+      ]
     }
   ],
   "pipelineNote": "All 35 listings are in production: 27 moved by 22 Sep and the 8 Vera Rubin products on 28 Sep. <b>None are live</b>: each was disabled after validation, pending approval."
