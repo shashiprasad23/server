@@ -120,6 +120,7 @@ section.block>*,.two>*,.panel,.deep>*{min-width:0}
 .decisions .d{grid-column:2;color:var(--muted);font-size:13.5px}
 
 /* pills */
+#mp-eta{white-space:normal;line-height:1.3}
 .pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;line-height:1;padding:5px 9px 5px 8px;border-radius:999px;white-space:nowrap;background:var(--grey-soft);color:var(--grey)}
 .pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;flex:none}
 .pill.red{background:var(--bad-soft);color:var(--bad)} .pill.red::before{border-radius:1px;transform:rotate(45deg)}
@@ -213,6 +214,29 @@ ul.clean{margin:0;padding-left:18px;display:grid;gap:6px;font-size:14px;color:va
 .deep .q b{font-weight:600;color:var(--ink)}
 .nolog{display:flex;flex-wrap:wrap;gap:6px}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.hl{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr))}
+.hl>article{border:1px solid var(--rule);border-radius:10px;padding:14px 16px;display:grid;gap:10px;align-content:start;background:var(--surface);min-width:0}
+.hl h4,.wl h4,.dep h4{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:500;margin:0}
+.hl .item{display:grid;gap:3px;padding-top:8px;border-top:1px solid var(--rule-2)}
+.hl .item:first-of-type{border-top:0;padding-top:0}
+.hl .item .t{display:flex;gap:8px;justify-content:space-between;align-items:baseline;flex-wrap:wrap;font-weight:600;font-size:14px}
+.hl .item p{margin:0;font-size:13.5px;color:var(--ink-2)}
+.hl .item .ask{font-size:13px;color:var(--ink)}
+.hl ul,.dep ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:5px;font-size:13px}
+.hl li,.dep li{display:grid;grid-template-columns:auto 1fr;gap:1px 8px}
+.hl li .m,.dep li .m{grid-column:2;color:var(--muted);font-size:12px}
+.wl{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr))}
+.wl>article{border:1px solid var(--rule);border-radius:10px;padding:14px 16px;display:grid;gap:8px;align-content:start;background:var(--surface);min-width:0}
+.wl .nums{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.wl .nums div{background:var(--surface-2);padding:7px 8px;display:grid}
+.wl .nums b{font-family:var(--font-display);font-size:18px;font-weight:600;font-variant-numeric:tabular-nums}
+.wl .nums span{font-size:11px;color:var(--muted)}
+.wl ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:13px;color:var(--ink-2)}
+.wl p.q{font-size:13.5px;color:var(--ink-2);margin:0}
+.wl p.q b{color:var(--ink);font-weight:600}
+@media (max-width:640px){ .wl .nums{grid-template-columns:repeat(3,1fr)} }
+.dep{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
+.dep>article{border:1px solid var(--rule);border-radius:10px;padding:14px 16px;display:grid;gap:8px;align-content:start;background:var(--surface);min-width:0}
 .spot{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}
 .spot>article{border:1px solid var(--rule);border-radius:10px;padding:14px 16px;display:grid;gap:10px;align-content:start;background:var(--surface);min-width:0}
 .spot .nums{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
@@ -329,6 +353,24 @@ footer.notes code{font-family:var(--font-mono);font-size:12px;background:var(--s
     <div class="filters" id="risk-filters" role="group" aria-label="Filter by review verdict"></div>
     <div class="panel flush"><div class="tscroll"><table class="risk-table" id="risk-table"></table></div></div>
 
+    <div class="panel" id="missed-wrap" hidden>
+      <h3>Missed due dates and the impact on each timeline</h3>
+      <p class="muted" style="font-size:13px;margin-top:4px;max-width:90ch">Every open ticket past its due date, in every programme, plus due dates pushed later in the last three weeks (found by comparing the daily Jira snapshots). "Shipped, not closed" means the work is in production but the ticket was never closed: housekeeping, not a delay.</p>
+      <div class="tscroll" style="margin-top:12px"><table id="missed"></table></div>
+      <div id="missed-detail" style="margin-top:6px"></div>
+    </div>
+
+    <div class="panel" id="dep-wrap" hidden>
+      <h3>Dependencies: design team timelines and pending design feedback</h3>
+      <p class="muted" style="font-size:13px;margin-top:4px;max-width:90ch" id="dep-lede"></p>
+      <div class="callout warn" id="dep-asks" style="margin-top:12px"></div>
+      <div class="dep" id="dep" style="margin-top:14px"></div>
+      <div class="two" style="margin-top:14px">
+        <div><h3 style="font-size:15px">Design team, open and late work</h3><div class="tscroll" style="margin-top:8px"><table id="dep-owners"></table></div></div>
+        <div><h3 style="font-size:15px">Report tickets waiting on design input</h3><ul class="clean" id="dep-waiting" style="margin-top:8px"></ul></div>
+      </div>
+    </div>
+
     <div class="two">
       <div class="panel" id="reported-risk"></div>
       <div class="panel">
@@ -353,6 +395,11 @@ footer.notes code{font-family:var(--font-mono);font-size:12px;background:var(--s
       <span class="eyebrow">Review point 3</span>
       <h2>Project-wise accomplishments</h2>
       <p class="ask"><b>Asked for:</b> real progress per project. For Marketplace, what reached UAT and production, what is pending, open issues and the completion date. For Marketing, testing done against total scope.</p>
+    </div>
+    <div class="panel" id="hl-wrap" hidden>
+      <h3>Key highlights by project</h3>
+      <p class="muted" style="font-size:13px;margin-top:4px;max-width:90ch">New initiatives, the next demo or milestone, and the dates Jira does not hold yet. "No date in Jira" means nobody has committed to one; the ask says who should.</p>
+      <div class="hl" id="hl" style="margin-top:14px"></div>
     </div>
     <div class="scorecards" id="scorecards"></div>
 
@@ -395,6 +442,11 @@ footer.notes code{font-family:var(--font-mono);font-size:12px;background:var(--s
       <span class="eyebrow">Review point 4</span>
       <h2>Resource utilisation</h2>
       <p class="ask"><b>Asked for:</b> allocation, planned versus actual work and available capacity per person. Explain the low-utilisation examples.</p>
+    </div>
+    <div class="panel" id="wl-wrap" hidden>
+      <h3>Performance watch list</h3>
+      <p class="muted" style="font-size:13px;margin-top:4px;max-width:90ch" id="wl-lede"></p>
+      <div class="wl" id="wl" style="margin-top:14px"></div>
     </div>
     <div class="callout warn" id="attrib"></div>
     <div class="stats" id="quality"></div>
@@ -700,6 +752,81 @@ const CAL = /*__CAL__*/[];
       ${n.question?`<p class="q"><b>Open question.</b> ${esc(n.question)}</p>`:""}
       ${n.verify?`<p class="q"><b>To verify.</b> ${keyify(n.verify)}</p>`:""}
     </article>`;}).join("");
+
+
+  // missed due dates
+  const MS = D.missed || [];
+  $("#missed-wrap").hidden = !MS.length;
+  if (MS.length) {
+    const nm = id => (D.scorecards.find(c=>c.id===id)||{}).name || id;
+    $("#missed").innerHTML = `<thead><tr><th>Programme</th><th class="r">Open past due</th><th class="r">Really late</th><th class="r">Shipped, not closed</th><th class="r">Median · worst</th><th class="r">Re-dated, 3 wks</th><th class="r">Closed late, 14 d</th><th>Timeline impact</th></tr></thead><tbody>${
+      MS.map(m=>{
+        const rg = m.redatedGroups.map(g=>`${g.count} moved ${dshort(g.from)} → ${dshort(g.to)}`).join("; ");
+        const par = m.parents.slice(0,3).map(x=>`${J(x.key)} (${x.late})`).join(", ");
+        let impact = [];
+        if (m.realLate) impact.push(`${m.realLate} open item${m.realLate>1?"s":""} late by a median of ${m.medianLate} days, worst ${m.maxLate}.`);
+        if (rg) impact.push(`Due dates pushed: ${rg}.`);
+        if (par) impact.push(`Parents held up: ${par}.`);
+        if (m.closedLate14) impact.push(`${m.closedLate14} closed late in 14 days, ${m.closedLateDays} days late on average.`);
+        if (!impact.length) impact.push("No missed dates.");
+        return `<tr><td>${esc(m.name)}</td><td class="r num" style="${m.open?"color:var(--bad);font-weight:600":""}">${m.open}</td><td class="r num">${m.realLate}</td><td class="r num">${m.shippedNotClosed}</td><td class="r num">${m.open?`${m.medianLate} · ${m.maxLate} d`:"—"}</td><td class="r num">${m.redated.length||"—"}</td><td class="r num">${m.closedLate14||"—"}</td><td style="font-size:13px;color:var(--ink-2)">${impact.join(" ")}</td></tr>`;}).join("")}</tbody>`;
+    $("#missed-detail").innerHTML = MS.filter(m=>m.open||m.redated.length).map(m=>`<details class="more"><summary>${esc(m.name)}: ${m.open} past due${m.redated.length?`, ${m.redated.length} re-dated`:""}</summary>
+      <div class="tscroll" style="margin-top:8px"><table><thead><tr><th>Ticket</th><th>Status · owner</th><th class="r">Due</th><th class="r">Days late</th><th>Impact</th></tr></thead><tbody>${
+        m.items.map(i=>`<tr><td>${J(i.key)} <span class="chip">${esc(i.type||"")}</span><span class="sub" style="color:var(--ink-2)">${esc(i.summary)}</span></td><td>${esc(i.status)}<span class="sub">${esc(i.assignee||"Unassigned")}</span></td><td class="r num">${dshort(i.due)}${i.redated?`<span class="sub">was ${dshort(i.redated.from)}</span>`:""}</td><td class="r num" style="${i.daysLate>14?"color:var(--bad);font-weight:600":""}">${i.daysLate}</td><td style="font-size:13px">${keyify(i.impact)}</td></tr>`).join("")}
+        ${m.redated.filter(r=>!m.items.some(i=>i.key===r.key)).slice(0,40).map(r=>`<tr><td>${J(r.key)}<span class="sub" style="color:var(--ink-2)">${esc(r.summary)}</span></td><td>${esc(r.status)}<span class="sub">${esc(r.assignee||"Unassigned")}</span></td><td class="r num">${dshort(r.to)}<span class="sub">was ${dshort(r.from)}</span></td><td class="r num">+${r.slip}</td><td style="font-size:13px">Re-dated on ${dshort(r.on)}, not yet late.</td></tr>`).join("")}</tbody></table></div></details>`).join("");
+  }
+
+  // design dependencies
+  const DD = D.designDeps;
+  $("#dep-wrap").hidden = !DD;
+  if (DD) {
+    const all = DD.groups.flatMap(g=>g.open), dn = DD.groups.reduce((a,g)=>a+g.done30,0), dl = DD.groups.reduce((a,g)=>a+g.doneLate30,0);
+    $("#dep-lede").innerHTML = `The design team (${DD.team.map(esc).join(", ")}) plans its work on the Design &amp; Creative board (VTN) and the Design Marketing board (DM). Their due dates are the design timelines the build teams wait on. <b>${all.filter(r=>r.daysLate>0).length} of ${all.length}</b> open design tasks are past their date, and <b>${dl} of ${dn}</b> finished in the last 30 days finished late. ${DD.staleCount} older items with no activity in 60 days are left out.`;
+    const asks = (D.designNotes||{}).asks || [];
+    $("#dep-asks").hidden = !asks.length;
+    $("#dep-asks").innerHTML = `<b>Asks for the design team.</b><ul class="clean" style="margin-top:6px">${asks.map(a=>`<li>${keyify(a)}</li>`).join("")}</ul>`;
+    $("#dep").innerHTML = DD.groups.filter(g=>g.open.length).map(g=>`<article>
+      <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline"><h3 style="font-size:15px">${esc(g.name)}</h3>${g.pastDue?pill("red",`${g.pastDue} past due`):pill("green","On date")}</div>
+      <span class="muted" style="font-size:12.5px">${g.open.length} open · ${g.inReview} waiting for review · ${g.done30} done in 30 days, ${g.doneLate30} of them late (${g.doneLateDays} days on average)${g.next?` · next due ${dshort(g.next.due)}`:""}</span>
+      ${g.open.length?`<ul>${g.open.map(r=>`<li><span>${J(r.key)}</span><span>${esc(r.summary)}</span><span class="m">${esc(r.status)} · ${esc(r.assignee||"Unassigned")} · ${r.due?(r.daysLate?`<b style="color:var(--bad);font-weight:600">due ${dshort(r.due)}, ${r.daysLate} d late</b>`:`due ${dshort(r.due)}`):"no due date"}</span></li>`).join("")}</ul>`:`<p class="muted" style="font-size:13px;margin:0">Nothing open.</p>`}
+    </article>`).join("");
+    $("#dep-owners").innerHTML = `<thead><tr><th>Designer</th><th class="r">Open</th><th class="r">Past due</th><th class="r">Done, 30 d</th></tr></thead><tbody>${DD.owners.map(o=>`<tr><td>${esc(o.name)}</td><td class="r num">${o.open}</td><td class="r num" style="${o.pastDue?"color:var(--bad);font-weight:600":""}">${o.pastDue}</td><td class="r num">${o.done30}</td></tr>`).join("")}</tbody>`;
+    $("#dep-waiting").innerHTML = DD.waitingOnDesign.length ? DD.waitingOnDesign.map(w=>`<li>${J(w.key)} ${esc(w.summary)} <span class="muted">· ${esc(w.status)} · ${esc(w.assignee||"Unassigned")}</span></li>`).join("") : `<li class="muted">None open.</li>`;
+  }
+
+  // key highlights
+  const HL = D.highlights, KH = D.keyHighlights || {};
+  $("#hl-wrap").hidden = !HL;
+  if (HL) {
+    $("#hl").innerHTML = D.scorecards.map(c=>{
+      const h = HL[c.id] || {new:[],next:[]}, cur = KH[c.id] || [];
+      const ul = (arr, metaFn) => `<ul>${arr.map(i=>`<li><span>${J(i.key)}</span><span>${esc(i.summary)}</span><span class="m">${metaFn(i)}</span></li>`).join("")}</ul>`;
+      return `<article>
+        <h3 style="font-size:16px">${esc(c.name)}</h3>
+        ${cur.map(x=>`<div class="item"><div class="t"><span>${esc(x.topic)}</span>${x.date?pill(x.rag||"",`Due ${dshort(x.date)}`):pill(x.rag||"amber","No date in Jira")}</div><p>${keyify(x.status)}</p>${x.ask?`<p class="ask"><b>Ask:</b> ${keyify(x.ask)}</p>`:""}</div>`).join("")}
+        ${h.new.length?`<div><h4>New in the last 7 days · ${h.newCount}</h4>${ul(h.new, i=>`${esc(i.status)} · raised ${dshort(i.created)} · ${esc(i.assignee||"Unassigned")}${i.due?` · due ${dshort(i.due)}`:" · no due date"}`)}</div>`:""}
+        ${h.next.length?`<div><h4>Next dated milestones</h4>${ul(h.next, i=>`${esc(i.status)} · due ${dshort(i.due)} · ${esc(i.assignee||"Unassigned")}`)}</div>`:`<p class="muted" style="font-size:13px;margin:0">No upcoming due dates in Jira${h.undatedInProgress?`; ${h.undatedInProgress} stories or epics are in progress with no due date`:""}.</p>`}
+      </article>`;}).join("");
+  }
+
+  // performance watch list
+  const WL = D.watch || [];
+  $("#wl-wrap").hidden = !WL.length;
+  if (WL.length) {
+    const red = WL.filter(w=>(w.note||{}).rag==="red").length;
+    $("#wl-lede").innerHTML = `People whose figures need a management look: below 60% of capacity, nothing closed, three or more items past due, or raised by management. Jira credits hours and closures to whoever holds a ticket at the end, so these are prompts to check, not verdicts; the Tempo report by worker is the tie-breaker. ${red?`<b>${red} ${red>1?"people need":"person needs"} a decision this week.</b>`:""} ${(D.watchExcluded||[]).length?`Excluded at your request: ${D.watchExcluded.map(esc).join(", ")}; their past-due items still appear under Risks.`:""}`;
+    $("#wl").innerHTML = WL.map(w=>{
+      const n = w.note || {};
+      return `<article>
+        <div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline"><h3 style="font-size:16px">${esc(w.name)}</h3>${n.rag?pill(n.rag, n.rag==="red"?"Decision needed":n.rag==="green"?"Explained":"Review"):pill("amber","Review")}</div>
+        <div class="nums"><div><b>${w.pctCapacity}%</b><span>${w.hours} h</span></div><div><b>${w.done}</b><span>closed</span></div><div><b>${w.open}</b><span>open</span></div><div><b style="${w.overdue>=3?"color:var(--bad)":""}">${w.overdue}</b><span>past due</span></div><div><b>${w.bugsRaised}</b><span>bugs raised</span></div></div>
+        <div class="flags">${w.flags.map(f=>pill(f[0],f[1])).join(" ")}</div>
+        ${n.assessment?`<p class="q"><b>Assessment.</b> ${esc(n.assessment)}</p>`:""}
+        ${(n.evidence||[]).length?`<ul>${n.evidence.map(e=>`<li>${keyify(e)}</li>`).join("")}</ul>`:""}
+        ${n.action?`<p class="q"><b>Action.</b> ${keyify(n.action)}</p>`:""}
+        ${n.pip?`<p class="q"><b>PIP status.</b> ${esc(n.pip)}</p>`:""}
+      </article>`;}).join("");
+  }
 
   // method
   $("#method").innerHTML = `

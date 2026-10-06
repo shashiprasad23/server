@@ -52,6 +52,21 @@ DECISIONS NEEDED
 - New: Sitemap exposes 250 of 500+ URLs (High/Medium). The production sitemap lists 250 URLs. More than 500 are expected. This hurts SEO and caps automated test coverage. Mitigation: Fix the sitemap generator, then extend Playwright coverage to the full URL list.
 - New: Time-logging data cannot support utilisation reporting (High/High). Every Tempo worklog in the window uses the generic description 'time-tracking'. Marketing content, Design, Infrastructure and Hamara CRM have no Tempo hours against Jira at all. Mitigation: Enforce the SOP rule that a description is mandatory. Pull the weekly utilisation view from Tempo by worker, not by Jira assignee.
 - New: Marketplace QA automation has no owner (Medium/Medium). The end-to-end automation framework was moved to backlog after the assigned engineer left on 23 Jul. Web-Marketing has working Playwright automation (MR-1165) that could be reused. Mitigation: Reuse the Web-Marketing Playwright setup for a Marketplace smoke suite.
+- Past due, Web-Marketplace: 4 open, most late 217 d. MT-376 Implement Order Filters Backend Support as per New Figma Design (217 d, Task still open past its date.); MT-1053 Create Backend APIs for PO Order Details Form (36 d, Task still open past its date.); MT-992 Update PO email layout structure (36 d, Task still open past its date.); MT-1331 P2 - As a buyer I want to return items and get a refund or credit so I can resolve issues post-delivery (21 d, Feature not delivered by its date.)
+- Past due, Web-Marketing: 6 open, most late 124 d. MR-736 Adding Search Button Instead of reset all filter on all post type pages (124 d, Shipped, but the ticket is not closed: housekeeping, no delivery impact.); MR-738 Adding "To Top" button to Footer (120 d, Shipped, but the ticket is not closed: housekeeping, no delivery impact.); MR-740 Removing Globe Control  (120 d, Shipped, but the ticket is not closed: housekeeping, no delivery impact.); MR-739 Implementing Article Page with configurations (119 d, Shipped, but the ticket is not closed: housekeeping, no delivery impact.)
+- Past due, Web-Uvation Services Platform: 31 open, most late 21 d. USP-4142 Update AI Servers in Traditional AI Factory – Remove Older Servers and Add Latest Models (21 d, Task still open past its date.); USP-4200   Invitation emails failures in notification backend (18 d, Task still open past its date.); USP-4214 MSA: signer details come from the signed-in user's Identity profile again (14 d, Shipped, but the ticket is not closed: housekeeping, no delivery impact.); USP-4207 Unread state for chats and service requests (11 d, Holds up USP-4252: Support HUB v2)
+
+DEPENDENCIES: DESIGN
+- Ask: Ask Raluca Conea for re-committed dates on the Marketplace RMA flow explanations (VTN-1826, due 2 Sep), the Marketplace Figma file clean-up (VTN-1820, due 11 Sep) and the marketing website USP Figma file (VTN-1819, due 15 Sep), and record them in Jira.
+- Ask: Sign off the Marketplace banners and the 30-product update (VTN-1870, VTN-1873), waiting for review since 2 Oct.
+- Ask: Get a new date for the marketing website redesign (VTN-1875, due 30 Sep): the new home page work (MR-1169) depends on it.
+- Ask: USP dashboard last edits (VTN-1881) were due 2 Oct and the credit card design (VTN-1812) 11 Sep; both are still in progress.
+- Web-Marketplace: 7 open, 5 past due, next date 2026-10-06 VTN-1882
+- Web-Marketing: 3 open, 3 past due, next date none set
+- Web-Uvation Services Platform: 7 open, 2 past due, next date 2026-10-07 VTN-1883
+- Other design work: 7 open, 7 past due, next date none set
+- Waiting on design: MR-1198 Coordinating with Team & Design Gaps (In Progress)
+- Waiting on design: MT-1581 Coordinating with Team & Design Gaps (TODO)
 
 2. ISSUES AND PREVENTIVE ACTIONS
 - Policy change identified during UAT is not recorded anywhere in Jira [Open – gap] (Marketplace, surfaced UAT)
@@ -121,6 +136,20 @@ DECISIONS NEEDED
   Prevention: Keep a decision log per project and link reversals to the original decision.
 
 3. PROJECT PROGRESS
+- Web-Marketplace · Live chat widget across Marketplace (new): Raised 6 Oct (MT-1577) with setup, build and QA subtasks; chat platform not chosen yet (MT-1578). Date: not set. Ask: Set a target date and confirm the chat platform.
+- Web-Marketplace · RMA item-level decisions: In progress (MT-1540, 9 subtasks), owner Saurabh Jain. Date: 2026-10-15. Ask: -
+- Web-Marketplace · Release testing: smoke, security and privacy: Three stories raised 30 Sep (MT-1541, MT-1547, MT-1553), all still To Do. Date: 2026-10-15. Ask: Confirm they can start this week; nine days remain.
+- Web-Marketplace · AI-server listings go-live: All 35 listings are in production but disabled pending approval. Date: not set. Ask: Name the approver and the approval date. Nothing in Jira tracks it.
+- Web-Marketing · Release of the 29 Figma fixes and the sitemap fix: Ready for Prod since 1 Oct (MR-1179, MR-1199), not released. Date: not set. Ask: Set the production release date.
+- Web-Marketing · Chatbot on the marketing site: QA started 6 Oct (MR-1309): three defects logged, none fixed. Date: not set. Ask: Set a fix date before the chatbot goes live on the site.
+- Web-Marketing · New home page design and API: In progress since 15 Sep (MR-1169), no due date; depends on the marketing website redesign (VTN-1875), which is past its 30 Sep design date. Date: not set. Ask: Get a revised design date from the design team.
+- Web-Uvation Services Platform · Sprint end moved to 30 Oct: 78 items that missed 30 Sep were re-dated to 30 Oct on 2 Oct, including the three S1 production bugs (USP-4229, USP-4230, USP-4231). Date: 2026-10-30. Ask: Ask for a fix date on the S1 bugs that is earlier than the sprint end.
+- Web-Uvation Services Platform · Support Hub v2 (new): Story raised 1 Oct (USP-4252), in progress, owner Silviu Oltean. Date: 2026-10-30. Ask: -
+- Uvation Conversational AI · Next chatbot demo: No demo is scheduled or tracked in Jira. Last delivered on 1 Oct: the CSM Teams dashboard (UC-215) and the logged-in marketplace user (UC-216). Four stories are due 15 Oct: marketplace sign-in for the chatbot (UC-225), live agent handoff via Teams (UC-22), admin analytics (UC-25) and model selection (UC-26). UC-25 and UC-26 have not started. Date: 2026-10-15. Ask: Confirm a demo date with Ankit Saxena and Nareddy Shiva Prasad Reddy; 15 Oct is the earliest date the planned work could be shown.
+- Uvation Pulse · Interactive AI Factory Experience (new, Anshul Bhargava): Started 6 Oct on the Uvation Projects board (UP-40): a 3D data hall with racks, GPU drill-down, health overlays and live USP subscription data. 6 of its 9 subtasks were created and closed the same day; 4 h logged. Date: not set. Ask: Confirm which programme it belongs to, who sponsors it and when it will be demonstrated.
+- Uvation Pulse · Rafay SSO integration (new, Anshul Bhargava): Started 6 Oct (UP-41): the SSO meeting, API documentation and Azure AD B2C SAML metadata are done. Date: not set. Ask: Set a target date.
+- Uvation Pulse · Uvation Pulse platform: 329 tickets, all held by Anshul Bhargava; one done, none dated. Date: not set. Ask: Set dates for at least the 8 epics.
+- Atlas CRM · CRM MVP plan: No date in Jira. ATLAS-1 'R&D on CRM for MVP' is in To Do with 8.25 h logged; the scope and specification task (ATLAS-2) was created on 6 Oct for Saurabh Jain without a due date. Date: not set. Ask: Ask Anshul Bhargava and Saurabh Jain when the MVP plan will be shared and record it as the due date on ATLAS-2.
 - Web-Marketplace: 319 moved, 260 closed (30 d), 4 past due, 0 blocked, 4 open bugs. 18 items closed on 6 Oct: six product grid, filter and product page front-end subtasks (MT-1234 to MT-1245), the token-claim clean-up (MT-1405, MT-1406), the category-disable plan (MT-1438) and its performance check, the RMA status timeline (MT-1487) and the user account flow (MT-1498). The URL disposition decision was re-raised as MT-1576. A live chat widget story (MT-1577, 3 subtasks) and seven NVIDIA AI server fixes (PC-146 to PC-152, three done) were added. The catalogue re-check (PC-136) is still in progress. Past due fell from 8 to 4.
 - Web-Marketing: 283 moved, 159 closed (30 d), 6 past due, 1 blocked, 18 open bugs. A chatbot QA bug (MR-1309) with three subtasks and four more page bugs were raised on 6 Oct; two of those were fixed the same day. Open bugs are now 18, none rated. MR-1168 moved to Ready for Prod. The sitemap fix (MR-1199) and 29 Figma fixes are still Ready for Prod and not released, and related products content on the AI Factory pages (MR-1265) is still blocked. 6 items are past due, five of them June tasks in the 'In Prod1' status.
 - Web-Uvation Services Platform: 568 moved, 431 closed (30 d), 31 past due, 2 blocked, 45 open bugs. Quiet on 6 Oct: two bugs closed (one S2 add-on description issue, USP-4056) and one task was added. The three S1 production bugs (wrong AI Factory prices and a Document API 502) are still in To Do, now due 30 Oct. 31 items are past due and 45 bugs are open, 5 of them S1.
@@ -133,6 +162,18 @@ DECISIONS NEEDED
 
 4. RESOURCE UTILISATION
 Capacity 72 h per person for the window. Tempo writes every worklog to Jira under its own app account, so Jira cannot say who logged an hour. Hours here are credited to each ticket's current assignee. When a developer's ticket is handed to QA, the developer's hours move with it. Any day above 10 hours for one person is flagged for this reason.
+- REVIEW Sapavat Yadagiri: 3 items past due, Hours not credible: a 18.0 h day. Raised by management on 6 Oct as not performing. Action: Decide whether to start a PIP. No PIP and no discussion with Farhat Quadiri is recorded in Jira or Confluence. Discuss with Farhat Quadiri, then set 30-day QA targets: bugs logged per sprint, test cases written and run, and a start date for MT-1141. PIP: Not started
+- REVIEW Shivam Dhoundiyal: 38% of capacity logged, Nothing closed in the window. Low output in the window. Action: Review the blocker and the workload with Shivam Dhoundiyal; check Tempo by worker for time logged elsewhere.
+- REVIEW Ankit Sharma: 3% of capacity logged. Almost no hours on own tickets. Action: Confirm allocation and where the rest of the time is logged.
+- REVIEW Parth: 3% of capacity logged. Almost no hours on own tickets. Action: Confirm allocation; MT-1553 needs a start this week.
+- REVIEW Gourav Agnani: 28% of capacity logged. Low hours in the window. Action: Confirm allocation and leave; check Tempo by worker.
+- REVIEW Kunal Jangid: 5 items past due, Hours not credible: a 20.2 h day. Flags come from ticket hygiene, not output. Action: Ask Kunal Jangid to close the shipped June tasks; check Tempo by worker for the real hours.
+- REVIEW Kannan Elangovan: 6% of capacity logged, Nothing closed in the window. Low hours, but output is high: no concern on this data. Action: No action. Use Tempo by worker to confirm hours.
+- REVIEW Shashi Prasad K: 13% of capacity logged. Work sits outside the report boards. Action: No action.
+- REVIEW Yash Janeshwar: No Tempo hours on own tickets, Nothing closed in the window
+- REVIEW shubham kuchwar: 40% of capacity logged
+- REVIEW Nagamuni Valluri: 54% of capacity logged
+- REVIEW Suganya Murugaraj: 55% of capacity logged
 - Kunal Jangid: 118.6 h (165%), 9 days, peak 20.2 h — A day over 10 h (other people's hours or bulk logging)
 - Sapavat Yadagiri: 86.5 h (120%), 9 days, peak 18.0 h — A day over 10 h (other people's hours or bulk logging)
 - Vishnu kumar yadav: 70.5 h (98%), 9 days, peak 12.8 h — A day over 10 h (other people's hours or bulk logging)

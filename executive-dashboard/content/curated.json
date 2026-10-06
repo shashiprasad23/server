@@ -754,5 +754,208 @@
       "question": "Is Rupkatha still allocated to the Product Catalog work? Jira shows no activity on these tickets in the last 26 days.",
       "verify": "Confirm Rupkatha's allocation. Close PC-118, PC-122 and PC-123 as superseded, or reassign them with dates."
     }
+  },
+  "keyHighlights": {
+    "MT": [
+      {
+        "topic": "Live chat widget across Marketplace (new)",
+        "status": "Raised 6 Oct (MT-1577) with setup, build and QA subtasks; chat platform not chosen yet (MT-1578).",
+        "date": null,
+        "ask": "Set a target date and confirm the chat platform.",
+        "rag": "amber"
+      },
+      {
+        "topic": "RMA item-level decisions",
+        "status": "In progress (MT-1540, 9 subtasks), owner Saurabh Jain.",
+        "date": "2026-10-15",
+        "ask": null,
+        "rag": "green"
+      },
+      {
+        "topic": "Release testing: smoke, security and privacy",
+        "status": "Three stories raised 30 Sep (MT-1541, MT-1547, MT-1553), all still To Do.",
+        "date": "2026-10-15",
+        "ask": "Confirm they can start this week; nine days remain.",
+        "rag": "amber"
+      },
+      {
+        "topic": "AI-server listings go-live",
+        "status": "All 35 listings are in production but disabled pending approval.",
+        "date": null,
+        "ask": "Name the approver and the approval date. Nothing in Jira tracks it.",
+        "rag": "red"
+      }
+    ],
+    "MR": [
+      {
+        "topic": "Release of the 29 Figma fixes and the sitemap fix",
+        "status": "Ready for Prod since 1 Oct (MR-1179, MR-1199), not released.",
+        "date": null,
+        "ask": "Set the production release date.",
+        "rag": "amber"
+      },
+      {
+        "topic": "Chatbot on the marketing site",
+        "status": "QA started 6 Oct (MR-1309): three defects logged, none fixed.",
+        "date": null,
+        "ask": "Set a fix date before the chatbot goes live on the site.",
+        "rag": "amber"
+      },
+      {
+        "topic": "New home page design and API",
+        "status": "In progress since 15 Sep (MR-1169), no due date; depends on the marketing website redesign (VTN-1875), which is past its 30 Sep design date.",
+        "date": null,
+        "ask": "Get a revised design date from the design team.",
+        "rag": "amber"
+      }
+    ],
+    "USP": [
+      {
+        "topic": "Sprint end moved to 30 Oct",
+        "status": "78 items that missed 30 Sep were re-dated to 30 Oct on 2 Oct, including the three S1 production bugs (USP-4229, USP-4230, USP-4231).",
+        "date": "2026-10-30",
+        "ask": "Ask for a fix date on the S1 bugs that is earlier than the sprint end.",
+        "rag": "red"
+      },
+      {
+        "topic": "Support Hub v2 (new)",
+        "status": "Story raised 1 Oct (USP-4252), in progress, owner Silviu Oltean.",
+        "date": "2026-10-30",
+        "ask": null,
+        "rag": "green"
+      }
+    ],
+    "UC": [
+      {
+        "topic": "Next chatbot demo",
+        "status": "No demo is scheduled or tracked in Jira. Last delivered on 1 Oct: the CSM Teams dashboard (UC-215) and the logged-in marketplace user (UC-216). Four stories are due 15 Oct: marketplace sign-in for the chatbot (UC-225), live agent handoff via Teams (UC-22), admin analytics (UC-25) and model selection (UC-26). UC-25 and UC-26 have not started.",
+        "date": "2026-10-15",
+        "ask": "Confirm a demo date with Ankit Saxena and Nareddy Shiva Prasad Reddy; 15 Oct is the earliest date the planned work could be shown.",
+        "rag": "amber"
+      }
+    ],
+    "PULSE": [
+      {
+        "topic": "Interactive AI Factory Experience (new, Anshul Bhargava)",
+        "status": "Started 6 Oct on the Uvation Projects board (UP-40): a 3D data hall with racks, GPU drill-down, health overlays and live USP subscription data. 6 of its 9 subtasks were created and closed the same day; 4 h logged.",
+        "date": null,
+        "ask": "Confirm which programme it belongs to, who sponsors it and when it will be demonstrated.",
+        "rag": "amber"
+      },
+      {
+        "topic": "Rafay SSO integration (new, Anshul Bhargava)",
+        "status": "Started 6 Oct (UP-41): the SSO meeting, API documentation and Azure AD B2C SAML metadata are done.",
+        "date": null,
+        "ask": "Set a target date.",
+        "rag": "amber"
+      },
+      {
+        "topic": "Uvation Pulse platform",
+        "status": "329 tickets, all held by Anshul Bhargava; one done, none dated.",
+        "date": null,
+        "ask": "Set dates for at least the 8 epics.",
+        "rag": "red"
+      }
+    ],
+    "ATLAS": [
+      {
+        "topic": "CRM MVP plan",
+        "status": "No date in Jira. ATLAS-1 'R&D on CRM for MVP' is in To Do with 8.25 h logged; the scope and specification task (ATLAS-2) was created on 6 Oct for Saurabh Jain without a due date.",
+        "date": null,
+        "ask": "Ask Anshul Bhargava and Saurabh Jain when the MVP plan will be shared and record it as the due date on ATLAS-2.",
+        "rag": "red"
+      }
+    ]
+  },
+  "performance": {
+    "Sapavat Yadagiri": {
+      "rag": "red",
+      "assessment": "Raised by management on 6 Oct as not performing.",
+      "evidence": [
+        "QA on Marketplace, yet no bugs raised in the window; on the other boards Kannan Elangovan raised 14 and r.jaiswal 9.",
+        "The end-to-end test automation framework (MT-1141) has not started.",
+        "Three items past due: MT-1053 and MT-992 (due 31 Aug) and MT-1331 (due 15 Sep).",
+        "The 31 closures and 86.5 h credited in Jira are mostly developer subtasks passed to QA at the end (27 of 31), so they do not measure Sapavat's own output."
+      ],
+      "action": "Decide whether to start a PIP. No PIP and no discussion with Farhat Quadiri is recorded in Jira or Confluence. Discuss with Farhat Quadiri, then set 30-day QA targets: bugs logged per sprint, test cases written and run, and a start date for MT-1141.",
+      "pip": "Not started"
+    },
+    "Shivam Dhoundiyal": {
+      "rag": "amber",
+      "assessment": "Low output in the window.",
+      "evidence": [
+        "27.5 h logged over 5 of 9 working days (38% of capacity).",
+        "Nothing closed in the window.",
+        "Holds USP-3858 (subscription start and end dates) marked BLOCKER; its due date moved from 30 Sep to 30 Oct."
+      ],
+      "action": "Review the blocker and the workload with Shivam Dhoundiyal; check Tempo by worker for time logged elsewhere.",
+      "pip": null
+    },
+    "Gourav Agnani": {
+      "rag": "amber",
+      "assessment": "Low hours in the window.",
+      "evidence": [
+        "20 h logged over 3 of 9 working days (28% of capacity).",
+        "5 items closed, including the RMA refund email templates (MT-1496, MT-1497) on 30 Sep."
+      ],
+      "action": "Confirm allocation and leave; check Tempo by worker.",
+      "pip": null
+    },
+    "Parth": {
+      "rag": "amber",
+      "assessment": "Almost no hours on own tickets.",
+      "evidence": [
+        "2.5 h logged on 1 day in the window.",
+        "Holds 10 open items, including the Marketplace privacy compliance story (MT-1553), due 15 Oct and not started."
+      ],
+      "action": "Confirm allocation; MT-1553 needs a start this week.",
+      "pip": null
+    },
+    "Ankit Sharma": {
+      "rag": "amber",
+      "assessment": "Almost no hours on own tickets.",
+      "evidence": [
+        "2.5 h logged on 1 day in the window; 1 item closed (MT-1498)."
+      ],
+      "action": "Confirm allocation and where the rest of the time is logged.",
+      "pip": null
+    },
+    "Kannan Elangovan": {
+      "rag": "green",
+      "assessment": "Low hours, but output is high: no concern on this data.",
+      "evidence": [
+        "Raised 75 tickets in the window, including 14 bugs: the most of anyone.",
+        "Testing time lands on other people's tickets, so only 4.3 h shows against Kannan's own."
+      ],
+      "action": "No action. Use Tempo by worker to confirm hours.",
+      "pip": null
+    },
+    "Shashi Prasad K": {
+      "rag": "green",
+      "assessment": "Work sits outside the report boards.",
+      "evidence": [
+        "Most work is on the Design Marketing (DM) board: SEO, redirects and website fixes, 11 items closed there in 30 days."
+      ],
+      "action": "No action.",
+      "pip": null
+    },
+    "Kunal Jangid": {
+      "rag": "amber",
+      "assessment": "Flags come from ticket hygiene, not output.",
+      "evidence": [
+        "The 5 past-due items are June Marketing tasks (MR-735 to MR-740) in the 'In Prod1' status: shipped, but never closed.",
+        "118.6 h credited in the window, with one day over 20 h, so the hours figure is not credible on its own."
+      ],
+      "action": "Ask Kunal Jangid to close the shipped June tasks; check Tempo by worker for the real hours.",
+      "pip": null
+    }
+  },
+  "designDependencies": {
+    "asks": [
+      "Ask Raluca Conea for re-committed dates on the Marketplace RMA flow explanations (VTN-1826, due 2 Sep), the Marketplace Figma file clean-up (VTN-1820, due 11 Sep) and the marketing website USP Figma file (VTN-1819, due 15 Sep), and record them in Jira.",
+      "Sign off the Marketplace banners and the 30-product update (VTN-1870, VTN-1873), waiting for review since 2 Oct.",
+      "Get a new date for the marketing website redesign (VTN-1875, due 30 Sep): the new home page work (MR-1169) depends on it.",
+      "USP dashboard last edits (VTN-1881) were due 2 Oct and the credit card design (VTN-1812) 11 Sep; both are still in progress."
+    ]
   }
 }

@@ -51,6 +51,12 @@ def ul(items):
     return "<ul style=\"margin:4px 0 14px;padding-left:20px\">" + "".join(f'<li style="font-size:14px;line-height:1.5;margin:3px 0;color:{INK}">{i}</li>' for i in items) + "</ul>"
 
 
+def _due(r):
+    if not r["due"]:
+        return "no date"
+    return f"due {e(r['due'])}" + (f", {r['daysLate']} d late" if r["daysLate"] else "")
+
+
 def build(date, to):
     d = json.loads((ROOT / "reports" / date / "dashboard-data.json").read_text())
     hist = json.loads((ROOT / "reports" / "history.json").read_text())
@@ -124,11 +130,35 @@ def build(date, to):
     H.append(table(["Risk", "Likelihood · Impact", "Detail", "Mitigation", "Owner"], [
         [f"<b>{e(r['title'])}</b><br><span style=\"color:{MUTED}\">{e(r['project'])}</span>", pill(r["rag"], f"{r['likelihood']} · {r['impact']}"), e(r["detail"]), e(r["mitigation"]), e(r.get("suggestedOwner"))] for r in d["newRisks"]]))
 
+    missed = [m for m in d.get("missed", []) if m["open"]]
+    if missed:
+        H.append(p("<b>Tickets past their due date, and what they hold up:</b>"))
+        H.append(table(["Programme", "Past due", "Most late", "Shipped, not closed", "Re-dated (21 d)", "Closed late (14 d)", "Oldest items and impact"], [
+            [f"<b>{e(m['name'])}</b>", m["open"], f"{m['maxLate']} d", m["shippedNotClosed"], len(m["redated"]), f"{m['closedLate14']}" + (f" (avg {m['closedLateDays']} d)" if m["closedLate14"] else ""),
+             "<br>".join(f"<b>{e(i['key'])}</b> {e(i['summary'])} <span style=\"color:{MUTED}\">· {i['daysLate']} d late, {e(i['assignee'] or 'Unassigned')}. {e(i['impact'])}</span>" for i in m["items"][:4])] for m in missed]))
+
     # 2. Issues
     H.append(h2("2. Issues and preventive actions"))
     H.append(table(["Issue", "Status", "Impact", "Root cause", "Action taken", "Preventive measure"], [
         [f"<b>{e(i['title'])}</b><br><span style=\"color:{MUTED}\">{e(i['project'])} · surfaced {e(i['surfaced'])}{(' · ' + ', '.join(e(x) for x in i['keys'])) if i['keys'] else ''}</span>",
          pill(i["rag"], i["status"]), e(i["impact"]), e(i["rootCause"]), e(i["actionTaken"]), e(i["preventive"])] for i in d["issues"]]))
+
+    # Design dependencies
+    DD, notes = d.get("designDeps"), d.get("designNotes", {})
+    if DD:
+        allo = [r for g in DD["groups"] for r in g["open"]]
+        H.append(h2("Dependencies: design timelines and pending design feedback"))
+        H.append(p(f"The design team ({e(', '.join(DD['team']))}) plans its work on the Design &amp; Creative (VTN) and Design Marketing (DM) boards. <b>{sum(1 for r in allo if r['daysLate'] > 0)} of {len(allo)}</b> open design tasks are past their date, and <b>{sum(g['doneLate30'] for g in DD['groups'])} of {sum(g['done30'] for g in DD['groups'])}</b> finished in the last 30 days finished late."))
+        if notes.get("asks"):
+            H.append(p("<b>Asks for the design team:</b>"))
+            H.append(ul([e(a) for a in notes["asks"]]))
+        H.append(table(["For", "Open", "Past due", "In review", "Done late (30 d)", "Next date", "Open design tasks"], [
+            [f"<b>{e(g['name'])}</b>", len(g["open"]), g["pastDue"], g["inReview"], f"{g['doneLate30']} of {g['done30']}",
+             (f"{e(g['next']['due'])} · {e(g['next']['key'])}" if g["next"] else "None set"),
+             "<br>".join(f"<b>{e(r['key'])}</b> {e(r['summary'])} <span style=\"color:{MUTED}\">· {e(r['status'])}, {e(r['assignee'] or 'Unassigned')}, {_due(r)}</span>" for r in g["open"][:6])]
+            for g in DD["groups"] if g["open"]]))
+        if DD["waitingOnDesign"]:
+            H.append(p("<b>Report tickets waiting on design input:</b> " + "; ".join(f"{e(w['key'])} {e(w['summary'])} ({e(w['status'])}, {e(w['assignee'] or 'Unassigned')})" for w in DD["waitingOnDesign"])))
 
     # 3. Progress
     H.append(h2("3. Project-wise accomplishments"))
@@ -136,6 +166,12 @@ def build(date, to):
         [f"<b>{e(c['name'])}</b><br><span style=\"color:{MUTED}\">{' + '.join(c['projects'])}</span>", c["updated30"], c["done30"], c["doneInPeriod"], c["overdueCount"], len(c["blocked"]),
          f"{c['openBugs']}" + (f"<br><span style=\"color:{MUTED}\">{', '.join(f'{a} {b}' for a, b in c['bugSeverity'].items())}</span>" if c["openBugs"] else ""),
          f"{c['stories']['delivered']} / {c['stories']['inflight']} / {c['stories']['planned']}"] for c in d["scorecards"]]))
+    KH = d.get("keyHighlights", {})
+    if KH:
+        H.append(p("<b>Key highlights and open questions by programme:</b>"))
+        H.append(table(["Programme", "Topic", "Status", "Date", "Ask"], [
+            [f"<b>{e(c['name'])}</b>", pill(x.get("rag", "grey"), x["topic"]), e(x["status"]), e(x.get("date") or "Not set"), e(x.get("ask") or "")]
+            for c in d["scorecards"] for x in KH.get(c["id"], [])]))
     for c in d["scorecards"]:
         H.append(f'<h3 style="font-size:15px;margin:16px 0 4px">{e(c["name"])}</h3>')
         H.append(p(e(c["headline"])))
@@ -184,6 +220,14 @@ def build(date, to):
     H.append(h2("4. Resource utilisation"))
     H.append(p(f"Capacity is {cap} hours per full-time person for the window: {per['workingDays']} working days at 8 hours. The SOP sets a utilisation target of 80–90%, with 60 of every 80 hours on development. Contract status is not in Jira, so every row uses the full-time figure."))
     H.append(p(f"<b>Read this before the table.</b> {e(un['attributionWarning'])} {e(un['overheadGap'])}"))
+    W = d.get("watch", [])
+    if W:
+        H.append(p("<b>Team members to review.</b> People whose hours, output or past-due work stand out in the window, with management notes where given. Hours are credited to the ticket assignee, so check Tempo by worker before acting."))
+        H.append(table(["Person", "Flags", "Hours · closed · raised", "Assessment and evidence", "Action · PIP"], [
+            [f"<b>{e(x['name'])}</b>", "<br>".join(pill(f[0], f[1]) for f in x["flags"]), f"{x['hours']} h ({x['pctCapacity']}%) · {x['done']} closed · {x['raised']} raised ({x['bugsRaised']} bugs)",
+             (f"{pill(x['note']['rag'], x['note']['assessment'])}<br>" + "<br>".join("· " + e(v) for v in x["note"].get("evidence", []))) if x.get("note") else "",
+             (e(x["note"].get("action", "")) + (f"<br><b>PIP:</b> {e(x['note']['pip'])}" if x["note"].get("pip") else "")) if x.get("note") else ""]
+            for x in W]))
     flag = {"attribution": "A day over 10 h (other people's hours or bulk logging)", "low": "Below 60% of capacity", "nolog": "No Tempo hours"}
     H.append(table(["Person", "Hours", "% of capacity", "Days logged", "Peak day", "Closed", "Open", "Past due", "Flag"], [
         [f"{e(x['name'])}<br><span style=\"color:{MUTED}\">{e(' · '.join(f'{a} {b}h' for a, b in x['projects'].items()))}</span>", x["hours"], f"{x['pctCapacity']}%", x["daysLogged"], x["maxDay"], x["doneInPeriod"], x["open"], x["overdue"], "<br>".join(flag[f] for f in x["flags"])]
@@ -217,7 +261,7 @@ def build(date, to):
         f"Source: Jira Cloud {e(d['meta']['site'])}, boards {e(', '.join(d['scope']['projects']))}. {k['issuesUpdated30']:,} issues updated in 30 days were pulled, against Jira's own count of {e(d['meta']['counts'].get('expectedIssues'))}.",
         "Verdicts, root causes and suggested owners are the reviewer's reading of the tickets cited. Confirm them with each owner.",
         f"This report is stored in the repository shashiprasad23/server, branch claude/executive-dashboard-jira-review-gclk36, folder executive-dashboard/reports/{e(date)}/.",
-        "A new report is generated every weekday at 7:00 PM Nepal time.",
+        "A new report is generated every day at 9:00 PM IST.",
     ]))
     H.append("</div>")
     html_body = "".join(H)
@@ -237,15 +281,22 @@ def build(date, to):
     T += [f"- {r['key']} {r['summary']} [{r['likelihood']}/{r['impact']}, {r['ownerTeam']}, Jira: {r['assignee'] or 'unassigned'}, {r['daysSinceUpdate']} d] -> {r['verdict']}. {r['why']} Next: {r['action']}" for r in items]
     T += [f"- Not in Jira: {rr['title']} -> {rr['verdict']}. Replace with: {rr['replaceWith']}"]
     T += [f"- New: {r['title']} ({r['likelihood']}/{r['impact']}). {r['detail']} Mitigation: {r['mitigation']}" for r in d["newRisks"]]
+    T += [f"- Past due, {m['name']}: {m['open']} open, most late {m['maxLate']} d. " + "; ".join(f"{i['key']} {i['summary']} ({i['daysLate']} d, {i['impact']})" for i in m["items"][:4]) for m in missed]
+    if DD:
+        T += ["", "DEPENDENCIES: DESIGN"] + [f"- Ask: {a}" for a in notes.get("asks", [])]
+        T += [f"- {g['name']}: {len(g['open'])} open, {g['pastDue']} past due, next date {g['next']['due'] + ' ' + g['next']['key'] if g['next'] else 'none set'}" for g in DD["groups"] if g["open"]]
+        T += [f"- Waiting on design: {w['key']} {w['summary']} ({w['status']})" for w in DD["waitingOnDesign"]]
     T += ["", "2. ISSUES AND PREVENTIVE ACTIONS"]
     for i in d["issues"]:
         T += [f"- {i['title']} [{i['status']}] ({i['project']}, surfaced {i['surfaced']})", f"  Impact: {i['impact']}", f"  Root cause: {i['rootCause']}", f"  Action: {i['actionTaken']}", f"  Prevention: {i['preventive']}"]
     T += ["", "3. PROJECT PROGRESS"]
+    T += [f"- {c['name']} · {x['topic']}: {x['status']} Date: {x.get('date') or 'not set'}. Ask: {x.get('ask') or '-'}" for c in d["scorecards"] for x in KH.get(c["id"], [])]
     for c in d["scorecards"]:
         T += [f"- {c['name']}: {c['updated30']} moved, {c['done30']} closed (30 d), {c['overdueCount']} past due, {len(c['blocked'])} blocked, {c['openBugs']} open bugs. {c['headline']}"]
     T += [f"- Marketplace pipeline: " + "; ".join(f"{b['brand']} {b['products']} ({b['prod']}, {b['live']})" for b in mp["brands"]), f"  Expected completion: {mp['expectedCompletion']}"]
     T += [f"- Marketing testing: {mk['automatedUrls']} of {mk['scopeUrlsExpected']}+ URLs automated; {mk['automatedPassed']}/{mk['automatedChecks']} checks pass; Figma defects {fd['done']} fixed of {fd['raised']}. Remaining effort: {mk['remainingEffort']} Target date: {mk['targetDate']}"]
     T += ["", "4. RESOURCE UTILISATION", f"Capacity {cap} h per person for the window. {un['attributionWarning']}"]
+    T += [f"- REVIEW {x['name']}: " + ", ".join(f[1] for f in x["flags"]) + (f". {x['note']['assessment']} Action: {x['note'].get('action', '')}" + (f" PIP: {x['note']['pip']}" if x['note'].get('pip') else "") if x.get("note") else "") for x in W]
     T += [f"- {x['name']}: {x['hours']} h ({x['pctCapacity']}%), {x['daysLogged']} days, peak {x['maxDay']} h{(' — ' + ', '.join(flag[f] for f in x['flags'])) if x['flags'] else ''}" for x in d["people"] if x["hours"] > 0]
     T += [f"- {dd['person']}: {dd['finding']} {dd['context']} To verify: {dd['verify']}" for dd in un["deepDives"]]
     T += [f"- {sp['name']} (all Jira projects): {sp['assigned']} held, {sp['open']} open, {sp['overdueCount']} past due, {sp['hours']} h, {sp['raised30']} raised in 30 days. "
@@ -258,7 +309,7 @@ def build(date, to):
     (out / "email.txt").write_text(text_body, encoding="utf-8")
     msg = EmailMessage()
     msg["To"] = to
-    msg["Subject"] = f"Status report {nice_date}: Marketplace, Marketing, Services Platform, Conversational AI"
+    msg["Subject"] = f"Status report {nice_date}: Marketplace, Marketing, Services Platform, Conversational AI, Pulse, Atlas CRM"
     msg["Date"] = formatdate(localtime=True)
     msg["X-Unsent"] = "1"  # Outlook opens it as a draft ready to send
     msg.set_content(text_body)

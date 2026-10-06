@@ -64,6 +64,22 @@ python3 scripts/ingest_people.py --date $DATE --out data/snapshot/people.json <a
 
 Refresh `peopleSpotlight` in `content/curated.json` only where the numbers changed.
 
+### 1c. Design team boards (dependencies panel)
+
+The design timelines the build teams wait on live on the Design & Creative (`VTN`) and Design Marketing (`DM`) boards. Pull them with the standard fields:
+
+| Pull | JQL |
+| --- | --- |
+| Design | `project in (DM, VTN) AND (statusCategory != Done OR updated >= -30d) ORDER BY key ASC` |
+
+Save every page, then:
+
+```bash
+python3 scripts/ingest_design.py --date $DATE --out data/snapshot/design.json <all saved files>
+```
+
+If a design due date moved or a design item closed, update `designDependencies.asks` in `content/curated.json`. Keep `keyHighlights` (per programme: next demo, plan dates, new work) and `performance` (team members under review, PIP status) current when a ticket changes them; do not invent dates that are not in Jira.
+
 ## 2. Build the snapshot
 
 ```bash

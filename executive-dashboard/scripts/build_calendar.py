@@ -151,6 +151,8 @@ def main():
             if "people" in bundles[base]:
                 # named people's tickets across Jira; their hours are clipped to the day by the builders
                 (t / "people.json").write_text(json.dumps(bundles[base]["people"]))
+            if "design" in bundles[base]:
+                (t / "design.json").write_text(json.dumps(bundles[base]["design"]))
             rebuilt = bd.build(t, scope)
             if c["kind"] == "run":
                 data = dict(reports[x])

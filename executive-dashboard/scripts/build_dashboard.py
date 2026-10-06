@@ -24,6 +24,10 @@ import html
 import json
 import re
 import pathlib
+import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import build_extras  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
@@ -247,6 +251,19 @@ def build(snapshot_dir: pathlib.Path, scope=None):
 
     scorecards = build_scorecards(issues, scope, today, p_start, p_end, d30) if scope else []
     spotlight = build_spotlight(snapshot_dir, cur, scope, today, p_start, p_end, d30)
+    extras = {}
+    if scope:
+        spot_names = [s["name"] for s in scope.get("spotlight", [])]
+        extras = {
+            "missed": build_extras.missed_deadlines(issues, scope, today),
+            "designDeps": build_extras.design_dependencies(snapshot_dir, issues, scope, today),
+            "highlights": build_extras.key_highlights(issues, scope, today),
+            "keyHighlights": cur.get("keyHighlights", {}),
+            "designNotes": cur.get("designDependencies", {}),
+            "watch": build_extras.watchlist(people, issues, scope, cur["period"], cur.get("performance", {}),
+                                            exclude=list(scope.get("hoursExclude", [])) + spot_names),
+            "watchExcluded": list(scope.get("hoursExclude", [])),
+        }
 
     def pick(keys):
         return [{"key": k, "summary": by_key[k]["summary"], "status": by_key[k]["status"]} for k in keys if k in by_key]
@@ -264,6 +281,7 @@ def build(snapshot_dir: pathlib.Path, scope=None):
                    "projects": scope["projects"], "names": [PROJECT_NAMES.get(p, p) for p in scope["projects"]]} if scope else None),
         "scorecards": scorecards,
         "spotlight": spotlight,
+        **extras,
     }
 
 
