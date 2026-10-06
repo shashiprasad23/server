@@ -279,11 +279,16 @@ export function QuoteCard({ q, onChanged, showDeal }: { q: Json; onChanged: () =
           )}
         </div>
       </div>
-      {q.approval_reasons?.length > 0 && (
-        <div className="mt-2 rounded-md bg-warn/10 p-2 text-xs">
-          <b>Needs {label(q.approval_role)} approval:</b> {q.approval_reasons.join('; ')}
-        </div>
-      )}
+      {q.approval_reasons?.length > 0 &&
+        (['draft', 'pending_approval'].includes(q.status) ? (
+          <div className="mt-2 rounded-md bg-warn/10 p-2 text-xs">
+            <b>Needs {label(q.approval_role)} approval:</b> {q.approval_reasons.join('; ')}
+          </div>
+        ) : (
+          <div className="mt-2 text-xs text-muted-foreground">
+            Outside standard policy ({label(q.approval_role)} sign-off): {q.approval_reasons.join('; ')}
+          </div>
+        ))}
       {q.revalidation?.length > 0 && <div className="mt-2 rounded-md bg-bad/10 p-2 text-xs text-bad">Price or supply moved: {q.revalidation.map((r: Json) => `${r.sku === "*" ? "" : `${r.sku}: `}${r.detail}`).join('; ')}</div>}
       {q.config_warnings?.length > 0 && <div className="mt-2 text-xs text-muted-foreground">{q.config_warnings.join(' · ')}</div>}
       {q.approved_by && (
