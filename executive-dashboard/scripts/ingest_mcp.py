@@ -55,7 +55,27 @@ def norm(it):
         "resolved": f.get("resolutiondate"), "due": f.get("duedate"), "spent": f.get("timespent"),
         "est": f.get("timeoriginalestimate"), "remaining": f.get("timeestimate"),
         "parent": (f.get("parent") or {}).get("key"),
+        # dependency signals: labels, sprint history (customfield_10020), the Jira flag (customfield_10021) and issue links
+        "labels": f.get("labels") or [],
+        "sprints": [{"name": s.get("name"), "state": s.get("state"), "start": (s.get("startDate") or "")[:10] or None,
+                     "end": (s.get("endDate") or "")[:10] or None, "complete": (s.get("completeDate") or "")[:10] or None}
+                    for s in (f.get("customfield_10020") or []) if isinstance(s, dict)],
+        "flagged": bool(f.get("customfield_10021")),
+        "links": [_link(l) for l in (f.get("issuelinks") or []) if _link(l)],
     }
+
+
+def _link(l):
+    """One issue link as {type, dir, key, statusCat}; dir is the phrase from this issue's side (e.g. 'is blocked by')."""
+    t = l.get("type") or {}
+    if l.get("inwardIssue"):
+        o, phrase = l["inwardIssue"], t.get("inward")
+    elif l.get("outwardIssue"):
+        o, phrase = l["outwardIssue"], t.get("outward")
+    else:
+        return None
+    st = ((o.get("fields") or {}).get("status") or {})
+    return {"type": t.get("name"), "dir": phrase, "key": o.get("key"), "statusCat": (st.get("statusCategory") or {}).get("key")}
 
 
 def read_result(path):
@@ -129,7 +149,7 @@ def cmd_finalize(a):
     if not issues:
         sys.exit("No issues ingested. Run the issues pull first.")
     keep = ("key", "project", "summary", "type", "subtask", "status", "statusCat", "priority", "assignee", "reporter",
-            "created", "updated", "resolved", "due", "spent", "est", "remaining", "parent")
+            "created", "updated", "resolved", "due", "spent", "est", "remaining", "parent", "labels", "sprints", "flagged", "links")
     issue_rows = [{k: v.get(k) for k in keep} for v in sorted(issues.values(), key=lambda x: x["key"])]
     wl_issues, logs = [], []
     for k, v in sorted(wls.items()):

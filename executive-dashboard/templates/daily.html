@@ -97,6 +97,7 @@ select{font:inherit;font-size:14px;color:var(--ink);background:var(--surface);bo
 .controls nav a{flex:0 0 auto;font-size:13px;text-decoration:none;color:var(--ink-2);padding:4px 9px;border-radius:999px}
 .controls nav a:hover{background:var(--accent-soft)}
 
+[hidden]{display:none !important}
 section{display:grid;gap:14px;padding-block:10px 30px;scroll-margin-top:70px}
 section>*{min-width:0}
 .shead{display:grid;gap:4px;border-top:2px solid var(--ink);padding-top:12px}
@@ -107,6 +108,12 @@ section>*{min-width:0}
 .kpi .v{font-family:var(--font-display);font-size:27px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.15}
 .kpi .l{font-size:12.5px;color:var(--ink-2)}
 .kpi .s{font-size:11.5px;color:var(--muted)}
+.kpi svg.spark{width:100%;height:26px;margin-top:4px;display:block;overflow:visible}
+.kpi-head{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;margin:0 0 8px;font-size:13px;color:var(--ink-2)}
+.kpi-head b{font-family:var(--font-display);font-size:15px;color:var(--ink)}
+.dep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:16px}
+.dep-list .row{grid-template-columns:auto 1fr}
+.ms-items{display:grid;gap:4px;margin-top:8px;font-size:13px}
 
 .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr))}
 .grid>*{min-width:0}
@@ -192,12 +199,13 @@ section>*{min-width:0}
     <label for="f-project">Project <select id="f-project"></select></label>
     <label class="switch" for="f-bulk"><input type="checkbox" id="f-bulk" checked> <span id="bulk-label">Leave out bulk events</span></label>
     <span class="daypill">Selected day <b id="day-label"></b></span>
-    <nav aria-label="Sections"><a href="#flow">Flow</a><a href="#effort">Effort</a><a href="#people">People</a><a href="#explorer">Day explorer</a><a href="#projects">Projects</a><a href="#tracks">Milestones</a><a href="#risk">Risk age</a><a href="#log">Event log</a></nav>
+    <nav aria-label="Sections"><a href="#flow">Flow</a><a href="#effort">Effort</a><a href="#people">People</a><a href="#explorer">Day explorer</a><a href="#projects">Projects</a><a href="#tracks">Milestones</a><a href="#deps">Dependencies</a><a href="#risk">Risk age</a><a href="#log">Event log</a></nav>
   </div>
 </div>
 
 <main class="wrap">
   <div class="asof" id="asof" hidden></div>
+  <div class="kpi-head" id="kpi-head"></div>
   <div class="kpis" id="kpis"></div>
 
   <section id="flow">
@@ -243,11 +251,25 @@ section>*{min-width:0}
   </section>
 
   <section id="tracks">
-    <div class="shead"><h2>Milestone tracks</h2><p>Day-by-day progress on the three workstreams raised in the review.</p></div>
-    <div class="card"><h3>Marketplace AI-server catalogue: research to production</h3><div class="legend"><span><i style="background:var(--seq-250)"></i>Research and content</span><span><i style="background:var(--seq-450)"></i>Created on UAT</span><span><i style="background:var(--seq-650)"></i>Moved to production</span></div><p class="note" id="gantt-note"></p><div class="chart" id="c-gantt" style="height:320px" role="img" aria-label="Timeline of the AI-server product pipeline by brand"></div></div>
+    <div class="shead"><h2>Milestone tracks</h2><p>Day-by-day progress on the Services Platform milestones, the Conversational AI roadmap, Atlas CRM and the Marketing Figma defects. Each track counts the smallest pieces of work under its epic (subtasks where they exist) and shows the state at the end of the report day.</p></div>
+    <div class="card"><h3>Web-Uvation Services Platform milestones</h3><p class="sub" id="usp-note"></p><div class="legend"><span><i style="background:var(--resolved)"></i>Closed</span><span><i style="background:var(--seq-250)"></i>In progress</span><span><i style="background:var(--surface-2);border:1px solid var(--rule)"></i>Not started</span></div><div class="chart" id="c-usp" style="height:360px" role="img" aria-label="Progress of each open Services Platform epic"></div></div>
     <div class="grid">
-      <div class="card"><h3>Category disable, tasks closed per day</h3><p class="sub">MT-1438, the AI-servers-only pivot raised on 10 Sep.</p><div class="chart" id="c-burn" role="img" aria-label="Cumulative category-disable tasks closed"></div></div>
+      <div class="card"><h3>Services Platform milestone work closed, day by day</h3><p class="sub">Running total of milestone tasks closed, against all milestone tasks raised so far.</p><div class="legend"><span><i class="line" style="background:var(--created)"></i>Raised</span><span><i class="line" style="background:var(--resolved)"></i>Closed</span></div><div class="chart" id="c-uspday" role="img" aria-label="Services Platform milestone tasks raised and closed per day"></div></div>
+      <div class="card"><h3 id="uc-burn-title">Conversational AI: current milestone, day by day</h3><p class="sub" id="uc-burn-note"></p><div class="legend"><span><i class="line" style="background:var(--created)"></i>Scope</span><span><i class="line" style="background:var(--resolved)"></i>Closed</span></div><div class="chart" id="c-ucburn" role="img" aria-label="Current Conversational AI milestone tasks closed per day"></div></div>
+    </div>
+    <div class="card"><h3>Uvation Conversational AI roadmap</h3><p class="sub" id="uc-note"></p><div class="chart" id="c-uc" style="height:330px" role="img" aria-label="Conversational AI epics from start to due date, with share of work closed"></div></div>
+    <div class="grid">
+      <div class="card"><h3>Atlas CRM</h3><p class="sub" id="crm-note"></p><div class="chart" id="c-crm" style="height:200px" role="img" aria-label="Hours logged per day on Atlas CRM"></div><div class="ms-items list" id="crm-items"></div></div>
       <div class="card"><h3>Web-Marketing Figma defects: raised against fixed</h3><p class="sub">Subtasks of MR-1179, cumulative.</p><div class="legend"><span><i class="line" style="background:var(--created)"></i>Raised</span><span><i class="line" style="background:var(--resolved)"></i>Fixed</span></div><div class="chart" id="c-figma" role="img" aria-label="Figma defects raised and fixed"></div></div>
+    </div>
+  </section>
+
+  <section id="deps">
+    <div class="shead"><h2>Dependencies</h2><p id="deps-note">Open tickets that missed their sprint, sit in a blocker state, or wait on an outside party. Follows the project filter.</p></div>
+    <div class="dep-grid">
+      <div class="card"><h3>Missed their sprint</h3><p class="sub" id="dp-sprint-sub"></p><div class="list dep-list" id="dp-sprint"></div></div>
+      <div class="card"><h3>Blocker state</h3><p class="sub">Status set to Blocker, an open "is blocked by" link, or a Jira flag.</p><div class="list dep-list" id="dp-block"></div></div>
+      <div class="card"><h3>Third-party dependencies</h3><p class="sub">Open tickets that name an outside party. Avalara is left out, as agreed.</p><div class="list dep-list" id="dp-tp"></div></div>
     </div>
   </section>
 
@@ -356,22 +378,40 @@ const CAL = /*__CAL__*/[];
   function countBy(days, pred, dateOf){ const m=Object.fromEntries(days.map(d=>[d,0])); I.forEach(i=>{ const d=dateOf(i); if(d in m && pred(i)) m[d]++; }); return days.map(d=>m[d]); }
 
   function renderKPIs(){
+    // Every figure is for the selected day; the "per working day" figures average the 7 working days up to it.
+    const d = state.day, k = DAYS.indexOf(d);
     const cre = countBy(DAYS, createdF, i=>i.cr), res = countBy(DAYS, resolvedF, i=>i.rs);
-    const tc = cre.reduce((a,b)=>a+b,0), tr = res.reduce((a,b)=>a+b,0);
-    const work = DAYS.filter(d=>!isOff(d)).length;
-    let bi=0; res.forEach((v,k)=>{ if(v>res[bi]) bi=k; });
-    const hrs = LE.filter(l=>inProj(l.p)); const th = hrs.reduce((a,l)=>a+l.h,0);
-    const eWork = EDAYS.filter(d=>!isOff(d)).length;
-    const people = new Set(hrs.map(l=>l.who).filter(Boolean)).size;
-    const k = [
-      [fmt(tc),"Issues created","30 days"],[fmt(tr),"Issues resolved","30 days"],
-      [(tr-tc>=0?"+":"")+fmt(tr-tc),"Resolved minus created", tr>=tc?"Open work shrank":"Open work grew"],
-      [(tr/work).toFixed(1),"Resolved per working day",`${work} working days`],
-      [lab(DAYS[bi]),"Busiest closing day",`${res[bi]} resolved`],
-      [fmt(Math.round(th))+" h","Tempo hours",`${lab(M.effortStart)}–${lab(M.effortEnd)}`],
-      [(th/eWork).toFixed(0)+" h","Hours per working day",`${people} people with hours`]
+    const hrs = DAYS.map(x => x < M.effortStart ? null : +L.filter(l=>l.d===x && inProj(l.p)).reduce((a,l)=>a+l.h,0).toFixed(1));
+    const work = DAYS.map((x,n)=>[x,n]).filter(([x])=>!isOff(x));
+    const upto = work.filter(([x])=>x<=d).slice(-7);
+    const avg = arr => arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : 0;
+    const rRoll = avg(upto.map(([,n])=>res[n]));
+    const hDays = upto.filter(([x])=>x>=M.effortStart), hRoll = avg(hDays.map(([,n])=>hrs[n]));
+    const allAvg = arr => avg(work.map(([,n])=>arr[n]).filter(v=>v!=null));
+    const ppl = new Set(L.filter(l=>l.d===d && inProj(l.p)).map(l=>l.who).filter(Boolean)).size;
+    const net = res.map((r,n)=>r-cre[n]);
+    const sgn = v => (v>0?"+":"")+fmt(v);
+    const span = n => `${n} working day${n===1?"":"s"} to ${lab(d)}`;
+    const tiles = [
+      [fmt(cre[k]), "Issues created", `30-day average ${allAvg(cre).toFixed(1)} per working day`, cre, "--created"],
+      [fmt(res[k]), "Issues resolved", `30-day average ${allAvg(res).toFixed(1)} per working day`, res, "--resolved"],
+      [sgn(net[k]), "Resolved minus created", net[k]>0?"Open work shrank that day":net[k]<0?"Open work grew that day":"No change that day", net, "--accent"],
+      [rRoll.toFixed(1), "Resolved per working day", span(upto.length), res.map((v,n)=>{ const w=work.filter(([x])=>x<=DAYS[n]).slice(-7); return w.length?avg(w.map(([,m])=>res[m])):null; }), "--resolved"],
+      [hrs[k]==null ? "—" : fmt(Math.round(hrs[k]))+" h", "Tempo hours", hrs[k]==null ? `Hours before ${lab(M.effortStart)} were not pulled` : `${ppl} ${ppl===1?"person":"people"} logged that day`, hrs, "--seq-450"],
+      [hDays.length ? hRoll.toFixed(0)+" h" : "—", "Hours per working day", hDays.length ? span(hDays.length) : "No hours pulled yet", hrs.map((v,n)=>{ const w=work.filter(([x])=>x<=DAYS[n] && x>=M.effortStart).slice(-7); return (v==null||!w.length)?null:avg(w.map(([,m])=>hrs[m])); }), "--seq-450"],
     ];
-    $("#kpis").innerHTML = k.map(([v,l,s])=>`<div class="kpi"><div class="v">${esc(v)}</div><div class="l">${esc(l)}</div><div class="s">${esc(s)}</div></div>`).join("");
+    const spark = (arr, colorVar) => {
+      const vals = arr.map(v=>v==null?null:+v), nums = vals.filter(v=>v!=null);
+      if (!nums.length) return "";
+      const lo = Math.min(0,...nums), hi = Math.max(1,...nums), W = 100, H = 24, x = n => (n/(vals.length-1))*W, y = v => H-((v-lo)/(hi-lo||1))*H;
+      let path = "", pen = false; vals.forEach((v,n)=>{ if(v==null){ pen=false; return; } path += (pen?"L":"M")+x(n).toFixed(1)+","+y(v).toFixed(1); pen=true; });
+      const off = DAYS.map((dd,n)=>isOff(dd)?`<rect x="${(x(n)-W/(vals.length-1)/2).toFixed(1)}" y="0" width="${(W/(vals.length-1)).toFixed(1)}" height="${H}" fill="${css("--weekend")}"/>`:"").join("");
+      const zero = lo<0 ? `<line x1="0" x2="${W}" y1="${y(0).toFixed(1)}" y2="${y(0).toFixed(1)}" stroke="${css("--rule")}" stroke-width="1" vector-effect="non-scaling-stroke"/>` : "";
+      const dot = vals[k]==null ? "" : `<circle cx="${x(k).toFixed(1)}" cy="${y(vals[k]).toFixed(1)}" r="3.2" fill="${css(colorVar)}" stroke="${css("--surface")}" stroke-width="1.5" vector-effect="non-scaling-stroke"/>`;
+      return `<svg class="spark" viewBox="0 -3 ${W} ${H+6}" preserveAspectRatio="none" aria-hidden="true">${off}${zero}<path d="${path}" fill="none" stroke="${css(colorVar)}" stroke-width="1.6" vector-effect="non-scaling-stroke"/><line x1="${x(k).toFixed(1)}" x2="${x(k).toFixed(1)}" y1="-3" y2="${H+3}" stroke="${css("--ink-2")}" stroke-width="1" stroke-dasharray="2 2" vector-effect="non-scaling-stroke"/>${dot}</svg>`;
+    };
+    $("#kpi-head").innerHTML = `<b>${esc(labW(d))}</b><span>${isOff(d) ? (M.holidays.includes(d)?"Holiday":"Weekend")+" · " : ""}Figures for this day. Pick another day in the day explorer, or click any chart.</span>`;
+    $("#kpis").innerHTML = tiles.map(([v,l,sub,arr,c])=>`<div class="kpi"><div class="v">${esc(v)}</div><div class="l">${esc(l)}</div><div class="s">${esc(sub)}</div>${spark(arr,c)}</div>`).join("");
   }
 
   function bulkMarks(kind){
@@ -550,7 +590,7 @@ const CAL = /*__CAL__*/[];
     state.day = d;
     document.querySelectorAll("#daystrip button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.d===d));
     const on = document.getElementById("day-"+d); if(on) on.scrollIntoView({block:"nearest",inline:"center"});
-    renderExplorer();
+    renderExplorer(); renderKPIs();
     if(scroll) document.getElementById("explorer").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
   }
 
@@ -581,38 +621,88 @@ const CAL = /*__CAL__*/[];
 
   // ---------- milestone tracks ----------
   function renderTracks(){
-    const G = D.pipeline, stages = ["Research and content","Created on UAT","Moved to production"], sc = [css("--seq-250"),css("--seq-450"),css("--seq-650")];
-    const firstStage = G.flatMap(g=>g.stages.map(s=>s.start)).sort()[0] || M.effortStart;
-    const lastStage = G.flatMap(g=>g.stages.map(s=>s.end)).sort().pop() || M.windowEnd;
-    const tEnd = lastStage > M.windowEnd ? lastStage : M.windowEnd;
-    const tDays = range(addDays(firstStage,-1) < M.windowStart ? M.windowStart : addDays(firstStage,-1), tEnd);
-    $("#gantt-note").innerHTML = D.pipelineNote || "";
-    const items = []; G.forEach((g,y)=>g.stages.forEach(s=>items.push({value:[tDays.indexOf(s.start), tDays.indexOf(s.end), y, stages.indexOf(s.stage)], brand:g.brand, s})));
-    const c = chart("c-gantt");
-    c.setOption({...base(), grid:{left:150,right:20,top:30,bottom:34},
-      tooltip:{...base().tooltip, formatter:p=>{ const it=items[p.dataIndex]; return `<b>${esc(it.brand)}</b> · ${esc(it.s.stage)}<br>${lab(it.s.start)}${it.s.end!==it.s.start?" to "+lab(it.s.end):""}<br>${it.s.keys.join(", ")}`; }},
-      xAxis:{...axisCat(tDays), boundaryGap:true},
-      yAxis:{type:"category", data:G.map(g=>g.brand), inverse:true, axisLine:{show:false}, axisTick:{show:false}, axisLabel:{color:css("--ink-2"),fontSize:12,formatter:(v,k)=>`${v}  ·  ${G[k].products}`}},
-      series:[{type:"custom", data:items.map(i=>i.value), encode:{x:[0,1],y:2},
-        renderItem:(params, api)=>{ const x0=api.coord([api.value(0),api.value(2)]), x1=api.coord([api.value(1),api.value(2)]); const band=api.size([1,1]); const lane=api.value(3);
-          const h=band[1]*0.8/3; const top=x0[1]-band[1]*0.4+lane*h;
-          return {type:"rect", shape:{x:x0[0]-band[0]*0.45, y:top+1, width:(x1[0]-x0[0])+band[0]*0.9, height:h-2, r:3}, style:{fill:sc[lane]}}; },
-        markLine:{silent:true,symbol:"none",lineStyle:{color:css("--critical"),type:"dashed",width:1.5},label:{formatter:"All still disabled",color:css("--bad-ink"),fontSize:11,position:"start"},data:[{xAxis:tEnd}]}}]}, true);
-    c.off("click"); c.on("click", p=>setDay(tDays[items[p.dataIndex].value[0]], true));
+    const MS = D.milestones;
+    ["#c-usp","#c-uspday","#c-ucburn","#c-uc","#c-crm"].forEach(id=>document.querySelector(id).closest(".card").hidden = !MS);
+    if (MS) {
+      // USP epics: closed / in progress / not started
+      const U = MS.usp.filter(e=>e.total);
+      const lateTxt = e => e.due ? (e.late ? `due ${lab(e.due)}, ${Math.round((Date.parse(M.snapshot)-Date.parse(e.due))/864e5)} d late` : `due ${lab(e.due)}`) : "no due date";
+      $("#usp-note").innerHTML = `${U.length} open epics with work under them. ${U.filter(e=>e.late).length ? `<b>${U.filter(e=>e.late).map(e=>esc(e.key)).join(" and ")}</b> passed ${U.filter(e=>e.late).length>1?"their":"its"} due date and ${U.filter(e=>e.late).length>1?"are":"is"} still open. ` : ""}${MS.usp.filter(e=>!e.total).length ? `Epics with nothing under them (${MS.usp.filter(e=>!e.total).map(e=>esc(e.key)).join(", ")}) are left off the chart.` : ""}`;
+      const c = chart("c-usp");
+      document.getElementById("c-usp").style.height = Math.max(200, U.length*38+40)+"px"; c.resize();
+      const cats = U.map(e=>`${e.key} · ${e.summary}`);
+      c.setOption({...base(), grid:{left:12,right:150,top:8,bottom:24,containLabel:true},
+        tooltip:{...base().tooltip, trigger:"axis", axisPointer:{type:"shadow"}, formatter:ps=>{ const e=U[ps[0].dataIndex]; return `<b>${esc(e.key)}</b> ${esc(e.summary)}<br>${e.closed} of ${e.total} closed, ${e.inprog} in progress<br>${esc(e.status)} · ${lateTxt(e)}`; }},
+        xAxis:axisVal({max:v=>v.max}), yAxis:{type:"category", data:cats, inverse:true, axisLine:{show:false}, axisTick:{show:false}, axisLabel:{color:css("--ink-2"),fontSize:11.5,width:260,overflow:"truncate"}},
+        series:[
+          {name:"Closed", type:"bar", stack:"e", barMaxWidth:20, data:U.map(e=>e.closed), itemStyle:{color:css("--resolved")}},
+          {name:"In progress", type:"bar", stack:"e", data:U.map(e=>e.inprog), itemStyle:{color:css("--seq-250")}},
+          {name:"Not started", type:"bar", stack:"e", data:U.map(e=>e.total-e.closed-e.inprog), itemStyle:{color:css("--surface-2"),borderColor:css("--rule"),borderWidth:1},
+           label:{show:true, position:"right", color:css("--ink-2"), fontSize:11.5, formatter:p=>{ const e=U[p.dataIndex]; return `${e.closed}/${e.total} · ${e.due ? (e.late ? "late" : "due "+lab(e.due)) : "no date"}`; }}}]}, true);
+      // USP milestone work, day by day
+      const all = U.flatMap(e=>e.items);
+      const r1 = DAYS.map(d=>all.filter(([,cr])=>cr<=d).length), c1 = DAYS.map(d=>all.filter(([,,rs])=>rs && rs<=d).length);
+      const u = chart("c-uspday");
+      u.setOption({...base(), grid:{...base().grid,right:66},
+        tooltip:{...base().tooltip, trigger:"axis", formatter:ps=>`<b>${labW(DAYS[ps[0].dataIndex])}</b><br>${ps.map(p=>`${p.marker}${p.seriesName}: <b>${p.value}</b>`).join("<br>")}<br>Open: <b>${ps[0].value-ps[1].value}</b>`},
+        xAxis:axisCat(DAYS), yAxis:axisVal(),
+        series:[{name:"Raised",type:"line",step:"end",data:r1,symbol:"none",lineStyle:{width:2,color:css("--created")},endLabel:{show:true,formatter:p=>`${p.value} raised`,color:css("--ink-2")}},
+                {name:"Closed",type:"line",step:"end",data:c1,symbol:"none",lineStyle:{width:2,color:css("--resolved")},areaStyle:{color:css("--resolved"),opacity:.1},endLabel:{show:true,formatter:p=>`${p.value} closed`,color:css("--ink")},markArea:offAreas(DAYS)}]}, true);
+      onDayClick(u, DAYS);
 
-    // burn-up category disable
-    const kids = I.filter(i=>i.parent==="MT-1438");
-    const bStart = kids.map(i=>i.cr).sort()[0] || M.effortStart;
-    const bDays = range(bStart < M.windowStart ? M.windowStart : bStart, M.windowEnd);
-    const done = bDays.map(d=>kids.filter(i=>i.rs && i.rs<=d).length);
-    const b = chart("c-burn");
-    b.setOption({...base(), grid:{...base().grid,right:86},
-      tooltip:{...base().tooltip, trigger:"axis", formatter:ps=>`<b>${labW(bDays[ps[0].dataIndex])}</b><br>${ps[0].value} of ${kids.length} tasks closed`},
-      xAxis:axisCat(bDays), yAxis:axisVal({max:kids.length}),
-      series:[{type:"line", step:"end", data:done, symbol:"circle", symbolSize:6, lineStyle:{width:2,color:css("--series-1")}, itemStyle:{color:css("--series-1")}, areaStyle:{color:css("--series-1"),opacity:.1},
-        markLine:{silent:true,symbol:"none",lineStyle:{color:css("--muted"),type:"dashed"},label:{formatter:`Scope ${kids.length}`,color:css("--muted"),fontSize:11},data:[{yAxis:kids.length}]},
-        endLabel:{show:true,formatter:p=>`${p.value} closed`,color:css("--ink"),fontWeight:600}, markArea:offAreas(bDays)}]}, true);
-    onDayClick(b, bDays);
+      // UC roadmap: start to due, filled by share closed
+      const R = MS.uc;
+      const today = M.snapshot;
+      $("#uc-note").innerHTML = R.length ? `${R.length} epics on the roadmap, ${new Date((R[0].start||R[0].due)+"T00:00:00Z").toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"})} to ${new Date(R[R.length-1].due+"T00:00:00Z").toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"})}. The dark part of each bar is the share of its work closed. The red line is the report day.` : "No roadmap epics found.";
+      const g = chart("c-uc");
+      const t0 = Date.parse((R.map(e=>e.start).filter(Boolean).sort()[0]||today)+"T00:00:00Z"), t1 = Date.parse((R.map(e=>e.due).filter(Boolean).sort().pop()||today)+"T00:00:00Z");
+      g.setOption({...base(), grid:{left:12,right:24,top:24,bottom:30,containLabel:true},
+        tooltip:{...base().tooltip, formatter:p=>{ const e=R[p.value[2]]; return `<b>${esc(e.key)}</b> ${esc(e.summary)}<br>${e.start?lab(e.start):"?"} to ${e.due?lab(e.due):"?"}<br>${e.closed} of ${e.total} closed · ${esc(e.status)}`; }},
+        xAxis:{type:"time", min:t0, max:t1, axisLine:{lineStyle:{color:css("--rule")}}, splitLine:{lineStyle:{color:css("--rule-2")}}, axisLabel:{color:css("--muted"),fontSize:11,formatter:v=>new Date(v).toLocaleDateString("en-GB",{month:"short",year:"2-digit",timeZone:"UTC"})}},
+        yAxis:{type:"category", data:R.map(e=>`${e.key} · ${e.summary}`), inverse:true, axisLine:{show:false}, axisTick:{show:false}, axisLabel:{color:css("--ink-2"),fontSize:11.5,width:250,overflow:"truncate"}},
+        series:[{type:"custom", data:R.map((e,n)=>[Date.parse((e.start||e.due)+"T00:00:00Z"), Date.parse((e.due||e.start)+"T00:00:00Z"), n, e.total?e.closed/e.total:0]),
+          renderItem:(params, api)=>{ const a=api.coord([api.value(0),api.value(2)]), b=api.coord([api.value(1),api.value(2)]), h=api.size([0,1])[1]*0.5, w=Math.max(4,b[0]-a[0]), f=api.value(3);
+            return {type:"group", children:[
+              {type:"rect", shape:{x:a[0], y:a[1]-h/2, width:w, height:h, r:3}, style:{fill:css("--seq-100"), stroke:css("--seq-250")}},
+              {type:"rect", shape:{x:a[0], y:a[1]-h/2, width:w*f, height:h, r:3}, style:{fill:css("--resolved")}},
+              {type:"text", style:{text:`${Math.round(f*100)}%`, x:a[0]+w+6, y:a[1], verticalAlign:"middle", fill:css("--ink-2"), fontSize:11}}]}; },
+          markLine:{silent:true, symbol:"none", lineStyle:{color:css("--critical"),type:"dashed",width:1.5}, label:{formatter:lab(today),color:css("--bad-ink"),fontSize:11,position:"end"}, data:[{xAxis:Date.parse(today+"T00:00:00Z")}]}}]}, true);
+
+      // the UC epic running now (or the next one), day by day
+      const cur = R.find(e=>e.start && e.start<=today && (!e.due || e.due>=today) && !e.done) || R.find(e=>!e.done) || null;
+      document.getElementById("c-ucburn").closest(".card").hidden = !cur;
+      if (cur) {
+        $("#uc-burn-title").textContent = `Conversational AI: ${cur.key}, day by day`;
+        const left = cur.due ? Math.round((Date.parse(cur.due)-Date.parse(today))/864e5) : null;
+        $("#uc-burn-note").innerHTML = `${esc(cur.summary)}. ${cur.closed} of ${cur.total} tasks closed${cur.due?`, due ${lab(cur.due)} (${left>=0?left+" days left":(-left)+" days late"})`:""}.`;
+        const end = cur.due && cur.due > M.windowEnd ? cur.due : M.windowEnd;
+        const bd = range(M.windowStart, end);
+        const sc = bd.map(d=>d>M.windowEnd?null:cur.items.filter(([,cr])=>cr<=d).length), dn = bd.map(d=>d>M.windowEnd?null:cur.items.filter(([,,rs])=>rs && rs<=d).length);
+        const b = chart("c-ucburn");
+        b.setOption({...base(), grid:{...base().grid,right:66},
+          tooltip:{...base().tooltip, trigger:"axis", formatter:ps=>ps[0].value==null?`<b>${labW(bd[ps[0].dataIndex])}</b><br>Ahead of the report day`:`<b>${labW(bd[ps[0].dataIndex])}</b><br>${ps.map(p=>`${p.marker}${p.seriesName}: <b>${p.value}</b>`).join("<br>")}`},
+          xAxis:axisCat(bd), yAxis:axisVal(),
+          series:[{name:"Scope",type:"line",step:"end",data:sc,symbol:"none",lineStyle:{width:2,type:"dashed",color:css("--created")}},
+                  {name:"Closed",type:"line",step:"end",data:dn,symbol:"none",lineStyle:{width:2,color:css("--resolved")},areaStyle:{color:css("--resolved"),opacity:.1},endLabel:{show:true,formatter:p=>`${p.value} closed`,color:css("--ink")},
+                   markLine: cur.due && bd.includes(cur.due) ? {silent:true,symbol:"none",lineStyle:{color:css("--critical"),type:"dashed"},label:{formatter:"Due "+lab(cur.due),color:css("--bad-ink"),fontSize:11},data:[{xAxis:cur.due}]} : undefined,
+                   markArea:offAreas(bd)}]}, true);
+        onDayClick(b, bd);
+      }
+
+      // Atlas CRM: hours per day and the items
+      const crmLogs = L.filter(l=>l.p==="ATLAS");
+      const spc = (D.spotlightLogs||[]).flatMap(s=>s.logs.filter(([,,p])=>p==="ATLAS").map(([d,h])=>({d,h,who:s.name})));
+      const seen = new Set(crmLogs.map(l=>l.d+"|"+l.who)); spc.forEach(l=>{ if(!seen.has(l.d+"|"+l.who)) crmLogs.push(l); });
+      const ch = EDAYS.map(d=>+crmLogs.filter(l=>l.d===d).reduce((a,l)=>a+l.h,0).toFixed(2));
+      const tot = ch.reduce((a,b)=>a+b,0);
+      $("#crm-note").innerHTML = `${MS.crm.length} item${MS.crm.length===1?"":"s"} on the board, ${MS.crm.filter(x=>x.done).length} closed, ${MS.crm.filter(x=>x.due).length} with a due date. ${tot.toFixed(1)} h logged ${lab(M.effortStart)}–${lab(M.effortEnd)}.`;
+      const cc = chart("c-crm");
+      cc.setOption({...base(), tooltip:{...base().tooltip, trigger:"axis", axisPointer:{type:"shadow"}, formatter:ps=>`<b>${labW(EDAYS[ps[0].dataIndex])}</b><br>${ps[0].value} h on Atlas CRM`},
+        xAxis:axisCat(EDAYS), yAxis:axisVal({axisLabel:{color:css("--muted"),fontSize:11,formatter:"{value} h"}}),
+        series:[{type:"bar", barMaxWidth:18, data:ch, itemStyle:{color:css("--seq-450"),borderRadius:[3,3,0,0]}, markArea:offAreas(EDAYS)}]}, true);
+      onDayClick(cc, EDAYS);
+      $("#crm-items").innerHTML = MS.crm.map(x=>`<div class="row"><span>${J(x.key)}</span><span>${esc(x.summary)}</span><span class="m">${esc(x.type)} · ${esc(x.status)} · ${esc(x.assignee||"Unassigned")} · raised ${lab(x.created)} · ${x.due?"due "+lab(x.due):"no due date"}</span></div>`).join("") || `<p class="note">No items.</p>`;
+    }
 
     // figma defects
     const fk = I.filter(i=>i.parent==="MR-1179");
@@ -626,6 +716,19 @@ const CAL = /*__CAL__*/[];
       series:[{name:"Raised",type:"line",step:"end",data:raised,symbol:"circle",symbolSize:6,lineStyle:{width:2,color:css("--created")},itemStyle:{color:css("--created")},endLabel:{show:true,formatter:p=>`${p.value} raised`,color:css("--ink-2")}},
               {name:"Fixed",type:"line",step:"end",data:fixed,symbol:"circle",symbolSize:6,lineStyle:{width:2,color:css("--resolved")},itemStyle:{color:css("--resolved")},endLabel:{show:true,formatter:p=>`${p.value} fixed`,color:css("--ink")},markArea:offAreas(fDays)}]}, true);
     onDayClick(f, fDays);
+  }
+
+  function renderDeps(){
+    const P = D.deps, on = !!(P && P.hasSprintData);
+    document.getElementById("deps").hidden = !on;
+    if (!on) return;
+    const f = r => inProj(r.project);
+    const row = (r, m) => `<div class="row"><span><span class="dot" style="background:${colorOf(grp(r.project))}"></span>${J(r.key)}</span><span>${esc(r.summary)}</span><span class="m">${m}</span></div>`;
+    const ms = P.missedSprint.filter(f), bl = P.blockers.filter(f), tp = P.thirdParty.filter(f);
+    $("#dp-sprint-sub").textContent = `${ms.length} open, ${ms.filter(r=>r.shipped).length} of them shipped but not closed. Longest overdue first.`;
+    $("#dp-sprint").innerHTML = ms.length ? ms.slice(0,80).map(r=>row(r, `${esc(r.status)} · ${esc(r.assignee||"Unassigned")} · ${esc(r.sprint)} ended ${lab(r.sprintEnd)}, ${r.daysSince} d ago${r.nextSprint?" · now in "+esc(r.nextSprint):" · not re-planned"}`)).join("") + (ms.length>80?`<p class="note" style="padding-top:6px">Showing 80 of ${ms.length}. The full list is in the Portfolio Status Review.</p>`:"") : `<p class="note">None under this filter.</p>`;
+    $("#dp-block").innerHTML = bl.length ? bl.map(r=>row(r, `${esc(r.reason)} · ${esc(r.assignee||"Unassigned")}${r.idleDays!=null?` · no update for ${r.idleDays} d`:""}`)).join("") : `<p class="note">None under this filter.</p>`;
+    $("#dp-tp").innerHTML = tp.length ? tp.map(r=>row(r, `${esc(r.party)} · ${esc(r.status)} · ${esc(r.assignee||"Unassigned")}${r.subtasks?` · ${r.subtasks} subtasks`:""}`)).join("") : `<p class="note">None under this filter.</p>`;
   }
 
   function renderRisk(){
@@ -653,11 +756,14 @@ const CAL = /*__CAL__*/[];
   }
 
   function renderAll(){
-    renderKPIs(); renderFlow(); renderResProj(); renderEffort(); renderPeople(); renderStrip(); renderExplorer(); renderMultiples(); renderTracks(); renderRisk(); renderFeed();
+    renderKPIs(); renderFlow(); renderResProj(); renderEffort(); renderPeople(); renderStrip(); renderExplorer(); renderMultiples(); renderTracks(); renderDeps(); renderRisk(); renderFeed();
   }
 
   // default day: the report day when it is a working day, else the last working day in the window
-  state.day = (DAYS.includes(M.snapshot) && !isOff(M.snapshot)) ? M.snapshot : DAYS.slice().reverse().find(d=>!isOff(d));
+  // Open on the latest working day with any activity, so a run early in the day does not open on an empty day.
+  const busy = d => I.some(i=>i.cr===d || i.rs===d) || L.some(l=>l.d===d);
+  const wdays = DAYS.filter(d=>!isOff(d)).reverse();
+  state.day = wdays.find(busy) || wdays[0] || M.snapshot;
   renderAll();
   live = {renderAll, charts, minis};
   }

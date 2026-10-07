@@ -66,6 +66,8 @@ def main():
         bundle["people"] = json.loads((snap / "people.json").read_text())
     if (snap / "design.json").exists():
         bundle["design"] = json.loads((snap / "design.json").read_text())
+    if (snap / "milestones.json").exists():
+        bundle["milestones"] = json.loads((snap / "milestones.json").read_text())
     with gzip.open(out / "snapshot.json.gz", "wt", encoding="utf-8") as f:
         json.dump(bundle, f, separators=(",", ":"))
 

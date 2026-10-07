@@ -2,7 +2,9 @@
 
 The scheduled routine follows this file every day at 9:00 PM IST (15:30 UTC). It fires into the original working session, which holds the Atlassian connector. One run pulls Jira for the in-scope programmes, rebuilds both pages, stores a dated copy in the repo, pushes it and updates the two live pages.
 
-Scope comes from `content/scope.json`: Web-Marketplace (`MT`, `PC`), Web-Marketing (`MR`), Web-Uvation Services Platform (`USP`), Uvation Conversational AI (`UC`), Uvation Pulse (`PULSE`) and Atlas CRM (`ATLAS`).
+Scope comes from `content/scope.json`: Web-Marketplace (`MT`, `PC`), Web-Marketing (`MR`), Web-Uvation Services Platform (`USP`), Uvation Conversational AI (`UC`), Uvation Pulse (`PULSE`), Atlas CRM (`ATLAS`), Web-Identity (`ID`), Web-Rewards (`REW`), Web-Support (`SUP`), Devops (`IN`) and Design Marketing Development Collab (`DM`).
+
+`IN` is a JQL keyword, so it must be quoted as `"IN"` in every query.
 
 ## 0. Prepare
 
@@ -30,13 +32,15 @@ Fields for the issues and worklog pulls:
 ["summary","status","assignee","reporter","issuetype","priority","created","updated","resolutiondate","timespent","timeoriginalestimate","timeestimate","duedate","labels","parent","project","components"]
 ```
 
+For the **Issues** pull only, add `"customfield_10020","customfield_10021","issuelinks"` (sprint history, the Jira flag and issue links). They feed the Dependencies section: missed sprints, blockers and third-party dependencies.
+
 | Pull | JQL | Extra | Ingest kind |
 | --- | --- | --- | --- |
-| Count (once) | `project in (MT, PC, MR, USP, UC, PULSE, ATLAS) AND updated >= -30d` | `searchResultMode: "count"` | Note the total as EXPECTED |
-| Open count (once) | `project in (MT, PC, MR, USP, UC, PULSE, ATLAS) AND statusCategory != Done` | `searchResultMode: "count"` | Note as OPEN |
-| Issues | `project in (MT, PC, MR, USP, UC, PULSE, ATLAS) AND updated >= -30d ORDER BY key ASC` | fields above | `issues` |
-| Worklogs | `project in (MT, PC, MR, USP, UC, PULSE, ATLAS) AND worklogDate >= -14d ORDER BY key ASC` | fields above plus `"worklog"` | `worklogs` |
-| Register | `project in (MT, PC, MR, USP, UC, PULSE, ATLAS) AND (summary ~ "Risk" OR summary ~ "Dependency") ORDER BY key ASC` | fields above plus `"description","comment"`, `responseContentFormat: "markdown"` | `register` |
+| Count (once) | `project in (MT, PC, MR, USP, UC, PULSE, ATLAS, ID, REW, SUP, "IN", DM) AND updated >= -30d` | `searchResultMode: "count"` | Note the total as EXPECTED |
+| Open count (once) | `project in (MT, PC, MR, USP, UC, PULSE, ATLAS, ID, REW, SUP, "IN", DM) AND statusCategory != Done` | `searchResultMode: "count"` | Note as OPEN |
+| Issues | `project in (MT, PC, MR, USP, UC, PULSE, ATLAS, ID, REW, SUP, "IN", DM) AND updated >= -30d ORDER BY key ASC` | fields above | `issues` |
+| Worklogs | `project in (MT, PC, MR, USP, UC, PULSE, ATLAS, ID, REW, SUP, "IN", DM) AND worklogDate >= -14d ORDER BY key ASC` | fields above plus `"worklog"` | `worklogs` |
+| Register | `project in (MT, PC, MR, USP, UC, PULSE, ATLAS, ID, REW, SUP, "IN", DM) AND (summary ~ "Risk" OR summary ~ "Dependency") ORDER BY key ASC` | fields above plus `"description","comment"`, `responseContentFormat: "markdown"` | `register` |
 
 After each page:
 
@@ -79,6 +83,20 @@ python3 scripts/ingest_design.py --date $DATE --out data/snapshot/design.json <a
 ```
 
 If a design due date moved or a design item closed, update `designDependencies.asks` in `content/curated.json`. Keep `keyHighlights` (per programme: next demo, plan dates, new work) and `performance` (team members under review, PIP status) current when a ticket changes them; do not invent dates that are not in Jira.
+
+### 1d. Milestone tracks (USP epics, Conversational AI roadmap, Atlas CRM)
+
+First list the open USP epics: `project = USP AND issuetype = Epic AND statusCategory != Done`. Then pull, with fields `["summary","status","assignee","issuetype","created","updated","resolutiondate","duedate","customfield_10015","parent","project"]`:
+
+```
+project in (UC, ATLAS) OR parent in (<open USP epic keys>) OR (project = USP AND issuetype = Epic AND statusCategory != Done) ORDER BY key ASC
+```
+
+Save every page, then:
+
+```bash
+python3 scripts/ingest_milestones.py --date $DATE --out data/snapshot/milestones.json <all saved files>
+```
 
 ## 2. Build the snapshot
 

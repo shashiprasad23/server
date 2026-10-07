@@ -143,6 +143,32 @@ def build(date, to):
         [f"<b>{e(i['title'])}</b><br><span style=\"color:{MUTED}\">{e(i['project'])} · surfaced {e(i['surfaced'])}{(' · ' + ', '.join(e(x) for x in i['keys'])) if i['keys'] else ''}</span>",
          pill(i["rag"], i["status"]), e(i["impact"]), e(i["rootCause"]), e(i["actionTaken"]), e(i["preventive"])] for i in d["issues"]]))
 
+    # Dependencies: missed sprints, blockers, third parties
+    DP = d.get("deps")
+    if DP and DP.get("hasSprintData"):
+        H.append(h2("Dependencies: missed sprints, blockers and outside parties"))
+        H.append(p(f"<b>{len(DP['missedSprint'])}</b> open tickets missed their sprint ({DP['missedShipped']} of them already built and waiting to be closed), <b>{len(DP['blockers'])}</b> sit in a blocker state, and <b>{len(DP['thirdParty'])}</b> wait on an outside party."))
+        cnt = lambda k, pid: next((x["n"] for x in DP["byProgramme"][k] if x["id"] == pid), 0)
+        H.append(table(["Programme", "Missed sprint", "Blocker state", "Third party"], [
+            [f"<b>{e(c['name'])}</b>", cnt("missedSprint", c["id"]) or "—", cnt("blockers", c["id"]) or "—", cnt("thirdParty", c["id"]) or "—"]
+            for c in d["scorecards"] if cnt("missedSprint", c["id"]) or cnt("blockers", c["id"]) or cnt("thirdParty", c["id"])]))
+        if DP["overrunSprints"]:
+            H.append(p("<b>Sprints past their end date and still open:</b> " + "; ".join(
+                f"{e(o['name'])} ({e(', '.join(o['projects']))}) ended {e(o['end'])}, still {'active' if o['state'] == 'active' else 'not started'} {o['daysPast']} days later with {o['open']} open" for o in DP["overrunSprints"]) + "."))
+        if DP["blockers"]:
+            H.append(p("<b>Tasks in a blocker state:</b>"))
+            H.append(table(["Ticket", "Why", "Owner", "Idle"], [
+                [f"<b>{e(r['key'])}</b> {e(r['summary'])}", e(r["reason"]), e(r["assignee"] or "Unassigned"), f"{r['idleDays']} d" if r["idleDays"] is not None else "—"] for r in DP["blockers"]]))
+        if DP["thirdParty"]:
+            H.append(p("<b>Third-party dependencies</b> (Avalara left out, as agreed):"))
+            H.append(table(["Party", "Ticket", "Status · owner"], [
+                [e(r["party"]), f"<b>{e(r['key'])}</b> {e(r['summary'])}" + (f" <span style=\"color:{MUTED}\">· {r['subtasks']} subtasks</span>" if r["subtasks"] else ""),
+                 f"{e(r['status'])} · {e(r['assignee'] or 'Unassigned')}"] for r in DP["thirdParty"]]))
+        late = [r for r in DP["missedSprint"] if not r["shipped"]]
+        H.append(p(f"<b>Missed sprint and not yet built</b> ({len(late)} of {len(DP['missedSprint'])}; the other {DP['missedShipped']} are shipped and only need closing; full list on the review page):"))
+        H.append(table(["Ticket", "Status · owner", "Sprint missed", "Days since end"], [
+            [f"<b>{e(r['key'])}</b> {e(r['summary'])}", f"{e(r['status'])} · {e(r['assignee'] or 'Unassigned')}", f"{e(r['sprint'])} (ended {e(r['sprintEnd'])})", r["daysSince"]] for r in late[:25]]))
+
     # Design dependencies
     DD, notes = d.get("designDeps"), d.get("designNotes", {})
     if DD:
@@ -282,6 +308,12 @@ def build(date, to):
     T += [f"- Not in Jira: {rr['title']} -> {rr['verdict']}. Replace with: {rr['replaceWith']}"]
     T += [f"- New: {r['title']} ({r['likelihood']}/{r['impact']}). {r['detail']} Mitigation: {r['mitigation']}" for r in d["newRisks"]]
     T += [f"- Past due, {m['name']}: {m['open']} open, most late {m['maxLate']} d. " + "; ".join(f"{i['key']} {i['summary']} ({i['daysLate']} d, {i['impact']})" for i in m["items"][:4]) for m in missed]
+    if DP and DP.get("hasSprintData"):
+        T += ["", "DEPENDENCIES: MISSED SPRINTS, BLOCKERS, OUTSIDE PARTIES",
+              f"{len(DP['missedSprint'])} missed their sprint ({DP['missedShipped']} shipped, not closed); {len(DP['blockers'])} in a blocker state; {len(DP['thirdParty'])} wait on an outside party."]
+        T += [f"- Blocker: {r['key']} {r['summary']} ({r['reason']}, {r['assignee'] or 'Unassigned'})" for r in DP["blockers"]]
+        T += [f"- Third party ({r['party']}): {r['key']} {r['summary']} [{r['status']}]" for r in DP["thirdParty"]]
+        T += [f"- Sprint overrun: {o['name']} ({', '.join(o['projects'])}) ended {o['end']}, {o['open']} open" for o in DP["overrunSprints"]]
     if DD:
         T += ["", "DEPENDENCIES: DESIGN"] + [f"- Ask: {a}" for a in notes.get("asks", [])]
         T += [f"- {g['name']}: {len(g['open'])} open, {g['pastDue']} past due, next date {g['next']['due'] + ' ' + g['next']['key'] if g['next'] else 'none set'}" for g in DD["groups"] if g["open"]]
@@ -309,7 +341,7 @@ def build(date, to):
     (out / "email.txt").write_text(text_body, encoding="utf-8")
     msg = EmailMessage()
     msg["To"] = to
-    msg["Subject"] = f"Status report {nice_date}: Marketplace, Marketing, Services Platform, Conversational AI, Pulse, Atlas CRM"
+    msg["Subject"] = f"Status report {nice_date}: Marketplace, Marketing, Services Platform, Conversational AI, Pulse, Atlas CRM, Identity, Rewards, Support, Devops, Design Marketing"
     msg["Date"] = formatdate(localtime=True)
     msg["X-Unsent"] = "1"  # Outlook opens it as a draft ready to send
     msg.set_content(text_body)

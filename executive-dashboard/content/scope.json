@@ -1,6 +1,6 @@
 {
-  "label": "Web platforms: Marketplace, Marketing, Services Platform and Conversational AI, plus Uvation Pulse and Atlas CRM",
-  "short": "6 programmes",
+  "label": "Web platforms: Marketplace, Marketing, Services Platform, Identity, Rewards and Support, plus Conversational AI, Uvation Pulse, Atlas CRM, Devops and Design Marketing Development Collab",
+  "short": "11 programmes",
   "projects": [
     "MT",
     "PC",
@@ -8,7 +8,12 @@
     "USP",
     "UC",
     "PULSE",
-    "ATLAS"
+    "ATLAS",
+    "ID",
+    "REW",
+    "SUP",
+    "IN",
+    "DM"
   ],
   "note": "Web-Marketplace Product Catalog (PC) is reported with Web-Marketplace, because the AI-server catalogue work runs across both boards.",
   "programmes": [
@@ -19,7 +24,7 @@
         "MT",
         "PC"
       ],
-      "headline": "18 items closed on 6 Oct: six product grid, filter and product page front-end subtasks (MT-1234 to MT-1245), the token-claim clean-up (MT-1405, MT-1406), the category-disable plan (MT-1438) and its performance check, the RMA status timeline (MT-1487) and the user account flow (MT-1498). The URL disposition decision was re-raised as MT-1576. A live chat widget story (MT-1577, 3 subtasks) and seven NVIDIA AI server fixes (PC-146 to PC-152, three done) were added. The catalogue re-check (PC-136) is still in progress. Past due fell from 8 to 4."
+      "headline": "18 items closed on 6 Oct: six product grid, filter and product page front-end subtasks (MT-1234 to MT-1245), the token-claim clean-up (MT-1405, MT-1406), the category-disable plan (MT-1438) and its performance check, the RMA status timeline (MT-1487) and the user account flow (MT-1498). The URL disposition decision was re-raised as MT-1576. A live chat widget story (MT-1577, 3 subtasks) and seven NVIDIA AI server fixes (PC-146 to PC-152, three done) were added. The catalogue re-check (PC-136) is still in progress. Past due fell from 8 to 4 on 6 Oct and is 5 this morning: the cart, checkout and pricing tests (MT-1543) passed their 6 Oct date."
     },
     {
       "id": "MR",
@@ -60,6 +65,46 @@
         "ATLAS"
       ],
       "headline": "A second item was added on 6 Oct: a scope and specification subtask for the CRM MVP (ATLAS-2), assigned to Saurabh Jain. ATLAS-1, held by Anshul Bhargava, is still in To Do with no due date and has 8.25 h logged since 28 Sep."
+    },
+    {
+      "id": "ID",
+      "name": "Web-Identity",
+      "projects": [
+        "ID"
+      ],
+      "headline": "83 items moved and 26 closed in 30 days, including the Azure B2C profile clean-up (ID-678, 1 Oct). 10 items are past due, most of them the claims-removal tasks due 15 Sep (ID-679 to ID-684). 35 items are in To Do and 15 have no assignee; 11 open tickets missed the September sprints. The work depends on Azure AD B2C and Rafay (ID-745, ID-746, ID-747)."
+    },
+    {
+      "id": "REW",
+      "name": "Web-Rewards",
+      "projects": [
+        "REW"
+      ],
+      "headline": "No delivery in 30 days. The only activity is 18 regression-test items raised on 30 Sep (REW-157 and its subtasks), all in To Do, unassigned and with no due date."
+    },
+    {
+      "id": "SUP",
+      "name": "Web-Support",
+      "projects": [
+        "SUP"
+      ],
+      "headline": "No Web-Support ticket was created or updated in the last 30 days."
+    },
+    {
+      "id": "IN",
+      "name": "Devops",
+      "projects": [
+        "IN"
+      ],
+      "headline": "75 items moved and 47 closed in 30 days, including the Pulse telemetry deployment on dev (IN-1098, 30 Sep). Three items sit in a BLOCKER status: the Azure Virtual Desktop set-up (IN-990) and the Jira and Azure DevOps integration (IN-992), both due end of July, and the production deployment write-up (IN-1074, due 15 Sep). 7 items are past due, including an S1 error-page bug (IN-1111) and the production AKS resize (IN-1126, due 3 Oct). The September 2nd Sprint ended on 30 Sep and is still open."
+    },
+    {
+      "id": "DM",
+      "name": "Design Marketing Development Collab",
+      "projects": [
+        "DM"
+      ],
+      "headline": "19 items moved and 13 closed in 30 days; 16 of the 19 are held by Shashi Prasad K (marketing-site SEO fixes). Two are past due: the soft 404 fix (DM-1074, due 9 Sep) and the missing H1 tags (DM-1077, due 28 Sep). The design team's own timelines on this board are covered under Dependencies."
     }
   ],
   "spotlight": [

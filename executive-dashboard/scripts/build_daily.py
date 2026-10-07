@@ -24,7 +24,7 @@ from build_dashboard import PROJECT_NAMES, build, load, load_scope  # noqa: E402
 
 # Fixed project -> categorical slot. Colour follows the project on every chart.
 SLOTS_ALL = ["MT", "USP", "MR", "DMI", "HC", "IT", "UC"]  # everything else folds to "Other"
-SLOTS_SCOPED = ["MT", "USP", "MR", "UC", "PC", "PULSE", "ATLAS"]
+SLOTS_SCOPED = ["MT", "USP", "MR", "UC", "ID", "PULSE", "IN"]  # PC, ATLAS and the small boards fold to "Other"
 
 
 def build_daily(snap, scope, review=None, review_url=""):
@@ -82,8 +82,8 @@ def build_daily(snap, scope, review=None, review_url=""):
         "logs": logs,
         "events": [e for e in daily["events"] if inscope(e["project"]) and e["date"] <= today.isoformat()],
         "bulk": [b for b in daily["bulk"] if inscope(b["project"]) and b["date"] <= today.isoformat()],
-        "pipeline": clip_pipeline(daily["pipeline"], today.isoformat()),
-        "pipelineNote": daily.get("pipelineNote", ""),
+        "milestones": milestone_tracks(snap, today.isoformat()),
+        "deps": review.get("deps"),
         "register": [{k: r[k] for k in ("key", "project", "kind", "summary", "verdict", "rag", "updated", "daysSinceUpdate", "assignee")}
                      for r in review["register"] if r["kind"] != "Epic"],
         "overheadTruncated": review["quality"]["overheadTicketsTruncated"],
@@ -104,6 +104,45 @@ def spotlight_logs(snap, start, end):
         logs = [[d, h, a["project"]] for a in p["assigned"] for d, h in a.get("logs", []) if start <= d <= end]
         out.append({"name": p["name"], "held": len(p["assigned"]), "logs": logs})
     return out
+
+
+def milestone_tracks(snap, x):
+    """USP's open epics, the Conversational AI roadmap and Atlas CRM, as they stood at the end of day x.
+
+    Reads milestones.json (scripts/ingest_milestones.py). Work created after x is left out; work resolved after x counts as open.
+    """
+    path = pathlib.Path(snap) / "milestones.json"
+    if not path.exists():
+        return None
+    rows = [r for r in load(path)["issues"] if r["created"] <= x]
+    for r in rows:
+        r["done"] = bool(r["resolved"] and r["resolved"] <= x) or (r["statusCat"] == "done" and not r["resolved"])
+    kids = {}
+    for r in rows:
+        if r["parent"]:
+            kids.setdefault(r["parent"], []).append(r)
+
+    def leaves(k):
+        out = []
+        for c in kids.get(k, []):
+            out += leaves(c["key"]) if c["key"] in kids else [c]
+        return out
+
+    def epic(e):
+        lv = leaves(e["key"])
+        late = bool(e["due"] and e["due"] < x and not e["done"])
+        return {"key": e["key"], "summary": e["summary"], "status": e["status"], "start": e["start"], "due": e["due"],
+                "done": e["done"], "late": late, "total": len(lv), "closed": sum(1 for l in lv if l["done"]),
+                "inprog": sum(1 for l in lv if not l["done"] and l["statusCat"] == "indeterminate"),
+                # day-by-day: when each piece of work was created and closed
+                "items": [[l["key"], l["created"], l["resolved"] if l["done"] else None] for l in lv]}
+
+    usp = [epic(e) for e in rows if e["project"] == "USP" and e["type"] == "Epic" and (not e["done"])]
+    usp = [e for e in usp if e["total"]] + [e for e in usp if not e["total"]]
+    uc = sorted([epic(e) for e in rows if e["project"] == "UC" and e["type"] == "Epic"], key=lambda e: e["start"] or "9999")
+    crm = [{"key": r["key"], "summary": r["summary"], "status": r["status"], "type": r["type"], "assignee": r["assignee"],
+            "created": r["created"], "due": r["due"], "done": r["done"], "parent": r["parent"]} for r in rows if r["project"] == "ATLAS"]
+    return {"usp": usp, "uc": uc, "crm": crm}
 
 
 def clip_pipeline(pipeline, x):

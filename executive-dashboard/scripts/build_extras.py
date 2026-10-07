@@ -4,6 +4,7 @@
   design_dependencies  design team timelines (VTN and DM boards) and design feedback still pending
   key_highlights     new work, next dated milestones and undated work, per programme
   watchlist          people whose Jira and Tempo figures need a management look
+  dependencies       open tickets that missed their sprint, sit in a blocker state or wait on an outside party (7 Oct)
 
 All four read only the snapshot and the stored daily bundles in reports/. Judgement text comes
 from content/curated.json and is merged in by the page.
@@ -239,3 +240,111 @@ def watchlist(people, issues, scope, period, notes, exclude=()):
     out.sort(key=lambda r: (0 if r["note"] else 1, rank.get((r["note"] or {}).get("rag", "amber"), 1),
                             -sum(1 for f in r["flags"] if f[0] != "grey"), r["pctCapacity"]))
     return out
+
+
+# ---------- dependencies: missed sprints, blockers, third parties (7 Oct feedback) ----------
+
+# Named outside parties a ticket can wait on. Product names (NVIDIA servers in the catalogue) are not dependencies.
+THIRD_PARTIES = [
+    ("Rafay", r"\brafay\b"),
+    ("Microsoft (Azure AD B2C, Teams, Graph)", r"azure ad|\bb2c\b|microsoft teams|teams (bot|app)|\bms ?graph\b|microsoft graph|\bmsal\b"),
+    ("Microsoft Azure (DevOps, AVD, AKS, Monitor)", r"azure devops|azure virtual desktop|\bavd\b|\baks\b|azure monitor|azure stack"),
+    ("Google (API, GCP)", r"google api|\bgcp\b"),
+    ("Stripe", r"\bstripe\b"),
+    ("DocuSign", r"docusign"),
+    ("Cloud partner APIs", r"cloud partner|partner api"),
+    ("Vendor or third party", r"third[- ]?party|3rd[- ]?party|vendor api|vendor approval|external vendor"),
+]
+_TP_SKIP = re.compile(r"avalara|tamper", re.I)  # Avalara left out at management's request; "vendor tampering" is a security test
+SHIPPED_RX = re.compile(r"ready for prod|in prod|deployed in prod|\buat\b|tested in uat", re.I)
+
+
+def _prog_of(scope):
+    return {p: g["id"] for g in scope["programmes"] for p in g["projects"]}
+
+
+def _row(i, **extra):
+    return {"key": i["key"], "project": i["project"], "summary": i["summary"], "type": i["type"], "status": i["status"],
+            "assignee": i.get("assignee"), "due": i.get("due"), "parent": i.get("parent"), **extra}
+
+
+def dependencies(issues, scope, today):
+    """Open tickets that missed their sprint, are in a blocker state, or wait on a named outside party."""
+    prog = _prog_of(scope)
+    keep = set(scope["projects"])
+    t = dt.date.fromisoformat(today)
+    op = [i for i in issues if i["project"] in keep and i["statusCat"] != "done" and (i.get("created") or "")[:10] <= today]
+    by_key = {i["key"]: i for i in issues}
+    has_sprints = any(i.get("sprints") for i in issues)
+
+    missed = []
+    for i in op:
+        sp = [s for s in (i.get("sprints") or []) if s.get("end")]
+        gone = sorted([s for s in sp if s["end"] < today], key=lambda s: s["end"])
+        if not gone:
+            continue
+        now = [s for s in sp if s["end"] >= today and s["state"] in ("active", "future")]
+        last = gone[-1]
+        missed.append(_row(i, sprint=last["name"], sprintEnd=last["end"], sprintState=last["state"],
+                           daysSince=(t - dt.date.fromisoformat(last["end"])).days, carried=len(gone),
+                           nextSprint=now[0]["name"] if now else None, shipped=bool(SHIPPED_RX.search(i["status"] or ""))))
+    missed.sort(key=lambda r: (-r["carried"], -r["daysSince"], r["key"]))
+
+    blockers = []
+    for i in op:
+        why, on = [], []
+        if re.search(r"block", i["status"] or "", re.I):
+            why.append("Status is " + i["status"])
+        for l in i.get("links") or []:
+            if l.get("dir") == "is blocked by" and l.get("statusCat") != "done":
+                on.append(l["key"])
+        if on:
+            why.append("Blocked by " + ", ".join(on))
+        if i.get("flagged"):
+            why.append("Flagged in Jira")
+        if why:
+            age = (t - dt.date.fromisoformat(i["updated"][:10])).days if i.get("updated") else None
+            blockers.append(_row(i, reason="; ".join(why), blockedBy=on, idleDays=age,
+                                 overdue=bool(i.get("due") and i["due"] < today)))
+    blockers.sort(key=lambda r: (r["project"], r["key"]))
+
+    tp, matched = [], {}
+    for i in op:
+        s = i["summary"] or ""
+        if _TP_SKIP.search(s):
+            continue
+        hit = next((name for name, rx in THIRD_PARTIES if re.search(rx, s, re.I)), None)
+        if hit:
+            matched[i["key"]] = hit
+    for k, party in matched.items():
+        i = by_key[k]
+        if i.get("parent") in matched:  # counted under its parent
+            continue
+        kids = [x for x in matched if by_key[x].get("parent") == k]
+        tp.append(_row(i, party=party, subtasks=len(kids), overdue=bool(i.get("due") and i["due"] < today)))
+    tp.sort(key=lambda r: (r["party"], r["key"]))
+
+    # sprints that passed their end date without being closed
+    sprint_open = collections.defaultdict(lambda: {"open": 0, "projects": set()})
+    for i in issues:
+        if i["project"] not in keep:
+            continue
+        for s in i.get("sprints") or []:
+            if s.get("end") and s["end"] < today and s["state"] in ("active", "future"):
+                k = (s["name"], s["state"], s["end"])
+                sprint_open[k]["projects"].add(i["project"])
+                if i["statusCat"] != "done":
+                    sprint_open[k]["open"] += 1
+    overrun = [{"name": n, "state": st, "end": e, "daysPast": (t - dt.date.fromisoformat(e)).days, "open": v["open"],
+                "projects": sorted(v["projects"])} for (n, st, e), v in sprint_open.items()]
+    overrun = [r for r in overrun if r["open"]]
+    overrun.sort(key=lambda r: (-r["daysPast"], r["name"]))
+
+    def by_prog(rows):
+        c = collections.Counter(prog.get(r["project"], r["project"]) for r in rows)
+        return [{"id": g["id"], "name": g["name"], "n": c.get(g["id"], 0)} for g in scope["programmes"]]
+
+    return {"hasSprintData": has_sprints, "missedSprint": missed, "blockers": blockers, "thirdParty": tp,
+            "overrunSprints": overrun,
+            "byProgramme": {"missedSprint": by_prog(missed), "blockers": by_prog(blockers), "thirdParty": by_prog(tp)},
+            "missedShipped": sum(r["shipped"] for r in missed), "missedReplanned": sum(1 for r in missed if r["nextSprint"])}

@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-10-06",
+ "snapshotDate": "2026-10-07",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -10248,7 +10248,27 @@
   {
    "name": "Anmol Srivastava",
    "accountId": "712020:630c75ca-4378-4036-8a73-1743a4b2dbac",
-   "assigned": [],
+   "assigned": [
+    {
+     "key": "UP-53",
+     "project": "UP",
+     "summary": "Tempo Report review",
+     "type": "Task",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-10-06",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anmol Srivastava",
+     "spentHours": 1.0,
+     "logs": [
+      [
+       "2026-10-06",
+       1.0
+      ]
+     ]
+    }
+   ],
    "reported": [
     {
      "key": "INF-1",
@@ -10837,6 +10857,18 @@
      "resolved": null,
      "due": null,
      "assignee": null
+    },
+    {
+     "key": "UP-53",
+     "project": "UP",
+     "summary": "Tempo Report review",
+     "type": "Task",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-10-06",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anmol Srivastava"
     }
    ]
   },

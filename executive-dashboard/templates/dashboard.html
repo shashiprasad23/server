@@ -317,6 +317,7 @@ footer.notes code{font-family:var(--font-mono);font-size:12px;background:var(--s
   <div class="wrap">
     <a href="#summary">Summary</a>
     <a href="#risks">1 · Risks</a>
+    <a href="#dependencies">Dependencies</a>
     <a href="#issues">2 · Issues &amp; prevention</a>
     <a href="#projects">3 · Project progress</a>
     <a href="#resources">4 · Resource utilisation</a>
@@ -360,6 +361,43 @@ footer.notes code{font-family:var(--font-mono);font-size:12px;background:var(--s
       <div id="missed-detail" style="margin-top:6px"></div>
     </div>
 
+
+    <div class="two">
+      <div class="panel" id="reported-risk"></div>
+      <div class="panel">
+        <h3>New risks surfaced from Jira evidence</h3>
+        <p class="muted" style="font-size:13px;margin-top:4px">These are not in the register yet. Each one is backed by tickets.</p>
+        <div id="new-risks" style="margin-top:12px;display:grid;gap:0"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="dependencies">
+    <div class="section-head">
+      <span class="eyebrow">Dependencies</span>
+      <h2>Dependencies: missed sprints, blockers and outside parties</h2>
+      <p class="ask"><b>Asked for:</b> a separate dependency section listing every task that missed its sprint, every task in a blocker state, and every third-party dependency.</p>
+    </div>
+    <p class="lede" id="deps-lede"></p>
+    <div class="panel flush" id="deps-sum-wrap" hidden><div class="tscroll"><table id="deps-sum"></table></div></div>
+    <div class="panel" id="deps-sprint-wrap" hidden>
+      <h3>Tasks that missed their sprint</h3>
+      <p class="muted" style="font-size:13px;margin-top:4px;max-width:90ch">Open tickets that sat in a sprint whose end date has passed. "Shipped, not closed" means the ticket is in Ready for Prod, UAT or production: the build is done, but nobody closed it when the sprint ended. "Not re-planned" means the ticket is not in any current or future sprint.</p>
+      <div class="callout warn" id="deps-overrun" style="margin-top:12px" hidden></div>
+      <div id="deps-sprint" style="margin-top:8px"></div>
+    </div>
+    <div class="two">
+      <div class="panel" id="deps-block-wrap" hidden>
+        <h3>Tasks in a blocker state</h3>
+        <p class="muted" style="font-size:13px;margin-top:4px">Status set to Blocker, an open "is blocked by" link, or a Jira flag.</p>
+        <div class="tscroll" style="margin-top:10px"><table id="deps-block"></table></div>
+      </div>
+      <div class="panel" id="deps-tp-wrap" hidden>
+        <h3>Third-party dependencies</h3>
+        <p class="muted" style="font-size:13px;margin-top:4px">Open tickets that name an outside party the work relies on. Subtasks are counted under their parent. Avalara is left out, as agreed.</p>
+        <div class="tscroll" style="margin-top:10px"><table id="deps-tp"></table></div>
+      </div>
+    </div>
     <div class="panel" id="dep-wrap" hidden>
       <h3>Dependencies: design team timelines and pending design feedback</h3>
       <p class="muted" style="font-size:13px;margin-top:4px;max-width:90ch" id="dep-lede"></p>
@@ -368,15 +406,6 @@ footer.notes code{font-family:var(--font-mono);font-size:12px;background:var(--s
       <div class="two" style="margin-top:14px">
         <div><h3 style="font-size:15px">Design team, open and late work</h3><div class="tscroll" style="margin-top:8px"><table id="dep-owners"></table></div></div>
         <div><h3 style="font-size:15px">Report tickets waiting on design input</h3><ul class="clean" id="dep-waiting" style="margin-top:8px"></ul></div>
-      </div>
-    </div>
-
-    <div class="two">
-      <div class="panel" id="reported-risk"></div>
-      <div class="panel">
-        <h3>New risks surfaced from Jira evidence</h3>
-        <p class="muted" style="font-size:13px;margin-top:4px">These are not in the register yet. Each one is backed by tickets.</p>
-        <div id="new-risks" style="margin-top:12px;display:grid;gap:0"></div>
       </div>
     </div>
   </section>
@@ -792,6 +821,34 @@ const CAL = /*__CAL__*/[];
     </article>`).join("");
     $("#dep-owners").innerHTML = `<thead><tr><th>Designer</th><th class="r">Open</th><th class="r">Past due</th><th class="r">Done, 30 d</th></tr></thead><tbody>${DD.owners.map(o=>`<tr><td>${esc(o.name)}</td><td class="r num">${o.open}</td><td class="r num" style="${o.pastDue?"color:var(--bad);font-weight:600":""}">${o.pastDue}</td><td class="r num">${o.done30}</td></tr>`).join("")}</tbody>`;
     $("#dep-waiting").innerHTML = DD.waitingOnDesign.length ? DD.waitingOnDesign.map(w=>`<li>${J(w.key)} ${esc(w.summary)} <span class="muted">· ${esc(w.status)} · ${esc(w.assignee||"Unassigned")}</span></li>`).join("") : `<li class="muted">None open.</li>`;
+  }
+
+  // dependencies: missed sprints, blockers, third parties
+  const DP = D.deps;
+  const dpOn = !!(DP && DP.hasSprintData);
+  ["#deps-sum-wrap","#deps-sprint-wrap","#deps-block-wrap","#deps-tp-wrap"].forEach(id=>$(id).hidden = !dpOn);
+  $("#deps-lede").textContent = dpOn
+    ? `${DP.missedSprint.length} open tickets missed their sprint (${DP.missedShipped} of them already built and waiting to be closed), ${DP.blockers.length} sit in a blocker state, and ${DP.thirdParty.length} wait on an outside party. The design team's timelines follow below.`
+    : "Sprint, blocker and third-party data starts with the 7 Oct pull, so this day shows the design team's timelines only.";
+  if (dpOn) {
+    const by = (k, id) => (DP.byProgramme[k].find(x=>x.id===id)||{}).n || 0;
+    const progs = DP.byProgramme.missedSprint.filter(p=>by("missedSprint",p.id)||by("blockers",p.id)||by("thirdParty",p.id));
+    $("#deps-sum").innerHTML = `<thead><tr><th>Programme</th><th class="r">Missed sprint</th><th class="r">Blocker state</th><th class="r">Third party</th></tr></thead><tbody>${
+      progs.map(p=>`<tr><td>${esc((D.scorecards.find(c=>c.id===p.id)||{}).name||p.id)}</td><td class="r num">${by("missedSprint",p.id)||"—"}</td><td class="r num" style="${by("blockers",p.id)?"color:var(--bad);font-weight:600":""}">${by("blockers",p.id)||"—"}</td><td class="r num">${by("thirdParty",p.id)||"—"}</td></tr>`).join("")}</tbody>`;
+    const ov = DP.overrunSprints || [];
+    $("#deps-overrun").hidden = !ov.length;
+    $("#deps-overrun").innerHTML = ov.length ? `<b>Sprints past their end date and still open.</b> ` + ov.map(o=>`${esc(o.name)} (${esc(o.projects.join(", "))}) ended ${dshort(o.end)} and is still ${o.state==="active"?"active":"not started"}, ${o.daysPast} days later, with ${o.open} open ticket${o.open>1?"s":""}.`).join(" ") : "";
+    const progOf = p => (D.scorecards.find(c=>c.projects && c.projects.includes(p))||{});
+    const groups = {}; DP.missedSprint.forEach(r=>{ const g=progOf(r.project); (groups[g.name||r.project] ||= []).push(r); });
+    $("#deps-sprint").innerHTML = Object.entries(groups).sort((a,b)=>b[1].length-a[1].length).map(([name, rows])=>{
+      const shipped = rows.filter(r=>r.shipped).length;
+      return `<details class="more"><summary>${esc(name)}: ${rows.length} missed their sprint${shipped?`, ${shipped} shipped but not closed`:""}</summary>
+      <div class="tscroll" style="margin-top:8px"><table><thead><tr><th>Ticket</th><th>Status · owner</th><th>Sprint missed</th><th class="r">Days since end</th><th>Now</th></tr></thead><tbody>${
+        rows.map(r=>`<tr><td>${J(r.key)} <span class="chip">${esc(r.type||"")}</span><span class="sub" style="color:var(--ink-2)">${esc(r.summary)}</span></td><td>${esc(r.status)}<span class="sub">${esc(r.assignee||"Unassigned")}</span></td><td>${esc(r.sprint)}<span class="sub">ended ${dshort(r.sprintEnd)}${r.carried>1?` · ${r.carried} sprints missed`:""}</span></td><td class="r num" style="${r.daysSince>30?"color:var(--bad);font-weight:600":""}">${r.daysSince}</td><td>${r.shipped?pill("amber","Shipped, not closed"):""}${r.nextSprint?`<span class="sub">In ${esc(r.nextSprint)}</span>`:`<span class="sub">Not re-planned</span>`}</td></tr>`).join("")}</tbody></table></div></details>`; }).join("") || `<p class="muted">No open ticket missed its sprint.</p>`;
+    $("#deps-block").innerHTML = DP.blockers.length ? `<thead><tr><th>Ticket</th><th>Why</th><th class="r">Idle</th></tr></thead><tbody>${
+      DP.blockers.map(r=>`<tr><td>${J(r.key)}<span class="sub" style="color:var(--ink-2)">${esc(r.summary)}</span><span class="sub">${esc(r.assignee||"Unassigned")}${r.due?` · due ${dshort(r.due)}`:""}</span></td><td style="font-size:13px">${keyify(r.reason)}</td><td class="r num">${r.idleDays!=null?r.idleDays+" d":"—"}</td></tr>`).join("")}</tbody>` : `<tbody><tr><td class="muted">Nothing in a blocker state.</td></tr></tbody>`;
+    $("#deps-tp").innerHTML = DP.thirdParty.length ? `<thead><tr><th>Party</th><th>Ticket</th><th>Status · owner</th></tr></thead><tbody>${
+      DP.thirdParty.map(r=>`<tr><td style="font-size:13px">${esc(r.party)}</td><td>${J(r.key)}<span class="sub" style="color:var(--ink-2)">${esc(r.summary)}${r.subtasks?` · ${r.subtasks} subtasks`:""}</span></td><td>${esc(r.status)}<span class="sub">${esc(r.assignee||"Unassigned")}${r.due?` · due ${dshort(r.due)}`:""}${r.overdue?" · past due":""}</span></td></tr>`).join("")}</tbody>` : `<tbody><tr><td class="muted">No third-party dependency named in open tickets.</td></tr></tbody>`;
   }
 
   // key highlights

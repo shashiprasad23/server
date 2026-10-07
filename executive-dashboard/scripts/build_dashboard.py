@@ -263,6 +263,7 @@ def build(snapshot_dir: pathlib.Path, scope=None):
             "watch": build_extras.watchlist(people, issues, scope, cur["period"], cur.get("performance", {}),
                                             exclude=list(scope.get("hoursExclude", [])) + spot_names),
             "watchExcluded": list(scope.get("hoursExclude", [])),
+            "deps": build_extras.dependencies(issues, scope, today),
         }
 
     def pick(keys):

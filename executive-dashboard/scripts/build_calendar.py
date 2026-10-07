@@ -153,6 +153,8 @@ def main():
                 (t / "people.json").write_text(json.dumps(bundles[base]["people"]))
             if "design" in bundles[base]:
                 (t / "design.json").write_text(json.dumps(bundles[base]["design"]))
+            if "milestones" in bundles[base]:
+                (t / "milestones.json").write_text(json.dumps(bundles[base]["milestones"]))
             rebuilt = bd.build(t, scope)
             if c["kind"] == "run":
                 data = dict(reports[x])
