@@ -24,7 +24,7 @@
         "MT",
         "PC"
       ],
-      "headline": "18 items closed on 6 Oct: six product grid, filter and product page front-end subtasks (MT-1234 to MT-1245), the token-claim clean-up (MT-1405, MT-1406), the category-disable plan (MT-1438) and its performance check, the RMA status timeline (MT-1487) and the user account flow (MT-1498). The URL disposition decision was re-raised as MT-1576. A live chat widget story (MT-1577, 3 subtasks) and seven NVIDIA AI server fixes (PC-146 to PC-152, three done) were added. The catalogue re-check (PC-136) is still in progress. Past due fell from 8 to 4 on 6 Oct and is 5 this morning: the cart, checkout and pricing tests (MT-1543) passed their 6 Oct date."
+      "headline": "10 items closed on 7 Oct, including the buyer returns and refunds story (MT-1331, three weeks late), the cart and checkout pricing tests (MT-1543), the stored-credits and ACH refund designs (MT-1409, MT-1410) and six AI-server catalogue fixes (PC-149 to PC-154). Work started on the live chat widget (MT-1577, due 14 Oct), security testing (MT-1547) and the RMA backend. 21 items are past due, but 20 of them have not been touched in 30 days, including MT-1053 and MT-992 (due 31 Aug, still in UAT)."
     },
     {
       "id": "MR",
@@ -32,7 +32,7 @@
       "projects": [
         "MR"
       ],
-      "headline": "A chatbot QA bug (MR-1309) with three subtasks and four more page bugs were raised on 6 Oct; two of those were fixed the same day. Open bugs are now 18, none rated. MR-1168 moved to Ready for Prod. The sitemap fix (MR-1199) and 29 Figma fixes are still Ready for Prod and not released, and related products content on the AI Factory pages (MR-1265) is still blocked. 6 items are past due, five of them June tasks in the 'In Prod1' status."
+      "headline": "Two chatbot and page bugs were fixed on 7 Oct (MR-1297, MR-1310), and a cross-browser testing bug (MR-1317) was raised with six page subtasks. Open bugs are 19, none rated. The sitemap fix (MR-1199), MR-1168 and the Figma fixes are still Ready for Prod and not released; related products content (MR-1265) is still blocked. 6 items are past due, five of them June tasks in 'In Prod1'. 75 tickets sat in a sprint that has ended."
     },
     {
       "id": "USP",
@@ -40,7 +40,7 @@
       "projects": [
         "USP"
       ],
-      "headline": "Quiet on 6 Oct: two bugs closed (one S2 add-on description issue, USP-4056) and one task was added. The three S1 production bugs (wrong AI Factory prices and a Document API 502) are still in To Do, now due 30 Oct. 31 items are past due and 45 bugs are open, 5 of them S1."
+      "headline": "Two of the three S1 production bugs were fixed on 7 Oct: the final price mismatches on the AI Factory pages (USP-4229, USP-4230). The Document API 502 (USP-4231) is still open. Four add-server form bugs and two data tasks were raised. 97 items are past due: 31 active ones and 66 nobody has touched in 30 days, 39 of those held by Livian Stefan Stan and Ankit Saxena. The Sept 2nd Sprint ended on 29 Sep and is still open with 20 tickets."
     },
     {
       "id": "UC",
@@ -48,7 +48,7 @@
       "projects": [
         "UC"
       ],
-      "headline": "No changes on 6 Oct. Marketplace sign-in for the AI chatbot (UC-225, due 15 Oct) is in progress. The project has 180 open items, but 171 have not been touched in more than 30 days, so most of the 3 Sep agent backlog does not appear in the 30-day figures here. Nothing is past due."
+      "headline": "No changes on 7 Oct. Marketplace sign-in for the chatbot (UC-225) is in progress, due 15 Oct; admin analytics (UC-25) and model selection (UC-26), due the same day, have not started. 24 design and specification tasks held by Ankit Saxena have been past due since August and untouched since 13 Aug. UC-8 Public Chatbots is at 21 of 54 tasks, due 18 Oct."
     },
     {
       "id": "PULSE",
@@ -56,7 +56,7 @@
       "projects": [
         "PULSE"
       ],
-      "headline": "No changes since 1 Oct. One item is done (PULSE-329). The other 328 (8 epics, 64 stories, 256 subtasks) are all held by Anshul Bhargava, 246 In Progress and 82 To Do, and none has a due date. Tempo shows 2.5 h in total, on 29 and 30 Sep."
+      "headline": "One subtask was added on 7 Oct (PULSE-330, production endpoint and DNS checks, unassigned). One item is done (PULSE-329); the other 329 are held by Anshul Bhargava and none has a due date."
     },
     {
       "id": "ATLAS",
@@ -64,7 +64,7 @@
       "projects": [
         "ATLAS"
       ],
-      "headline": "A second item was added on 6 Oct: a scope and specification subtask for the CRM MVP (ATLAS-2), assigned to Saurabh Jain. ATLAS-1, held by Anshul Bhargava, is still in To Do with no due date and has 8.25 h logged since 28 Sep."
+      "headline": "A third item was added on 7 Oct: a POC understanding meeting (ATLAS-3) for Saurabh Jain. ATLAS-1 (Anshul Bhargava) and the MVP scope task (ATLAS-2) are still in To Do, and none of the three has a due date."
     },
     {
       "id": "ID",
@@ -72,7 +72,7 @@
       "projects": [
         "ID"
       ],
-      "headline": "83 items moved and 26 closed in 30 days, including the Azure B2C profile clean-up (ID-678, 1 Oct). 10 items are past due, most of them the claims-removal tasks due 15 Sep (ID-679 to ID-684). 35 items are in To Do and 15 have no assignee; 11 open tickets missed the September sprints. The work depends on Azure AD B2C and Rafay (ID-745, ID-746, ID-747)."
+      "headline": "Five field-validation styling bugs were closed on 7 Oct (ID-696 to ID-699, ID-710); 31 items closed in 30 days. The 6 past-due items are the claims-removal tasks due 15 Sep (ID-679 to ID-684): all in production, but not closed. 15 tickets have no assignee and 11 missed the September sprints. The work depends on Azure AD B2C and Rafay (ID-745, ID-746, ID-747)."
     },
     {
       "id": "REW",
@@ -80,7 +80,7 @@
       "projects": [
         "REW"
       ],
-      "headline": "No delivery in 30 days. The only activity is 18 regression-test items raised on 30 Sep (REW-157 and its subtasks), all in To Do, unassigned and with no due date."
+      "headline": "No change on 7 Oct. The 18 regression-test items raised on 30 Sep are all To Do, unassigned and undated; one older bug (REW-156, due 15 Jul) is in UAT."
     },
     {
       "id": "SUP",
@@ -96,7 +96,7 @@
       "projects": [
         "IN"
       ],
-      "headline": "75 items moved and 47 closed in 30 days, including the Pulse telemetry deployment on dev (IN-1098, 30 Sep). Three items sit in a BLOCKER status: the Azure Virtual Desktop set-up (IN-990) and the Jira and Azure DevOps integration (IN-992), both due end of July, and the production deployment write-up (IN-1074, due 15 Sep). 7 items are past due, including an S1 error-page bug (IN-1111) and the production AKS resize (IN-1126, due 3 Oct). The September 2nd Sprint ended on 30 Sep and is still open."
+      "headline": "One Key Vault configuration subtask was raised and closed on 7 Oct (IN-1147). 23 items are past due, 16 of them untouched in 30 days. 15 sit in BLOCKER status, 11 of them held by k.kishore: Azure Virtual Desktop and licensing (IN-990, IN-994 to IN-999), the Jira and Azure DevOps integration (IN-992, IN-1005 to IN-1007) and APIM WebSocket routing (IN-776 to IN-778, due 27 Mar). The S1 login error-page bug (IN-1111) is still To Do."
     },
     {
       "id": "DM",
@@ -104,7 +104,7 @@
       "projects": [
         "DM"
       ],
-      "headline": "19 items moved and 13 closed in 30 days; 16 of the 19 are held by Shashi Prasad K (marketing-site SEO fixes). Two are past due: the soft 404 fix (DM-1074, due 9 Sep) and the missing H1 tags (DM-1077, due 28 Sep). The design team's own timelines on this board are covered under Dependencies."
+      "headline": "One marketplace issue was closed on 7 Oct (DM-1083). 27 items are past due, 25 of them untouched in 30 days, 17 of those waiting in review; the oldest date is July 2025. The two active ones are the soft 404 fix (DM-1074) and the missing H1 tags (DM-1077). The design team's own timelines are covered under Dependencies."
     }
   ],
   "spotlight": [

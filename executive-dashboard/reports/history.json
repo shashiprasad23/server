@@ -308,31 +308,31 @@
  {
   "date": "2026-10-07",
   "window": "23 Sep\u20136 Oct",
-  "issuesMoved30": 1738,
-  "closed30": 969,
-  "closedWindow": 242,
-  "pastDue": 61,
-  "hours": 1217.2,
+  "issuesMoved30": 1726,
+  "closed30": 959,
+  "closedWindow": 241,
+  "pastDue": 205,
+  "hours": 1225.2,
   "registerRed": 1,
   "programmes": {
    "MT": {
-    "closed30": 260,
-    "pastDue": 5,
+    "closed30": 263,
+    "pastDue": 21,
     "openBugs": 4
    },
    "MR": {
-    "closed30": 159,
+    "closed30": 156,
     "pastDue": 6,
-    "openBugs": 18
+    "openBugs": 19
    },
    "USP": {
-    "closed30": 431,
-    "pastDue": 31,
-    "openBugs": 45
+    "closed30": 417,
+    "pastDue": 97,
+    "openBugs": 46
    },
    "UC": {
-    "closed30": 32,
-    "pastDue": 0,
+    "closed30": 31,
+    "pastDue": 24,
     "openBugs": 0
    },
    "PULSE": {
@@ -346,13 +346,13 @@
     "openBugs": 0
    },
    "ID": {
-    "closed30": 26,
-    "pastDue": 10,
-    "openBugs": 2
+    "closed30": 31,
+    "pastDue": 6,
+    "openBugs": 1
    },
    "REW": {
     "closed30": 0,
-    "pastDue": 0,
+    "pastDue": 1,
     "openBugs": 0
    },
    "SUP": {
@@ -362,12 +362,12 @@
    },
    "IN": {
     "closed30": 47,
-    "pastDue": 7,
+    "pastDue": 23,
     "openBugs": 1
    },
    "DM": {
     "closed30": 13,
-    "pastDue": 2,
+    "pastDue": 27,
     "openBugs": 0
    }
   }

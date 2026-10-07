@@ -16,7 +16,7 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 8.25,
+     "spentHours": 8.75,
      "logs": [
       [
        "2026-09-28",
@@ -29,6 +29,10 @@
       [
        "2026-10-05",
        5.5
+      ],
+      [
+       "2026-10-07",
+       0.5
       ]
      ]
     },
@@ -152,7 +156,7 @@
     {
      "key": "PULSE-10",
      "project": "PULSE",
-     "summary": "03.02 — [DevOps] CI verification and release gates",
+     "summary": "03.02 — [DevOps] On-Prem Production Deployment and Configuration",
      "type": "Story",
      "status": "In Progress",
      "statusCat": "indeterminate",
@@ -5046,14 +5050,19 @@
      "project": "UP",
      "summary": "Cabling and power distribution in the hall",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-06",
-     "resolved": null,
+     "resolved": "2026-10-07",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-10-07",
+       0.5
+      ]
+     ]
     },
     {
      "key": "UP-47",
@@ -5116,14 +5125,19 @@
      "project": "UP",
      "summary": "Camera framing, reset view and focus on selected components",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-06",
-     "resolved": null,
+     "resolved": "2026-10-07",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.0,
+     "logs": [
+      [
+       "2026-10-07",
+       1.0
+      ]
+     ]
     },
     {
      "key": "UP-52",
@@ -5138,6 +5152,25 @@
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
+    },
+    {
+     "key": "UP-54",
+     "project": "UP",
+     "summary": "UAT: re-test against UAT USP CRM and CRM DB data",
+     "type": "Subtask",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-10-07",
+     "resolved": null,
+     "due": "2026-10-07",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-10-07",
+       0.5
+      ]
+     ]
     },
     {
      "key": "USP-3795",
@@ -5190,18 +5223,6 @@
      "resolved": "2026-09-11",
      "due": "2026-09-10",
      "assignee": "Ankit Sharma"
-    },
-    {
-     "key": "IN-1055",
-     "project": "IN",
-     "summary": "Migrate Magento Credentials to Azure Managed Identity",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-08-19",
-     "resolved": "2026-09-01",
-     "due": "2026-08-30",
-     "assignee": "k.kishore"
     },
     {
      "key": "IN-1059",
@@ -5636,30 +5657,6 @@
      "assignee": "Sanjay Singh"
     },
     {
-     "key": "MT-1426",
-     "project": "MT",
-     "summary": "My Addresses – Implement empty state, address list, and shipping/billing address modal",
-     "type": "Task",
-     "status": "TODO",
-     "statusCat": "new",
-     "created": "2026-09-07",
-     "resolved": null,
-     "due": null,
-     "assignee": null
-    },
-    {
-     "key": "MT-1431",
-     "project": "MT",
-     "summary": "My Orders – Update Return Eligibility Handling Across Desktop, Mobile, and Tablet",
-     "type": "Task",
-     "status": "TODO",
-     "statusCat": "new",
-     "created": "2026-09-07",
-     "resolved": null,
-     "due": null,
-     "assignee": null
-    },
-    {
      "key": "MT-1538",
      "project": "MT",
      "summary": "Verify the AI/ML PRODUCTS for USP on the Excel Sheet created by Product team",
@@ -5686,7 +5683,7 @@
     {
      "key": "PULSE-10",
      "project": "PULSE",
-     "summary": "03.02 — [DevOps] CI verification and release gates",
+     "summary": "03.02 — [DevOps] On-Prem Production Deployment and Configuration",
      "type": "Story",
      "status": "In Progress",
      "statusCat": "indeterminate",
@@ -9908,6 +9905,18 @@
      "assignee": "Ankit Saxena"
     },
     {
+     "key": "UC-44",
+     "project": "UC",
+     "summary": "QA & validation — Teams handoff SLA, fallback & audit logging",
+     "type": "Subtask",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2027-02-21",
+     "assignee": "Ankit Saxena"
+    },
+    {
      "key": "UC-74",
      "project": "UC",
      "summary": "Design & technical spec — USP persona, prompt & tier-routing rules",
@@ -10001,6 +10010,18 @@
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-12-18",
+     "assignee": "Ankit Saxena"
+    },
+    {
+     "key": "UC-87",
+     "project": "UC",
+     "summary": "Integration & security review — analytics export audit trail",
+     "type": "Subtask",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2027-01-01",
      "assignee": "Ankit Saxena"
     },
     {
@@ -10164,10 +10185,10 @@
      "project": "UP",
      "summary": "Cabling and power distribution in the hall",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-06",
-     "resolved": null,
+     "resolved": "2026-10-07",
      "due": null,
      "assignee": "Anshul Bhargava"
     },
@@ -10224,10 +10245,10 @@
      "project": "UP",
      "summary": "Camera framing, reset view and focus on selected components",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-06",
-     "resolved": null,
+     "resolved": "2026-10-07",
      "due": null,
      "assignee": "Anshul Bhargava"
     },
@@ -10241,6 +10262,18 @@
      "created": "2026-10-06",
      "resolved": "2026-10-06",
      "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "UP-54",
+     "project": "UP",
+     "summary": "UAT: re-test against UAT USP CRM and CRM DB data",
+     "type": "Subtask",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-10-07",
+     "resolved": null,
+     "due": "2026-10-07",
      "assignee": "Anshul Bhargava"
     }
    ]
@@ -10260,10 +10293,14 @@
      "resolved": null,
      "due": null,
      "assignee": "Anmol Srivastava",
-     "spentHours": 1.0,
+     "spentHours": 2.0,
      "logs": [
       [
        "2026-10-06",
+       1.0
+      ],
+      [
+       "2026-10-07",
        1.0
       ]
      ]
@@ -10869,6 +10906,18 @@
      "resolved": null,
      "due": null,
      "assignee": "Anmol Srivastava"
+    },
+    {
+     "key": "UP-55",
+     "project": "UP",
+     "summary": "Email communications to team",
+     "type": "Subtask",
+     "status": "Backlog",
+     "statusCat": "new",
+     "created": "2026-10-07",
+     "resolved": null,
+     "due": null,
+     "assignee": null
     }
    ]
   },

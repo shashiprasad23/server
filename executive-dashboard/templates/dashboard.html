@@ -357,6 +357,7 @@ footer.notes code{font-family:var(--font-mono);font-size:12px;background:var(--s
     <div class="panel" id="missed-wrap" hidden>
       <h3>Missed due dates and the impact on each timeline</h3>
       <p class="muted" style="font-size:13px;margin-top:4px;max-width:90ch">Every open ticket past its due date, in every programme, plus due dates pushed later in the last three weeks (found by comparing the daily Jira snapshots). "Shipped, not closed" means the work is in production but the ticket was never closed: housekeeping, not a delay.</p>
+      <p class="muted" style="font-size:13px;margin-top:6px;max-width:90ch" id="missed-stale" hidden></p>
       <div class="tscroll" style="margin-top:12px"><table id="missed"></table></div>
       <div id="missed-detail" style="margin-top:6px"></div>
     </div>
@@ -799,6 +800,8 @@ const CAL = /*__CAL__*/[];
         if (m.closedLate14) impact.push(`${m.closedLate14} closed late in 14 days, ${m.closedLateDays} days late on average.`);
         if (!impact.length) impact.push("No missed dates.");
         return `<tr><td>${esc(m.name)}</td><td class="r num" style="${m.open?"color:var(--bad);font-weight:600":""}">${m.open}</td><td class="r num">${m.realLate}</td><td class="r num">${m.shippedNotClosed}</td><td class="r num">${m.open?`${m.medianLate} · ${m.maxLate} d`:"—"}</td><td class="r num">${m.redated.length||"—"}</td><td class="r num">${m.closedLate14||"—"}</td><td style="font-size:13px;color:var(--ink-2)">${impact.join(" ")}</td></tr>`;}).join("")}</tbody>`;
+    $("#missed-stale").hidden = !D.staleCount;
+    $("#missed-stale").innerHTML = D.staleCount ? `<b>Includes ${D.staleCount} open tickets nobody has updated in 30 days or more</b> that are past due, in a blocker state or left over from a sprint. They are outside the 30-day activity figures but still count here, in the scorecards' past-due numbers and under Dependencies.` : "";
     $("#missed-detail").innerHTML = MS.filter(m=>m.open||m.redated.length).map(m=>`<details class="more"><summary>${esc(m.name)}: ${m.open} past due${m.redated.length?`, ${m.redated.length} re-dated`:""}</summary>
       <div class="tscroll" style="margin-top:8px"><table><thead><tr><th>Ticket</th><th>Status · owner</th><th class="r">Due</th><th class="r">Days late</th><th>Impact</th></tr></thead><tbody>${
         m.items.map(i=>`<tr><td>${J(i.key)} <span class="chip">${esc(i.type||"")}</span><span class="sub" style="color:var(--ink-2)">${esc(i.summary)}</span></td><td>${esc(i.status)}<span class="sub">${esc(i.assignee||"Unassigned")}</span></td><td class="r num">${dshort(i.due)}${i.redated?`<span class="sub">was ${dshort(i.redated.from)}</span>`:""}</td><td class="r num" style="${i.daysLate>14?"color:var(--bad);font-weight:600":""}">${i.daysLate}</td><td style="font-size:13px">${keyify(i.impact)}</td></tr>`).join("")}

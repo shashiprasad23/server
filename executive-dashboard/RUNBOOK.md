@@ -50,6 +50,10 @@ python3 scripts/ingest_mcp.py add --work $W --kind issues <saved-or-written-file
 
 Keep the same `ORDER BY key ASC` and follow the token. Never restart a pull with a `key >` filter, because Jira sorts keys as text.
 
+| Stale (once) | `project in (<scope>) AND statusCategory != Done AND updated < -30d AND (duedate < now() OR status = Blocker OR sprint in closedSprints() OR issueLinkType = "is blocked by") ORDER BY key ASC` | same fields as Issues (with sprint, flag and links) | `stale` |
+
+The stale pull catches open tickets nobody has touched in 30 days that are still past due, blocked or left over from a sprint. They stay out of the 30-day activity figures but count in past-due numbers, the missed-deadline panel and Dependencies.
+
 ### 1b. Named people (Anshul, Anmol, Rupkatha)
 
 The people and their account ids are in `content/scope.json` under `spotlight`. Their work sits outside the report boards or on tickets raised for others, so pull it from every project:

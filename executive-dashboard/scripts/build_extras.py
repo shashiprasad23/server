@@ -209,7 +209,7 @@ def key_highlights(issues, scope, today):
     return out
 
 
-def watchlist(people, issues, scope, period, notes, exclude=()):
+def watchlist(people, issues, scope, period, notes, exclude=(), extra_overdue=None):
     ps, pe = period["start"], period["end"]
     raised = collections.Counter(i.get("reporter") for i in issues if ps <= day(i["created"]) <= pe)
     bugs = collections.Counter(i.get("reporter") for i in issues if ps <= day(i["created"]) <= pe and i.get("type") == "Bug")
@@ -219,6 +219,7 @@ def watchlist(people, issues, scope, period, notes, exclude=()):
         if p["name"] in skip:
             continue
         flags = []
+        p = dict(p, overdue=p["overdue"] + (extra_overdue or {}).get(p["name"], 0))  # plus stale past-due tickets
         if p["hours"] == 0 and p["open"]:
             flags.append(["grey", "No Tempo hours on own tickets"])
         elif 0 < p["pctCapacity"] < 60:

@@ -99,6 +99,14 @@ def build(snapshot_dir: pathlib.Path, scope=None):
         register = [r for r in register if r["project"] in keep]
 
     today = meta["snapshotDate"]
+    # Open tickets untouched for 30+ days that are past due, blocked or carried over a sprint (stale.json).
+    # They count in past-due, blocker and dependency figures, never in the 30-day throughput.
+    stale_path = snapshot_dir / "stale.json"
+    stale = load(stale_path) if stale_path.exists() else []
+    for i in stale:
+        i["summary"] = html.unescape(i.get("summary") or "")
+    stale = [i for i in stale if (not scope or i["project"] in set(scope["projects"])) and (i.get("created") or "")[:10] <= today
+             and i["key"] not in {x["key"] for x in issues}]
     p_start, p_end = cur["period"]["start"], cur["period"]["end"]
     d30 = (dt.date.fromisoformat(today) - dt.timedelta(days=30)).isoformat()
     cap_hours = cur["period"]["workingDays"] * cur["capacityPolicy"]["hoursPerDay"]
@@ -110,7 +118,7 @@ def build(snapshot_dir: pathlib.Path, scope=None):
     for p in sorted({i["project"] for i in issues}):
         xs = [i for i in issues if i["project"] == p]
         open_ = [i for i in xs if i["statusCat"] != "done"]
-        overdue = [i for i in open_ if i.get("due") and i["due"] < today]
+        overdue = [i for i in open_ + [x for x in stale if x["project"] == p] if i.get("due") and i["due"] < today]
         projects.append({
             "key": p, "name": PROJECT_NAMES.get(p, p),
             "updated30": len(xs),
@@ -249,21 +257,23 @@ def build(snapshot_dir: pathlib.Path, scope=None):
         "capacityPerPerson": cap_hours,
     }
 
-    scorecards = build_scorecards(issues, scope, today, p_start, p_end, d30) if scope else []
+    scorecards = build_scorecards(issues, scope, today, p_start, p_end, d30, stale) if scope else []
     spotlight = build_spotlight(snapshot_dir, cur, scope, today, p_start, p_end, d30)
     extras = {}
     if scope:
         spot_names = [s["name"] for s in scope.get("spotlight", [])]
         extras = {
-            "missed": build_extras.missed_deadlines(issues, scope, today),
+            "missed": build_extras.missed_deadlines(issues + stale, scope, today),
             "designDeps": build_extras.design_dependencies(snapshot_dir, issues, scope, today),
             "highlights": build_extras.key_highlights(issues, scope, today),
             "keyHighlights": cur.get("keyHighlights", {}),
             "designNotes": cur.get("designDependencies", {}),
-            "watch": build_extras.watchlist(people, issues, scope, cur["period"], cur.get("performance", {}),
-                                            exclude=list(scope.get("hoursExclude", [])) + spot_names),
+            "watch": build_extras.watchlist(people, issues + stale, scope, cur["period"], cur.get("performance", {}),
+                                            exclude=list(scope.get("hoursExclude", [])) + spot_names,
+                                            extra_overdue=collections.Counter(i.get("assignee") for i in stale if i.get("due") and i["due"] < today)),
             "watchExcluded": list(scope.get("hoursExclude", [])),
-            "deps": build_extras.dependencies(issues, scope, today),
+            "deps": build_extras.dependencies(issues + stale, scope, today),
+            "staleCount": len(stale),
         }
 
     def pick(keys):
@@ -335,7 +345,7 @@ def build_spotlight(snapshot_dir, cur, scope, today, p_start, p_end, d30):
     return out
 
 
-def build_scorecards(issues, scope, today, p_start, p_end, d30):
+def build_scorecards(issues, scope, today, p_start, p_end, d30, stale=()):
     """One card per programme: throughput, delivered and in-flight stories, overdue, blocked, roll-ups, bugs."""
     by_key = {i["key"]: i for i in issues}
     cards = []
@@ -350,8 +360,9 @@ def build_scorecards(issues, scope, today, p_start, p_end, d30):
                            key=lambda i: i["resolved"], reverse=True)
         inflight = sorted([i for i in top if i["statusCat"] == "indeterminate"], key=lambda i: (i.get("due") or "9999", i["key"]))
         planned = [i for i in top if i["statusCat"] == "new"]
-        overdue = sorted([i for i in open_ if i.get("due") and i["due"] < today], key=lambda i: i["due"])
-        blocked = [i for i in xs if re.search(r"block|hold", i["status"], re.I) and i["statusCat"] != "done"]
+        old_open = [i for i in stale if i["project"] in prog["projects"]]
+        overdue = sorted([i for i in open_ + old_open if i.get("due") and i["due"] < today], key=lambda i: i["due"])
+        blocked = [i for i in xs + old_open if re.search(r"block|hold", i["status"], re.I) and i["statusCat"] != "done"]
         kids = collections.defaultdict(list)
         for i in xs:
             if i.get("parent"):

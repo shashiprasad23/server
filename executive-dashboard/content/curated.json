@@ -759,10 +759,10 @@
     "MT": [
       {
         "topic": "Live chat widget across Marketplace (new)",
-        "status": "Raised 6 Oct (MT-1577) with setup, build and QA subtasks; chat platform not chosen yet (MT-1578).",
-        "date": null,
-        "ask": "Set a target date and confirm the chat platform.",
-        "rag": "amber"
+        "status": "Started on 7 Oct (MT-1577, Naveen Jangid, due 14 Oct). Choosing the chat platform (MT-1578) is in progress, due 9 Oct.",
+        "date": "2026-10-14",
+        "ask": "Confirm the chosen chat platform by 9 Oct.",
+        "rag": "green"
       },
       {
         "topic": "RMA item-level decisions",
@@ -773,9 +773,9 @@
       },
       {
         "topic": "Release testing: smoke, security and privacy",
-        "status": "Three stories raised 30 Sep (MT-1541, MT-1547, MT-1553), all still To Do.",
+        "status": "Three stories raised 30 Sep: security testing (MT-1547) started on 7 Oct; smoke testing (MT-1541) and privacy compliance (MT-1553) are still To Do.",
         "date": "2026-10-15",
-        "ask": "Confirm they can start this week; nine days remain.",
+        "ask": "Start MT-1541 and MT-1553 this week; eight days remain.",
         "rag": "amber"
       },
       {
@@ -860,7 +860,7 @@
     "ATLAS": [
       {
         "topic": "CRM MVP plan",
-        "status": "No date in Jira. ATLAS-1 'R&D on CRM for MVP' is in To Do with 8.25 h logged; the scope and specification task (ATLAS-2) was created on 6 Oct for Saurabh Jain without a due date.",
+        "status": "No date in Jira. ATLAS-1 'R&D on CRM for MVP' is in To Do with 8.25 h logged. Saurabh Jain holds the scope and specification task (ATLAS-2, 6 Oct) and a POC understanding meeting (ATLAS-3, raised 7 Oct); neither has a due date.",
         "date": null,
         "ask": "Ask Anshul Bhargava and Saurabh Jain when the MVP plan will be shared and record it as the due date on ATLAS-2.",
         "rag": "red"
@@ -874,7 +874,7 @@
       "evidence": [
         "QA on Marketplace, yet no bugs raised in the window; on the other boards Kannan Elangovan raised 14 and r.jaiswal 9.",
         "The end-to-end test automation framework (MT-1141) has not started.",
-        "Three items past due: MT-1053 and MT-992 (due 31 Aug) and MT-1331 (due 15 Sep).",
+        "Past due: MT-1053 and MT-992 (due 31 Aug) still sit in UAT and have not been touched since 7 Sep. MT-1331 (due 15 Sep) closed on 7 Oct. Six Web-Identity claims-removal tasks (ID-679 to ID-684, due 15 Sep) are in production but not closed.",
         "The 31 closures and 86.5 h credited in Jira are mostly developer subtasks passed to QA at the end (27 of 31), so they do not measure Sapavat's own output."
       ],
       "action": "Decide whether to start a PIP. No PIP and no discussion with Farhat Quadiri is recorded in Jira or Confluence. Discuss with Farhat Quadiri, then set 30-day QA targets: bugs logged per sprint, test cases written and run, and a start date for MT-1141.",
@@ -947,6 +947,26 @@
         "118.6 h credited in the window, with one day over 20 h, so the hours figure is not credible on its own."
       ],
       "action": "Ask Kunal Jangid to close the shipped June tasks; check Tempo by worker for the real hours.",
+      "pip": null
+    },
+    "Ankit Saxena": {
+      "rag": "amber",
+      "assessment": "43 open tickets past their due date, none touched since 13 Aug.",
+      "evidence": [
+        "24 Conversational AI design and specification tasks (from UC-100, due 2 Aug) and 19 Services Platform tickets, all in To Do.",
+        "UC-25 (admin analytics) and UC-26 (model selection), due 15 Oct, have not started; UC-22 (Teams handoff) is in progress."
+      ],
+      "action": "Confirm which of the 43 are still planned; re-date or close the rest, and agree the 15 Oct scope.",
+      "pip": null
+    },
+    "k.kishore": {
+      "rag": "amber",
+      "assessment": "Devops blockers with no movement.",
+      "evidence": [
+        "13 open tickets past due, 11 of them in BLOCKER status, the oldest due 27 Mar (APIM WebSocket routing, IN-776 to IN-778) and the Azure Virtual Desktop and licensing set-up (IN-990, IN-994 to IN-999).",
+        "12 h logged in the window (17% of capacity)."
+      ],
+      "action": "Name what each blocker waits on (licences, access, a decision) and who clears it; escalate the AVD and licensing items.",
       "pip": null
     }
   },

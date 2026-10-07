@@ -153,6 +153,8 @@ def main():
                 (t / "people.json").write_text(json.dumps(bundles[base]["people"]))
             if "design" in bundles[base]:
                 (t / "design.json").write_text(json.dumps(bundles[base]["design"]))
+            if "stale" in bundles[base]:
+                (t / "stale.json").write_text(json.dumps(bundles[base]["stale"]))
             if "milestones" in bundles[base]:
                 (t / "milestones.json").write_text(json.dumps(bundles[base]["milestones"]))
             rebuilt = bd.build(t, scope)

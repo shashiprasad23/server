@@ -9,6 +9,7 @@ written to a file first. This script accumulates those files, then writes the sn
   python3 scripts/ingest_mcp.py add --work /tmp/pull --kind issues   <result-file> [more files]
   python3 scripts/ingest_mcp.py add --work /tmp/pull --kind worklogs <result-file>
   python3 scripts/ingest_mcp.py add --work /tmp/pull --kind register <result-file>
+  python3 scripts/ingest_mcp.py add --work /tmp/pull --kind stale    <result-file>
 
   # when every page is in
   python3 scripts/ingest_mcp.py finalize --work /tmp/pull --out data/snapshot \\
@@ -23,7 +24,7 @@ import pathlib
 import re
 import sys
 
-KINDS = ("issues", "worklogs", "register")
+KINDS = ("issues", "worklogs", "register", "stale")
 
 
 def adf_text(n):
@@ -166,6 +167,10 @@ def cmd_finalize(a):
     (out / "issues.json").write_text(json.dumps(issue_rows, separators=(",", ":")))
     (out / "worklogs.json").write_text(json.dumps({"issues": wl_issues, "worklogs": logs}, separators=(",", ":")))
     (out / "register.json").write_text(json.dumps(register, indent=1))
+    # Open tickets untouched for 30+ days that are past due, blocked or carried over from a sprint.
+    # They are outside the 30-day figures, but the risk and dependency lists need them.
+    stale = {k: v for k, v in load("stale").items() if k not in issues}
+    (out / "stale.json").write_text(json.dumps([{k: v.get(k) for k in keep} for v in sorted(stale.values(), key=lambda x: x["key"])], separators=(",", ":")))
     msg = f"snapshot {a.date}: {len(issue_rows)} issues, {len(wl_issues)} worklog issues / {len(logs)} worklogs, {len(register)} register items"
     if a.expected and a.expected != len(issue_rows):
         msg += f"  WARNING: Jira count was {a.expected}, ingested {len(issue_rows)}"
