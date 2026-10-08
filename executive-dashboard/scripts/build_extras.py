@@ -257,6 +257,7 @@ THIRD_PARTIES = [
     ("Vendor or third party", r"third[- ]?party|3rd[- ]?party|vendor api|vendor approval|external vendor"),
 ]
 _TP_SKIP = re.compile(r"avalara|tamper", re.I)  # Avalara left out at management's request; "vendor tampering" is a security test
+_PARKING = re.compile(r"\s*retro", re.I)  # "Retrospective" is a parking sprint, not a delivery sprint
 SHIPPED_RX = re.compile(r"ready for prod|in prod|deployed in prod|\buat\b|tested in uat", re.I)
 
 
@@ -280,7 +281,7 @@ def dependencies(issues, scope, today):
 
     missed = []
     for i in op:
-        sp = [s for s in (i.get("sprints") or []) if s.get("end")]
+        sp = [s for s in (i.get("sprints") or []) if s.get("end") and not _PARKING.match(s.get("name") or "")]
         gone = sorted([s for s in sp if s["end"] < today], key=lambda s: s["end"])
         if not gone:
             continue
@@ -331,6 +332,8 @@ def dependencies(issues, scope, today):
         if i["project"] not in keep:
             continue
         for s in i.get("sprints") or []:
+            if _PARKING.match(s.get("name") or ""):
+                continue
             if s.get("end") and s["end"] < today and s["state"] in ("active", "future"):
                 k = (s["name"], s["state"], s["end"])
                 sprint_open[k]["projects"].add(i["project"])

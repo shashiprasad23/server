@@ -759,10 +759,17 @@
     "MT": [
       {
         "topic": "Live chat widget across Marketplace (new)",
-        "status": "Started on 7 Oct (MT-1577, Naveen Jangid, due 14 Oct). Choosing the chat platform (MT-1578) is in progress, due 9 Oct.",
+        "status": "Widget build (MT-1579) and QA (MT-1580) started on 8 Oct; the platform choice (MT-1578, due 9 Oct) moved back to To Do. Marketing is running its own live chat (MR-754, due 15 Oct) with a separate platform choice (MR-786).",
         "date": "2026-10-14",
-        "ask": "Confirm the chosen chat platform by 9 Oct.",
-        "rag": "green"
+        "ask": "Choose one chat platform for both sites by 9 Oct, or confirm that two are intended.",
+        "rag": "amber"
+      },
+      {
+        "topic": "Design and content review of 11 commerce journeys (new)",
+        "status": "Raised 8 Oct as High priority (MT-1586, Saurabh Jain, due 12 Oct) with 13 review subtasks across 12 people, including Anshul Bhargava, Anmol Srivastava and Shashi Prasad K.",
+        "date": "2026-10-12",
+        "ask": "Confirm who signs off each journey and what happens to findings after 12 Oct.",
+        "rag": "amber"
       },
       {
         "topic": "RMA item-level decisions",
@@ -828,7 +835,7 @@
     "UC": [
       {
         "topic": "Next chatbot demo",
-        "status": "No demo is scheduled or tracked in Jira. Last delivered on 1 Oct: the CSM Teams dashboard (UC-215) and the logged-in marketplace user (UC-216). Four stories are due 15 Oct: marketplace sign-in for the chatbot (UC-225), live agent handoff via Teams (UC-22), admin analytics (UC-25) and model selection (UC-26). UC-25 and UC-26 have not started.",
+        "status": "No demo is scheduled or tracked in Jira. On 8 Oct the Teams live-agent handoff (UC-22) and its build and QA tasks (UC-43, UC-44) moved to In Dev, and model selection (UC-26) started. Marketplace sign-in for the chatbot (UC-225) is in progress; admin analytics (UC-25) has not started. All four are due 15 Oct.",
         "date": "2026-10-15",
         "ask": "Confirm a demo date with Ankit Saxena and Nareddy Shiva Prasad Reddy; 15 Oct is the earliest date the planned work could be shown.",
         "rag": "amber"
@@ -954,7 +961,7 @@
       "assessment": "43 open tickets past their due date, none touched since 13 Aug.",
       "evidence": [
         "24 Conversational AI design and specification tasks (from UC-100, due 2 Aug) and 19 Services Platform tickets, all in To Do.",
-        "UC-25 (admin analytics) and UC-26 (model selection), due 15 Oct, have not started; UC-22 (Teams handoff) is in progress."
+        "UC-22 (Teams handoff) moved to In Dev and UC-26 (model selection) started on 8 Oct; UC-25 (admin analytics), due 15 Oct, has not started."
       ],
       "action": "Confirm which of the 43 are still planned; re-date or close the rest, and agree the 15 Oct scope.",
       "pip": null

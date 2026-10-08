@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-10-07",
+ "snapshotDate": "2026-10-08",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -138,6 +138,20 @@
        0.67
       ]
      ]
+    },
+    {
+     "key": "MT-1588",
+     "project": "MT",
+     "summary": "Review Request for Quote buyer flow, design, and content",
+     "type": "Subtask",
+     "status": "TODO",
+     "statusCat": "new",
+     "created": "2026-10-08",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
     },
     {
      "key": "PULSE-1",
@@ -5158,17 +5172,21 @@
      "project": "UP",
      "summary": "UAT: re-test against UAT USP CRM and CRM DB data",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-07",
-     "resolved": null,
+     "resolved": "2026-10-08",
      "due": "2026-10-07",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.5,
+     "spentHours": 3.0,
      "logs": [
       [
        "2026-10-07",
        0.5
+      ],
+      [
+       "2026-10-08",
+       2.5
       ]
      ]
     },
@@ -5409,8 +5427,8 @@
      "project": "IN",
      "summary": "General DevOps Ticket",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-01",
      "resolved": null,
      "due": "2026-10-15",
@@ -5577,10 +5595,10 @@
      "project": "IN",
      "summary": "Design AKS-hosted Azure DevOps agent architecture",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-01",
-     "resolved": null,
+     "resolved": "2026-10-08",
      "due": "2026-10-15",
      "assignee": "k.kishore"
     },
@@ -5589,10 +5607,10 @@
      "project": "IN",
      "summary": "Build secure agent image and AKS deployment manifests",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-01",
-     "resolved": null,
+     "resolved": "2026-10-08",
      "due": "2026-10-15",
      "assignee": "k.kishore"
     },
@@ -5601,8 +5619,8 @@
      "project": "IN",
      "summary": "Implement agent registration, scaling, and lifecycle controls",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-01",
      "resolved": null,
      "due": "2026-10-15",
@@ -9789,7 +9807,7 @@
      "project": "UC",
      "summary": "Live agent handoff via Microsoft Teams — bidirectional relay & SLA fallback",
      "type": "Story",
-     "status": "IN PROGRESS",
+     "status": "In Dev",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -9813,8 +9831,8 @@
      "project": "UC",
      "summary": "Admin console — LLM provider/model selection without deployment",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-10-15",
@@ -9897,7 +9915,7 @@
      "project": "UC",
      "summary": "Implementation — Teams Bot Framework integration & bidirectional relay",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "In Dev",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -9909,11 +9927,23 @@
      "project": "UC",
      "summary": "QA & validation — Teams handoff SLA, fallback & audit logging",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "In Dev",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2027-02-21",
+     "assignee": "Ankit Saxena"
+    },
+    {
+     "key": "UC-51",
+     "project": "UC",
+     "summary": "Implementation — admin LLM provider/model selection console",
+     "type": "Subtask",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2027-04-13",
      "assignee": "Ankit Saxena"
     },
     {
@@ -10005,7 +10035,7 @@
      "project": "UC",
      "summary": "Design & technical spec — content-gap clustering algorithm",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "In Dev",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -10017,7 +10047,7 @@
      "project": "UC",
      "summary": "Integration & security review — analytics export audit trail",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "In Dev",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -10035,6 +10065,18 @@
      "resolved": null,
      "due": "2027-01-10",
      "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "UC-94",
+     "project": "UC",
+     "summary": "Design & technical spec — quote-generation pricing source of truth",
+     "type": "Subtask",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2027-02-05",
+     "assignee": "Ankit Saxena"
     },
     {
      "key": "UP-28",
@@ -10269,10 +10311,10 @@
      "project": "UP",
      "summary": "UAT: re-test against UAT USP CRM and CRM DB data",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-07",
-     "resolved": null,
+     "resolved": "2026-10-08",
      "due": "2026-10-07",
      "assignee": "Anshul Bhargava"
     }
@@ -10282,6 +10324,20 @@
    "name": "Anmol Srivastava",
    "accountId": "712020:630c75ca-4378-4036-8a73-1743a4b2dbac",
    "assigned": [
+    {
+     "key": "MT-1590",
+     "project": "MT",
+     "summary": "Review Order Checkout design, content, and payment states",
+     "type": "Subtask",
+     "status": "TODO",
+     "statusCat": "new",
+     "created": "2026-10-08",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anmol Srivastava",
+     "spentHours": 0.0,
+     "logs": []
+    },
     {
      "key": "UP-53",
      "project": "UP",
@@ -10293,7 +10349,7 @@
      "resolved": null,
      "due": null,
      "assignee": "Anmol Srivastava",
-     "spentHours": 2.0,
+     "spentHours": 3.0,
      "logs": [
       [
        "2026-10-06",
@@ -10301,6 +10357,10 @@
       ],
       [
        "2026-10-07",
+       1.0
+      ],
+      [
+       "2026-10-08",
        1.0
       ]
      ]
@@ -10915,6 +10975,18 @@
      "status": "Backlog",
      "statusCat": "new",
      "created": "2026-10-07",
+     "resolved": null,
+     "due": null,
+     "assignee": null
+    },
+    {
+     "key": "UP-56",
+     "project": "UP",
+     "summary": "JIRA issue resolution",
+     "type": "Subtask",
+     "status": "Backlog",
+     "statusCat": "new",
+     "created": "2026-10-08",
      "resolved": null,
      "due": null,
      "assignee": null
