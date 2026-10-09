@@ -39,7 +39,7 @@ const fmtDate = (iso) =>
 const fmtRange = (a, b) => (a === b ? fmtDate(a) : `${fmtDate(a)} – ${fmtDate(b)}`);
 const todayIso = () => new Date().toISOString().slice(0, 10);
 
-const STATUS_LABEL = { over: 'Over-allocated', full: 'Fully allocated', under: 'Has free capacity', unassigned: 'Unassigned' };
+const STATUS_LABEL = { over: 'Over-allocated', full: 'Fully allocated', under: 'Free capacity', unassigned: 'Unassigned' };
 const LEAVE_TYPES = ['leave', 'sick', 'training', 'travel', 'other'];
 const PROJECT_STATUS = { active: 'Active', on_hold: 'On hold', completed: 'Completed' };
 
