@@ -306,9 +306,10 @@ def dependencies(issues, scope, today):
             why.append("Flagged in Jira")
         if why:
             age = (t - dt.date.fromisoformat(i["updated"][:10])).days if i.get("updated") else None
-            blockers.append(_row(i, reason="; ".join(why), blockedBy=on, idleDays=age,
+            hard = bool(re.search(r"block", i["status"] or "", re.I) or i.get("flagged"))
+            blockers.append(_row(i, reason="; ".join(why), blockedBy=on, idleDays=age, kind="status" if hard else "link",
                                  overdue=bool(i.get("due") and i["due"] < today)))
-    blockers.sort(key=lambda r: (r["project"], r["key"]))
+    blockers.sort(key=lambda r: (r["kind"] != "status", r["project"], r["key"]))
 
     tp, matched = [], {}
     for i in op:
@@ -351,4 +352,5 @@ def dependencies(issues, scope, today):
     return {"hasSprintData": has_sprints, "missedSprint": missed, "blockers": blockers, "thirdParty": tp,
             "overrunSprints": overrun,
             "byProgramme": {"missedSprint": by_prog(missed), "blockers": by_prog(blockers), "thirdParty": by_prog(tp)},
-            "missedShipped": sum(r["shipped"] for r in missed), "missedReplanned": sum(1 for r in missed if r["nextSprint"])}
+            "missedShipped": sum(r["shipped"] for r in missed), "missedReplanned": sum(1 for r in missed if r["nextSprint"]),
+            "blockedStatus": sum(1 for r in blockers if r["kind"] == "status"), "blockedLink": sum(1 for r in blockers if r["kind"] == "link")}

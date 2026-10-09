@@ -147,7 +147,7 @@ def build(date, to):
     DP = d.get("deps")
     if DP and DP.get("hasSprintData"):
         H.append(h2("Dependencies: missed sprints, blockers and outside parties"))
-        H.append(p(f"<b>{len(DP['missedSprint'])}</b> open tickets missed their sprint ({DP['missedShipped']} of them already built and waiting to be closed), <b>{len(DP['blockers'])}</b> sit in a blocker state, and <b>{len(DP['thirdParty'])}</b> wait on an outside party."))
+        H.append(p(f"<b>{len(DP['missedSprint'])}</b> open tickets missed their sprint ({DP['missedShipped']} of them already built and waiting to be closed), <b>{len(DP['blockers'])}</b> are blocked ({DP.get('blockedStatus', len(DP['blockers']))} in a Blocker status, {DP.get('blockedLink', 0)} waiting on another open ticket), and <b>{len(DP['thirdParty'])}</b> wait on an outside party."))
         cnt = lambda k, pid: next((x["n"] for x in DP["byProgramme"][k] if x["id"] == pid), 0)
         H.append(table(["Programme", "Missed sprint", "Blocker state", "Third party"], [
             [f"<b>{e(c['name'])}</b>", cnt("missedSprint", c["id"]) or "—", cnt("blockers", c["id"]) or "—", cnt("thirdParty", c["id"]) or "—"]

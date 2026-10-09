@@ -17,6 +17,20 @@
       "kind": "resolved",
       "count": 278,
       "label": "Services Platform backlog clean-up (278 closed)"
+    },
+    {
+      "date": "2026-09-28",
+      "project": "PULSE",
+      "kind": "created",
+      "count": 291,
+      "label": "Uvation Pulse backlog created in bulk (291)"
+    },
+    {
+      "date": "2026-10-09",
+      "project": "USP",
+      "kind": "created",
+      "count": 95,
+      "label": "Services Platform Go Live plan raised in bulk (95)"
     }
   ],
   "pipeline": [

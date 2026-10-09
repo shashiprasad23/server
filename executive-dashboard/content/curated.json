@@ -759,7 +759,7 @@
     "MT": [
       {
         "topic": "Live chat widget across Marketplace (new)",
-        "status": "Widget build (MT-1579) and QA (MT-1580) started on 8 Oct; the platform choice (MT-1578, due 9 Oct) moved back to To Do. Marketing is running its own live chat (MR-754, due 15 Oct) with a separate platform choice (MR-786).",
+        "status": "The platform choice (MT-1578) and the widget build (MT-1579) moved to Dev on 9 Oct, the platform choice's due date. Marketing is running its own live chat (MR-754, due 15 Oct) with a separate platform choice (MR-786).",
         "date": "2026-10-14",
         "ask": "Choose one chat platform for both sites by 9 Oct, or confirm that two are intended.",
         "rag": "amber"
@@ -818,15 +818,22 @@
     ],
     "USP": [
       {
-        "topic": "Sprint end moved to 30 Oct",
-        "status": "78 items that missed 30 Sep were re-dated to 30 Oct on 2 Oct, including the three S1 production bugs (USP-4229, USP-4230, USP-4231).",
-        "date": "2026-10-30",
-        "ask": "Ask for a fix date on the S1 bugs that is earlier than the sprint end.",
-        "rag": "red"
+        "topic": "Go Live plan (new)",
+        "status": "Raised 9 Oct by Livian Stefan Stan: five epics (subscription and contract, payments and invoicing, dashboard, subscription upgrade, cross-cutting) with 95 stories and subtasks, mostly for Silviu Oltean and Cășvan Marcel. Epic due dates run from 2 Nov to 15 Dec. 22 stories are sequenced behind other open stories, and 8 tickets were created with due dates already past.",
+        "date": "2026-12-15",
+        "ask": "Confirm the go-live date this plan works towards, and fix the 8 tickets dated in the past.",
+        "rag": "amber"
       },
       {
-        "topic": "Support Hub v2 (new)",
-        "status": "Story raised 1 Oct (USP-4252), in progress, owner Silviu Oltean.",
+        "topic": "S1 production bugs",
+        "status": "Fixed: the AI Factory price mismatches (USP-4229, USP-4230) on 7 Oct and the deposit deduction bug (USP-4095) on 9 Oct. Still open: the Document API 502 (USP-4231) and the subscription calculation 500 error (USP-4204).",
+        "date": "2026-10-30",
+        "ask": "Ask for fix dates on USP-4231 and USP-4204 earlier than 30 Oct.",
+        "rag": "amber"
+      },
+      {
+        "topic": "Support Hub",
+        "status": "Support Hub v1 (USP-4028) closed on 9 Oct; v2 (USP-4252) is in progress with Silviu Oltean.",
         "date": "2026-10-30",
         "ask": null,
         "rag": "green"
@@ -844,9 +851,9 @@
     "PULSE": [
       {
         "topic": "Interactive AI Factory Experience (new, Anshul Bhargava)",
-        "status": "Started 6 Oct on the Uvation Projects board (UP-40): a 3D data hall with racks, GPU drill-down, health overlays and live USP subscription data. 6 of its 9 subtasks were created and closed the same day; 4 h logged.",
-        "date": null,
-        "ask": "Confirm which programme it belongs to, who sponsors it and when it will be demonstrated.",
+        "status": "On 9 Oct Anshul Bhargava closed UP-40 and published the project plan on Confluence (PRD-1, a new board). 98 backlog tasks were raised in Uvation Projects with due dates from 13 Oct to 19 Nov.",
+        "date": "2026-11-19",
+        "ask": "Share the Confluence plan link with the team, and confirm the sponsor and the first demo date.",
         "rag": "amber"
       },
       {

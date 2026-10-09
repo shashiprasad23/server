@@ -831,7 +831,7 @@ const CAL = /*__CAL__*/[];
   const dpOn = !!(DP && DP.hasSprintData);
   ["#deps-sum-wrap","#deps-sprint-wrap","#deps-block-wrap","#deps-tp-wrap"].forEach(id=>$(id).hidden = !dpOn);
   $("#deps-lede").textContent = dpOn
-    ? `${DP.missedSprint.length} open tickets missed their sprint (${DP.missedShipped} of them already built and waiting to be closed), ${DP.blockers.length} sit in a blocker state, and ${DP.thirdParty.length} wait on an outside party. The design team's timelines follow below.`
+    ? `${DP.missedSprint.length} open tickets missed their sprint (${DP.missedShipped} of them already built and waiting to be closed), ${DP.blockers.length} are blocked (${DP.blockedStatus ?? DP.blockers.length} in a Blocker status, ${DP.blockedLink ?? 0} waiting on another open ticket), and ${DP.thirdParty.length} wait on an outside party. The design team's timelines follow below.`
     : "Sprint, blocker and third-party data starts with the 7 Oct pull, so this day shows the design team's timelines only.";
   if (dpOn) {
     const by = (k, id) => (DP.byProgramme[k].find(x=>x.id===id)||{}).n || 0;
