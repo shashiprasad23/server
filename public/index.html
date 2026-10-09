@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resource Pool</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Resource Pool</div>
+    <nav id="nav">
+      <a href="#board" data-view="board">Sprint board</a>
+      <a href="#plan" data-view="plan">Allocation planner</a>
+      <a href="#leave" data-view="leave">Unavailability</a>
+      <a href="#people" data-view="people">People</a>
+      <a href="#projects" data-view="projects">Projects</a>
+      <a href="#sprints" data-view="sprints">Sprints &amp; holidays</a>
+    </nav>
+  </header>
+
+  <main id="view"></main>
+
+  <dialog id="modal">
+    <form method="dialog" id="modal-form">
+      <h2 id="modal-title"></h2>
+      <div id="modal-body"></div>
+      <p class="error" id="modal-error" hidden></p>
+      <div class="actions">
+        <button type="button" class="btn ghost" id="modal-cancel">Cancel</button>
+        <button type="submit" class="btn primary" id="modal-submit">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" role="status" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
