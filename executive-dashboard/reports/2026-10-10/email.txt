@@ -1,0 +1,310 @@
+STATUS REPORT · 10 Oct 2026
+Web programmes: risks, issues, progress and utilisation
+
+Scope: Web-Marketplace, Web-Marketing, Web-Uvation Services Platform, Uvation Conversational AI, Uvation Pulse, Atlas CRM, Web-Identity, Web-Rewards, Web-Support, Devops, Design Marketing Development Collab (Web-Marketplace includes the Product Catalog board).
+Window for hours: 26 Sep–9 Oct (9 working days). Throughput: last 30 days.
+
+Portfolio Status Review: https://claude.ai/artifact/R9gQ2oHPXkQaj2ZgrXCEAe
+Daily Delivery Pulse:   https://claude.ai/artifact/K7m76XrnRRHWkGYqHtDySN
+
+HEADLINE FIGURES
+- Issues moved, 30 days: 1,848
+- Issues closed, 30 days: 944
+- Issues closed 26 Sep–9 Oct: 251
+- Open issues (all time): 1,384
+- Open and past due: 224
+- Tempo hours 26 Sep–9 Oct: 1,257
+- AI-server listings live: 0 of 35 (35 in production, disabled)
+- Red register items: 1 of 17
+
+DECISIONS NEEDED
+- Policy change identified during UAT is not recorded anywhere in Jira. Log it now as a Change Request with impact and effort, linked to the affected stories.
+- AI Factory final prices calculated wrongly in production. Add the price-calculation checks to the automated regression run before each production release.
+- Four Marketplace register items no longer appear in Jira, including the red OEM-agreement dependency. Close register items with a reason instead of deleting them.
+- Migrated products are disabled pending approval. Put a dated approval gate in the plan for each batch.
+- USP-3755 Scope creep from multiple managed service teams adding portal requirements. Enforce the change-request gate named in the mitigation.
+- Key-person dependency on Magento product migration. Pair a second engineer on the next batch and document the CSV and attribute steps as an SOP. Suggested owner: Naman Bapna.
+- AI-server products are in production but disabled. Set an approval date with the approver and a named enablement owner. Suggested owner: Shashi Prasad K.
+- Time-logging data cannot support utilisation reporting. Enforce the SOP rule that a description is mandatory. Pull the weekly utilisation view from Tempo by worker, not by Jira assignee. Suggested owner: Shashi Prasad K.
+
+1. RISKS
+11 risks and 6 dependencies; 2 not updated in 30+ days; 2 unassigned.
+- USP-3755 Scope creep from multiple managed service teams adding portal requirements [High/Medium, Product Team, Jira: Livian Stefan Stan, 8 d] -> Keep – materialising. Scope creep is visible: 151 USP issues created in 30 days and 47 open bugs, 5 of them S1. On 2 Oct, 78 items that missed the 30 Sep sprint end were re-dated to 30 Oct, including the three S1 price and Document API bugs, which are still in To Do. 33 items remain past due. Next: Enforce the change-request gate named in the mitigation.
+- MT-1094 Gynger API sandbox access required before financing integration [Medium/Medium, Backend Team, Jira: unassigned, 95 d] -> Re-assess. Financing modal was part of the PDP story (MT-1217), which closed on 24 Sep. No Jira evidence that Gynger sandbox access was obtained. Next: Confirm whether financing is in go-live scope. If not, close. If yes, assign an owner.
+- USP-3750 Uvation Rewards Platform API required for service credit sync [Medium/High, Backend Team, Jira: Livian Stefan Stan, 8 d] -> Keep. Depends on Rewards API. Same failure mode as MT-1099, which Marketplace has already mitigated. Next: Reuse the Marketplace sync and reconciliation pattern.
+- USP-3754 Service credit sync failure from Marketplace or Rewards [Medium/High, Backend Team, Jira: Livian Stefan Stan, 8 d] -> Keep. Duplicate of USP-3750 in substance. Next: Merge with USP-3750.
+- IN-986 Infrastructure scaling risk causing performance degradation [Medium/High, DevOps Team, Jira: k.kishore, 33 d] -> Close with condition. Horizontal pod autoscaling configured in production at 80% CPU (3 Sep). Ticket is Done. Load testing before release is not evidenced. Next: Close risk. Keep 'load test before each production release' as a release checklist item.
+- MT-1095 CDN infrastructure must be operational to serve product images [Low/Medium, DevOps Team, Jira: Shashi Prasad K, 17 d] -> Closed. Closed 23 Sep by Shashi Prasad K: CDN is up and serving product images for all migrated products (MT-1528). Next: None. Closed with a reason.
+- MT-1097 Payment gateway downtime at checkout [Low/High, Backend Team, Jira: Shashi Prasad K, 17 d] -> Closed. Closed 23 Sep by Shashi Prasad K: payments are recorded manually, so the online payment-gateway feature is being deprecated. Next: Revisit only if an online payment gateway is brought back into scope.
+- MT-1098 OEM pricing changes without notice impacting listed prices [Medium/Medium, Product Team, Jira: unassigned, 17 d] -> Closed. Closed 23 Sep by Shashi Prasad K: every catalogue product is sold as request-for-quote, so no OEM list price is shown to buyers. Next: Reopen if any product is enabled with a fixed listed price.
+- MT-1099 Rewards platform sync failure leading to incorrect point balances [Medium/Medium, Backend Team, Jira: Naveen Jangid, 23 d] -> Close. Mitigation delivered. Event-based sync, manual order sync and admin point adjustment exist (comment 16 Sep). Ticket is Done. Next: Close in register.
+- MT-1100 Data breach exposing customer PII or order history [Low/Critical, Security Team, Jira: Naveen Jangid, 17 d] -> Closed. Closed 23 Sep. Marketplace reads user details from the userinfo API instead of token claims (7 Sep). Identity claim-removal subtasks ID-679 to ID-683 sit in another project. Next: Confirm with Security that ID-679 to ID-683 reached production.
+- USP-3747 Uvation Identity must remain single source of truth for USP auth [Low/High, Identity Team, Jira: Livian Stefan Stan, 8 d] -> Keep. Owned and dated. Next: Run the periodic auth-bypass audit named in the mitigation.
+- USP-3748 Cloud partner APIs (Azure Monitor / GCP) must be accessible for dashboards [Medium/High, Engineering Team, Jira: Livian Stefan Stan, 8 d] -> Keep. Owned and dated. Next: Confirm partner API access before Phase 3.
+- USP-3751 Azure AD B2C outage preventing USP portal login [Low/High, Identity Team, Jira: Livian Stefan Stan, 8 d] -> Keep. Owned and dated. Next: Now the only open identity-outage risk, since MT-1096 no longer appears in Jira. Extend it to cover Marketplace login.
+- USP-3752 Cloud partner API rate limits blocking dashboard data [Medium/Medium, Engineering Team, Jira: Livian Stefan Stan, 8 d] -> Keep. Owned and dated. Next: Re-dated from 30 Sep to 30 Oct on 2 Oct with no review comment. Record the review outcome before 30 Oct.
+- USP-3753 AI transcription service failure after advisory session [Medium/Medium, Engineering Team, Jira: Livian Stefan Stan, 8 d] -> Keep. Owned and dated. Next: Confirm the failure mode applies to the advisory workflow.
+- USP-3756 Low adoption of self-service portal by clients used to manual engagement [Medium/High, Product Team, Jira: Livian Stefan Stan, 8 d] -> Keep. Owned and dated. Next: Re-dated from 30 Sep to 30 Oct on 2 Oct with no review comment. Record the review outcome before 30 Oct.
+- USP-3757 Vendor API approval delays blocking integrations [Medium/High, Engineering Team, Jira: Livian Stefan Stan, 8 d] -> Keep. Owned and dated. Next: Re-dated from 30 Sep to 30 Oct on 2 Oct with no review comment. Record the review outcome before 30 Oct.
+- Not in Jira: Hiring a Product Catalog resource -> Retire as a critical risk. Replace with: Key-person dependency on Naman Bapna for Magento product creation and production migration. One researcher (Suganya) covers all brands.
+- New: Key-person dependency on Magento product migration (Medium/High). Every UAT product creation and every UAT-to-production migration was done by one person, including the 8 Vera Rubin products created on 25 Sep and moved to production on 28 Sep (MT-1532, MT-1535). Mitigation: Pair a second engineer on the next batch and document the CSV and attribute steps as an SOP.
+- New: AI-server products are in production but disabled (High/High). All 35 migrated listings, including the 8 Vera Rubin products moved on 28 Sep, were verified and then disabled pending business approval. The UAT cross-validation closed on 28 Sep. Mitigation: Set an approval date with the approver and a named enablement owner.
+- New: Marketplace staging performance (High/Medium). Lighthouse performance score on staging was 43 on 18 Sep, after categories were reduced. The ticket was routed to the wrong person first. Mitigation: Performance baseline and fix plan before enabling products.
+- New: Sitemap exposes 250 of 500+ URLs (High/Medium). The production sitemap lists 250 URLs. More than 500 are expected. This hurts SEO and caps automated test coverage. Mitigation: Fix the sitemap generator, then extend Playwright coverage to the full URL list.
+- New: Time-logging data cannot support utilisation reporting (High/High). Every Tempo worklog in the window uses the generic description 'time-tracking'. Marketing content, Design, Infrastructure and Hamara CRM have no Tempo hours against Jira at all. Mitigation: Enforce the SOP rule that a description is mandatory. Pull the weekly utilisation view from Tempo by worker, not by Jira assignee.
+- New: Marketplace QA automation has no owner (Medium/Medium). The end-to-end automation framework was moved to backlog after the assigned engineer left on 23 Jul. Web-Marketing has working Playwright automation (MR-1165) that could be reused. Mitigation: Reuse the Web-Marketing Playwright setup for a Marketplace smoke suite.
+- Past due, Web-Marketplace: 26 open, most late 306 d. MT-20 Notification -Email templates (306 d, Feature not delivered by its date.); PC-78 AI Server Attributes Updates (225 d, Task still open past its date.); MT-376 Implement Order Filters Backend Support as per New Figma Design (221 d, Task still open past its date.); PC-83 Mandatory_Filterable_Attributes for AI_Servers (197 d, Task still open past its date.)
+- Past due, Web-Marketing: 13 open, most late 128 d. MR-736 Adding Search Button Instead of reset all filter on all post type pages (128 d, Shipped, but the ticket is not closed: housekeeping, no delivery impact.); MR-738 Adding "To Top" button to Footer (124 d, Shipped, but the ticket is not closed: housekeeping, no delivery impact.); MR-740 Removing Globe Control  (124 d, Shipped, but the ticket is not closed: housekeeping, no delivery impact.); MR-739 Implementing Article Page with configurations (123 d, Shipped, but the ticket is not closed: housekeeping, no delivery impact.)
+- Past due, Web-Uvation Services Platform: 99 open, most late 211 d. USP-2667 Create Bank Account form UI to add bank details  (211 d, Task still open past its date.); USP-2668 Fetch bank account details and map (211 d, Task still open past its date.); USP-2669 Integrate the API (GET,POST,PATCH,DELETE) (211 d, Task still open past its date.); USP-2670 Add format validation (Routing / SWIFT) (211 d, Task still open past its date.)
+- Past due, Uvation Conversational AI: 27 open, most late 69 d. UC-100 Design & technical spec — lead capture form schema & consent handling (69 d, Holds up UC-57: Marketing lead capture — persistent Book a Meeting / Contact Us CTA routing); UC-104 Design & technical spec — multi-turn context retention rules (69 d, Holds up UC-60: Multi-turn context resolution & feedback capture loop); UC-108 Design & technical spec — i18n locale detection & string catalogue (69 d, Holds up UC-61: Internationalization — language selection & localized UI strings); UC-112 Design & technical spec — responsive widget layout breakpoints (69 d, Holds up UC-62: Mobile responsive layout — full-screen widget experience)
+- Past due, Web-Identity: 6 open, most late 25 d. ID-679 Remove the claims from the Login, Signup, Password Reset flows (25 d, Shipped, but the ticket is not closed: housekeeping, no delivery impact.); ID-680 Remove the Claims from the Edit Profile Flow (25 d, Shipped, but the ticket is not closed: housekeeping, no delivery impact.); ID-681 Remove the Claims from the Reset Authenticator Flow (25 d, Shipped, but the ticket is not closed: housekeeping, no delivery impact.); ID-682 Remove the Claims from the Reset MFA Phone number Flow (25 d, Shipped, but the ticket is not closed: housekeeping, no delivery impact.)
+- Past due, Web-Rewards: 1 open, most late 87 d. REW-156 Numeric field overflow when releasing promotion for high-value orders (87 d, Defect still open past its fix date.)
+- Past due, Devops: 24 open, most late 406 d. IN-323 192.168.216.72 root cred need to change fix the issue Need console support (406 d, Task still open past its date.); IN-418 Configure Prometheus and Grafana Monitoring Setup (360 d, Task still open past its date.); IN-776 Fix APIM Routing for WebSocket API (197 d, Task still open past its date.); IN-777 Update APIM Policies for WebSocket Support (197 d, Task still open past its date.)
+- Past due, Design Marketing Development Collab: 28 open, most late 452 d. DM-147 Fix Missing Alt Texts (452 d, Task still open past its date.); DM-242 Working on Firewall/Fortinet image research (423 d, Task still open past its date.); DM-476 Enable GTAG Tracing for Test User (358 d, Task still open past its date.); DM-557 Programmatic SEO Strategy (324 d, Task still open past its date.)
+
+DEPENDENCIES: MISSED SPRINTS, BLOCKERS, OUTSIDE PARTIES
+117 missed their sprint (95 shipped, not closed); 49 in a blocker state; 20 wait on an outside party.
+- Blocker: IN-1005 Configure/implement integration (POC) (Status is BLOCKER, Sarath Chandra)
+- Blocker: IN-1006 Test and validate sync (Status is BLOCKER; Blocked by IN-1005, Sarath Chandra)
+- Blocker: IN-1007 Document integration and roll out to team (Status is BLOCKER; Blocked by IN-1005, Sarath Chandra)
+- Blocker: IN-1074 Implement and document for Production deployment (Status is BLOCKER, k.kishore)
+- Blocker: IN-776 Fix APIM Routing for WebSocket API (Status is BLOCKER, k.kishore)
+- Blocker: IN-777 Update APIM Policies for WebSocket Support (Status is BLOCKER, k.kishore)
+- Blocker: IN-778 Validate WebSocket Connectivity End-to-End (Status is BLOCKER, k.kishore)
+- Blocker: IN-990 Configure Azure Virtual Desktop (AVD) Environment (Status is BLOCKER, k.kishore)
+- Blocker: IN-992 Jira Board Integration with Azure DevOps (TBD) (Status is BLOCKER, Sarath Chandra)
+- Blocker: IN-994 Intune Licensing (Status is BLOCKER, k.kishore)
+- Blocker: IN-995 Azure Entra ID Licensing (Status is BLOCKER, k.kishore)
+- Blocker: IN-996 Create resources for Azure Virtual Desktop (Status is BLOCKER, k.kishore)
+- Blocker: IN-997 Create dynamic and security groups in Azure Entra ID (Status is BLOCKER, k.kishore)
+- Blocker: IN-998 Configure Conditional Access policies using Intune (Status is BLOCKER, k.kishore)
+- Blocker: IN-999 Configure FSLogix profiles (Status is BLOCKER, k.kishore)
+- Blocker: MR-1265 Related Products Content Missing on All AI Factory Pages (Status is Blocker, Vishnu kumar yadav)
+- Blocker: USP-3380 Implement Component wise modifications in Service Configuration Page (Status is BlOCKER, Shivam Dhoundiyal)
+- Blocker: USP-3381 Summary page details modifications( Design + API integration) (Status is BlOCKER, Shivam Dhoundiyal)
+- Blocker: USP-3382 Integrate Payment  flow with Subscription Upgrade Flow (Status is BlOCKER, Shivam Dhoundiyal)
+- Blocker: USP-3428 Testing Subscription Upgrade Flow (Status is BlOCKER, r.jaiswal)
+- Blocker: USP-3795 GPU as a Service (Status is BlOCKER, Anshul Bhargava)
+- Blocker: USP-3858 start date and end date of a subscription page (Status is BlOCKER, Shivam Dhoundiyal)
+- Blocker: USP-3391 Generate proposal package automatically (Blocked by USP-4268, Cășvan Marcel)
+- Blocker: USP-3400 Support restricted upgrades within existing subscription (Blocked by USP-3379, Cășvan Marcel)
+- Blocker: USP-3401 Versioning-based subscription amendment model (Blocked by USP-4347, Cășvan Marcel)
+- Blocker: USP-3784 Recurring billing cycles 2→N (Blocked by USP-4284, Silviu Oltean)
+- Blocker: USP-3940 [Agreements] Wire the Dedicated Contacts actions (Blocked by USP-4296, USP-4293, Cășvan Marcel)
+- Blocker: USP-4270 TAX-02 – Show tax everywhere amounts appear (Blocked by USP-4268, Cășvan Marcel)
+- Blocker: USP-4278 TAX-04 – Dynamic tax by data-center location (Blocked by USP-4268, Cășvan Marcel)
+- Blocker: USP-4290 PAY-03 – Payment options depend on the invoice type (Blocked by USP-4048, USP-3784, Cășvan Marcel)
+- Blocker: USP-4291 INV-05 – Unpaid / overdue state for invoices and subscriptions (Blocked by USP-3784, Cășvan Marcel)
+- Blocker: USP-4292 PAY-05 – Context-specific messages in the payment modal (Blocked by USP-4048, Livian Stefan Stan)
+- Blocker: USP-4298 CH-20/21/22 – Book a meeting with the assigned team (Blocked by USP-4296, Silviu Oltean)
+- Blocker: USP-4299 CH-31 – Video player and recordings section (Blocked by USP-3985, Silviu Oltean)
+- Blocker: USP-4301 CH-10…16 – Group chats (Blocked by USP-4234, Silviu Oltean)
+- Blocker: USP-4303 CH-32 – Automatic sync of recordings from Teams (Blocked by USP-3985, Silviu Oltean)
+- Blocker: USP-4306 CH-23 – Calendar view in the portal (Blocked by USP-4298, Silviu Oltean)
+- Blocker: USP-4307 CH-24 – Request a meeting: keep or retire (Blocked by USP-4298, Silviu Oltean)
+- Blocker: USP-4308 CH-26 – Call / meeting history (Blocked by USP-3985, Silviu Oltean)
+- Blocker: USP-4309 CH-33 – Transcripts / recaps in the hub (Blocked by USP-3985, Silviu Oltean)
+- Blocker: USP-4330 SH-01 – Microsoft-style 'Create a service request' flow (Blocked by USP-4234, Silviu Oltean)
+- Blocker: USP-4331 SH-02 – Auto-add the assigned team to new service requests (Blocked by USP-4296, Silviu Oltean)
+- Blocker: USP-4339 DSH-02 – Account team card with Chat and Book a meeting (Blocked by USP-4296, USP-4298, Silviu Oltean)
+- Blocker: USP-4342 DSH-07 – Billing page holds the content removed from the dashboard (Blocked by USP-4337, Livian Stefan Stan)
+- Blocker: USP-4346 UPG-04 – Co-term pricing and proration (Blocked by USP-3400, Cășvan Marcel)
+- Blocker: USP-4347 UPG-05 – Upgrade summary and contract amendment signing (Blocked by USP-3400, Cășvan Marcel)
+- Blocker: USP-4348 UPG-07 – CRM: Uvation approves the upgrade before the customer signs (Blocked by USP-4347, Cășvan Marcel)
+- Blocker: USP-4349 UPG-08 – Invoices after an upgrade (Blocked by USP-4346, USP-3784, Cășvan Marcel)
+- Blocker: USP-4351 XC-02/03/04 – Front-end polish, whole portal responsive, design audit (Blocked by USP-4295, Cășvan Marcel)
+- Third party (Cloud partner APIs): USP-3752 Risk: Cloud partner API rate limits blocking dashboard data [TODO]
+- Third party (Microsoft (Azure AD B2C, Teams, Graph)): ID-684  Create a UserInfo endpoint to return the profile details from AD B2C [In Prod]
+- Third party (Microsoft (Azure AD B2C, Teams, Graph)): ID-714 Clear B2C and Front-End Sessions After Account Deletion [In Progress]
+- Third party (Microsoft (Azure AD B2C, Teams, Graph)): ID-747 Account Deactivation & GDPR Deletion (Azure B2C + Identity DB) [In Progress]
+- Third party (Microsoft (Azure AD B2C, Teams, Graph)): UC-22 Live agent handoff via Microsoft Teams — bidirectional relay & SLA fallback [In Dev]
+- Third party (Microsoft (Azure AD B2C, Teams, Graph)): UC-225 Integrate Marketplace Authentication for AI Chatbot using MSAL [IN PROGRESS]
+- Third party (Microsoft (Azure AD B2C, Teams, Graph)): USP-3520 Verify Azure AD B2C policy matches expected (B2C_1A_6_UID_SIGNUP_SIGNIN) [TODO]
+- Third party (Microsoft (Azure AD B2C, Teams, Graph)): USP-3551 Document ownership matrix: Azure subscription, Key Vault, DNS, B2C tenant admin, CI/CD secrets [TODO]
+- Third party (Microsoft (Azure AD B2C, Teams, Graph)): USP-3751 Risk: Azure AD B2C outage preventing USP portal login [TODO]
+- Third party (Microsoft (Azure AD B2C, Teams, Graph)): USP-4324 CH-12 – Teams app: engineers create groups and add staff [TODO]
+- Third party (Microsoft Azure (DevOps, AVD, AKS, Monitor)): IN-1126 Production AKS Resize Activity [To Do]
+- Third party (Microsoft Azure (DevOps, AVD, AKS, Monitor)): IN-1128 R&D – Configure AKS Pods as Azure DevOps Build Agents [To Do]
+- Third party (Microsoft Azure (DevOps, AVD, AKS, Monitor)): IN-990 Configure Azure Virtual Desktop (AVD) Environment [BLOCKER]
+- Third party (Microsoft Azure (DevOps, AVD, AKS, Monitor)): IN-992 Jira Board Integration with Azure DevOps (TBD) [BLOCKER]
+- Third party (Microsoft Azure (DevOps, AVD, AKS, Monitor)): PULSE-60 53.04 — [Integration] Azure and AKS inventory integration [To Do]
+- Third party (Microsoft Azure (DevOps, AVD, AKS, Monitor)): USP-3748 Dependency: Cloud partner APIs (Azure Monitor / GCP) must be accessible for dashboards [TODO]
+- Third party (Rafay): ID-745 New SAML Policy for Azure AD B2C SSO integration with RAFAY [In Progress]
+- Third party (Rafay): PULSE-62 55.06 — [Integration] Rafay, GPU, and resource sync [To Do]
+- Third party (Stripe): USP-3888 [Placeholder] - Disable Stripe On All Envs [TODO]
+- Third party (Vendor or third party): USP-3757 Dependency: Vendor API approval delays blocking integrations [TODO]
+- Sprint overrun: Sept 2nd Sprint (USP) ended 2026-09-29, 3 open
+- Sprint overrun: September 2nd Sprint (IN) ended 2026-09-30, 2 open
+
+DEPENDENCIES: DESIGN
+- Ask: Ask Raluca Conea for re-committed dates on the Marketplace RMA flow explanations (VTN-1826, due 2 Sep), the Marketplace Figma file clean-up (VTN-1820, due 11 Sep) and the marketing website USP Figma file (VTN-1819, due 15 Sep), and record them in Jira.
+- Ask: Sign off the Marketplace banners and the 30-product update (VTN-1870, VTN-1873), waiting for review since 2 Oct.
+- Ask: Get a new date for the marketing website redesign (VTN-1875, due 30 Sep): the new home page work (MR-1169) depends on it.
+- Ask: The USP dashboard last edits (VTN-1881, due 2 Oct) are waiting for review, and the credit card design (VTN-1812, due 11 Sep) is still in progress.
+- Web-Marketplace: 7 open, 6 past due, next date 2026-10-15 VTN-1876
+- Web-Marketing: 4 open, 4 past due, next date none set
+- Web-Uvation Services Platform: 8 open, 5 past due, next date 2026-10-15 VTN-1818
+- Other design work: 8 open, 8 past due, next date none set
+- Waiting on design: MR-1198 Coordinating with Team & Design Gaps (In Progress)
+- Waiting on design: MR-1341 Website UI and Animation Enhancements Based on Raluca’s Feedback (TODO)
+- Waiting on design: MT-1581 Coordinating with Team & Design Gaps (TODO)
+
+2. ISSUES AND PREVENTIVE ACTIONS
+- Policy change identified during UAT is not recorded anywhere in Jira [Open – gap] (Marketplace, surfaced UAT)
+  Impact: Not measurable from Jira. The change is not logged, so its effect on scope, dates and effort cannot be traced.
+  Root cause: No change-request ticket type, and no UAT sign-off step that captures business-policy changes. About 300 tickets mentioning policy or change requests across 8 projects were checked. The closest are the returns-policy use cases (MT-1116, MT-1180, MT-1181, MT-1187) and MT-1286, which made the return-eligibility window configurable on 2 Sep. None of them records a change found in UAT.
+  Action: None visible in Jira.
+  Prevention: Log it now as a Change Request with impact and effort, linked to the affected stories. Add a 'business rules confirmed' line to UAT sign-off covering returns, refunds, loyalty points and pricing. Open business-rule questions already exist on MT-978 (loyalty points) and MT-1488 (refund and exchange timelines).
+- AI Factory final prices calculated wrongly in production [Open] (Services Platform, surfaced 25 and 28 Sep, production)
+  Impact: The subscription price API returns the wrong final price for every billing and term combination in the Traditional, Modular and Nuclear AI Factory. One logged example expected 174,420 and got 150,660, about 14% low. A separate S1 has the Document API failing with a 502 on the first request.
+  Root cause: Not recorded yet. The Document API failure is suspected to be the API gateway blocking the first request (comment on USP-4231, 28 Sep).
+  Action: All three are S1 and still in To Do on 6 Oct. Their due date was moved from 30 Sep to 30 Oct on 2 Oct. No fix recorded.
+  Prevention: Add the price-calculation checks to the automated regression run before each production release.
+- Four Marketplace register items no longer appear in Jira, including the red OEM-agreement dependency [Open] (Marketplace, surfaced Register refresh, 23–25 Sep)
+  Impact: MT-1093 (OEM/brand partner agreements before listing) was rated red while 27 AI-server listings sit in production. With the ticket gone there is no record of whether OEM agreements were confirmed. MT-1096 (identity outage) and MT-1101 (GDPR/CCPA cookie handling) were still open.
+  Root cause: A search by key returns none of the four tickets, so they were deleted or moved where this account cannot see them. The four items closed the same evening (MT-1095, MT-1097, MT-1098, MT-1100) each got a closing comment. These four did not.
+  Action: None recorded.
+  Prevention: Close register items with a reason instead of deleting them. Record the OEM-agreement decision for each brand before any listing is enabled.
+- Marketplace scope changed mid-sprint to AI servers only [Largely delivered] (Marketplace, surfaced 10 Sep)
+  Impact: A 38-task category-disable plan was added on 10 Sep. 36 are done and about 43 hours were logged against it. The home page redesign around B300, GB300 and Vera Rubin (MT-1524) closed on 30 Sep, its due date.
+  Root cause: Business strategy change mid-sprint.
+  Action: Category disable executed in 12 days. The plan (MT-1438) and the performance check (MT-1475) closed on 6 Oct. The URL disposition decision (MT-1447) was closed and re-raised the same day as a new task (MT-1576), still To Do.
+  Prevention: Route strategy changes through a change request with an impact estimate before tasks are raised.
+- Dell products created with wrong parent-child configuration [Resolved] (Marketplace, surfaced UAT review, 16 Sep)
+  Impact: 4 of 6 Dell products needed rework. One had to be recreated. Dell GPU values also needed correction (PC-133, 17 Sep).
+  Root cause: No agreed standard for configurable versus standalone products before creation started.
+  Action: Fixed and verified on UAT on 17 Sep. Later brands were created as standalone products.
+  Prevention: Apply the pre-publish QA checklist in the Confluence 30/60/90 plan to every batch before production migration.
+- Product list and specs arrived late [Resolved] (Marketplace, surfaced 16–17 Sep)
+  Impact: HPE creation waited a day for one product's details. Timelines could not be set until the final list existed.
+  Root cause: Creation started before the approved product list was final.
+  Action: HPE completed 18 Sep.
+  Prevention: Require a signed approved-product list per batch before creation, as the 30/60/90 plan's approval gate specifies.
+- Migrated products are disabled pending approval [Open] (Marketplace, surfaced 18–22 Sep)
+  Impact: 35 listings are in production but not visible to buyers: 27 since 18–22 Sep and 8 Vera Rubin since 28 Sep.
+  Root cause: Approval step sits after migration, with no date.
+  Action: Cross-validation on UAT closed on 28 Sep (MT-1529). A full catalogue re-check (PC-136) was due 30 Sep and was still In Progress on 6 Oct.
+  Prevention: Put a dated approval gate in the plan for each batch.
+- Earlier Lenovo UAT products not visible, and ticket status not maintained [Unclear] (Product Catalog, surfaced 2 Sep)
+  Impact: A manually created Lenovo product did not appear on the UAT storefront. PC-121 is still 'To Do' with 49.5 hours logged. It is not clear whether its Lenovo products were superseded by the 2 Lenovo products in MT-1512.
+  Root cause: Not recorded.
+  Action: None recorded after 7 Sep.
+  Prevention: Close or re-scope PC-121 and state which Lenovo SKUs are in the go-live list.
+- Staging performance score of 43 [Open] (Marketplace, surfaced 18 Sep)
+  Impact: Slow pages on the reduced catalogue. Risk to conversion and SEO at go-live.
+  Root cause: Not yet analysed. The ticket was first routed to the wrong person.
+  Action: Reassigned to Naveen Jangid on 22 Sep. Now in UAT/staging (last updated 23 Sep). No new score recorded.
+  Prevention: Add a performance budget to the release checklist.
+- Production sitemap lists 250 of 500+ URLs [Open] (Web-Marketing, surfaced 22 Sep)
+  Impact: Search engines and the Playwright suite both see only half the site.
+  Root cause: Sitemap generation limit. Not yet confirmed.
+  Action: Raised as P1. Started 30 Sep and Ready for Prod since 1 Oct (MR-1199, MR-1200); not released as of 6 Oct.
+  Prevention: Add a URL-count check to the automated smoke run.
+- Marketplace buyer stories were past due [Partly resolved] (Marketplace, surfaced Due 31 Aug and 15 Sep)
+  Impact: Home page, product listing and PDP were due 31 Aug and closed on 24–25 Sep, 24 to 25 days late. Account hub (MT-1311) and returns flow (MT-1331) were due 15 Sep and are still in testing.
+  Root cause: Not recorded. Due dates were not re-baselined after the AI-servers pivot.
+  Action: MT-1216 and MT-1217 closed 24 Sep, MT-1215 closed 25 Sep. Account hub is 4 of 10 subtasks done (3 on 29 Sep); returns is 10 of 12, in testing.
+  Prevention: Re-baseline due dates when scope changes, per the SOP's Scenario 14.
+- Marketplace automation framework parked after a resource exit [Open] (Marketplace, surfaced 23 Jul)
+  Impact: Marketplace regression testing stays manual.
+  Root cause: Single owner left and work was not reassigned.
+  Action: Moved to backlog.
+  Prevention: Reuse the Web-Marketing Playwright suite and name a new owner.
+- Conflicting requirement on live chat [Open] (Web-Marketing, surfaced 15 Sep)
+  Impact: The team was asked to build a widget that it had earlier been asked to remove.
+  Root cause: Requirement changes are not recorded as decisions.
+  Action: Waiting on chatbot design and APIs.
+  Prevention: Keep a decision log per project and link reversals to the original decision.
+
+3. PROJECT PROGRESS
+- Web-Marketplace · Live chat widget across Marketplace (new): The platform choice (MT-1578) and the widget build (MT-1579) moved to Dev on 9 Oct, the platform choice's due date. Marketing is running its own live chat (MR-754, due 15 Oct) with a separate platform choice (MR-786). Date: 2026-10-14. Ask: Choose one chat platform for both sites by 9 Oct, or confirm that two are intended.
+- Web-Marketplace · Design and content review of 11 commerce journeys (new): Raised 8 Oct as High priority (MT-1586, Saurabh Jain, due 12 Oct) with 13 review subtasks across 12 people, including Anshul Bhargava, Anmol Srivastava and Shashi Prasad K. Date: 2026-10-12. Ask: Confirm who signs off each journey and what happens to findings after 12 Oct.
+- Web-Marketplace · RMA item-level decisions: In progress (MT-1540, 9 subtasks), owner Saurabh Jain. Date: 2026-10-15. Ask: -
+- Web-Marketplace · Release testing: smoke, security and privacy: Three stories raised 30 Sep: security testing (MT-1547) started on 7 Oct; smoke testing (MT-1541) and privacy compliance (MT-1553) are still To Do. Date: 2026-10-15. Ask: Start MT-1541 and MT-1553 this week; eight days remain.
+- Web-Marketplace · AI-server listings go-live: All 35 listings are in production but disabled pending approval. Date: not set. Ask: Name the approver and the approval date. Nothing in Jira tracks it.
+- Web-Marketing · Release of the 29 Figma fixes and the sitemap fix: Ready for Prod since 1 Oct (MR-1179, MR-1199), not released. Date: not set. Ask: Set the production release date.
+- Web-Marketing · Chatbot on the marketing site: QA started 6 Oct (MR-1309): three defects logged, none fixed. Date: not set. Ask: Set a fix date before the chatbot goes live on the site.
+- Web-Marketing · New home page design and API: In progress since 15 Sep (MR-1169), no due date; depends on the marketing website redesign (VTN-1875), which is past its 30 Sep design date. Date: not set. Ask: Get a revised design date from the design team.
+- Web-Uvation Services Platform · Go Live plan (new): Raised 9 Oct by Livian Stefan Stan: five epics (subscription and contract, payments and invoicing, dashboard, subscription upgrade, cross-cutting) with 95 stories and subtasks, mostly for Silviu Oltean and Cășvan Marcel. Epic due dates run from 2 Nov to 15 Dec. 22 stories are sequenced behind other open stories, and 8 tickets were created with due dates already past. Raluca Conea added five design follow-ups for Livian Stefan Stan on 9 and 10 Oct (USP-4362 to USP-4366, due 30 Oct), one of them Highest priority: the VAT and deposit line on the product configuration summary. Date: 2026-12-15. Ask: Confirm the go-live date this plan works towards, and fix the 8 tickets dated in the past.
+- Web-Uvation Services Platform · S1 production bugs: Fixed: the AI Factory price mismatches (USP-4229, USP-4230) on 7 Oct and the deposit deduction bug (USP-4095) on 9 Oct. Still open: the Document API 502 (USP-4231) and the subscription calculation 500 error (USP-4204). Date: 2026-10-30. Ask: Ask for fix dates on USP-4231 and USP-4204 earlier than 30 Oct.
+- Web-Uvation Services Platform · Support Hub: Support Hub v1 (USP-4028) closed on 9 Oct; v2 (USP-4252) is in progress with Silviu Oltean. Date: 2026-10-30. Ask: -
+- Uvation Conversational AI · Next chatbot demo: No demo is scheduled or tracked in Jira. On 8 Oct the Teams live-agent handoff (UC-22) and its build and QA tasks (UC-43, UC-44) moved to In Dev, and model selection (UC-26) started. Marketplace sign-in for the chatbot (UC-225) is in progress; admin analytics (UC-25) has not started. All four are due 15 Oct. Date: 2026-10-15. Ask: Confirm a demo date with Ankit Saxena and Nareddy Shiva Prasad Reddy; 15 Oct is the earliest date the planned work could be shown.
+- Uvation Pulse · Interactive AI Factory Experience (new, Anshul Bhargava): On 9 Oct Anshul Bhargava closed UP-40 and published the project plan on Confluence (PRD-1, a new board). 98 backlog tasks were raised in Uvation Projects with due dates from 13 Oct to 19 Nov. Date: 2026-11-19. Ask: Share the Confluence plan link with the team, and confirm the sponsor and the first demo date.
+- Uvation Pulse · Rafay SSO integration (new, Anshul Bhargava): Started 6 Oct (UP-41): the SSO meeting, API documentation and Azure AD B2C SAML metadata are done. Date: not set. Ask: Set a target date.
+- Uvation Pulse · Uvation Pulse platform: 329 tickets, all held by Anshul Bhargava; one done, none dated. Date: not set. Ask: Set dates for at least the 8 epics.
+- Atlas CRM · CRM MVP plan: No date in Jira. ATLAS-1 'R&D on CRM for MVP' is in To Do with 8.25 h logged. Saurabh Jain holds the scope and specification task (ATLAS-2, 6 Oct) and a POC understanding meeting (ATLAS-3, raised 7 Oct); neither has a due date. Date: not set. Ask: Ask Anshul Bhargava and Saurabh Jain when the MVP plan will be shared and record it as the due date on ATLAS-2.
+- Web-Marketplace: 324 moved, 259 closed (30 d), 26 past due, 0 blocked, 4 open bugs. Nothing moved on Saturday 10 Oct after 13 closures on 9 Oct, including the three reopened NVIDIA fixes and configurable product upload on UAT (PC-121). The live chat platform choice (MT-1578, in Dev) and the RFQ end-to-end test (MT-1582) passed their 9 Oct due dates, so 26 items are now past due, 20 of them untouched in 30 days.
+- Web-Marketing: 282 moved, 130 closed (30 d), 13 past due, 1 blocked, 20 open bugs. No change on 10 Oct. Four chatbot and footer subtasks from Kannan Elangovan's review (MR-1289, MR-1337, MR-1340) and the platform review plan (MR-1336) passed their 9 Oct due dates, taking past-due items from 9 to 13. The sitemap fix (MR-1199) is still Ready for Prod, related products content (MR-1265) is still blocked, and 20 open bugs are unrated.
+- Web-Uvation Services Platform: 662 moved, 431 closed (30 d), 99 past due, 6 blocked, 37 open bugs. Raluca Conea raised five design follow-ups for Livian Stefan Stan late on 9 Oct and early on 10 Oct (USP-4362 to USP-4366, due 30 Oct), including a Highest-priority VAT and deposit line on the product configuration summary. The Go Live plan raised on 9 Oct (five epics, 95 items, due 2 Nov to 15 Dec) is unchanged. Two S1 bugs remain open (USP-4231, USP-4204); 99 items are past due, 65 of them untouched in 30 days.
+- Uvation Conversational AI: 49 moved, 31 closed (30 d), 27 past due, 0 blocked, 4 open bugs. No change on 10 Oct. The booking-confirmation bug (UC-233) is still in development and passed its 9 Oct due date; Marketplace sign-in (UC-225), the Teams handoff (UC-22) and model selection (UC-26) are in progress for 15 Oct. 27 items are past due, 26 of them untouched since August.
+- Uvation Pulse: 330 moved, 1 closed (30 d), 0 past due, 0 blocked, 0 open bugs. No change on the Pulse board. Anshul Bhargava's Interactive AI Factory plan (PRD-1) and its 98 Uvation Projects tasks, raised on 9 Oct, sit outside this report's boards.
+- Atlas CRM: 3 moved, 0 closed (30 d), 0 past due, 0 blocked, 0 open bugs. No change on 10 Oct. The three items (ATLAS-1 to ATLAS-3) are in To Do with no due dates; the CRM MVP plan date is still not in Jira.
+- Web-Identity: 82 moved, 32 closed (30 d), 6 past due, 0 blocked, 1 open bugs. No change on 10 Oct. The account deletion flow (ID-743, ID-748 to ID-750, ID-756) is in Dev and support reactivation (ID-751) has started. The 6 past-due claims-removal tasks (ID-679 to ID-684) are in production but not closed.
+- Web-Rewards: 18 moved, 0 closed (30 d), 1 past due, 0 blocked, 0 open bugs. No change on 10 Oct. The 18 regression-test items raised on 30 Sep are all To Do, unassigned and undated; one older bug (REW-156) is in UAT.
+- Web-Support: 0 moved, 0 closed (30 d), 0 past due, 0 blocked, 0 open bugs. No Web-Support ticket was created or updated in the last 30 days.
+- Devops: 76 moved, 48 closed (30 d), 24 past due, 15 blocked, 1 open bugs. No change on 10 Oct. The Azure Virtual Desktop design document (IN-1148) was finished on 9 Oct. 15 items still sit in BLOCKER status, most held by k.kishore, and 24 are past due; the S1 login error-page bug (IN-1111) is still To Do.
+- Design Marketing Development Collab: 22 moved, 12 closed (30 d), 28 past due, 0 blocked, 2 open bugs. No change on 10 Oct. Three marketing-site fixes raised for Shashi Prasad K on 9 Oct are open, including a login page returning 403 (DM-1088). 28 items are past due, 25 of them untouched in 30 days. The design team's own timelines are covered under Dependencies.
+- Marketplace pipeline: Dell 6 (Moved 18 Sep (MT-1528), Disabled); HPE 3 (Moved 18 Sep (MT-1528), Disabled); NVIDIA 8 (Moved 21 Sep (MT-1528), Disabled); Supermicro 8 (Moved by 22 Sep (MT-1528 closed), Disabled); Lenovo 2 (Moved by 22 Sep (MT-1528 closed), Disabled); NVIDIA Vera Rubin 8 (Moved 28 Sep (MT-1535), Disabled)
+  Expected completion: MT-1485 and MT-1524 closed on 30 Sep, their due date. MT-1488 (RMA backend) reached production on 30 Sep and closed on 1 Oct. Go-live still waits on approval to enable the listings.
+- Marketing testing: 250 of 500+ URLs automated; 2250/2250 checks pass; Figma defects 27 fixed of 56. Remaining effort: Not estimated in Jira. None of the testing tickets carry an Original Estimate. Target date: Not set in Jira. The only dated item is MR-1168, due 30 Sep and Ready for Prod since 6 Oct.
+
+4. RESOURCE UTILISATION
+Capacity 72 h per person for the window. Tempo writes every worklog to Jira under its own app account, so Jira cannot say who logged an hour. Hours here are credited to each ticket's current assignee. When a developer's ticket is handed to QA, the developer's hours move with it. Any day above 10 hours for one person is flagged for this reason.
+- REVIEW Sapavat Yadagiri: 8 items past due, Hours not credible: a 22.0 h day. Raised by management on 6 Oct as not performing. Action: Decide whether to start a PIP. No PIP and no discussion with Farhat Quadiri is recorded in Jira or Confluence. Discuss with Farhat Quadiri, then set 30-day QA targets: bugs logged per sprint, test cases written and run, and a start date for MT-1141. PIP: Not started
+- REVIEW Shivam Dhoundiyal: 37% of capacity logged, Nothing closed in the window, 8 items past due. Low output in the window. Action: Review the blocker and the workload with Shivam Dhoundiyal; check Tempo by worker for time logged elsewhere.
+- REVIEW Ankit Sharma: 28% of capacity logged. Almost no hours on own tickets. Action: Confirm allocation and where the rest of the time is logged.
+- REVIEW Parth: 29% of capacity logged. Almost no hours on own tickets. Action: Confirm allocation; MT-1553 needs a start this week.
+- REVIEW Gourav Agnani: 4 items past due. Low hours in the window. Action: Confirm allocation and leave; check Tempo by worker.
+- REVIEW Ankit Saxena: 46 items past due. 43 open tickets past their due date, none touched since 13 Aug. Action: Confirm which of the 43 are still planned; re-date or close the rest, and agree the 15 Oct scope.
+- REVIEW k.kishore: 13 items past due, Hours not credible: a 14.0 h day. Devops blockers with no movement. Action: Name what each blocker waits on (licences, access, a decision) and who clears it; escalate the AVD and licensing items.
+- REVIEW Kunal Jangid: 8 items past due, Hours not credible: a 18.8 h day. Flags come from ticket hygiene, not output. Action: Ask Kunal Jangid to close the shipped June tasks; check Tempo by worker for the real hours.
+- REVIEW Kannan Elangovan: 4% of capacity logged, Nothing closed in the window, 3 items past due. Low hours, but output is high: no concern on this data. Action: No action. Use Tempo by worker to confirm hours.
+- REVIEW Shashi Prasad K: 6 items past due, Hours not credible: a 17.5 h day. Work sits outside the report boards. Action: No action.
+- REVIEW b.kumar: 50% of capacity logged, 3 items past due
+- REVIEW Suganya Murugaraj: 56% of capacity logged, 6 items past due
+- REVIEW Saravana Kumar: 17% of capacity logged
+- REVIEW Aman prakash: 38% of capacity logged
+- REVIEW Akhil Katiyar: 42% of capacity logged
+- REVIEW shubham kuchwar: 49% of capacity logged
+- REVIEW Nagamuni Valluri: 51% of capacity logged
+- REVIEW Naveen Jangid: 8 items past due
+- REVIEW Nareddy Shiva Prasad Reddy: 4 items past due
+- REVIEW Sarath Chandra: 6 items past due
+- REVIEW Vishnu kumar yadav: 3 items past due, Hours not credible: a 14.0 h day
+- REVIEW r.jaiswal: 3 items past due, Hours not credible: a 16.5 h day
+- Kunal Jangid: 115.5 h (160%), 9 days, peak 18.8 h — A day over 10 h (other people's hours or bulk logging)
+- r.jaiswal: 98.3 h (137%), 9 days, peak 16.5 h — A day over 10 h (other people's hours or bulk logging)
+- k.kishore: 90.0 h (125%), 9 days, peak 14.0 h — A day over 10 h (other people's hours or bulk logging)
+- Sapavat Yadagiri: 81.0 h (112%), 9 days, peak 22.0 h — A day over 10 h (other people's hours or bulk logging)
+- Vishnu kumar yadav: 76.0 h (106%), 9 days, peak 14.0 h — A day over 10 h (other people's hours or bulk logging)
+- Sarath Chandra: 67.5 h (94%), 9 days, peak 10.5 h — A day over 10 h (other people's hours or bulk logging)
+- Ankit Saxena: 59.7 h (83%), 9 days, peak 10.5 h — A day over 10 h (other people's hours or bulk logging)
+- Shashi Prasad K: 57.1 h (79%), 9 days, peak 17.5 h — A day over 10 h (other people's hours or bulk logging)
+- Yash Janeshwar: 53.0 h (74%), 9 days, peak 7.0 h
+- Saurabh Jain: 49.7 h (69%), 9 days, peak 11.2 h — A day over 10 h (other people's hours or bulk logging)
+- Nareddy Shiva Prasad Reddy: 49.0 h (68%), 9 days, peak 7.8 h
+- Naveen Jangid: 48.0 h (67%), 8 days, peak 8.0 h
+- Naman Bapna: 47.3 h (66%), 9 days, peak 8.0 h
+- Gourav Agnani: 46.5 h (65%), 7 days, peak 8.0 h
+- Suganya Murugaraj: 40.4 h (56%), 8 days, peak 7.2 h — Below 60% of capacity
+- Nagamuni Valluri: 37.0 h (51%), 7 days, peak 9.0 h — Below 60% of capacity
+- b.kumar: 36.0 h (50%), 5 days, peak 8.0 h — Below 60% of capacity
+- shubham kuchwar: 35.0 h (49%), 9 days, peak 6.0 h — Below 60% of capacity
+- Akhil Katiyar: 30.2 h (42%), 9 days, peak 4.5 h — Below 60% of capacity
+- Aman prakash: 27.0 h (38%), 8 days, peak 6.5 h — Below 60% of capacity
+- Shivam Dhoundiyal: 26.5 h (37%), 7 days, peak 6.5 h — Below 60% of capacity
+- Parth: 21.0 h (29%), 6 days, peak 6.0 h — Below 60% of capacity
+- Ankit Sharma: 20.0 h (28%), 4 days, peak 7.0 h — Below 60% of capacity
+- Raluca Conea: 12.5 h (17%), 2 days, peak 7.0 h — Below 60% of capacity
+- Saravana Kumar: 12.0 h (17%), 5 days, peak 3.5 h — Below 60% of capacity
+- Anshul Bhargava: 11.9 h (17%), 5 days, peak 5.5 h — Below 60% of capacity
+- Cășvan Marcel: 4.8 h (7%), 3 days, peak 2.3 h — Below 60% of capacity
+- Kannan Elangovan: 3.0 h (4%), 1 days, peak 3.0 h — Below 60% of capacity
+- Livian Stefan Stan: 0.5 h (1%), 1 days, peak 0.5 h — Below 60% of capacity
+- Suganya Murugaraj: Logged 39.8 hours on 9 working days in the 22 Sep–5 Oct window (2 Oct had no logged work from anyone), on PC-133 and PC-136. That averages about 4.4 hours a day against an 8-hour day, or 55% of the 72-hour capacity. 28 Sep shows 0.5 hours. The 5.5 hours on 17 Sep covered Dell GPU corrections with Naman and then HPE validation, which is 3 products. Each product also needed a tech-spec table, long description, short description and product-card copy in HTML. Between 15 and 24 Sep Suganya validated 19 products for 4 brands and started the 8 Vera Rubin products, about 1.5 hours per product. PC-133 closed on 30 Sep. To verify: Pull Suganya's Tempo timesheet for 22 Sep–5 Oct and compare the total with 72 hours. The full catalogue re-check (PC-136), started 29 Sep and due 30 Sep, was still In Progress on 6 Oct.
+- Sapavat Yadagiri: Jira credits Sapavat with 86.5 hours in the 22 Sep–5 Oct window, 120% of the 72-hour capacity, with three days between 11.8 and 18 hours (23, 25 and 28 Sep). That is not plausible for one person: Marketplace tickets closed on 1 Oct are assigned to Sapavat and carry developer hours. Sapavat's own QA tasks show 0.5 to 2 hours each. For example, the navigation, homepage-module and facet UI updates for the category disable took 1 hour each (MT-1455 to MT-1457). Functional test on staging took 1.5 hours and the toggle test 1.5 hours (MT-1471, MT-1473). To verify: Pull Sapavat's Tempo timesheet by worker. Check that QA time is logged on QA subtasks, not on development subtasks.
+- Anshul Bhargava (all Jira projects): 462 held, 432 open, 3 past due, 33.4 h, 476 raised in 30 days. Holds 363 tickets, 343 of them open, after creating the PULSE project on 28 and 29 Sep: 8 epics, 64 stories and 256 subtasks, all self-assigned, 246 marked In Progress and none with a due date. The one PULSE bug (PULSE-329) closed on 30 Sep. 12.9 hours landed on these tickets in the 22 Sep–5 Oct window (ATLAS-1 8.2 h, PULSE 2.5 h, IN-1119 1.5 h, MT-1538 0.7 h), 18% of the 72-hour capacity. On 6 Oct Anshul opened 13 Uvation Projects tickets (UP-40 to UP-52) for an interactive 3D AI Factory experience and Rafay SSO integration, 8 of them already Done, with 5.5 h logged. To verify: Assign PULSE stories to the people doing the work, move untouched items back to To Do and add due dates. Pull Anshul's Tempo timesheet by worker for 22 Sep–5 Oct, and confirm who owns USP-3795.
+- Anmol Srivastava (all Jira projects): 2 held, 2 open, 0 past due, 3.0 h, 35 raised in 30 days. Holds no tickets in any Jira project, so Tempo has nowhere to credit Anmol's hours. Anmol raised 49 tickets in 30 days, and 41 of them are done. To verify: Pull Anmol's Tempo timesheet by worker. Assign UP-36 to UP-38 to Anmol so that work and its hours show in Jira.
+- Rupkatha (all Jira projects): 0 held, 0 open, 0 past due, 0 h, 0 raised in 30 days. Holds no tickets in any Jira project and has logged no hours against Jira. Rupkatha raised three Product Catalog tickets, all still To Do, and nothing in Jira has changed on them since 4 Sep. To verify: Confirm Rupkatha's allocation. Close PC-118, PC-122 and PC-123 as superseded, or reassign them with dates.
+
+Stored in shashiprasad23/server, branch claude/executive-dashboard-jira-review-gclk36, executive-dashboard/reports/2026-10-10/.

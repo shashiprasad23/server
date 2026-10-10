@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-10-09",
+ "snapshotDate": "2026-10-10",
  "issues": [
   {
    "key": "DM-1003",
@@ -1532,36 +1532,6 @@
    "parentSummary": ""
   },
   {
-   "key": "VTN-1840",
-   "project": "VTN",
-   "summary": "corporate  capabilitie additional files",
-   "type": "Task",
-   "status": "Done",
-   "statusCat": "done",
-   "assignee": "Milica Stojkovic",
-   "created": "2026-09-08",
-   "updated": "2026-09-10",
-   "resolved": "2026-09-10",
-   "due": "2026-09-09",
-   "parent": null,
-   "parentSummary": ""
-  },
-  {
-   "key": "VTN-1841",
-   "project": "VTN",
-   "summary": "email signature",
-   "type": "Task",
-   "status": "Done",
-   "statusCat": "done",
-   "assignee": "Ivan Divjakovic",
-   "created": "2026-09-09",
-   "updated": "2026-09-10",
-   "resolved": "2026-09-10",
-   "due": "2026-09-09",
-   "parent": null,
-   "parentSummary": ""
-  },
-  {
    "key": "VTN-1842",
    "project": "VTN",
    "summary": "USP update small adjustments",
@@ -1572,36 +1542,6 @@
    "created": "2026-09-09",
    "updated": "2026-09-11",
    "resolved": "2026-09-11",
-   "due": "2026-09-10",
-   "parent": null,
-   "parentSummary": ""
-  },
-  {
-   "key": "VTN-1843",
-   "project": "VTN",
-   "summary": "update on corporate capabilities",
-   "type": "Task",
-   "status": "Done",
-   "statusCat": "done",
-   "assignee": "Raluca Conea",
-   "created": "2026-09-10",
-   "updated": "2026-09-10",
-   "resolved": "2026-09-10",
-   "due": "2026-09-09",
-   "parent": null,
-   "parentSummary": ""
-  },
-  {
-   "key": "VTN-1844",
-   "project": "VTN",
-   "summary": "Datacenter infrastructure v1",
-   "type": "Task",
-   "status": "Done",
-   "statusCat": "done",
-   "assignee": "Raluca Conea",
-   "created": "2026-09-10",
-   "updated": "2026-09-10",
-   "resolved": "2026-09-10",
    "due": "2026-09-10",
    "parent": null,
    "parentSummary": ""

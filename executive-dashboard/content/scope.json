@@ -24,7 +24,7 @@
         "MT",
         "PC"
       ],
-      "headline": "13 items closed on 9 Oct, including the three reopened NVIDIA fixes (back in production), six more AI-server catalogue fixes, configurable product upload on UAT (PC-121) and two journey reviews under MT-1586. Smoke testing (MT-1541) started, and the live chat platform choice (MT-1578) moved to Dev on its due date. A US tax-rate sourcing task (MT-1601) was raised. 24 items are past due, 20 of them untouched in 30 days."
+      "headline": "Nothing moved on Saturday 10 Oct after 13 closures on 9 Oct, including the three reopened NVIDIA fixes and configurable product upload on UAT (PC-121). The live chat platform choice (MT-1578, in Dev) and the RFQ end-to-end test (MT-1582) passed their 9 Oct due dates, so 26 items are now past due, 20 of them untouched in 30 days."
     },
     {
       "id": "MR",
@@ -32,7 +32,7 @@
       "projects": [
         "MR"
       ],
-      "headline": "15 tickets were raised on 9 Oct, mostly chatbot and page polish subtasks for Kunal Jangid from Kannan Elangovan's review, and a shareable chatbot package for the Marketplace (MR-1335) was built and closed the same day. The sitemap fix (MR-1199) is still Ready for Prod and related products content (MR-1265) is still blocked. Open bugs are 20, none rated; 9 items are past due."
+      "headline": "No change on 10 Oct. Four chatbot and footer subtasks from Kannan Elangovan's review (MR-1289, MR-1337, MR-1340) and the platform review plan (MR-1336) passed their 9 Oct due dates, taking past-due items from 9 to 13. The sitemap fix (MR-1199) is still Ready for Prod, related products content (MR-1265) is still blocked, and 20 open bugs are unrated."
     },
     {
       "id": "USP",
@@ -40,7 +40,7 @@
       "projects": [
         "USP"
       ],
-      "headline": "Livian Stefan Stan raised a Go Live plan on 9 Oct: five epics and 95 stories and subtasks (tax, contract proposal, payments and invoicing, dashboard, upgrade), mostly for Silviu Oltean and Cășvan Marcel, due 2 Nov to 15 Dec. 15 items closed, including Support Hub v1 (USP-4028) and the S1 deposit deduction bug (USP-4095); open bugs fell from 47 to 37. Two S1 bugs remain (USP-4231, USP-4204). The overdue Sept 2nd Sprint now holds 3 tickets."
+      "headline": "Raluca Conea raised five design follow-ups for Livian Stefan Stan late on 9 Oct and early on 10 Oct (USP-4362 to USP-4366, due 30 Oct), including a Highest-priority VAT and deposit line on the product configuration summary. The Go Live plan raised on 9 Oct (five epics, 95 items, due 2 Nov to 15 Dec) is unchanged. Two S1 bugs remain open (USP-4231, USP-4204); 99 items are past due, 65 of them untouched in 30 days."
     },
     {
       "id": "UC",
@@ -48,7 +48,7 @@
       "projects": [
         "UC"
       ],
-      "headline": "One chatbot booking-confirmation bug (UC-233) was raised and is in development. Marketplace sign-in (UC-225), the Teams handoff (UC-22) and model selection (UC-26) are in progress for 15 Oct; admin analytics (UC-25) has not started. 25 items are past due, all untouched since August."
+      "headline": "No change on 10 Oct. The booking-confirmation bug (UC-233) is still in development and passed its 9 Oct due date; Marketplace sign-in (UC-225), the Teams handoff (UC-22) and model selection (UC-26) are in progress for 15 Oct. 27 items are past due, 26 of them untouched since August."
     },
     {
       "id": "PULSE",
@@ -56,7 +56,7 @@
       "projects": [
         "PULSE"
       ],
-      "headline": "No change on the Pulse board. Anshul Bhargava's time on 9 Oct went to the Interactive AI Factory: its plan was published on Confluence (PRD-1) and 98 tasks were raised in Uvation Projects, outside this report's boards."
+      "headline": "No change on the Pulse board. Anshul Bhargava's Interactive AI Factory plan (PRD-1) and its 98 Uvation Projects tasks, raised on 9 Oct, sit outside this report's boards."
     },
     {
       "id": "ATLAS",
@@ -64,7 +64,7 @@
       "projects": [
         "ATLAS"
       ],
-      "headline": "No change on 9 Oct. The three items (ATLAS-1 to ATLAS-3) are in To Do with no due dates; the CRM MVP plan date is still not in Jira."
+      "headline": "No change on 10 Oct. The three items (ATLAS-1 to ATLAS-3) are in To Do with no due dates; the CRM MVP plan date is still not in Jira."
     },
     {
       "id": "ID",
@@ -72,7 +72,7 @@
       "projects": [
         "ID"
       ],
-      "headline": "The account deletion flow moved to Dev on 9 Oct (ID-743, ID-748 to ID-750, ID-756) and support reactivation (ID-751) started. The 6 past-due claims-removal tasks (ID-679 to ID-684) are in production but not closed."
+      "headline": "No change on 10 Oct. The account deletion flow (ID-743, ID-748 to ID-750, ID-756) is in Dev and support reactivation (ID-751) has started. The 6 past-due claims-removal tasks (ID-679 to ID-684) are in production but not closed."
     },
     {
       "id": "REW",
@@ -80,7 +80,7 @@
       "projects": [
         "REW"
       ],
-      "headline": "No change on 9 Oct. The 18 regression-test items raised on 30 Sep are all To Do, unassigned and undated; one older bug (REW-156) is in UAT."
+      "headline": "No change on 10 Oct. The 18 regression-test items raised on 30 Sep are all To Do, unassigned and undated; one older bug (REW-156) is in UAT."
     },
     {
       "id": "SUP",
@@ -96,7 +96,7 @@
       "projects": [
         "IN"
       ],
-      "headline": "The Azure Virtual Desktop design document (IN-1148) was finished on 9 Oct, and a production network and DNS maintenance task was done the same day. 15 items still sit in BLOCKER status, most held by k.kishore, and 24 are past due; the S1 login error-page bug (IN-1111) is still To Do."
+      "headline": "No change on 10 Oct. The Azure Virtual Desktop design document (IN-1148) was finished on 9 Oct. 15 items still sit in BLOCKER status, most held by k.kishore, and 24 are past due; the S1 login error-page bug (IN-1111) is still To Do."
     },
     {
       "id": "DM",
@@ -104,7 +104,7 @@
       "projects": [
         "DM"
       ],
-      "headline": "Three marketing-site fixes were raised for Shashi Prasad K on 9 Oct, including a login page returning 403 (DM-1088). 28 items are past due, 25 of them untouched in 30 days. The design team's own timelines are covered under Dependencies."
+      "headline": "No change on 10 Oct. Three marketing-site fixes raised for Shashi Prasad K on 9 Oct are open, including a login page returning 403 (DM-1088). 28 items are past due, 25 of them untouched in 30 days. The design team's own timelines are covered under Dependencies."
     }
   ],
   "spotlight": [

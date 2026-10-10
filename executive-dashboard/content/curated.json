@@ -819,7 +819,7 @@
     "USP": [
       {
         "topic": "Go Live plan (new)",
-        "status": "Raised 9 Oct by Livian Stefan Stan: five epics (subscription and contract, payments and invoicing, dashboard, subscription upgrade, cross-cutting) with 95 stories and subtasks, mostly for Silviu Oltean and Cășvan Marcel. Epic due dates run from 2 Nov to 15 Dec. 22 stories are sequenced behind other open stories, and 8 tickets were created with due dates already past.",
+        "status": "Raised 9 Oct by Livian Stefan Stan: five epics (subscription and contract, payments and invoicing, dashboard, subscription upgrade, cross-cutting) with 95 stories and subtasks, mostly for Silviu Oltean and Cășvan Marcel. Epic due dates run from 2 Nov to 15 Dec. 22 stories are sequenced behind other open stories, and 8 tickets were created with due dates already past. Raluca Conea added five design follow-ups for Livian Stefan Stan on 9 and 10 Oct (USP-4362 to USP-4366, due 30 Oct), one of them Highest priority: the VAT and deposit line on the product configuration summary.",
         "date": "2026-12-15",
         "ask": "Confirm the go-live date this plan works towards, and fix the 8 tickets dated in the past.",
         "rag": "amber"
@@ -989,7 +989,7 @@
       "Ask Raluca Conea for re-committed dates on the Marketplace RMA flow explanations (VTN-1826, due 2 Sep), the Marketplace Figma file clean-up (VTN-1820, due 11 Sep) and the marketing website USP Figma file (VTN-1819, due 15 Sep), and record them in Jira.",
       "Sign off the Marketplace banners and the 30-product update (VTN-1870, VTN-1873), waiting for review since 2 Oct.",
       "Get a new date for the marketing website redesign (VTN-1875, due 30 Sep): the new home page work (MR-1169) depends on it.",
-      "USP dashboard last edits (VTN-1881) were due 2 Oct and the credit card design (VTN-1812) 11 Sep; both are still in progress."
+      "The USP dashboard last edits (VTN-1881, due 2 Oct) are waiting for review, and the credit card design (VTN-1812, due 11 Sep) is still in progress."
     ]
   }
 }

@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-10-09",
+ "snapshotDate": "2026-10-10",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -56,20 +56,6 @@
      ]
     },
     {
-     "key": "MT-1439",
-     "project": "MT",
-     "summary": "Freeze scope and confirm the keep-list",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-10",
-     "due": "2026-09-10",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
      "key": "MT-1478",
      "project": "MT",
      "summary": "Product Upload",
@@ -102,20 +88,6 @@
      "created": "2026-09-10",
      "resolved": "2026-09-16",
      "due": "2026-09-10",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "MT-1482",
-     "project": "MT",
-     "summary": "Share CSV format with all product assignees for configuration updates",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-10",
-     "due": "2026-09-11",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
@@ -6365,8 +6337,8 @@
      "project": "UP",
      "summary": "Add the page and its libraries to NEXT-V3",
      "type": "Subtask",
-     "status": "Backlog",
-     "statusCat": "new",
+     "status": "In Review",
+     "statusCat": "indeterminate",
      "created": "2026-10-09",
      "resolved": null,
      "due": "2026-10-12",
@@ -12719,8 +12691,8 @@
      "project": "UP",
      "summary": "Add the page and its libraries to NEXT-V3",
      "type": "Subtask",
-     "status": "Backlog",
-     "statusCat": "new",
+     "status": "In Review",
+     "statusCat": "indeterminate",
      "created": "2026-10-09",
      "resolved": null,
      "due": "2026-10-12",
@@ -13028,30 +13000,6 @@
      "assignee": "Shashi Prasad K"
     },
     {
-     "key": "MT-1439",
-     "project": "MT",
-     "summary": "Freeze scope and confirm the keep-list",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-10",
-     "due": "2026-09-10",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "MT-1440",
-     "project": "MT",
-     "summary": "Map SKUs / listings per category",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-10",
-     "due": "2026-09-10",
-     "assignee": "Saurabh Jain"
-    },
-    {
      "key": "MT-1441",
      "project": "MT",
      "summary": "Identify orphan and multi-category listings",
@@ -13100,18 +13048,6 @@
      "assignee": "Murali G"
     },
     {
-     "key": "MT-1445",
-     "project": "MT",
-     "summary": "Decide the disable mechanism",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-10",
-     "due": "2026-09-10",
-     "assignee": "Naman Bapna"
-    },
-    {
      "key": "MT-1446",
      "project": "MT",
      "summary": "Define disabled-state behaviour matrix",
@@ -13148,54 +13084,6 @@
      "assignee": "Saurabh Jain"
     },
     {
-     "key": "MT-1449",
-     "project": "MT",
-     "summary": "Add category status / visibility field",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-10",
-     "due": "2026-09-15",
-     "assignee": "Naman Bapna"
-    },
-    {
-     "key": "MT-1450",
-     "project": "MT",
-     "summary": "Filter disabled categories from public APIs",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-10",
-     "due": "2026-09-10",
-     "assignee": "Naman Bapna"
-    },
-    {
-     "key": "MT-1451",
-     "project": "MT",
-     "summary": "Filter listing/product endpoints by category state",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-10",
-     "due": "2026-09-10",
-     "assignee": "Naman Bapna"
-    },
-    {
-     "key": "MT-1452",
-     "project": "MT",
-     "summary": "Preserve admin/internal read access",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-10",
-     "due": "2026-09-10",
-     "assignee": "Naman Bapna"
-    },
-    {
      "key": "MT-1453",
      "project": "MT",
      "summary": "Block cart/checkout on disabled items",
@@ -13206,18 +13094,6 @@
      "resolved": "2026-09-15",
      "due": "2026-09-10",
      "assignee": "Sapavat Yadagiri"
-    },
-    {
-     "key": "MT-1454",
-     "project": "MT",
-     "summary": "Cache and CDN invalidation strategy",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-10",
-     "due": "2026-09-10",
-     "assignee": "Naman Bapna"
     },
     {
      "key": "MT-1455",
@@ -13292,18 +13168,6 @@
      "assignee": "Sapavat Yadagiri"
     },
     {
-     "key": "MT-1461",
-     "project": "MT",
-     "summary": "Update marketing/email templates and automations",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-10",
-     "due": "2026-09-10",
-     "assignee": "Vishnu kumar yadav"
-    },
-    {
      "key": "MT-1462",
      "project": "MT",
      "summary": "Update help centre and support macros",
@@ -13314,30 +13178,6 @@
      "resolved": "2026-09-11",
      "due": "2026-09-10",
      "assignee": "Murali G"
-    },
-    {
-     "key": "MT-1463",
-     "project": "MT",
-     "summary": "Rebuild search index without disabled categories",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-10",
-     "due": "2026-09-10",
-     "assignee": "Naman Bapna"
-    },
-    {
-     "key": "MT-1464",
-     "project": "MT",
-     "summary": "Regenerate sitemap.xml and robots directives",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-10",
-     "due": "2026-09-10",
-     "assignee": "Naman Bapna"
     },
     {
      "key": "MT-1465",
@@ -13362,42 +13202,6 @@
      "resolved": "2026-09-11",
      "due": "2026-09-10",
      "assignee": "Murali G"
-    },
-    {
-     "key": "MT-1467",
-     "project": "MT",
-     "summary": "Confirm the real dependent-project list",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-10",
-     "due": "2026-09-10",
-     "assignee": "Ankit Sharma"
-    },
-    {
-     "key": "MT-1468",
-     "project": "MT",
-     "summary": "Notify each dependent project owner",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-10",
-     "due": "2026-09-10",
-     "assignee": "Naman Bapna"
-    },
-    {
-     "key": "MT-1469",
-     "project": "MT",
-     "summary": "Coordinate CRM / billing / ERP integrations",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-10",
-     "due": "2026-09-10",
-     "assignee": "Naman Bapna"
     },
     {
      "key": "MT-1470",
@@ -13494,42 +13298,6 @@
      "resolved": "2026-09-16",
      "due": "2026-09-10",
      "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "MT-1481",
-     "project": "MT",
-     "summary": "Assign AI/ML server products to team members for research and configuration validation",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-10",
-     "due": "2026-09-10",
-     "assignee": "Shashi Prasad K"
-    },
-    {
-     "key": "MT-1482",
-     "project": "MT",
-     "summary": "Share CSV format with all product assignees for configuration updates",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-10",
-     "due": "2026-09-11",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "MT-1483",
-     "project": "MT",
-     "summary": "Collate team questions and doubts on AI/ML server product configurations",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-10",
-     "due": "2026-09-10",
-     "assignee": "Shashi Prasad K"
     },
     {
      "key": "MT-1534",
