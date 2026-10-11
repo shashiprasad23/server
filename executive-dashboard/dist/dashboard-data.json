@@ -1,6 +1,6 @@
 {
  "meta": {
-  "snapshotDate": "2026-10-10",
+  "snapshotDate": "2026-10-11",
   "site": "uvation-devops.atlassian.net",
   "projectsVisible": 20,
   "queries": {
@@ -9,12 +9,12 @@
    "register": "summary ~ Risk|Dependency"
   },
   "counts": {
-   "issuesUpdated30d": 1848,
+   "issuesUpdated30d": 1536,
    "openAllTime": 1384,
    "worklogIssues": 337,
    "worklogEntries": 996,
    "registerItems": 20,
-   "expectedIssues": 1848
+   "expectedIssues": 1536
   }
  },
  "period": {
@@ -25,8 +25,8 @@
    "2026-10-02"
   ],
   "holidayNote": "Days with no worklogs from anyone (for example Mon 14 Sep) are listed here and treated as non-working days.",
-  "start": "2026-09-26",
-  "end": "2026-10-09",
+  "start": "2026-09-27",
+  "end": "2026-10-10",
   "workingDays": 9,
   "workingDayList": [
    "2026-09-28",
@@ -39,8 +39,8 @@
    "2026-10-08",
    "2026-10-09"
   ],
-  "short": "26 Sep–9 Oct",
-  "label": "Window 26 Sep–9 Oct 2026"
+  "short": "27 Sep–10 Oct",
+  "label": "Window 27 Sep–10 Oct 2026"
  },
  "capacityPolicy": {
   "source": "Confluence SOP: Resource Planning, Jira Management and Tempo Time Logging",
@@ -55,11 +55,11 @@
   "projectsVisible": 20,
   "projectsInScope": 12,
   "projectsActive": 11,
-  "issuesUpdated30": 1848,
-  "done30": 944,
-  "doneInPeriod": 251,
+  "issuesUpdated30": 1536,
+  "done30": 643,
+  "doneInPeriod": 250,
   "openAllTime": 1384,
-  "overdueOpen": 224,
+  "overdueOpen": 225,
   "hoursInPeriod": 1256.9,
   "capacityPerPerson": 72
  },
@@ -67,11 +67,11 @@
   {
    "key": "USP",
    "name": "Web-Uvation Services Platform",
-   "updated30": 662,
-   "created30": 230,
+   "updated30": 382,
+   "created30": 224,
    "todo": 185,
    "inprog": 36,
-   "done": 441,
+   "done": 161,
    "doneInPeriod": 56,
    "overdue": 99,
    "openBugs": 37,
@@ -93,11 +93,11 @@
   {
    "key": "MT",
    "name": "Web-Marketplace",
-   "updated30": 290,
-   "created30": 148,
+   "updated30": 277,
+   "created30": 119,
    "todo": 27,
    "inprog": 36,
-   "done": 227,
+   "done": 214,
    "doneInPeriod": 73,
    "overdue": 14,
    "openBugs": 4,
@@ -106,13 +106,13 @@
   {
    "key": "MR",
    "name": "Web-Marketing",
-   "updated30": 282,
-   "created30": 196,
+   "updated30": 268,
+   "created30": 183,
    "todo": 41,
    "inprog": 109,
-   "done": 132,
+   "done": 118,
    "doneInPeriod": 26,
-   "overdue": 13,
+   "overdue": 14,
    "openBugs": 20,
    "hours": 218.4
   },
@@ -120,7 +120,7 @@
    "key": "ID",
    "name": "Web-Identity",
    "updated30": 82,
-   "created30": 63,
+   "created30": 62,
    "todo": 28,
    "inprog": 22,
    "done": 32,
@@ -132,12 +132,12 @@
   {
    "key": "IN",
    "name": "Devops",
-   "updated30": 76,
-   "created30": 62,
+   "updated30": 71,
+   "created30": 59,
    "todo": 15,
    "inprog": 10,
-   "done": 51,
-   "doneInPeriod": 25,
+   "done": 46,
+   "doneInPeriod": 24,
    "overdue": 24,
    "openBugs": 1,
    "hours": 180.5
@@ -221,7 +221,7 @@
    "assignee": "Livian Stefan Stan",
    "jiraStatus": "TODO",
    "updated": "2026-10-02",
-   "daysSinceUpdate": 8,
+   "daysSinceUpdate": 9,
    "context": "Multiple managed service teams are independently adding portal requirements, risking scope creep. Currently In Progress.",
    "mitigation": [
     "Enforce a formal change request process for new requirements",
@@ -247,7 +247,7 @@
    "assignee": null,
    "jiraStatus": "TODO",
    "updated": "2026-07-07",
-   "daysSinceUpdate": 95,
+   "daysSinceUpdate": 96,
    "context": "Financing integration on the Marketplace requires Gynger API sandbox access, which has not yet been granted.",
    "mitigation": [
     "Request Gynger sandbox access as early as possible",
@@ -273,7 +273,7 @@
    "assignee": "Livian Stefan Stan",
    "jiraStatus": "TODO",
    "updated": "2026-10-02",
-   "daysSinceUpdate": 8,
+   "daysSinceUpdate": 9,
    "context": "Service credit sync depends on the Rewards Platform API, currently tracked as an open dependency.",
    "mitigation": [
     "Implement idempotent async processing via Service Bus",
@@ -299,7 +299,7 @@
    "assignee": "Livian Stefan Stan",
    "jiraStatus": "TODO",
    "updated": "2026-10-02",
-   "daysSinceUpdate": 8,
+   "daysSinceUpdate": 9,
    "context": "Service credit sync from Marketplace or Rewards can fail, risking inconsistent balances for customers.",
    "mitigation": [
     "Implement idempotent async processing via Service Bus",
@@ -325,7 +325,7 @@
    "assignee": "k.kishore",
    "jiraStatus": "Done",
    "updated": "2026-09-07",
-   "daysSinceUpdate": 33,
+   "daysSinceUpdate": 34,
    "context": "Current infrastructure capacity is not proven against peak load scenarios, risking performance degradation.",
    "mitigation": [
     "Complete capacity planning against expected peak load",
@@ -355,7 +355,7 @@
    "assignee": "Shashi Prasad K",
    "jiraStatus": "Done",
    "updated": "2026-09-23",
-   "daysSinceUpdate": 17,
+   "daysSinceUpdate": 18,
    "context": "Product image delivery depends on CDN infrastructure being operational. This is owned by DevOps and currently open.",
    "mitigation": [
     "Validate CDN uptime SLA",
@@ -385,7 +385,7 @@
    "assignee": "Shashi Prasad K",
    "jiraStatus": "Done",
    "updated": "2026-09-23",
-   "daysSinceUpdate": 17,
+   "daysSinceUpdate": 18,
    "context": "Checkout currently has no automatic failover if the primary payment gateway experiences downtime, risking lost orders.",
    "mitigation": [
     "Implement dual payment provider failover",
@@ -415,7 +415,7 @@
    "assignee": null,
    "jiraStatus": "Done",
    "updated": "2026-09-23",
-   "daysSinceUpdate": 17,
+   "daysSinceUpdate": 18,
    "context": "OEMs can change pricing without notice, and Marketplace listings can drift out of sync, creating pricing-accuracy risk.",
    "mitigation": [
     "Build automated price-sync jobs against OEM pricing feeds",
@@ -445,7 +445,7 @@
    "assignee": "Naveen Jangid",
    "jiraStatus": "Done",
    "updated": "2026-09-17",
-   "daysSinceUpdate": 23,
+   "daysSinceUpdate": 24,
    "context": "Sync failures between Marketplace and the Rewards platform can leave customers with incorrect point balances.",
    "mitigation": [
     "Implement idempotent, event-driven sync between Marketplace and Rewards",
@@ -475,7 +475,7 @@
    "assignee": "Naveen Jangid",
    "jiraStatus": "Done",
    "updated": "2026-09-23",
-   "daysSinceUpdate": 17,
+   "daysSinceUpdate": 18,
    "context": "Customer PII and order history are high-value targets; a breach would have critical impact and reputational/legal consequences.",
    "mitigation": [
     "Enforce encryption at rest and in transit for all PII and order data",
@@ -505,7 +505,7 @@
    "assignee": "Livian Stefan Stan",
    "jiraStatus": "TODO",
    "updated": "2026-10-02",
-   "daysSinceUpdate": 8,
+   "daysSinceUpdate": 9,
    "context": "USP must not implement standalone authentication; all auth flows must delegate to Azure AD B2C via OAuth 2.0.",
    "mitigation": [
     "No standalone auth implementation exists in USP",
@@ -531,7 +531,7 @@
    "assignee": "Livian Stefan Stan",
    "jiraStatus": "TODO",
    "updated": "2026-10-02",
-   "daysSinceUpdate": 8,
+   "daysSinceUpdate": 9,
    "context": "Phase 3 dashboard work depends on cloud partner API access being validated ahead of build start.",
    "mitigation": [
     "Validate partner API access against existing agreements",
@@ -557,7 +557,7 @@
    "assignee": "Livian Stefan Stan",
    "jiraStatus": "TODO",
    "updated": "2026-10-02",
-   "daysSinceUpdate": 8,
+   "daysSinceUpdate": 9,
    "context": "An Azure AD B2C outage would block USP portal login entirely without mitigation in place.",
    "mitigation": [
     "Rely on Azure's 99.99% SLA as the baseline",
@@ -583,7 +583,7 @@
    "assignee": "Livian Stefan Stan",
    "jiraStatus": "TODO",
    "updated": "2026-10-02",
-   "daysSinceUpdate": 8,
+   "daysSinceUpdate": 9,
    "context": "Cloud partner API rate limits can block real-time dashboard data from loading.",
    "mitigation": [
     "Implement a caching layer with a 5-minute TTL",
@@ -609,7 +609,7 @@
    "assignee": "Livian Stefan Stan",
    "jiraStatus": "TODO",
    "updated": "2026-10-02",
-   "daysSinceUpdate": 8,
+   "daysSinceUpdate": 9,
    "context": "The AI transcription service can fail after an advisory session, currently flagged as needing verification of applicability.",
    "mitigation": [
     "Fall back to manual transcript delivery via email within a 4-hour SLA",
@@ -635,7 +635,7 @@
    "assignee": "Livian Stefan Stan",
    "jiraStatus": "TODO",
    "updated": "2026-10-02",
-   "daysSinceUpdate": 8,
+   "daysSinceUpdate": 9,
    "context": "Clients accustomed to manual engagement may be slow to adopt the self-service portal, risking underuse of the platform.",
    "mitigation": [
     "Build an in-portal guided onboarding tour",
@@ -661,7 +661,7 @@
    "assignee": "Livian Stefan Stan",
    "jiraStatus": "TODO",
    "updated": "2026-10-02",
-   "daysSinceUpdate": 8,
+   "daysSinceUpdate": 9,
    "context": "External vendor API approvals are on the critical path for several USP integrations and are prone to delay.",
    "mitigation": [
     "Coordinate early with external vendors on approval requirements",
@@ -687,7 +687,7 @@
    "assignee": null,
    "jiraStatus": "To Do",
    "updated": "2026-07-07",
-   "daysSinceUpdate": 95,
+   "daysSinceUpdate": 96,
    "context": null,
    "mitigation": [],
    "lastComment": null,
@@ -709,7 +709,7 @@
    "assignee": null,
    "jiraStatus": "TODO",
    "updated": "2026-07-07",
-   "daysSinceUpdate": 95,
+   "daysSinceUpdate": 96,
    "context": null,
    "mitigation": [],
    "lastComment": null,
@@ -731,7 +731,7 @@
    "assignee": "Livian Stefan Stan",
    "jiraStatus": "TODO",
    "updated": "2026-08-26",
-   "daysSinceUpdate": 45,
+   "daysSinceUpdate": 46,
    "context": null,
    "mitigation": [],
    "lastComment": null,
@@ -1399,7 +1399,7 @@
    "tickets": 34,
    "doneInPeriod": 5,
    "open": 45,
-   "overdue": 3,
+   "overdue": 4,
    "projects": {
     "MR": 76.0
    },
@@ -1736,7 +1736,7 @@
    "avgPerDay": 7.2,
    "pctCapacity": 50,
    "tickets": 5,
-   "doneInPeriod": 8,
+   "doneInPeriod": 7,
    "open": 6,
    "overdue": 1,
    "projects": {
@@ -2211,14 +2211,14 @@
     "MT",
     "PC"
    ],
-   "headline": "Nothing moved on Saturday 10 Oct after 13 closures on 9 Oct, including the three reopened NVIDIA fixes and configurable product upload on UAT (PC-121). The live chat platform choice (MT-1578, in Dev) and the RFQ end-to-end test (MT-1582) passed their 9 Oct due dates, so 26 items are now past due, 20 of them untouched in 30 days.",
-   "updated30": 324,
-   "created30": 181,
-   "done30": 259,
+   "headline": "Nothing moved over the weekend of 10 and 11 Oct after 13 closures on 9 Oct, including the three reopened NVIDIA fixes and configurable product upload on UAT (PC-121). The live chat platform choice (MT-1578, in Dev) and the RFQ end-to-end test (MT-1582) passed their 9 Oct due dates, so 26 items are now past due, 20 of them untouched in 30 days.",
+   "updated30": 311,
+   "created30": 152,
+   "done30": 246,
    "doneInPeriod": 104,
    "todo": 27,
    "inprog": 37,
-   "done": 260,
+   "done": 247,
    "statuses": {
     "TODO": 27,
     "In Progress": 25,
@@ -2426,13 +2426,6 @@
      "total": 27
     },
     {
-     "key": "MT-1438",
-     "summary": "Uvation Marketplace Category Disable Task List",
-     "status": "Done",
-     "done": 24,
-     "total": 24
-    },
-    {
      "key": "MT-1485",
      "summary": "Product creation on Magento for all AI servers",
      "status": "Done",
@@ -2459,6 +2452,13 @@
      "status": "In Progress",
      "done": 2,
      "total": 13
+    },
+    {
+     "key": "MT-1331",
+     "summary": "P2 - As a buyer I want to return items and get a refund or credit so I can resolve issues post-delivery",
+     "status": "Done",
+     "done": 12,
+     "total": 12
     }
    ],
    "openBugs": 4,
@@ -2472,14 +2472,14 @@
    "projects": [
     "MR"
    ],
-   "headline": "No change on 10 Oct. Four chatbot and footer subtasks from Kannan Elangovan's review (MR-1289, MR-1337, MR-1340) and the platform review plan (MR-1336) passed their 9 Oct due dates, taking past-due items from 9 to 13. The sitemap fix (MR-1199) is still Ready for Prod, related products content (MR-1265) is still blocked, and 20 open bugs are unrated.",
-   "updated30": 282,
-   "created30": 196,
-   "done30": 130,
+   "headline": "No change over the weekend of 10 and 11 Oct. Past-due items rose from 9 on Friday to 14: four chatbot and footer subtasks from Kannan Elangovan's review (MR-1289, MR-1337, MR-1340) and the platform review plan (MR-1336) passed their 9 Oct due dates, and the security alert retest (MR-1290) passed its 10 Oct date. The sitemap fix (MR-1199) is still Ready for Prod, related products content (MR-1265) is still blocked, and 20 open bugs are unrated.",
+   "updated30": 268,
+   "created30": 183,
+   "done30": 116,
    "doneInPeriod": 26,
    "todo": 41,
    "inprog": 109,
-   "done": 132,
+   "done": 118,
    "statuses": {
     "Ready for Prod": 67,
     "TODO": 41,
@@ -2492,7 +2492,7 @@
     "Code Review": 1
    },
    "stories": {
-    "delivered": 5,
+    "delivered": 4,
     "inflight": 10,
     "planned": 1
    },
@@ -2528,14 +2528,6 @@
      "assignee": "Kunal Jangid",
      "due": null,
      "resolved": "2026-09-15"
-    },
-    {
-     "key": "MR-755",
-     "summary": "Make contact form visible on page load and add calendar booking (Calendly) to contact page",
-     "status": "Done",
-     "assignee": "Kunal Jangid",
-     "due": null,
-     "resolved": "2026-09-11"
     }
    ],
    "inflight": [
@@ -2670,7 +2662,7 @@
      "resolved": ""
     }
    ],
-   "overdueCount": 13,
+   "overdueCount": 14,
    "blocked": [
     {
      "key": "MR-1265",
@@ -2737,13 +2729,13 @@
     "USP"
    ],
    "headline": "Raluca Conea raised five design follow-ups for Livian Stefan Stan late on 9 Oct and early on 10 Oct (USP-4362 to USP-4366, due 30 Oct), including a Highest-priority VAT and deposit line on the product configuration summary. The Go Live plan raised on 9 Oct (five epics, 95 items, due 2 Nov to 15 Dec) is unchanged. Two S1 bugs remain open (USP-4231, USP-4204); 99 items are past due, 65 of them untouched in 30 days.",
-   "updated30": 662,
-   "created30": 230,
-   "done30": 431,
+   "updated30": 382,
+   "created30": 224,
+   "done30": 159,
    "doneInPeriod": 56,
    "todo": 185,
    "inprog": 36,
-   "done": 441,
+   "done": 161,
    "statuses": {
     "TODO": 182,
     "In Progress": 23,
@@ -2756,7 +2748,7 @@
     "Tested In Dev": 1
    },
    "stories": {
-    "delivered": 39,
+    "delivered": 9,
     "inflight": 4,
     "planned": 76
    },
@@ -2979,46 +2971,46 @@
    ],
    "rollups": [
     {
-     "key": "USP-1996",
-     "summary": "Parent last updated before the 30-day window",
-     "status": "",
-     "done": 100,
-     "total": 101
-    },
-    {
      "key": "USP-3915",
      "summary": "Communication & Support Hub",
      "status": "TODO",
-     "done": 3,
-     "total": 28
-    },
-    {
-     "key": "USP-3510",
-     "summary": "Parent last updated before the 30-day window",
-     "status": "",
-     "done": 24,
-     "total": 25
+     "done": 1,
+     "total": 26
     },
     {
      "key": "USP-3605",
      "summary": "Parent last updated before the 30-day window",
      "status": "",
-     "done": 15,
-     "total": 21
+     "done": 9,
+     "total": 15
     },
     {
-     "key": "USP-3482",
-     "summary": "Parent last updated before the 30-day window",
-     "status": "",
-     "done": 17,
-     "total": 19
+     "key": "USP-4280",
+     "summary": "Go Live – Payments & Invoicing",
+     "status": "TODO",
+     "done": 0,
+     "total": 13
     },
     {
      "key": "USP-3491",
      "summary": "Parent last updated before the 30-day window",
      "status": "",
-     "done": 6,
-     "total": 14
+     "done": 4,
+     "total": 12
+    },
+    {
+     "key": "USP-3746",
+     "summary": "Parent last updated before the 30-day window",
+     "status": "",
+     "done": 0,
+     "total": 10
+    },
+    {
+     "key": "USP-4050",
+     "summary": "General",
+     "status": "Done",
+     "done": 9,
+     "total": 10
     }
    ],
    "openBugs": 37,
@@ -3035,7 +3027,7 @@
    "projects": [
     "UC"
    ],
-   "headline": "No change on 10 Oct. The booking-confirmation bug (UC-233) is still in development and passed its 9 Oct due date; Marketplace sign-in (UC-225), the Teams handoff (UC-22) and model selection (UC-26) are in progress for 15 Oct. 27 items are past due, 26 of them untouched since August.",
+   "headline": "No change over the weekend of 10 and 11 Oct. The booking-confirmation bug (UC-233) is still in development and passed its 9 Oct due date; Marketplace sign-in (UC-225), the Teams handoff (UC-22) and model selection (UC-26) are in progress for 15 Oct. 27 items are past due, 26 of them untouched since August.",
    "updated30": 49,
    "created30": 19,
    "done30": 31,
@@ -3252,7 +3244,7 @@
    "projects": [
     "PULSE"
    ],
-   "headline": "No change on the Pulse board. Anshul Bhargava's Interactive AI Factory plan (PRD-1) and its 98 Uvation Projects tasks, raised on 9 Oct, sit outside this report's boards.",
+   "headline": "No change on the Pulse board. Anshul Bhargava's Interactive AI Factory work continues outside this report's boards: after the plan (PRD-1) and 98 Uvation Projects tasks on 9 Oct, 31 more were raised on Sunday 11 Oct (UP-156 to UP-186: 5 stories and 26 subtasks for new page sections, tester tools and a logo style), all in Backlog, unassigned and undated.",
    "updated30": 330,
    "created30": 330,
    "done30": 1,
@@ -3392,7 +3384,7 @@
    "projects": [
     "ATLAS"
    ],
-   "headline": "No change on 10 Oct. The three items (ATLAS-1 to ATLAS-3) are in To Do with no due dates; the CRM MVP plan date is still not in Jira.",
+   "headline": "No change over the weekend of 10 and 11 Oct. The three items (ATLAS-1 to ATLAS-3) are in To Do with no due dates; the CRM MVP plan date is still not in Jira.",
    "updated30": 3,
    "created30": 3,
    "done30": 0,
@@ -3423,9 +3415,9 @@
    "projects": [
     "ID"
    ],
-   "headline": "No change on 10 Oct. The account deletion flow (ID-743, ID-748 to ID-750, ID-756) is in Dev and support reactivation (ID-751) has started. The 6 past-due claims-removal tasks (ID-679 to ID-684) are in production but not closed.",
+   "headline": "No change over the weekend of 10 and 11 Oct. The account deletion flow (ID-743, ID-748 to ID-750, ID-756) is in Dev and support reactivation (ID-751) has started. The 6 past-due claims-removal tasks (ID-679 to ID-684) are in production but not closed.",
    "updated30": 82,
-   "created30": 63,
+   "created30": 62,
    "done30": 32,
    "doneInPeriod": 18,
    "todo": 28,
@@ -3579,7 +3571,7 @@
    "projects": [
     "REW"
    ],
-   "headline": "No change on 10 Oct. The 18 regression-test items raised on 30 Sep are all To Do, unassigned and undated; one older bug (REW-156) is in UAT.",
+   "headline": "No change over the weekend of 10 and 11 Oct. The 18 regression-test items raised on 30 Sep are all To Do, unassigned and undated; one older bug (REW-156) is in UAT.",
    "updated30": 18,
    "created30": 18,
    "done30": 0,
@@ -3670,14 +3662,14 @@
    "projects": [
     "IN"
    ],
-   "headline": "No change on 10 Oct. The Azure Virtual Desktop design document (IN-1148) was finished on 9 Oct. 15 items still sit in BLOCKER status, most held by k.kishore, and 24 are past due; the S1 login error-page bug (IN-1111) is still To Do.",
-   "updated30": 76,
-   "created30": 62,
-   "done30": 48,
-   "doneInPeriod": 25,
+   "headline": "No change over the weekend of 10 and 11 Oct. The Azure Virtual Desktop design document (IN-1148) was finished on 9 Oct. 15 items still sit in BLOCKER status, most held by k.kishore, and 24 are past due; the S1 login error-page bug (IN-1111) is still To Do.",
+   "updated30": 71,
+   "created30": 59,
+   "done30": 46,
+   "doneInPeriod": 24,
    "todo": 15,
    "inprog": 10,
-   "done": 51,
+   "done": 46,
    "statuses": {
     "To Do": 15,
     "In Progress": 7,
@@ -3946,18 +3938,18 @@
      "total": 17
     },
     {
-     "key": "IN-1078",
-     "summary": "General DevOps task",
-     "status": "Done",
-     "done": 14,
-     "total": 14
-    },
-    {
      "key": "IN-1127",
      "summary": "General DevOps Ticket",
      "status": "In Progress",
      "done": 4,
      "total": 10
+    },
+    {
+     "key": "IN-1078",
+     "summary": "General DevOps task",
+     "status": "Done",
+     "done": 9,
+     "total": 9
     },
     {
      "key": "IN-1098",
@@ -3992,7 +3984,7 @@
    "projects": [
     "DM"
    ],
-   "headline": "No change on 10 Oct. Three marketing-site fixes raised for Shashi Prasad K on 9 Oct are open, including a login page returning 403 (DM-1088). 28 items are past due, 25 of them untouched in 30 days. The design team's own timelines are covered under Dependencies.",
+   "headline": "No change over the weekend of 10 and 11 Oct. Three marketing-site fixes raised for Shashi Prasad K on 9 Oct are open, including a login page returning 403 (DM-1088). 28 items are past due, 25 of them untouched in 30 days. The design team's own timelines are covered under Dependencies.",
    "updated30": 22,
    "created30": 14,
    "done30": 12,
@@ -4094,7 +4086,7 @@
    "assigned": 462,
    "open": 432,
    "inProgress": 253,
-   "overdueCount": 3,
+   "overdueCount": 6,
    "overdue": [
     {
      "key": "IN-1119",
@@ -4122,6 +4114,36 @@
      "summary": "Name the USP website and QA people for Part A",
      "status": "Backlog",
      "due": "2026-10-09",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-10-09",
+     "resolved": null
+    },
+    {
+     "key": "UP-153",
+     "project": "UP",
+     "summary": "Update the playbook and plan for the full-copy model",
+     "status": "In Progress",
+     "due": "2026-10-10",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-10-09",
+     "resolved": null
+    },
+    {
+     "key": "UP-154",
+     "project": "UP",
+     "summary": "Copy the Portal frontend into NEXT-V3 as an unchanged baseline",
+     "status": "In Progress",
+     "due": "2026-10-10",
+     "assignee": "Anshul Bhargava",
+     "created": "2026-10-09",
+     "resolved": null
+    },
+    {
+     "key": "UP-76",
+     "project": "UP",
+     "summary": "Review the reference code and name the backend reviewer",
+     "status": "Backlog",
+     "due": "2026-10-10",
      "assignee": "Anshul Bhargava",
      "created": "2026-10-09",
      "resolved": null
@@ -4240,20 +4262,18 @@
      "resolved": null
     }
    ],
-   "raised30": 476,
-   "raisedDone": 34,
+   "raised30": 506,
+   "raisedDone": 33,
    "raisedByProject": {
     "PULSE": 329,
-    "UP": 113,
+    "UP": 144,
     "IN": 29,
     "PRD": 1,
     "MT": 1,
     "INF": 1,
-    "ATLAS": 1,
-    "ID": 1
+    "ATLAS": 1
    },
    "raisedByDay": {
-    "2026-09-10": 1,
     "2026-09-16": 8,
     "2026-09-25": 1,
     "2026-09-28": 292,
@@ -4261,87 +4281,88 @@
     "2026-10-01": 20,
     "2026-10-06": 14,
     "2026-10-07": 1,
-    "2026-10-09": 99
+    "2026-10-09": 99,
+    "2026-10-11": 31
    },
    "raisedRecent": [
     {
-     "key": "UP-99",
+     "key": "UP-186",
      "project": "UP",
-     "summary": "Draw each item with its own unit, table row and drill-down",
+     "summary": "Quality checks: plan creation, visibility rules and the hand-off",
      "status": "Backlog",
-     "due": "2026-10-19",
-     "assignee": "Anshul Bhargava",
-     "created": "2026-10-09",
+     "due": null,
+     "assignee": null,
+     "created": "2026-10-11",
      "resolved": null
     },
     {
-     "key": "UP-98",
+     "key": "UP-185",
      "project": "UP",
-     "summary": "Match each item to its name in the CRM catalogue",
+     "summary": "Ask a question about a milestone through the communication hub",
      "status": "Backlog",
-     "due": "2026-10-14",
-     "assignee": "Anshul Bhargava",
-     "created": "2026-10-09",
+     "due": null,
+     "assignee": null,
+     "created": "2026-10-11",
      "resolved": null
     },
     {
-     "key": "UP-97",
+     "key": "UP-184",
      "project": "UP",
-     "summary": "Agree the list of data-centre items with Product",
+     "summary": "Build plan in the 3D hall: parts coloured by milestone status",
      "status": "Backlog",
-     "due": "2026-10-12",
-     "assignee": "Anshul Bhargava",
-     "created": "2026-10-09",
+     "due": null,
+     "assignee": null,
+     "created": "2026-10-11",
      "resolved": null
     },
     {
-     "key": "UP-96",
+     "key": "UP-183",
      "project": "UP",
-     "summary": "Approve the pilot invitation, launch note and in-app notice",
+     "summary": "Build plan on the provisioning page: timeline and latest updates",
      "status": "Backlog",
-     "due": "2026-10-15",
-     "assignee": "Anshul Bhargava",
-     "created": "2026-10-09",
+     "due": null,
+     "assignee": null,
+     "created": "2026-10-11",
      "resolved": null
     },
     {
-     "key": "UP-95",
+     "key": "UP-182",
      "project": "UP",
-     "summary": "Name the pilot customers and the pilot dates",
+     "summary": "Build-plan notifications in the app and by e-mail",
      "status": "Backlog",
-     "due": "2026-10-15",
-     "assignee": "Anshul Bhargava",
-     "created": "2026-10-09",
+     "due": null,
+     "assignee": null,
+     "created": "2026-10-11",
      "resolved": null
     },
     {
-     "key": "UP-94",
+     "key": "UP-181",
      "project": "UP",
-     "summary": "Write the support guide, FAQ and walkthrough",
+     "summary": "Customer endpoint to read the build plan, with only customer-visible fields",
      "status": "Backlog",
-     "due": "2026-10-15",
-     "assignee": "Anshul Bhargava",
-     "created": "2026-10-09",
+     "due": null,
+     "assignee": null,
+     "created": "2026-10-11",
      "resolved": null
     },
     {
-     "key": "UP-93",
+     "key": "UP-180",
      "project": "UP",
-     "summary": "Test the on/off switch on staging (under 15 minutes)",
+     "summary": "CRM endpoints to run the plan: edit, publish and complete milestones",
      "status": "Backlog",
-     "due": "2026-10-15",
-     "assignee": "Anshul Bhargava",
-     "created": "2026-10-09",
+     "due": null,
+     "assignee": null,
+     "created": "2026-10-11",
      "resolved": null
     },
     {
-     "key": "UP-92",
+     "key": "UP-179",
      "project": "UP",
-     "summary": "Hook up error and usage reporting",
+     "summary": "Create the plan when the deposit is confirmed and connect it to the provisioning hand-off",
      "status": "Backlog",
-     "due": "2026-10-14",
-     "assignee": "Anshul Bhargava",
-     "created": "2026-10-09",
+     "due": null,
+     "assignee": null,
+     "created": "2026-10-11",
      "resolved": null
     }
    ],
@@ -4397,7 +4418,7 @@
      "resolved": null
     }
    ],
-   "lastRaised": "2026-10-09",
+   "lastRaised": "2026-10-11",
    "note": {
     "finding": "Holds 363 tickets, 343 of them open, after creating the PULSE project on 28 and 29 Sep: 8 epics, 64 stories and 256 subtasks, all self-assigned, 246 marked In Progress and none with a due date. The one PULSE bug (PULSE-329) closed on 30 Sep. 12.9 hours landed on these tickets in the 22 Sep–5 Oct window (ATLAS-1 8.2 h, PULSE 2.5 h, IN-1119 1.5 h, MT-1538 0.7 h), 18% of the 72-hour capacity. On 6 Oct Anshul opened 13 Uvation Projects tickets (UP-40 to UP-52) for an interactive 3D AI Factory experience and Rafay SSO integration, 8 of them already Done, with 5.5 h logged.",
     "context": "PULSE is the Pulse observability platform plan (platform foundation, telemetry ingestion, alerts and SLOs, integrations, governance). It replaces the smaller DevOps rollout raised on 16 Sep (IN-1098 to IN-1104). PULSE and the Atlas CRM story (ATLAS-1) are report programmes with their own scorecards. Anshul also raised 54 Conversational AI tickets on 3 Sep, and checked the AI/ML product list for the Services Platform (MT-1538), which closed on 30 Sep. GPU as a Service (USP-3795) is still assigned to Anshul and marked BLOCKER, re-dated from 30 Sep to 30 Oct on 2 Oct.",
@@ -4450,15 +4471,14 @@
      "resolved": null
     }
    ],
-   "raised30": 35,
-   "raisedDone": 27,
+   "raised30": 9,
+   "raisedDone": 1,
    "raisedByProject": {
-    "MT": 27,
     "UP": 6,
-    "INF": 2
+    "INF": 2,
+    "MT": 1
    },
    "raisedByDay": {
-    "2026-09-10": 26,
     "2026-09-21": 2,
     "2026-09-22": 1,
     "2026-09-24": 1,
@@ -4632,7 +4652,7 @@
      "status": "In Progress",
      "assignee": "Naman Bapna",
      "due": "2025-12-08",
-     "daysLate": 306,
+     "daysLate": 307,
      "parent": null,
      "impact": "Feature not delivered by its date.",
      "redated": null
@@ -4644,7 +4664,7 @@
      "status": "QA_TEST",
      "assignee": "Shrikant Sharma",
      "due": "2026-02-27",
-     "daysLate": 225,
+     "daysLate": 226,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -4656,7 +4676,7 @@
      "status": "UAT Testing",
      "assignee": "Nagamuni Valluri",
      "due": "2026-03-03",
-     "daysLate": 221,
+     "daysLate": 222,
      "parent": "MT-375",
      "impact": "Task still open past its date.",
      "redated": null
@@ -4668,7 +4688,7 @@
      "status": "In Progress",
      "assignee": "Suganya Murugaraj",
      "due": "2026-03-27",
-     "daysLate": 197,
+     "daysLate": 198,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -4680,7 +4700,7 @@
      "status": "In Progress",
      "assignee": "Suganya Murugaraj",
      "due": "2026-03-27",
-     "daysLate": 197,
+     "daysLate": 198,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -4692,7 +4712,7 @@
      "status": "In Progress",
      "assignee": "Suganya Murugaraj",
      "due": "2026-04-22",
-     "daysLate": 171,
+     "daysLate": 172,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -4704,7 +4724,7 @@
      "status": "In Progress",
      "assignee": "Suganya Murugaraj",
      "due": "2026-05-06",
-     "daysLate": 157,
+     "daysLate": 158,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -4716,7 +4736,7 @@
      "status": "In Progress",
      "assignee": "Suganya Murugaraj",
      "due": "2026-05-15",
-     "daysLate": 148,
+     "daysLate": 149,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -4728,7 +4748,7 @@
      "status": "In Progress",
      "assignee": "Vikasbhatia",
      "due": "2026-06-09",
-     "daysLate": 123,
+     "daysLate": 124,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -4740,7 +4760,7 @@
      "status": "QA_TEST",
      "assignee": "Vikasbhatia",
      "due": "2026-06-16",
-     "daysLate": 116,
+     "daysLate": 117,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -4752,7 +4772,7 @@
      "status": "TODO",
      "assignee": "Naveen Jangid",
      "due": "2026-07-10",
-     "daysLate": 92,
+     "daysLate": 93,
      "parent": "MT-978",
      "impact": "Holds up MT-978: Loyalty Points – Define & implement allotment logic and display",
      "redated": null
@@ -4764,7 +4784,7 @@
      "status": "TODO",
      "assignee": "Naveen Jangid",
      "due": "2026-07-15",
-     "daysLate": 87,
+     "daysLate": 88,
      "parent": "MT-978",
      "impact": "Holds up MT-978: Loyalty Points – Define & implement allotment logic and display",
      "redated": null
@@ -4776,7 +4796,7 @@
      "status": "In Progress",
      "assignee": "Vikasbhatia",
      "due": "2026-07-15",
-     "daysLate": 87,
+     "daysLate": 88,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -4788,7 +4808,7 @@
      "status": "In Progress",
      "assignee": null,
      "due": "2026-08-22",
-     "daysLate": 49,
+     "daysLate": 50,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -4800,7 +4820,7 @@
      "status": "In Progress",
      "assignee": "Suganya Murugaraj",
      "due": "2026-08-25",
-     "daysLate": 46,
+     "daysLate": 47,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -4812,7 +4832,7 @@
      "status": "To Do",
      "assignee": "Arnab",
      "due": "2026-08-29",
-     "daysLate": 42,
+     "daysLate": 43,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -4824,7 +4844,7 @@
      "status": "In Prod",
      "assignee": "Kannan Elangovan",
      "due": "2026-08-31",
-     "daysLate": 40,
+     "daysLate": 41,
      "parent": "MT-989",
      "impact": "Shipped, but the ticket is not closed: housekeeping, no delivery impact.",
      "redated": null
@@ -4836,7 +4856,7 @@
      "status": "UAT",
      "assignee": "Sapavat Yadagiri",
      "due": "2026-08-31",
-     "daysLate": 40,
+     "daysLate": 41,
      "parent": "MT-989",
      "impact": "Task still open past its date.",
      "redated": null
@@ -4848,7 +4868,7 @@
      "status": "Dev",
      "assignee": "Gourav Agnani",
      "due": "2026-08-31",
-     "daysLate": 40,
+     "daysLate": 41,
      "parent": "MT-989",
      "impact": "Task still open past its date.",
      "redated": null
@@ -4860,7 +4880,7 @@
      "status": "In Prod",
      "assignee": "Kannan Elangovan",
      "due": "2026-08-31",
-     "daysLate": 40,
+     "daysLate": 41,
      "parent": "MT-989",
      "impact": "Shipped, but the ticket is not closed: housekeeping, no delivery impact.",
      "redated": null
@@ -4872,7 +4892,7 @@
      "status": "UAT",
      "assignee": "Sapavat Yadagiri",
      "due": "2026-08-31",
-     "daysLate": 40,
+     "daysLate": 41,
      "parent": "MT-989",
      "impact": "Task still open past its date.",
      "redated": null
@@ -4884,7 +4904,7 @@
      "status": "Dev",
      "assignee": "Naveen Jangid",
      "due": "2026-10-07",
-     "daysLate": 3,
+     "daysLate": 4,
      "parent": "MT-1563",
      "impact": "Holds up MT-1563: General",
      "redated": null
@@ -4896,7 +4916,7 @@
      "status": "In Progress",
      "assignee": "Gourav Agnani",
      "due": "2026-10-08",
-     "daysLate": 2,
+     "daysLate": 3,
      "parent": "MT-1541",
      "impact": "Holds up MT-1541: [Marketplace] Functional smoke regression and transaction integrity",
      "redated": null
@@ -4908,7 +4928,7 @@
      "status": "Dev",
      "assignee": "Naveen Jangid",
      "due": "2026-10-08",
-     "daysLate": 2,
+     "daysLate": 3,
      "parent": "MT-1577",
      "impact": "Holds up MT-1577: Implement live chat widget across Marketplace platform",
      "redated": null
@@ -4920,7 +4940,7 @@
      "status": "Dev",
      "assignee": "Naveen Jangid",
      "due": "2026-10-09",
-     "daysLate": 1,
+     "daysLate": 2,
      "parent": "MT-1577",
      "impact": "Holds up MT-1577: Implement live chat widget across Marketplace platform",
      "redated": null
@@ -4932,14 +4952,14 @@
      "status": "In Progress",
      "assignee": "Nagamuni Valluri",
      "due": "2026-10-09",
-     "daysLate": 1,
+     "daysLate": 2,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
     }
    ],
-   "maxLate": 306,
-   "medianLate": 68,
+   "maxLate": 307,
+   "medianLate": 69,
    "shippedNotClosed": 2,
    "realLate": 24,
    "parents": [
@@ -4980,7 +5000,7 @@
   {
    "id": "MR",
    "name": "Web-Marketing",
-   "open": 13,
+   "open": 14,
    "items": [
     {
      "key": "MR-736",
@@ -4989,7 +5009,7 @@
      "status": "In Prod1",
      "assignee": "Kunal Jangid",
      "due": "2026-06-04",
-     "daysLate": 128,
+     "daysLate": 129,
      "parent": "MR-721",
      "impact": "Shipped, but the ticket is not closed: housekeeping, no delivery impact.",
      "redated": null
@@ -5001,7 +5021,7 @@
      "status": "In Prod1",
      "assignee": "Kunal Jangid",
      "due": "2026-06-08",
-     "daysLate": 124,
+     "daysLate": 125,
      "parent": "MR-721",
      "impact": "Shipped, but the ticket is not closed: housekeeping, no delivery impact.",
      "redated": null
@@ -5013,7 +5033,7 @@
      "status": "In Prod1",
      "assignee": "Kunal Jangid",
      "due": "2026-06-08",
-     "daysLate": 124,
+     "daysLate": 125,
      "parent": "MR-721",
      "impact": "Shipped, but the ticket is not closed: housekeeping, no delivery impact.",
      "redated": null
@@ -5025,7 +5045,7 @@
      "status": "In Prod1",
      "assignee": "Kunal Jangid",
      "due": "2026-06-09",
-     "daysLate": 123,
+     "daysLate": 124,
      "parent": "MR-721",
      "impact": "Shipped, but the ticket is not closed: housekeeping, no delivery impact.",
      "redated": null
@@ -5037,7 +5057,7 @@
      "status": "In Prod1",
      "assignee": "Kunal Jangid",
      "due": "2026-06-12",
-     "daysLate": 120,
+     "daysLate": 121,
      "parent": "MR-721",
      "impact": "Shipped, but the ticket is not closed: housekeeping, no delivery impact.",
      "redated": null
@@ -5049,7 +5069,7 @@
      "status": "Ready for Prod",
      "assignee": "Vishnu kumar yadav",
      "due": "2026-09-30",
-     "daysLate": 10,
+     "daysLate": 11,
      "parent": null,
      "impact": "Feature not delivered by its date.",
      "redated": null
@@ -5061,7 +5081,7 @@
      "status": "Dev",
      "assignee": "Vishnu kumar yadav",
      "due": "2026-10-07",
-     "daysLate": 3,
+     "daysLate": 4,
      "parent": "MR-1278",
      "impact": "Holds up MR-1278: [Marketing] Security parameter tampering and access verification",
      "redated": null
@@ -5073,7 +5093,7 @@
      "status": "Dev",
      "assignee": "Kunal Jangid",
      "due": "2026-10-07",
-     "daysLate": 3,
+     "daysLate": 4,
      "parent": null,
      "impact": "Defect still open past its fix date.",
      "redated": null
@@ -5085,7 +5105,7 @@
      "status": "In Progress",
      "assignee": "Saurabh Jain",
      "due": "2026-10-07",
-     "daysLate": 3,
+     "daysLate": 4,
      "parent": null,
      "impact": "Defect still open past its fix date.",
      "redated": null
@@ -5097,7 +5117,7 @@
      "status": "In Progress",
      "assignee": "Vishnu kumar yadav",
      "due": "2026-10-09",
-     "daysLate": 1,
+     "daysLate": 2,
      "parent": "MR-1278",
      "impact": "Holds up MR-1278: [Marketing] Security parameter tampering and access verification",
      "redated": {
@@ -5114,7 +5134,7 @@
      "status": "In Progress",
      "assignee": null,
      "due": "2026-10-09",
-     "daysLate": 1,
+     "daysLate": 2,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -5126,7 +5146,7 @@
      "status": "Dev Testing",
      "assignee": "Kannan Elangovan",
      "due": "2026-10-09",
-     "daysLate": 1,
+     "daysLate": 2,
      "parent": "MR-1309",
      "impact": "Holds up MR-1309: Dev > Chatbot QA Testing and Issue Tracking",
      "redated": null
@@ -5138,23 +5158,35 @@
      "status": "In Progress",
      "assignee": "Kunal Jangid",
      "due": "2026-10-09",
-     "daysLate": 1,
+     "daysLate": 2,
      "parent": "MR-1298",
      "impact": "Holds up MR-1298: General",
      "redated": null
+    },
+    {
+     "key": "MR-1290",
+     "summary": "Subtask 5 — Validate security alerts and complete retesting",
+     "type": "Subtask",
+     "status": "TODO",
+     "assignee": "Vishnu kumar yadav",
+     "due": "2026-10-10",
+     "daysLate": 1,
+     "parent": "MR-1278",
+     "impact": "Holds up MR-1278: [Marketing] Security parameter tampering and access verification",
+     "redated": null
     }
    ],
-   "maxLate": 128,
-   "medianLate": 3,
+   "maxLate": 129,
+   "medianLate": 4,
    "shippedNotClosed": 5,
-   "realLate": 8,
+   "realLate": 9,
    "parents": [
     {
      "key": "MR-1278",
      "summary": "[Marketing] Security parameter tampering and access verification",
      "status": "In Progress",
      "due": null,
-     "late": 2
+     "late": 3
     },
     {
      "key": "MR-1309",
@@ -5205,7 +5237,7 @@
      "status": "Tested In UAT/Ready For Production",
      "assignee": "Shivam Dhoundiyal",
      "due": "2026-03-13",
-     "daysLate": 211,
+     "daysLate": 212,
      "parent": "USP-2655",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5217,7 +5249,7 @@
      "status": "Tested In UAT/Ready For Production",
      "assignee": "Shivam Dhoundiyal",
      "due": "2026-03-13",
-     "daysLate": 211,
+     "daysLate": 212,
      "parent": "USP-2655",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5229,7 +5261,7 @@
      "status": "Tested In UAT/Ready For Production",
      "assignee": "Shivam Dhoundiyal",
      "due": "2026-03-13",
-     "daysLate": 211,
+     "daysLate": 212,
      "parent": "USP-2655",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5241,7 +5273,7 @@
      "status": "Tested In UAT/Ready For Production",
      "assignee": "Shivam Dhoundiyal",
      "due": "2026-03-13",
-     "daysLate": 211,
+     "daysLate": 212,
      "parent": "USP-2655",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5253,7 +5285,7 @@
      "status": "Tested In UAT/Ready For Production",
      "assignee": "Nareddy Shiva Prasad Reddy",
      "due": "2026-04-30",
-     "daysLate": 163,
+     "daysLate": 164,
      "parent": "USP-3182",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5265,7 +5297,7 @@
      "status": "Tested In UAT/Ready For Production",
      "assignee": "Nareddy Shiva Prasad Reddy",
      "due": "2026-04-30",
-     "daysLate": 163,
+     "daysLate": 164,
      "parent": "USP-3182",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5277,7 +5309,7 @@
      "status": "Tested In UAT/Ready For Production",
      "assignee": "Nareddy Shiva Prasad Reddy",
      "due": "2026-04-30",
-     "daysLate": 163,
+     "daysLate": 164,
      "parent": "USP-3184",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5289,7 +5321,7 @@
      "status": "Tested In UAT/Ready For Production",
      "assignee": "Nareddy Shiva Prasad Reddy",
      "due": "2026-04-30",
-     "daysLate": 163,
+     "daysLate": 164,
      "parent": "USP-3184",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5301,7 +5333,7 @@
      "status": "BlOCKER",
      "assignee": "Shivam Dhoundiyal",
      "due": "2026-05-29",
-     "daysLate": 134,
+     "daysLate": 135,
      "parent": "USP-3379",
      "impact": "Holds up USP-3379: Subscription Upgrade Flow",
      "redated": null
@@ -5313,7 +5345,7 @@
      "status": "BlOCKER",
      "assignee": "Shivam Dhoundiyal",
      "due": "2026-05-29",
-     "daysLate": 134,
+     "daysLate": 135,
      "parent": "USP-3379",
      "impact": "Holds up USP-3379: Subscription Upgrade Flow",
      "redated": null
@@ -5325,7 +5357,7 @@
      "status": "BlOCKER",
      "assignee": "Shivam Dhoundiyal",
      "due": "2026-05-29",
-     "daysLate": 134,
+     "daysLate": 135,
      "parent": "USP-3379",
      "impact": "Holds up USP-3379: Subscription Upgrade Flow",
      "redated": null
@@ -5337,7 +5369,7 @@
      "status": "BlOCKER",
      "assignee": "r.jaiswal",
      "due": "2026-05-31",
-     "daysLate": 132,
+     "daysLate": 133,
      "parent": "USP-3379",
      "impact": "Holds up USP-3379: Subscription Upgrade Flow",
      "redated": null
@@ -5349,7 +5381,7 @@
      "status": "TODO",
      "assignee": "Ankit Saxena",
      "due": "2026-06-01",
-     "daysLate": 131,
+     "daysLate": 132,
      "parent": "USP-3400",
      "impact": "Holds up USP-3400: Support restricted upgrades within existing subscription",
      "redated": null
@@ -5361,7 +5393,7 @@
      "status": "TODO",
      "assignee": "Ankit Saxena",
      "due": "2026-06-02",
-     "daysLate": 130,
+     "daysLate": 131,
      "parent": "USP-3400",
      "impact": "Holds up USP-3400: Support restricted upgrades within existing subscription",
      "redated": null
@@ -5373,7 +5405,7 @@
      "status": "TODO",
      "assignee": "Ankit Saxena",
      "due": "2026-06-02",
-     "daysLate": 130,
+     "daysLate": 131,
      "parent": "USP-3401",
      "impact": "Holds up USP-3401: Versioning-based subscription amendment model",
      "redated": null
@@ -5385,7 +5417,7 @@
      "status": "TODO",
      "assignee": "Ankit Saxena",
      "due": "2026-06-03",
-     "daysLate": 129,
+     "daysLate": 130,
      "parent": "USP-3401",
      "impact": "Holds up USP-3401: Versioning-based subscription amendment model",
      "redated": null
@@ -5397,7 +5429,7 @@
      "status": "TODO",
      "assignee": "Ankit Saxena",
      "due": "2026-06-04",
-     "daysLate": 128,
+     "daysLate": 129,
      "parent": "USP-3400",
      "impact": "Holds up USP-3400: Support restricted upgrades within existing subscription",
      "redated": null
@@ -5409,7 +5441,7 @@
      "status": "TODO",
      "assignee": "Ankit Saxena",
      "due": "2026-06-05",
-     "daysLate": 127,
+     "daysLate": 128,
      "parent": "USP-3400",
      "impact": "Holds up USP-3400: Support restricted upgrades within existing subscription",
      "redated": null
@@ -5421,7 +5453,7 @@
      "status": "TODO",
      "assignee": "Ankit Saxena",
      "due": "2026-06-05",
-     "daysLate": 127,
+     "daysLate": 128,
      "parent": "USP-3400",
      "impact": "Holds up USP-3400: Support restricted upgrades within existing subscription",
      "redated": null
@@ -5433,7 +5465,7 @@
      "status": "TODO",
      "assignee": "Ankit Saxena",
      "due": "2026-06-05",
-     "daysLate": 127,
+     "daysLate": 128,
      "parent": "USP-3401",
      "impact": "Holds up USP-3401: Versioning-based subscription amendment model",
      "redated": null
@@ -5445,7 +5477,7 @@
      "status": "TODO",
      "assignee": "Ankit Saxena",
      "due": "2026-06-08",
-     "daysLate": 124,
+     "daysLate": 125,
      "parent": "USP-3400",
      "impact": "Holds up USP-3400: Support restricted upgrades within existing subscription",
      "redated": null
@@ -5457,7 +5489,7 @@
      "status": "TODO",
      "assignee": "Ankit Saxena",
      "due": "2026-06-08",
-     "daysLate": 124,
+     "daysLate": 125,
      "parent": "USP-3401",
      "impact": "Holds up USP-3401: Versioning-based subscription amendment model",
      "redated": null
@@ -5469,7 +5501,7 @@
      "status": "TODO",
      "assignee": "Ankit Saxena",
      "due": "2026-06-09",
-     "daysLate": 123,
+     "daysLate": 124,
      "parent": "USP-3400",
      "impact": "Holds up USP-3400: Support restricted upgrades within existing subscription",
      "redated": null
@@ -5481,7 +5513,7 @@
      "status": "TODO",
      "assignee": "Ankit Saxena",
      "due": "2026-06-10",
-     "daysLate": 122,
+     "daysLate": 123,
      "parent": "USP-3401",
      "impact": "Holds up USP-3401: Versioning-based subscription amendment model",
      "redated": null
@@ -5493,7 +5525,7 @@
      "status": "TODO",
      "assignee": "Ankit Saxena",
      "due": "2026-06-10",
-     "daysLate": 122,
+     "daysLate": 123,
      "parent": "USP-3401",
      "impact": "Holds up USP-3401: Versioning-based subscription amendment model",
      "redated": null
@@ -5505,7 +5537,7 @@
      "status": "TODO",
      "assignee": "Ankit Saxena",
      "due": "2026-06-11",
-     "daysLate": 121,
+     "daysLate": 122,
      "parent": "USP-3400",
      "impact": "Holds up USP-3400: Support restricted upgrades within existing subscription",
      "redated": null
@@ -5517,7 +5549,7 @@
      "status": "TODO",
      "assignee": "Ankit Saxena",
      "due": "2026-06-11",
-     "daysLate": 121,
+     "daysLate": 122,
      "parent": "USP-3401",
      "impact": "Holds up USP-3401: Versioning-based subscription amendment model",
      "redated": null
@@ -5529,7 +5561,7 @@
      "status": "TODO",
      "assignee": "Ankit Saxena",
      "due": "2026-06-11",
-     "daysLate": 121,
+     "daysLate": 122,
      "parent": "USP-3401",
      "impact": "Holds up USP-3401: Versioning-based subscription amendment model",
      "redated": null
@@ -5541,7 +5573,7 @@
      "status": "TODO",
      "assignee": "Ankit Saxena",
      "due": "2026-06-12",
-     "daysLate": 120,
+     "daysLate": 121,
      "parent": "USP-3401",
      "impact": "Holds up USP-3401: Versioning-based subscription amendment model",
      "redated": null
@@ -5553,7 +5585,7 @@
      "status": "TODO",
      "assignee": "Shashi Prasad K",
      "due": "2026-06-12",
-     "daysLate": 120,
+     "daysLate": 121,
      "parent": "USP-3402",
      "impact": "Holds up USP-3402: Trigger financing/legal review for major upgrades",
      "redated": null
@@ -5565,7 +5597,7 @@
      "status": "TODO",
      "assignee": "Ankit Saxena",
      "due": "2026-06-12",
-     "daysLate": 120,
+     "daysLate": 121,
      "parent": "USP-3401",
      "impact": "Holds up USP-3401: Versioning-based subscription amendment model",
      "redated": null
@@ -5577,7 +5609,7 @@
      "status": "TODO",
      "assignee": "Ankit Saxena",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3401",
      "impact": "Holds up USP-3401: Versioning-based subscription amendment model",
      "redated": null
@@ -5589,7 +5621,7 @@
      "status": "Tested In UAT/Ready For Production",
      "assignee": "Silviu Oltean",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3494",
      "impact": "Holds up USP-3494: Test infrastructure & coverage for uspcrm-be",
      "redated": null
@@ -5601,7 +5633,7 @@
      "status": "TODO",
      "assignee": "Silviu Oltean",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3494",
      "impact": "Holds up USP-3494: Test infrastructure & coverage for uspcrm-be",
      "redated": null
@@ -5613,7 +5645,7 @@
      "status": "TODO",
      "assignee": "Silviu Oltean",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3494",
      "impact": "Holds up USP-3494: Test infrastructure & coverage for uspcrm-be",
      "redated": null
@@ -5625,7 +5657,7 @@
      "status": "TODO",
      "assignee": "Silviu Oltean",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3494",
      "impact": "Holds up USP-3494: Test infrastructure & coverage for uspcrm-be",
      "redated": null
@@ -5637,7 +5669,7 @@
      "status": "TODO",
      "assignee": "Silviu Oltean",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3494",
      "impact": "Holds up USP-3494: Test infrastructure & coverage for uspcrm-be",
      "redated": null
@@ -5649,7 +5681,7 @@
      "status": "TODO",
      "assignee": "Silviu Oltean",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3494",
      "impact": "Holds up USP-3494: Test infrastructure & coverage for uspcrm-be",
      "redated": null
@@ -5661,7 +5693,7 @@
      "status": "TODO",
      "assignee": "Silviu Oltean",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3494",
      "impact": "Holds up USP-3494: Test infrastructure & coverage for uspcrm-be",
      "redated": null
@@ -5673,7 +5705,7 @@
      "status": "TODO",
      "assignee": "Silviu Oltean",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3494",
      "impact": "Holds up USP-3494: Test infrastructure & coverage for uspcrm-be",
      "redated": null
@@ -5685,7 +5717,7 @@
      "status": "TODO",
      "assignee": "Silviu Oltean",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3494",
      "impact": "Holds up USP-3494: Test infrastructure & coverage for uspcrm-be",
      "redated": null
@@ -5697,7 +5729,7 @@
      "status": "Tested In UAT/Ready For Production",
      "assignee": "Silviu Oltean",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3494",
      "impact": "Holds up USP-3494: Test infrastructure & coverage for uspcrm-be",
      "redated": null
@@ -5709,7 +5741,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3511",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5721,7 +5753,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3511",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5733,7 +5765,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3511",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5745,7 +5777,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3511",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5757,7 +5789,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3511",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5769,7 +5801,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3511",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5781,7 +5813,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3511",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5793,7 +5825,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3512",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5805,7 +5837,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3512",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5817,7 +5849,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3512",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5829,7 +5861,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3512",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5841,7 +5873,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3512",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5853,7 +5885,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3512",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5865,7 +5897,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3516",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5877,7 +5909,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3516",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5889,7 +5921,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3516",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5901,7 +5933,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3516",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5913,7 +5945,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3518",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5925,7 +5957,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-15",
-     "daysLate": 117,
+     "daysLate": 118,
      "parent": "USP-3518",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5937,7 +5969,7 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-06-29",
-     "daysLate": 103,
+     "daysLate": 104,
      "parent": "USP-3518",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5949,7 +5981,7 @@
      "status": "TODO",
      "assignee": "Silviu Oltean",
      "due": "2026-07-31",
-     "daysLate": 71,
+     "daysLate": 72,
      "parent": "USP-3494",
      "impact": "Holds up USP-3494: Test infrastructure & coverage for uspcrm-be",
      "redated": null
@@ -5961,7 +5993,7 @@
      "status": "Deployed In UAT/Staging",
      "assignee": "Cășvan Marcel",
      "due": "2026-08-15",
-     "daysLate": 56,
+     "daysLate": 57,
      "parent": null,
      "impact": "Feature not delivered by its date.",
      "redated": null
@@ -5973,7 +6005,7 @@
      "status": "In Progress",
      "assignee": "Cășvan Marcel",
      "due": "2026-08-15",
-     "daysLate": 56,
+     "daysLate": 57,
      "parent": null,
      "impact": "Feature not delivered by its date.",
      "redated": null
@@ -5985,7 +6017,7 @@
      "status": "TODO",
      "assignee": "Gourav Agnani",
      "due": "2026-08-15",
-     "daysLate": 56,
+     "daysLate": 57,
      "parent": "USP-3960",
      "impact": "Task still open past its date.",
      "redated": null
@@ -5997,7 +6029,7 @@
      "status": "Deployed In Dev",
      "assignee": "Aman prakash",
      "due": "2026-09-15",
-     "daysLate": 25,
+     "daysLate": 26,
      "parent": "USP-4050",
      "impact": "Task still open past its date.",
      "redated": null
@@ -6009,7 +6041,7 @@
      "status": "In Progress",
      "assignee": "Gourav Agnani",
      "due": "2026-09-18",
-     "daysLate": 22,
+     "daysLate": 23,
      "parent": "USP-3960",
      "impact": "Task still open past its date.",
      "redated": null
@@ -6021,7 +6053,7 @@
      "status": "TODO",
      "assignee": "Silviu Oltean",
      "due": "2026-09-25",
-     "daysLate": 15,
+     "daysLate": 16,
      "parent": "USP-4297",
      "impact": "Holds up USP-4297: CH-43/50 – Read receipts and unread counters",
      "redated": null
@@ -6033,7 +6065,7 @@
      "status": "In Progress",
      "assignee": "Silviu Oltean",
      "due": "2026-09-25",
-     "daysLate": 15,
+     "daysLate": 16,
      "parent": "USP-4028",
      "impact": "Task still open past its date.",
      "redated": null
@@ -6045,7 +6077,7 @@
      "status": "Deployed In Prod",
      "assignee": "Cășvan Marcel",
      "due": "2026-09-30",
-     "daysLate": 10,
+     "daysLate": 11,
      "parent": null,
      "impact": "Shipped, but the ticket is not closed: housekeeping, no delivery impact.",
      "redated": null
@@ -6057,7 +6089,7 @@
      "status": "Tested In Dev",
      "assignee": "r.jaiswal",
      "due": "2026-09-30",
-     "daysLate": 10,
+     "daysLate": 11,
      "parent": "USP-4179",
      "impact": "Holds up USP-4179: General",
      "redated": null
@@ -6069,7 +6101,7 @@
      "status": "In Progress",
      "assignee": "r.jaiswal",
      "due": "2026-09-30",
-     "daysLate": 10,
+     "daysLate": 11,
      "parent": "USP-4179",
      "impact": "Holds up USP-4179: General",
      "redated": null
@@ -6081,7 +6113,7 @@
      "status": "CODE REVIEW",
      "assignee": "Akhil Katiyar",
      "due": "2026-09-30",
-     "daysLate": 10,
+     "daysLate": 11,
      "parent": "USP-4179",
      "impact": "Holds up USP-4179: General",
      "redated": null
@@ -6093,7 +6125,7 @@
      "status": "TODO",
      "assignee": "Silviu Oltean",
      "due": "2026-09-30",
-     "daysLate": 10,
+     "daysLate": 11,
      "parent": "USP-4308",
      "impact": "Holds up USP-4308: CH-26 – Call / meeting history",
      "redated": null
@@ -6105,7 +6137,7 @@
      "status": "CODE REVIEW",
      "assignee": "Shivam Dhoundiyal",
      "due": "2026-09-30",
-     "daysLate": 10,
+     "daysLate": 11,
      "parent": "USP-4179",
      "impact": "Holds up USP-4179: General",
      "redated": null
@@ -6117,7 +6149,7 @@
      "status": "TODO",
      "assignee": "Silviu Oltean",
      "due": "2026-10-01",
-     "daysLate": 9,
+     "daysLate": 10,
      "parent": "USP-4302",
      "impact": "Holds up USP-4302: CH-51/52 – Hub notifications: portal bell and email",
      "redated": null
@@ -6129,7 +6161,7 @@
      "status": "In Progress",
      "assignee": "Aman prakash",
      "due": "2026-10-01",
-     "daysLate": 9,
+     "daysLate": 10,
      "parent": "USP-4179",
      "impact": "Holds up USP-4179: General",
      "redated": null
@@ -6141,7 +6173,7 @@
      "status": "In Progress",
      "assignee": "Cășvan Marcel",
      "due": "2026-10-02",
-     "daysLate": 8,
+     "daysLate": 9,
      "parent": "USP-4234",
      "impact": "Holds up USP-4234: [IAM] Customer role refinements and IAM security foundation hardening",
      "redated": null
@@ -6153,7 +6185,7 @@
      "status": "In Progress",
      "assignee": "Cășvan Marcel",
      "due": "2026-10-02",
-     "daysLate": 8,
+     "daysLate": 9,
      "parent": "USP-4234",
      "impact": "Holds up USP-4234: [IAM] Customer role refinements and IAM security foundation hardening",
      "redated": null
@@ -6165,7 +6197,7 @@
      "status": "In Progress",
      "assignee": "Cășvan Marcel",
      "due": "2026-10-02",
-     "daysLate": 8,
+     "daysLate": 9,
      "parent": "USP-4234",
      "impact": "Holds up USP-4234: [IAM] Customer role refinements and IAM security foundation hardening",
      "redated": null
@@ -6177,7 +6209,7 @@
      "status": "In Progress",
      "assignee": "Cășvan Marcel",
      "due": "2026-10-02",
-     "daysLate": 8,
+     "daysLate": 9,
      "parent": "USP-4234",
      "impact": "Holds up USP-4234: [IAM] Customer role refinements and IAM security foundation hardening",
      "redated": null
@@ -6189,7 +6221,7 @@
      "status": "In Progress",
      "assignee": "Cășvan Marcel",
      "due": "2026-10-02",
-     "daysLate": 8,
+     "daysLate": 9,
      "parent": "USP-4234",
      "impact": "Holds up USP-4234: [IAM] Customer role refinements and IAM security foundation hardening",
      "redated": null
@@ -6201,7 +6233,7 @@
      "status": "In Progress",
      "assignee": "Cășvan Marcel",
      "due": "2026-10-02",
-     "daysLate": 8,
+     "daysLate": 9,
      "parent": "USP-4234",
      "impact": "Holds up USP-4234: [IAM] Customer role refinements and IAM security foundation hardening",
      "redated": null
@@ -6213,7 +6245,7 @@
      "status": "In Progress",
      "assignee": "Cășvan Marcel",
      "due": "2026-10-02",
-     "daysLate": 8,
+     "daysLate": 9,
      "parent": "USP-4234",
      "impact": "Holds up USP-4234: [IAM] Customer role refinements and IAM security foundation hardening",
      "redated": null
@@ -6225,7 +6257,7 @@
      "status": "In Progress",
      "assignee": "Cășvan Marcel",
      "due": "2026-10-02",
-     "daysLate": 8,
+     "daysLate": 9,
      "parent": "USP-4234",
      "impact": "Holds up USP-4234: [IAM] Customer role refinements and IAM security foundation hardening",
      "redated": null
@@ -6237,7 +6269,7 @@
      "status": "In Progress",
      "assignee": "Cășvan Marcel",
      "due": "2026-10-02",
-     "daysLate": 8,
+     "daysLate": 9,
      "parent": "USP-4234",
      "impact": "Holds up USP-4234: [IAM] Customer role refinements and IAM security foundation hardening",
      "redated": null
@@ -6249,7 +6281,7 @@
      "status": "TODO",
      "assignee": "Cășvan Marcel",
      "due": "2026-10-06",
-     "daysLate": 4,
+     "daysLate": 5,
      "parent": "USP-4267",
      "impact": "Holds up USP-4267: Go Live – Subscription & Contract",
      "redated": null
@@ -6261,7 +6293,7 @@
      "status": "TODO",
      "assignee": "Silviu Oltean",
      "due": "2026-10-06",
-     "daysLate": 4,
+     "daysLate": 5,
      "parent": "USP-4252",
      "impact": "Holds up USP-4252: Support HUB v2",
      "redated": null
@@ -6273,7 +6305,7 @@
      "status": "TODO",
      "assignee": "Cășvan Marcel",
      "due": "2026-10-07",
-     "daysLate": 3,
+     "daysLate": 4,
      "parent": "USP-4280",
      "impact": "Holds up USP-4280: Go Live – Payments & Invoicing",
      "redated": {
@@ -6290,7 +6322,7 @@
      "status": "TODO",
      "assignee": "Cășvan Marcel",
      "due": "2026-10-07",
-     "daysLate": 3,
+     "daysLate": 4,
      "parent": "USP-4048",
      "impact": "Holds up USP-4048: payment option Update",
      "redated": null
@@ -6302,7 +6334,7 @@
      "status": "TODO",
      "assignee": "Cășvan Marcel",
      "due": "2026-10-07",
-     "daysLate": 3,
+     "daysLate": 4,
      "parent": "USP-4048",
      "impact": "Holds up USP-4048: payment option Update",
      "redated": null
@@ -6314,7 +6346,7 @@
      "status": "TODO",
      "assignee": "Silviu Oltean",
      "due": "2026-10-07",
-     "daysLate": 3,
+     "daysLate": 4,
      "parent": "USP-3915",
      "impact": "Holds up USP-3915: Communication & Support Hub",
      "redated": null
@@ -6326,7 +6358,7 @@
      "status": "Deployed In Dev",
      "assignee": "Silviu Oltean",
      "due": "2026-10-08",
-     "daysLate": 2,
+     "daysLate": 3,
      "parent": "USP-4296",
      "impact": "Holds up USP-4296: CH-01/02/07 – Team & roster: assigned team per customer",
      "redated": null
@@ -6338,7 +6370,7 @@
      "status": "TODO",
      "assignee": "Cășvan Marcel",
      "due": "2026-10-08",
-     "daysLate": 2,
+     "daysLate": 3,
      "parent": "USP-4280",
      "impact": "Holds up USP-4280: Go Live – Payments & Invoicing",
      "redated": null
@@ -6350,7 +6382,7 @@
      "status": "TODO",
      "assignee": "Cășvan Marcel",
      "due": "2026-10-08",
-     "daysLate": 2,
+     "daysLate": 3,
      "parent": "USP-4283",
      "impact": "Holds up USP-4283: PAY-04/06 – Proforma payment cleanup",
      "redated": null
@@ -6362,7 +6394,7 @@
      "status": "TODO",
      "assignee": "Cășvan Marcel",
      "due": "2026-10-08",
-     "daysLate": 2,
+     "daysLate": 3,
      "parent": "USP-4283",
      "impact": "Holds up USP-4283: PAY-04/06 – Proforma payment cleanup",
      "redated": null
@@ -6374,7 +6406,7 @@
      "status": "TODO",
      "assignee": "Cășvan Marcel",
      "due": "2026-10-09",
-     "daysLate": 1,
+     "daysLate": 2,
      "parent": "USP-4267",
      "impact": "Holds up USP-4267: Go Live – Subscription & Contract",
      "redated": null
@@ -6386,14 +6418,14 @@
      "status": "TODO",
      "assignee": "Livian Stefan Stan",
      "due": "2026-10-09",
-     "daysLate": 1,
+     "daysLate": 2,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
     }
    ],
-   "maxLate": 211,
-   "medianLate": 117,
+   "maxLate": 212,
+   "medianLate": 118,
    "shippedNotClosed": 1,
    "realLate": 98,
    "parents": [
@@ -7312,7 +7344,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-08-02",
-     "daysLate": 69,
+     "daysLate": 70,
      "parent": "UC-57",
      "impact": "Holds up UC-57: Marketing lead capture — persistent Book a Meeting / Contact Us CTA routing",
      "redated": null
@@ -7324,7 +7356,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-08-02",
-     "daysLate": 69,
+     "daysLate": 70,
      "parent": "UC-60",
      "impact": "Holds up UC-60: Multi-turn context resolution & feedback capture loop",
      "redated": null
@@ -7336,7 +7368,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-08-02",
-     "daysLate": 69,
+     "daysLate": 70,
      "parent": "UC-61",
      "impact": "Holds up UC-61: Internationalization — language selection & localized UI strings",
      "redated": null
@@ -7348,7 +7380,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-08-02",
-     "daysLate": 69,
+     "daysLate": 70,
      "parent": "UC-62",
      "impact": "Holds up UC-62: Mobile responsive layout — full-screen widget experience",
      "redated": null
@@ -7360,7 +7392,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-08-14",
-     "daysLate": 57,
+     "daysLate": 58,
      "parent": "UC-57",
      "impact": "Holds up UC-57: Marketing lead capture — persistent Book a Meeting / Contact Us CTA routing",
      "redated": null
@@ -7372,7 +7404,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-08-14",
-     "daysLate": 57,
+     "daysLate": 58,
      "parent": "UC-60",
      "impact": "Holds up UC-60: Multi-turn context resolution & feedback capture loop",
      "redated": null
@@ -7384,7 +7416,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-08-14",
-     "daysLate": 57,
+     "daysLate": 58,
      "parent": "UC-61",
      "impact": "Holds up UC-61: Internationalization — language selection & localized UI strings",
      "redated": null
@@ -7396,7 +7428,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-08-14",
-     "daysLate": 57,
+     "daysLate": 58,
      "parent": "UC-62",
      "impact": "Holds up UC-62: Mobile responsive layout — full-screen widget experience",
      "redated": null
@@ -7408,7 +7440,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-08-21",
-     "daysLate": 50,
+     "daysLate": 51,
      "parent": "UC-57",
      "impact": "Holds up UC-57: Marketing lead capture — persistent Book a Meeting / Contact Us CTA routing",
      "redated": null
@@ -7420,7 +7452,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-08-21",
-     "daysLate": 50,
+     "daysLate": 51,
      "parent": "UC-60",
      "impact": "Holds up UC-60: Multi-turn context resolution & feedback capture loop",
      "redated": null
@@ -7432,7 +7464,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-08-21",
-     "daysLate": 50,
+     "daysLate": 51,
      "parent": "UC-61",
      "impact": "Holds up UC-61: Internationalization — language selection & localized UI strings",
      "redated": null
@@ -7444,7 +7476,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-08-21",
-     "daysLate": 50,
+     "daysLate": 51,
      "parent": "UC-62",
      "impact": "Holds up UC-62: Mobile responsive layout — full-screen widget experience",
      "redated": null
@@ -7456,7 +7488,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-08-23",
-     "daysLate": 48,
+     "daysLate": 49,
      "parent": "UC-8",
      "impact": "Feature not delivered by its date.",
      "redated": null
@@ -7468,7 +7500,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-08-23",
-     "daysLate": 48,
+     "daysLate": 49,
      "parent": "UC-8",
      "impact": "Feature not delivered by its date.",
      "redated": null
@@ -7480,7 +7512,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-08-24",
-     "daysLate": 47,
+     "daysLate": 48,
      "parent": "UC-57",
      "impact": "Holds up UC-57: Marketing lead capture — persistent Book a Meeting / Contact Us CTA routing",
      "redated": null
@@ -7492,7 +7524,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-08-24",
-     "daysLate": 47,
+     "daysLate": 48,
      "parent": "UC-60",
      "impact": "Holds up UC-60: Multi-turn context resolution & feedback capture loop",
      "redated": null
@@ -7504,7 +7536,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-08-24",
-     "daysLate": 47,
+     "daysLate": 48,
      "parent": "UC-61",
      "impact": "Holds up UC-61: Internationalization — language selection & localized UI strings",
      "redated": null
@@ -7516,7 +7548,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-08-24",
-     "daysLate": 47,
+     "daysLate": 48,
      "parent": "UC-62",
      "impact": "Holds up UC-62: Mobile responsive layout — full-screen widget experience",
      "redated": null
@@ -7528,7 +7560,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-09-06",
-     "daysLate": 34,
+     "daysLate": 35,
      "parent": "UC-8",
      "impact": "Feature not delivered by its date.",
      "redated": null
@@ -7540,7 +7572,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-09-20",
-     "daysLate": 20,
+     "daysLate": 21,
      "parent": "UC-8",
      "impact": "Feature not delivered by its date.",
      "redated": null
@@ -7552,7 +7584,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-09-25",
-     "daysLate": 15,
+     "daysLate": 16,
      "parent": "UC-63",
      "impact": "Task still open past its date.",
      "redated": null
@@ -7564,7 +7596,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-09-30",
-     "daysLate": 10,
+     "daysLate": 11,
      "parent": "UC-63",
      "impact": "Task still open past its date.",
      "redated": null
@@ -7576,7 +7608,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-10-04",
-     "daysLate": 6,
+     "daysLate": 7,
      "parent": "UC-8",
      "impact": "Feature not delivered by its date.",
      "redated": null
@@ -7588,7 +7620,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-10-04",
-     "daysLate": 6,
+     "daysLate": 7,
      "parent": "UC-8",
      "impact": "Feature not delivered by its date.",
      "redated": null
@@ -7600,7 +7632,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-10-07",
-     "daysLate": 3,
+     "daysLate": 4,
      "parent": "UC-63",
      "impact": "Task still open past its date.",
      "redated": null
@@ -7612,7 +7644,7 @@
      "status": "To Do",
      "assignee": "Ankit Saxena",
      "due": "2026-10-09",
-     "daysLate": 1,
+     "daysLate": 2,
      "parent": "UC-63",
      "impact": "Task still open past its date.",
      "redated": null
@@ -7624,14 +7656,14 @@
      "status": "In Dev",
      "assignee": "Ankit Saxena",
      "due": "2026-10-09",
-     "daysLate": 1,
+     "daysLate": 2,
      "parent": null,
      "impact": "Defect still open past its fix date.",
      "redated": null
     }
    ],
-   "maxLate": 69,
-   "medianLate": 48,
+   "maxLate": 70,
+   "medianLate": 49,
    "shippedNotClosed": 0,
    "realLate": 27,
    "parents": [
@@ -7711,7 +7743,7 @@
      "status": "In Prod",
      "assignee": "Sapavat Yadagiri",
      "due": "2026-09-15",
-     "daysLate": 25,
+     "daysLate": 26,
      "parent": "ID-678",
      "impact": "Shipped, but the ticket is not closed: housekeeping, no delivery impact.",
      "redated": null
@@ -7723,7 +7755,7 @@
      "status": "In Prod",
      "assignee": "Sapavat Yadagiri",
      "due": "2026-09-15",
-     "daysLate": 25,
+     "daysLate": 26,
      "parent": "ID-678",
      "impact": "Shipped, but the ticket is not closed: housekeeping, no delivery impact.",
      "redated": null
@@ -7735,7 +7767,7 @@
      "status": "In Prod",
      "assignee": "Sapavat Yadagiri",
      "due": "2026-09-15",
-     "daysLate": 25,
+     "daysLate": 26,
      "parent": "ID-678",
      "impact": "Shipped, but the ticket is not closed: housekeeping, no delivery impact.",
      "redated": null
@@ -7747,7 +7779,7 @@
      "status": "In Prod",
      "assignee": "Sapavat Yadagiri",
      "due": "2026-09-15",
-     "daysLate": 25,
+     "daysLate": 26,
      "parent": "ID-678",
      "impact": "Shipped, but the ticket is not closed: housekeeping, no delivery impact.",
      "redated": null
@@ -7759,7 +7791,7 @@
      "status": "In Prod",
      "assignee": "Sapavat Yadagiri",
      "due": "2026-09-15",
-     "daysLate": 25,
+     "daysLate": 26,
      "parent": "ID-678",
      "impact": "Shipped, but the ticket is not closed: housekeeping, no delivery impact.",
      "redated": null
@@ -7771,14 +7803,14 @@
      "status": "In Prod",
      "assignee": "Sapavat Yadagiri",
      "due": "2026-09-15",
-     "daysLate": 25,
+     "daysLate": 26,
      "parent": "ID-678",
      "impact": "Shipped, but the ticket is not closed: housekeeping, no delivery impact.",
      "redated": null
     }
    ],
-   "maxLate": 25,
-   "medianLate": 25,
+   "maxLate": 26,
+   "medianLate": 26,
    "shippedNotClosed": 6,
    "realLate": 0,
    "parents": [],
@@ -7799,14 +7831,14 @@
      "status": "UAT/ STAGING",
      "assignee": "Naveen Jangid",
      "due": "2026-07-15",
-     "daysLate": 87,
+     "daysLate": 88,
      "parent": null,
      "impact": "Defect still open past its fix date.",
      "redated": null
     }
    ],
-   "maxLate": 87,
-   "medianLate": 87,
+   "maxLate": 88,
+   "medianLate": 88,
    "shippedNotClosed": 0,
    "realLate": 1,
    "parents": [],
@@ -7842,7 +7874,7 @@
      "status": "To Do",
      "assignee": "Abhishek",
      "due": "2025-08-30",
-     "daysLate": 406,
+     "daysLate": 407,
      "parent": "IN-322",
      "impact": "Task still open past its date.",
      "redated": null
@@ -7854,7 +7886,7 @@
      "status": "In Progress",
      "assignee": "Sarath Chandra",
      "due": "2025-10-15",
-     "daysLate": 360,
+     "daysLate": 361,
      "parent": "IN-310",
      "impact": "Task still open past its date.",
      "redated": null
@@ -7866,7 +7898,7 @@
      "status": "BLOCKER",
      "assignee": "k.kishore",
      "due": "2026-03-27",
-     "daysLate": 197,
+     "daysLate": 198,
      "parent": "IN-511",
      "impact": "Task still open past its date.",
      "redated": null
@@ -7878,7 +7910,7 @@
      "status": "BLOCKER",
      "assignee": "k.kishore",
      "due": "2026-03-27",
-     "daysLate": 197,
+     "daysLate": 198,
      "parent": "IN-511",
      "impact": "Task still open past its date.",
      "redated": null
@@ -7890,7 +7922,7 @@
      "status": "BLOCKER",
      "assignee": "k.kishore",
      "due": "2026-03-27",
-     "daysLate": 197,
+     "daysLate": 198,
      "parent": "IN-511",
      "impact": "Task still open past its date.",
      "redated": null
@@ -7902,7 +7934,7 @@
      "status": "BLOCKER",
      "assignee": "k.kishore",
      "due": "2026-07-17",
-     "daysLate": 85,
+     "daysLate": 86,
      "parent": "IN-990",
      "impact": "Holds up IN-990: Configure Azure Virtual Desktop (AVD) Environment",
      "redated": null
@@ -7914,7 +7946,7 @@
      "status": "BLOCKER",
      "assignee": "k.kishore",
      "due": "2026-07-17",
-     "daysLate": 85,
+     "daysLate": 86,
      "parent": "IN-990",
      "impact": "Holds up IN-990: Configure Azure Virtual Desktop (AVD) Environment",
      "redated": null
@@ -7926,7 +7958,7 @@
      "status": "BLOCKER",
      "assignee": "k.kishore",
      "due": "2026-07-21",
-     "daysLate": 81,
+     "daysLate": 82,
      "parent": "IN-990",
      "impact": "Holds up IN-990: Configure Azure Virtual Desktop (AVD) Environment",
      "redated": null
@@ -7938,7 +7970,7 @@
      "status": "BLOCKER",
      "assignee": "k.kishore",
      "due": "2026-07-21",
-     "daysLate": 81,
+     "daysLate": 82,
      "parent": "IN-990",
      "impact": "Holds up IN-990: Configure Azure Virtual Desktop (AVD) Environment",
      "redated": null
@@ -7950,7 +7982,7 @@
      "status": "BLOCKER",
      "assignee": "k.kishore",
      "due": "2026-07-24",
-     "daysLate": 78,
+     "daysLate": 79,
      "parent": "IN-990",
      "impact": "Holds up IN-990: Configure Azure Virtual Desktop (AVD) Environment",
      "redated": null
@@ -7962,7 +7994,7 @@
      "status": "BLOCKER",
      "assignee": "Sarath Chandra",
      "due": "2026-07-25",
-     "daysLate": 77,
+     "daysLate": 78,
      "parent": "IN-992",
      "impact": "Holds up IN-992: Jira Board Integration with Azure DevOps (TBD)",
      "redated": null
@@ -7974,7 +8006,7 @@
      "status": "BLOCKER",
      "assignee": "Sarath Chandra",
      "due": "2026-07-28",
-     "daysLate": 74,
+     "daysLate": 75,
      "parent": "IN-992",
      "impact": "Holds up IN-992: Jira Board Integration with Azure DevOps (TBD)",
      "redated": null
@@ -7986,7 +8018,7 @@
      "status": "BLOCKER",
      "assignee": "k.kishore",
      "due": "2026-07-29",
-     "daysLate": 73,
+     "daysLate": 74,
      "parent": null,
      "impact": "Feature not delivered by its date.",
      "redated": null
@@ -7998,7 +8030,7 @@
      "status": "BLOCKER",
      "assignee": "k.kishore",
      "due": "2026-07-29",
-     "daysLate": 73,
+     "daysLate": 74,
      "parent": "IN-990",
      "impact": "Holds up IN-990: Configure Azure Virtual Desktop (AVD) Environment",
      "redated": null
@@ -8010,7 +8042,7 @@
      "status": "BLOCKER",
      "assignee": "Sarath Chandra",
      "due": "2026-07-30",
-     "daysLate": 72,
+     "daysLate": 73,
      "parent": "IN-992",
      "impact": "Holds up IN-992: Jira Board Integration with Azure DevOps (TBD)",
      "redated": null
@@ -8022,7 +8054,7 @@
      "status": "BLOCKER",
      "assignee": "Sarath Chandra",
      "due": "2026-07-30",
-     "daysLate": 72,
+     "daysLate": 73,
      "parent": null,
      "impact": "Feature not delivered by its date.",
      "redated": null
@@ -8034,7 +8066,7 @@
      "status": "To Do",
      "assignee": "b.kumar",
      "due": "2026-08-25",
-     "daysLate": 46,
+     "daysLate": 47,
      "parent": "IN-1055",
      "impact": "Task still open past its date.",
      "redated": null
@@ -8046,7 +8078,7 @@
      "status": "To Do",
      "assignee": "b.kumar",
      "due": "2026-08-30",
-     "daysLate": 41,
+     "daysLate": 42,
      "parent": "IN-1055",
      "impact": "Task still open past its date.",
      "redated": null
@@ -8058,7 +8090,7 @@
      "status": "BLOCKER",
      "assignee": "k.kishore",
      "due": "2026-09-15",
-     "daysLate": 25,
+     "daysLate": 26,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8070,7 +8102,7 @@
      "status": "In Progress",
      "assignee": "Anshul Bhargava",
      "due": "2026-09-29",
-     "daysLate": 11,
+     "daysLate": 12,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8082,7 +8114,7 @@
      "status": "To Do",
      "assignee": "k.kishore",
      "due": "2026-09-30",
-     "daysLate": 10,
+     "daysLate": 11,
      "parent": null,
      "impact": "Defect still open past its fix date.",
      "redated": null
@@ -8094,7 +8126,7 @@
      "status": "To Do",
      "assignee": "k.kishore",
      "due": "2026-10-03",
-     "daysLate": 7,
+     "daysLate": 8,
      "parent": null,
      "impact": "Feature not delivered by its date.",
      "redated": null
@@ -8106,7 +8138,7 @@
      "status": "In Progress",
      "assignee": "b.kumar",
      "due": "2026-10-05",
-     "daysLate": 5,
+     "daysLate": 6,
      "parent": "IN-1127",
      "impact": "Holds up IN-1127: General DevOps Ticket",
      "redated": null
@@ -8118,14 +8150,14 @@
      "status": "In Progress",
      "assignee": "Sarath Chandra",
      "due": "2026-10-08",
-     "daysLate": 2,
+     "daysLate": 3,
      "parent": "IN-1127",
      "impact": "Holds up IN-1127: General DevOps Ticket",
      "redated": null
     }
    ],
-   "maxLate": 406,
-   "medianLate": 73,
+   "maxLate": 407,
+   "medianLate": 74,
    "shippedNotClosed": 0,
    "realLate": 24,
    "parents": [
@@ -8168,7 +8200,7 @@
      "status": "RECURRING",
      "assignee": "Kunal Jangid",
      "due": "2025-07-15",
-     "daysLate": 452,
+     "daysLate": 453,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8180,7 +8212,7 @@
      "status": "In Progress",
      "assignee": "Avinash KUMAR",
      "due": "2025-08-13",
-     "daysLate": 423,
+     "daysLate": 424,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8192,7 +8224,7 @@
      "status": "In Review",
      "assignee": "Naveen Jangid",
      "due": "2025-10-17",
-     "daysLate": 358,
+     "daysLate": 359,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8204,7 +8236,7 @@
      "status": "In Review",
      "assignee": "Shashi Prasad K",
      "due": "2025-11-20",
-     "daysLate": 324,
+     "daysLate": 325,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8216,7 +8248,7 @@
      "status": "Not started",
      "assignee": "Rajesh R",
      "due": "2025-12-01",
-     "daysLate": 313,
+     "daysLate": 314,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8228,7 +8260,7 @@
      "status": "In Review",
      "assignee": "Deepak Sabharwal",
      "due": "2025-12-12",
-     "daysLate": 302,
+     "daysLate": 303,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8240,7 +8272,7 @@
      "status": "In Review",
      "assignee": "Deepak Sabharwal",
      "due": "2025-12-24",
-     "daysLate": 290,
+     "daysLate": 291,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8252,7 +8284,7 @@
      "status": "In Review",
      "assignee": "Deepak Sabharwal",
      "due": "2025-12-24",
-     "daysLate": 290,
+     "daysLate": 291,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8264,7 +8296,7 @@
      "status": "In Review",
      "assignee": "Deepak Sabharwal",
      "due": "2025-12-26",
-     "daysLate": 288,
+     "daysLate": 289,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8276,7 +8308,7 @@
      "status": "In Progress",
      "assignee": "Rajesh R",
      "due": "2025-12-26",
-     "daysLate": 288,
+     "daysLate": 289,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8288,7 +8320,7 @@
      "status": "In Review",
      "assignee": "Deepak Sabharwal",
      "due": "2025-12-26",
-     "daysLate": 288,
+     "daysLate": 289,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8300,7 +8332,7 @@
      "status": "Not started",
      "assignee": "Naveen Jangid",
      "due": "2026-01-22",
-     "daysLate": 261,
+     "daysLate": 262,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8312,7 +8344,7 @@
      "status": "In Progress",
      "assignee": "Rajesh R",
      "due": "2026-02-04",
-     "daysLate": 248,
+     "daysLate": 249,
      "parent": null,
      "impact": "Defect still open past its fix date.",
      "redated": null
@@ -8324,7 +8356,7 @@
      "status": "In Review",
      "assignee": "Shashi Prasad K",
      "due": "2026-03-16",
-     "daysLate": 208,
+     "daysLate": 209,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8336,7 +8368,7 @@
      "status": "Not started",
      "assignee": "Rahul Dev",
      "due": "2026-05-28",
-     "daysLate": 135,
+     "daysLate": 136,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8348,7 +8380,7 @@
      "status": "In Review",
      "assignee": "Milica Stojkovic",
      "due": "2026-06-03",
-     "daysLate": 129,
+     "daysLate": 130,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8360,7 +8392,7 @@
      "status": "In Review",
      "assignee": "Milica Stojkovic",
      "due": "2026-06-04",
-     "daysLate": 128,
+     "daysLate": 129,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8372,7 +8404,7 @@
      "status": "In Review",
      "assignee": "Rahul Dev",
      "due": "2026-06-12",
-     "daysLate": 120,
+     "daysLate": 121,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8384,7 +8416,7 @@
      "status": "In Progress",
      "assignee": "Milica Stojkovic",
      "due": "2026-07-03",
-     "daysLate": 99,
+     "daysLate": 100,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8396,7 +8428,7 @@
      "status": "In Review",
      "assignee": "a.kaushal",
      "due": "2026-07-23",
-     "daysLate": 79,
+     "daysLate": 80,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8408,7 +8440,7 @@
      "status": "In Review",
      "assignee": "a.kaushal",
      "due": "2026-08-11",
-     "daysLate": 60,
+     "daysLate": 61,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8420,7 +8452,7 @@
      "status": "In Review",
      "assignee": "a.kaushal",
      "due": "2026-08-19",
-     "daysLate": 52,
+     "daysLate": 53,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8432,7 +8464,7 @@
      "status": "In Review",
      "assignee": "a.kaushal",
      "due": "2026-08-19",
-     "daysLate": 52,
+     "daysLate": 53,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8444,7 +8476,7 @@
      "status": "In Review",
      "assignee": "a.kaushal",
      "due": "2026-08-20",
-     "daysLate": 51,
+     "daysLate": 52,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8456,7 +8488,7 @@
      "status": "In Review",
      "assignee": "Prashanth Naikar",
      "due": "2026-08-28",
-     "daysLate": 43,
+     "daysLate": 44,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8468,7 +8500,7 @@
      "status": "In Review",
      "assignee": "Shashi Prasad K",
      "due": "2026-09-09",
-     "daysLate": 31,
+     "daysLate": 32,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8480,7 +8512,7 @@
      "status": "In Progress",
      "assignee": "Shashi Prasad K",
      "due": "2026-09-28",
-     "daysLate": 12,
+     "daysLate": 13,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
@@ -8492,14 +8524,14 @@
      "status": "In Progress",
      "assignee": "Shashi Prasad K",
      "due": "2026-10-07",
-     "daysLate": 3,
+     "daysLate": 4,
      "parent": null,
      "impact": "Task still open past its date.",
      "redated": null
     }
    ],
-   "maxLate": 452,
-   "medianLate": 171,
+   "maxLate": 453,
+   "medianLate": 172,
    "shippedNotClosed": 0,
    "realLate": 28,
    "parents": [],
@@ -8530,7 +8562,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "MT",
-      "daysLate": 38
+      "daysLate": 39
      },
      {
       "key": "VTN-1820",
@@ -8547,7 +8579,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "MT",
-      "daysLate": 29
+      "daysLate": 30
      },
      {
       "key": "VTN-1874",
@@ -8564,7 +8596,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "MT",
-      "daysLate": 11
+      "daysLate": 12
      },
      {
       "key": "VTN-1870",
@@ -8581,7 +8613,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "MT",
-      "daysLate": 8
+      "daysLate": 9
      },
      {
       "key": "VTN-1873",
@@ -8598,7 +8630,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "MT",
-      "daysLate": 8
+      "daysLate": 9
      },
      {
       "key": "VTN-1882",
@@ -8615,7 +8647,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "MT",
-      "daysLate": 4
+      "daysLate": 5
      },
      {
       "key": "VTN-1876",
@@ -8668,7 +8700,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "MR",
-      "daysLate": 52
+      "daysLate": 53
      },
      {
       "key": "VTN-1819",
@@ -8685,7 +8717,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "MR",
-      "daysLate": 25
+      "daysLate": 26
      },
      {
       "key": "VTN-1875",
@@ -8702,7 +8734,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "MR",
-      "daysLate": 10
+      "daysLate": 11
      },
      {
       "key": "VTN-1885",
@@ -8719,16 +8751,16 @@
       "parent": null,
       "parentSummary": "",
       "prog": "MR",
-      "daysLate": 2
+      "daysLate": 3
      }
     ],
     "pastDue": 4,
     "noDate": 0,
     "inReview": 2,
     "blocked": 0,
-    "done30": 12,
-    "doneLate30": 10,
-    "doneLateDays": 10,
+    "done30": 11,
+    "doneLate30": 9,
+    "doneLateDays": 11,
     "next": null
    },
    {
@@ -8750,7 +8782,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "USP",
-      "daysLate": 29
+      "daysLate": 30
      },
      {
       "key": "VTN-1881",
@@ -8767,7 +8799,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "USP",
-      "daysLate": 8
+      "daysLate": 9
      },
      {
       "key": "VTN-1883",
@@ -8784,7 +8816,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "USP",
-      "daysLate": 3
+      "daysLate": 4
      },
      {
       "key": "VTN-1884",
@@ -8801,7 +8833,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "USP",
-      "daysLate": 3
+      "daysLate": 4
      },
      {
       "key": "VTN-1886",
@@ -8818,7 +8850,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "USP",
-      "daysLate": 2
+      "daysLate": 3
      },
      {
       "key": "VTN-1818",
@@ -8876,9 +8908,9 @@
     "noDate": 0,
     "inReview": 4,
     "blocked": 0,
-    "done30": 8,
-    "doneLate30": 8,
-    "doneLateDays": 7,
+    "done30": 6,
+    "doneLate30": 6,
+    "doneLateDays": 4,
     "next": {
      "key": "VTN-1818",
      "summary": "organize old figma file for USP",
@@ -8918,7 +8950,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "Other",
-      "daysLate": 60
+      "daysLate": 61
      },
      {
       "key": "DM-1065",
@@ -8935,7 +8967,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "Other",
-      "daysLate": 52
+      "daysLate": 53
      },
      {
       "key": "DM-1066",
@@ -8952,7 +8984,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "Other",
-      "daysLate": 51
+      "daysLate": 52
      },
      {
       "key": "VTN-1593",
@@ -8969,7 +9001,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "Other",
-      "daysLate": 40
+      "daysLate": 41
      },
      {
       "key": "VTN-1797",
@@ -8986,7 +9018,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "Other",
-      "daysLate": 40
+      "daysLate": 41
      },
      {
       "key": "VTN-1879",
@@ -9003,7 +9035,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "Other",
-      "daysLate": 8
+      "daysLate": 9
      },
      {
       "key": "VTN-1880",
@@ -9020,7 +9052,7 @@
       "parent": null,
       "parentSummary": "",
       "prog": "Other",
-      "daysLate": 8
+      "daysLate": 9
      },
      {
       "key": "VTN-1887",
@@ -9037,16 +9069,16 @@
       "parent": null,
       "parentSummary": "",
       "prog": "Other",
-      "daysLate": 1
+      "daysLate": 2
      }
     ],
     "pastDue": 8,
     "noDate": 0,
     "inReview": 4,
     "blocked": 0,
-    "done30": 13,
-    "doneLate30": 12,
-    "doneLateDays": 5,
+    "done30": 7,
+    "doneLate30": 6,
+    "doneLateDays": 9,
     "next": null
    }
   ],
@@ -9056,31 +9088,31 @@
     "name": "a.kaushal",
     "open": 10,
     "pastDue": 9,
-    "done30": 11
-   },
-   {
-    "name": "Raluca Conea",
-    "open": 5,
-    "pastDue": 4,
-    "done30": 10
+    "done30": 9
    },
    {
     "name": "Ivan Divjakovic",
     "open": 5,
     "pastDue": 4,
-    "done30": 5
+    "done30": 4
+   },
+   {
+    "name": "Raluca Conea",
+    "open": 5,
+    "pastDue": 4,
+    "done30": 9
    },
    {
     "name": "Valeriia",
     "open": 4,
     "pastDue": 3,
-    "done30": 6
+    "done30": 4
    },
    {
     "name": "Milica Stojkovic",
     "open": 3,
     "pastDue": 3,
-    "done30": 5
+    "done30": 2
    }
   ],
   "waitingOnDesign": [
@@ -9702,7 +9734,7 @@
   "PULSE": [
    {
     "topic": "Interactive AI Factory Experience (new, Anshul Bhargava)",
-    "status": "On 9 Oct Anshul Bhargava closed UP-40 and published the project plan on Confluence (PRD-1, a new board). 98 backlog tasks were raised in Uvation Projects with due dates from 13 Oct to 19 Nov.",
+    "status": "On 9 Oct Anshul Bhargava closed UP-40 and published the project plan on Confluence (PRD-1, a new board). 98 backlog tasks were raised in Uvation Projects with due dates from 13 Oct to 19 Nov. 31 more were raised on 11 Oct (UP-156 to UP-186), unassigned and undated.",
     "date": "2026-11-19",
     "ask": "Share the Confluence plan link with the team, and confirm the sponsor and the first demo date.",
     "rag": "amber"
@@ -10049,10 +10081,10 @@
    "hours": 36.0,
    "pctCapacity": 50,
    "daysLogged": 5,
-   "done": 8,
+   "done": 7,
    "open": 6,
    "overdue": 3,
-   "raised": 5,
+   "raised": 3,
    "bugsRaised": 0,
    "flags": [
     [
@@ -10239,13 +10271,13 @@
    "daysLogged": 9,
    "done": 5,
    "open": 45,
-   "overdue": 3,
+   "overdue": 4,
    "raised": 6,
    "bugsRaised": 0,
    "flags": [
     [
      "red",
-     "3 items past due"
+     "4 items past due"
     ],
     [
      "grey",
@@ -10300,7 +10332,7 @@
     "sprint": "Feb 2nd Sprint",
     "sprintEnd": "2026-02-27",
     "sprintState": "closed",
-    "daysSince": 225,
+    "daysSince": 226,
     "carried": 3,
     "nextSprint": null,
     "shipped": true
@@ -10317,7 +10349,7 @@
     "sprint": "IN Sprint 3",
     "sprintEnd": "2025-09-26",
     "sprintState": "closed",
-    "daysSince": 379,
+    "daysSince": 380,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -10334,7 +10366,7 @@
     "sprint": "Dec 2nd Sprint",
     "sprintEnd": "2025-12-31",
     "sprintState": "closed",
-    "daysSince": 283,
+    "daysSince": 284,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -10351,7 +10383,7 @@
     "sprint": "March 1st Sprint",
     "sprintEnd": "2026-03-13",
     "sprintState": "closed",
-    "daysSince": 211,
+    "daysSince": 212,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10368,7 +10400,7 @@
     "sprint": "March 1st Sprint",
     "sprintEnd": "2026-03-13",
     "sprintState": "closed",
-    "daysSince": 211,
+    "daysSince": 212,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10385,7 +10417,7 @@
     "sprint": "March 1st Sprint",
     "sprintEnd": "2026-03-13",
     "sprintState": "closed",
-    "daysSince": 211,
+    "daysSince": 212,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10402,7 +10434,7 @@
     "sprint": "March 1st Sprint",
     "sprintEnd": "2026-03-13",
     "sprintState": "closed",
-    "daysSince": 211,
+    "daysSince": 212,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10419,7 +10451,7 @@
     "sprint": "April 2nd Sprint",
     "sprintEnd": "2026-04-29",
     "sprintState": "closed",
-    "daysSince": 164,
+    "daysSince": 165,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10436,7 +10468,7 @@
     "sprint": "April 2nd Sprint",
     "sprintEnd": "2026-04-29",
     "sprintState": "closed",
-    "daysSince": 164,
+    "daysSince": 165,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10453,7 +10485,7 @@
     "sprint": "April 2nd Sprint",
     "sprintEnd": "2026-04-29",
     "sprintState": "closed",
-    "daysSince": 164,
+    "daysSince": 165,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10470,7 +10502,7 @@
     "sprint": "April 2nd Sprint",
     "sprintEnd": "2026-04-29",
     "sprintState": "closed",
-    "daysSince": 164,
+    "daysSince": 165,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10487,7 +10519,7 @@
     "sprint": "June 1st Sprint",
     "sprintEnd": "2026-06-15",
     "sprintState": "closed",
-    "daysSince": 117,
+    "daysSince": 118,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10504,7 +10536,7 @@
     "sprint": "June 1st Sprint",
     "sprintEnd": "2026-06-15",
     "sprintState": "closed",
-    "daysSince": 117,
+    "daysSince": 118,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10521,7 +10553,7 @@
     "sprint": "June 1st Sprint",
     "sprintEnd": "2026-06-15",
     "sprintState": "closed",
-    "daysSince": 117,
+    "daysSince": 118,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10538,7 +10570,7 @@
     "sprint": "June 1st Sprint",
     "sprintEnd": "2026-06-15",
     "sprintState": "closed",
-    "daysSince": 117,
+    "daysSince": 118,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10555,7 +10587,7 @@
     "sprint": "June 1st Sprint",
     "sprintEnd": "2026-06-15",
     "sprintState": "closed",
-    "daysSince": 117,
+    "daysSince": 118,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10572,7 +10604,7 @@
     "sprint": "June 1st Sprint",
     "sprintEnd": "2026-06-15",
     "sprintState": "closed",
-    "daysSince": 117,
+    "daysSince": 118,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10589,7 +10621,7 @@
     "sprint": "June 1st Sprint",
     "sprintEnd": "2026-06-15",
     "sprintState": "closed",
-    "daysSince": 117,
+    "daysSince": 118,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10606,7 +10638,7 @@
     "sprint": "July 2nd Sprint",
     "sprintEnd": "2026-07-30",
     "sprintState": "closed",
-    "daysSince": 72,
+    "daysSince": 73,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -10623,7 +10655,7 @@
     "sprint": "July 2nd Sprint",
     "sprintEnd": "2026-07-30",
     "sprintState": "closed",
-    "daysSince": 72,
+    "daysSince": 73,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -10640,7 +10672,7 @@
     "sprint": "July 2nd Sprint",
     "sprintEnd": "2026-07-30",
     "sprintState": "closed",
-    "daysSince": 72,
+    "daysSince": 73,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -10657,7 +10689,7 @@
     "sprint": "July 2nd Sprint",
     "sprintEnd": "2026-07-30",
     "sprintState": "closed",
-    "daysSince": 72,
+    "daysSince": 73,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -10674,7 +10706,7 @@
     "sprint": "July 2nd Sprint",
     "sprintEnd": "2026-07-30",
     "sprintState": "closed",
-    "daysSince": 72,
+    "daysSince": 73,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -10691,7 +10723,7 @@
     "sprint": "July 2nd Sprint",
     "sprintEnd": "2026-07-30",
     "sprintState": "closed",
-    "daysSince": 72,
+    "daysSince": 73,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -10708,7 +10740,7 @@
     "sprint": "July 2nd Sprint",
     "sprintEnd": "2026-07-30",
     "sprintState": "closed",
-    "daysSince": 72,
+    "daysSince": 73,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -10725,7 +10757,7 @@
     "sprint": "July 2nd Sprint",
     "sprintEnd": "2026-07-30",
     "sprintState": "closed",
-    "daysSince": 72,
+    "daysSince": 73,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -10742,7 +10774,7 @@
     "sprint": "July 2nd Sprint",
     "sprintEnd": "2026-07-30",
     "sprintState": "closed",
-    "daysSince": 72,
+    "daysSince": 73,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -10759,7 +10791,7 @@
     "sprint": "July 2nd Sprint",
     "sprintEnd": "2026-07-30",
     "sprintState": "closed",
-    "daysSince": 72,
+    "daysSince": 73,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -10776,7 +10808,7 @@
     "sprint": "July 2nd Sprint",
     "sprintEnd": "2026-07-30",
     "sprintState": "closed",
-    "daysSince": 72,
+    "daysSince": 73,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -10793,7 +10825,7 @@
     "sprint": "August 2nd Sprint",
     "sprintEnd": "2026-08-30",
     "sprintState": "closed",
-    "daysSince": 41,
+    "daysSince": 42,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -10810,7 +10842,7 @@
     "sprint": "August 2nd Sprint",
     "sprintEnd": "2026-08-30",
     "sprintState": "closed",
-    "daysSince": 41,
+    "daysSince": 42,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -10827,7 +10859,7 @@
     "sprint": "August 2nd Sprint",
     "sprintEnd": "2026-08-30",
     "sprintState": "closed",
-    "daysSince": 41,
+    "daysSince": 42,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10844,7 +10876,7 @@
     "sprint": "August 2nd Sprint",
     "sprintEnd": "2026-08-30",
     "sprintState": "closed",
-    "daysSince": 41,
+    "daysSince": 42,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10861,7 +10893,7 @@
     "sprint": "August 2nd Sprint",
     "sprintEnd": "2026-08-30",
     "sprintState": "closed",
-    "daysSince": 41,
+    "daysSince": 42,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10878,7 +10910,7 @@
     "sprint": "August 2nd Sprint",
     "sprintEnd": "2026-08-30",
     "sprintState": "closed",
-    "daysSince": 41,
+    "daysSince": 42,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10895,7 +10927,7 @@
     "sprint": "August 2nd Sprint",
     "sprintEnd": "2026-08-30",
     "sprintState": "closed",
-    "daysSince": 41,
+    "daysSince": 42,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10912,7 +10944,7 @@
     "sprint": "August 2nd Sprint",
     "sprintEnd": "2026-08-30",
     "sprintState": "closed",
-    "daysSince": 41,
+    "daysSince": 42,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -10929,7 +10961,7 @@
     "sprint": "August 2nd Sprint",
     "sprintEnd": "2026-08-30",
     "sprintState": "closed",
-    "daysSince": 41,
+    "daysSince": 42,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10946,7 +10978,7 @@
     "sprint": "August 2nd Sprint",
     "sprintEnd": "2026-08-30",
     "sprintState": "closed",
-    "daysSince": 41,
+    "daysSince": 42,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10963,7 +10995,7 @@
     "sprint": "September 1st sprint",
     "sprintEnd": "2026-09-14",
     "sprintState": "closed",
-    "daysSince": 26,
+    "daysSince": 27,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10980,7 +11012,7 @@
     "sprint": "September 1st sprint",
     "sprintEnd": "2026-09-14",
     "sprintState": "closed",
-    "daysSince": 26,
+    "daysSince": 27,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -10997,7 +11029,7 @@
     "sprint": "September 1st sprint",
     "sprintEnd": "2026-09-14",
     "sprintState": "closed",
-    "daysSince": 26,
+    "daysSince": 27,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11014,7 +11046,7 @@
     "sprint": "September 1st sprint",
     "sprintEnd": "2026-09-14",
     "sprintState": "closed",
-    "daysSince": 26,
+    "daysSince": 27,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11031,7 +11063,7 @@
     "sprint": "September 1st sprint",
     "sprintEnd": "2026-09-14",
     "sprintState": "closed",
-    "daysSince": 26,
+    "daysSince": 27,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11048,7 +11080,7 @@
     "sprint": "September 1st sprint",
     "sprintEnd": "2026-09-14",
     "sprintState": "closed",
-    "daysSince": 26,
+    "daysSince": 27,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11065,7 +11097,7 @@
     "sprint": "Sept 1st Sprint",
     "sprintEnd": "2026-09-14",
     "sprintState": "closed",
-    "daysSince": 26,
+    "daysSince": 27,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -11082,7 +11114,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11099,7 +11131,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11116,7 +11148,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11133,7 +11165,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11150,7 +11182,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11167,7 +11199,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11184,7 +11216,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11201,7 +11233,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11218,7 +11250,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11235,7 +11267,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11252,7 +11284,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11269,7 +11301,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11286,7 +11318,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11303,7 +11335,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11320,7 +11352,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11337,7 +11369,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11354,7 +11386,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11371,7 +11403,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11388,7 +11420,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11405,7 +11437,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11422,7 +11454,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11439,7 +11471,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11456,7 +11488,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11473,7 +11505,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11490,7 +11522,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11507,7 +11539,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11524,7 +11556,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11541,7 +11573,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11558,7 +11590,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11575,7 +11607,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11592,7 +11624,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11609,7 +11641,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11626,7 +11658,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11643,7 +11675,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11660,7 +11692,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11677,7 +11709,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11694,7 +11726,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11711,7 +11743,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11728,7 +11760,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11745,7 +11777,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11762,7 +11794,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11779,7 +11811,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11796,7 +11828,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11813,7 +11845,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11830,7 +11862,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11847,7 +11879,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11864,7 +11896,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11881,7 +11913,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11898,7 +11930,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11915,7 +11947,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11932,7 +11964,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11949,7 +11981,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11966,7 +11998,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -11983,7 +12015,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -12000,7 +12032,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -12017,7 +12049,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -12034,7 +12066,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -12051,7 +12083,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -12068,7 +12100,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -12085,7 +12117,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -12102,7 +12134,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -12119,7 +12151,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -12136,7 +12168,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -12153,7 +12185,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -12170,7 +12202,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -12187,7 +12219,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "closed",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -12204,7 +12236,7 @@
     "sprint": "Sept 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "active",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -12221,7 +12253,7 @@
     "sprint": "Sept 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "active",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": true
@@ -12238,7 +12270,7 @@
     "sprint": "Sept 2nd Sprint",
     "sprintEnd": "2026-09-29",
     "sprintState": "active",
-    "daysSince": 11,
+    "daysSince": 12,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -12255,7 +12287,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-30",
     "sprintState": "active",
-    "daysSince": 10,
+    "daysSince": 11,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -12272,7 +12304,7 @@
     "sprint": "September 2nd Sprint",
     "sprintEnd": "2026-09-30",
     "sprintState": "active",
-    "daysSince": 10,
+    "daysSince": 11,
     "carried": 1,
     "nextSprint": null,
     "shipped": false
@@ -12290,7 +12322,7 @@
     "parent": "IN-992",
     "reason": "Status is BLOCKER",
     "blockedBy": [],
-    "idleDays": 74,
+    "idleDays": 75,
     "kind": "status",
     "overdue": true
    },
@@ -12307,7 +12339,7 @@
     "blockedBy": [
      "IN-1005"
     ],
-    "idleDays": 74,
+    "idleDays": 75,
     "kind": "status",
     "overdue": true
    },
@@ -12324,7 +12356,7 @@
     "blockedBy": [
      "IN-1005"
     ],
-    "idleDays": 74,
+    "idleDays": 75,
     "kind": "status",
     "overdue": true
    },
@@ -12339,7 +12371,7 @@
     "parent": null,
     "reason": "Status is BLOCKER",
     "blockedBy": [],
-    "idleDays": 9,
+    "idleDays": 10,
     "kind": "status",
     "overdue": true
    },
@@ -12354,7 +12386,7 @@
     "parent": "IN-511",
     "reason": "Status is BLOCKER",
     "blockedBy": [],
-    "idleDays": 178,
+    "idleDays": 179,
     "kind": "status",
     "overdue": true
    },
@@ -12369,7 +12401,7 @@
     "parent": "IN-511",
     "reason": "Status is BLOCKER",
     "blockedBy": [],
-    "idleDays": 178,
+    "idleDays": 179,
     "kind": "status",
     "overdue": true
    },
@@ -12384,7 +12416,7 @@
     "parent": "IN-511",
     "reason": "Status is BLOCKER",
     "blockedBy": [],
-    "idleDays": 178,
+    "idleDays": 179,
     "kind": "status",
     "overdue": true
    },
@@ -12399,7 +12431,7 @@
     "parent": null,
     "reason": "Status is BLOCKER",
     "blockedBy": [],
-    "idleDays": 12,
+    "idleDays": 13,
     "kind": "status",
     "overdue": true
    },
@@ -12414,7 +12446,7 @@
     "parent": null,
     "reason": "Status is BLOCKER",
     "blockedBy": [],
-    "idleDays": 9,
+    "idleDays": 10,
     "kind": "status",
     "overdue": true
    },
@@ -12429,7 +12461,7 @@
     "parent": "IN-990",
     "reason": "Status is BLOCKER",
     "blockedBy": [],
-    "idleDays": 79,
+    "idleDays": 80,
     "kind": "status",
     "overdue": true
    },
@@ -12444,7 +12476,7 @@
     "parent": "IN-990",
     "reason": "Status is BLOCKER",
     "blockedBy": [],
-    "idleDays": 79,
+    "idleDays": 80,
     "kind": "status",
     "overdue": true
    },
@@ -12459,7 +12491,7 @@
     "parent": "IN-990",
     "reason": "Status is BLOCKER",
     "blockedBy": [],
-    "idleDays": 79,
+    "idleDays": 80,
     "kind": "status",
     "overdue": true
    },
@@ -12474,7 +12506,7 @@
     "parent": "IN-990",
     "reason": "Status is BLOCKER",
     "blockedBy": [],
-    "idleDays": 79,
+    "idleDays": 80,
     "kind": "status",
     "overdue": true
    },
@@ -12489,7 +12521,7 @@
     "parent": "IN-990",
     "reason": "Status is BLOCKER",
     "blockedBy": [],
-    "idleDays": 79,
+    "idleDays": 80,
     "kind": "status",
     "overdue": true
    },
@@ -12504,7 +12536,7 @@
     "parent": "IN-990",
     "reason": "Status is BLOCKER",
     "blockedBy": [],
-    "idleDays": 79,
+    "idleDays": 80,
     "kind": "status",
     "overdue": true
    },
@@ -12519,7 +12551,7 @@
     "parent": "MR-1260",
     "reason": "Status is Blocker",
     "blockedBy": [],
-    "idleDays": 11,
+    "idleDays": 12,
     "kind": "status",
     "overdue": false
    },
@@ -12534,7 +12566,7 @@
     "parent": "USP-3379",
     "reason": "Status is BlOCKER",
     "blockedBy": [],
-    "idleDays": 136,
+    "idleDays": 137,
     "kind": "status",
     "overdue": true
    },
@@ -12549,7 +12581,7 @@
     "parent": "USP-3379",
     "reason": "Status is BlOCKER",
     "blockedBy": [],
-    "idleDays": 136,
+    "idleDays": 137,
     "kind": "status",
     "overdue": true
    },
@@ -12564,7 +12596,7 @@
     "parent": "USP-3379",
     "reason": "Status is BlOCKER",
     "blockedBy": [],
-    "idleDays": 136,
+    "idleDays": 137,
     "kind": "status",
     "overdue": true
    },
@@ -12579,7 +12611,7 @@
     "parent": "USP-3379",
     "reason": "Status is BlOCKER",
     "blockedBy": [],
-    "idleDays": 134,
+    "idleDays": 135,
     "kind": "status",
     "overdue": true
    },
@@ -12594,7 +12626,7 @@
     "parent": null,
     "reason": "Status is BlOCKER",
     "blockedBy": [],
-    "idleDays": 8,
+    "idleDays": 9,
     "kind": "status",
     "overdue": false
    },
@@ -12609,7 +12641,7 @@
     "parent": "USP-3605",
     "reason": "Status is BlOCKER",
     "blockedBy": [],
-    "idleDays": 8,
+    "idleDays": 9,
     "kind": "status",
     "overdue": false
    },
@@ -12626,7 +12658,7 @@
     "blockedBy": [
      "USP-4268"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12643,7 +12675,7 @@
     "blockedBy": [
      "USP-3379"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12660,7 +12692,7 @@
     "blockedBy": [
      "USP-4347"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12677,7 +12709,7 @@
     "blockedBy": [
      "USP-4284"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12695,7 +12727,7 @@
      "USP-4296",
      "USP-4293"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12712,7 +12744,7 @@
     "blockedBy": [
      "USP-4268"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12729,7 +12761,7 @@
     "blockedBy": [
      "USP-4268"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12747,7 +12779,7 @@
      "USP-4048",
      "USP-3784"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12764,7 +12796,7 @@
     "blockedBy": [
      "USP-3784"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12781,7 +12813,7 @@
     "blockedBy": [
      "USP-4048"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12798,7 +12830,7 @@
     "blockedBy": [
      "USP-4296"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12815,7 +12847,7 @@
     "blockedBy": [
      "USP-3985"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12832,7 +12864,7 @@
     "blockedBy": [
      "USP-4234"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12849,7 +12881,7 @@
     "blockedBy": [
      "USP-3985"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12866,7 +12898,7 @@
     "blockedBy": [
      "USP-4298"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12883,7 +12915,7 @@
     "blockedBy": [
      "USP-4298"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12900,7 +12932,7 @@
     "blockedBy": [
      "USP-3985"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12917,7 +12949,7 @@
     "blockedBy": [
      "USP-3985"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12934,7 +12966,7 @@
     "blockedBy": [
      "USP-4234"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12951,7 +12983,7 @@
     "blockedBy": [
      "USP-4296"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12969,7 +13001,7 @@
      "USP-4296",
      "USP-4298"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -12986,7 +13018,7 @@
     "blockedBy": [
      "USP-4337"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -13003,7 +13035,7 @@
     "blockedBy": [
      "USP-3400"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -13020,7 +13052,7 @@
     "blockedBy": [
      "USP-3400"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -13037,7 +13069,7 @@
     "blockedBy": [
      "USP-4347"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -13055,7 +13087,7 @@
      "USP-4346",
      "USP-3784"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    },
@@ -13072,7 +13104,7 @@
     "blockedBy": [
      "USP-4295"
     ],
-    "idleDays": 1,
+    "idleDays": 2,
     "kind": "link",
     "overdue": false
    }
@@ -13344,7 +13376,7 @@
     "name": "Sept 2nd Sprint",
     "state": "active",
     "end": "2026-09-29",
-    "daysPast": 11,
+    "daysPast": 12,
     "open": 3,
     "projects": [
      "USP"
@@ -13354,7 +13386,7 @@
     "name": "September 2nd Sprint",
     "state": "active",
     "end": "2026-09-30",
-    "daysPast": 10,
+    "daysPast": 11,
     "open": 2,
     "projects": [
      "IN"
