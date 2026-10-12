@@ -1,0 +1,6 @@
+{
+  "name": "unified-pm-e2e",
+  "private": true,
+  "scripts": { "test": "node workflow.cjs screenshots" },
+  "devDependencies": { "playwright": "1.56.1" }
+}

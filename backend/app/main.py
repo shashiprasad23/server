@@ -45,6 +45,12 @@ def create_app() -> FastAPI:
     from app.modules.work.router import router as work_router
 
     settings = get_settings()
+    if settings.environment == "production":
+        # Fail fast rather than run production with development identity shortcuts.
+        if settings.auth_mode != "oidc":
+            raise RuntimeError("Production requires UPM_AUTH_MODE=oidc (Entra ID); dev sign-in is disabled")
+        if "dev-only" in settings.jwt_secret or settings.webhook_secret == "dev-webhook-secret":
+            raise RuntimeError("Production requires real UPM_JWT_SECRET and UPM_WEBHOOK_SECRET from the secrets store")
     app = FastAPI(title="Unified Enterprise Project Management Platform API", version="1.0.0",
                   openapi_url="/api/v1/openapi.json", docs_url="/api/docs", lifespan=lifespan)
     app.add_middleware(CORSMiddleware, allow_origins=[o.strip() for o in settings.cors_origins.split(",") if o.strip()],

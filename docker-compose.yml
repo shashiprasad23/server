@@ -1,0 +1,55 @@
+# Local full stack: PostgreSQL, one-off migrate (+ optional demo seed), API with the web app, background worker.
+#   docker compose up --build            # migrate, then start db + api + worker
+#   docker compose run --rm seed         # load the demo organization (dev only)
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: upm
+      POSTGRES_PASSWORD: upm
+      POSTGRES_DB: upm
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U upm"]
+      interval: 3s
+      retries: 20
+
+  migrate:
+    build: .
+    command: ["alembic", "upgrade", "head"]
+    environment: &env
+      UPM_DATABASE_URL: postgresql+psycopg://upm:upm@db:5432/upm
+      UPM_ENVIRONMENT: development
+      UPM_AUTH_MODE: dev
+      UPM_RUN_WORKER_IN_PROCESS: "false"
+      UPM_CORS_ORIGINS: http://localhost:8000
+    depends_on:
+      db: { condition: service_healthy }
+
+  seed:
+    build: .
+    command: ["python", "-m", "app.seed"]
+    environment: *env
+    profiles: ["seed"]
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+
+  api:
+    build: .
+    environment: *env
+    ports: ["8000:8000"]
+    volumes: [storage:/data/storage]
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+
+  worker:
+    build: .
+    command: ["python", "-m", "app.worker"]
+    environment: *env
+    volumes: [storage:/data/storage]
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+
+volumes:
+  pgdata:
+  storage:
