@@ -83,8 +83,10 @@ def _parse_plain(raw: str) -> list[Segment]:
         elif segments:
             segments[-1].text += " " + _clean(line)
     for i, s in enumerate(segments):
-        nxt = segments[i + 1].start if i + 1 < len(segments) else s.start + max(5, len(s.text) // 12)
-        s.end = max(s.start, nxt - 1)
+        # Plain transcripts carry no end time: estimate from speech length (~2.5 words/s), capped by the next turn.
+        spoken = s.start + max(4, round(len(s.text.split()) / 2.5) + 2)
+        nxt = segments[i + 1].start - 1 if i + 1 < len(segments) else spoken
+        s.end = max(s.start, min(spoken, nxt))
     return segments
 
 

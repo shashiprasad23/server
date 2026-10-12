@@ -98,7 +98,7 @@ def submit_request(db: Session, p: Principal, offering_id: uuid.UUID, data: dict
         priority = PRIORITY_MATRIX.get((impact, urgency), priority)
         service_fields.update({"impact": impact, "urgency": urgency,
                                "severity_level": {"P1": "Sev 1", "P2": "Sev 2"}.get(priority, "Sev 3"),
-                               "service": offering.name})
+                               "service": answers.get("service") or offering.name})
     if offering.request_type == "change_request":
         service_fields.update({k: data.get(k) or answers.get(k) for k in (
             "change_type", "risk", "implementation_plan", "rollback_plan", "maintenance_window")})

@@ -265,3 +265,26 @@ def test_viewer_role_cannot_log_work(as_user):
     ri = as_user("ri")  # viewer in Application Support
     sr = next(i for i in as_user("ql").get("/service/queue").json()["items"])
     assert ri.log(sr["key"], 30).status_code == 403
+
+
+def test_concurrent_period_creation_does_not_collide(fresh_db):
+    """Regression: parallel requests for the same user/week used to race on the period's unique key."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    from app.db import session_factory
+    from app.modules.identity.models import User
+    from app.modules.time.service import get_or_create_period
+
+    with session_factory()() as s:
+        user_id = s.scalar(select(User.id).where(User.email == "a.rao@example.com"))
+    day = week_start(today()) + timedelta(days=21)
+
+    def create(_):
+        with session_factory()() as s:
+            period = get_or_create_period(s, user_id, day)
+            s.commit()
+            return period.id
+
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        ids = set(pool.map(create, range(16)))
+    assert len(ids) == 1

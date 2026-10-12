@@ -138,6 +138,8 @@ def capacity_grid(db: Session, p: Principal, start: date, weeks: int, team_id: u
     people = _visible_people(db, p)
     profiles = {pr.user_id: pr for pr in db.scalars(select(ResourceProfile).where(
         ResourceProfile.user_id.in_([u.id for u in people] or [uuid.uuid4()])))}
+    # The resource pool is people with a resource profile (plus yourself, so everyone can see their own load).
+    people = [u for u in people if u.id in profiles or u.id == p.id]
     if team_id:
         people = [u for u in people if profiles.get(u.id) and profiles[u.id].team_id == team_id]
     if skill:
@@ -199,7 +201,7 @@ def capacity_grid(db: Session, p: Principal, start: date, weeks: int, team_id: u
                     flags.append({"kind": "leave_conflict", "label": f"Leave {len(leave_days)} day(s)"})
                 elif holidays:
                     flags.append({"kind": "holiday_conflict", "label": f"Holiday {holidays[0]['reason']}"})
-            elif ratio is not None and ratio < 0.5:
+            elif ratio is not None and 0 < ratio < 0.5:
                 flags.append({"kind": "under_allocated", "label": "Under-allocated"})
             cell = {
                 "weekStart": str(ws), "week": iso_week(ws), "gross": gross, "net": net, "planned": planned_i,

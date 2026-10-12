@@ -98,7 +98,7 @@ def run() -> None:
         db.add(user)
         db.flush()
         u[key] = user
-        if key not in {"ex", "ad"}:
+        if key not in {"ex", "ad", "rm"}:
             db.add(ResourceProfile(user_id=user.id, team_id=team.id if key not in {"ql", "rm"} else None, title=title,
                                    skills=skills, pools=["Payments"], location="Bengaluru", calendar_id=cal.id))
     db.commit()
@@ -184,11 +184,15 @@ def run() -> None:
     item(wp, 1070, "ri", type="story", title="Remember preferred payment method", storyPoints=3,
          originalEstimateMinutes=300)
     item(wp, 1071, "ri", type="bug", title="Expiry field accepts past months", originalEstimateMinutes=90)
+    item(wp, 1030, "ri", type="task", title="Card masking discovery (Sprint 13)", parentId=epic.id,
+         originalEstimateMinutes=2400, assigneeId=u["sp"].id)
+    item(wp, 1031, "ri", type="task", title="Team operations: ceremonies, reviews and support",
+         description="Non-sprint time: stand-ups, planning, reviews and ad-hoc support.", originalEstimateMinutes=9600)
     db.add(WorkItemLink(source_id=s1042.id, target_id=s1061.id, link_type="blocks", created_by=u["ri"].id))
     db.commit()
     start_sprint(db, P("ri"), s14)
     db.commit()
-    for key, status in [("WP-1039", "done"), ("WP-1040", "done"), ("WP-1044", "done"), ("WP-1042", "in_progress"),
+    for key, status in [("WP-1030", "done"), ("WP-1039", "done"), ("WP-1040", "done"), ("WP-1044", "done"), ("WP-1042", "in_progress"),
                         ("WP-1047", "in_progress"), ("WP-1051", "in_progress"), ("WP-1043", "in_review"),
                         ("WP-1060", "in_review")]:
         if key in {"WP-1044", "WP-1043"}:
@@ -299,14 +303,14 @@ def run() -> None:
         alloc("sp", wp, wph, *wk(i))
         alloc("sp", co, coh, *wk(i))
         alloc("sp", asp, ash, *wk(i))
-    for i, h in enumerate([40, 32, 40, 30]):
+    for i, h in enumerate([40, 32, 32, 30]):
         alloc("ar", wp, h, *wk(i))
     alloc("ar", asp, 12, *wk(1))
     for i, h in enumerate([32, 40, 40, 36]):
         alloc("dp", wp, h, *wk(i))
     for i, h in enumerate([36, 40, 32, 20]):
         alloc("ml", wp, h, *wk(i))
-    for i, h in enumerate([40, 36, 40, 40]):
+    for i, h in enumerate([40, 36, 32, 40]):
         alloc("ms", wp, h, *wk(i))
     for i, h in enumerate([20, 20, 16, 16]):
         alloc("tb", wp, h, *wk(i))
@@ -367,7 +371,8 @@ def run() -> None:
     entry("sp", "WP-1042", this_monday, 60, "Development", "Server-side validation for amount field.", DRAFT)
     entry("sp", inc.key, this_monday, 90, "Support", "Applied pool sizing hotfix in staging.", DRAFT)
 
-    # Teammates (week 41) so compliance and capacity reports have data.
+    # Teammates (week 41) so compliance and capacity reports have data: a little on their sprint ticket,
+    # the rest on team operations.
     for k, key, per_day, st in [("ar", "WP-1047", [480, 480, 480, 480, 360], APPROVED),
                                 ("dp", "WP-1039", [480, 480, 480, 360, 0], SUBMITTED),
                                 ("ml", "WP-1060", [480, 480, 480, 480, 240], SUBMITTED),
@@ -375,13 +380,14 @@ def run() -> None:
                                 ("tb", "WP-1040", [300, 300, 240, 180, 300], DRAFT)]:
         for i, m in enumerate(per_day):
             if m:
-                entry(k, key, L + timedelta(days=i), m, "Development" if k != "ml" else "Testing / QA",
-                      "Sprint 14 delivery work.", st)
+                d = L + timedelta(days=i)
+                activity = "Development" if k != "ml" else "Testing / QA"
+                entry(k, key, d, 45, activity, "Sprint 14 delivery work.", st)
+                entry(k, "WP-1031", d, m - 45, "Meeting" if i % 2 else "Support", "Ceremonies, reviews and support.", st)
     # Week 40 approved & locked for S. Prasad (shows locked-period behaviour).
     w40 = L - timedelta(days=7)
     for i in range(5):
-        entry("sp", "WP-1039" if i < 2 else "WP-1040", w40 + timedelta(days=i), 480, "Development",
-              "Sprint 13 delivery work.", APPROVED)
+        entry("sp", "WP-1030", w40 + timedelta(days=i), 480, "Development", "Sprint 13 card masking discovery.", APPROVED)
     db.add(TimesheetPeriod(user_id=u["sp"].id, period_start=w40, period_end=w40 + timedelta(days=6),
                            state=PERIOD_LOCKED, approved_at=utcnow(), locked_at=utcnow(), locked_by=u["ri"].id))
     db.add(TimesheetPeriod(user_id=u["sp"].id, period_start=L, period_end=L + timedelta(days=6), state="open"))

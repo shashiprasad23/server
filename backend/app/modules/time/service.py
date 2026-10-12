@@ -10,6 +10,7 @@ from datetime import date, timedelta
 from typing import Any
 
 from sqlalchemy import func, select
+from sqlalchemy.dialects.postgresql import insert as pg_insert
 from sqlalchemy.orm import Session
 
 from app.core import access
@@ -50,15 +51,14 @@ def reporting_policy(org: Organization) -> str:
 # ---------------------------------------------------------------- periods
 
 def get_or_create_period(db: Session, user_id: uuid.UUID, d: date) -> TimesheetPeriod:
+    """Atomic upsert: concurrent requests for the same user/week never collide on the unique constraint."""
     start = week_start(d)
-    period = db.scalar(select(TimesheetPeriod).where(TimesheetPeriod.user_id == user_id,
-                                                     TimesheetPeriod.period_start == start))
-    if period is None:
-        period = TimesheetPeriod(user_id=user_id, period_start=start, period_end=start + timedelta(days=6),
-                                 state=PERIOD_OPEN)
-        db.add(period)
-        db.flush()
-    return period
+    db.execute(pg_insert(TimesheetPeriod).values(
+        id=uuid.uuid4(), user_id=user_id, period_start=start, period_end=start + timedelta(days=6),
+        state=PERIOD_OPEN, created_at=utcnow(), updated_at=utcnow(),
+    ).on_conflict_do_nothing(index_elements=["user_id", "period_start"]))
+    return db.scalar(select(TimesheetPeriod).where(TimesheetPeriod.user_id == user_id,
+                                                   TimesheetPeriod.period_start == start))
 
 
 def _assert_period_open(db: Session, user_id: uuid.UUID, d: date) -> TimesheetPeriod:
