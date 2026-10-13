@@ -759,16 +759,16 @@
     "MT": [
       {
         "topic": "Live chat widget across Marketplace (new)",
-        "status": "The platform choice (MT-1578, due 9 Oct) and the widget build (MT-1579, due 8 Oct) are both still in Dev and past due. Marketing is running its own live chat (MR-754, due 15 Oct) with a separate platform choice (MR-786).",
+        "status": "The Marketplace platform choice (MT-1578, due 9 Oct) and widget build (MT-1579, due 8 Oct) are still in Dev and past due. Marketing's site-wide widget (MR-754) and its platform choice (MR-786) moved to Code Review on 13 Oct.",
         "date": "2026-10-14",
         "ask": "Set new dates for MT-1578 and MT-1579, and choose one chat platform for both sites or confirm that two are intended.",
         "rag": "amber"
       },
       {
         "topic": "Design and content review of 11 commerce journeys",
-        "status": "Due 12 Oct (MT-1586, Saurabh Jain): 4 of 13 review subtasks are done, including the sanity test of all 11 journeys (MT-1598). 6 are in progress and 3 have not started: Request for Quote (MT-1588, Anshul Bhargava), Order Checkout (MT-1590, Anmol Srivastava) and product re-verification (MT-1597, Suganya Murugaraj).",
+        "status": "Due 12 Oct (MT-1586, Saurabh Jain): 6 of 13 review subtasks are done, including the 11-journey sanity test (MT-1598), order sync (MT-1591) and email notifications (MT-1595). Request for Quote (MT-1588, Anshul Bhargava) and Order Checkout (MT-1590, Anmol Srivastava) have not started.",
         "date": "2026-10-12",
-        "ask": "Set a new date for the 9 open reviews and confirm who signs off each journey.",
+        "ask": "Set a new date for the 7 open reviews and confirm who signs off each journey.",
         "rag": "amber"
       },
       {
@@ -780,9 +780,9 @@
       },
       {
         "topic": "Release testing: smoke, security and privacy",
-        "status": "Smoke testing (MT-1541) and security testing (MT-1547) are in progress; privacy compliance (MT-1553) is still To Do. All three are due 15 Oct.",
+        "status": "Privacy compliance (MT-1553) and its review subtasks reached Ready for Prod on 13 Oct; smoke testing (MT-1541) and security testing (MT-1547) are in progress. All are due 15 Oct.",
         "date": "2026-10-15",
-        "ask": "Start MT-1553 now; three days remain.",
+        "ask": "Confirm smoke and security results before 15 Oct.",
         "rag": "amber"
       },
       {
@@ -803,17 +803,17 @@
       },
       {
         "topic": "Chatbot on the marketing site",
-        "status": "QA started 6 Oct (MR-1309): three defects logged, none fixed.",
+        "status": "QA started 6 Oct (MR-1309). The chatbot defects (MR-1311, MR-1312, MR-1327, MR-1337) moved to Code Review on 13 Oct.",
         "date": null,
-        "ask": "Set a fix date before the chatbot goes live on the site.",
+        "ask": "Confirm the date the chatbot goes live on the site.",
         "rag": "amber"
       },
       {
         "topic": "New home page design and API",
-        "status": "In progress since 15 Sep (MR-1169), no due date; depends on the marketing website redesign (VTN-1875), which is past its 30 Sep design date.",
+        "status": "Closed on 13 Oct (MR-1169), with its CMS API and content (MR-1173, MR-1174).",
         "date": null,
-        "ask": "Get a revised design date from the design team.",
-        "rag": "amber"
+        "ask": null,
+        "rag": "green"
       }
     ],
     "USP": [
@@ -874,10 +874,10 @@
     "ATLAS": [
       {
         "topic": "CRM MVP plan",
-        "status": "No date in Jira. ATLAS-1 'R&D on CRM for MVP' is in To Do with 8.25 h logged. Saurabh Jain holds the scope and specification task (ATLAS-2, 6 Oct) and a POC understanding meeting (ATLAS-3, raised 7 Oct); neither has a due date.",
+        "status": "Saurabh Jain closed the CRM MVP scope and specification work (ATLAS-2) and the POC understanding meeting (ATLAS-3) on 13 Oct. Two follow-ups on agentic lead conversion journeys and app gaps started (ATLAS-4, Gourav Agnani; ATLAS-5, Saurabh Jain). The parent item (ATLAS-1, Anshul Bhargava) is still To Do with no due date.",
         "date": null,
-        "ask": "Ask Anshul Bhargava and Saurabh Jain when the MVP plan will be shared and record it as the due date on ATLAS-2.",
-        "rag": "red"
+        "ask": "Ask Saurabh Jain to share the MVP scope document, and set a plan date on ATLAS-1.",
+        "rag": "amber"
       }
     ]
   },
@@ -987,9 +987,9 @@
   "designDependencies": {
     "asks": [
       "Ask Raluca Conea for re-committed dates on the Marketplace RMA flow explanations (VTN-1826, due 2 Sep), the Marketplace Figma file clean-up (VTN-1820, due 11 Sep) and the marketing website Figma file (VTN-1819, due 15 Sep, started 12 Oct), and record them in Jira.",
-      "On 12 Oct the design board closed the Marketplace banners and 30-product update (VTN-1870, VTN-1873), the marketing website redesign (VTN-1875), the USP dashboard edits (VTN-1881) and the credit card design (VTN-1812). The new home page build (MR-1169) can now proceed.",
+      "A redesign of the marketing home page (VTN-1891, Ivan Divjakovic, due 15 Oct) started on 13 Oct, the same day the home page build (MR-1169) closed. Confirm whether the build will need another pass.",
       "Review the Marketplace updates (VTN-1882, in review since its 6 Oct due date) and get a date for the USP page content update (VTN-1886, due 8 Oct, in progress).",
-      "A Marketplace invoice redesign (VTN-1890, Ivan Divjakovic) started, due 13 Oct."
+      "The Marketplace invoice redesign (VTN-1890) closed on 13 Oct; USP subscription flow corrections (VTN-1892, Valeriia) are due 13 Oct and still in progress."
     ]
   }
 }
