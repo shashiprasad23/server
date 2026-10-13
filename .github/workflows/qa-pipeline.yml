@@ -1,0 +1,218 @@
+name: Uvation Marketplace QA pipeline
+
+on:
+  push:
+    branches: [main, 'claude/**']
+  pull_request:
+  schedule:
+    - cron: '17 1 * * *' # nightly regression (01:17 UTC)
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target environment
+        type: choice
+        options: [mock, qa, staging, prod]
+        default: qa
+      suite:
+        description: Which suite to run
+        type: choice
+        options: [smoke, regression, full, perf]
+        default: regression
+
+concurrency:
+  group: qa-${{ github.ref }}-${{ inputs.environment || 'auto' }}
+  cancel-in-progress: true
+
+env:
+  # push/PR -> self-verifying run against the contract mock; nightly -> repo variable NIGHTLY_ENV (default mock)
+  TEST_ENV: ${{ inputs.environment || (github.event_name == 'schedule' && vars.NIGHTLY_ENV) || 'mock' }}
+  SUITE: ${{ inputs.suite || (github.event_name == 'schedule' && 'full') || 'full' }}
+  CI: 'true'
+
+jobs:
+  static:
+    name: Lint & typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run format:check
+
+  functional:
+    name: Functional (API + UI)
+    needs: static
+    if: ${{ inputs.suite != 'perf' }}
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment || (github.event_name == 'schedule' && vars.NIGHTLY_ENV) || 'mock' }}
+    timeout-minutes: 30
+    env:
+      BASE_URL: ${{ secrets.BASE_URL || 'http://localhost:4010' }}
+      API_BASE_URL: ${{ secrets.API_BASE_URL || secrets.BASE_URL || 'http://localhost:4010' }}
+      MAIL_API_URL: ${{ secrets.MAIL_API_URL || 'http://localhost:4010/mailpit' }}
+      FAULT_INJECTION: ${{ vars.FAULT_INJECTION || 'true' }}
+      TEST_DATA_FILE: test-data/${{ inputs.environment || (github.event_name == 'schedule' && vars.NIGHTLY_ENV) || 'mock' }}.json
+      ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL || 'admin@uvation.test' }}
+      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD || 'change-me' }}
+      SALES_EMAIL: ${{ secrets.SALES_EMAIL || 'sales@uvation.test' }}
+      SALES_PASSWORD: ${{ secrets.SALES_PASSWORD || 'change-me' }}
+      APPROVER_EMAIL: ${{ secrets.APPROVER_EMAIL || 'approver@uvation.test' }}
+      APPROVER_PASSWORD: ${{ secrets.APPROVER_PASSWORD || 'change-me' }}
+      FINANCE_EMAIL: ${{ secrets.FINANCE_EMAIL || 'finance@uvation.test' }}
+      FINANCE_PASSWORD: ${{ secrets.FINANCE_PASSWORD || 'change-me' }}
+      CUSTOMER_EMAIL: ${{ secrets.CUSTOMER_EMAIL || 'buyer@acme-ai.test' }}
+      CUSTOMER_PASSWORD: ${{ secrets.CUSTOMER_PASSWORD || 'change-me' }}
+      OTHER_CUSTOMER_EMAIL: ${{ secrets.OTHER_CUSTOMER_EMAIL || 'buyer@globex.test' }}
+      OTHER_CUSTOMER_PASSWORD: ${{ secrets.OTHER_CUSTOMER_PASSWORD || 'change-me' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Run functional suite
+        run: |
+          GREP=""
+          if [ "$SUITE" = "smoke" ] || [ "$TEST_ENV" = "prod" ]; then GREP="--grep @smoke"; fi
+          npx playwright test --project=api --project=ui $GREP
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: blob-functional
+          path: reports/blob
+          retention-days: 7
+
+  faults:
+    name: Resilience (fault injection, serial)
+    needs: functional
+    # Destructive: never on prod, and only where fault hooks exist. Runs even if functional had failures.
+    if: ${{ !cancelled() && needs.functional.result != 'skipped' && inputs.suite != 'smoke' && inputs.environment != 'prod' }}
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment || (github.event_name == 'schedule' && vars.NIGHTLY_ENV) || 'mock' }}
+    timeout-minutes: 20
+    env:
+      BASE_URL: ${{ secrets.BASE_URL || 'http://localhost:4010' }}
+      API_BASE_URL: ${{ secrets.API_BASE_URL || secrets.BASE_URL || 'http://localhost:4010' }}
+      MAIL_API_URL: ${{ secrets.MAIL_API_URL || 'http://localhost:4010/mailpit' }}
+      FAULT_INJECTION: ${{ vars.FAULT_INJECTION || 'true' }}
+      TEST_DATA_FILE: test-data/${{ inputs.environment || (github.event_name == 'schedule' && vars.NIGHTLY_ENV) || 'mock' }}.json
+      ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL || 'admin@uvation.test' }}
+      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD || 'change-me' }}
+      SALES_EMAIL: ${{ secrets.SALES_EMAIL || 'sales@uvation.test' }}
+      SALES_PASSWORD: ${{ secrets.SALES_PASSWORD || 'change-me' }}
+      APPROVER_EMAIL: ${{ secrets.APPROVER_EMAIL || 'approver@uvation.test' }}
+      APPROVER_PASSWORD: ${{ secrets.APPROVER_PASSWORD || 'change-me' }}
+      FINANCE_EMAIL: ${{ secrets.FINANCE_EMAIL || 'finance@uvation.test' }}
+      FINANCE_PASSWORD: ${{ secrets.FINANCE_PASSWORD || 'change-me' }}
+      CUSTOMER_EMAIL: ${{ secrets.CUSTOMER_EMAIL || 'buyer@acme-ai.test' }}
+      CUSTOMER_PASSWORD: ${{ secrets.CUSTOMER_PASSWORD || 'change-me' }}
+      OTHER_CUSTOMER_EMAIL: ${{ secrets.OTHER_CUSTOMER_EMAIL || 'buyer@globex.test' }}
+      OTHER_CUSTOMER_PASSWORD: ${{ secrets.OTHER_CUSTOMER_PASSWORD || 'change-me' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npx playwright test --project=faults --no-deps
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: blob-faults
+          path: reports/blob
+          retention-days: 7
+
+  nfr:
+    name: Non-functional (NFR-001..010)
+    needs: faults
+    if: ${{ !cancelled() && needs.faults.result != 'skipped' && (inputs.suite == 'full' || inputs.suite == '') && inputs.environment != 'prod' }}
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment || (github.event_name == 'schedule' && vars.NIGHTLY_ENV) || 'mock' }}
+    timeout-minutes: 30
+    env:
+      BASE_URL: ${{ secrets.BASE_URL || 'http://localhost:4010' }}
+      API_BASE_URL: ${{ secrets.API_BASE_URL || secrets.BASE_URL || 'http://localhost:4010' }}
+      MAIL_API_URL: ${{ secrets.MAIL_API_URL || 'http://localhost:4010/mailpit' }}
+      FAULT_INJECTION: ${{ vars.FAULT_INJECTION || 'true' }}
+      TEST_DATA_FILE: test-data/${{ inputs.environment || (github.event_name == 'schedule' && vars.NIGHTLY_ENV) || 'mock' }}.json
+      ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL || 'admin@uvation.test' }}
+      ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD || 'change-me' }}
+      SALES_EMAIL: ${{ secrets.SALES_EMAIL || 'sales@uvation.test' }}
+      SALES_PASSWORD: ${{ secrets.SALES_PASSWORD || 'change-me' }}
+      APPROVER_EMAIL: ${{ secrets.APPROVER_EMAIL || 'approver@uvation.test' }}
+      APPROVER_PASSWORD: ${{ secrets.APPROVER_PASSWORD || 'change-me' }}
+      FINANCE_EMAIL: ${{ secrets.FINANCE_EMAIL || 'finance@uvation.test' }}
+      FINANCE_PASSWORD: ${{ secrets.FINANCE_PASSWORD || 'change-me' }}
+      CUSTOMER_EMAIL: ${{ secrets.CUSTOMER_EMAIL || 'buyer@acme-ai.test' }}
+      CUSTOMER_PASSWORD: ${{ secrets.CUSTOMER_PASSWORD || 'change-me' }}
+      OTHER_CUSTOMER_EMAIL: ${{ secrets.OTHER_CUSTOMER_EMAIL || 'buyer@globex.test' }}
+      OTHER_CUSTOMER_PASSWORD: ${{ secrets.OTHER_CUSTOMER_PASSWORD || 'change-me' }}
+      NFR_CONCURRENCY: ${{ vars.NFR_CONCURRENCY || '25' }}
+      NFR_P95_MS: ${{ vars.NFR_P95_MS || '2000' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npx playwright test --project=nfr --no-deps
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: blob-nfr
+          path: reports/blob
+          retention-days: 7
+
+  report:
+    name: Test report & traceability
+    needs: [functional, faults, nfr]
+    if: ${{ !cancelled() && needs.functional.result != 'skipped' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: blob-*
+          path: all-blob-reports
+          merge-multiple: true
+      - run: npx playwright merge-reports --config merge.config.ts ./all-blob-reports
+      - run: cat reports/summary.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: qa-report-${{ env.TEST_ENV }}-${{ github.run_number }}
+          path: |
+            reports/html
+            reports/junit.xml
+            reports/traceability.csv
+            reports/traceability.json
+            reports/summary.md
+          retention-days: 30
+      - name: Fail if any test case failed
+        run: |
+          if grep -q '"Test Status": "Fail"' reports/traceability.json; then
+            echo "::error::One or more test cases failed - see the traceability report"; exit 1; fi
+
+  perf:
+    name: k6 peak load (NFR-002 / NFR-010)
+    if: ${{ inputs.suite == 'perf' && inputs.environment != 'prod' }}
+    needs: static
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: grafana/setup-k6-action@v1
+      - name: Run k6
+        env:
+          API_BASE_URL: ${{ secrets.API_BASE_URL || secrets.BASE_URL }}
+          SALES_EMAIL: ${{ secrets.SALES_EMAIL }}
+          SALES_PASSWORD: ${{ secrets.SALES_PASSWORD }}
+        run: k6 run --summary-export=k6-summary.json perf/k6/quote-load.js
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: k6-summary-${{ github.run_number }}
+          path: k6-summary.json

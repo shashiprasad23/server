@@ -1,0 +1,8 @@
+node_modules/
+reports/
+test-results/
+playwright/.cache/
+.auth/
+.env
+.env.*
+!.env.example

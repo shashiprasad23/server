@@ -1,0 +1,57 @@
+{
+  "currency": "USD",
+  "supportedCurrencies": ["USD"],
+  "unsupportedCurrency": "EUR",
+  "registeredCustomer": {
+    "email": "buyer@acme-ai.test",
+    "companyName": "Acme AI Labs",
+    "contactName": "Jordan Lee",
+    "phone": "+14155550101"
+  },
+  "negotiatedCustomer": { "email": "buyer@acme-ai.test", "sku": "UV-AI-8X", "expectedUnitPrice": 42000 },
+  "server": {
+    "model": "UV-AI-8X",
+    "sku": "UV-AI-8X",
+    "basePrice": 45000,
+    "validCpu": "XEON-8480",
+    "incompatibleCpu": "EPYC-7003",
+    "motherboard": "X13-SPR",
+    "incompatibleMotherboard": "H12-ROME",
+    "gpuModel": "H200",
+    "supportedGpuCounts": [1, 2, 4, 8],
+    "unsupportedGpuCount": 3,
+    "overPowerGpuModel": "B200",
+    "overPowerGpuCount": 8,
+    "maxRamGb": 2048,
+    "maxStorageTb": 61,
+    "supportedNic": "400GbE",
+    "unsupportedNic": "800GbE",
+    "scarceGpuModel": "H100-SXM",
+    "psuDependentGpuModel": "L40S"
+  },
+  "volumeTiers": [
+    { "qty": 1, "expectedUnitPrice": 45000 },
+    { "qty": 10, "expectedUnitPrice": 42750 },
+    { "qty": 50, "expectedUnitPrice": 40500 }
+  ],
+  "unavailableSku": "UV-AI-4X-GEN1",
+  "serviceSkus": {
+    "installation": "SVC-RACK-INSTALL",
+    "warranty": "SVC-WARRANTY-3Y",
+    "support": "SVC-SUPPORT-247",
+    "sla": "SVC-SLA-GOLD"
+  },
+  "leaseSku": "LEASE-H200-NODE",
+  "discounts": {
+    "valid": "AIWEEK10",
+    "validPercent": 10,
+    "expired": "SUMMER2025",
+    "invalid": "NOPE-123",
+    "ineligible": "EDU15"
+  },
+  "maxDiscountPercent": 30,
+  "salesRepDiscountAuthorityPercent": 10,
+  "highValueThreshold": 1000000,
+  "tax": { "destination": "US-CA", "ratePercent": 7.25 },
+  "shipping": { "destination": "US-CA", "method": "freight", "expectedCost": 1500 }
+}

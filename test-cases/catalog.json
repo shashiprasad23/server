@@ -1,0 +1,758 @@
+[
+  {
+    "id": "SQ-001",
+    "suite": "Quote initiation and customer details",
+    "scenario": "Send quote from Admin page",
+    "expected": "Quote page should open",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-002",
+    "suite": "Quote initiation and customer details",
+    "scenario": "On admin page, user validation",
+    "expected": "Registered customer shows details; unknown customer shows 'No data found'",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-003",
+    "suite": "Quote initiation and customer details",
+    "scenario": "Lead quote - submit with valid customer details",
+    "expected": "User and quote request are created successfully",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-004",
+    "suite": "Quote initiation and customer details",
+    "scenario": "Validate mandatory fields",
+    "expected": "Submission is blocked with field-level validation (Email required)",
+    "priority": "P1",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-005",
+    "suite": "Quote initiation and customer details",
+    "scenario": "Validate email format",
+    "expected": "Invalid email is rejected",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-006",
+    "suite": "Quote initiation and customer details",
+    "scenario": "Validate contact number",
+    "expected": "Invalid input is rejected according to configured phone rules",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-007",
+    "suite": "Quote initiation and customer details",
+    "scenario": "Submit without selecting a product",
+    "expected": "System requests a product selection or captures a valid general inquiry",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-008",
+    "suite": "Quote initiation and customer details",
+    "scenario": "Prevent duplicate submissions",
+    "expected": "Only one quote request is created for the same submission",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-009",
+    "suite": "Quote initiation and customer details",
+    "scenario": "Save customer company details",
+    "expected": "Correct company and contact details are linked to the request",
+    "priority": "P1",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-010",
+    "suite": "Quote initiation and customer details",
+    "scenario": "Handle guest B2B customer",
+    "expected": "Quote is created with a guest reference and verifiable contact information",
+    "priority": "P1",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-011",
+    "suite": "AI server configuration and product validation",
+    "scenario": "Select AI server model",
+    "expected": "Correct product name, SKU, and base configuration are displayed",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-012",
+    "suite": "AI server configuration and product validation",
+    "scenario": "Configure GPU quantity",
+    "expected": "Valid configurations are accepted; unsupported combinations are blocked",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-013",
+    "suite": "AI server configuration and product validation",
+    "scenario": "Validate CPU and motherboard compatibility",
+    "expected": "Incompatible configuration is rejected or corrected",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-014",
+    "suite": "AI server configuration and product validation",
+    "scenario": "Validate GPU and power requirements",
+    "expected": "System blocks the invalid configuration or requests an approved alternative",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-015",
+    "suite": "AI server configuration and product validation",
+    "scenario": "Validate memory and storage options",
+    "expected": "Unsupported configurations cannot be quoted as valid products",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-016",
+    "suite": "AI server configuration and product validation",
+    "scenario": "Validate network interface compatibility",
+    "expected": "Compatibility validation is enforced",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-017",
+    "suite": "AI server configuration and product validation",
+    "scenario": "Quote configured-to-order server",
+    "expected": "All selected options appear accurately in the quote",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-018",
+    "suite": "AI server configuration and product validation",
+    "scenario": "Validate product availability",
+    "expected": "Availability warning or alternate-product workflow is shown",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-019",
+    "suite": "AI server configuration and product validation",
+    "scenario": "Add installation and support",
+    "expected": "Services appear as separate, correctly priced line items",
+    "priority": "P1",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-020",
+    "suite": "AI server configuration and product validation",
+    "scenario": "Update configuration after quote creation",
+    "expected": "Totals and specifications are recalculated; document reflects latest configuration",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-021",
+    "suite": "Pricing, discounts, and tax calculations",
+    "scenario": "Calculate standard product price",
+    "expected": "Line totals and quote subtotal are accurate",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-022",
+    "suite": "Pricing, discounts, and tax calculations",
+    "scenario": "Apply volume-based pricing",
+    "expected": "Correct quantity tiers or negotiated rates are applied",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-023",
+    "suite": "Pricing, discounts, and tax calculations",
+    "scenario": "Apply customer-specific pricing",
+    "expected": "The correct eligible customer price is used",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-024",
+    "suite": "Pricing, discounts, and tax calculations",
+    "scenario": "Apply discount code",
+    "expected": "Eligible discount is applied and totals are updated",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-025",
+    "suite": "Pricing, discounts, and tax calculations",
+    "scenario": "Reject invalid discount",
+    "expected": "Discount is rejected with a clear message",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-026",
+    "suite": "Pricing, discounts, and tax calculations",
+    "scenario": "Enforce maximum discount",
+    "expected": "Discount is capped or routed for approval according to policy",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-027",
+    "suite": "Pricing, discounts, and tax calculations",
+    "scenario": "Calculate tax correctly",
+    "expected": "Taxable base, applicable taxes, and grand total are correct",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-028",
+    "suite": "Pricing, discounts, and tax calculations",
+    "scenario": "Calculate shipping and handling",
+    "expected": "Applicable shipping costs are included in the total",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-029",
+    "suite": "Pricing, discounts, and tax calculations",
+    "scenario": "Should not handle multi-currency quotes",
+    "expected": "Only supported currencies are accepted; prices, symbols and totals are consistent",
+    "priority": "P1",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-030",
+    "suite": "Pricing, discounts, and tax calculations",
+    "scenario": "Prevent negative or zero pricing",
+    "expected": "Invalid pricing is rejected",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-031",
+    "suite": "Pricing, discounts, and tax calculations",
+    "scenario": "Recalculate after quantity change",
+    "expected": "Subtotal, discount, tax, shipping, and total recalculate correctly",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-032",
+    "suite": "Pricing, discounts, and tax calculations",
+    "scenario": "Handle pricing changes during a session",
+    "expected": "Price-lock/repricing policy is applied and changes are recorded",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-033",
+    "suite": "Quote document generation and email delivery",
+    "scenario": "Generate quote PDF",
+    "expected": "A readable PDF is created with a unique quote number",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-034",
+    "suite": "Quote document generation and email delivery",
+    "scenario": "Verify PDF line items",
+    "expected": "Descriptions, SKUs, quantities, unit prices, and line totals match the saved quote",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-035",
+    "suite": "Quote document generation and email delivery",
+    "scenario": "Verify commercial terms",
+    "expected": "Payment terms, delivery, warranty, validity, taxes, and exclusions are correct",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-036",
+    "suite": "Quote document generation and email delivery",
+    "scenario": "Send quote to customer",
+    "expected": "Email is queued or sent and references the correct quote",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-037",
+    "suite": "Quote document generation and email delivery",
+    "scenario": "Validate recipient address",
+    "expected": "Invalid address is rejected before sending",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-038",
+    "suite": "Quote document generation and email delivery",
+    "scenario": "Send quote to multiple recipients",
+    "expected": "Email goes to intended recipients without unintended disclosure",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-039",
+    "suite": "Quote document generation and email delivery",
+    "scenario": "Verify email attachment or link",
+    "expected": "Correct PDF or authorized quote link is included",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-040",
+    "suite": "Quote document generation and email delivery",
+    "scenario": "Handle email delivery failure",
+    "expected": "Failure is logged and visible; retry is available without creating a duplicate quote",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-041",
+    "suite": "Quote document generation and email delivery",
+    "scenario": "Resend existing quote",
+    "expected": "The correct version is sent and the resend event is recorded",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-042",
+    "suite": "Quote document generation and email delivery",
+    "scenario": "Verify quote branding",
+    "expected": "Logo, contact details, layout, and formatting match the approved template",
+    "priority": "P2",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-043",
+    "suite": "Quote document generation and email delivery",
+    "scenario": "Verify special characters and long descriptions",
+    "expected": "PDF and email render correctly without missing text",
+    "priority": "P2",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-044",
+    "suite": "Approval, quote lifecycle, and order conversion",
+    "scenario": "Approve quote within discount limit",
+    "expected": "Quote follows the configured approval process",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-045",
+    "suite": "Approval, quote lifecycle, and order conversion",
+    "scenario": "Require approval for high discounts",
+    "expected": "Quote cannot be issued until the authorized approver acts",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-046",
+    "suite": "Approval, quote lifecycle, and order conversion",
+    "scenario": "Reject a quote for correction",
+    "expected": "Rejection reason is recorded and quote returns to correction workflow",
+    "priority": "P1",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-047",
+    "suite": "Approval, quote lifecycle, and order conversion",
+    "scenario": "Track quote status",
+    "expected": "Status transitions follow defined business rules",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-048",
+    "suite": "Approval, quote lifecycle, and order conversion",
+    "scenario": "Enforce quote expiration",
+    "expected": "Acceptance is blocked or revalidation is required",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-049",
+    "suite": "Approval, quote lifecycle, and order conversion",
+    "scenario": "Revise an issued quote",
+    "expected": "A new revision is generated, with prior versions retained",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-050",
+    "suite": "Approval, quote lifecycle, and order conversion",
+    "scenario": "Accept quote",
+    "expected": "Acceptance is recorded with timestamp and the correct revision",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-051",
+    "suite": "Approval, quote lifecycle, and order conversion",
+    "scenario": "Convert quote to order",
+    "expected": "Products, quantities, prices, taxes, terms, and customer carry over",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-052",
+    "suite": "Approval, quote lifecycle, and order conversion",
+    "scenario": "Prevent duplicate order conversion",
+    "expected": "Only one order is created",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-053",
+    "suite": "Approval, quote lifecycle, and order conversion",
+    "scenario": "Handle product availability change",
+    "expected": "Fulfillment rules are enforced and the exception is communicated",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-054",
+    "suite": "Approval, quote lifecycle, and order conversion",
+    "scenario": "Cancel a quote",
+    "expected": "Status and reason are recorded; further actions are restricted",
+    "priority": "P1",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-055",
+    "suite": "Security, permissions, audit, and reliability",
+    "scenario": "Restrict quote access by role",
+    "expected": "Each role can perform only authorized actions",
+    "priority": "P0",
+    "manualStatus": "Pass",
+    "manualDate": "09.10.2026"
+  },
+  {
+    "id": "SQ-056",
+    "suite": "Security, permissions, audit, and reliability",
+    "scenario": "Prevent cross-customer access",
+    "expected": "Access is denied and sensitive information is not exposed",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-057",
+    "suite": "Security, permissions, audit, and reliability",
+    "scenario": "Protect quote links",
+    "expected": "Authentication or secure token validation is enforced",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-058",
+    "suite": "Security, permissions, audit, and reliability",
+    "scenario": "Audit price overrides",
+    "expected": "Original price, revised price, user, timestamp, and reason are recorded",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-059",
+    "suite": "Security, permissions, audit, and reliability",
+    "scenario": "Validate input against injection",
+    "expected": "Input is safely handled; no injection or script execution",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-060",
+    "suite": "Security, permissions, audit, and reliability",
+    "scenario": "Verify concurrent quote edits",
+    "expected": "Conflicts are detected per concurrency rules",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-061",
+    "suite": "Security, permissions, audit, and reliability",
+    "scenario": "Recover from interrupted submission",
+    "expected": "No partially committed quote; safe retry is possible",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-062",
+    "suite": "Security, permissions, audit, and reliability",
+    "scenario": "Maintain audit trail",
+    "expected": "Important actions are logged with actor and timestamp",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-063",
+    "suite": "Security, permissions, audit, and reliability",
+    "scenario": "Verify customer data protection",
+    "expected": "Sensitive information is limited to authorized recipients",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-064",
+    "suite": "AI infrastructure-specific edge cases",
+    "scenario": "GPU compatible but unavailable in required quantity",
+    "expected": "Availability constraint shown with alternative or lead time",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-065",
+    "suite": "AI infrastructure-specific edge cases",
+    "scenario": "GPU configuration requires a different PSU or chassis",
+    "expected": "Dependent components are updated or configuration is blocked",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-066",
+    "suite": "AI infrastructure-specific edge cases",
+    "scenario": "Customer requests a custom-built AI server",
+    "expected": "Custom specs and pricing are captured for technical and commercial review",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-067",
+    "suite": "AI infrastructure-specific edge cases",
+    "scenario": "Quote includes products with different lead times",
+    "expected": "Delivery estimates are represented per item",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-068",
+    "suite": "AI infrastructure-specific edge cases",
+    "scenario": "Long-term GPU rental or lease",
+    "expected": "Recurring charges, billing period, term, and deposits are correct",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-069",
+    "suite": "AI infrastructure-specific edge cases",
+    "scenario": "Cloud GPU or managed AI infrastructure services",
+    "expected": "Usage-based charges and contract terms are represented correctly",
+    "priority": "P1",
+    "manualStatus": "NA",
+    "manualDate": null
+  },
+  {
+    "id": "SQ-070",
+    "suite": "AI infrastructure-specific edge cases",
+    "scenario": "Customer requests an SLA or extended warranty",
+    "expected": "Selected service level and warranty terms are included",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-071",
+    "suite": "AI infrastructure-specific edge cases",
+    "scenario": "Quoted product specification changes in the catalog",
+    "expected": "Existing quote retains its version or requires controlled repricing",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-072",
+    "suite": "AI infrastructure-specific edge cases",
+    "scenario": "Supplier cost changes before quote approval",
+    "expected": "Margin and pricing rules are reevaluated",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-073",
+    "suite": "AI infrastructure-specific edge cases",
+    "scenario": "High-value quote exceeds a commercial threshold",
+    "expected": "Finance or management approval is enforced",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "SQ-074",
+    "suite": "AI infrastructure-specific edge cases",
+    "scenario": "Custom quote contains an unsupported component combination",
+    "expected": "Technical validation prevents issuance",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "NFR-001",
+    "suite": "Non-functional and performance",
+    "scenario": "Concurrent quote requests",
+    "expected": "No lost, duplicated, or incorrectly linked quotes",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "NFR-002",
+    "suite": "Non-functional and performance",
+    "scenario": "High-volume quote generation",
+    "expected": "Response times and throughput meet SLAs",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "NFR-003",
+    "suite": "Non-functional and performance",
+    "scenario": "Large quote document",
+    "expected": "Document with hundreds of lines is complete and generated in target time",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "NFR-004",
+    "suite": "Non-functional and performance",
+    "scenario": "Email queue backlog",
+    "expected": "Queue processes burst reliably and reports failures",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "NFR-005",
+    "suite": "Non-functional and performance",
+    "scenario": "Pricing service latency",
+    "expected": "Timeout, retry, and failure handling operate safely",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "NFR-006",
+    "suite": "Non-functional and performance",
+    "scenario": "Quote service recovery",
+    "expected": "Persisted quotes stay consistent; retry is safe",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "NFR-007",
+    "suite": "Non-functional and performance",
+    "scenario": "Database consistency",
+    "expected": "Persisted prices and totals remain consistent",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "NFR-008",
+    "suite": "Non-functional and performance",
+    "scenario": "Access security",
+    "expected": "Unauthorized access and quote manipulation are prevented",
+    "priority": "P0",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "NFR-009",
+    "suite": "Non-functional and performance",
+    "scenario": "Observability",
+    "expected": "Logs identify failures with correlation ID",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  },
+  {
+    "id": "NFR-010",
+    "suite": "Non-functional and performance",
+    "scenario": "Scalability",
+    "expected": "System scales within latency and error-rate targets",
+    "priority": "P1",
+    "manualStatus": null,
+    "manualDate": null
+  }
+]
