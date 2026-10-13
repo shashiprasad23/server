@@ -12,6 +12,9 @@ function esc(s) {
 }
 
 async function api(method, url, body) {
+  // The hosted build has no server: scripts/build-artifact.js installs a browser backend
+  // (public/browser-backend.js) that answers the same routes.
+  if (window.RP_BACKEND) return window.RP_BACKEND.request(method, url, body);
   const res = await fetch(url, {
     method,
     headers: body ? { 'Content-Type': 'application/json' } : {},
@@ -99,11 +102,14 @@ function noSprints() {
  * fields: [{ name, label, type, options, required, step, min, max, half }]
  * Resolves with the submitted values, or null on cancel.
  * onSubmit(values) may throw to keep the dialog open and show an error.
+ * opts: { submitLabel, danger, message } for confirmation-style dialogs.
  */
-function openForm(title, fields, initial = {}, onSubmit) {
+function openForm(title, fields, initial = {}, onSubmit, { submitLabel = 'Save', danger = false, message = '' } = {}) {
   const modal = $('#modal');
   $('#modal-title').textContent = title;
   $('#modal-error').hidden = true;
+  $('#modal-submit').textContent = submitLabel;
+  $('#modal-submit').className = `btn ${danger ? 'danger-solid' : 'primary'}`;
 
   const renderField = (f) => {
     const val = initial[f.name] ?? f.default ?? '';
@@ -132,7 +138,7 @@ function openForm(title, fields, initial = {}, onSubmit) {
       i++;
     } else html += renderField(fields[i]);
   }
-  $('#modal-body').innerHTML = html;
+  $('#modal-body').innerHTML = (message ? `<p>${esc(message)}</p>` : '') + html;
 
   return new Promise((resolve) => {
     const form = $('#modal-form');
@@ -169,14 +175,30 @@ function openForm(title, fields, initial = {}, onSubmit) {
   });
 }
 
+// An in-page dialog rather than confirm(), which hosted pages cannot show.
 async function confirmDelete(what, url, after) {
-  if (!confirm(`Delete ${what}? This cannot be undone.`)) return;
+  const done = await openForm(`Delete ${what}?`, [], {}, () => api('DELETE', url), {
+    submitLabel: 'Delete',
+    danger: true,
+    message: 'This cannot be undone.',
+  });
+  if (!done) return;
+  toast('Deleted');
+  await after();
+}
+
+async function exportCsv(sprintId) {
+  if (!window.RP_BACKEND) {
+    location.href = `/api/sprints/${sprintId}/export.csv`;
+    return;
+  }
   try {
-    await api('DELETE', url);
-    toast('Deleted');
-    await after();
+    const { filename, csv } = await api('GET', `/api/sprints/${sprintId}/export.csv`);
+    const downloads = await window.claude?.use('downloads');
+    if (!downloads) throw new Error('Downloads are not available in this view.');
+    await downloads.save({ filename, data: csv });
   } catch (err) {
-    toast(err.message, true);
+    if (err.code !== 'declined') toast(err.message, true);
   }
 }
 
@@ -215,7 +237,7 @@ async function renderBoard() {
       <h1>Sprint board</h1>
       ${sprintSelect(sprintId)}
       <span class="spacer"></span>
-      <a class="btn" href="/api/sprints/${sprintId}/export.csv">Export CSV</a>
+      <button class="btn" id="export-csv">Export CSV</button>
       <a class="btn primary" href="#plan">Edit allocations</a>
     </div>
     ${s.sprint.goal ? `<p class="muted">Goal: ${esc(s.sprint.goal)}</p>` : ''}
@@ -241,7 +263,7 @@ async function renderBoard() {
           <tbody>
           ${s.people.map((p) => `
             <tr>
-              <td class="name"><a href="#person/${p.person.id}">${esc(p.person.name)}</a><div class="muted small">${esc(p.person.role || '')}</div></td>
+              <td class="name"><a href="#person-${p.person.id}">${esc(p.person.name)}</a><div class="muted small">${esc(p.person.role || '')}</div></td>
               <td>${p.allocations.map((a) => `<span class="chip"><span class="dot" style="background:${esc(a.project_color)}"></span>${esc(a.project_name)} ${a.allocation_pct}%</span>`).join('') || '<span class="muted">—</span>'}
                 ${p.unavailability.length ? `<div>${leaveChips(p.unavailability)}</div>` : ''}</td>
               <td>${allocationBar(p)}</td>
@@ -261,7 +283,7 @@ async function renderBoard() {
             <thead><tr><th>Project</th><th class="num">FTE</th><th class="num">Hours</th></tr></thead>
             <tbody>${s.projects.map((p) => `
               <tr>
-                <td><span class="dot" style="background:${esc(p.color)}"></span> <a href="#project/${p.project_id}">${esc(p.name)}</a>
+                <td><span class="dot" style="background:${esc(p.color)}"></span> <a href="#project-${p.project_id}">${esc(p.name)}</a>
                   <div class="muted small">${p.people.map((x) => `${esc(x.name)} ${x.allocation_pct}%`).join(', ')}</div></td>
                 <td class="num">${fmt(p.fte)}</td>
                 <td class="num">${fmt(p.hours)}</td>
@@ -278,6 +300,7 @@ async function renderBoard() {
       </div>
     </div>`;
   bindSprintSelect(renderBoard);
+  $('#export-csv').addEventListener('click', () => exportCsv(sprintId));
 }
 
 // ---------------------------------------------------------------------------
@@ -480,7 +503,7 @@ async function renderPeople() {
     addLabel: 'Add person',
     rows: cache.people,
     columns: [
-      { label: 'Name', render: (r) => `<a href="#person/${r.id}">${esc(r.name)}</a>${r.active ? '' : ' <span class="badge completed">Inactive</span>'}` },
+      { label: 'Name', render: (r) => `<a href="#person-${r.id}">${esc(r.name)}</a>${r.active ? '' : ' <span class="badge completed">Inactive</span>'}` },
       { label: 'Role', key: 'role' },
       { label: 'Team', key: 'team' },
       { label: 'Email', key: 'email' },
@@ -506,7 +529,7 @@ async function renderProjects() {
     addLabel: 'Add project',
     rows: cache.projects,
     columns: [
-      { label: 'Project', render: (r) => `<span class="dot" style="background:${esc(r.color)}"></span> <a href="#project/${r.id}">${esc(r.name)}</a>` },
+      { label: 'Project', render: (r) => `<span class="dot" style="background:${esc(r.color)}"></span> <a href="#project-${r.id}">${esc(r.name)}</a>` },
       { label: 'Code', key: 'code' },
       { label: 'Owner', key: 'owner' },
       { label: 'Status', render: (r) => `<span class="badge ${r.status}">${PROJECT_STATUS[r.status]}</span>` },
@@ -618,7 +641,7 @@ async function renderProject(id) {
         <tbody>${[...timeline].reverse().map((t) => `
           <tr class="timeline-row">
             <td>${esc(t.sprint.name)}<div class="muted small">${fmtRange(t.sprint.start_date, t.sprint.end_date)}</div></td>
-            <td>${t.people.map((p) => `<span class="chip"><a href="#person/${p.id}">${esc(p.name)}</a> ${p.allocation_pct}% · ${fmt(p.hours)} h</span>`).join('')}</td>
+            <td>${t.people.map((p) => `<span class="chip"><a href="#person-${p.id}">${esc(p.name)}</a> ${p.allocation_pct}% · ${fmt(p.hours)} h</span>`).join('')}</td>
             <td class="num">${fmt(t.fte)}</td>
             <td class="num">${fmt(t.hours)}</td>
           </tr>`).join('')}</tbody>
@@ -642,11 +665,18 @@ const routes = {
 };
 
 async function route() {
-  const [name, arg] = (location.hash.slice(1) || 'board').split('/');
+  // Plain tokens like #person-12: hosted pages only pass hashes made of letters, digits and - . _ ~
+  const [name, arg] = (location.hash.slice(1) || 'board').split('-');
   const render = routes[name] || renderBoard;
   const navKey = { person: 'board', project: 'projects' }[name] || name;
   document.querySelectorAll('#nav a').forEach((a) => a.classList.toggle('active', a.dataset.view === navKey));
   try {
+    if (window.RP_BACKEND) {
+      await window.RP_BACKEND.ready;
+      const notice = $('#notice');
+      notice.textContent = window.RP_BACKEND.notice || '';
+      notice.hidden = !window.RP_BACKEND.notice;
+    }
     await refreshCache();
     await render(arg);
   } catch (err) {
@@ -655,4 +685,19 @@ async function route() {
 }
 
 window.addEventListener('hashchange', route);
+
+// Someone else changed the shared data: re-render, unless the viewer is mid-edit.
+let staleView = false;
+function refreshIfIdle() {
+  const busy = $('#modal').open || document.activeElement?.matches?.('#view input, #view select, #view textarea');
+  if (busy) staleView = true;
+  else route();
+}
+window.RP_BACKEND?.setOnChange(refreshIfIdle);
+$('#modal').addEventListener('close', () => {
+  if (staleView) {
+    staleView = false;
+    route();
+  }
+});
 route();

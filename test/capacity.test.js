@@ -2,7 +2,7 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { workingDays, unavailableDays, personSprintCapacity } = require('../src/capacity');
+const { workingDays, unavailableDays, personSprintCapacity } = require('../src/shared/capacity');
 
 // 2026-10-05 is a Monday; a two-week sprint runs Mon 5th -> Fri 16th.
 const sprint = { start_date: '2026-10-05', end_date: '2026-10-16' };

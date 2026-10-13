@@ -1,6 +1,12 @@
+// Pure capacity maths, shared by the Node server and the browser build.
+// Loaded with require() on the server and as a plain <script> (window.RPCapacity) in the browser.
+(function (factory) {
+  if (typeof module === 'object' && module.exports) module.exports = factory();
+  else window.RPCapacity = factory();
+})(function () {
 'use strict';
 
-// Pure capacity maths. Dates are ISO 'YYYY-MM-DD' strings and are handled in UTC
+// Dates are ISO 'YYYY-MM-DD' strings and are handled in UTC
 // so results never shift with the server's timezone.
 
 const DAY_MS = 24 * 60 * 60 * 1000;
@@ -94,4 +100,5 @@ function round(n) {
   return Math.round(n * 100) / 100;
 }
 
-module.exports = { eachDay, workingDays, unavailableDays, personSprintCapacity, round };
+return { eachDay, workingDays, unavailableDays, personSprintCapacity, round };
+});

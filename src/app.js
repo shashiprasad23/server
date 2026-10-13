@@ -2,7 +2,7 @@
 
 const path = require('node:path');
 const express = require('express');
-const { personSprintCapacity, round } = require('./capacity');
+const reports = require('./shared/reports');
 
 class HttpError extends Error {
   constructor(status, message) {
@@ -262,109 +262,27 @@ function createApp(db) {
     return sprint;
   }
 
-  function holidaysIn(start, end) {
-    return all('SELECT date, name FROM holidays WHERE date BETWEEN ? AND ? ORDER BY date', start, end);
-  }
-
-  /** Full picture of one sprint: per-person capacity, allocations, leave; per-project totals. */
-  function sprintSummary(sprint) {
-    const holidays = holidaysIn(sprint.start_date, sprint.end_date);
-    const holidayDates = holidays.map((h) => h.date);
-    const allocations = all(
-      `SELECT a.*, p.name AS project_name, p.code AS project_code, p.color AS project_color
-         FROM allocations a JOIN projects p ON p.id = a.project_id
-        WHERE a.sprint_id = ?`,
-      sprint.id,
-    );
-    const leave = all(
-      'SELECT * FROM unavailability WHERE start_date <= ? AND end_date >= ? ORDER BY start_date',
-      sprint.end_date,
-      sprint.start_date,
-    );
-    // Include inactive people only if they still hold allocations in this sprint.
-    const allocatedIds = new Set(allocations.map((a) => a.person_id));
-    const people = all('SELECT * FROM people ORDER BY name').filter((p) => p.active || allocatedIds.has(p.id));
-
-    const peopleOut = people.map((person) => {
-      const mine = allocations.filter((a) => a.person_id === person.id);
-      const myLeave = leave.filter((u) => u.person_id === person.id);
-      const cap = personSprintCapacity({ sprint, person, holidays: holidayDates, unavailability: myLeave, allocations: mine });
-      return {
-        person: { id: person.id, name: person.name, role: person.role, team: person.team, hours_per_day: person.hours_per_day },
-        ...cap,
-        unavailability: myLeave,
-        allocations: mine.map((a) => ({
-          id: a.id,
-          project_id: a.project_id,
-          project_name: a.project_name,
-          project_code: a.project_code,
-          project_color: a.project_color,
-          allocation_pct: a.allocation_pct,
-          hours: round((a.allocation_pct / 100) * cap.capacityHours),
-          notes: a.notes,
-        })),
-      };
-    });
-
-    const projectMap = new Map();
-    for (const p of peopleOut) {
-      for (const a of p.allocations) {
-        if (!projectMap.has(a.project_id)) {
-          projectMap.set(a.project_id, {
-            project_id: a.project_id,
-            name: a.project_name,
-            code: a.project_code,
-            color: a.project_color,
-            hours: 0,
-            fte: 0,
-            people: [],
-          });
-        }
-        const entry = projectMap.get(a.project_id);
-        entry.hours += a.hours;
-        entry.fte += a.allocation_pct / 100;
-        entry.people.push({ id: p.person.id, name: p.person.name, allocation_pct: a.allocation_pct, hours: a.hours });
-      }
-    }
-    const projects = [...projectMap.values()]
-      .map((p) => ({ ...p, hours: round(p.hours), fte: round(p.fte) }))
-      .sort((a, b) => b.hours - a.hours);
-
-    const totals = peopleOut.reduce(
-      (t, p) => {
-        t.capacityHours += p.capacityHours;
-        t.allocatedHours += Math.min(p.allocatedHours, p.capacityHours);
-        t.unavailableDays += p.unavailableDays;
-        if (p.status === 'over') t.overAllocated += 1;
-        if (p.status === 'unassigned' || p.status === 'under') t.withFreeCapacity += 1;
-        return t;
-      },
-      { capacityHours: 0, allocatedHours: 0, unavailableDays: 0, overAllocated: 0, withFreeCapacity: 0 },
-    );
-    totals.capacityHours = round(totals.capacityHours);
-    totals.allocatedHours = round(totals.allocatedHours);
-    totals.utilisationPct = totals.capacityHours ? round((totals.allocatedHours / totals.capacityHours) * 100) : 0;
-    totals.people = peopleOut.length;
-
-    return { sprint, holidays, totals, people: peopleOut, projects };
+  /** Every row the reports need. The data set is small, so reading it whole keeps one code path with the browser build. */
+  function loadAll() {
+    return {
+      people: all('SELECT * FROM people'),
+      projects: all('SELECT * FROM projects'),
+      sprints: all('SELECT * FROM sprints'),
+      allocations: all('SELECT * FROM allocations'),
+      unavailability: all('SELECT * FROM unavailability'),
+      holidays: all('SELECT * FROM holidays'),
+    };
   }
 
   app.get('/api/sprints/:id/summary', (req, resp) => {
-    resp.json(sprintSummary(loadSprint(req.params.id)));
+    const sprint = loadSprint(req.params.id);
+    resp.json(reports.sprintSummary(loadAll(), sprint));
   });
 
   app.get('/api/sprints/:id/export.csv', (req, resp) => {
-    const s = sprintSummary(loadSprint(req.params.id));
-    const rows = [['Person', 'Role', 'Team', 'Project', 'Allocation %', 'Hours', 'Available days', 'Unavailable days', 'Capacity hours', 'Total allocation %', 'Status']];
-    for (const p of s.people) {
-      const base = [p.person.name, p.person.role || '', p.person.team || ''];
-      const tail = [p.availableDays, p.unavailableDays, p.capacityHours, p.allocatedPct, p.status];
-      if (!p.allocations.length) rows.push([...base, '', '', '', ...tail]);
-      for (const a of p.allocations) rows.push([...base, a.project_name, a.allocation_pct, a.hours, ...tail]);
-    }
-    const csv = rows.map((r) => r.map(csvCell).join(',')).join('\r\n');
-    const fname = s.sprint.name.replace(/[^\w.-]+/g, '_');
-    resp.type('text/csv').attachment(`${fname}.csv`).send(csv);
+    const sprint = loadSprint(req.params.id);
+    const { filename, csv } = reports.sprintCsv(reports.sprintSummary(loadAll(), sprint));
+    resp.type('text/csv').attachment(filename).send(csv);
   });
 
   /** Copy every allocation from another sprint into this one, skipping ones that already exist. */
@@ -388,48 +306,14 @@ function createApp(db) {
   app.get('/api/people/:id/timeline', (req, resp) => {
     const person = get('SELECT * FROM people WHERE id = ?', Number(req.params.id));
     if (!person) throw new HttpError(404, 'Person not found');
-    const sprints = all('SELECT * FROM sprints ORDER BY start_date');
-    const leave = all('SELECT * FROM unavailability WHERE person_id = ? ORDER BY start_date', person.id);
-    const allocations = all(
-      `SELECT a.*, p.name AS project_name, p.color AS project_color
-         FROM allocations a JOIN projects p ON p.id = a.project_id
-        WHERE a.person_id = ?`,
-      person.id,
-    );
-    const timeline = sprints.map((sprint) => {
-      const mine = allocations.filter((a) => a.sprint_id === sprint.id);
-      const myLeave = leave.filter((u) => u.start_date <= sprint.end_date && u.end_date >= sprint.start_date);
-      const holidayDates = holidaysIn(sprint.start_date, sprint.end_date).map((h) => h.date);
-      const cap = personSprintCapacity({ sprint, person, holidays: holidayDates, unavailability: myLeave, allocations: mine });
-      return {
-        sprint,
-        ...cap,
-        unavailability: myLeave,
-        allocations: mine.map((a) => ({
-          project_id: a.project_id,
-          project_name: a.project_name,
-          project_color: a.project_color,
-          allocation_pct: a.allocation_pct,
-          hours: round((a.allocation_pct / 100) * cap.capacityHours),
-        })),
-      };
-    });
-    resp.json({ person, timeline });
+    resp.json(reports.personTimeline(loadAll(), person));
   });
 
   /** Who worked / is working on a project, sprint by sprint. */
   app.get('/api/projects/:id/timeline', (req, resp) => {
     const project = get('SELECT * FROM projects WHERE id = ?', Number(req.params.id));
     if (!project) throw new HttpError(404, 'Project not found');
-    const sprintIds = all('SELECT DISTINCT sprint_id FROM allocations WHERE project_id = ?', project.id).map((r) => r.sprint_id);
-    const timeline = all('SELECT * FROM sprints ORDER BY start_date')
-      .filter((s) => sprintIds.includes(s.id))
-      .map((sprint) => {
-        const summary = sprintSummary(sprint);
-        const entry = summary.projects.find((p) => p.project_id === project.id);
-        return { sprint, hours: entry.hours, fte: entry.fte, people: entry.people };
-      });
-    resp.json({ project, timeline });
+    resp.json(reports.projectTimeline(loadAll(), project));
   });
 
   // ---- static UI + errors ---------------------------------------------------
@@ -448,11 +332,6 @@ function createApp(db) {
   });
 
   return app;
-}
-
-function csvCell(val) {
-  const s = String(val ?? '');
-  return /[",\r\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
 }
 
 module.exports = { createApp };

@@ -44,6 +44,10 @@ Environment variables:
 | `PORT`    | `3000`                    | HTTP port          |
 | `DB_FILE` | `data/resource-pool.db`   | SQLite file path   |
 
+## Hosted version (no server)
+
+`npm run build:artifact` bundles the UI into `dist/resource-pool.html`, a single page that runs without the Node server. In that build, `public/browser-backend.js` answers the same `/api` routes in the browser and keeps the data in the hosting page's shared store. Reports come from the same `src/shared/` modules the server uses.
+
 ## REST API
 
 All endpoints are JSON and live under `/api`. The resources are `people`, `projects`, `sprints`, `allocations`, `unavailability` and `holidays`. Each one supports:
@@ -80,10 +84,13 @@ Main fields:
 ```
 src/
   server.js     entry point
-  app.js        Express routes, validation, sprint/person/project reports
-  capacity.js   working-day and capacity calculations (pure functions)
+  app.js        Express routes and validation
   db.js         SQLite schema
+  shared/       capacity maths and reports, used by the server and the hosted build
 public/         single-page UI (plain HTML/CSS/JS, no build step)
-scripts/seed.js demo data
+  browser-backend.js  in-browser API for the hosted build
+scripts/
+  seed.js             demo data
+  build-artifact.js   bundles the hosted single-file page
 test/           node:test unit and API tests
 ```
