@@ -759,30 +759,30 @@
     "MT": [
       {
         "topic": "Live chat widget across Marketplace (new)",
-        "status": "The Marketplace platform choice (MT-1578, due 9 Oct) and widget build (MT-1579, due 8 Oct) are still in Dev and past due. Marketing's site-wide widget (MR-754) and its platform choice (MR-786) moved to Code Review on 13 Oct.",
+        "status": "The Marketplace widget (MT-1577) and its platform choice and build (MT-1578, MT-1579) moved to UAT Testing on 14 Oct. Marketing's site-wide widget (MR-754) reached Ready for Prod the same day.",
         "date": "2026-10-14",
-        "ask": "Set new dates for MT-1578 and MT-1579, and choose one chat platform for both sites or confirm that two are intended.",
+        "ask": "Confirm both sites use the same chat platform before release.",
         "rag": "amber"
       },
       {
         "topic": "Design and content review of 11 commerce journeys",
-        "status": "Due 12 Oct (MT-1586, Saurabh Jain): 6 of 13 review subtasks are done, including the 11-journey sanity test (MT-1598), order sync (MT-1591) and email notifications (MT-1595). Request for Quote (MT-1588, Anshul Bhargava) and Order Checkout (MT-1590, Anmol Srivastava) have not started.",
+        "status": "Moved to UAT on 14 Oct (MT-1586): 8 of 13 reviews are done. Request for Quote (MT-1588, Anshul Bhargava) and Order Checkout (MT-1590, Anmol Srivastava) have not started; Send a Quote (MT-1587) and ShipStation (MT-1592) are in progress.",
         "date": "2026-10-12",
-        "ask": "Set a new date for the 7 open reviews and confirm who signs off each journey.",
+        "ask": "Close or reassign MT-1588 and MT-1590 before sign-off.",
         "rag": "amber"
       },
       {
         "topic": "RMA item-level decisions",
-        "status": "In progress (MT-1540, 9 subtasks), owner Saurabh Jain.",
+        "status": "Moved to UAT on 14 Oct (MT-1540); the backend, frontend and QA subtasks reached Ready for Prod, with automated tests (MT-1569) still in progress.",
         "date": "2026-10-15",
         "ask": null,
         "rag": "green"
       },
       {
         "topic": "Release testing: smoke, security and privacy",
-        "status": "Privacy compliance (MT-1553) and its review subtasks reached Ready for Prod on 13 Oct; smoke testing (MT-1541) and security testing (MT-1547) are in progress. All are due 15 Oct.",
+        "status": "Security testing (MT-1547) and privacy compliance (MT-1553) are Ready for Prod; smoke testing (MT-1541) moved to Dev Test. All are due 15 Oct, and 26 Marketplace items now wait at Ready for Prod.",
         "date": "2026-10-15",
-        "ask": "Confirm smoke and security results before 15 Oct.",
+        "ask": "Set the production release date for the 26 Ready for Prod items.",
         "rag": "amber"
       },
       {
@@ -795,11 +795,11 @@
     ],
     "MR": [
       {
-        "topic": "Release of the 29 Figma fixes and the sitemap fix",
-        "status": "Ready for Prod since 1 Oct (MR-1179, MR-1199), not released.",
+        "topic": "Production release backlog",
+        "status": "116 Marketing items are Ready for Prod, including the 29 Figma fixes and the sitemap fix (MR-1179, MR-1199) waiting since 1 Oct, the live chat widget (MR-754) and the website changes from Raluca Conea's feedback (MR-1341).",
         "date": null,
         "ask": "Set the production release date.",
-        "rag": "amber"
+        "rag": "red"
       },
       {
         "topic": "Chatbot on the marketing site",
@@ -819,7 +819,7 @@
     "USP": [
       {
         "topic": "Go Live plan (new)",
-        "status": "Raised 9 Oct by Livian Stefan Stan: five epics (subscription and contract, payments and invoicing, dashboard, subscription upgrade, cross-cutting) with 95 stories and subtasks, mostly for Silviu Oltean and Cășvan Marcel. Epic due dates run from 2 Nov to 15 Dec. 22 stories are sequenced behind other open stories, and 8 tickets were created with due dates already past. Raluca Conea added five design follow-ups for Livian Stefan Stan on 9 and 10 Oct (USP-4362 to USP-4366, due 30 Oct), one of them Highest priority: the VAT and deposit line on the product configuration summary. Work started on 12 Oct: the payment option stories (USP-4283, USP-4290) are deployed in Dev and four PAY subtasks are in progress.",
+        "status": "Raised 9 Oct by Livian Stefan Stan: five epics (subscription and contract, payments and invoicing, dashboard, subscription upgrade, cross-cutting) with 95 stories and subtasks, mostly for Silviu Oltean and Cășvan Marcel. Epic due dates run from 2 Nov to 15 Dec. 22 stories are sequenced behind other open stories, and 8 tickets were created with due dates already past. Raluca Conea added five design follow-ups for Livian Stefan Stan on 9 and 10 Oct (USP-4362 to USP-4366, due 30 Oct), one of them Highest priority: the VAT and deposit line on the product configuration summary. Work started on 12 Oct: the payment option stories (USP-4283, USP-4290) are deployed in Dev and four PAY subtasks are in progress. On 14 Oct Cășvan Marcel started the subscription and contract epic (USP-4267): four tax stories and the summary-page restyle are in progress, three past their 6 to 13 Oct dates.",
         "date": "2026-12-15",
         "ask": "Confirm the go-live date this plan works towards, and fix the 8 tickets dated in the past.",
         "rag": "amber"
@@ -874,7 +874,7 @@
     "ATLAS": [
       {
         "topic": "CRM MVP plan",
-        "status": "Saurabh Jain closed the CRM MVP scope and specification work (ATLAS-2) and the POC understanding meeting (ATLAS-3) on 13 Oct. Two follow-ups on agentic lead conversion journeys and app gaps started (ATLAS-4, Gourav Agnani; ATLAS-5, Saurabh Jain). The parent item (ATLAS-1, Anshul Bhargava) is still To Do with no due date.",
+        "status": "Saurabh Jain closed the CRM MVP scope and specification (ATLAS-2) on 13 Oct and the agentic lead-journey document (ATLAS-5) on 14 Oct, and started building an AI Factory CRM with Gemini and Gmail lead integration (ATLAS-7). Gourav Agnani is validating 33 CRM email role plays (ATLAS-8). The parent item (ATLAS-1, Anshul Bhargava) is still To Do with no due date.",
         "date": null,
         "ask": "Ask Saurabh Jain to share the MVP scope document, and set a plan date on ATLAS-1.",
         "rag": "amber"
@@ -989,7 +989,7 @@
       "Ask Raluca Conea for re-committed dates on the Marketplace RMA flow explanations (VTN-1826, due 2 Sep), the Marketplace Figma file clean-up (VTN-1820, due 11 Sep) and the marketing website Figma file (VTN-1819, due 15 Sep, started 12 Oct), and record them in Jira.",
       "A redesign of the marketing home page (VTN-1891, Ivan Divjakovic, due 15 Oct) started on 13 Oct, the same day the home page build (MR-1169) closed. Confirm whether the build will need another pass.",
       "Review the Marketplace updates (VTN-1882, in review since its 6 Oct due date) and get a date for the USP page content update (VTN-1886, due 8 Oct, in progress).",
-      "The Marketplace invoice redesign (VTN-1890) closed on 13 Oct; USP subscription flow corrections (VTN-1892, Valeriia) are due 13 Oct and still in progress."
+      "The Marketplace invoice redesign (VTN-1890) closed on 13 Oct; the USP subscription flow corrections (VTN-1892, Valeriia) moved to review on 14 Oct."
     ]
   }
 }

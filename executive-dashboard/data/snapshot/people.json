@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-10-13",
+ "snapshotDate": "2026-10-14",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -433,8 +433,8 @@
      "project": "PRD",
      "summary": "Build plan: a delivery plan the customer follows while their AI Factory is built",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-11",
      "resolved": null,
      "due": null,
@@ -598,16 +598,20 @@
      "project": "PRD",
      "summary": "Part A: Show the real Uvation team from the roster endpoint",
      "type": "Story",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-09",
-     "resolved": null,
+     "resolved": "2026-10-14",
      "due": "2026-10-14",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.5,
+     "spentHours": 1.0,
      "logs": [
       [
        "2026-10-13",
+       0.5
+      ],
+      [
+       "2026-10-14",
        0.5
       ]
      ]
@@ -631,14 +635,19 @@
      "project": "PRD",
      "summary": "Switch the page to the roster endpoint and re-test Chat",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-09",
-     "resolved": null,
+     "resolved": "2026-10-14",
      "due": "2026-10-14",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-10-14",
+       0.5
+      ]
+     ]
     },
     {
      "key": "PRD-20",
@@ -795,14 +804,19 @@
      "project": "PRD",
      "summary": "Write the support guide, FAQ and walkthrough",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-09",
      "resolved": null,
      "due": "2026-10-15",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.33,
+     "logs": [
+      [
+       "2026-10-14",
+       0.33
+      ]
+     ]
     },
     {
      "key": "PRD-31",
@@ -940,42 +954,57 @@
      "project": "PRD",
      "summary": "Part C: One brand per factory",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-09",
      "resolved": null,
      "due": "2026-10-23",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-10-14",
+       0.5
+      ]
+     ]
     },
     {
      "key": "PRD-41",
      "project": "PRD",
      "summary": "Add the one-brand rule to the page",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-09",
-     "resolved": null,
+     "resolved": "2026-10-14",
      "due": "2026-10-22",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-10-14",
+       0.5
+      ]
+     ]
     },
     {
      "key": "PRD-42",
      "project": "PRD",
      "summary": "Tests and a mixed-brand scenario in the dev tool",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-09",
-     "resolved": null,
+     "resolved": "2026-10-14",
      "due": "2026-10-23",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-10-14",
+       0.5
+      ]
+     ]
     },
     {
      "key": "PRD-43",
@@ -7422,10 +7451,10 @@
      "project": "IN",
      "summary": "Implement agent registration, scaling, and lifecycle controls",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-01",
-     "resolved": null,
+     "resolved": "2026-10-14",
      "due": "2026-10-15",
      "assignee": "k.kishore"
     },
@@ -7758,8 +7787,8 @@
      "project": "PRD",
      "summary": "Build plan: a delivery plan the customer follows while their AI Factory is built",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-11",
      "resolved": null,
      "due": null,
@@ -8054,6 +8083,18 @@
      "assignee": null
     },
     {
+     "key": "PRD-149",
+     "project": "PRD",
+     "summary": "Component registry: a permanent unique id for every part of a subscription's AI Factory",
+     "type": "Story",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-10-14",
+     "resolved": null,
+     "due": null,
+     "assignee": null
+    },
+    {
      "key": "PRD-15",
      "project": "PRD",
      "summary": "Copy the Portal frontend into NEXT-V3 as an unchanged baseline",
@@ -8066,14 +8107,110 @@
      "assignee": "Anshul Bhargava"
     },
     {
+     "key": "PRD-150",
+     "project": "PRD",
+     "summary": "Telemetry binding: map each component's sensor data to the component the customer sees",
+     "type": "Story",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-14",
+     "resolved": null,
+     "due": null,
+     "assignee": null
+    },
+    {
+     "key": "PRD-151",
+     "project": "PRD",
+     "summary": "Registry tables and id rules in their own CRM app, off by default",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-14",
+     "resolved": "2026-10-14",
+     "due": null,
+     "assignee": null
+    },
+    {
+     "key": "PRD-152",
+     "project": "PRD",
+     "summary": "Assign the ids when the deposit is confirmed, and freeze them at activation",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-14",
+     "resolved": "2026-10-14",
+     "due": null,
+     "assignee": null
+    },
+    {
+     "key": "PRD-153",
+     "project": "PRD",
+     "summary": "CRM endpoints: list components and bind a vendor device at commissioning",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-14",
+     "resolved": "2026-10-14",
+     "due": null,
+     "assignee": null
+    },
+    {
+     "key": "PRD-154",
+     "project": "PRD",
+     "summary": "Quality checks: id assignment, freeze, duplicates and visibility",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-14",
+     "resolved": "2026-10-14",
+     "due": null,
+     "assignee": null
+    },
+    {
+     "key": "PRD-155",
+     "project": "PRD",
+     "summary": "Portal: read the component ids and map each drawn rack, cooling unit and power unit to its id",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-14",
+     "resolved": null,
+     "due": null,
+     "assignee": null
+    },
+    {
+     "key": "PRD-156",
+     "project": "PRD",
+     "summary": "Sync the Portal and CRM copies with the original repositories (develop and the IAM branch)",
+     "type": "Task",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-10-14",
+     "resolved": null,
+     "due": null,
+     "assignee": null
+    },
+    {
+     "key": "PRD-157",
+     "project": "PRD",
+     "summary": "Payment dialog shows the full cycle price when the deposit credit already lowers the first payment",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-14",
+     "resolved": null,
+     "due": null,
+     "assignee": null
+    },
+    {
      "key": "PRD-17",
      "project": "PRD",
      "summary": "Part A: Show the real Uvation team from the roster endpoint",
      "type": "Story",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-09",
-     "resolved": null,
+     "resolved": "2026-10-14",
      "due": "2026-10-14",
      "assignee": "Anshul Bhargava"
     },
@@ -8094,10 +8231,10 @@
      "project": "PRD",
      "summary": "Switch the page to the roster endpoint and re-test Chat",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-09",
-     "resolved": null,
+     "resolved": "2026-10-14",
      "due": "2026-10-14",
      "assignee": "Anshul Bhargava"
     },
@@ -8238,8 +8375,8 @@
      "project": "PRD",
      "summary": "Write the support guide, FAQ and walkthrough",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-09",
      "resolved": null,
      "due": "2026-10-15",
@@ -8358,8 +8495,8 @@
      "project": "PRD",
      "summary": "Part C: One brand per factory",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-09",
      "resolved": null,
      "due": "2026-10-23",
@@ -8370,10 +8507,10 @@
      "project": "PRD",
      "summary": "Add the one-brand rule to the page",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-09",
-     "resolved": null,
+     "resolved": "2026-10-14",
      "due": "2026-10-22",
      "assignee": "Anshul Bhargava"
     },
@@ -8382,10 +8519,10 @@
      "project": "PRD",
      "summary": "Tests and a mixed-brand scenario in the dev tool",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-09",
-     "resolved": null,
+     "resolved": "2026-10-14",
      "due": "2026-10-23",
      "assignee": "Anshul Bhargava"
     },
@@ -13230,7 +13367,7 @@
      "project": "UC",
      "summary": "Live agent handoff via Microsoft Teams — bidirectional relay & SLA fallback",
      "type": "Story",
-     "status": "In Dev",
+     "status": "UAT Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -13242,7 +13379,7 @@
      "project": "UC",
      "summary": "Extended admin analytics — unlisted-product demand & visitor journey view",
      "type": "Story",
-     "status": "IN PROGRESS",
+     "status": "UAT Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -13254,7 +13391,7 @@
      "project": "UC",
      "summary": "Admin console — LLM provider/model selection without deployment",
      "type": "Story",
-     "status": "In Dev",
+     "status": "UAT Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -13338,7 +13475,7 @@
      "project": "UC",
      "summary": "Implementation — Teams Bot Framework integration & bidirectional relay",
      "type": "Subtask",
-     "status": "In Dev",
+     "status": "UAT Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -13350,7 +13487,7 @@
      "project": "UC",
      "summary": "QA & validation — Teams handoff SLA, fallback & audit logging",
      "type": "Subtask",
-     "status": "In Dev",
+     "status": "UAT Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -13362,7 +13499,7 @@
      "project": "UC",
      "summary": "Implementation — unlisted-product tracking & visitor journey view",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "UAT Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -13370,11 +13507,23 @@
      "assignee": "Ankit Saxena"
     },
     {
+     "key": "UC-50",
+     "project": "UC",
+     "summary": "QA & validation — demand report accuracy & journey view usability",
+     "type": "Subtask",
+     "status": "UAT Testing",
+     "statusCat": "indeterminate",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2027-04-04",
+     "assignee": "Ankit Saxena"
+    },
+    {
      "key": "UC-51",
      "project": "UC",
      "summary": "Implementation — admin LLM provider/model selection console",
      "type": "Subtask",
-     "status": "In Dev",
+     "status": "UAT Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -13386,7 +13535,7 @@
      "project": "UC",
      "summary": "QA & validation — model switch reliability & Milestone 6 sign-off",
      "type": "Subtask",
-     "status": "In Dev",
+     "status": "UAT Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -13482,7 +13631,7 @@
      "project": "UC",
      "summary": "Design & technical spec — content-gap clustering algorithm",
      "type": "Subtask",
-     "status": "In Dev",
+     "status": "UAT Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -13494,7 +13643,7 @@
      "project": "UC",
      "summary": "Integration & security review — analytics export audit trail",
      "type": "Subtask",
-     "status": "In Dev",
+     "status": "UAT Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -13518,7 +13667,7 @@
      "project": "UC",
      "summary": "Design & technical spec — RFQ payload & sales routing rules",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "UAT Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -13526,11 +13675,23 @@
      "assignee": "Ankit Saxena"
     },
     {
+     "key": "UC-93",
+     "project": "UC",
+     "summary": "Integration & security review — RFQ CRM handoff integrity",
+     "type": "Subtask",
+     "status": "UAT Testing",
+     "statusCat": "indeterminate",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2027-02-12",
+     "assignee": "Ankit Saxena"
+    },
+    {
      "key": "UC-94",
      "project": "UC",
      "summary": "Design & technical spec — quote-generation pricing source of truth",
      "type": "Subtask",
-     "status": "In Dev",
+     "status": "UAT Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -13542,7 +13703,7 @@
      "project": "UC",
      "summary": "Integration & security review — quote email delivery verification",
      "type": "Subtask",
-     "status": "In Dev",
+     "status": "UAT Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,

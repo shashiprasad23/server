@@ -24,7 +24,7 @@
         "MT",
         "PC"
       ],
-      "headline": "Privacy compliance (MT-1553) and its five review subtasks reached Ready for Prod on 13 Oct, and the RMA backend moved to Dev Test (MT-1565, MT-1566). The journey review (MT-1586) now has 6 of 13 reviews done. A new High bug was raised: Send a Quote approval does not register the customer in Identity (MT-1611); open bugs are 11. 21 items are past due, including the live chat platform choice and widget (MT-1578, MT-1579), still in Dev."
+      "headline": "Ahead of the 15 Oct release date, security testing (MT-1547) and its five subtasks, most of the RMA item-level decision work (MT-1540 in UAT) and the three checkout bugs (MT-1604, MT-1605, MT-1607) reached Ready for Prod on 14 Oct, bringing 26 Marketplace items to Ready for Prod. The live chat widget and platform choice (MT-1577 to MT-1579) moved to UAT, the RFQ and Send a Quote end-to-end tests (MT-1582, MT-1583) closed, and the journey review (MT-1586) is in UAT with 8 of 13 reviews done. 22 items are past due."
     },
     {
       "id": "MR",
@@ -32,7 +32,7 @@
       "projects": [
         "MR"
       ],
-      "headline": "The new home page (MR-1169) and its CMS work closed on 13 Oct, along with the platform review and next-sprint plan (MR-1336). The site-wide live chat widget (MR-754) and its platform choice (MR-786) moved to Code Review, and about 40 page fixes from Kannan Elangovan's review moved to Code Review or UAT. Smoke and privacy testing (MR-1277, MR-1279) went back to To Do. 14 items are past due; the sitemap fix (MR-1199) is still Ready for Prod and related products content (MR-1265) is still blocked."
+      "headline": "The site-wide live chat widget (MR-754), the website changes from Raluca Conea's feedback (MR-1341) and six High page bugs reached Ready for Prod on 14 Oct. 116 Marketing items now wait at Ready for Prod, including the 29 Figma fixes and the sitemap fix (MR-1179, MR-1199) waiting since 1 Oct. Kannan Elangovan raised a High bug: email submission fails for every rewards category (MR-1359). 15 items are past due."
     },
     {
       "id": "USP",
@@ -40,7 +40,7 @@
       "projects": [
         "USP"
       ],
-      "headline": "Two Go Live payment subtasks were deployed in Dev on 13 Oct (USP-4281, USP-4282), joining the two payment stories deployed on 12 Oct. Two S1 bugs remain open: the Document API 502 (USP-4231, not started) and the subscription calculation 500 (USP-4204, in progress), both due 30 Oct. 103 items are past due, 65 of them untouched in 30 days."
+      "headline": "Cășvan Marcel started the Go Live subscription and contract epic (USP-4267) on 14 Oct: four tax stories and the summary-page restyle are in progress, three of them already past their 6 to 13 Oct due dates. Livian Stefan Stan started the VAT and deposit summary line (USP-4366). Two S1 bugs remain open (USP-4231, USP-4204, due 30 Oct); 102 items are past due, 65 of them untouched in 30 days."
     },
     {
       "id": "UC",
@@ -48,7 +48,7 @@
       "projects": [
         "UC"
       ],
-      "headline": "Five chatbot bugs moved to Code Review on 13 Oct, including booking confirmation (UC-233) and Book a Meeting triggering support (UC-234). Model selection (UC-26) moved to In Dev and admin analytics (UC-25) started; with sign-in (UC-225) and the Teams handoff (UC-22) they are due 15 Oct. 27 items are past due, 26 of them untouched since August."
+      "headline": "The Teams handoff (UC-22), admin analytics (UC-25) and model selection (UC-26) moved to UAT Testing on 14 Oct, a day before their 15 Oct due date, and end-to-end testing (UC-229) started. Marketplace sign-in (UC-225) is still in progress, and the chatbot bug fixes (UC-233, UC-234) are in Code Review. 27 items are past due, 26 of them untouched since August."
     },
     {
       "id": "PULSE",
@@ -56,7 +56,7 @@
       "projects": [
         "PULSE"
       ],
-      "headline": "Sarath Chandra raised and started production configuration fixes for the Pulse status page (PULSE-331) on 13 Oct; the rest of the board is unchanged. Anshul Bhargava's Interactive AI Factory tasks sit on the PRD board, outside this report's boards."
+      "headline": "Sarath Chandra started per-app and per-platform monitoring dashboards in Pulse (PULSE-332) on 14 Oct, alongside the status page fixes (PULSE-331). Anshul Bhargava's Interactive AI Factory tasks sit on the PRD board, outside this report's boards."
     },
     {
       "id": "ATLAS",
@@ -64,7 +64,7 @@
       "projects": [
         "ATLAS"
       ],
-      "headline": "Saurabh Jain closed the CRM MVP scope and specification work (ATLAS-2) and the POC meeting (ATLAS-3) on 13 Oct, and two new subtasks on agentic lead conversion journeys started (ATLAS-4, ATLAS-5). The parent CRM MVP item (ATLAS-1) is still To Do with no due date."
+      "headline": "Saurabh Jain closed the agentic communication and lead-journey document (ATLAS-5) on 14 Oct and started building an AI Factory CRM with Gemini and Gmail lead integration (ATLAS-7); Gourav Agnani is validating 33 CRM email role plays (ATLAS-8). The parent CRM MVP item (ATLAS-1) is still To Do with no due date."
     },
     {
       "id": "ID",
@@ -72,7 +72,7 @@
       "projects": [
         "ID"
       ],
-      "headline": "No change on 13 Oct. The account deletion flow (ID-748 to ID-750) is in Dev Testing; the Klaviyo production notification bug (ID-758) is To Do. The 6 past-due claims-removal tasks (ID-679 to ID-684) are in production but not closed."
+      "headline": "The SAML policy for Azure AD B2C SSO with Rafay (ID-745) and end-to-end testing of MFA, profile and SSO flows (ID-757, ID-759) closed on 14 Oct, and the account deletion hand-back (ID-735) reached UAT. A new S2 bug was raised: a deleted account's session stays active (ID-760). The 6 past-due claims-removal tasks (ID-679 to ID-684) are in production but not closed."
     },
     {
       "id": "REW",
@@ -80,7 +80,7 @@
       "projects": [
         "REW"
       ],
-      "headline": "No change on 13 Oct. The 18 regression-test items raised on 30 Sep are all To Do, unassigned and undated; one older bug (REW-156) is in UAT."
+      "headline": "No change on 14 Oct. The 18 regression-test items raised on 30 Sep are all To Do, unassigned and undated; one older bug (REW-156) is in UAT."
     },
     {
       "id": "SUP",
@@ -96,7 +96,7 @@
       "projects": [
         "IN"
       ],
-      "headline": "Work on the USP pipeline VM (IN-1152) started on 13 Oct and an Azure DevOps activity reporting pipeline (IN-1153) was done. 15 items still sit in BLOCKER status, most held by k.kishore, and 24 are past due; the S1 login error-page bug (IN-1111) is still To Do."
+      "headline": "The USP pipeline VM (IN-1152), agent registration and scaling (IN-1143) and the UAT Key Vault configuration (IN-1145) closed on 14 Oct. 15 items still sit in BLOCKER status, most held by k.kishore, and 23 are past due; the S1 login error-page bug (IN-1111) is still To Do."
     },
     {
       "id": "DM",
@@ -104,7 +104,7 @@
       "projects": [
         "DM"
       ],
-      "headline": "The Events page title and link fix (DM-1087) closed on 13 Oct and the case-study image fix (DM-1084) is in review; the soft-404 issue on Marketplace pages (DM-1081, High) went back to In Progress. 25 items are past due, 22 of them untouched in 30 days."
+      "headline": "Test email accounts were removed from Klaviyo (DM-1085) on 14 Oct and the HTTP-to-HTTPS portal link fix (DM-1090) started. Murali G raised a High SEO task: 18 pages are missing H1 tags (DM-1091, due 28 Oct). 25 items are past due, 22 of them untouched in 30 days."
     }
   ],
   "spotlight": [
