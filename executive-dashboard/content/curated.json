@@ -759,30 +759,37 @@
     "MT": [
       {
         "topic": "Live chat widget across Marketplace (new)",
-        "status": "The Marketplace widget (MT-1577) and its platform choice and build (MT-1578, MT-1579) moved to UAT Testing on 14 Oct. Marketing's site-wide widget (MR-754) reached Ready for Prod the same day.",
-        "date": "2026-10-14",
-        "ask": "Confirm both sites use the same chat platform before release.",
+        "status": "The Marketplace widget (MT-1577) and its platform choice and build (MT-1578, MT-1579) have been in UAT Testing since 14 Oct. Marketing's site-wide widget (MR-754) went to production with the 15 Oct release.",
+        "date": "2026-10-15",
+        "ask": "Confirm the Marketplace widget uses the same platform as the one now live on uvation.com, and set its release date.",
         "rag": "amber"
       },
       {
         "topic": "Design and content review of 11 commerce journeys",
-        "status": "Moved to UAT on 14 Oct (MT-1586): 8 of 13 reviews are done. Request for Quote (MT-1588, Anshul Bhargava) and Order Checkout (MT-1590, Anmol Srivastava) have not started; Send a Quote (MT-1587) and ShipStation (MT-1592) are in progress.",
-        "date": "2026-10-12",
-        "ask": "Close or reassign MT-1588 and MT-1590 before sign-off.",
-        "rag": "amber"
+        "status": "Closed on 15 Oct (MT-1586): all 13 reviews are done, including Request for Quote (MT-1588, Anshul Bhargava), Order Checkout (MT-1590, Anmol Srivastava), Send a Quote (MT-1587) and ShipStation (MT-1592).",
+        "date": "2026-10-15",
+        "ask": null,
+        "rag": "green"
       },
       {
         "topic": "RMA item-level decisions",
-        "status": "Moved to UAT on 14 Oct (MT-1540); the backend, frontend and QA subtasks reached Ready for Prod, with automated tests (MT-1569) still in progress.",
+        "status": "In UAT since 14 Oct (MT-1540). The automated RMA tests (MT-1569) closed on 15 Oct, and three more RMA fixes (MT-1606, MT-1609, MT-1652) reached Ready for Prod.",
         "date": "2026-10-15",
         "ask": null,
         "rag": "green"
       },
       {
         "topic": "Release testing: smoke, security and privacy",
-        "status": "Security testing (MT-1547) and privacy compliance (MT-1553) are Ready for Prod; smoke testing (MT-1541) moved to Dev Test. All are due 15 Oct, and 26 Marketplace items now wait at Ready for Prod.",
+        "status": "Security testing (MT-1547) and privacy compliance (MT-1553) are Ready for Prod; smoke testing (MT-1541) is still in Dev Test past its 15 Oct due date. 33 Marketplace items wait at Ready for Prod, while Marketing released its 116 on 15 Oct.",
         "date": "2026-10-15",
-        "ask": "Set the production release date for the 26 Ready for Prod items.",
+        "ask": "Set the Marketplace production release date for the 33 Ready for Prod items, once smoke testing (MT-1541) passes.",
+        "rag": "amber"
+      },
+      {
+        "topic": "October 2nd Sprint: upgrade, compliance and test automation (new)",
+        "status": "Planned on 15 Oct: Magento upgrade to 2.4.9 (MT-1615, Naman Bapna, due 30 Oct), GDPR and SOC-2 compliance (MT-1616, Saurabh Jain, due 31 Oct), chatbot integration with Marketplace (MT-1626, Naveen Jangid, due 30 Oct) and module-wise Playwright regression automation (MT-1632, Shashi Prasad K, due 12 Nov). 26 of the new subtasks have no assignee.",
+        "date": "2026-11-12",
+        "ask": "Assign the 26 unowned subtasks, starting with the compliance work under MT-1616.",
         "rag": "amber"
       },
       {
@@ -795,18 +802,18 @@
     ],
     "MR": [
       {
-        "topic": "Production release backlog",
-        "status": "116 Marketing items are Ready for Prod, including the 29 Figma fixes and the sitemap fix (MR-1179, MR-1199) waiting since 1 Oct, the live chat widget (MR-754) and the website changes from Raluca Conea's feedback (MR-1341).",
-        "date": null,
-        "ask": "Set the production release date.",
-        "rag": "red"
+        "topic": "Production release (15 Oct)",
+        "status": "Released on 15 Oct: all 116 Ready for Prod items moved to Done, including the 29 Figma fixes (MR-1179), the sitemap fix (MR-1199), the live chat widget (MR-754) and the changes from Raluca Conea's feedback (MR-1341). Nothing is waiting at Ready for Prod.",
+        "date": "2026-10-15",
+        "ask": null,
+        "rag": "green"
       },
       {
         "topic": "Chatbot on the marketing site",
-        "status": "QA started 6 Oct (MR-1309). The chatbot defects (MR-1311, MR-1312, MR-1327, MR-1337) moved to Code Review on 13 Oct.",
-        "date": null,
-        "ask": "Confirm the date the chatbot goes live on the site.",
-        "rag": "amber"
+        "status": "Chatbot QA (MR-1309) and the defects (MR-1311, MR-1312, MR-1327, MR-1337) closed with the 15 Oct release.",
+        "date": "2026-10-15",
+        "ask": "Confirm the chatbot is switched on for visitors; no ticket records it.",
+        "rag": "green"
       },
       {
         "topic": "New home page design and API",
@@ -819,9 +826,16 @@
     "USP": [
       {
         "topic": "Go Live plan (new)",
-        "status": "Raised 9 Oct by Livian Stefan Stan: five epics (subscription and contract, payments and invoicing, dashboard, subscription upgrade, cross-cutting) with 95 stories and subtasks, mostly for Silviu Oltean and Cășvan Marcel. Epic due dates run from 2 Nov to 15 Dec. 22 stories are sequenced behind other open stories, and 8 tickets were created with due dates already past. Raluca Conea added five design follow-ups for Livian Stefan Stan on 9 and 10 Oct (USP-4362 to USP-4366, due 30 Oct), one of them Highest priority: the VAT and deposit line on the product configuration summary. Work started on 12 Oct: the payment option stories (USP-4283, USP-4290) are deployed in Dev and four PAY subtasks are in progress. On 14 Oct Cășvan Marcel started the subscription and contract epic (USP-4267): four tax stories and the summary-page restyle are in progress, three past their 6 to 13 Oct dates.",
+        "status": "Raised 9 Oct by Livian Stefan Stan: five epics (subscription and contract, payments and invoicing, dashboard, subscription upgrade, cross-cutting) with 95 stories and subtasks, mostly for Silviu Oltean and Cășvan Marcel. Epic due dates run from 2 Nov to 15 Dec. 22 stories are sequenced behind other open stories, and 8 tickets were created with due dates already past. Raluca Conea added five design follow-ups for Livian Stefan Stan on 9 and 10 Oct (USP-4362 to USP-4366, due 30 Oct), one of them Highest priority: the VAT and deposit line on the product configuration summary. Work started on 12 Oct: the payment option stories (USP-4283, USP-4290) are deployed in Dev and four PAY subtasks are in progress. On 14 Oct Cășvan Marcel started the subscription and contract epic (USP-4267): four tax stories and the summary-page restyle are in progress, three past their 6 to 13 Oct dates. On 15 Oct Livian Stefan Stan closed two dashboard stories (USP-4341, USP-4342) and deployed the dashboard clean-up (USP-4337) to Dev.",
         "date": "2026-12-15",
         "ask": "Confirm the go-live date this plan works towards, and fix the 8 tickets dated in the past.",
+        "rag": "amber"
+      },
+      {
+        "topic": "IAM and role security (USP-4234)",
+        "status": "Deployed in Dev on 15 Oct with its nine subtasks (USP-4235 to USP-4243, due 2 Oct). The same day Livian Stefan Stan raised a Highest security bug (USP-4369): Switch Access seat claims in the B2C token are not bound to the signed-in person. It has no due date.",
+        "date": "2026-10-26",
+        "ask": "Set a due date on USP-4369 and fix it before the IAM changes go to UAT.",
         "rag": "amber"
       },
       {
@@ -842,9 +856,16 @@
     "UC": [
       {
         "topic": "Next chatbot demo",
-        "status": "No demo is scheduled or tracked in Jira. On 8 Oct the Teams live-agent handoff (UC-22) and its build and QA tasks (UC-43, UC-44) moved to In Dev, and model selection (UC-26) started. Marketplace sign-in for the chatbot (UC-225) is in progress; admin analytics (UC-25) has not started. All four are due 15 Oct.",
-        "date": "2026-10-15",
-        "ask": "Confirm a demo date with Ankit Saxena and Nareddy Shiva Prasad Reddy; 15 Oct is the earliest date the planned work could be shown.",
+        "status": "The work planned for 15 Oct closed that day: Teams handoff (UC-22), admin analytics (UC-25), model selection (UC-26) and Marketplace sign-in (UC-225). No demo is scheduled or tracked in Jira.",
+        "date": null,
+        "ask": "Book the demo with Ankit Saxena and Nareddy Shiva Prasad Reddy now that the 15 Oct scope is done.",
+        "rag": "amber"
+      },
+      {
+        "topic": "Backlog update (new)",
+        "status": "191 backlog stories and subtasks were updated together on 15 Oct: 153 assigned to Shivam Dhoundiyal, 25 to Ankit Saxena and 13 to Nareddy Shiva Prasad Reddy. Due dates run from 2 Aug 2026 to 27 Jun 2027, most of them Oct to Dec 2026; 10 are already past and 12 have none.",
+        "date": null,
+        "ask": "Confirm with Ankit Saxena that this is the new Conversational AI plan, and re-date the 10 past-due items.",
         "rag": "amber"
       }
     ],
@@ -888,6 +909,7 @@
       "evidence": [
         "QA on Marketplace, yet no bugs raised in the window; on the other boards Kannan Elangovan raised 14 and r.jaiswal 9.",
         "The end-to-end test automation framework (MT-1141) has not started.",
+        "Playwright regression automation was planned on 15 Oct as MT-1632, assigned to Shashi Prasad K (due 12 Nov); MT-1141 is still To Do.",
         "Past due: MT-1053 and MT-992 (due 31 Aug) still sit in UAT and have not been touched since 7 Sep. MT-1331 (due 15 Sep) closed on 7 Oct. Six Web-Identity claims-removal tasks (ID-679 to ID-684, due 15 Sep) are in production but not closed.",
         "The 31 closures and 86.5 h credited in Jira are mostly developer subtasks passed to QA at the end (27 of 31), so they do not measure Sapavat's own output."
       ],
@@ -900,7 +922,8 @@
       "evidence": [
         "27.5 h logged over 5 of 9 working days (38% of capacity).",
         "Nothing closed in the window.",
-        "Holds USP-3858 (subscription start and end dates) marked BLOCKER; its due date moved from 30 Sep to 30 Oct."
+        "Holds USP-3858 (subscription start and end dates) marked BLOCKER; its due date moved from 30 Sep to 30 Oct.",
+        "Holds 153 of the 191 Conversational AI backlog items updated on 15 Oct; closed the code-complexity subtask (USP-4233) the same day, after the window."
       ],
       "action": "Review the blocker and the workload with Shivam Dhoundiyal; check Tempo by worker for time logged elsewhere.",
       "pip": null
@@ -910,19 +933,20 @@
       "assessment": "Low hours in the window.",
       "evidence": [
         "20 h logged over 3 of 9 working days (28% of capacity).",
-        "5 items closed, including the RMA refund email templates (MT-1496, MT-1497) on 30 Sep."
+        "5 items closed, including the RMA refund email templates (MT-1496, MT-1497) on 30 Sep.",
+        "Closed three Marketplace items on 15 Oct: RMA refund and exchange testing (MT-1545) and two address and timezone bugs (MT-1608, MT-1610)."
       ],
       "action": "Confirm allocation and leave; check Tempo by worker.",
       "pip": null
     },
     "Parth": {
       "rag": "amber",
-      "assessment": "Almost no hours on own tickets.",
+      "assessment": "Few hours on own tickets, but the 15 Oct items moved.",
       "evidence": [
         "2.5 h logged on 1 day in the window.",
-        "Holds 10 open items, including the Marketplace privacy compliance story (MT-1553), due 15 Oct and not started."
+        "Holds 3 open items, none past due: the privacy compliance story (MT-1553) reached Ready for Prod on 13 Oct and the brand-information query update (MT-1564) on 15 Oct."
       ],
-      "action": "Confirm allocation; MT-1553 needs a start this week.",
+      "action": "Confirm allocation; check Tempo by worker for the hours.",
       "pip": null
     },
     "Ankit Sharma": {
@@ -965,19 +989,20 @@
     },
     "Ankit Saxena": {
       "rag": "amber",
-      "assessment": "43 open tickets past their due date, none touched since 13 Aug.",
+      "assessment": "40 open tickets past their due date.",
       "evidence": [
-        "24 Conversational AI design and specification tasks (from UC-100, due 2 Aug) and 19 Services Platform tickets, all in To Do.",
-        "UC-22 (Teams handoff) moved to In Dev and UC-26 (model selection) started on 8 Oct; UC-25 (admin analytics), due 15 Oct, has not started."
+        "21 Conversational AI tasks and 19 Services Platform tickets, all To Do; 35 of them untouched since 13 Aug or earlier.",
+        "Delivered the 15 Oct scope on time: UC-22 (Teams handoff), UC-25 (admin analytics) and UC-26 (model selection) closed on 15 Oct, with the chatbot bugs UC-230 to UC-233."
       ],
-      "action": "Confirm which of the 43 are still planned; re-date or close the rest, and agree the 15 Oct scope.",
+      "action": "Confirm which of the 40 are still planned; re-date or close the rest.",
       "pip": null
     },
     "k.kishore": {
       "rag": "amber",
-      "assessment": "Devops blockers with no movement.",
+      "assessment": "Devops blockers with no movement; the AKS work closed.",
       "evidence": [
-        "13 open tickets past due, 11 of them in BLOCKER status, the oldest due 27 Mar (APIM WebSocket routing, IN-776 to IN-778) and the Azure Virtual Desktop and licensing set-up (IN-990, IN-994 to IN-999).",
+        "12 open tickets past due, 11 of them in BLOCKER status, the oldest due 27 Mar (APIM WebSocket routing, IN-776 to IN-778) and the Azure Virtual Desktop and licensing set-up (IN-990, IN-994 to IN-999).",
+        "Closed 7 items on 15 Oct: the production AKS resize (IN-1126, IN-1133 to IN-1136) and the build-agent research (IN-1128, IN-1144).",
         "12 h logged in the window (17% of capacity)."
       ],
       "action": "Name what each blocker waits on (licences, access, a decision) and who clears it; escalate the AVD and licensing items.",
@@ -987,9 +1012,9 @@
   "designDependencies": {
     "asks": [
       "Ask Raluca Conea for re-committed dates on the Marketplace RMA flow explanations (VTN-1826, due 2 Sep), the Marketplace Figma file clean-up (VTN-1820, due 11 Sep) and the marketing website Figma file (VTN-1819, due 15 Sep, started 12 Oct), and record them in Jira.",
-      "A redesign of the marketing home page (VTN-1891, Ivan Divjakovic, due 15 Oct) started on 13 Oct, the same day the home page build (MR-1169) closed. Confirm whether the build will need another pass.",
-      "Review the Marketplace updates (VTN-1882, in review since its 6 Oct due date) and get a date for the USP page content update (VTN-1886, due 8 Oct, in progress).",
-      "The Marketplace invoice redesign (VTN-1890) closed on 13 Oct; the USP subscription flow corrections (VTN-1892, Valeriia) moved to review on 14 Oct."
+      "The marketing home page redesign (VTN-1891, Ivan Divjakovic) moved to waiting for review on its 15 Oct due date. The home page build (MR-1169) closed on 13 Oct and went out with the 15 Oct Marketing release. Confirm whether the build will need another pass.",
+      "The Marketplace updates (VTN-1882) closed on 15 Oct, and the Marketplace handoff optimisation (VTN-1876, a.kaushal) started on its 15 Oct due date. Get dates for it and for the USP page content update (VTN-1886, due 8 Oct, in progress).",
+      "a.kaushal recorded three finished design updates on 15 Oct (VTN-1893 to VTN-1895: Marketplace invoices, home page and PDP, PDP typography). The USP subscription flow corrections (VTN-1892, Valeriia) have been in review since 14 Oct."
     ]
   }
 }
