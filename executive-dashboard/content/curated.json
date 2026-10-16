@@ -759,10 +759,10 @@
     "MT": [
       {
         "topic": "Live chat widget across Marketplace (new)",
-        "status": "The Marketplace widget (MT-1577) and its platform choice and build (MT-1578, MT-1579) have been in UAT Testing since 14 Oct. Marketing's site-wide widget (MR-754) went to production with the 15 Oct release.",
-        "date": "2026-10-15",
-        "ask": "Confirm the Marketplace widget uses the same platform as the one now live on uvation.com, and set its release date.",
-        "rag": "amber"
+        "status": "Released on 16 Oct: the Marketplace widget (MT-1577), its platform choice, build and QA (MT-1578 to MT-1580) closed. Marketing's site-wide widget (MR-754) went live on 15 Oct.",
+        "date": "2026-10-16",
+        "ask": null,
+        "rag": "green"
       },
       {
         "topic": "Design and content review of 11 commerce journeys",
@@ -773,23 +773,23 @@
       },
       {
         "topic": "RMA item-level decisions",
-        "status": "In UAT since 14 Oct (MT-1540). The automated RMA tests (MT-1569) closed on 15 Oct, and three more RMA fixes (MT-1606, MT-1609, MT-1652) reached Ready for Prod.",
-        "date": "2026-10-15",
+        "status": "Closed on 16 Oct (MT-1540) with the Marketplace release, including the automated tests (MT-1569) and the RMA fixes (MT-1606, MT-1609, MT-1652).",
+        "date": "2026-10-16",
         "ask": null,
         "rag": "green"
       },
       {
-        "topic": "Release testing: smoke, security and privacy",
-        "status": "Security testing (MT-1547) and privacy compliance (MT-1553) are Ready for Prod; smoke testing (MT-1541) is still in Dev Test past its 15 Oct due date. 33 Marketplace items wait at Ready for Prod, while Marketing released its 116 on 15 Oct.",
-        "date": "2026-10-15",
-        "ask": "Set the Marketplace production release date for the 33 Ready for Prod items, once smoke testing (MT-1541) passes.",
-        "rag": "amber"
+        "topic": "Production release (16 Oct)",
+        "status": "Released on 16 Oct: smoke testing (MT-1541) closed, and all 33 Ready for Prod items moved to Done, including security testing (MT-1547) and privacy compliance (MT-1553). No Marketplace bug is open.",
+        "date": "2026-10-16",
+        "ask": null,
+        "rag": "green"
       },
       {
         "topic": "October 2nd Sprint: upgrade, compliance and test automation (new)",
-        "status": "Planned on 15 Oct: Magento upgrade to 2.4.9 (MT-1615, Naman Bapna, due 30 Oct), GDPR and SOC-2 compliance (MT-1616, Saurabh Jain, due 31 Oct), chatbot integration with Marketplace (MT-1626, Naveen Jangid, due 30 Oct) and module-wise Playwright regression automation (MT-1632, Shashi Prasad K, due 12 Nov). 26 of the new subtasks have no assignee.",
+        "status": "The Magento 2.4.9 upgrade (MT-1615, Naman Bapna, due 30 Oct) started on 16 Oct and now has 91 module subtasks: 51 unassigned and 75 undated. Chatbot integration (MT-1626) and search-flow automation (MT-1631) are in progress. Five of the six GDPR and SOC-2 subtasks (MT-1616, due 31 Oct) and all 19 Playwright subtasks (MT-1632, due 12 Nov) have no assignee.",
         "date": "2026-11-12",
-        "ask": "Assign the 26 unowned subtasks, starting with the compliance work under MT-1616.",
+        "ask": "Assign the unowned upgrade, compliance and Playwright subtasks, and date the upgrade subtasks against the 30 Oct target.",
         "rag": "amber"
       },
       {
@@ -826,9 +826,9 @@
     "USP": [
       {
         "topic": "Go Live plan (new)",
-        "status": "Raised 9 Oct by Livian Stefan Stan: five epics (subscription and contract, payments and invoicing, dashboard, subscription upgrade, cross-cutting) with 95 stories and subtasks, mostly for Silviu Oltean and Cășvan Marcel. Epic due dates run from 2 Nov to 15 Dec. 22 stories are sequenced behind other open stories, and 8 tickets were created with due dates already past. Raluca Conea added five design follow-ups for Livian Stefan Stan on 9 and 10 Oct (USP-4362 to USP-4366, due 30 Oct), one of them Highest priority: the VAT and deposit line on the product configuration summary. Work started on 12 Oct: the payment option stories (USP-4283, USP-4290) are deployed in Dev and four PAY subtasks are in progress. On 14 Oct Cășvan Marcel started the subscription and contract epic (USP-4267): four tax stories and the summary-page restyle are in progress, three past their 6 to 13 Oct dates. On 15 Oct Livian Stefan Stan closed two dashboard stories (USP-4341, USP-4342) and deployed the dashboard clean-up (USP-4337) to Dev.",
+        "status": "Raised 9 Oct by Livian Stefan Stan: five epics (subscription and contract, payments and invoicing, dashboard, subscription upgrade, cross-cutting) with 95 stories and subtasks, mostly for Silviu Oltean and Cășvan Marcel. Epic due dates run from 2 Nov to 15 Dec. 22 stories are sequenced behind other open stories, and 8 tickets were created with due dates already past. Raluca Conea added five design follow-ups for Livian Stefan Stan on 9 and 10 Oct (USP-4362 to USP-4366, due 30 Oct), one of them Highest priority: the VAT and deposit line on the product configuration summary. Work started on 12 Oct: the payment option stories (USP-4283, USP-4290) are deployed in Dev and four PAY subtasks are in progress. On 14 Oct Cășvan Marcel started the subscription and contract epic (USP-4267): four tax stories and the summary-page restyle are in progress, three past their 6 to 13 Oct dates. On 15 Oct Livian Stefan Stan closed two dashboard stories (USP-4341, USP-4342) and deployed the dashboard clean-up (USP-4337) to Dev. By 16 Oct, 17 items due 15 Oct had passed their date, including invoice issuing from the CRM (USP-4284, USP-4287 to USP-4289) and the team roster and chat stories (USP-4296, USP-4297, USP-4312 to USP-4315), none of them started.",
         "date": "2026-12-15",
-        "ask": "Confirm the go-live date this plan works towards, and fix the 8 tickets dated in the past.",
+        "ask": "Confirm the go-live date this plan works towards, re-date the 17 items that passed 15 Oct, and fix the 8 tickets dated in the past.",
         "rag": "amber"
       },
       {
@@ -856,7 +856,7 @@
     "UC": [
       {
         "topic": "Next chatbot demo",
-        "status": "The work planned for 15 Oct closed that day: Teams handoff (UC-22), admin analytics (UC-25), model selection (UC-26) and Marketplace sign-in (UC-225). No demo is scheduled or tracked in Jira.",
+        "status": "The 15 Oct scope closed on time (UC-22, UC-25, UC-26, UC-225). On 16 Oct the live agent console and handoff queue (UC-21, due 20 Oct) and a follow-on Marketplace sign-in story (UC-235, due 19 Oct) started. No demo is scheduled or tracked in Jira.",
         "date": null,
         "ask": "Book the demo with Ankit Saxena and Nareddy Shiva Prasad Reddy now that the 15 Oct scope is done.",
         "rag": "amber"
@@ -894,10 +894,10 @@
     ],
     "ATLAS": [
       {
-        "topic": "CRM MVP plan",
-        "status": "Saurabh Jain closed the CRM MVP scope and specification (ATLAS-2) on 13 Oct and the agentic lead-journey document (ATLAS-5) on 14 Oct, and started building an AI Factory CRM with Gemini and Gmail lead integration (ATLAS-7). Gourav Agnani is validating 33 CRM email role plays (ATLAS-8). The parent item (ATLAS-1, Anshul Bhargava) is still To Do with no due date.",
-        "date": null,
-        "ask": "Ask Saurabh Jain to share the MVP scope document, and set a plan date on ATLAS-1.",
+        "topic": "CRM build plan (new)",
+        "status": "The R&D item (ATLAS-1) and the prototype work (ATLAS-4, ATLAS-7, ATLAS-8) closed on 16 Oct. The same day 285 tickets were raised, 273 by Shashi Prasad K: 47 stories in nine milestones, from M0 foundations (repository, CI and AKS environments, Entra ID sign-in, multi-tenancy) through agents and guardrails (M4), calling and messaging (M6) and lead routing (M7) to M8 go-live readiness and a pilot with the Uvation sales team. 267 tickets are unassigned and 283 have no due date. Saurabh Jain holds the end-to-end Gmail lead flow and analytics work for a 22 October demo (ATLAS-282, ATLAS-283, due 31 Oct).",
+        "date": "2026-10-22",
+        "ask": "Assign owners and set dates per milestone, starting with M0, and confirm who attends the 22 October demo.",
         "rag": "amber"
       }
     ]
@@ -909,7 +909,7 @@
       "evidence": [
         "QA on Marketplace, yet no bugs raised in the window; on the other boards Kannan Elangovan raised 14 and r.jaiswal 9.",
         "The end-to-end test automation framework (MT-1141) has not started.",
-        "Playwright regression automation was planned on 15 Oct as MT-1632, assigned to Shashi Prasad K (due 12 Nov); MT-1141 is still To Do.",
+        "Test automation is moving without Sapavat: Naveen Jangid set up the Playwright repository (MT-1612, closed 16 Oct), and Playwright regression automation (MT-1632, due 12 Nov) is assigned to Shashi Prasad K. MT-1141 is still To Do.",
         "Past due: MT-1053 and MT-992 (due 31 Aug) still sit in UAT and have not been touched since 7 Sep. MT-1331 (due 15 Sep) closed on 7 Oct. Six Web-Identity claims-removal tasks (ID-679 to ID-684, due 15 Sep) are in production but not closed.",
         "The 31 closures and 86.5 h credited in Jira are mostly developer subtasks passed to QA at the end (27 of 31), so they do not measure Sapavat's own output."
       ],
@@ -934,17 +934,19 @@
       "evidence": [
         "20 h logged over 3 of 9 working days (28% of capacity).",
         "5 items closed, including the RMA refund email templates (MT-1496, MT-1497) on 30 Sep.",
-        "Closed three Marketplace items on 15 Oct: RMA refund and exchange testing (MT-1545) and two address and timezone bugs (MT-1608, MT-1610)."
+        "Closed three Marketplace items on 15 Oct: RMA refund and exchange testing (MT-1545) and two address and timezone bugs (MT-1608, MT-1610).",
+        "Closed the CRM role-play validation (ATLAS-8) and the lead-conversion journeys (ATLAS-4) on 16 Oct."
       ],
       "action": "Confirm allocation and leave; check Tempo by worker.",
       "pip": null
     },
     "Parth": {
       "rag": "amber",
-      "assessment": "Few hours on own tickets, but the 15 Oct items moved.",
+      "assessment": "Few hours on own tickets; the release items closed.",
       "evidence": [
         "2.5 h logged on 1 day in the window.",
-        "Holds 3 open items, none past due: the privacy compliance story (MT-1553) reached Ready for Prod on 13 Oct and the brand-information query update (MT-1564) on 15 Oct."
+        "The privacy compliance story (MT-1553) and the brand-information query update (MT-1564) closed with the 16 Oct Marketplace release.",
+        "Holds 12 open items, all Magento 2.4.9 module subtasks under MT-1615 added on 16 Oct; none past due."
       ],
       "action": "Confirm allocation; check Tempo by worker for the hours.",
       "pip": null
@@ -992,7 +994,7 @@
       "assessment": "40 open tickets past their due date.",
       "evidence": [
         "21 Conversational AI tasks and 19 Services Platform tickets, all To Do; 35 of them untouched since 13 Aug or earlier.",
-        "Delivered the 15 Oct scope on time: UC-22 (Teams handoff), UC-25 (admin analytics) and UC-26 (model selection) closed on 15 Oct, with the chatbot bugs UC-230 to UC-233."
+        "Delivered the 15 Oct scope on time (UC-22, UC-25, UC-26) and started the live agent console (UC-21, due 20 Oct) on 16 Oct."
       ],
       "action": "Confirm which of the 40 are still planned; re-date or close the rest.",
       "pip": null
@@ -1002,7 +1004,7 @@
       "assessment": "Devops blockers with no movement; the AKS work closed.",
       "evidence": [
         "12 open tickets past due, 11 of them in BLOCKER status, the oldest due 27 Mar (APIM WebSocket routing, IN-776 to IN-778) and the Azure Virtual Desktop and licensing set-up (IN-990, IN-994 to IN-999).",
-        "Closed 7 items on 15 Oct: the production AKS resize (IN-1126, IN-1133 to IN-1136) and the build-agent research (IN-1128, IN-1144).",
+        "Closed the production AKS resize and build-agent research (7 items) on 15 Oct; given Snyk image scanning (IN-1161 to IN-1164, due 30 Oct) on 16 Oct.",
         "12 h logged in the window (17% of capacity)."
       ],
       "action": "Name what each blocker waits on (licences, access, a decision) and who clears it; escalate the AVD and licensing items.",
@@ -1012,9 +1014,9 @@
   "designDependencies": {
     "asks": [
       "Ask Raluca Conea for re-committed dates on the Marketplace RMA flow explanations (VTN-1826, due 2 Sep), the Marketplace Figma file clean-up (VTN-1820, due 11 Sep) and the marketing website Figma file (VTN-1819, due 15 Sep, started 12 Oct), and record them in Jira.",
-      "The marketing home page redesign (VTN-1891, Ivan Divjakovic) moved to waiting for review on its 15 Oct due date. The home page build (MR-1169) closed on 13 Oct and went out with the 15 Oct Marketing release. Confirm whether the build will need another pass.",
-      "The Marketplace updates (VTN-1882) closed on 15 Oct, and the Marketplace handoff optimisation (VTN-1876, a.kaushal) started on its 15 Oct due date. Get dates for it and for the USP page content update (VTN-1886, due 8 Oct, in progress).",
-      "a.kaushal recorded three finished design updates on 15 Oct (VTN-1893 to VTN-1895: Marketplace invoices, home page and PDP, PDP typography). The USP subscription flow corrections (VTN-1892, Valeriia) have been in review since 14 Oct."
+      "The marketing home page redesign (VTN-1891, Ivan Divjakovic) has been waiting for review since its 15 Oct due date. The home page build (MR-1169) already went out with the 15 Oct Marketing release. Confirm whether the build will need another pass.",
+      "The USP page content update (VTN-1886) closed on 16 Oct. Get a date for the Marketplace handoff optimisation (VTN-1876, a.kaushal), in progress past its 15 Oct due date.",
+      "a.kaushal added three more Marketplace design tasks on 16 Oct: cart and checkout UI (VTN-1896, due 16 Oct, in progress), invoice information (VTN-1897, in review) and PDP content for Marketing (VTN-1898, due 21 Oct). The USP subscription flow corrections (VTN-1892, Valeriia) have been in review since 14 Oct."
     ]
   }
 }
