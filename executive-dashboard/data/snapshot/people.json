@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-10-16",
+ "snapshotDate": "2026-10-17",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -7061,7 +7061,7 @@
      "created": "2026-10-16",
      "resolved": null,
      "due": "2026-10-31",
-     "assignee": "r.jaiswal"
+     "assignee": null
     },
     {
      "key": "AFVU-132",
@@ -7457,7 +7457,7 @@
      "created": "2026-10-16",
      "resolved": null,
      "due": "2026-10-31",
-     "assignee": null
+     "assignee": "r.jaiswal"
     },
     {
      "key": "AFVU-165",
@@ -14072,6 +14072,30 @@
      "assignee": "Ankit Saxena"
     },
     {
+     "key": "UC-37",
+     "project": "UC",
+     "summary": "Implementation — entitlement layer, internal API tools & deterministic cards",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-10-29",
+     "assignee": "Ankit Saxena"
+    },
+    {
+     "key": "UC-38",
+     "project": "UC",
+     "summary": "QA & validation — entitlement testing & penetration test",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-10-29",
+     "assignee": "Ankit Saxena"
+    },
+    {
      "key": "UC-41",
      "project": "UC",
      "summary": "Implementation — agent console, handoff queue & SLA timers",
@@ -14080,7 +14104,19 @@
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
-     "due": "2027-01-19",
+     "due": "2026-10-20",
+     "assignee": "Ankit Saxena"
+    },
+    {
+     "key": "UC-42",
+     "project": "UC",
+     "summary": "QA & validation — Milestone 3 handoff queue sign-off",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-10-20",
      "assignee": "Ankit Saxena"
     },
     {
@@ -14153,6 +14189,30 @@
      "created": "2026-08-13",
      "resolved": "2026-10-15",
      "due": "2027-04-18",
+     "assignee": "Ankit Saxena"
+    },
+    {
+     "key": "UC-53",
+     "project": "UC",
+     "summary": "Implementation — internal KB source ingestion into isolated index (conditional)",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-10-23",
+     "assignee": "Ankit Saxena"
+    },
+    {
+     "key": "UC-54",
+     "project": "UC",
+     "summary": "QA & validation — internal KB isolation & access-control verification",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-10-23",
      "assignee": "Ankit Saxena"
     },
     {
@@ -14336,6 +14396,30 @@
      "assignee": "Anshul Bhargava"
     },
     {
+     "key": "UC-80",
+     "project": "UC",
+     "summary": "Design & technical spec — entitlement model & internal API tool contracts",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-10-29",
+     "assignee": "Ankit Saxena"
+    },
+    {
+     "key": "UC-81",
+     "project": "UC",
+     "summary": "Integration & security review — cross-user access exploit testing",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-10-29",
+     "assignee": "Ankit Saxena"
+    },
+    {
      "key": "UC-84",
      "project": "UC",
      "summary": "Design & technical spec — agent console UI & SLA-timer logic",
@@ -14344,7 +14428,19 @@
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
-     "due": "2027-01-13",
+     "due": "2026-10-20",
+     "assignee": "Ankit Saxena"
+    },
+    {
+     "key": "UC-85",
+     "project": "UC",
+     "summary": "Integration & security review — agent console access control",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-10-20",
      "assignee": "Ankit Saxena"
     },
     {
@@ -14429,6 +14525,30 @@
      "created": "2026-08-13",
      "resolved": "2026-10-15",
      "due": "2027-02-12",
+     "assignee": "Ankit Saxena"
+    },
+    {
+     "key": "UC-96",
+     "project": "UC",
+     "summary": "Design & technical spec — demand-tracking ranking logic",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-10-23",
+     "assignee": "Ankit Saxena"
+    },
+    {
+     "key": "UC-97",
+     "project": "UC",
+     "summary": "Integration & security review — demand data anonymisation check",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-10-23",
      "assignee": "Ankit Saxena"
     },
     {
