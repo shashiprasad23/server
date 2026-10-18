@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-10-17",
+ "snapshotDate": "2026-10-18",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -14961,18 +14961,6 @@
      "assignee": "Naveen Jangid"
     },
     {
-     "key": "MT-1453",
-     "project": "MT",
-     "summary": "Block cart/checkout on disabled items",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-15",
-     "due": "2026-09-10",
-     "assignee": "Sapavat Yadagiri"
-    },
-    {
      "key": "MT-1460",
      "project": "MT",
      "summary": "Fix internal links pointing at disabled categories",
@@ -14985,18 +14973,6 @@
      "assignee": "Sapavat Yadagiri"
     },
     {
-     "key": "MT-1470",
-     "project": "MT",
-     "summary": "Write the test plan and acceptance criteria",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-18",
-     "due": "2026-09-10",
-     "assignee": "Sapavat Yadagiri"
-    },
-    {
      "key": "MT-1471",
      "project": "MT",
      "summary": "Functional test on staging with production-like data",
@@ -15005,18 +14981,6 @@
      "statusCat": "done",
      "created": "2026-09-10",
      "resolved": "2026-09-22",
-     "due": "2026-09-10",
-     "assignee": "Sapavat Yadagiri"
-    },
-    {
-     "key": "MT-1472",
-     "project": "MT",
-     "summary": "Regression test AI ML Systems end to end",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-09-16",
      "due": "2026-09-10",
      "assignee": "Sapavat Yadagiri"
     },

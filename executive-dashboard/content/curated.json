@@ -1014,7 +1014,7 @@
   "designDependencies": {
     "asks": [
       "Ask Raluca Conea for re-committed dates on the Marketplace RMA flow explanations (VTN-1826, due 2 Sep), the Marketplace Figma file clean-up (VTN-1820, due 11 Sep) and the marketing website Figma file (VTN-1819, due 15 Sep), and record them in Jira. The old USP Figma file clean-up (VTN-1818) closed on 17 Oct.",
-      "The marketing home page redesign (VTN-1891, Ivan Divjakovic) closed on 17 Oct, after the home page build (MR-1169) went out with the 15 Oct Marketing release. Confirm whether the build needs another pass. Raluca Conea tested the marketing website and sent feedback to the developers (VTN-1899), with text-size adjustments to follow (VTN-1900, due 19 Oct).",
+      "The marketing home page redesign (VTN-1891, Ivan Divjakovic) closed on 17 Oct, after the home page build (MR-1169) went out with the 15 Oct Marketing release. Confirm whether the build needs another pass. Raluca Conea tested the marketing website and sent feedback to the developers (VTN-1899), with text-size adjustments to follow (VTN-1900, due 19 Oct). A new home page proposal (VTN-1907, due 20 Oct) was added on 17 Oct with no owner.",
       "Get a date for the Marketplace handoff optimisation (VTN-1876, a.kaushal), still in progress past its 15 Oct due date, and for the cart and checkout UI update (VTN-1896, due 16 Oct, in progress).",
       "The USP subscription flow corrections (VTN-1892) and USP layout (VTN-1877) closed on 17 Oct, and the summary page redesign was recorded as done in light and dark versions (VTN-1902, VTN-1903). Ivan Divjakovic started the Kemi page design (VTN-1905, due 20 Oct)."
     ]

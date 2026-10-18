@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-10-17",
+ "snapshotDate": "2026-10-18",
  "issues": [
   {
    "key": "DM-1003",
@@ -253,21 +253,6 @@
    "updated": "2026-08-28",
    "resolved": null,
    "due": "2026-08-28",
-   "parent": null,
-   "parentSummary": ""
-  },
-  {
-   "key": "DM-1071",
-   "project": "DM",
-   "summary": "Marketing site - People Page Issues",
-   "type": "Task",
-   "status": "Done",
-   "statusCat": "done",
-   "assignee": "Shashi Prasad K",
-   "created": "2026-08-31",
-   "updated": "2026-09-18",
-   "resolved": "2026-09-18",
-   "due": "2026-09-01",
    "parent": null,
    "parentSummary": ""
   },
@@ -1517,21 +1502,6 @@
    "parentSummary": ""
   },
   {
-   "key": "VTN-1860",
-   "project": "VTN",
-   "summary": "communication hub update",
-   "type": "Task",
-   "status": "Done",
-   "statusCat": "done",
-   "assignee": "Ivan Divjakovic",
-   "created": "2026-09-15",
-   "updated": "2026-09-18",
-   "resolved": "2026-09-18",
-   "due": "2026-09-16",
-   "parent": null,
-   "parentSummary": ""
-  },
-  {
    "key": "VTN-1862",
    "project": "VTN",
    "summary": "new version for marketplace website",
@@ -2203,6 +2173,21 @@
    "updated": "2026-10-17",
    "resolved": null,
    "due": "2026-10-19",
+   "parent": null,
+   "parentSummary": ""
+  },
+  {
+   "key": "VTN-1907",
+   "project": "VTN",
+   "summary": "new homepage proposal",
+   "type": "Task",
+   "status": "To Do",
+   "statusCat": "new",
+   "assignee": null,
+   "created": "2026-10-17",
+   "updated": "2026-10-17",
+   "resolved": null,
+   "due": "2026-10-20",
    "parent": null,
    "parentSummary": ""
   },
