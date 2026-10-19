@@ -24,7 +24,7 @@
         "MT",
         "PC"
       ],
-      "headline": "No change over the weekend. The 16 Oct release stands: all 33 Ready for Prod items are Done and no Marketplace bug is open. The Magento 2.4.9 upgrade (MT-1615, due 30 Oct) has 91 module subtasks, 51 of them unassigned, and chatbot integration (MT-1626) is in progress. 15 items are past due."
+      "headline": "On 19 Oct the Magento 2.4.9 upgrade (MT-1615) moved to a 31 Oct due date and 28 of its 91 module subtasks were dated 31 Oct; 51 are still unassigned. The core upgrade (MT-1617) and two Membership module removals (MT-1656, MT-1657) moved to Code Review, and search-flow automation (MT-1631) closed. No Marketplace bug is open; 15 items are past due."
     },
     {
       "id": "MR",
@@ -32,7 +32,7 @@
       "projects": [
         "MR"
       ],
-      "headline": "No change over the weekend. Five items due 16 Oct passed their date, so past-due rose from 8 to 13: three Sonar fixes for Vishnu kumar yadav (MR-1363 and MR-1364 in Dev, MR-1365 not started) and Kannan Elangovan's sitemap smoke-test automation and Playwright guide (MR-1369, MR-1370), which sit in In Prod1 but are not closed."
+      "headline": "Vishnu kumar yadav moved two Sonar fixes to Dev and re-dated them to 20 Oct (MR-1365, MR-1366); MR-1363 and MR-1364 were re-dated to 17 Oct and stay past due. Kannan Elangovan moved three mobile and careers-page fixes to Dev Testing (MR-1371 to MR-1373). Kunal Jangid started a review of new Figma designs (MR-1377, due 20 Oct) with follow-up fixes for the contact and employee-benefits pages (MR-1374, MR-1375, MR-1378, due 30 Oct). 12 items are past due."
     },
     {
       "id": "USP",
@@ -40,7 +40,7 @@
       "projects": [
         "USP"
       ],
-      "headline": "No change over the weekend. Late on 16 Oct Cășvan Marcel moved the subscription tax work to Deployed in Dev (USP-4268 to USP-4278, USP-4366, USP-3724). The Support Hub mobile and tablet story (USP-4329, Silviu Oltean) passed its 17 Oct due date without starting, so 118 items are now past due. The S1 bugs (USP-4231, USP-4204) and the Highest security bug with no due date (USP-4369) remain open."
+      "headline": "Livian Stefan Stan deployed the subscription dashboard stories (USP-4358 to USP-4360) to Dev, and Akhil Katiyar deployed the Galaxy Z Fold header check (USP-4255) to Prod and the FAQ highlight fix (USP-4266) to Dev. The dashboard clean-up (USP-4337) and recurring billing cycles (USP-3784) passed their 18 Oct due date, so 120 items are past due. The Support Hub mobile and tablet story (USP-4329) has still not started, and the S1 bugs (USP-4231, USP-4204) and the Highest security bug with no due date (USP-4369) remain open."
     },
     {
       "id": "UC",
@@ -48,7 +48,7 @@
       "projects": [
         "UC"
       ],
-      "headline": "Late on 16 Oct, ten August subtasks held by Ankit Saxena were updated with due dates from 20 to 29 Oct, including the handoff-queue sign-off (UC-42, due 20 Oct), internal knowledge-base isolation (UC-53, UC-54, due 23 Oct) and the entitlement layer and penetration test (UC-37, UC-38, due 29 Oct). The live agent console (UC-21, due 20 Oct) is in progress. No change over the weekend; 26 items are past due."
+      "headline": "On 19 Oct ten multi-turn memory and out-of-scope handling items held by Nareddy Shiva Prasad Reddy were re-dated to 30 Oct, taking five August items off the past-due list, and work started on UC-66 and UC-128. A High-priority bug was raised: agent handoff options do not always appear during a conversation (UC-391). The public chatbot launch items (UC-8, UC-63) passed their 18 Oct due date, untouched since 13 Aug. The live agent console (UC-21, due 20 Oct) is in progress; 23 items are past due."
     },
     {
       "id": "PULSE",
@@ -56,7 +56,7 @@
       "projects": [
         "PULSE"
       ],
-      "headline": "Sarath Chandra closed the per-app and per-platform monitoring dashboards (PULSE-332) on Saturday 17 Oct and added a production pipeline set-up item (PULSE-333, unassigned, in review). Three of Naveen Jangid's stories (PULSE-9 to PULSE-11) are back in To Do. Anshul Bhargava's Interactive AI Factory tasks sit on the PRD board, outside this report's boards."
+      "headline": "Naveen Jangid restarted CI build reproducibility (PULSE-9, due 23 Oct) and its define and implement subtasks (PULSE-278, PULSE-279); all four subtasks are now dated 20 to 27 Oct (PULSE-278 to PULSE-281). Sarath Chandra's production pipeline set-up (PULSE-333) moved back to In Progress. Anshul Bhargava's Interactive AI Factory tasks sit on the PRD board, outside this report's boards."
     },
     {
       "id": "ATLAS",
@@ -64,7 +64,7 @@
       "projects": [
         "ATLAS"
       ],
-      "headline": "No change over the weekend. The CRM build plan raised on 16 Oct (285 tickets across nine milestones) still has 267 tickets unassigned and 283 undated. Saurabh Jain holds the end-to-end Gmail lead flow for the 22 October demo (ATLAS-282)."
+      "headline": "Saurabh Jain started the end-to-end Gmail lead flow for the 22 October demo (ATLAS-282), and two hand-over subtasks were added for Nagamuni Valluri and Saurabh Jain (ATLAS-294, ATLAS-295). The CRM build plan raised on 16 Oct still has 267 tickets unassigned and nearly all of them undated."
     },
     {
       "id": "ID",
@@ -72,7 +72,7 @@
       "projects": [
         "ID"
       ],
-      "headline": "No change over the weekend. Account deactivation and GDPR deletion (ID-747) closed on 16 Oct; the account-deletion front end (ID-743, ID-744, ID-756), the session clean-up (ID-714) and an MFA fix (ID-713) are in UAT past their 15 Oct due date. 11 items are past due."
+      "headline": "Saravana Kumar and r.jaiswal closed the account-deletion front end (ID-735, ID-743, ID-744, ID-756), the session clean-up (ID-714) and the MFA fix (ID-713), and the certificate for login.uvation.com was renewed (ID-768). Yash Janeshwar started the JWT and session bypass assessment (ID-721 to ID-723) and moved the Klaviyo notification bug (ID-758) to Dev. Past-due items fell from 11 to 6."
     },
     {
       "id": "REW",
@@ -80,7 +80,7 @@
       "projects": [
         "REW"
       ],
-      "headline": "No change over the weekend. The 18 regression-test items raised on 30 Sep are all To Do, unassigned and undated; one older bug (REW-156) is in UAT."
+      "headline": "No change. The 18 regression-test items raised on 30 Sep are all To Do, unassigned and undated; one older bug (REW-156) is in UAT."
     },
     {
       "id": "SUP",
@@ -96,7 +96,7 @@
       "projects": [
         "IN"
       ],
-      "headline": "No change over the weekend. The Chat AI agent PR validation and SonarCloud gates (IN-1156, b.kumar) passed its 16 Oct due date. 15 items still sit in BLOCKER status, most held by k.kishore, and 23 are past due; the S1 login error-page bug (IN-1111) is still To Do."
+      "headline": "The Chat AI agent PR validation gates (IN-1156), the Pulse admin fixes (IN-1119) and the TLS certificate renewal across environments (IN-1175) closed. A production chatbot task for Azure Communication Services and Entra permissions was raised for Sarath Chandra (IN-1178, due 21 Oct); the same task is on the Web-Identity board with k.kishore (ID-766, due 22 Oct). 15 items still sit in BLOCKER status, most held by k.kishore, and 21 are past due; the S1 login error-page bug (IN-1111) is still To Do."
     },
     {
       "id": "DM",
@@ -104,7 +104,7 @@
       "projects": [
         "DM"
       ],
-      "headline": "No change over the weekend. The H1-tag fix (DM-1091), the portal HTTPS fix (DM-1090) and the 404 work (DM-1082) are in review. 28 items are past due."
+      "headline": "The Marketplace soft-404 fix (DM-1081) closed. The 404 work (DM-1082) was re-dated from 7 to 28 Oct and is in review with the H1-tag fix (DM-1091); the portal HTTPS fix (DM-1090) is in review past its 15 Oct date. An events-page item was dated 21 Oct (DM-1095). 27 items are past due."
     }
   ],
   "spotlight": [

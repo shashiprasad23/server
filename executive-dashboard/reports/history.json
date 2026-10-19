@@ -1108,5 +1108,72 @@
     "openBugs": 3
    }
   }
+ },
+ {
+  "date": "2026-10-19",
+  "window": "5 Oct\u201318 Oct",
+  "issuesMoved30": 1987,
+  "closed30": 671,
+  "closedWindow": 412,
+  "pastDue": 225,
+  "hours": 1332.8,
+  "registerRed": 1,
+  "programmes": {
+   "MT": {
+    "closed30": 221,
+    "pastDue": 15,
+    "openBugs": 0
+   },
+   "MR": {
+    "closed30": 175,
+    "pastDue": 12,
+    "openBugs": 1
+   },
+   "USP": {
+    "closed30": 98,
+    "pastDue": 120,
+    "openBugs": 39
+   },
+   "UC": {
+    "closed30": 41,
+    "pastDue": 23,
+    "openBugs": 1
+   },
+   "PULSE": {
+    "closed30": 4,
+    "pastDue": 0,
+    "openBugs": 0
+   },
+   "ATLAS": {
+    "closed30": 8,
+    "pastDue": 0,
+    "openBugs": 0
+   },
+   "ID": {
+    "closed30": 50,
+    "pastDue": 6,
+    "openBugs": 2
+   },
+   "REW": {
+    "closed30": 0,
+    "pastDue": 1,
+    "openBugs": 0
+   },
+   "SUP": {
+    "closed30": 0,
+    "pastDue": 0,
+    "openBugs": 0
+   },
+   "IN": {
+    "closed30": 57,
+    "pastDue": 21,
+    "openBugs": 1
+   },
+   "DM": {
+    "closed30": 17,
+    "pastDue": 27,
+    "openBugs": 3
+   }
+  }
  }
 ]

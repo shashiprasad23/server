@@ -787,9 +787,9 @@
       },
       {
         "topic": "October 2nd Sprint: upgrade, compliance and test automation (new)",
-        "status": "The Magento 2.4.9 upgrade (MT-1615, Naman Bapna, due 30 Oct) started on 16 Oct and now has 91 module subtasks: 51 unassigned and 75 undated. Chatbot integration (MT-1626) and search-flow automation (MT-1631) are in progress. Five of the six GDPR and SOC-2 subtasks (MT-1616, due 31 Oct) and all 19 Playwright subtasks (MT-1632, due 12 Nov) have no assignee.",
+        "status": "The Magento 2.4.9 upgrade (MT-1615, Naman Bapna) started on 16 Oct; on 19 Oct its due date moved from 30 to 31 Oct and 28 of its 91 module subtasks were dated 31 Oct. 51 subtasks are unassigned and 63 undated. The core 2.4.7 to 2.4.9 upgrade (MT-1617) and the two Membership module removals (MT-1656, MT-1657) moved to Code Review on 19 Oct. Search-flow automation (MT-1631) closed on 19 Oct and chatbot integration (MT-1626) is in progress. Five of the six GDPR and SOC-2 subtasks (MT-1616, due 31 Oct) and all 19 Playwright subtasks (MT-1632, due 12 Nov) have no assignee.",
         "date": "2026-11-12",
-        "ask": "Assign the unowned upgrade, compliance and Playwright subtasks, and date the upgrade subtasks against the 30 Oct target.",
+        "ask": "Assign the unowned upgrade, compliance and Playwright subtasks, and date the remaining 63 upgrade subtasks against the 31 Oct target.",
         "rag": "amber"
       },
       {
@@ -826,7 +826,7 @@
     "USP": [
       {
         "topic": "Go Live plan (new)",
-        "status": "Raised 9 Oct by Livian Stefan Stan: five epics (subscription and contract, payments and invoicing, dashboard, subscription upgrade, cross-cutting) with 95 stories and subtasks, mostly for Silviu Oltean and Cășvan Marcel. Epic due dates run from 2 Nov to 15 Dec. 22 stories are sequenced behind other open stories, and 8 tickets were created with due dates already past. Raluca Conea added five design follow-ups for Livian Stefan Stan on 9 and 10 Oct (USP-4362 to USP-4366, due 30 Oct), one of them Highest priority: the VAT and deposit line on the product configuration summary. Work started on 12 Oct: the payment option stories (USP-4283, USP-4290) are deployed in Dev and four PAY subtasks are in progress. On 14 Oct Cășvan Marcel started the subscription and contract epic (USP-4267): four tax stories and the summary-page restyle are in progress, three past their 6 to 13 Oct dates. On 15 Oct Livian Stefan Stan closed two dashboard stories (USP-4341, USP-4342) and deployed the dashboard clean-up (USP-4337) to Dev. By 16 Oct, 17 items due 15 Oct had passed their date, including invoice issuing from the CRM (USP-4284, USP-4287 to USP-4289) and the team roster and chat stories (USP-4296, USP-4297, USP-4312 to USP-4315), none of them started. Late on 16 Oct the subscription tax stories (USP-4268 to USP-4278) and the VAT and deposit line (USP-4366) were deployed to Dev.",
+        "status": "Raised 9 Oct by Livian Stefan Stan: five epics (subscription and contract, payments and invoicing, dashboard, subscription upgrade, cross-cutting) with 95 stories and subtasks, mostly for Silviu Oltean and Cășvan Marcel. Epic due dates run from 2 Nov to 15 Dec. 22 stories are sequenced behind other open stories, and 8 tickets were created with due dates already past. Raluca Conea added five design follow-ups for Livian Stefan Stan on 9 and 10 Oct (USP-4362 to USP-4366, due 30 Oct), one of them Highest priority: the VAT and deposit line on the product configuration summary. Work started on 12 Oct: the payment option stories (USP-4283, USP-4290) are deployed in Dev and four PAY subtasks are in progress. On 14 Oct Cășvan Marcel started the subscription and contract epic (USP-4267): four tax stories and the summary-page restyle are in progress, three past their 6 to 13 Oct dates. On 15 Oct Livian Stefan Stan closed two dashboard stories (USP-4341, USP-4342) and deployed the dashboard clean-up (USP-4337) to Dev. By 16 Oct, 17 items due 15 Oct had passed their date, including invoice issuing from the CRM (USP-4284, USP-4287 to USP-4289) and the team roster and chat stories (USP-4296, USP-4297, USP-4312 to USP-4315), none of them started. Late on 16 Oct the subscription tax stories (USP-4268 to USP-4278) and the VAT and deposit line (USP-4366) were deployed to Dev. On 19 Oct Livian Stefan Stan deployed the subscription dashboard stories (USP-4358 to USP-4360) to Dev; the dashboard clean-up (USP-4337, in Dev) and recurring billing cycles (USP-3784, Cășvan Marcel, not started) passed their 18 Oct due date.",
         "date": "2026-12-15",
         "ask": "Confirm the go-live date this plan works towards, re-date the 17 items that passed 15 Oct, and fix the 8 tickets dated in the past.",
         "rag": "amber"
@@ -856,9 +856,9 @@
     "UC": [
       {
         "topic": "Next chatbot demo",
-        "status": "The 15 Oct scope closed on time (UC-22, UC-25, UC-26, UC-225). On 16 Oct the live agent console and handoff queue (UC-21, due 20 Oct) and a follow-on Marketplace sign-in story (UC-235, due 19 Oct) started. No demo is scheduled or tracked in Jira.",
+        "status": "The 15 Oct scope closed on time (UC-22, UC-25, UC-26, UC-225). The live agent console and handoff queue (UC-21, due 20 Oct) is in progress. On 19 Oct ten roadmap items for multi-turn memory and feedback (UC-60, UC-104 to UC-107) and out-of-scope request handling (UC-66, UC-128 to UC-131) were re-dated to 30 Oct; Nareddy Shiva Prasad Reddy started UC-66 and UC-128 and raised a High-priority chatbot bug: handoff options do not always appear during a conversation (UC-391). The public chatbot launch items (UC-8, Anshul Bhargava; UC-63, Ankit Saxena) passed their 18 Oct due date without starting and have not been updated since 13 Aug. No demo is scheduled or tracked in Jira.",
         "date": null,
-        "ask": "Book the demo with Ankit Saxena and Nareddy Shiva Prasad Reddy now that the 15 Oct scope is done.",
+        "ask": "Re-date or close the public launch items (UC-8, UC-63), and book the demo with Ankit Saxena and Nareddy Shiva Prasad Reddy.",
         "rag": "amber"
       },
       {
@@ -895,7 +895,7 @@
     "ATLAS": [
       {
         "topic": "CRM build plan (new)",
-        "status": "The R&D item (ATLAS-1) and the prototype work (ATLAS-4, ATLAS-7, ATLAS-8) closed on 16 Oct. The same day 285 tickets were raised, 273 by Shashi Prasad K: 47 stories in nine milestones, from M0 foundations (repository, CI and AKS environments, Entra ID sign-in, multi-tenancy) through agents and guardrails (M4), calling and messaging (M6) and lead routing (M7) to M8 go-live readiness and a pilot with the Uvation sales team. 267 tickets are unassigned and 283 have no due date. Saurabh Jain holds the end-to-end Gmail lead flow and analytics work for a 22 October demo (ATLAS-282, ATLAS-283, due 31 Oct).",
+        "status": "The R&D item (ATLAS-1) and the prototype work (ATLAS-4, ATLAS-7, ATLAS-8) closed on 16 Oct. The same day 285 tickets were raised, 273 by Shashi Prasad K: 47 stories in nine milestones, from M0 foundations (repository, CI and AKS environments, Entra ID sign-in, multi-tenancy) through agents and guardrails (M4), calling and messaging (M6) and lead routing (M7) to M8 go-live readiness and a pilot with the Uvation sales team. 267 tickets are unassigned and 293 of the 295 ATLAS tickets have no due date. Saurabh Jain started the end-to-end Gmail lead flow for the 22 October demo on 19 Oct (ATLAS-282, due 31 Oct), and two hand-over subtasks were added the same day: local set-up for Nagamuni Valluri (ATLAS-294) and UI and dashboard knowledge transfer for Saurabh Jain (ATLAS-295).",
         "date": "2026-10-22",
         "ask": "Assign owners and set dates per milestone, starting with M0, and confirm who attends the 22 October demo.",
         "rag": "amber"
@@ -923,7 +923,7 @@
         "27.5 h logged over 5 of 9 working days (38% of capacity).",
         "Nothing closed in the window.",
         "Holds USP-3858 (subscription start and end dates) marked BLOCKER; its due date moved from 30 Sep to 30 Oct.",
-        "Holds 153 of the 191 Conversational AI backlog items updated on 15 Oct; closed the code-complexity subtask (USP-4233) the same day, after the window."
+        "Holds 153 of the 191 Conversational AI backlog items updated on 15 Oct; closed the code-complexity subtask (USP-4233) the same day, after the window. On 19 Oct started the CSM dashboard UI theme story (UC-236, due 29 Oct) and moved its knowledge-transfer and redesign-plan subtask (UC-237) to Code Review."
       ],
       "action": "Review the blocker and the workload with Shivam Dhoundiyal; check Tempo by worker for time logged elsewhere.",
       "pip": null
@@ -946,7 +946,7 @@
       "evidence": [
         "2.5 h logged on 1 day in the window.",
         "The privacy compliance story (MT-1553) and the brand-information query update (MT-1564) closed with the 16 Oct Marketplace release.",
-        "Holds 12 open items, all Magento 2.4.9 module subtasks under MT-1615 added on 16 Oct; none past due."
+        "Holds 12 open items, all Magento 2.4.9 module subtasks under MT-1615 added on 16 Oct; none past due. Started the Auctane_Api upgrade (MT-1676, due 31 Oct) on 19 Oct."
       ],
       "action": "Confirm allocation; check Tempo by worker for the hours.",
       "pip": null
@@ -991,12 +991,12 @@
     },
     "Ankit Saxena": {
       "rag": "amber",
-      "assessment": "40 open tickets past their due date.",
+      "assessment": "41 open tickets past their due date.",
       "evidence": [
-        "21 Conversational AI tasks and 19 Services Platform tickets, all To Do; 35 of them untouched since 13 Aug or earlier.",
+        "22 Conversational AI tasks and 19 Services Platform tickets, all To Do; 36 of them untouched since 13 Aug or earlier. The Milestone 1 production hardening and public launch item (UC-63) joined them when it passed its 18 Oct due date.",
         "Delivered the 15 Oct scope on time (UC-22, UC-25, UC-26) and started the live agent console (UC-21, due 20 Oct) on 16 Oct."
       ],
-      "action": "Confirm which of the 40 are still planned; re-date or close the rest.",
+      "action": "Confirm which of the 41 are still planned; re-date or close the rest.",
       "pip": null
     },
     "k.kishore": {
@@ -1004,7 +1004,7 @@
       "assessment": "Devops blockers with no movement; the AKS work closed.",
       "evidence": [
         "12 open tickets past due, 11 of them in BLOCKER status, the oldest due 27 Mar (APIM WebSocket routing, IN-776 to IN-778) and the Azure Virtual Desktop and licensing set-up (IN-990, IN-994 to IN-999).",
-        "Closed the production AKS resize and build-agent research (7 items) on 15 Oct; given Snyk image scanning (IN-1161 to IN-1164, due 30 Oct) on 16 Oct.",
+        "Closed the production AKS resize and build-agent research (7 items) on 15 Oct; given Snyk image scanning (IN-1161 to IN-1164, due 30 Oct) on 16 Oct. On 19 Oct started the production chatbot Azure Communication Services and Entra permissions task (ID-766), re-dated from 19 to 22 Oct.",
         "12 h logged in the window (17% of capacity)."
       ],
       "action": "Name what each blocker waits on (licences, access, a decision) and who clears it; escalate the AVD and licensing items.",
@@ -1014,8 +1014,8 @@
   "designDependencies": {
     "asks": [
       "Ask Raluca Conea for re-committed dates on the Marketplace RMA flow explanations (VTN-1826, due 2 Sep), the Marketplace Figma file clean-up (VTN-1820, due 11 Sep) and the marketing website Figma file (VTN-1819, due 15 Sep), and record them in Jira. The old USP Figma file clean-up (VTN-1818) closed on 17 Oct.",
-      "The marketing home page redesign (VTN-1891, Ivan Divjakovic) closed on 17 Oct, after the home page build (MR-1169) went out with the 15 Oct Marketing release. Confirm whether the build needs another pass. Raluca Conea tested the marketing website and sent feedback to the developers (VTN-1899), with text-size adjustments to follow (VTN-1900, due 19 Oct). A new home page proposal (VTN-1907, due 20 Oct) was added on 17 Oct with no owner.",
-      "Get a date for the Marketplace handoff optimisation (VTN-1876, a.kaushal), still in progress past its 15 Oct due date, and for the cart and checkout UI update (VTN-1896, due 16 Oct, in progress).",
+      "The marketing home page redesign (VTN-1891, Ivan Divjakovic) closed on 17 Oct, after the home page build (MR-1169) went out with the 15 Oct Marketing release. Confirm whether the build needs another pass. Raluca Conea's website test and feedback (VTN-1899) is done; the text-size adjustments (VTN-1900, due 19 Oct) are in progress. A new home page proposal (VTN-1907, due 20 Oct) still has no owner, and on 19 Oct Ivan Divjakovic was given a home page consistency update for the new concept (VTN-1910, due 21 Oct). Raluca Conea is updating marketing website content and menu for v1.2 (VTN-1916).",
+      "The cart and checkout UI update (VTN-1896, a.kaushal) closed on 19 Oct. The Marketplace handoff optimisation (VTN-1876, a.kaushal) was re-dated from 15 to 21 Oct and is in progress.",
       "The USP subscription flow corrections (VTN-1892) and USP layout (VTN-1877) closed on 17 Oct, and the summary page redesign was recorded as done in light and dark versions (VTN-1902, VTN-1903). Ivan Divjakovic started the Kemi page design (VTN-1905, due 20 Oct)."
     ]
   }
