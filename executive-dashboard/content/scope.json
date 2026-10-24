@@ -32,7 +32,7 @@
       "projects": [
         "MR"
       ],
-      "headline": "Kunal Jangid split the v1.2 marketing revamp into design updates for 17 pages plus the header and footer (MR-1392 to MR-1410, due 31 Oct) and is preparing a hotfix to switch the chatbot on in production (MR-1416, due 23 Oct). The home page design updates (MR-1381) are in Dev Testing with Kannan Elangovan, and Saurabh Jain started review and deployment (MR-1391). A second v1.2 revamp story with no due date (MR-1411) duplicates MR-1379. Vishnu kumar yadav's Sonar fixes (MR-1365 to MR-1367) are in Dev past their dates; 15 items are past due."
+      "headline": "Kunal Jangid split the v1.2 marketing revamp into design updates for 17 pages plus the header and footer (MR-1392 to MR-1410, due 31 Oct) ; the hotfix to switch the chatbot on in production (MR-1416) passed its 23 Oct due date still in progress. The home page design updates (MR-1381) are in Dev Testing with Kannan Elangovan, and Saurabh Jain started review and deployment (MR-1391). A second v1.2 revamp story with no due date (MR-1411) duplicates MR-1379. Vishnu kumar yadav's Sonar fixes (MR-1365 to MR-1367) are in Dev past their dates, and the Dev sign-up redirect bug (MR-1065) passed its 23 Oct date in TODO; 17 items are past due, up from 15."
     },
     {
       "id": "USP",
@@ -48,7 +48,7 @@
       "projects": [
         "UC"
       ],
-      "headline": "The live agent console and handoff queue (UC-21) and its four subtasks went to production, and the Marketplace sign-in work for the chatbot closed (UC-235, UC-240, UC-241). The handoff-options bug (UC-391) is Ready for Prod; a new UAT bug, the user's name is lost during agent handoff (UC-393), is in Code Review. Internal knowledge-base and demand-tracking items (UC-27, UC-53, UC-54, UC-96, UC-97) and out-of-scope handling (UC-128 to UC-130) moved to In Dev. The In Prod items stay open past their 21 Oct date, so 29 items are past due."
+      "headline": "The live agent console and handoff queue (UC-21) and its four subtasks went to production, and the Marketplace sign-in work for the chatbot closed (UC-235, UC-240, UC-241). The handoff-options bug (UC-391) is Ready for Prod; a new UAT bug, the user's name is lost during agent handoff (UC-393), is in Code Review. Internal knowledge-base and demand-tracking items (UC-27, UC-53, UC-54, UC-96, UC-97) and out-of-scope handling (UC-128 to UC-130) moved to In Dev. The In Prod items stay open past their 21 Oct date, and on 23 Oct 19 of Shivam Dhoundiyal's front-end widget, admin and dashboard items (UC-243 to UC-298) passed their due date without starting, so past-due items rose from 29 to 48."
     },
     {
       "id": "PULSE",
@@ -56,7 +56,7 @@
       "projects": [
         "PULSE"
       ],
-      "headline": "No change since 21 Oct. Naveen Jangid is on the verification step of CI build reproducibility (PULSE-280, due 27 Oct); the define step (PULSE-278) passed its 20 Oct date in progress, the programme's one past-due item. Anshul Bhargava's Interactive AI Factory tasks sit on the PRD board, outside this report's boards."
+      "headline": "Naveen Jangid is on the verification step of CI build reproducibility (PULSE-280, due 27 Oct). The define step (PULSE-278) passed its 20 Oct date in progress, and the parent item (PULSE-9) and its implementation step (PULSE-279) passed their 23 Oct date in progress, so 3 items are past due. Anshul Bhargava's Interactive AI Factory tasks sit on the PRD board, outside this report's boards."
     },
     {
       "id": "ATLAS",
@@ -96,7 +96,7 @@
       "projects": [
         "IN"
       ],
-      "headline": "k.kishore started Snyk image scanning (IN-1161, IN-1163) and closed its authentication set-up (IN-1162); Sarath Chandra is upgrading Marketplace PHP to 8.2.35 in UAT and production (IN-1184, due 26 Oct), and b.kumar closed public access for the ChatAI agent domain (IN-1174). The Devops copy of the chatbot Azure Communication Services task (IN-1178) is still in BLOCKER past its 21 Oct date, although the Web-Identity copy (ID-766) closed on 22 Oct. 16 items sit in BLOCKER status and 21 are past due; the S1 login error-page bug (IN-1111) is still To Do."
+      "headline": "k.kishore started Snyk image scanning (IN-1161, IN-1163) and closed its authentication set-up (IN-1162); Sarath Chandra is upgrading Marketplace PHP to 8.2.35 in UAT and production (IN-1184, due 26 Oct), and b.kumar closed public access for the ChatAI agent domain (IN-1174). On 24 Oct b.kumar configured the custom domain for Azure API Management in UAT (IN-1190, done) and started smart VM deallocation for the USP self-hosted agent (IN-1189, due 26 Oct). The Devops copy of the chatbot Azure Communication Services task (IN-1178) is still in BLOCKER past its 21 Oct date, although the Web-Identity copy (ID-766) closed on 22 Oct. The AKS agent migration items (IN-1158 to IN-1160, b.kumar) and the Pulse pipeline set-up (IN-1166 to IN-1168, Shashi Prasad K and Sarath Chandra) passed their 23 Oct date in To Do. 16 items sit in BLOCKER status and 27 are past due, up from 21; the S1 login error-page bug (IN-1111) is still To Do."
     },
     {
       "id": "DM",

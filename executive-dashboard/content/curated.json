@@ -817,10 +817,10 @@
       },
       {
         "topic": "Chatbot on the marketing site",
-        "status": "Chatbot QA (MR-1309) and the defects (MR-1311, MR-1312, MR-1327, MR-1337) closed with the 15 Oct release. On 23 Oct Kunal Jangid started a hotfix to switch the chatbot on in production (MR-1416, due 23 Oct).",
-        "date": "2026-10-15",
+        "status": "Chatbot QA (MR-1309) and the defects (MR-1311, MR-1312, MR-1327, MR-1337) closed with the 15 Oct release. On 23 Oct Kunal Jangid started a hotfix to switch the chatbot on in production (MR-1416); it passed its 23 Oct due date still in progress.",
+        "date": "2026-10-23",
         "ask": "Confirm the hotfix is live and the chatbot is visible to visitors.",
-        "rag": "green"
+        "rag": "amber"
       },
       {
         "topic": "New home page design and API",
@@ -870,9 +870,9 @@
       },
       {
         "topic": "Backlog update (new)",
-        "status": "191 backlog stories and subtasks were updated together on 15 Oct: 153 assigned to Shivam Dhoundiyal, 25 to Ankit Saxena and 13 to Nareddy Shiva Prasad Reddy. Due dates run from 2 Aug 2026 to 27 Jun 2027, most of them Oct to Dec 2026; 10 are already past and 12 have none.",
+        "status": "191 backlog stories and subtasks were updated together on 15 Oct: 153 assigned to Shivam Dhoundiyal, 25 to Ankit Saxena and 13 to Nareddy Shiva Prasad Reddy. Due dates run from 2 Aug 2026 to 27 Jun 2027, most of them Oct to Dec 2026; 10 are already past and 12 have none. On 23 Oct, 19 of Shivam Dhoundiyal's front-end items (UC-243 to UC-298) passed their due date without starting.",
         "date": null,
-        "ask": "Confirm with Ankit Saxena that this is the new Conversational AI plan, and re-date the 10 past-due items.",
+        "ask": "Confirm with Ankit Saxena that this is the new Conversational AI plan, and re-date the past-due items, including the 19 front-end items due 23 Oct.",
         "rag": "amber"
       }
     ],
@@ -925,14 +925,15 @@
     },
     "Shivam Dhoundiyal": {
       "rag": "amber",
-      "assessment": "Low output in the window.",
+      "assessment": "Hours are up in the window, but many held items are past due.",
       "evidence": [
-        "27.5 h logged over 5 of 9 working days (38% of capacity).",
-        "Nothing closed in the window.",
+        "60.7 h logged over 9 of 10 working days (76% of capacity).",
+        "4 items closed in the window.",
         "Holds USP-3858 (subscription start and end dates) marked BLOCKER; its due date moved from 30 Sep to 30 Oct.",
-        "Holds 153 of the 191 Conversational AI backlog items updated on 15 Oct. Closed the knowledge-transfer subtask (UC-237) on 21 Oct, two days late; the UI 2.0 mock-up (UC-392) is in Code Review past its 22 Oct date, and the CSM dashboard redesign (UC-238, due 26 Oct) started."
+        "Holds 153 of the 191 Conversational AI backlog items updated on 15 Oct. Closed the knowledge-transfer subtask (UC-237) on 21 Oct, two days late; the UI 2.0 mock-up (UC-392) is in Code Review past its 22 Oct date, and the CSM dashboard redesign (UC-238, due 26 Oct) started.",
+        "19 front-end widget, admin and dashboard items (UC-243 to UC-298) passed their 23 Oct due date without starting; 20 held items are past due."
       ],
-      "action": "Review the blocker and the workload with Shivam Dhoundiyal; check Tempo by worker for time logged elsewhere.",
+      "action": "Review the blocker and the workload with Shivam Dhoundiyal, and re-plan the 19 front-end items that passed 23 Oct.",
       "pip": null
     },
     "Gourav Agnani": {
