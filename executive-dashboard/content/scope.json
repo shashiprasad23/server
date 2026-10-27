@@ -24,7 +24,7 @@
         "MT",
         "PC"
       ],
-      "headline": "On 26 Oct the Marketplace chatbot work closed: the integration (MT-1626), logged-in user handling (MT-1627) and backend support (MT-1629) moved from In Prod to Done. The same day Kannan Elangovan raised a P1 bug, broken product links from the chatbot in production (MT-1750, no due date). In the Magento 2.4.9 upgrade (MT-1615, due 31 Oct) Parth, shubham kuchwar and Naman Bapna moved ten more module subtasks to Dev (MT-1662 to MT-1685) and started the Magetrend email upgrade (MT-1660), Naman Bapna raised a Part-2 upgrade story (MT-1753, due 16 Nov) and two email-module reviews (MT-1755, MT-1756, due 31 Oct), and is fixing GraphQL APIs that return 403 for signed-in users on Dev (MT-1754). The GDPR and SOC-2 work (MT-1616) was re-dated from 31 Oct to 30 Nov. The cross-application logout fix (MT-1745) is In Prod and the homepage H1 fix (MT-1749) is in UAT. 13 items are past due."
+      "headline": "The Marketplace chatbot work closed on 26 Oct (MT-1626, MT-1627, MT-1629) and the cross-application logout fix closed on 27 Oct (MT-1745); the homepage H1 fix (MT-1749) is Ready for Prod but passed its 26 Oct date. Kannan Elangovan's P1 bug for broken chatbot product links in production (MT-1750) has no due date. In the Magento 2.4.9 upgrade (MT-1615, due 31 Oct) six more module and email subtasks reached Dev on 27 Oct (MT-1660, MT-1669, MT-1670, MT-1686, MT-1755, MT-1756), the GraphQL 403 fix (MT-1754) is in Dev Test and dated 31 Oct, and two upgrade side effects were raised: wrong or invalid order dates (MT-1757, in Dev) and loyalty points in cart and checkout (MT-1758), both due 31 Oct. Naveen Jangid started the V1.4 Marketplace Figma review (MT-1759, due 28 Oct). GDPR and SOC-2 (MT-1616) is due 30 Nov. 14 items are past due."
     },
     {
       "id": "MR",
@@ -32,7 +32,7 @@
       "projects": [
         "MR"
       ],
-      "headline": "Kunal Jangid closed the hotfix that switches the chatbot on in production (MR-1416) and the H1 tags on 18 pages (MR-1361), and Vishnu kumar yadav closed the Dev sign-up redirect bug (MR-1065). Figma validation of the v1.2 pages started on 26 Oct: Nuclear Energy page issues (MR-1419 with six subtasks) and Partners page issues (MR-1428, MR-1429), all due 30 Oct; the Partners page design update (MR-1402) is in Dev Testing and the SLA and Terms page (MR-1404) is in progress. Vishnu kumar yadav was given the PHP 8.2.35 security patch for the Marketing CMS (MR-1422, Highest, due 29 Oct). A second v1.2 revamp story with no due date (MR-1411) still duplicates MR-1379. 15 items are past due, down from 17."
+      "headline": "Vishnu kumar yadav deployed the PHP 8.2.35 security patch to the Marketing CMS (MR-1422) on 27 Oct, two days early. Kunal Jangid moved the Partners and SLA and Terms page updates (MR-1402, MR-1404) and five Nuclear Energy page fixes (MR-1421, MR-1423 to MR-1425, MR-1427) to Code Review and started the Contact page (MR-1403); the People page (MR-1399), the mobile category dropdown (MR-1382) and the Microsoft Bookings integration that replaces Calendly (MR-1362) are in Dev Testing. Figma validation of the SLA and Terms page raised MR-1432 with five subtasks (MR-1433 to MR-1437), including document categories that return 404, all due 30 Oct. A second v1.2 revamp story with no due date (MR-1411) still duplicates MR-1379. 15 items are past due."
     },
     {
       "id": "USP",
@@ -40,7 +40,7 @@
       "projects": [
         "USP"
       ],
-      "headline": "On 26 Oct 100 USP items moved to UAT/Staging, 73 of them from Deployed In Dev, among them the IAM and role security story with its nine subtasks (USP-4234), the tax stories (USP-4268 to USP-4278), invoice issuing from the CRM (USP-4284, USP-4287 to USP-4289, straight from TODO), the payment option stories, the team, chat and dashboard cards, the request-quote wait step (USP-4395 to USP-4400) and the AI Factory storage configurator (USP-4403 to USP-4411). The S1 subscription calculation error (USP-4204) and the S2 backend error cluster (USP-4199) are in UAT; the S1 Document API 502 (USP-4231, due 30 Oct) is still TODO. Livian Stefan Stan raised and deployed ten performance, security and CI tasks to UAT (USP-4417 to USP-4426). Cășvan Marcel raised a management networking story (USP-4413) and three bugs due 2 Nov, including a security bug where pricing rule formulas run through Python eval with full builtins (USP-4414), plus a send-quote deadlock fix already in UAT (USP-4412). Two items were closed as Won't Do (USP-3908, USP-4319) and three Communication Hub and Support Hub stories moved to Backlog (USP-4294, USP-4303, USP-4335). Past-due items rose from 123 to 127 because seven of the new UAT tasks carry 24 and 25 Oct dates; the Highest security bug with no due date (USP-4369) is still TODO."
+      "headline": "On 26 Oct 100 USP items moved to UAT/Staging, 73 of them from Deployed In Dev, among them the IAM and role security story with its nine subtasks (USP-4234), the tax stories (USP-4268 to USP-4278), invoice issuing from the CRM (USP-4284, USP-4287 to USP-4289, straight from TODO), the payment option stories, the team, chat and dashboard cards, the request-quote wait step (USP-4395 to USP-4400) and the AI Factory storage configurator (USP-4403 to USP-4411). On 27 Oct eleven items passed UAT and are Ready for Production, among them the S1 subscription calculation error (USP-4204), the S2 backend error cluster (USP-4199), invoice issuing from the CRM (USP-4284) and staff avatars (USP-4293); the S1 Document API 502 (USP-4231, due 30 Oct) is still TODO. Silviu Oltean started engineer-initiated chats (USP-4305) and Teams groups (USP-4324) and a new story so service requests follow the customer team (USP-4428, due 15 Nov). Livian Stefan Stan raised and deployed ten performance, security and CI tasks to UAT (USP-4417 to USP-4426). Cășvan Marcel raised a management networking story (USP-4413) and three bugs due 2 Nov, including a security bug where pricing rule formulas run through Python eval with full builtins (USP-4414), plus a send-quote deadlock fix already in UAT (USP-4412). Two items were closed as Won't Do (USP-3908, USP-4319) and three Communication Hub and Support Hub stories moved to Backlog (USP-4294, USP-4303, USP-4335). Past-due items rose to 128: seven new UAT tasks carry 24 and 25 Oct dates, and the IAM story (USP-4234) and the CI pipelines task (USP-4425) passed 26 Oct in UAT; the Highest security bug with no due date (USP-4369) is still TODO."
     },
     {
       "id": "UC",
@@ -48,7 +48,7 @@
       "projects": [
         "UC"
       ],
-      "headline": "The live agent console and handoff queue (UC-21) and the UI 2.0 mock-up (UC-392) closed. On 26 Oct six chatbot bugs were raised for Nareddy Shiva Prasad Reddy, all due 30 Oct: a Highest-priority P1 where the chatbot repeats the same answer when asked for an agent (UC-398), the production API returning 429 because credits are exhausted (UC-399, To Do), discovery-call booking and time-zone options (UC-394, UC-395) and two broken product links (UC-396, UC-400). Ankit Saxena started the authenticated own-records experience and its entitlement layer (UC-19, UC-37, UC-80, due 29 and 30 Oct). The user-name handoff bug (UC-393) was dated 30 Oct. 46 items are past due, down from 48."
+      "headline": "The live agent console (UC-21) and the UI 2.0 mock-up (UC-392) closed. Nareddy Shiva Prasad Reddy moved five of the six chatbot production bugs raised on 26 Oct to Code Review on 27 Oct, including the P1 where the chatbot repeats the same answer when asked for an agent (UC-398), discovery-call booking and time zones (UC-394, UC-395) and two broken product links (UC-396, UC-400); the exhausted-credits 429 error (UC-399) is In Dev. All are due 30 Oct. Ankit Saxena's internal knowledge-base ingestion (UC-27, UC-53, UC-54) and demand-tracking items (UC-96, UC-97) passed their 26 Oct date in Dev, and two design specs (UC-120, UC-124) passed it without starting; Shivam Dhoundiyal's CSM dashboard redesign (UC-238) is in Code Review a day late. 54 items are past due, up from 46."
     },
     {
       "id": "PULSE",
@@ -56,7 +56,7 @@
       "projects": [
         "PULSE"
       ],
-      "headline": "Naveen Jangid closed CI build reproducibility (PULSE-9) with its define, implement, verify and document steps (PULSE-278 to PULSE-281), and started on-prem production deployment (PULSE-10) and service health readiness (PULSE-11), neither dated. No PULSE item is past due. Anshul Bhargava's Interactive AI Factory tasks sit on the PRD board, outside this report's boards."
+      "headline": "Naveen Jangid closed CI build reproducibility (PULSE-9, PULSE-278 to PULSE-281) on 26 Oct and service health and dependency readiness (PULSE-11) with the CI verification and release gates subtasks (PULSE-73 to PULSE-80) on 27 Oct. On-prem production deployment (PULSE-10) is in progress with no date. No PULSE item is past due. Anshul Bhargava's Interactive AI Factory tasks sit on the PRD board, outside this report's boards."
     },
     {
       "id": "ATLAS",
@@ -64,7 +64,7 @@
       "projects": [
         "ATLAS"
       ],
-      "headline": "Jira does not record whether the 22 October demo took place. Saurabh Jain started end-to-end regression and lead-flow defect fixing (ATLAS-287); the Gmail lead flow (ATLAS-282), agent orchestration (ATLAS-286) and the demo journey (ATLAS-284) are still in progress. Nagamuni Valluri moved the Carbon set-up and UI wrappers to review (ATLAS-36, ATLAS-38) and started the UI shell (ATLAS-37); on 26 Oct the i18n set-up (ATLAS-40) went to review and a fix for agent email reply loops and booking replies (ATLAS-296) started. 267 of the 295 ATLAS tickets are unassigned and 293 have no due date."
+      "headline": "Jira does not record whether the 22 October demo took place; on 27 Oct Saurabh Jain started the task to rehearse that demo and publish its evidence and runbook (ATLAS-288). Saurabh Jain started end-to-end regression and lead-flow defect fixing (ATLAS-287); the Gmail lead flow (ATLAS-282), agent orchestration (ATLAS-286) and the demo journey (ATLAS-284) are still in progress. Nagamuni Valluri moved the Carbon set-up and UI wrappers to review (ATLAS-36, ATLAS-38) and moved the UI shell to review (ATLAS-37); on 26 Oct the i18n set-up (ATLAS-40) went to review and a fix for agent email reply loops and booking replies (ATLAS-296) started. 267 of the 295 ATLAS tickets are unassigned and 293 have no due date."
     },
     {
       "id": "ID",
@@ -72,7 +72,7 @@
       "projects": [
         "ID"
       ],
-      "headline": "Yash Janeshwar moved the JWT and session bypass assessment (ID-721) and its five subtasks (ID-722 to ID-726) to UAT Testing. The production chatbot Azure Communication Services and Entra permissions task closed on 22 Oct (ID-766, k.kishore), and Gourav Agnani's Socket.IO SSO logout test closed (ID-761). Ankit Sharma started the Node.js upgrade (ID-772, due 31 Oct) and the S2 bug where a deleted account's session stays active (ID-760). Two epics were raised with no owner (ID-770, ID-771). 6 items are past due."
+      "headline": "Yash Janeshwar closed the identity security scope and the JWT cookie and refresh-token tests (ID-722, ID-723) on 27 Oct; the rest of the session bypass assessment (ID-721, ID-724 to ID-726) is in UAT Testing. Saravana Kumar moved the account deactivation API in the delete-account flow (ID-765, due 31 Oct) to Dev. The production chatbot Azure Communication Services and Entra permissions task closed on 22 Oct (ID-766, k.kishore), and Gourav Agnani's Socket.IO SSO logout test closed (ID-761). Ankit Sharma started the Node.js upgrade (ID-772, due 31 Oct) and the S2 bug where a deleted account's session stays active (ID-760). Two epics were raised with no owner (ID-770, ID-771). 6 items are past due."
     },
     {
       "id": "REW",
@@ -96,7 +96,7 @@
       "projects": [
         "IN"
       ],
-      "headline": "k.kishore started Snyk image scanning (IN-1161, IN-1163) and closed its authentication set-up (IN-1162); Sarath Chandra is upgrading Marketplace PHP to 8.2.35 in UAT and production (IN-1184, due 26 Oct), and b.kumar closed public access for the ChatAI agent domain (IN-1174). On 24 Oct b.kumar configured the custom domain for Azure API Management in UAT (IN-1190, done) and started smart VM deallocation for the USP self-hosted agent (IN-1189, due 26 Oct). On 26 Oct b.kumar started the AKS agent migration (IN-1157, IN-1158), closed a PR merge-conflict fix (IN-1192) and started the CSM front-end pipeline deployment (IN-1191, due 30 Oct). The Devops copy of the chatbot Azure Communication Services task (IN-1178) is still in BLOCKER past its 21 Oct date, although the Web-Identity copy (ID-766) closed on 22 Oct. The remaining AKS agent migration items (IN-1159, IN-1160, b.kumar) and the Pulse pipeline set-up (IN-1166 to IN-1168, Shashi Prasad K and Sarath Chandra) passed their 23 Oct date in To Do. 16 items sit in BLOCKER status and 27 are past due; the S1 login error-page bug (IN-1111) is still To Do."
+      "headline": "k.kishore closed the S1 USP login error-page bug (IN-1111) and the notification socket changes for UAT and production (IN-1188) on 27 Oct and started the Genesis console Front Door onboarding (IN-1187, due 29 Oct); Snyk image scanning (IN-1161, IN-1163) is in progress; Sarath Chandra is upgrading Marketplace PHP to 8.2.35 in UAT and production (IN-1184, due 26 Oct), and b.kumar closed public access for the ChatAI agent domain (IN-1174). On 24 Oct b.kumar configured the custom domain for Azure API Management in UAT (IN-1190, done) and started smart VM deallocation for the USP self-hosted agent (IN-1189, due 26 Oct). On 26 Oct b.kumar started the AKS agent migration (IN-1157, IN-1158), closed a PR merge-conflict fix (IN-1192) and started the CSM front-end pipeline deployment (IN-1191, due 30 Oct). The Devops copy of the chatbot Azure Communication Services task (IN-1178) is still in BLOCKER past its 21 Oct date, although the Web-Identity copy (ID-766) closed on 22 Oct. The remaining AKS agent migration items (IN-1159, IN-1160, b.kumar) and the Pulse pipeline set-up (IN-1166 to IN-1168, Shashi Prasad K and Sarath Chandra) passed their 23 Oct date in To Do. The Magento PHP upgrade (IN-1184), the UAT cron image fix (IN-1186), Magento 2.4.9 infrastructure readiness (IN-1181) and smart VM deallocation (IN-1189) passed their 26 Oct date in progress. 16 items sit in BLOCKER status and 30 are past due, up from 27."
     },
     {
       "id": "DM",
@@ -104,7 +104,7 @@
       "projects": [
         "DM"
       ],
-      "headline": "Shashi Prasad K closed the 404 work (DM-1082) and the H1 tags on 18 pages (DM-1091), and Murali G closed the email spam issue (DM-1089) and the events item (DM-1095). New items: 404 pages listed in sitemap.xml (DM-1097), a broken Marketplace FAQ redirect (DM-1098) and an authorship change on production (DM-1099, due 26 Oct). On 26 Oct Shashi Prasad K raised a Marketplace www subdomain problem: no response over https and a redirect loop over http (DM-1100, not started, no due date). 27 items are past due."
+      "headline": "Shashi Prasad K closed the 404 work (DM-1082) and the H1 tags on 18 pages (DM-1091), and Murali G closed the email spam issue (DM-1089) and the events item (DM-1095). New items: 404 pages listed in sitemap.xml (DM-1097), a broken Marketplace FAQ redirect (DM-1098) and an authorship change on production (DM-1099, due 26 Oct). On 26 Oct Shashi Prasad K raised a Marketplace www subdomain problem: no response over https and a redirect loop over http (DM-1100, not started, no due date). On 27 Oct Prashanth Naikar fixed meta descriptions and titles on 12 Marketplace pages (DM-1101), Shashi Prasad K raised JSON-LD schema for articles, the homepage and Marketplace categories (DM-1102, due 29 Oct), and the reseller terms dev link fix (DM-1086) was re-dated from 15 to 30 Oct. The authorship change (DM-1099) passed its 26 Oct date without starting. 27 items are past due."
     }
   ],
   "spotlight": [
