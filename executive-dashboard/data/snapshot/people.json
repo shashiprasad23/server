@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-10-27",
+ "snapshotDate": "2026-10-28",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -676,11 +676,11 @@
      "project": "AFVU",
      "summary": "GPU as a Service on the Portal: Rafay GPU PaaS on our data-center VMs, ordered on the Portal, single sign-on Launch, usage and telemetry on the service page",
      "type": "Story",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-21",
-     "resolved": null,
-     "due": null,
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.42,
      "logs": [
@@ -732,7 +732,7 @@
      "statusCat": "done",
      "created": "2026-10-22",
      "resolved": "2026-10-27",
-     "due": null,
+     "due": "2026-10-28",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.42,
      "logs": [
@@ -751,7 +751,7 @@
      "statusCat": "done",
      "created": "2026-10-22",
      "resolved": "2026-10-27",
-     "due": null,
+     "due": "2026-10-23",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.42,
      "logs": [
@@ -766,7 +766,7 @@
      "project": "AFVU",
      "summary": "Access, Launch and single sign-on: console roles per team member, single-use Launch tickets, Azure AD B2C as Rafay's Global IdP",
      "type": "Story",
-     "status": "In Progress",
+     "status": "Dependent",
      "statusCat": "indeterminate",
      "created": "2026-10-22",
      "resolved": null,
@@ -789,7 +789,7 @@
      "statusCat": "done",
      "created": "2026-10-22",
      "resolved": "2026-10-27",
-     "due": null,
+     "due": "2026-10-28",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.42,
      "logs": [
@@ -808,7 +808,7 @@
      "statusCat": "done",
      "created": "2026-10-22",
      "resolved": "2026-10-27",
-     "due": null,
+     "due": "2026-10-23",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.42,
      "logs": [
@@ -827,7 +827,7 @@
      "statusCat": "indeterminate",
      "created": "2026-10-22",
      "resolved": null,
-     "due": null,
+     "due": "2026-10-30",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.42,
      "logs": [
@@ -931,7 +931,7 @@
      "project": "AFVU",
      "summary": "[Config] B2C custom policy for the GPU console and Rafay Global IdP, with the B2C owners and Rafay",
      "type": "Subtask",
-     "status": "In Progress",
+     "status": "Dependent",
      "statusCat": "indeterminate",
      "created": "2026-10-23",
      "resolved": null,
@@ -1584,6 +1584,272 @@
       [
        "2026-10-27",
        0.5
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-285",
+     "project": "AFVU",
+     "summary": "[S2][P2] Proposal Page on the Agreement Step Loads Slowly",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-10-28",
+       0.25
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-286",
+     "project": "AFVU",
+     "summary": "[S3][P3] Download Buttons Show No Loader While the File Is Being Generated",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-10-28",
+       0.25
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-287",
+     "project": "AFVU",
+     "summary": "[S3][P3] Uvation Logo and Confidential Mark Are Missing in Summary and Invoice PDFs",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.33,
+     "logs": [
+      [
+       "2026-10-28",
+       0.33
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-288",
+     "project": "AFVU",
+     "summary": "[S2][P2] Payment Page After Signing Shows the Old Summary Design",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.33,
+     "logs": [
+      [
+       "2026-10-28",
+       0.33
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-289",
+     "project": "AFVU",
+     "summary": "[S3][P3] Improper Text Alignment and Layout in Proposal Document",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.33,
+     "logs": [
+      [
+       "2026-10-28",
+       0.33
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-290",
+     "project": "AFVU",
+     "summary": "[S2][P2] Signature Is Missing in the Downloaded Signed Proposal and on the Staff CRM Proposal Tab",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.33,
+     "logs": [
+      [
+       "2026-10-28",
+       0.33
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-291",
+     "project": "AFVU",
+     "summary": "[S3][P3] Categories and Cards Run Together on the Architect Add-ons Step",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.33,
+     "logs": [
+      [
+       "2026-10-28",
+       0.33
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-292",
+     "project": "AFVU",
+     "summary": "[S3][P3] Payment Page Is Distorted on Phones and Tablets, Server Specs Are Missing and Date of Issue Differs from the PDF",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.33,
+     "logs": [
+      [
+       "2026-10-28",
+       0.33
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-293",
+     "project": "AFVU",
+     "summary": "[S3][P3] Downloaded Summary PDF Does Not Match the Summary Page Design",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.33,
+     "logs": [
+      [
+       "2026-10-28",
+       0.33
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-294",
+     "project": "AFVU",
+     "summary": "[S3][P3] Price Section Is Crowded and Misaligned in the Summary PDF and the Proposal",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.17,
+     "logs": [
+      [
+       "2026-10-28",
+       0.17
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-295",
+     "project": "AFVU",
+     "summary": "[S2][P2] Downloaded Proposal Keeps Its Old Layout After a Release",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.33,
+     "logs": [
+      [
+       "2026-10-28",
+       0.33
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-296",
+     "project": "AFVU",
+     "summary": "[S2][P2] Changing the Network Design Shrinks the Factory (GB300 NVL72: 8 Racks Drop to 3)",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.33,
+     "logs": [
+      [
+       "2026-10-28",
+       0.33
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-297",
+     "project": "AFVU",
+     "summary": "Architect sizing follows the reference architecture: the CRM sizes each network design for the customer's GPU target",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.33,
+     "logs": [
+      [
+       "2026-10-28",
+       0.33
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-298",
+     "project": "AFVU",
+     "summary": "Design pictures (logos, backgrounds, banners, icons) come from the CDN, with a checked cache and bundled fallback",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.33,
+     "logs": [
+      [
+       "2026-10-28",
+       0.33
       ]
      ]
     },
@@ -8508,7 +8774,7 @@
      "project": "AFVU",
      "summary": "[Backend] CRM inventory, branch map and merge order on the updated base",
      "type": "Subtask",
-     "status": "In Review",
+     "status": "In Progress",
      "statusCat": "indeterminate",
      "created": "2026-10-16",
      "resolved": null,
@@ -8544,7 +8810,7 @@
      "project": "AFVU",
      "summary": "[Backend] Bring in the factory designer app, migrations and loader; check the old-table dependencies",
      "type": "Subtask",
-     "status": "In Review",
+     "status": "In Progress",
      "statusCat": "indeterminate",
      "created": "2026-10-16",
      "resolved": null,
@@ -8640,8 +8906,8 @@
      "project": "AFVU",
      "summary": "[Test] New dashboard: every stage, every role, desktop and phone, switch off and on",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-16",
      "resolved": null,
      "due": "2026-10-31",
@@ -8668,7 +8934,7 @@
      "statusCat": "indeterminate",
      "created": "2026-10-16",
      "resolved": null,
-     "due": "2026-10-28",
+     "due": "2026-10-30",
      "assignee": "Ankit Sharma"
     },
     {
@@ -8676,8 +8942,8 @@
      "project": "AFVU",
      "summary": "[Test] Interactive View: 3D, probes, tickets, performance, keyboard and phone",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-16",
      "resolved": null,
      "due": "2026-10-31",
@@ -9240,11 +9506,11 @@
      "project": "AFVU",
      "summary": "GPU as a Service on the Portal: Rafay GPU PaaS on our data-center VMs, ordered on the Portal, single sign-on Launch, usage and telemetry on the service page",
      "type": "Story",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-21",
-     "resolved": null,
-     "due": null,
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
      "assignee": "Anshul Bhargava"
     },
     {
@@ -9280,7 +9546,7 @@
      "statusCat": "done",
      "created": "2026-10-22",
      "resolved": "2026-10-27",
-     "due": null,
+     "due": "2026-10-28",
      "assignee": "Anshul Bhargava"
     },
     {
@@ -9292,7 +9558,7 @@
      "statusCat": "done",
      "created": "2026-10-22",
      "resolved": "2026-10-27",
-     "due": null,
+     "due": "2026-10-23",
      "assignee": "Anshul Bhargava"
     },
     {
@@ -9300,7 +9566,7 @@
      "project": "AFVU",
      "summary": "Access, Launch and single sign-on: console roles per team member, single-use Launch tickets, Azure AD B2C as Rafay's Global IdP",
      "type": "Story",
-     "status": "In Progress",
+     "status": "Dependent",
      "statusCat": "indeterminate",
      "created": "2026-10-22",
      "resolved": null,
@@ -9316,7 +9582,7 @@
      "statusCat": "done",
      "created": "2026-10-22",
      "resolved": "2026-10-27",
-     "due": null,
+     "due": "2026-10-28",
      "assignee": "Anshul Bhargava"
     },
     {
@@ -9328,7 +9594,7 @@
      "statusCat": "done",
      "created": "2026-10-22",
      "resolved": "2026-10-27",
-     "due": null,
+     "due": "2026-10-23",
      "assignee": "Anshul Bhargava"
     },
     {
@@ -9340,7 +9606,7 @@
      "statusCat": "indeterminate",
      "created": "2026-10-22",
      "resolved": null,
-     "due": null,
+     "due": "2026-10-30",
      "assignee": "Anshul Bhargava"
     },
     {
@@ -9420,7 +9686,7 @@
      "project": "AFVU",
      "summary": "[Config] B2C custom policy for the GPU console and Rafay Global IdP, with the B2C owners and Rafay",
      "type": "Subtask",
-     "status": "In Progress",
+     "status": "Dependent",
      "statusCat": "indeterminate",
      "created": "2026-10-23",
      "resolved": null,
@@ -9932,6 +10198,174 @@
      "assignee": "Anshul Bhargava"
     },
     {
+     "key": "AFVU-285",
+     "project": "AFVU",
+     "summary": "[S2][P2] Proposal Page on the Agreement Step Loads Slowly",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-286",
+     "project": "AFVU",
+     "summary": "[S3][P3] Download Buttons Show No Loader While the File Is Being Generated",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-287",
+     "project": "AFVU",
+     "summary": "[S3][P3] Uvation Logo and Confidential Mark Are Missing in Summary and Invoice PDFs",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-288",
+     "project": "AFVU",
+     "summary": "[S2][P2] Payment Page After Signing Shows the Old Summary Design",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-289",
+     "project": "AFVU",
+     "summary": "[S3][P3] Improper Text Alignment and Layout in Proposal Document",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-290",
+     "project": "AFVU",
+     "summary": "[S2][P2] Signature Is Missing in the Downloaded Signed Proposal and on the Staff CRM Proposal Tab",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-291",
+     "project": "AFVU",
+     "summary": "[S3][P3] Categories and Cards Run Together on the Architect Add-ons Step",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-292",
+     "project": "AFVU",
+     "summary": "[S3][P3] Payment Page Is Distorted on Phones and Tablets, Server Specs Are Missing and Date of Issue Differs from the PDF",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-293",
+     "project": "AFVU",
+     "summary": "[S3][P3] Downloaded Summary PDF Does Not Match the Summary Page Design",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-294",
+     "project": "AFVU",
+     "summary": "[S3][P3] Price Section Is Crowded and Misaligned in the Summary PDF and the Proposal",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-295",
+     "project": "AFVU",
+     "summary": "[S2][P2] Downloaded Proposal Keeps Its Old Layout After a Release",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-296",
+     "project": "AFVU",
+     "summary": "[S2][P2] Changing the Network Design Shrinks the Factory (GB300 NVL72: 8 Racks Drop to 3)",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-297",
+     "project": "AFVU",
+     "summary": "Architect sizing follows the reference architecture: the CRM sizes each network design for the customer's GPU target",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-298",
+     "project": "AFVU",
+     "summary": "Design pictures (logos, backgrounds, banners, icons) come from the CDN, with a checked cache and bundled fallback",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava"
+    },
+    {
      "key": "ATLAS-1",
      "project": "ATLAS",
      "summary": "R&D on CRM for MVP",
@@ -10304,18 +10738,6 @@
      "assignee": "k.kishore"
     },
     {
-     "key": "IN-990",
-     "project": "IN",
-     "summary": "Configure Azure Virtual Desktop (AVD) Environment",
-     "type": "Story",
-     "status": "BLOCKER",
-     "statusCat": "indeterminate",
-     "created": "2026-07-15",
-     "resolved": null,
-     "due": "2026-07-29",
-     "assignee": "k.kishore"
-    },
-    {
      "key": "IN-992",
      "project": "IN",
      "summary": "Jira Board Integration with Azure DevOps (TBD)",
@@ -10326,18 +10748,6 @@
      "resolved": null,
      "due": "2026-07-30",
      "assignee": "Sarath Chandra"
-    },
-    {
-     "key": "INF-3",
-     "project": "INF",
-     "summary": "Request for VM Provisioning for Pulse Deployment",
-     "type": "[System] Service request",
-     "status": "Closed",
-     "statusCat": "done",
-     "created": "2026-09-29",
-     "resolved": "2026-09-29",
-     "due": null,
-     "assignee": "Sanjay Singh"
     },
     {
      "key": "MR-1073",
@@ -15724,7 +16134,7 @@
      "statusCat": "done",
      "created": "2026-09-28",
      "resolved": "2026-10-27",
-     "due": null,
+     "due": "2026-10-20",
      "assignee": "Naveen Jangid"
     },
     {
@@ -15736,7 +16146,7 @@
      "statusCat": "done",
      "created": "2026-09-28",
      "resolved": "2026-10-27",
-     "due": null,
+     "due": "2026-10-23",
      "assignee": "Naveen Jangid"
     },
     {
@@ -15760,7 +16170,7 @@
      "statusCat": "done",
      "created": "2026-09-28",
      "resolved": "2026-10-27",
-     "due": null,
+     "due": "2026-10-27",
      "assignee": "Naveen Jangid"
     },
     {
@@ -15784,7 +16194,7 @@
      "statusCat": "done",
      "created": "2026-09-28",
      "resolved": "2026-10-27",
-     "due": null,
+     "due": "2026-10-27",
      "assignee": "Naveen Jangid"
     },
     {
@@ -16052,6 +16462,18 @@
      "assignee": "Anshul Bhargava"
     },
     {
+     "key": "TICKET-3",
+     "project": "TICKET",
+     "summary": "Request for VM Provisioning for Pulse Deployment",
+     "type": "[System] Service request",
+     "status": "Closed",
+     "statusCat": "done",
+     "created": "2026-09-29",
+     "resolved": "2026-09-29",
+     "due": null,
+     "assignee": "Sanjay Singh"
+    },
+    {
      "key": "UC-10",
      "project": "UC",
      "summary": "Live Agent Handoff — Agent Console & Queue (Channel-Agnostic)",
@@ -16080,8 +16502,8 @@
      "project": "UC",
      "summary": "Implementation — multi-turn memory and thumbs up/down feedback UI",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-10-30",
@@ -16680,8 +17102,8 @@
      "project": "UC",
      "summary": "Multi-turn context resolution & feedback capture loop",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-10-30",
@@ -17024,18 +17446,6 @@
      "assignee": null
     },
     {
-     "key": "UP-33",
-     "project": "UP",
-     "summary": "Design Review meeting",
-     "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
-     "created": "2026-08-04",
-     "resolved": null,
-     "due": null,
-     "assignee": null
-    },
-    {
      "key": "UP-39",
      "project": "UP",
      "summary": "USP Interactive Design and Rafay Integration",
@@ -17371,18 +17781,6 @@
      "resolved": "2026-10-06",
      "due": "2026-09-10",
      "assignee": "Naveen Jangid"
-    },
-    {
-     "key": "MT-1534",
-     "project": "MT",
-     "summary": "Remove \"free shipping\",   estimated delivery and order-processing text from the UI ",
-     "type": "Task",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-28",
-     "resolved": "2026-09-28",
-     "due": "2026-09-28",
-     "assignee": "Shashi Prasad K"
     },
     {
      "key": "UP-38",
