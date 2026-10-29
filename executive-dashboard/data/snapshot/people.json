@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-10-28",
+ "snapshotDate": "2026-10-29",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -772,11 +772,15 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.42,
+     "spentHours": 1.92,
      "logs": [
       [
        "2026-10-23",
        0.42
+      ],
+      [
+       "2026-10-29",
+       1.5
       ]
      ]
     },
@@ -1007,8 +1011,13 @@
      "resolved": "2026-10-27",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.5,
+     "logs": [
+      [
+       "2026-10-29",
+       1.5
+      ]
+     ]
     },
     {
      "key": "AFVU-234",
@@ -1119,8 +1128,13 @@
      "resolved": "2026-10-27",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.75,
+     "logs": [
+      [
+       "2026-10-29",
+       0.75
+      ]
+     ]
     },
     {
      "key": "AFVU-242",
@@ -1281,8 +1295,8 @@
      "project": "AFVU",
      "summary": "GPU as a Service: teardown when a subscription is cancelled or expires (30-day data window)",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-27",
      "resolved": null,
      "due": null,
@@ -1299,21 +1313,7 @@
      "statusCat": "new",
      "created": "2026-10-27",
      "resolved": null,
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-261",
-     "project": "AFVU",
-     "summary": "GPU as a Service: notification template for new GPU alerts, then turn alert notifications on",
-     "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-10-27",
-     "resolved": null,
-     "due": null,
+     "due": "2026-11-16",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
@@ -1327,7 +1327,7 @@
      "statusCat": "new",
      "created": "2026-10-27",
      "resolved": null,
-     "due": null,
+     "due": "2026-11-16",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
@@ -1341,7 +1341,7 @@
      "statusCat": "new",
      "created": "2026-10-27",
      "resolved": null,
-     "due": null,
+     "due": "2026-11-16",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
@@ -1355,7 +1355,7 @@
      "statusCat": "new",
      "created": "2026-10-27",
      "resolved": null,
-     "due": null,
+     "due": "2026-11-16",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
@@ -1369,7 +1369,7 @@
      "statusCat": "new",
      "created": "2026-10-27",
      "resolved": null,
-     "due": null,
+     "due": "2026-11-15",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
@@ -1383,21 +1383,7 @@
      "statusCat": "new",
      "created": "2026-10-27",
      "resolved": null,
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-267",
-     "project": "AFVU",
-     "summary": "Server catalog: owners and decisions for the 18 open items in the workbook",
-     "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-10-27",
-     "resolved": null,
-     "due": null,
+     "due": "2026-11-16",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
@@ -1826,11 +1812,15 @@
      "resolved": "2026-10-28",
      "due": "2026-10-28",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.33,
+     "spentHours": 1.58,
      "logs": [
       [
        "2026-10-28",
        0.33
+      ],
+      [
+       "2026-10-29",
+       1.25
       ]
      ]
     },
@@ -1852,6 +1842,67 @@
        0.33
       ]
      ]
+    },
+    {
+     "key": "AFVU-299",
+     "project": "AFVU",
+     "summary": "Our tests are part of the repo in the Portal, the CRM and the staff CRM, and run with upstream's",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-300",
+     "project": "AFVU",
+     "summary": "Pact contract tests between the Portal, the staff CRM and the CRM, verified against the Pact Broker",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-10-29",
+       0.5
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-320",
+     "project": "AFVU",
+     "summary": "[Data] Business review of the filled reference values and sources for the missing ones",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-328",
+     "project": "AFVU",
+     "summary": "[Data] Owner and decision for each of the 18 open items in the server catalog workbook",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
     },
     {
      "key": "ATLAS-1",
@@ -8144,95 +8195,6 @@
      "logs": []
     },
     {
-     "key": "UC-161",
-     "project": "UC",
-     "summary": "Book a Meeting — Microsoft Graph scheduling with round-robin CSM assignment & cancellation flow",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-02",
-     "resolved": "2026-09-29",
-     "due": "2026-09-04",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 3.0,
-     "logs": [
-      [
-       "2026-09-02",
-       3.0
-      ]
-     ]
-    },
-    {
-     "key": "UC-162",
-     "project": "UC",
-     "summary": "Design &amp; technical spec — Book a Meeting &amp; cancellation flow",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-02",
-     "resolved": "2026-09-29",
-     "due": "2026-09-04",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "UC-163",
-     "project": "UC",
-     "summary": "Implementation — booking flow (name/email/timezone capture, round-robin slot selection, confirmation)",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-02",
-     "resolved": "2026-09-29",
-     "due": "2026-09-04",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "UC-164",
-     "project": "UC",
-     "summary": "Implementation — cancellation &amp; email verification flow",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-02",
-     "resolved": "2026-09-29",
-     "due": "2026-09-04",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "UC-165",
-     "project": "UC",
-     "summary": "Integration &amp; security review — MS Bookings auth, input validation &amp; verification-code handling",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-02",
-     "resolved": "2026-09-29",
-     "due": "2026-09-04",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "UC-166",
-     "project": "UC",
-     "summary": "QA &amp; validation — end-to-end booking &amp; cancellation test pass",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-02",
-     "resolved": "2026-09-29",
-     "due": "2026-09-04",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
      "key": "UC-8",
      "project": "UC",
      "summary": "Public Chatbots — Marketing, USP & Marketplace",
@@ -8786,10 +8748,10 @@
      "project": "AFVU",
      "summary": "[Frontend] Portal inventory, regenerated patch and dependency check",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-10-29",
      "due": "2026-10-31",
      "assignee": "Aman prakash"
     },
@@ -8822,10 +8784,10 @@
      "project": "AFVU",
      "summary": "[Frontend] Bring in the configurator pages, route and Express / Architect switch with the fallback",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-10-29",
      "due": "2026-10-31",
      "assignee": "Aman prakash"
     },
@@ -9134,10 +9096,10 @@
      "project": "AFVU",
      "summary": "[Frontend] Portal test suite, strict type check, bundle budgets and accessibility fixes on the integrated code",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-10-29",
      "due": "2026-10-30",
      "assignee": "Aman prakash"
     },
@@ -9986,8 +9948,8 @@
      "project": "AFVU",
      "summary": "GPU as a Service: teardown when a subscription is cancelled or expires (30-day data window)",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-27",
      "resolved": null,
      "due": null,
@@ -10002,7 +9964,7 @@
      "statusCat": "new",
      "created": "2026-10-27",
      "resolved": null,
-     "due": null,
+     "due": "2026-11-16",
      "assignee": "Anshul Bhargava"
     },
     {
@@ -10014,8 +9976,8 @@
      "statusCat": "new",
      "created": "2026-10-27",
      "resolved": null,
-     "due": null,
-     "assignee": "Anshul Bhargava"
+     "due": "2026-11-16",
+     "assignee": "Aman prakash"
     },
     {
      "key": "AFVU-262",
@@ -10026,7 +9988,7 @@
      "statusCat": "new",
      "created": "2026-10-27",
      "resolved": null,
-     "due": null,
+     "due": "2026-11-16",
      "assignee": "Anshul Bhargava"
     },
     {
@@ -10038,7 +10000,7 @@
      "statusCat": "new",
      "created": "2026-10-27",
      "resolved": null,
-     "due": null,
+     "due": "2026-11-16",
      "assignee": "Anshul Bhargava"
     },
     {
@@ -10050,7 +10012,7 @@
      "statusCat": "new",
      "created": "2026-10-27",
      "resolved": null,
-     "due": null,
+     "due": "2026-11-16",
      "assignee": "Anshul Bhargava"
     },
     {
@@ -10062,7 +10024,7 @@
      "statusCat": "new",
      "created": "2026-10-27",
      "resolved": null,
-     "due": null,
+     "due": "2026-11-15",
      "assignee": "Anshul Bhargava"
     },
     {
@@ -10074,7 +10036,7 @@
      "statusCat": "new",
      "created": "2026-10-27",
      "resolved": null,
-     "due": null,
+     "due": "2026-11-16",
      "assignee": "Anshul Bhargava"
     },
     {
@@ -10086,8 +10048,8 @@
      "statusCat": "new",
      "created": "2026-10-27",
      "resolved": null,
-     "due": null,
-     "assignee": "Anshul Bhargava"
+     "due": "2026-11-16",
+     "assignee": "Aman prakash"
     },
     {
      "key": "AFVU-273",
@@ -10364,6 +10326,402 @@
      "resolved": "2026-10-28",
      "due": "2026-10-28",
      "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-299",
+     "project": "AFVU",
+     "summary": "Our tests are part of the repo in the Portal, the CRM and the staff CRM, and run with upstream's",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-300",
+     "project": "AFVU",
+     "summary": "Pact contract tests between the Portal, the staff CRM and the CRM, verified against the Pact Broker",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-10-28",
+     "due": "2026-10-28",
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-301",
+     "project": "AFVU",
+     "summary": "[Backend] GPU as a Service teardown: stop instances on cancel or expiry, delete in Rafay after 30 days",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Yash Janeshwar"
+    },
+    {
+     "key": "AFVU-302",
+     "project": "AFVU",
+     "summary": "[Frontend] GPU as a Service page shows the ended state and the data-deletion date",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Aman prakash"
+    },
+    {
+     "key": "AFVU-303",
+     "project": "AFVU",
+     "summary": "[Frontend] Staff CRM: teardown status per GPU as a Service subscription with a Retry button",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Ankit Sharma"
+    },
+    {
+     "key": "AFVU-304",
+     "project": "AFVU",
+     "summary": "[QA] End-to-end test of GPU as a Service teardown against a real Rafay organization",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "r.jaiswal"
+    },
+    {
+     "key": "AFVU-305",
+     "project": "AFVU",
+     "summary": "[Backend] Overage line for GPU-hours above the Pay as you go minimum on the next monthly invoice",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Yash Janeshwar"
+    },
+    {
+     "key": "AFVU-306",
+     "project": "AFVU",
+     "summary": "[Frontend] Usage tab shows the CRM's overage amount instead of its own estimate",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Ankit Sharma"
+    },
+    {
+     "key": "AFVU-307",
+     "project": "AFVU",
+     "summary": "[QA] Test the GPU-hours overage on a test invoice and the Usage tab",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "r.jaiswal"
+    },
+    {
+     "key": "AFVU-308",
+     "project": "AFVU",
+     "summary": "[Backend] GPU alert condition and templates in the notification service, then switch alert notifications on",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Yash Janeshwar"
+    },
+    {
+     "key": "AFVU-309",
+     "project": "AFVU",
+     "summary": "[Frontend] GPU alert notification opens the Alerts tab on the right alert",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Aman prakash"
+    },
+    {
+     "key": "AFVU-310",
+     "project": "AFVU",
+     "summary": "[QA] Test GPU alert notifications: one alert, one e-mail and one in-app message",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "r.jaiswal"
+    },
+    {
+     "key": "AFVU-311",
+     "project": "AFVU",
+     "summary": "[Backend] Read Rafay sign-in events and keep them per GPU as a Service subscription",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Yash Janeshwar"
+    },
+    {
+     "key": "AFVU-312",
+     "project": "AFVU",
+     "summary": "[Frontend] Activity tab lists who signed in to the GPU console and when",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Ankit Sharma"
+    },
+    {
+     "key": "AFVU-313",
+     "project": "AFVU",
+     "summary": "[QA] Test that GPU console sign-ins appear on the Activity tab",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "r.jaiswal"
+    },
+    {
+     "key": "AFVU-314",
+     "project": "AFVU",
+     "summary": "[Backend] Build plan notification conditions and templates, then switch BUILD_PLAN_NOTIFICATIONS_ENABLED on",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Yash Janeshwar"
+    },
+    {
+     "key": "AFVU-315",
+     "project": "AFVU",
+     "summary": "[Frontend] Build progress card shows the real updates list (up to five, with the day of each)",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Aman prakash"
+    },
+    {
+     "key": "AFVU-316",
+     "project": "AFVU",
+     "summary": "[QA] End-to-end test of build plan notifications with the real notification service",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "r.jaiswal"
+    },
+    {
+     "key": "AFVU-317",
+     "project": "AFVU",
+     "summary": "[Backend] ACS settings and test identities on the test environment, and a load check of the chat list route",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Yash Janeshwar"
+    },
+    {
+     "key": "AFVU-318",
+     "project": "AFVU",
+     "summary": "[Frontend] Communication Hub build-team conversation works with real ACS: endpoint, fixes, phone and keyboard",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Ankit Sharma"
+    },
+    {
+     "key": "AFVU-319",
+     "project": "AFVU",
+     "summary": "[QA] Run the AFVU-161 Communication Hub checks with real ACS",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "r.jaiswal"
+    },
+    {
+     "key": "AFVU-320",
+     "project": "AFVU",
+     "summary": "[Data] Business review of the filled reference values and sources for the missing ones",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-321",
+     "project": "AFVU",
+     "summary": "[Backend] Move the approved reference values into the seed file",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Yash Janeshwar"
+    },
+    {
+     "key": "AFVU-322",
+     "project": "AFVU",
+     "summary": "[Frontend] Configuration page shows the reviewed reference values from the CRM",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Aman prakash"
+    },
+    {
+     "key": "AFVU-323",
+     "project": "AFVU",
+     "summary": "[QA] Check a fresh database from the seed against the approved reference values",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "r.jaiswal"
+    },
+    {
+     "key": "AFVU-324",
+     "project": "AFVU",
+     "summary": "[Backend] Self-hosted Pact broker on AppTest, CRM provider verification and can-i-deploy in the pipeline",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Yash Janeshwar"
+    },
+    {
+     "key": "AFVU-325",
+     "project": "AFVU",
+     "summary": "[Frontend] Portal (next-fe) consumer contracts for the most-called CRM routes, published from the pipeline",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Aman prakash"
+    },
+    {
+     "key": "AFVU-326",
+     "project": "AFVU",
+     "summary": "[Frontend] Staff CRM (next-crm-fe) consumer contracts for the staff routes, published from the pipeline",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Ankit Sharma"
+    },
+    {
+     "key": "AFVU-327",
+     "project": "AFVU",
+     "summary": "[QA] Prove the contract pipeline catches a breaking change before deploy",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "r.jaiswal"
+    },
+    {
+     "key": "AFVU-328",
+     "project": "AFVU",
+     "summary": "[Data] Owner and decision for each of the 18 open items in the server catalog workbook",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-329",
+     "project": "AFVU",
+     "summary": "[Backend] Apply the approved server catalog decisions to the reference data through a change set",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Yash Janeshwar"
+    },
+    {
+     "key": "AFVU-330",
+     "project": "AFVU",
+     "summary": "[Frontend] Configuration page and Interactive View show the updated server catalog",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Ankit Sharma"
+    },
+    {
+     "key": "AFVU-331",
+     "project": "AFVU",
+     "summary": "[QA] Check the server catalog changes end to end, from configuration to Proposal",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-29",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "r.jaiswal"
     },
     {
      "key": "ATLAS-1",
@@ -12534,7 +12892,7 @@
      "statusCat": "indeterminate",
      "created": "2026-09-28",
      "resolved": null,
-     "due": null,
+     "due": "2026-10-23",
      "assignee": "Naveen Jangid"
     },
     {
@@ -12666,7 +13024,7 @@
      "statusCat": "done",
      "created": "2026-09-28",
      "resolved": "2026-10-27",
-     "due": null,
+     "due": "2026-10-23",
      "assignee": "Naveen Jangid"
     },
     {
@@ -16122,7 +16480,7 @@
      "statusCat": "done",
      "created": "2026-09-28",
      "resolved": "2026-10-27",
-     "due": null,
+     "due": "2026-10-20",
      "assignee": "Naveen Jangid"
     },
     {
@@ -16158,7 +16516,7 @@
      "statusCat": "done",
      "created": "2026-09-28",
      "resolved": "2026-10-27",
-     "due": null,
+     "due": "2026-10-23",
      "assignee": "Naveen Jangid"
     },
     {
@@ -16182,7 +16540,7 @@
      "statusCat": "done",
      "created": "2026-09-28",
      "resolved": "2026-10-27",
-     "due": null,
+     "due": "2026-10-27",
      "assignee": "Naveen Jangid"
     },
     {
@@ -16562,10 +16920,10 @@
      "project": "UC",
      "summary": "Design & technical spec — out-of-scope request detection rules",
      "type": "Subtask",
-     "status": "In Dev",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-10-29",
      "due": "2026-10-30",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -16574,10 +16932,10 @@
      "project": "UC",
      "summary": "Implementation — out-of-scope refusal & routing to human support",
      "type": "Subtask",
-     "status": "In Dev",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-10-29",
      "due": "2026-10-30",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -16598,10 +16956,10 @@
      "project": "UC",
      "summary": "Integration & security review — no unauthorized action bypass check",
      "type": "Subtask",
-     "status": "In Dev",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-10-29",
      "due": "2026-10-30",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -16610,7 +16968,7 @@
      "project": "UC",
      "summary": "QA & validation — out-of-scope handling test pass",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "In Dev",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -16630,76 +16988,100 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "UC-161",
+     "key": "UC-140",
      "project": "UC",
-     "summary": "Book a Meeting — Microsoft Graph scheduling with round-robin CSM assignment & cancellation flow",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-02",
-     "resolved": "2026-09-29",
-     "due": "2026-09-04",
-     "assignee": "Anshul Bhargava"
+     "summary": "Design & technical spec — canned response templates & routing rules",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2027-02-12",
+     "assignee": "Ankit Saxena"
     },
     {
-     "key": "UC-162",
+     "key": "UC-141",
      "project": "UC",
-     "summary": "Design &amp; technical spec — Book a Meeting &amp; cancellation flow",
+     "summary": "Implementation — canned response library & handoff routing",
      "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-02",
-     "resolved": "2026-09-29",
-     "due": "2026-09-04",
-     "assignee": "Anshul Bhargava"
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2027-02-19",
+     "assignee": "Ankit Saxena"
     },
     {
-     "key": "UC-163",
+     "key": "UC-142",
      "project": "UC",
-     "summary": "Implementation — booking flow (name/email/timezone capture, round-robin slot selection, confirmation)",
+     "summary": "Integration & security review — routing rule access control",
      "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-02",
-     "resolved": "2026-09-29",
-     "due": "2026-09-04",
-     "assignee": "Anshul Bhargava"
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2027-02-24",
+     "assignee": "Ankit Saxena"
     },
     {
-     "key": "UC-164",
+     "key": "UC-143",
      "project": "UC",
-     "summary": "Implementation — cancellation &amp; email verification flow",
+     "summary": "QA & validation — canned response & routing test pass",
      "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-02",
-     "resolved": "2026-09-29",
-     "due": "2026-09-04",
-     "assignee": "Anshul Bhargava"
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2027-02-26",
+     "assignee": "Ankit Saxena"
     },
     {
-     "key": "UC-165",
+     "key": "UC-148",
      "project": "UC",
-     "summary": "Integration &amp; security review — MS Bookings auth, input validation &amp; verification-code handling",
+     "summary": "Design & technical spec — SLA timer configuration & escalation rules",
      "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-02",
-     "resolved": "2026-09-29",
-     "due": "2026-09-04",
-     "assignee": "Anshul Bhargava"
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-11-13",
+     "assignee": "Nareddy Shiva Prasad Reddy"
     },
     {
-     "key": "UC-166",
+     "key": "UC-149",
      "project": "UC",
-     "summary": "QA &amp; validation — end-to-end booking &amp; cancellation test pass",
+     "summary": "Implementation — availability check & connect-within-SLA flow",
      "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-02",
-     "resolved": "2026-09-29",
-     "due": "2026-09-04",
-     "assignee": "Anshul Bhargava"
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-11-13",
+     "assignee": "Nareddy Shiva Prasad Reddy"
+    },
+    {
+     "key": "UC-150",
+     "project": "UC",
+     "summary": "Integration & security review — Teams availability check integrity",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-11-13",
+     "assignee": "Nareddy Shiva Prasad Reddy"
+    },
+    {
+     "key": "UC-151",
+     "project": "UC",
+     "summary": "QA & validation — SLA connect-time testing",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2027-01-20",
+     "assignee": "Nareddy Shiva Prasad Reddy"
     },
     {
      "key": "UC-167",
@@ -16802,7 +17184,7 @@
      "project": "UC",
      "summary": "Authenticated own-records experience — orders, invoices, subscription & low-risk actions",
      "type": "Story",
-     "status": "IN PROGRESS",
+     "status": "In Dev",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -16898,10 +17280,10 @@
      "project": "UC",
      "summary": "Internal knowledge-base ingestion — isolated, access-controlled index (conditional)",
      "type": "Story",
-     "status": "In Dev",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-10-29",
      "due": "2026-10-26",
      "assignee": "Ankit Saxena"
     },
@@ -16922,7 +17304,7 @@
      "project": "UC",
      "summary": "Implementation — entitlement layer, internal API tools & deterministic cards",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "In Dev",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -16934,8 +17316,8 @@
      "project": "UC",
      "summary": "QA & validation — entitlement testing & penetration test",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Dev",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-10-29",
@@ -17042,7 +17424,7 @@
      "project": "UC",
      "summary": "Implementation — internal KB source ingestion into isolated index (conditional)",
      "type": "Subtask",
-     "status": "In Dev",
+     "status": "In Prod",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -17054,7 +17436,7 @@
      "project": "UC",
      "summary": "QA & validation — internal KB isolation & access-control verification",
      "type": "Subtask",
-     "status": "In Dev",
+     "status": "In Prod",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -17102,10 +17484,10 @@
      "project": "UC",
      "summary": "Multi-turn context resolution & feedback capture loop",
      "type": "Story",
-     "status": "IN PROGRESS",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-10-29",
      "due": "2026-10-30",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -17190,7 +17572,7 @@
      "statusCat": "new",
      "created": "2026-08-13",
      "resolved": null,
-     "due": "2027-01-24",
+     "due": "2026-11-13",
      "assignee": "Ankit Saxena"
     },
     {
@@ -17202,8 +17584,8 @@
      "statusCat": "new",
      "created": "2026-08-13",
      "resolved": null,
-     "due": "2027-02-15",
-     "assignee": "Ankit Saxena"
+     "due": "2026-11-13",
+     "assignee": "Nareddy Shiva Prasad Reddy"
     },
     {
      "key": "UC-70",
@@ -17246,7 +17628,7 @@
      "project": "UC",
      "summary": "Design & technical spec — entitlement model & internal API tool contracts",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "In Dev",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -17258,8 +17640,8 @@
      "project": "UC",
      "summary": "Integration & security review — cross-user access exploit testing",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Dev",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-10-29",
@@ -17378,7 +17760,7 @@
      "project": "UC",
      "summary": "Design & technical spec — demand-tracking ranking logic",
      "type": "Subtask",
-     "status": "In Dev",
+     "status": "In Prod",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -17390,7 +17772,7 @@
      "project": "UC",
      "summary": "Integration & security review — demand data anonymisation check",
      "type": "Subtask",
-     "status": "In Dev",
+     "status": "In Prod",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -17408,18 +17790,6 @@
      "resolved": "2026-10-09",
      "due": "2026-10-13",
      "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UP-28",
-     "project": "UP",
-     "summary": "Tempo Logging ",
-     "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
-     "created": "2026-07-14",
-     "resolved": null,
-     "due": null,
-     "assignee": null
     },
     {
      "key": "UP-29",
@@ -17781,18 +18151,6 @@
      "resolved": "2026-10-06",
      "due": "2026-09-10",
      "assignee": "Naveen Jangid"
-    },
-    {
-     "key": "UP-38",
-     "project": "UP",
-     "summary": "Tempo setup for infra",
-     "type": "Subtask",
-     "status": "Backlog",
-     "statusCat": "new",
-     "created": "2026-09-28",
-     "resolved": null,
-     "due": null,
-     "assignee": null
     },
     {
      "key": "UP-53",
