@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-10-29",
+ "snapshotDate": "2026-10-30",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -1299,7 +1299,7 @@
      "statusCat": "indeterminate",
      "created": "2026-10-27",
      "resolved": null,
-     "due": null,
+     "due": "2026-11-16",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
@@ -1905,6 +1905,230 @@
      "logs": []
     },
     {
+     "key": "AFVU-336",
+     "project": "AFVU",
+     "summary": "Live telemetry from NVIDIA DSX into the AI Factory hall, rack to server and GPU: built and checked locally (30 Oct)",
+     "type": "Story",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-30",
+     "resolved": "2026-10-30",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-337",
+     "project": "AFVU",
+     "summary": "[Backend] CRM: asset map, collector per subscription and stream token for the live DSX feed, with mapping guards",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-30",
+     "resolved": "2026-10-30",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-338",
+     "project": "AFVU",
+     "summary": "[Frontend] Interactive View reads the live DSX stream, down to server and GPU, with the CRM poll as fallback",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-30",
+     "resolved": "2026-10-30",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-339",
+     "project": "AFVU",
+     "summary": "[Backend] dsx-collector: DSX Event Bus and GPU readings into the Portal stream, the CRM and VictoriaMetrics",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-30",
+     "resolved": "2026-10-30",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-341",
+     "project": "AFVU",
+     "summary": "Live DSX telemetry: push, merge, run on AppTest, QA, then a real site",
+     "type": "Story",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-342",
+     "project": "AFVU",
+     "summary": "[Backend] Push the CRM part to next-be v3, merge into demo/main and migrate on AppTest",
+     "type": "Subtask",
+     "status": "In Review",
+     "statusCat": "indeterminate",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-343",
+     "project": "AFVU",
+     "summary": "[Frontend] Push the Portal part to NEXT-V3 and merge into demo/main",
+     "type": "Subtask",
+     "status": "In Review",
+     "statusCat": "indeterminate",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-344",
+     "project": "AFVU",
+     "summary": "[Backend] Create the dsx-collector repo, push it, and run it with VictoriaMetrics on the AppTest server",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-345",
+     "project": "AFVU",
+     "summary": "[Data] Real site: DSX access route, broker credentials, the site's asset map and NVIDIA's temperature limits",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-348",
+     "project": "AFVU",
+     "summary": "NVIDIA DSX POD as a new platform under Modular and Nuclear, built to the Vera Rubin NVL72 RA: built, checked and pushed (30 Oct)",
+     "type": "Story",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-30",
+     "resolved": "2026-10-30",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-349",
+     "project": "AFVU",
+     "summary": "[Backend] CRM: change-set loader adds new platforms by copy, DSX POD change set as drafts, platform guard in quote and order check",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-30",
+     "resolved": "2026-10-30",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-350",
+     "project": "AFVU",
+     "summary": "[Frontend] Architect configurator shows DSX POD as a container model: own name, platform card price from the container, CRM pictures",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-30",
+     "resolved": "2026-10-30",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-351",
+     "project": "AFVU",
+     "summary": "[Data] DSX POD decisions, RA sizing and sources, and product pictures on the CDN",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-30",
+     "resolved": "2026-10-30",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-352",
+     "project": "AFVU",
+     "summary": "NVIDIA DSX POD go-live: merge, price, load and approve, QA on AppTest, then release",
+     "type": "Story",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-353",
+     "project": "AFVU",
+     "summary": "[Data] Price per DSX POD (Modular and Nuclear) from business, and marketing's OK for NVIDIA's press render",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-359",
+     "project": "AFVU",
+     "summary": "[Data] Replace the assumed DSX POD figures when NVIDIA publishes its reference design",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
      "key": "ATLAS-1",
      "project": "ATLAS",
      "summary": "R&D on CRM for MVP",
@@ -1951,25 +2175,6 @@
       [
        "2026-09-25",
        1.5
-      ]
-     ]
-    },
-    {
-     "key": "MT-1538",
-     "project": "MT",
-     "summary": "Verify the AI/ML PRODUCTS for USP on the Excel Sheet created by Product team",
-     "type": "Task",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-29",
-     "resolved": "2026-09-30",
-     "due": "2026-09-29",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.67,
-     "logs": [
-      [
-       "2026-09-29",
-       0.67
       ]
      ]
     },
@@ -7187,29 +7392,6 @@
      "logs": []
     },
     {
-     "key": "PULSE-329",
-     "project": "PULSE",
-     "summary": "Developement: telemetry-ingest service assertion sends null subscriptionIds and receives 401",
-     "type": "Bug",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-29",
-     "resolved": "2026-09-30",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 1.5,
-     "logs": [
-      [
-       "2026-09-29",
-       0.5
-      ],
-      [
-       "2026-09-30",
-       1.0
-      ]
-     ]
-    },
-    {
      "key": "PULSE-33",
      "project": "PULSE",
      "summary": "26.01 — [Backend] Safe PQL/PromQL AST compiler",
@@ -8616,10 +8798,10 @@
      "project": "AFVU",
      "summary": "AI Factory configurator (Express and Architect): CRM reference data and routes, and the Portal configuration page",
      "type": "Story",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-10-30",
      "due": "2026-10-30",
      "assignee": "Ankit Sharma"
     },
@@ -8632,7 +8814,7 @@
      "statusCat": "indeterminate",
      "created": "2026-10-16",
      "resolved": null,
-     "due": "2026-10-30",
+     "due": "2026-11-16",
      "assignee": "Ankit Sharma"
     },
     {
@@ -8740,7 +8922,7 @@
      "statusCat": "indeterminate",
      "created": "2026-10-16",
      "resolved": null,
-     "due": "2026-10-18",
+     "due": "2026-11-16",
      "assignee": "Yash Janeshwar"
     },
     {
@@ -8776,7 +8958,7 @@
      "statusCat": "indeterminate",
      "created": "2026-10-16",
      "resolved": null,
-     "due": "2026-10-22",
+     "due": "2026-11-16",
      "assignee": "Yash Janeshwar"
     },
     {
@@ -8812,7 +8994,7 @@
      "statusCat": "indeterminate",
      "created": "2026-10-16",
      "resolved": null,
-     "due": "2026-10-21",
+     "due": "2026-11-16",
      "assignee": "Yash Janeshwar"
     },
     {
@@ -8820,10 +9002,10 @@
      "project": "AFVU",
      "summary": "[Frontend] Read factory-config and probe-access; behaviour when they fail",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-10-30",
      "due": "2026-10-31",
      "assignee": "Ankit Sharma"
     },
@@ -8832,8 +9014,8 @@
      "project": "AFVU",
      "summary": "[Test] factory-config and probe-access: isolation, allow-list, billing rule, failure states",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-16",
      "resolved": null,
      "due": "2026-10-27",
@@ -8848,7 +9030,7 @@
      "statusCat": "new",
      "created": "2026-10-16",
      "resolved": null,
-     "due": "2026-10-22",
+     "due": "2026-11-16",
      "assignee": "Yash Janeshwar"
     },
     {
@@ -8856,10 +9038,10 @@
      "project": "AFVU",
      "summary": "[Frontend] Bring in the new page, switch, fallback, access rules and deep links",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-10-30",
      "due": "2026-10-28",
      "assignee": "Ankit Sharma"
     },
@@ -8884,7 +9066,7 @@
      "statusCat": "new",
      "created": "2026-10-16",
      "resolved": null,
-     "due": "2026-10-23",
+     "due": "2026-11-16",
      "assignee": "Yash Janeshwar"
     },
     {
@@ -8892,10 +9074,10 @@
      "project": "AFVU",
      "summary": "[Frontend] Bring in the Interactive View, dependencies, chunks and size budgets",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-10-30",
      "due": "2026-10-30",
      "assignee": "Ankit Sharma"
     },
@@ -8920,7 +9102,7 @@
      "statusCat": "new",
      "created": "2026-10-16",
      "resolved": null,
-     "due": "2026-10-22",
+     "due": "2026-11-16",
      "assignee": "Yash Janeshwar"
     },
     {
@@ -8928,10 +9110,10 @@
      "project": "AFVU",
      "summary": "[Frontend] Bring in the registry ids on the page",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-10-30",
      "due": "2026-10-31",
      "assignee": "Aman prakash"
     },
@@ -8956,7 +9138,7 @@
      "statusCat": "new",
      "created": "2026-10-16",
      "resolved": null,
-     "due": "2026-10-23",
+     "due": "2026-11-16",
      "assignee": "Yash Janeshwar"
     },
     {
@@ -8968,7 +9150,7 @@
      "statusCat": "new",
      "created": "2026-10-16",
      "resolved": null,
-     "due": "2026-10-26",
+     "due": "2026-11-16",
      "assignee": "Yash Janeshwar"
     },
     {
@@ -9088,7 +9270,7 @@
      "statusCat": "new",
      "created": "2026-10-16",
      "resolved": null,
-     "due": "2026-10-30",
+     "due": "2026-11-16",
      "assignee": "Yash Janeshwar"
     },
     {
@@ -9952,7 +10134,7 @@
      "statusCat": "indeterminate",
      "created": "2026-10-27",
      "resolved": null,
-     "due": null,
+     "due": "2026-11-16",
      "assignee": "Anshul Bhargava"
     },
     {
@@ -10724,6 +10906,294 @@
      "assignee": "r.jaiswal"
     },
     {
+     "key": "AFVU-336",
+     "project": "AFVU",
+     "summary": "Live telemetry from NVIDIA DSX into the AI Factory hall, rack to server and GPU: built and checked locally (30 Oct)",
+     "type": "Story",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-30",
+     "resolved": "2026-10-30",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-337",
+     "project": "AFVU",
+     "summary": "[Backend] CRM: asset map, collector per subscription and stream token for the live DSX feed, with mapping guards",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-30",
+     "resolved": "2026-10-30",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-338",
+     "project": "AFVU",
+     "summary": "[Frontend] Interactive View reads the live DSX stream, down to server and GPU, with the CRM poll as fallback",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-30",
+     "resolved": "2026-10-30",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-339",
+     "project": "AFVU",
+     "summary": "[Backend] dsx-collector: DSX Event Bus and GPU readings into the Portal stream, the CRM and VictoriaMetrics",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-30",
+     "resolved": "2026-10-30",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-340",
+     "project": "AFVU",
+     "summary": "[Test] Live DSX telemetry end to end: readings, alerts, stale and fallback, and no data in another customer's hall",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "r.jaiswal"
+    },
+    {
+     "key": "AFVU-341",
+     "project": "AFVU",
+     "summary": "Live DSX telemetry: push, merge, run on AppTest, QA, then a real site",
+     "type": "Story",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-342",
+     "project": "AFVU",
+     "summary": "[Backend] Push the CRM part to next-be v3, merge into demo/main and migrate on AppTest",
+     "type": "Subtask",
+     "status": "In Review",
+     "statusCat": "indeterminate",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-343",
+     "project": "AFVU",
+     "summary": "[Frontend] Push the Portal part to NEXT-V3 and merge into demo/main",
+     "type": "Subtask",
+     "status": "In Review",
+     "statusCat": "indeterminate",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-344",
+     "project": "AFVU",
+     "summary": "[Backend] Create the dsx-collector repo, push it, and run it with VictoriaMetrics on the AppTest server",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-345",
+     "project": "AFVU",
+     "summary": "[Data] Real site: DSX access route, broker credentials, the site's asset map and NVIDIA's temperature limits",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-346",
+     "project": "AFVU",
+     "summary": "[Frontend] Staff screen for a subscription's asset map and live-feed collector",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Aman prakash"
+    },
+    {
+     "key": "AFVU-347",
+     "project": "AFVU",
+     "summary": "[Backend] Check asset-map rows against the subscription's hall when staff save them",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Yash Janeshwar"
+    },
+    {
+     "key": "AFVU-348",
+     "project": "AFVU",
+     "summary": "NVIDIA DSX POD as a new platform under Modular and Nuclear, built to the Vera Rubin NVL72 RA: built, checked and pushed (30 Oct)",
+     "type": "Story",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-30",
+     "resolved": "2026-10-30",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-349",
+     "project": "AFVU",
+     "summary": "[Backend] CRM: change-set loader adds new platforms by copy, DSX POD change set as drafts, platform guard in quote and order check",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-30",
+     "resolved": "2026-10-30",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-350",
+     "project": "AFVU",
+     "summary": "[Frontend] Architect configurator shows DSX POD as a container model: own name, platform card price from the container, CRM pictures",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-30",
+     "resolved": "2026-10-30",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-351",
+     "project": "AFVU",
+     "summary": "[Data] DSX POD decisions, RA sizing and sources, and product pictures on the CDN",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-30",
+     "resolved": "2026-10-30",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-352",
+     "project": "AFVU",
+     "summary": "NVIDIA DSX POD go-live: merge, price, load and approve, QA on AppTest, then release",
+     "type": "Story",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-353",
+     "project": "AFVU",
+     "summary": "[Data] Price per DSX POD (Modular and Nuclear) from business, and marketing's OK for NVIDIA's press render",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-354",
+     "project": "AFVU",
+     "summary": "[Backend] Merge feature/dsx-pod into next-be v3, deploy the CRM to AppTest and load the DSX POD change set",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Yash Janeshwar"
+    },
+    {
+     "key": "AFVU-355",
+     "project": "AFVU",
+     "summary": "[Frontend] Merge feature/dsx-pod into NEXT-V3 and deploy the Portal to AppTest",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Aman prakash"
+    },
+    {
+     "key": "AFVU-356",
+     "project": "AFVU",
+     "summary": "[Backend] Set the DSX POD price, approve the 6 drafts and activate the 2 catalog rows on AppTest",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Yash Janeshwar"
+    },
+    {
+     "key": "AFVU-357",
+     "project": "AFVU",
+     "summary": "[QA] NVIDIA DSX POD end to end on AppTest: Modular and Nuclear, site fit, quote, order, and Genesis unchanged",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "r.jaiswal"
+    },
+    {
+     "key": "AFVU-358",
+     "project": "AFVU",
+     "summary": "[Backend] Keep the DSX POD design in step with later Vera Rubin NVL72 rule fixes",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Yash Janeshwar"
+    },
+    {
+     "key": "AFVU-359",
+     "project": "AFVU",
+     "summary": "[Data] Replace the assumed DSX POD figures when NVIDIA publishes its reference design",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
      "key": "ATLAS-1",
      "project": "ATLAS",
      "summary": "R&D on CRM for MVP",
@@ -10758,90 +11228,6 @@
      "resolved": "2026-10-01",
      "due": "2026-09-30",
      "assignee": "b.kumar"
-    },
-    {
-     "key": "IN-1098",
-     "project": "IN",
-     "summary": "Deploy and validate Pulse telemetry platform on developemnt  VM",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-16",
-     "resolved": "2026-09-30",
-     "due": "2026-09-30",
-     "assignee": "Sarath Chandra"
-    },
-    {
-     "key": "IN-1099",
-     "project": "IN",
-     "summary": "Fix metrics poison message (collector → Redpanda → writer)",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-16",
-     "resolved": "2026-09-30",
-     "due": "2026-09-18",
-     "assignee": "Sarath Chandra"
-    },
-    {
-     "key": "IN-1100",
-     "project": "IN",
-     "summary": "Integration of two applications Metrics in pulse Dashboard",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-16",
-     "resolved": "2026-09-30",
-     "due": "2026-09-25",
-     "assignee": "Sarath Chandra"
-    },
-    {
-     "key": "IN-1101",
-     "project": "IN",
-     "summary": "Set up ingress, DNS, TLS, and Azure Front Door for status-platform",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-16",
-     "resolved": "2026-09-30",
-     "due": "2026-09-23",
-     "assignee": "Sarath Chandra"
-    },
-    {
-     "key": "IN-1102",
-     "project": "IN",
-     "summary": "Wire telemetry ingestion and tune rollup thresholds for production",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-16",
-     "resolved": "2026-09-30",
-     "due": "2026-09-25",
-     "assignee": "Sarath Chandra"
-    },
-    {
-     "key": "IN-1103",
-     "project": "IN",
-     "summary": "End-to-end smoke testing of status-platform on production",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-16",
-     "resolved": "2026-09-30",
-     "due": "2026-09-28",
-     "assignee": "Sarath Chandra"
-    },
-    {
-     "key": "IN-1104",
-     "project": "IN",
-     "summary": "Write runbook and configure alert routing for status-platform",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-16",
-     "resolved": "2026-09-30",
-     "due": "2026-09-30",
-     "assignee": "Sarath Chandra"
     },
     {
      "key": "IN-1119",
@@ -11118,18 +11504,6 @@
      "resolved": null,
      "due": "2026-10-30",
      "assignee": "Vishnu kumar yadav"
-    },
-    {
-     "key": "MT-1538",
-     "project": "MT",
-     "summary": "Verify the AI/ML PRODUCTS for USP on the Excel Sheet created by Product team",
-     "type": "Task",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-29",
-     "resolved": "2026-09-30",
-     "due": "2026-09-29",
-     "assignee": "Anshul Bhargava"
     },
     {
      "key": "PRD-1",
@@ -12888,10 +13262,10 @@
      "project": "PULSE",
      "summary": "03.02 — [DevOps] On-Prem Production Deployment and Configuration",
      "type": "Story",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-09-28",
-     "resolved": null,
+     "resolved": "2026-10-30",
      "due": "2026-10-23",
      "assignee": "Naveen Jangid"
     },
@@ -15932,18 +16306,6 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "PULSE-329",
-     "project": "PULSE",
-     "summary": "Developement: telemetry-ingest service assertion sends null subscriptionIds and receives 401",
-     "type": "Bug",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-29",
-     "resolved": "2026-09-30",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
      "key": "PULSE-33",
      "project": "PULSE",
      "summary": "26.01 — [Backend] Safe PQL/PromQL AST compiler",
@@ -16820,18 +17182,6 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "TICKET-3",
-     "project": "TICKET",
-     "summary": "Request for VM Provisioning for Pulse Deployment",
-     "type": "[System] Service request",
-     "status": "Closed",
-     "statusCat": "done",
-     "created": "2026-09-29",
-     "resolved": "2026-09-29",
-     "due": null,
-     "assignee": "Sanjay Singh"
-    },
-    {
      "key": "UC-10",
      "project": "UC",
      "summary": "Live Agent Handoff — Agent Console & Queue (Channel-Agnostic)",
@@ -16842,6 +17192,54 @@
      "resolved": null,
      "due": "2027-01-24",
      "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "UC-100",
+     "project": "UC",
+     "summary": "Design & technical spec — lead capture form schema & consent handling",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-11-13",
+     "assignee": "Nareddy Shiva Prasad Reddy"
+    },
+    {
+     "key": "UC-101",
+     "project": "UC",
+     "summary": "Implementation — lead capture flow and CRM handoff",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-11-13",
+     "assignee": "Nareddy Shiva Prasad Reddy"
+    },
+    {
+     "key": "UC-102",
+     "project": "UC",
+     "summary": "Integration & security review — lead data consent enforcement",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-11-13",
+     "assignee": "Nareddy Shiva Prasad Reddy"
+    },
+    {
+     "key": "UC-103",
+     "project": "UC",
+     "summary": "QA & validation — lead capture end-to-end test pass",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-11-13",
+     "assignee": "Nareddy Shiva Prasad Reddy"
     },
     {
      "key": "UC-104",
@@ -16872,8 +17270,8 @@
      "project": "UC",
      "summary": "Integration & security review — feedback data storage review",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-10-30",
@@ -16996,7 +17394,7 @@
      "statusCat": "new",
      "created": "2026-08-13",
      "resolved": null,
-     "due": "2027-02-12",
+     "due": "2026-11-10",
      "assignee": "Ankit Saxena"
     },
     {
@@ -17008,7 +17406,7 @@
      "statusCat": "new",
      "created": "2026-08-13",
      "resolved": null,
-     "due": "2027-02-19",
+     "due": "2026-11-11",
      "assignee": "Ankit Saxena"
     },
     {
@@ -17020,7 +17418,7 @@
      "statusCat": "new",
      "created": "2026-08-13",
      "resolved": null,
-     "due": "2027-02-24",
+     "due": "2026-11-12",
      "assignee": "Ankit Saxena"
     },
     {
@@ -17032,7 +17430,7 @@
      "statusCat": "new",
      "created": "2026-08-13",
      "resolved": null,
-     "due": "2027-02-26",
+     "due": "2026-11-13",
      "assignee": "Ankit Saxena"
     },
     {
@@ -17236,7 +17634,7 @@
      "statusCat": "new",
      "created": "2026-08-13",
      "resolved": null,
-     "due": "2027-03-07",
+     "due": "2026-11-13",
      "assignee": "Ankit Saxena"
     },
     {
@@ -17308,7 +17706,7 @@
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
-     "due": "2026-10-29",
+     "due": "2026-10-30",
      "assignee": "Ankit Saxena"
     },
     {
@@ -17320,7 +17718,7 @@
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
-     "due": "2026-10-29",
+     "due": "2026-10-30",
      "assignee": "Ankit Saxena"
     },
     {
@@ -17369,6 +17767,30 @@
      "created": "2026-08-13",
      "resolved": "2026-10-15",
      "due": "2027-02-21",
+     "assignee": "Ankit Saxena"
+    },
+    {
+     "key": "UC-45",
+     "project": "UC",
+     "summary": "Implementation — in-chat RFQ flow & CRM integration",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2027-03-03",
+     "assignee": "Ankit Saxena"
+    },
+    {
+     "key": "UC-46",
+     "project": "UC",
+     "summary": "QA & validation — RFQ CRM record creation & confirmation reliability",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-11-05",
      "assignee": "Ankit Saxena"
     },
     {
@@ -17452,8 +17874,8 @@
      "statusCat": "new",
      "created": "2026-08-13",
      "resolved": null,
-     "due": "2026-08-23",
-     "assignee": "Ankit Saxena"
+     "due": "2026-11-13",
+     "assignee": "Nareddy Shiva Prasad Reddy"
     },
     {
      "key": "UC-58",
@@ -17484,10 +17906,10 @@
      "project": "UC",
      "summary": "Multi-turn context resolution & feedback capture loop",
      "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
-     "resolved": "2026-10-29",
+     "resolved": null,
      "due": "2026-10-30",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -17632,7 +18054,7 @@
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
-     "due": "2026-10-29",
+     "due": "2026-10-30",
      "assignee": "Ankit Saxena"
     },
     {
@@ -17644,7 +18066,7 @@
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
-     "due": "2026-10-29",
+     "due": "2026-10-30",
      "assignee": "Ankit Saxena"
     },
     {
@@ -17693,6 +18115,30 @@
      "created": "2026-08-13",
      "resolved": "2026-10-15",
      "due": "2027-01-01",
+     "assignee": "Ankit Saxena"
+    },
+    {
+     "key": "UC-88",
+     "project": "UC",
+     "summary": "Design & technical spec — live-join transcript continuity",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-11-04",
+     "assignee": "Ankit Saxena"
+    },
+    {
+     "key": "UC-89",
+     "project": "UC",
+     "summary": "Integration & security review — dashboard-to-Teams join handshake",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-08-13",
+     "resolved": null,
+     "due": "2026-11-06",
      "assignee": "Ankit Saxena"
     },
     {
