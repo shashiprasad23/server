@@ -847,9 +847,9 @@
       },
       {
         "topic": "S1 production bugs",
-        "status": "Fixed: the AI Factory price mismatches (USP-4229, USP-4230) on 7 Oct and the deposit deduction bug (USP-4095) on 9 Oct. The subscription calculation 500 error (USP-4204) was deployed to production on 28 Oct. The Document API 502 (USP-4231) is still To Do.",
+        "status": "Fixed: the AI Factory price mismatches (USP-4229, USP-4230) on 7 Oct and the deposit deduction bug (USP-4095) on 9 Oct. The subscription calculation 500 error (USP-4204) was deployed to production on 28 Oct but is still Deployed In Prod past its 30 Oct date. The Document API 502 (USP-4231) is still To Do and passed its 30 Oct date.",
         "date": "2026-10-30",
-        "ask": "Close USP-4204 now it is in production, and get a fix date for the Document API 502 (USP-4231) earlier than 30 Oct.",
+        "ask": "Close USP-4204 now it is in production, and get a new fix date for the Document API 502 (USP-4231).",
         "rag": "amber"
       },
       {
@@ -927,11 +927,11 @@
       "rag": "amber",
       "assessment": "Hours are steady but lower than earlier in October, and held items past due keep rising.",
       "evidence": [
-        "51.0 h logged over 9 of 10 working days (64% of capacity).",
+        "51.5 h logged over 9 of 10 working days (64% of capacity).",
         "4 items closed in the window.",
-        "Holds USP-3858 (subscription start and end dates) marked BLOCKER; its due date moved from 30 Sep to 30 Oct.",
+        "Holds USP-3858 (subscription start and end dates) marked BLOCKER; its due date moved from 30 Sep to 30 Oct, and that date has now passed.",
         "Holds 153 of the 191 Conversational AI backlog items updated on 15 Oct. Closed the knowledge-transfer subtask (UC-237) on 21 Oct, two days late; the UI 2.0 mock-up (UC-392) closed on 26 Oct, four days late, the CSM dashboard redesign (UC-238, due 26 Oct) closed on 30 Oct, and its validation (UC-239) and the dashboard theme story (UC-236) passed their 29 Oct date in Code Review and Dev. A new admin landing page story (UC-402) was raised on 30 Oct with three subtasks already dated in the past (UC-403, UC-404, UC-407).",
-        "19 front-end widget, admin and dashboard items (UC-243 to UC-298) passed their 23 Oct due date without starting; 28 held items are past due."
+        "19 front-end widget, admin and dashboard items (UC-243 to UC-298) passed their 23 Oct due date without starting; 42 held items are past due after more front-end items passed their 30 Oct date."
       ],
       "action": "Review the blocker and the workload with Shivam Dhoundiyal, re-plan the 19 front-end items that passed 23 Oct, and correct the past dates on the new UC-403, UC-404 and UC-407.",
       "pip": null

@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-10-30",
+ "snapshotDate": "2026-10-31",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -73,11 +73,15 @@
      "resolved": "2026-10-27",
      "due": "2026-10-30",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.5,
+     "spentHours": 3.0,
      "logs": [
       [
        "2026-10-26",
        0.5
+      ],
+      [
+       "2026-10-30",
+       2.5
       ]
      ]
     },
@@ -682,11 +686,15 @@
      "resolved": "2026-10-28",
      "due": "2026-10-28",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.42,
+     "spentHours": 0.92,
      "logs": [
       [
        "2026-10-23",
        0.42
+      ],
+      [
+       "2026-10-30",
+       0.5
       ]
      ]
     },
@@ -772,7 +780,7 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 1.92,
+     "spentHours": 4.42,
      "logs": [
       [
        "2026-10-23",
@@ -781,6 +789,10 @@
       [
        "2026-10-29",
        1.5
+      ],
+      [
+       "2026-10-30",
+       2.5
       ]
      ]
     },
@@ -1915,8 +1927,13 @@
      "resolved": "2026-10-30",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-10-30",
+       0.5
+      ]
+     ]
     },
     {
      "key": "AFVU-337",
@@ -11218,18 +11235,6 @@
      "assignee": "Ankit Sharma"
     },
     {
-     "key": "IN-1097",
-     "project": "IN",
-     "summary": "General Devops Ticket",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-16",
-     "resolved": "2026-10-01",
-     "due": "2026-09-30",
-     "assignee": "b.kumar"
-    },
-    {
      "key": "IN-1119",
      "project": "IN",
      "summary": "Pulse admin Improvement and bug fixes",
@@ -11480,18 +11485,6 @@
      "resolved": "2026-10-15",
      "due": "2026-10-15",
      "assignee": "k.kishore"
-    },
-    {
-     "key": "IN-992",
-     "project": "IN",
-     "summary": "Jira Board Integration with Azure DevOps (TBD)",
-     "type": "Story",
-     "status": "BLOCKER",
-     "statusCat": "indeterminate",
-     "created": "2026-07-15",
-     "resolved": null,
-     "due": "2026-07-30",
-     "assignee": "Sarath Chandra"
     },
     {
      "key": "MR-1073",
