@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-11-01",
+ "snapshotDate": "2026-11-02",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -109,11 +109,30 @@
      "project": "AFVU",
      "summary": "[Test] Test strategy, environments, accounts and data for the integration",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-30",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-02",
+       0.25
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-142",
+     "project": "AFVU",
+     "summary": "[Backend] Confirm every endpoint the new page calls on the updated CRM, with the same shape",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-16",
+     "resolved": "2026-11-02",
+     "due": "2026-11-16",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
@@ -123,14 +142,38 @@
      "project": "AFVU",
      "summary": "[Test] Registry: creation once, freeze, backfill, ids, isolation",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-30",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-02",
+       0.25
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-152",
+     "project": "AFVU",
+     "summary": "[Backend] Document the staff build plan API for the CRM admin screen team and agree who builds the screen",
+     "type": "Subtask",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-10-16",
+     "resolved": null,
+     "due": "2026-11-16",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-02",
+       0.25
+      ]
+     ]
     },
     {
      "key": "AFVU-153",
@@ -151,14 +194,19 @@
      "project": "AFVU",
      "summary": "[Test] Build plan end to end: staff, customer, hidden steps, deadline, hall and phone",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-16",
      "resolved": null,
      "due": "2026-10-30",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-02",
+       0.25
+      ]
+     ]
     },
     {
      "key": "AFVU-156",
@@ -201,6 +249,25 @@
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
+    },
+    {
+     "key": "AFVU-159",
+     "project": "AFVU",
+     "summary": "[Backend] Roster: architects in a department and assigned to accounts; check the cost of the chat list route",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-16",
+     "resolved": "2026-11-02",
+     "due": "2026-10-25",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-02",
+       0.25
+      ]
+     ]
     },
     {
      "key": "AFVU-160",
@@ -366,10 +433,10 @@
      "project": "AFVU",
      "summary": "[Backend] [Frontend] Release branch on both v3 repos and the developer kit: local setup with the UAT database copy, working rules and Jira process",
      "type": "Subtask",
-     "status": "In Review",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-19",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-30",
      "assignee": "Anshul Bhargava",
      "spentHours": 2.0,
@@ -774,7 +841,7 @@
      "project": "AFVU",
      "summary": "Access, Launch and single sign-on: console roles per team member, single-use Launch tickets, Azure AD B2C as Rafay's Global IdP",
      "type": "Story",
-     "status": "Dependent",
+     "status": "In Progress",
      "statusCat": "indeterminate",
      "created": "2026-10-22",
      "resolved": null,
@@ -964,7 +1031,7 @@
      "status": "Done",
      "statusCat": "done",
      "created": "2026-10-23",
-     "resolved": "2026-10-27",
+     "resolved": "2026-11-02",
      "due": null,
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
@@ -1137,7 +1204,7 @@
      "status": "Done",
      "statusCat": "done",
      "created": "2026-10-23",
-     "resolved": "2026-10-27",
+     "resolved": "2026-11-02",
      "due": null,
      "assignee": "Anshul Bhargava",
      "spentHours": 0.75,
@@ -1156,7 +1223,7 @@
      "status": "Done",
      "statusCat": "done",
      "created": "2026-10-23",
-     "resolved": "2026-10-27",
+     "resolved": "2026-11-02",
      "due": null,
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
@@ -1405,14 +1472,19 @@
      "project": "AFVU",
      "summary": "[S2][P2] PDF API Returns 409 Conflict While Proposal Is Being Prepared",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-27",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-31",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-02",
+       0.25
+      ]
+     ]
     },
     {
      "key": "AFVU-273",
@@ -1582,6 +1654,25 @@
       [
        "2026-10-27",
        0.5
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-283",
+     "project": "AFVU",
+     "summary": "[S3][P3] Storage Product Images Are Not Displayed in Configuration/Summary Section",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-28",
+     "resolved": "2026-11-02",
+     "due": "2026-10-31",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-02",
+       0.25
       ]
      ]
     },
@@ -2181,6 +2272,313 @@
      "status": "To Do",
      "statusCat": "new",
      "created": "2026-10-30",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-361",
+     "project": "AFVU",
+     "summary": "Book a Meeting: customers book Teams meetings with their subscription team from the Portal; live on AppTest, then minutes, IT setup, QA and release",
+     "type": "Story",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-02",
+       0.25
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-362",
+     "project": "AFVU",
+     "summary": "[Backend] Merge feature/book-a-meeting into next-be v3 and deploy the CRM to AppTest with the meetings migrations, Graph keys and the sync job",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-02",
+     "resolved": "2026-11-02",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-02",
+       0.25
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-363",
+     "project": "AFVU",
+     "summary": "[Frontend] Merge feature/book-a-meeting into NEXT-V3 and deploy the Portal Meetings tab and booking dialog to AppTest",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-02",
+     "resolved": "2026-11-02",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-02",
+       0.25
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-364",
+     "project": "AFVU",
+     "summary": "[Frontend] Merge feature/book-a-meeting into NEXT-CRM-V3 and deploy the staff CRM Meetings screens to AppTest",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-02",
+     "resolved": "2026-11-02",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-02",
+       0.25
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-365",
+     "project": "AFVU",
+     "summary": "[Backend] Switch Book a Meeting on when an AI Factory or GPU as a Service contract is signed, and backfill signed subscriptions",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-02",
+     "resolved": "2026-11-02",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-02",
+       0.25
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-366",
+     "project": "AFVU",
+     "summary": "[Data] IT: limit the Graph app to roster staff mailboxes, and give every host Teams and Outlook working hours",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-367",
+     "project": "AFVU",
+     "summary": "[Backend] Turn on meeting minutes on AppTest: Fireflies key and the 5-minute meetings_minutes job",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-372",
+     "project": "AFVU",
+     "summary": "[Backend] Follow the host's own calendar, let customers move a booked meeting, record who moved it, and write the minutes email in the meeting's time zone",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-02",
+     "resolved": "2026-11-02",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-02",
+       0.25
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-373",
+     "project": "AFVU",
+     "summary": "[Frontend] Portal: Move a booked meeting, show host cancelled and host moved meetings, \"Moved by\" on every move, clearer meeting rows",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-02",
+     "resolved": "2026-11-02",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-02",
+       0.25
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-374",
+     "project": "AFVU",
+     "summary": "[Frontend] Staff CRM: label meetings the host cancelled or moved in their calendar, and show who moved a meeting",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-02",
+     "resolved": "2026-11-02",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-02",
+       0.25
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-375",
+     "project": "AFVU",
+     "summary": "[Backend] Staff can delete an unused role, and a customer can change the guests and agenda of a meeting that has not started",
+     "type": "Subtask",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-02",
+       0.25
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-376",
+     "project": "AFVU",
+     "summary": "[Frontend] Portal: Edit a meeting's guests and agenda from My meetings",
+     "type": "Subtask",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-02",
+       0.25
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-377",
+     "project": "AFVU",
+     "summary": "[Frontend] Staff CRM Meetings tab: one row per meeting, arrange a request from its row, delete a role, steadier Add role button",
+     "type": "Subtask",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-02",
+       0.5
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-378",
+     "project": "AFVU",
+     "summary": "[Data] Decide: write agenda edits into the calendar invite, and keep or split the daily limit that edits share with cancel and move",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-380",
+     "project": "AFVU",
+     "summary": "[Frontend] Architect Genesis hall draws the wrong rack, and a second model shows only after Back",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-381",
+     "project": "AFVU",
+     "summary": "[Frontend] A second Genesis model appears only after Back when the size passes one container",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-382",
+     "project": "AFVU",
+     "summary": "[Frontend] Genesis Titan card says 12 racks but the container shows one rack",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-383",
+     "project": "AFVU",
+     "summary": "[Frontend] Architect Genesis hall draws a full NVL72 rack when the scale says 4 servers",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-02",
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
@@ -8510,10 +8908,10 @@
      "project": "UP",
      "summary": "Rafay SSO Integration",
      "type": "Story",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-06",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-15",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.5,
@@ -8845,10 +9243,10 @@
      "project": "AFVU",
      "summary": "Integration plan: branch map, merge order, environments, switches and rollback for the CRM backend and the Portal",
      "type": "Story",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-30",
      "assignee": "Aman prakash"
     },
@@ -8977,10 +9375,10 @@
      "project": "AFVU",
      "summary": "[Backend] CRM inventory, branch map and merge order on the updated base",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-11-16",
      "assignee": "Yash Janeshwar"
     },
@@ -9001,10 +9399,10 @@
      "project": "AFVU",
      "summary": "[Test] Test strategy, environments, accounts and data for the integration",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-30",
      "assignee": "Anshul Bhargava"
     },
@@ -9049,10 +9447,10 @@
      "project": "AFVU",
      "summary": "[Backend] Bring in the factory-config and probe-access routes with the allow-list",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-11-16",
      "assignee": "Yash Janeshwar"
     },
@@ -9085,12 +9483,12 @@
      "project": "AFVU",
      "summary": "[Backend] Confirm every endpoint the new page calls on the updated CRM, with the same shape",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-11-16",
-     "assignee": "Yash Janeshwar"
+     "assignee": "Anshul Bhargava"
     },
     {
      "key": "AFVU-143",
@@ -9181,10 +9579,10 @@
      "project": "AFVU",
      "summary": "[Test] Registry: creation once, freeze, backfill, ids, isolation",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-30",
      "assignee": "Anshul Bhargava"
     },
@@ -9205,12 +9603,12 @@
      "project": "AFVU",
      "summary": "[Backend] Document the staff build plan API for the CRM admin screen team and agree who builds the screen",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-16",
      "resolved": null,
      "due": "2026-11-16",
-     "assignee": "Yash Janeshwar"
+     "assignee": "Anshul Bhargava"
     },
     {
      "key": "AFVU-153",
@@ -9229,8 +9627,8 @@
      "project": "AFVU",
      "summary": "[Test] Build plan end to end: staff, customer, hidden steps, deadline, hall and phone",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-16",
      "resolved": null,
      "due": "2026-10-30",
@@ -9289,12 +9687,12 @@
      "project": "AFVU",
      "summary": "[Backend] Roster: architects in a department and assigned to accounts; check the cost of the chat list route",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-25",
-     "assignee": "Yash Janeshwar"
+     "assignee": "Anshul Bhargava"
     },
     {
      "key": "AFVU-160",
@@ -9469,10 +9867,10 @@
      "project": "AFVU",
      "summary": "[Backend] [Frontend] Release branch on both v3 repos and the developer kit: local setup with the UAT database copy, working rules and Jira process",
      "type": "Subtask",
-     "status": "In Review",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-19",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-30",
      "assignee": "Anshul Bhargava"
     },
@@ -9769,7 +10167,7 @@
      "project": "AFVU",
      "summary": "Access, Launch and single sign-on: console roles per team member, single-use Launch tickets, Azure AD B2C as Rafay's Global IdP",
      "type": "Story",
-     "status": "Dependent",
+     "status": "In Progress",
      "statusCat": "indeterminate",
      "created": "2026-10-22",
      "resolved": null,
@@ -9904,7 +10302,7 @@
      "status": "Done",
      "statusCat": "done",
      "created": "2026-10-23",
-     "resolved": "2026-10-27",
+     "resolved": "2026-11-02",
      "due": null,
      "assignee": "Anshul Bhargava"
     },
@@ -10048,7 +10446,7 @@
      "status": "Done",
      "statusCat": "done",
      "created": "2026-10-23",
-     "resolved": "2026-10-27",
+     "resolved": "2026-11-02",
      "due": null,
      "assignee": "Anshul Bhargava"
     },
@@ -10060,7 +10458,7 @@
      "status": "Done",
      "statusCat": "done",
      "created": "2026-10-23",
-     "resolved": "2026-10-27",
+     "resolved": "2026-11-02",
      "due": null,
      "assignee": "Anshul Bhargava"
     },
@@ -10597,8 +10995,8 @@
      "project": "AFVU",
      "summary": "[Backend] GPU as a Service teardown: stop instances on cancel or expiry, delete in Rafay after 30 days",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-29",
      "resolved": null,
      "due": "2026-11-16",
@@ -10885,8 +11283,8 @@
      "project": "AFVU",
      "summary": "[Frontend] Portal (next-fe) consumer contracts for the most-called CRM routes, published from the pipeline",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-29",
      "resolved": null,
      "due": "2026-11-16",
@@ -11251,6 +11649,246 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-360",
+     "project": "AFVU",
+     "summary": "[S3][P3] Summary Step in the Progress Bar Opens Page Not Found on the Agreement Step",
+     "type": "Bug",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": "2026-11-02",
+     "assignee": "r.jaiswal"
+    },
+    {
+     "key": "AFVU-361",
+     "project": "AFVU",
+     "summary": "Book a Meeting: customers book Teams meetings with their subscription team from the Portal; live on AppTest, then minutes, IT setup, QA and release",
+     "type": "Story",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-362",
+     "project": "AFVU",
+     "summary": "[Backend] Merge feature/book-a-meeting into next-be v3 and deploy the CRM to AppTest with the meetings migrations, Graph keys and the sync job",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-02",
+     "resolved": "2026-11-02",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-363",
+     "project": "AFVU",
+     "summary": "[Frontend] Merge feature/book-a-meeting into NEXT-V3 and deploy the Portal Meetings tab and booking dialog to AppTest",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-02",
+     "resolved": "2026-11-02",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-364",
+     "project": "AFVU",
+     "summary": "[Frontend] Merge feature/book-a-meeting into NEXT-CRM-V3 and deploy the staff CRM Meetings screens to AppTest",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-02",
+     "resolved": "2026-11-02",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-365",
+     "project": "AFVU",
+     "summary": "[Backend] Switch Book a Meeting on when an AI Factory or GPU as a Service contract is signed, and backfill signed subscriptions",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-02",
+     "resolved": "2026-11-02",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-366",
+     "project": "AFVU",
+     "summary": "[Data] IT: limit the Graph app to roster staff mailboxes, and give every host Teams and Outlook working hours",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-367",
+     "project": "AFVU",
+     "summary": "[Backend] Turn on meeting minutes on AppTest: Fireflies key and the 5-minute meetings_minutes job",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-368",
+     "project": "AFVU",
+     "summary": "[Backend] Notification service: map the meeting_minutes email to its SendGrid template, then switch the minutes email on",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Yash Janeshwar"
+    },
+    {
+     "key": "AFVU-369",
+     "project": "AFVU",
+     "summary": "[QA] Book a Meeting end to end on AppTest: book, move, cancel, arrange, hand over, outside attendees, switch on/off and minutes",
+     "type": "Subtask",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "r.jaiswal"
+    },
+    {
+     "key": "AFVU-370",
+     "project": "AFVU",
+     "summary": "[Backend] Close the known Book a Meeting gaps: switch row deletes, plan name mapping, paused orders and Graph call bursts",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Yash Janeshwar"
+    },
+    {
+     "key": "AFVU-371",
+     "project": "AFVU",
+     "summary": "[Backend] Release Book a Meeting past AppTest: API gateway routes, request timeout, and the same settings and jobs on each environment",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Yash Janeshwar"
+    },
+    {
+     "key": "AFVU-372",
+     "project": "AFVU",
+     "summary": "[Backend] Follow the host's own calendar, let customers move a booked meeting, record who moved it, and write the minutes email in the meeting's time zone",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-02",
+     "resolved": "2026-11-02",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-373",
+     "project": "AFVU",
+     "summary": "[Frontend] Portal: Move a booked meeting, show host cancelled and host moved meetings, \"Moved by\" on every move, clearer meeting rows",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-02",
+     "resolved": "2026-11-02",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-374",
+     "project": "AFVU",
+     "summary": "[Frontend] Staff CRM: label meetings the host cancelled or moved in their calendar, and show who moved a meeting",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-02",
+     "resolved": "2026-11-02",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-375",
+     "project": "AFVU",
+     "summary": "[Backend] Staff can delete an unused role, and a customer can change the guests and agenda of a meeting that has not started",
+     "type": "Subtask",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-376",
+     "project": "AFVU",
+     "summary": "[Frontend] Portal: Edit a meeting's guests and agenda from My meetings",
+     "type": "Subtask",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-377",
+     "project": "AFVU",
+     "summary": "[Frontend] Staff CRM Meetings tab: one row per meeting, arrange a request from its row, delete a role, steadier Add role button",
+     "type": "Subtask",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-378",
+     "project": "AFVU",
+     "summary": "[Data] Decide: write agenda edits into the calendar invite, and keep or split the daily limit that edits share with cancel and move",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-379",
+     "project": "AFVU",
+     "summary": "[QA] Move, Edit, host calendar changes and the staff Meetings rows on AppTest",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-02",
+     "resolved": null,
+     "due": null,
+     "assignee": "r.jaiswal"
     },
     {
      "key": "ATLAS-1",
@@ -17281,7 +17919,7 @@
      "project": "UC",
      "summary": "Design & technical spec — multi-turn context retention rules",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "Dev Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -17293,7 +17931,7 @@
      "project": "UC",
      "summary": "Implementation — multi-turn memory and thumbs up/down feedback UI",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "Dev Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -17305,7 +17943,7 @@
      "project": "UC",
      "summary": "Integration & security review — feedback data storage review",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "Dev Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -17401,10 +18039,10 @@
      "project": "UC",
      "summary": "QA & validation — out-of-scope handling test pass",
      "type": "Subtask",
-     "status": "In Dev",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-30",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -17473,8 +18111,8 @@
      "project": "UC",
      "summary": "Design & technical spec — SLA timer configuration & escalation rules",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-11-13",
@@ -17617,7 +18255,7 @@
      "project": "UC",
      "summary": "Authenticated own-records experience — orders, invoices, subscription & low-risk actions",
      "type": "Story",
-     "status": "In Dev",
+     "status": "Dev Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -17761,10 +18399,10 @@
      "project": "UC",
      "summary": "Implementation — agent console, handoff queue & SLA timers",
      "type": "Subtask",
-     "status": "In Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-21",
      "assignee": "Ankit Saxena"
     },
@@ -17773,10 +18411,10 @@
      "project": "UC",
      "summary": "QA & validation — Milestone 3 handoff queue sign-off",
      "type": "Subtask",
-     "status": "In Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-21",
      "assignee": "Ankit Saxena"
     },
@@ -17881,10 +18519,10 @@
      "project": "UC",
      "summary": "Implementation — internal KB source ingestion into isolated index (conditional)",
      "type": "Subtask",
-     "status": "In Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-26",
      "assignee": "Ankit Saxena"
     },
@@ -17893,10 +18531,10 @@
      "project": "UC",
      "summary": "QA & validation — internal KB isolation & access-control verification",
      "type": "Subtask",
-     "status": "In Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-26",
      "assignee": "Ankit Saxena"
     },
@@ -17941,7 +18579,7 @@
      "project": "UC",
      "summary": "Multi-turn context resolution & feedback capture loop",
      "type": "Story",
-     "status": "IN PROGRESS",
+     "status": "Dev Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -18001,10 +18639,10 @@
      "project": "UC",
      "summary": "Out-of-scope account request handling — declines & routing",
      "type": "Story",
-     "status": "IN PROGRESS",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-30",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -18037,8 +18675,8 @@
      "project": "UC",
      "summary": "Teams handoff — SLA-timeout fallback when no agent available",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-11-13",
@@ -18109,10 +18747,10 @@
      "project": "UC",
      "summary": "Design & technical spec — agent console UI & SLA-timer logic",
      "type": "Subtask",
-     "status": "In Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-21",
      "assignee": "Ankit Saxena"
     },
@@ -18121,10 +18759,10 @@
      "project": "UC",
      "summary": "Integration & security review — agent console access control",
      "type": "Subtask",
-     "status": "In Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-21",
      "assignee": "Ankit Saxena"
     },
@@ -18241,10 +18879,10 @@
      "project": "UC",
      "summary": "Design & technical spec — demand-tracking ranking logic",
      "type": "Subtask",
-     "status": "In Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-26",
      "assignee": "Ankit Saxena"
     },
@@ -18253,10 +18891,10 @@
      "project": "UC",
      "summary": "Integration & security review — demand data anonymisation check",
      "type": "Subtask",
-     "status": "In Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-26",
      "assignee": "Ankit Saxena"
     },
@@ -18297,6 +18935,18 @@
      "assignee": null
     },
     {
+     "key": "UP-33",
+     "project": "UP",
+     "summary": "Design Review meeting",
+     "type": "Subtask",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-08-04",
+     "resolved": null,
+     "due": null,
+     "assignee": null
+    },
+    {
      "key": "UP-39",
      "project": "UP",
      "summary": "USP Interactive Design and Rafay Integration",
@@ -18325,10 +18975,10 @@
      "project": "UP",
      "summary": "Rafay SSO Integration",
      "type": "Story",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-06",
-     "resolved": null,
+     "resolved": "2026-11-02",
      "due": "2026-10-15",
      "assignee": "Anshul Bhargava"
     },
