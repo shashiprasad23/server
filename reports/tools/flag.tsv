@@ -1,0 +1,23 @@
+DUE	AFVU-127	In Progress	Aman prakash	2026-10-31				Component registry: a permanent id for every part of a subscription, in the CRM and shown in the Portal
+DUE	AFVU-128	In Progress	Anshul Bhargava	2026-10-30				Build plan: tables, templates, staff and customer routes, the Portal tab and card, the 3D hall states and the tester simulator
+DUE	AFVU-131	In Progress	Aman prakash	2026-10-31				Quality gates and UAT sign-off for the integrated CRM backend and Portal
+DUE	AFVU-132	In Progress	Anshul Bhargava	2026-10-30				Release, rollout and rollback: turning the switches on in order, monitoring, documentation and handover
+DUE	AFVU-138	In Progress	r.jaiswal	2026-10-30				[Test] Configurator: order flows, pricing, idempotent data load and fallback
+DUE	AFVU-147	In Progress	r.jaiswal	2026-10-31				[Test] Interactive View: 3D, probes, tickets, performance, keyboard and phone
+DUE	AFVU-154	In Progress	Anshul Bhargava	2026-10-30				[Test] Build plan end to end: staff, customer, hidden steps, deadline, hall and phone
+DUE	AFVU-165	To Do	Anshul Bhargava	2026-10-30				[Backend] Migrations, loader commands, switch order and the rollback runbook
+DUE	AFVU-166	To Do	Anshul Bhargava	2026-10-30				[Frontend] Build settings, the pilot group and the Portal rollback
+DUE	AFVU-167	To Do	Anshul Bhargava	2026-10-30				[Test] Rehearse the switch order and rollback, confirm everything is OFF after merge, and the post-release checks
+DUE	AFVU-191	In Progress	Anshul Bhargava	2026-10-30				[Data] Audit every CRM data centre against public sources (a source per value), verified Excel and a script to load it into the CRM
+DUE	AFVU-214	In Progress	Anshul Bhargava	2026-10-30				GPU as a Service hardening, quality gates and release: reconciliation, security tests, runbook, switch-on plan
+DUE	ID-736	Ready for Prod	Yash Janeshwar	2026-10-30				Remediate identity for signup, data lifecycle, credentials, and runtime configuration
+DUE	MR-1073	Ready for Prod	Vishnu kumar yadav	2026-10-30				Resolve Sonar maintainability issues in uvation-cms API code
+DUE	MR-1362	Code Review	Kunal Jangid	2026-10-30				Integrate the Microsoft Bookings and replace the Calendly
+DUE	MR-1379	In Progress	Kunal Jangid	2026-10-30				V1.2 Marketing revamped design implementation based on dated 19.10.2026
+DUE	MR-1454	Ready for Prod	Vishnu kumar yadav	2026-10-30				Added the upcoming month's events to the CMS in the Production environment.
+DUE	MT-1615	Ready For Prod	Naman Bapna	2026-10-31				Part-1 : Magento latest version upgrade with compatible with all plugins
+DUE	UC-19	UAT	Ankit Saxena	2026-10-30				Authenticated own-records experience — orders, invoices, subscription & low-risk actions
+DUE	UC-60	UAT Testing	Nareddy Shiva Prasad Reddy	2026-10-30				Multi-turn context resolution & feedback capture loop
+DUE	UC-413	Ready for Prod	Ankit Saxena	2026-11-02				[Chatbot] Fails to Identify Ambiguous Product Queries and Ask Relevant Clarification Questions
+DUE	UC-414	Ready for Prod	Ankit Saxena	2026-11-03				[Chatbot] Additional Issues Identified During Chatbot Testing
+DUE	UC-418	Ready for Prod	Ankit Saxena	2026-11-04				[Chatbot] Chatbot Response Times Out on Marketing and Marketplace DEV Environments
