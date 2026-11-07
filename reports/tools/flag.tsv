@@ -1,4 +1,3 @@
-DUE	AFVU-127	In Progress	Aman prakash	2026-10-31				Component registry: a permanent id for every part of a subscription, in the CRM and shown in the Portal
 DUE	AFVU-128	In Progress	Anshul Bhargava	2026-10-30				Build plan: tables, templates, staff and customer routes, the Portal tab and card, the 3D hall states and the tester simulator
 DUE	AFVU-131	In Progress	Aman prakash	2026-10-31				Quality gates and UAT sign-off for the integrated CRM backend and Portal
 DUE	AFVU-132	In Progress	Anshul Bhargava	2026-10-30				Release, rollout and rollback: turning the switches on in order, monitoring, documentation and handover
@@ -21,3 +20,7 @@ DUE	UC-60	UAT Testing	Nareddy Shiva Prasad Reddy	2026-10-30				Multi-turn contex
 DUE	UC-413	Ready for Prod	Ankit Saxena	2026-11-02				[Chatbot] Fails to Identify Ambiguous Product Queries and Ask Relevant Clarification Questions
 DUE	UC-414	Ready for Prod	Ankit Saxena	2026-11-03				[Chatbot] Additional Issues Identified During Chatbot Testing
 DUE	UC-418	Ready for Prod	Ankit Saxena	2026-11-04				[Chatbot] Chatbot Response Times Out on Marketing and Marketplace DEV Environments
+DUE	MT-1784	Code Review	Naveen Jangid	2026-11-06				[Marketplace] NVIDIA HGX B300 Search Fails with Server Components Render Error on DEV
+DUE	MR-1470	In Progress	Kunal Jangid	2026-11-06				Marketing New Design v1.3 – Kimi Page
+DUE	USP-4433	Deployed In Dev	Livian Stefan Stan	2026-11-06				Rename "Submit Draft" / "Request Draft" / "Quote" to "Proposal" wording (portal and CRM)
+DUE	UC-408	IN PROGRESS	Ankit Saxena	2026-11-06				CSM Teams Admin Dashboard — API Development & Integration
