@@ -24,7 +24,7 @@
         "MT",
         "PC"
       ],
-      "headline": "On 2 Nov the Magento 2.4.9 upgrade (MT-1615) and the core upgrade (MT-1617) moved to UAT, together with most of their module subtasks held by Naman Bapna, Parth and shubham kuchwar; 42 MT items are now in UAT, which is not a Done status, so most stay past their 30 and 31 Oct dates. Naman Bapna closed the upgrade environment support (MT-1654) and started Part 2 of the upgrade (MT-1753, due 16 Nov). Shashi Prasad K raised a Highest-priority Go-Live checklist for 15 November (MT-1770, Naman Bapna, due 13 Nov) with checks for the request-for-quote, send-a-quote, invoice, product content, AI chatbot and Communication Hub flows (MT-1772 to MT-1777, due 4 to 5 Nov; Communication Hub has no date). Nagamuni Valluri closed the invalid order dates fix (MT-1757) and moved the GraphQL 403 and wishlist fixes to Ready For Prod (MT-1754, MT-1760); the chatbot RFQ redirect (MT-1761) is also Ready For Prod. The V1.4 design implementation (MT-1747) and three of its front-end subtasks started (MT-1763, MT-1765, MT-1768). 56 items are past due, down from 57."
+      "headline": "On 3 Nov the Magento 2.4.9 upgrade (MT-1615), the core upgrade (MT-1617) and most of its module subtasks held by Naman Bapna, Parth and shubham kuchwar moved from UAT to Ready For Prod; 40 of its subtasks and 42 MT items in all now wait at Ready For Prod, which is not a Done status, so the upgrade subtasks stay past their 30 and 31 Oct dates. Eleven items closed, including ten Uvation module compatibility checks and reviews (MT-1693 to MT-1728) and the Send a Quote go-live check (MT-1773); Parth started two more checks (MT-1712, MT-1713) and shubham kuchwar the Request for Quote check (MT-1772, due 4 Nov). The GraphQL 403, wishlist and chatbot RFQ redirect fixes moved to In Prod (MT-1754, MT-1760, MT-1761). Naman Bapna raised a Highest checkout bug where store credit equal to the order total is rejected (MT-1778, Ready For Prod), and Shashi Prasad K raised a Quote Dashboard story with no owner (MT-1779, due 30 Nov). 56 items are past due, unchanged."
     },
     {
       "id": "MR",
@@ -32,7 +32,7 @@
       "projects": [
         "MR"
       ],
-      "headline": "On 2 Nov Kunal Jangid closed the chatbot RFQ redirect bug (MR-1457), Kannan Elangovan closed cross-browser automation and the smoke-testing and Playwright guide subtasks (MR-1358, MR-1369, MR-1370) and moved two AI Factory and document fixes to Dev Testing (MR-1420, MR-1434). Vishnu kumar yadav moved the header and footer updates to Dev and re-dated them to 3 Nov (MR-1409, MR-1410). Kunal Jangid started the Case Studies, Events and Insights page updates (MR-1405 to MR-1407, due 13 Nov), and the Nuclear Energy page (MR-1397) went back to TODO. Saurabh Jain started PR review and completion (MR-1459, due 16 Nov). The v1.2 revamp (MR-1379) and the Homepage and People page validations (MR-1438, MR-1446) are still open past 30 Oct. 63 items are past due, down from 69."
+      "headline": "On 3 Nov 36 MR items closed, mostly the page validation bugs and their subtasks for the Nuclear Energy, Partners, SLA and Terms, Homepage and People pages (MR-1419 to MR-1456). Kannan Elangovan raised a new design validation bug for the Case Studies, Insights, Events and header pages (MR-1460, Vishnu kumar yadav) with six subtasks for Vishnu kumar yadav and Saurabh Jain, all due 13 Nov (MR-1461 to MR-1466). Kunal Jangid moved the header, footer, Case Studies, Events and Insights updates to Code Review (MR-1405 to MR-1407, MR-1409, MR-1410), and the People, Partners and SLA page updates went back from Code Review to In Progress (MR-1399, MR-1402, MR-1404). The v1.2 revamp (MR-1379) is still open past 30 Oct. 29 items are past due, down from 63."
     },
     {
       "id": "USP",
@@ -40,7 +40,7 @@
       "projects": [
         "USP"
       ],
-      "headline": "On 2 Nov the S1 subscription calculation error (USP-4204) was closed, as were staff avatars (USP-4293) and the team-and-roster story (USP-4296). Cășvan Marcel started the subscription upgrade work: the upgrade flow, restricted upgrades and amendment model (USP-3379, USP-3400, USP-3401) and the co-term pricing, amendment signing, CRM approval and post-upgrade invoice stories (USP-4346 to USP-4349), all due 15 Dec under the Go Live subscription upgrade epic (USP-4343). Silviu Oltean restarted Support Hub v2 (USP-4252, due 12 Nov) and added a chat events webhook (USP-4431). Still open: the S1 Document API 502 (USP-4231, TODO, past its 30 Oct date), the Highest security bug on Switch Access seat claims (USP-4369, Deployed In Dev, no due date) and the pricing-rule eval security bug (USP-4414, due today, not started). 197 items are past due, down from 199."
+      "headline": "On 3 Nov 51 USP items were closed, 48 of them from Deployed In Prod, including the IAM story and its nine subtasks (USP-4234 to USP-4243), the payment and invoice changes (USP-4281 to USP-4290), the subscription dashboard items (USP-4358 to USP-4366), the request-quote wait step (USP-4396 to USP-4400) and the storage configurator (USP-4404 to USP-4411); 22 items remain Deployed In Prod. Cășvan Marcel moved the subscription upgrade epic and its stories back to TODO (USP-4343, USP-3379, USP-3400, USP-3401, USP-4346 to USP-4349, due 15 Dec). 18 items were re-dated to 15 Nov, including the S1 Document API 502 (USP-4231, TODO), the Highest seat-claims security bug (USP-4369, Deployed In Dev), Support Hub v2 (USP-4252) and the Communication Hub re-skin and Book a meeting stories (USP-4295, USP-4298). Livian Stefan Stan raised a Highest end-to-end Book a meeting story for Anshul Bhargava (USP-4438, due 15 Nov), a production DB clean-up and production smoke tests (USP-4436, USP-4437), and started renaming quote wording to Proposal (USP-4433, due 6 Nov). The pricing-rule eval security bug (USP-4414) passed its 2 Nov date in TODO. 139 items are past due, down from 197."
     },
     {
       "id": "UC",
@@ -48,7 +48,7 @@
       "projects": [
         "UC"
       ],
-      "headline": "On 2 Nov Ankit Saxena's agent console, knowledge-base and demand-tracking subtasks moved from In Prod to Done (UC-41, UC-42, UC-53, UC-54, UC-84, UC-85, UC-96, UC-97), and the own-records experience (UC-19) moved to Dev Testing. Nareddy Shiva Prasad Reddy closed out-of-scope request handling (UC-66, UC-131), moved multi-turn context and feedback (UC-60, UC-104 to UC-106) to Dev Testing, and started the Teams SLA-timeout fallback (UC-69, UC-148, due 13 Nov). Shivam Dhoundiyal closed the dashboard theme story and its validation (UC-236, UC-239) and started the admin landing page layout and KPI tiles (UC-403, UC-404), both dated in early October. Kannan Elangovan raised a chatbot bug: ambiguous product queries get no clarifying question (UC-413, In Dev, due today). 66 items are past due, down from 78."
+      "headline": "On 3 Nov Kannan Elangovan raised more chatbot testing bugs for Ankit Saxena (UC-414, due 3 Nov) with three subtasks now in Dev (UC-415 to UC-417: clarifying questions, the signed-in user's name, and recommendations that change with GDPR consent), and a High bug where chatbot responses time out on the Marketing and Marketplace dev environments (UC-418, no due date). Ankit Saxena started the in-chat RFQ flow and its CRM integration (UC-23, due 13 Nov; UC-45, re-dated to 4 Nov) and the ambiguous-query bug (UC-413); the own-records experience (UC-19) went back from Dev Testing to In Dev. Nareddy Shiva Prasad Reddy started the multi-turn regression pass and the availability-check flow (UC-107, UC-149). Shivam Dhoundiyal moved the admin landing page layout and KPI tiles to Code Review (UC-403, UC-404) and started the landing page story and the Today drawer and chat history page (UC-402, UC-405, due 4 Nov). 67 items are past due, up from 66."
     },
     {
       "id": "PULSE",
@@ -64,7 +64,7 @@
       "projects": [
         "ATLAS"
       ],
-      "headline": "On 2 Nov Saurabh Jain started lead-behaviour analytics (ATLAS-283, due 16 Nov): the metric dictionary audit (ATLAS-289) is done and Gmail and lead event tracking (ATLAS-290) is in progress. Nagamuni Valluri holds the front-end Playwright, UI and analytics story (ATLAS-297, due 16 Nov). 267 of the 303 ATLAS tickets are unassigned and 297 have no due date."
+      "headline": "On 3 Nov Saurabh Jain closed the analytics aggregation APIs (ATLAS-291) and started the analytics dashboard, filters and lead drill-down (ATLAS-292); lead-behaviour analytics (ATLAS-283) and Nagamuni Valluri's front-end Playwright and analytics story (ATLAS-297) were re-dated from 16 to 14 Nov. 267 of the 303 ATLAS tickets are unassigned and 297 have no due date."
     },
     {
       "id": "ID",
@@ -72,7 +72,7 @@
       "projects": [
         "ID"
       ],
-      "headline": "On 2 Nov r.jaiswal closed the S2 bug where a deleted account's session stayed active (ID-760) and the general task (ID-767). Saravana Kumar raised and closed a fix to the dev identity URL in the B2C policy (ID-778) and started the Safari address autocomplete bug (ID-775); Yash Janeshwar moved the deactivation email restyle to Dev Testing (ID-773). The remediation work is still Ready for Prod (ID-736 to ID-742), and the S2 P1 bearer token bug (ID-774, due 15 Nov) has not started. 7 items are past due, down from 9."
+      "headline": "On 3 Nov Yash Janeshwar started the identity privacy, access governance and operational readiness story (ID-727, due 13 Nov) with its data inventory and rights-retention subtasks (ID-728, ID-729). The remediation work is still Ready for Prod (ID-736 to ID-742), the Safari address autocomplete bug (ID-775) is in progress, and the S2 P1 bearer token bug (ID-774, due 15 Nov) has not started. 7 items are past due, unchanged."
     },
     {
       "id": "REW",
@@ -96,7 +96,7 @@
       "projects": [
         "IN"
       ],
-      "headline": "On 2 Nov Sarath Chandra started general DevOps operations (IN-1203, IN-1205), closed the CMS MySQL dev deployment and the Support and Rewards front-end deployments on AKS agents (IN-1213, IN-1216), and is upgrading the UAT environment for Magento 2.4.9 with PHP 8.3, MySQL 8.4 and OpenSearch 3.2 (IN-1214, due 3 Nov) and fixing the APIM client certificate prompt (IN-1215). k.kishore closed the APIM custom domain through Front Door and Cloudflare (IN-1218). An unassigned task to import the UAT database into a new dev database is due 3 Nov (IN-1217). The AKS agent migration and Snyk items (IN-1157, IN-1158, IN-1161, IN-1163, IN-1164) are still past their 30 Oct date. 15 items sit in BLOCKER status and 28 are past due."
+      "headline": "On 3 Nov b.kumar closed the application pipeline migration to AKS agents (IN-1158), and Sarath Chandra closed the import of the latest UAT database into a new dev MySQL database (IN-1217) and started deploying and validating the Marketplace front end and marketing CMS on AKS self-hosted agents (IN-1219, due 4 Nov). Sarath Chandra's UAT upgrade for Magento 2.4.9 (IN-1214) and the APIM client certificate fix (IN-1215) are still in progress on their 3 Nov due date. The Snyk and remaining AKS agent items (IN-1157, IN-1161, IN-1163, IN-1164) are still past their 30 Oct date. 15 items sit in BLOCKER status and 27 are past due."
     },
     {
       "id": "DM",
@@ -104,7 +104,7 @@
       "projects": [
         "DM"
       ],
-      "headline": "On 2 Nov Prashanth Naikar closed blogs to production (DM-1069), which had been in review since its 28 Aug date, and Shashi Prasad K started fixing the broken Marketplace FAQ redirect (DM-1098). The JSON-LD schema task (DM-1102) and the three Marketplace SEO tasks (DM-1104 to DM-1106) are past their dates without starting, and the reseller terms dev link fix (DM-1086) is still in review past 30 Oct. 30 items are past due, down from 31."
+      "headline": "On 3 Nov Murali G raised a High task for Shashi Prasad K to block bot traffic from Singapore that is inflating uvation.com GA4 data (DM-1107, due 6 Nov). Shashi Prasad K is fixing the broken Marketplace FAQ redirect (DM-1098). The JSON-LD schema task (DM-1102) and the three Marketplace SEO tasks (DM-1104 to DM-1106) are past their dates without starting, and the reseller terms dev link fix (DM-1086) is still in review past 30 Oct. 30 items are past due, unchanged."
     }
   ],
   "spotlight": [
