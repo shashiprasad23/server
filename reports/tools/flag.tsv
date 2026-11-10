@@ -22,4 +22,23 @@ DUE	UC-414	Ready for Prod	Ankit Saxena	2026-11-03				[Chatbot] Additional Issues
 DUE	UC-418	Ready for Prod	Ankit Saxena	2026-11-04				[Chatbot] Chatbot Response Times Out on Marketing and Marketplace DEV Environments
 DUE	MT-1784	Code Review	Naveen Jangid	2026-11-06				[Marketplace] NVIDIA HGX B300 Search Fails with Server Components Render Error on DEV
 DUE	MR-1470	In Progress	Kunal Jangid	2026-11-06				Marketing New Design v1.3 – Kimi Page
-DUE	UC-408	IN PROGRESS	Ankit Saxena	2026-11-06				CSM Teams Admin Dashboard — API Development & Integration
+DUE	MT-1763	In Progress	Nagamuni Valluri	2026-11-04				[FE] Navigation, mega menu, and footer
+DUE	MT-1765	Dev	Naveen Jangid	2026-11-06				[FE] Marketing product pages
+DUE	MT-1772	Dev	shubham kuchwar	2026-11-04				Request For Flow
+DUE	MT-1774	Dev	Parth	2026-11-05				Invoice
+DUE	MT-1775	In Progress	Suganya Murugaraj	2026-11-04				Products and contents
+DUE	MT-1776	TODO	Naveen Jangid	2026-11-05				AI Chatbot
+DUE	MT-1788	Dev	Naveen Jangid	2026-11-09				[BE] Add admin on/off switch for Rewards integration (no Rewards API traffic when OFF)
+DUE	MR-1469	Dev	Vishnu kumar yadav	2026-11-06				Creating A API to fetch Job Data
+DUE	UC-45	In Dev	Ankit Saxena	2026-11-04				Implementation — in-chat RFQ flow & CRM integration
+DUE	UC-403	In Dev	Shivam Dhoundiyal	2026-11-02				CSM dashboard information architecture and layout
+DUE	UC-404	In Dev	Shivam Dhoundiyal	2026-10-03				Build KPI tiles and operational summary cards UI
+DUE	UC-405	In Dev	Shivam Dhoundiyal	2026-11-04				Todays drawer Ui/ux enhancements and chat history page
+DUE	UC-407	IN PROGRESS	Shivam Dhoundiyal	2026-10-11				Validate theme switching, Teams hosting behavior, and dashboard QA
+DUE	UC-409	IN PROGRESS	Ankit Saxena	2026-11-03				Implementation — CSM Teams Admin Dashboard APIs
+DUE	UC-410	To Do	Ankit Saxena	2026-11-05				QA & validation — CSM Teams Admin Dashboard API functionality & reliability
+DUE	UC-411	To Do	Ankit Saxena	2026-11-04				Design & technical spec — CSM Teams Admin Dashboard API architecture & contracts
+DUE	UC-412	To Do	Ankit Saxena	2026-11-06				Integration & security review — CSM Teams Admin Dashboard authentication & access control
+DUE	USP-4225	TODO	Silviu Oltean	2026-10-01				Hub notifications: portal bell and email
+DUE	USP-4310	TODO	Silviu Oltean	2026-10-11				CH-41 – Communication Hub re-skin to the frozen design (web)
+DUE	USP-4311	TODO	Silviu Oltean	2026-10-11				CH-42 – Communication Hub mobile + tablet
