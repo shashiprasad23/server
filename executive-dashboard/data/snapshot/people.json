@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-11-03",
+ "snapshotDate": "2026-11-10",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -16,11 +16,15 @@
      "resolved": null,
      "due": "2026-10-30",
      "assignee": "Anshul Bhargava",
-     "spentHours": 5.5,
+     "spentHours": 8.0,
      "logs": [
       [
        "2026-10-22",
        5.5
+      ],
+      [
+       "2026-11-06",
+       2.5
       ]
      ]
     },
@@ -847,7 +851,7 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 4.42,
+     "spentHours": 7.42,
      "logs": [
       [
        "2026-10-23",
@@ -860,6 +864,14 @@
       [
        "2026-10-30",
        2.5
+      ],
+      [
+       "2026-11-06",
+       2.0
+      ],
+      [
+       "2026-11-06",
+       1.0
       ]
      ]
     },
@@ -1416,8 +1428,8 @@
      "project": "AFVU",
      "summary": "Build plan notifications: notification-service templates, the updates list on the dashboard card, and an end-to-end test",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-27",
      "resolved": null,
      "due": "2026-11-16",
@@ -2077,7 +2089,7 @@
      "statusCat": "indeterminate",
      "created": "2026-10-30",
      "resolved": null,
-     "due": null,
+     "due": "2026-11-13",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
@@ -2087,10 +2099,10 @@
      "project": "AFVU",
      "summary": "[Backend] Push the CRM part to next-be v3, merge into demo/main and migrate on AppTest",
      "type": "Subtask",
-     "status": "In Review",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-30",
-     "resolved": null,
+     "resolved": "2026-11-06",
      "due": null,
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
@@ -2101,10 +2113,10 @@
      "project": "AFVU",
      "summary": "[Frontend] Push the Portal part to NEXT-V3 and merge into demo/main",
      "type": "Subtask",
-     "status": "In Review",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-30",
-     "resolved": null,
+     "resolved": "2026-11-06",
      "due": null,
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
@@ -2203,7 +2215,7 @@
      "statusCat": "indeterminate",
      "created": "2026-10-30",
      "resolved": null,
-     "due": null,
+     "due": "2026-11-13",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
@@ -2301,13 +2313,21 @@
      "statusCat": "indeterminate",
      "created": "2026-11-02",
      "resolved": null,
-     "due": null,
+     "due": "2026-11-13",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.25,
+     "spentHours": 5.25,
      "logs": [
       [
        "2026-11-02",
        0.25
+      ],
+      [
+       "2026-11-03",
+       3.0
+      ],
+      [
+       "2026-11-06",
+       2.0
       ]
      ]
     },
@@ -2477,10 +2497,10 @@
      "project": "AFVU",
      "summary": "[Backend] Staff can delete an unused role, and a customer can change the guests and agenda of a meeting that has not started",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-02",
-     "resolved": null,
+     "resolved": "2026-11-07",
      "due": null,
      "assignee": "Anshul Bhargava",
      "spentHours": 0.25,
@@ -2496,10 +2516,10 @@
      "project": "AFVU",
      "summary": "[Frontend] Portal: Edit a meeting's guests and agenda from My meetings",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-02",
-     "resolved": null,
+     "resolved": "2026-11-07",
      "due": null,
      "assignee": "Anshul Bhargava",
      "spentHours": 0.25,
@@ -2534,317 +2554,581 @@
      "project": "AFVU",
      "summary": "[Frontend] Architect Genesis hall draws the wrong rack, and a second model shows only after Back",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-02",
-     "resolved": null,
+     "resolved": "2026-11-04",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-04",
+       0.33
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
     },
     {
      "key": "AFVU-381",
      "project": "AFVU",
      "summary": "[Frontend] A second Genesis model appears only after Back when the size passes one container",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-02",
-     "resolved": null,
+     "resolved": "2026-11-04",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-04",
+       0.33
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
     },
     {
      "key": "AFVU-382",
      "project": "AFVU",
      "summary": "[Frontend] Genesis Titan card says 12 racks but the container shows one rack",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-02",
-     "resolved": null,
+     "resolved": "2026-11-05",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-04",
+       0.33
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
     },
     {
      "key": "AFVU-383",
      "project": "AFVU",
      "summary": "[Frontend] Architect Genesis hall draws a full NVL72 rack when the scale says 4 servers",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-02",
-     "resolved": null,
+     "resolved": "2026-11-04",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-04",
+       0.33
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
     },
     {
      "key": "AFVU-386",
      "project": "AFVU",
      "summary": "[Frontend] NVIDIA DSX POD exploded GPU lid says B300 instead of Rubin",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-03",
-     "resolved": null,
+     "resolved": "2026-11-05",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-04",
+       0.33
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
     },
     {
      "key": "AFVU-387",
      "project": "AFVU",
      "summary": "[Frontend] Genesis Titan is offered for a 36-rack DGX B300 build it cannot hold",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-03",
-     "resolved": null,
+     "resolved": "2026-11-10",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.67,
+     "logs": [
+      [
+       "2026-11-04",
+       0.33
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ],
+      [
+       "2026-11-10",
+       1.17
+      ]
+     ]
     },
     {
      "key": "AFVU-388",
      "project": "AFVU",
      "summary": "[Frontend] DGX GB300 at 2 SU shows 2.62 MW on Forge and on Grid, above either container",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-03",
-     "resolved": null,
+     "resolved": "2026-11-10",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.92,
+     "logs": [
+      [
+       "2026-11-05",
+       0.17
+      ],
+      [
+       "2026-11-10",
+       0.75
+      ]
+     ]
     },
     {
      "key": "AFVU-389",
      "project": "AFVU",
      "summary": "[Frontend] Hall keeps Storage racks after Back, and they return on a rebuilt combination",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-03",
-     "resolved": null,
+     "resolved": "2026-11-06",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 2.25,
+     "logs": [
+      [
+       "2026-11-04",
+       0.33
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ],
+      [
+       "2026-11-06",
+       1.0
+      ],
+      [
+       "2026-11-10",
+       0.75
+      ]
+     ]
     },
     {
      "key": "AFVU-390",
      "project": "AFVU",
      "summary": "[Frontend] NVIDIA DSX POD at 2 SU shows 4.35 MW above the 4.00 MW container, and the storage cabinet has no bay",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-03",
-     "resolved": null,
+     "resolved": "2026-11-10",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.17,
+     "logs": [
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
     },
     {
      "key": "AFVU-391",
      "project": "AFVU",
      "summary": "[Frontend] Management step says this design has no out-of-band network",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-03",
-     "resolved": null,
+     "resolved": "2026-11-10",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.42,
+     "logs": [
+      [
+       "2026-11-04",
+       0.25
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ],
+      [
+       "2026-11-10",
+       1.0
+      ]
+     ]
     },
     {
      "key": "AFVU-392",
      "project": "AFVU",
      "summary": "[Frontend] DGX GB300 at 1 SU shows 1.31 MW; the NVIDIA RA says 1.2 MW per SU, and the 142 kW per rack the page uses is not in the RA",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-03",
-     "resolved": null,
-     "due": null,
+     "resolved": "2026-11-05",
+     "due": "2026-11-05",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-04",
+       0.33
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
     },
     {
      "key": "AFVU-393",
      "project": "AFVU",
      "summary": "[Frontend] DGX GB300 Scale step cites the GB300 RA for optics, storage and control counts that come from the DGX B300 RAs or a Uvation default",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-03",
-     "resolved": null,
-     "due": null,
+     "resolved": "2026-11-10",
+     "due": "2026-11-13",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.67,
+     "logs": [
+      [
+       "2026-11-05",
+       0.17
+      ],
+      [
+       "2026-11-10",
+       0.5
+      ]
+     ]
     },
     {
      "key": "AFVU-394",
      "project": "AFVU",
      "summary": "[Frontend] Scale step says 1 SU is \"smaller than NVIDIA's smallest published size\", but the DGX GB300 RA says a single SU is fully tested",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-03",
-     "resolved": null,
-     "due": null,
+     "resolved": "2026-11-05",
+     "due": "2026-11-05",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.42,
+     "logs": [
+      [
+       "2026-11-04",
+       0.25
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
     },
     {
      "key": "AFVU-395",
      "project": "AFVU",
      "summary": "[Frontend] Scale step says \"NVIDIA reference size ... follows NVIDIA's reference design exactly\" for NVIDIA GB300 NVL72, a system the DGX SuperPOD RA does not certify",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-03",
-     "resolved": null,
+     "resolved": "2026-11-10",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.92,
+     "logs": [
+      [
+       "2026-11-04",
+       0.25
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ],
+      [
+       "2026-11-10",
+       0.5
+      ]
+     ]
     },
     {
      "key": "AFVU-396",
      "project": "AFVU",
      "summary": "[Frontend] Scale step gives two different server limits for an air-cooled DGX B300 build: \"at most 256 per build\" and \"at most 216 servers\"",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-03",
-     "resolved": null,
+     "resolved": "2026-11-10",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.67,
+     "logs": [
+      [
+       "2026-11-04",
+       0.25
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ],
+      [
+       "2026-11-10",
+       0.25
+      ]
+     ]
     },
     {
      "key": "AFVU-397",
      "project": "AFVU",
      "summary": "[Frontend] Scale step says switch counts are rounded \"to whole pairs (one per network plane)\" on single-plane designs such as DGX B300 InfiniBand",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-03",
-     "resolved": null,
+     "resolved": "2026-11-05",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-04",
+       0.33
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
     },
     {
      "key": "AFVU-398",
      "project": "AFVU",
      "summary": "[Frontend] Changing system after a large build silently cuts the size: a 16-unit GB300 build (9,216 GPUs) becomes 3 units of DGX B300 (1,728 GPUs) with no warning on the System step",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-03",
-     "resolved": null,
+     "resolved": "2026-11-05",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-04",
+       0.33
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
     },
     {
      "key": "AFVU-399",
      "project": "AFVU",
      "summary": "[Frontend] Exploded GPU view labels every GPU \"NVIDIA B300\", including the Rubin GPUs of Vera Rubin NVL72 and Rubin NVL8",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-03",
-     "resolved": null,
+     "resolved": "2026-11-05",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-04",
+       0.33
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
     },
     {
      "key": "AFVU-400",
      "project": "AFVU",
      "summary": "[Backend] DGX Vera Rubin NVL72 shows \"NVIDIA has tested this design up to 1 block\", but the RA says a fully tested system scales to two SUs",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-03",
-     "resolved": null,
+     "resolved": "2026-11-05",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.42,
+     "logs": [
+      [
+       "2026-11-04",
+       0.25
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
     },
     {
      "key": "AFVU-401",
      "project": "AFVU",
      "summary": "[Backend] IT load ignores the chosen system for rack-sized designs: Vera Rubin NVL72 OEM-integrated (227 kW per rack) shows the same 4.35 MW as the DGX system (250 kW per rack)",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-03",
-     "resolved": null,
+     "resolved": "2026-11-05",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.42,
+     "logs": [
+      [
+       "2026-11-04",
+       0.25
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
     },
     {
      "key": "AFVU-402",
      "project": "AFVU",
      "summary": "[Catalogue] NVIDIA HGX Rubin NVL8 is priced at $180,000 per server per month, 11x the DGX Rubin NVL8 ($16,000); a 2-unit build quotes $26.41M a month",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-03",
-     "resolved": null,
+     "resolved": "2026-11-05",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.42,
+     "logs": [
+      [
+       "2026-11-04",
+       0.25
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
     },
     {
      "key": "AFVU-403",
      "project": "AFVU",
      "summary": "[Frontend] HGX Rubin NVL8 shows 0.1 MW for 1,152 GPUs because compute power is unknown; the warning appears only on the review step, and site matching uses the wrong figure",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-03",
-     "resolved": null,
+     "resolved": "2026-11-05",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.42,
+     "logs": [
+      [
+       "2026-11-04",
+       0.25
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
     },
     {
      "key": "AFVU-404",
      "project": "AFVU",
      "summary": "[Frontend] NVIDIA DSX POD at 18 SU shows 38.95 MW above the 36.00 MW container limit",
      "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-03",
+     "resolved": "2026-11-05",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.42,
+     "logs": [
+      [
+       "2026-11-04",
+       0.25
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-405",
+     "project": "AFVU",
+     "summary": "[Frontend] Storage step calls the recommended capacity the NVIDIA reference architecture",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-03",
+     "resolved": "2026-11-05",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.42,
+     "logs": [
+      [
+       "2026-11-04",
+       0.25
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-407",
+     "project": "AFVU",
+     "summary": "[Frontend] 3D hall draws every rack-scale compute rack with 8 power shelves; the Vera Rubin NVL72 RA has 4 per rack (GB300 has 8)",
+     "type": "Bug",
      "status": "To Do",
      "statusCat": "new",
-     "created": "2026-11-03",
+     "created": "2026-11-04",
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
@@ -2852,13 +3136,980 @@
      "logs": []
     },
     {
-     "key": "AFVU-405",
+     "key": "AFVU-408",
      "project": "AFVU",
-     "summary": "[Frontend] Storage step calls the recommended capacity the NVIDIA reference architecture",
+     "summary": "[Frontend] 3D hall network racks always draw 6 identical switches, so the hall shows far fewer switches than the design lists (e.g. 100 for 2 units of Vera Rubin NVL72)",
      "type": "Bug",
      "status": "To Do",
      "statusCat": "new",
-     "created": "2026-11-03",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-409",
+     "project": "AFVU",
+     "summary": "[Backend] Hot flash storage is billed per TB but the design always deploys a minimum of 8 WEKA nodes (1 PB) or 1 VAST DBox, so small orders pay far less than the hardware costs",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-410",
+     "project": "AFVU",
+     "summary": "[Frontend] Storage step says flash is priced \"per TB (raw)\", but the amount entered and billed is usable TB, and the Scale step says \"usable\"",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-411",
+     "project": "AFVU",
+     "summary": "[Frontend] Management step says \"The reference architecture needs at least 7\" control-plane nodes for DGX GB300, but the GB300 RA gives no count",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-412",
+     "project": "AFVU",
+     "summary": "[Catalogue] DGX GB300 rack is priced at $7,000 per month for 72 GPUs (about $97 per GPU), the same as an 8-GPU HGX B300 server; compute is $56,000 of an $861,938 monthly build",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-413",
+     "project": "AFVU",
+     "summary": "[Frontend] Scale step says \"NVIDIA reference size ... follows NVIDIA's reference design exactly\" for the Vera Rubin NVL72 OEM-integrated and Supermicro racks, which the DGX Vera Rubin RA does not certify",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-04",
+     "resolved": "2026-11-05",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.42,
+     "logs": [
+      [
+       "2026-11-04",
+       0.25
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-414",
+     "project": "AFVU",
+     "summary": "[Frontend] Scale step says \"NVIDIA reference size ... follows NVIDIA's reference design exactly\" for the HGX Rubin NVL8 system, which has no NVIDIA RA and is not certified on the DGX Rubin NVL8 design",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-04",
+     "resolved": "2026-11-05",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.42,
+     "logs": [
+      [
+       "2026-11-04",
+       0.25
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-415",
+     "project": "AFVU",
+     "summary": "[Frontend] DGX Rubin NVL8 Scale step says it follows NVIDIA's reference design exactly at 2 units, but only the 24 InfiniBand switches are published there; the other counts are scaled from the 8-unit table",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-416",
+     "project": "AFVU",
+     "summary": "[Frontend] Cooling choice (In-row or In-rack CDU) does not change the 3D hall; hall always draws 2 floor CDUs whatever the Bill of materials says",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-417",
+     "project": "AFVU",
+     "summary": "[Backend] IT load ignores the chosen system for DGX GB300 designs: NVIDIA GB300 NVL72 (132 kW nominal) shows the same 1.31 MW as DGX GB300",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-04",
+     "resolved": "2026-11-10",
+     "due": "2026-11-13",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.17,
+     "logs": [
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-418",
+     "project": "AFVU",
+     "summary": "[Catalogue] NVIDIA GB300 NVL72 rack is priced at $9,000 per month for 72 GPUs (about $125 per GPU); compute is $72,000 of an $864k monthly 1 SU build",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-419",
+     "project": "AFVU",
+     "summary": "[Frontend] Network step selects the InfiniBand design for NVIDIA GB300 NVL72 although it says \"Not NVIDIA-certified on this design\"; the Enterprise Spectrum-X design is not marked as the one that covers OEM racks",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-04",
+     "resolved": "2026-11-05",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.42,
+     "logs": [
+      [
+       "2026-11-04",
+       0.25
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-420",
+     "project": "AFVU",
+     "summary": "[Backend] Monthly price falls when the size doubles: GB300 NVL72 build is about $862k at 1 scalable unit and $734,586 at 2 scalable units",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-421",
+     "project": "AFVU",
+     "summary": "[Frontend] Management step says the GB300 Enterprise (Spectrum-X) design has no out-of-band or in-band management network, but the design counts 2 SN2201 per rack and converged leaf and spine switches",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-422",
+     "project": "AFVU",
+     "summary": "[Backend] Recommended hot storage for the same 576 GPUs is 4.5 PB on the GB300 InfiniBand design and 1 PB on the Enterprise design, and the Storage step labels both \"(NVIDIA reference architecture)\"",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-423",
+     "project": "AFVU",
+     "summary": "[Backend] Storage step with the cold tier on shows the price of the hot tier only, on WEKA and on VAST: 8 PB hot plus 1 PB cold is $235,040 and 3.8 PB hot plus 1 PB cold is $45,866, which is hot alone",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-424",
+     "project": "AFVU",
+     "summary": "[Frontend] Management step says \"In-band management: none in this design's reference architecture\" on the DGX B300 designs, which count in-band leaf and spine switches",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-425",
+     "project": "AFVU",
+     "summary": "[Frontend] DGX B300 Scale step says \"the network follows NVIDIA's reference design exactly\" at 2 units, but only the compute leaf and spine counts are published there; the other counts are scaled from the 8-unit or 4-unit table",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-426",
+     "project": "AFVU",
+     "summary": "[Frontend] Network step still shows the size-change notice from the previous system: a Vera Rubin NVL72 build says \"your size went from 2,048 to 1,728 GPUs (54 racks)\" with an Undo that would restore the old design",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-427",
+     "project": "AFVU",
+     "summary": "[Frontend] Management step says \"The reference architecture needs at least 7\" control-plane nodes for DGX Vera Rubin NVL72, but the Vera Rubin RA gives no control-node count",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-428",
+     "project": "AFVU",
+     "summary": "[Frontend] Vera Rubin NVL72 Scale step says \"the network follows NVIDIA's reference design exactly\" at 4 units, but the optics and cables (24,160) and the SN2201 count are estimates because the RA gives no count",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-429",
+     "project": "AFVU",
+     "summary": "[Frontend] 3D hall draws 2 cooling units for a 30-rack Vera Rubin NVL72 build, but the page lists 4 in-row CDUs for about 7.5 MW; with no cooling choice on the step, the hall has no way to follow the design",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-430",
+     "project": "AFVU",
+     "summary": "[Frontend] 3D hall for Vera Rubin NVL72 draws 2 network racks and 1 management rack that the Bill of materials does not list; the design has no switch rack lines, so the hall invents them",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-431",
+     "project": "AFVU",
+     "summary": "[Backend] Vera Rubin NVL72 Spectrum-X Storage step says \"Recommended for this build: 3.8 PB (NVIDIA reference architecture)\", but the RA gives read speed only (90 and 280 GB/s per SU) and no capacity",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-04",
+     "resolved": "2026-11-10",
+     "due": "2026-11-13",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.17,
+     "logs": [
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-432",
+     "project": "AFVU",
+     "summary": "[Frontend] Management step on both Vera Rubin NVL72 designs says \"Out-of-band management: none in this design's reference architecture\", but the RA has SN2201 top-of-rack switches and 2 SN5600D out-of-band spines",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-433",
+     "project": "AFVU",
+     "summary": "[Frontend] The size-change notice from the previous system also stays on the Scale step: a Vera Rubin NVL72 build at 4 units still says \"your size went from 2,048 to 1,728 GPUs (54 racks)\"",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-434",
+     "project": "AFVU",
+     "summary": "[Frontend] Scale step shows \"NVIDIA has tested this design up to 1 block\" for the Vera Rubin NVL72 OEM-integrated system, which NVIDIA did not test or certify on this design; the \"Not NVIDIA-certified\" notice is only on the Network step",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-04",
+     "resolved": "2026-11-05",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.42,
+     "logs": [
+      [
+       "2026-11-04",
+       0.25
+      ],
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-435",
+     "project": "AFVU",
+     "summary": "[Frontend] Vera Rubin NVL72 Spectrum-X Scale step shows \"Optics and cables 22,656\" as a plain figure, but the RA lists no optics or cables; the count is an estimate by port arithmetic, and the data's own note still says none are sized",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-436",
+     "project": "AFVU",
+     "summary": "[Frontend] 3D hall draws the Vera Rubin NVL72 InfiniBand fabric with Q3400-RA switches (air-cooled, 4U); the design and the RA use Q3400-RD (Q3401-RD, 48 VDC busbar)",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-438",
+     "project": "AFVU",
+     "summary": "[S3][P3] Close Button Is Highlighted by Default and Tooltip Is Missing When Opening New Event",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-04",
+     "resolved": "2026-11-06",
+     "due": "2026-11-15",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.67,
+     "logs": [
+      [
+       "2026-11-05",
+       0.17
+      ],
+      [
+       "2026-11-06",
+       0.5
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-439",
+     "project": "AFVU",
+     "summary": "[S3][P3] Incorrect Schedule Meeting Button Height and Bottom Spacing",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-04",
+     "resolved": "2026-11-06",
+     "due": "2026-11-15",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 1.17,
+     "logs": [
+      [
+       "2026-11-05",
+       0.17
+      ],
+      [
+       "2026-11-06",
+       1.0
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-440",
+     "project": "AFVU",
+     "summary": "[Frontend] Genesis Titan hall shows 32 DGX B300 servers at 1 SU; Scale and the RA count 72",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-04",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.17,
+     "logs": [
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-441",
+     "project": "AFVU",
+     "summary": "[S3][P3] Meeting Details Popup Overflows and Does Not Support Scrolling for Long Title and Description",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-04",
+     "resolved": "2026-11-06",
+     "due": "2026-11-15",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 1.17,
+     "logs": [
+      [
+       "2026-11-05",
+       0.17
+      ],
+      [
+       "2026-11-06",
+       1.0
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-443",
+     "project": "AFVU",
+     "summary": "[Frontend] Genesis Titan at 2 SU leaves TITAN-05 half empty; 36 RA racks do not fill 5 complete containers",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-05",
+     "resolved": "2026-11-06",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.17,
+     "logs": [
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-444",
+     "project": "AFVU",
+     "summary": "[Frontend] 32 SU Dell XE9780 on Titan shows 4 containers; 16 racks need 2",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-05",
+     "resolved": "2026-11-06",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-445",
+     "project": "AFVU",
+     "summary": "[Backend] Enterprise HGX B300 at 128 nodes shows 12 converged SN5600; RA Table 9 is 48",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-05",
+     "resolved": "2026-11-05",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-446",
+     "project": "AFVU",
+     "summary": "[Frontend] Enterprise XE9780L can be set to 2 SU; the RA and CRM only sell 8, 16 or 32",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-05",
+     "resolved": "2026-11-06",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-447",
+     "project": "AFVU",
+     "summary": "[Frontend] Enterprise XE9712 at 2 racks sits in one Genesis Forge; FORGE-01 uses only 2 of 8 bays",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-05",
+     "resolved": "2026-11-06",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-449",
+     "project": "AFVU",
+     "summary": "[Frontend] Architect offers plants below 1 MW; Uvation only deploys above 1 MW",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-05",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-450",
+     "project": "AFVU",
+     "summary": "[Frontend] 3D hall draws a full container for an order with no server line, and misplaces its management servers and a rack label",
+     "type": "Bug",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-11-05",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.17,
+     "logs": [
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-451",
+     "project": "AFVU",
+     "summary": "Plan: Modular and Nuclear AI Factory sites, with the approved site list and site choice in the configurator",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-05",
+     "resolved": "2026-11-05",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.67,
+     "logs": [
+      [
+       "2026-11-05",
+       0.17
+      ],
+      [
+       "2026-11-06",
+       0.5
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-452",
+     "project": "AFVU",
+     "summary": "Plan: GPU-hour rate engine for GPU as a Service",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-05",
+     "resolved": "2026-11-05",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.17,
+     "logs": [
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-453",
+     "project": "AFVU",
+     "summary": "Measure the test suite times and propose how to shorten them",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-05",
+     "resolved": "2026-11-05",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.17,
+     "logs": [
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-454",
+     "project": "AFVU",
+     "summary": "[Backend] Book a Meeting free times answer 500 for a host whose working hours are set in Asia/Calcutta",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-05",
+     "resolved": "2026-11-07",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.17,
+     "logs": [
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-455",
+     "project": "AFVU",
+     "summary": "[Frontend] Moving a meeting hides the free times beside its own place",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-05",
+     "resolved": "2026-11-07",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.17,
+     "logs": [
+      [
+       "2026-11-05",
+       0.17
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-456",
+     "project": "AFVU",
+     "summary": "[Frontend] Joining a Teams call before the host starts it ends the call instead of waiting",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-05",
+     "resolved": "2026-11-07",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.08,
+     "logs": [
+      [
+       "2026-11-05",
+       0.08
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-457",
+     "project": "AFVU",
+     "summary": "[Frontend] The meeting card names the subscription under the description",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-05",
+     "resolved": "2026-11-07",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.08,
+     "logs": [
+      [
+       "2026-11-05",
+       0.08
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-458",
+     "project": "AFVU",
+     "summary": "[Frontend] Architect sells Dell XE9780L on SuperPOD IB; NVIDIA does not certify that system there",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-06",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-459",
+     "project": "AFVU",
+     "summary": "[Frontend] Genesis Aether at 18 SU of XE9780L quotes $13.00M; catalogue is 4 x $4.50M = $18.00M",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-06",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-460",
+     "project": "AFVU",
+     "summary": "[Frontend] Nuclear Terra at 1 SU of XE9780L uses 6 of 8 compute bays",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-06",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-462",
+     "project": "AFVU",
+     "summary": "[DO NOT USE] Duplicate of AFVU-463 — Architect reset bug",
+     "type": "Subtask",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-463",
+     "project": "AFVU",
+     "summary": "[Frontend] Architect keeps the design after refresh and has no Reset / Start over",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-464",
+     "project": "AFVU",
+     "summary": "Architect IT load for GB300 Enterprise is about 3× the RA rack power",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-465",
+     "project": "AFVU",
+     "summary": "[S2][P2] Subscriptions Awaiting Deposit Are Displayed in the New Event Subscription List",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": "2026-11-15",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-466",
+     "project": "AFVU",
+     "summary": "Architect Vera Rubin NVL72 Review uses 250 kW per rack, not the rate-flow 227 kW",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-467",
+     "project": "AFVU",
+     "summary": "Architect Traditional never shows Rubin NVL8, so the no-price order message cannot appear",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-468",
+     "project": "AFVU",
+     "summary": "Architect Scale lists Genesis Grid with no reason the customer cannot choose it",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-469",
+     "project": "AFVU",
+     "summary": "Architect Storage does not say that raising PB raises the billed TB and first invoice",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-470",
+     "project": "AFVU",
+     "summary": "Architect Management: extra control-plane nodes update the count, not whether the invoice changes",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-471",
+     "project": "AFVU",
+     "summary": "GET /api/subscription/download-summary/ times out on the signing page (60s)",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-472",
+     "project": "AFVU",
+     "summary": "Active dashboard header To-date is billingPeriod end, not the 12-month service term",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
@@ -2928,25 +4179,6 @@
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
-    },
-    {
-     "key": "PRD-1",
-     "project": "PRD",
-     "summary": "Create the project plan for the Interactive AI Factory and publish it on Confluence",
-     "type": "Task",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-09",
-     "resolved": "2026-10-09",
-     "due": "2026-10-09",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 1.0,
-     "logs": [
-      [
-       "2026-10-09",
-       1.0
-      ]
-     ]
     },
     {
      "key": "PRD-10",
@@ -9142,48 +10374,6 @@
      "logs": []
     },
     {
-     "key": "UP-146",
-     "project": "UP",
-     "summary": "Tools and access for every developer",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-09",
-     "resolved": "2026-10-09",
-     "due": "2026-10-13",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.5,
-     "logs": [
-      [
-       "2026-10-09",
-       0.5
-      ]
-     ]
-    },
-    {
-     "key": "UP-40",
-     "project": "UP",
-     "summary": "Interactive AI Factory Experience",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-09",
-     "due": "2026-10-15",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 4.5,
-     "logs": [
-      [
-       "2026-10-06",
-       4.0
-      ],
-      [
-       "2026-10-09",
-       0.5
-      ]
-     ]
-    },
-    {
      "key": "UP-41",
      "project": "UP",
      "summary": "Rafay SSO Integration",
@@ -9203,294 +10393,6 @@
      ]
     },
     {
-     "key": "UP-42",
-     "project": "UP",
-     "summary": "Rafay and Infrastructure SSO integration meeting and API documentation",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-06",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 1.0,
-     "logs": [
-      [
-       "2026-10-06",
-       1.0
-      ]
-     ]
-    },
-    {
-     "key": "UP-43",
-     "project": "UP",
-     "summary": "Create Azure AD B2C policy and SAML metadata URL with Saravana",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-06",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "UP-44",
-     "project": "UP",
-     "summary": "Standalone service-dashboard page with redesigned Dashboard tab",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-06",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "UP-45",
-     "project": "UP",
-     "summary": "Interactive 3D data hall: racks, build animation, hall size, brand halls",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-06",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "UP-46",
-     "project": "UP",
-     "summary": "Cabling and power distribution in the hall",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-07",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.5,
-     "logs": [
-      [
-       "2026-10-07",
-       0.5
-      ]
-     ]
-    },
-    {
-     "key": "UP-47",
-     "project": "UP",
-     "summary": "Rack, server and GPU drill-down",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-06",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "UP-48",
-     "project": "UP",
-     "summary": "Probe adapter, health overlays and alerts (simulator for now)",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-09",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "UP-49",
-     "project": "UP",
-     "summary": "Dynamic data from USP CRM subscription data",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-06",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "UP-50",
-     "project": "UP",
-     "summary": "Subscription lifecycle states and live refresh",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-06",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "UP-51",
-     "project": "UP",
-     "summary": "Camera framing, reset view and focus on selected components",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-07",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 1.0,
-     "logs": [
-      [
-       "2026-10-07",
-       1.0
-      ]
-     ]
-    },
-    {
-     "key": "UP-52",
-     "project": "UP",
-     "summary": "Support tickets, contacts and integration handoff docs",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-06",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "UP-54",
-     "project": "UP",
-     "summary": "UAT: re-test against UAT USP CRM and CRM DB data",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-07",
-     "resolved": "2026-10-08",
-     "due": "2026-10-07",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 3.0,
-     "logs": [
-      [
-       "2026-10-07",
-       0.5
-      ],
-      [
-       "2026-10-08",
-       2.5
-      ]
-     ]
-    },
-    {
-     "key": "UP-57",
-     "project": "UP",
-     "summary": "Discovery: Plan walkthrough, repository setup and local environment",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-09",
-     "resolved": "2026-10-09",
-     "due": "2026-10-15",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 5.0,
-     "logs": [
-      [
-       "2026-10-09",
-       2.0
-      ],
-      [
-       "2026-10-09",
-       3.0
-      ]
-     ]
-    },
-    {
-     "key": "UP-72",
-     "project": "UP",
-     "summary": "Walk the team through Project Plan V2 and the USP v3 playbook",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-09",
-     "resolved": "2026-10-09",
-     "due": "2026-10-12",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 4.0,
-     "logs": [
-      [
-       "2026-10-09",
-       1.0
-      ],
-      [
-       "2026-10-09",
-       1.0
-      ],
-      [
-       "2026-10-09",
-       1.0
-      ],
-      [
-       "2026-10-09",
-       1.0
-      ]
-     ]
-    },
-    {
-     "key": "UP-73",
-     "project": "UP",
-     "summary": "Clone usp-fe and uspcrm-be locally as read-only references",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-09",
-     "resolved": "2026-10-09",
-     "due": "2026-10-13",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "UP-74",
-     "project": "UP",
-     "summary": "Set up the NEXT-V3 repository and the local uspcrm-be-v3 copy",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-09",
-     "resolved": "2026-10-09",
-     "due": "2026-10-14",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "UP-75",
-     "project": "UP",
-     "summary": "Run the local CRM and database from uspcrm-be-v3",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-09",
-     "resolved": "2026-10-09",
-     "due": "2026-10-15",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
      "key": "USP-3795",
      "project": "USP",
      "summary": "GPU as a Service",
@@ -9499,7 +10401,7 @@
      "statusCat": "new",
      "created": "2026-07-10",
      "resolved": null,
-     "due": "2026-10-30",
+     "due": "2026-12-31",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
@@ -9611,10 +10513,10 @@
      "project": "AFVU",
      "summary": "Component registry: a permanent id for every part of a subscription, in the CRM and shown in the Portal",
      "type": "Story",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-11-06",
      "due": "2026-10-31",
      "assignee": "Aman prakash"
     },
@@ -9863,10 +10765,10 @@
      "project": "AFVU",
      "summary": "[Backend] Bring in the component registry app, hooks, backfill and routes",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-11-04",
      "due": "2026-11-16",
      "assignee": "Yash Janeshwar"
     },
@@ -9899,10 +10801,10 @@
      "project": "AFVU",
      "summary": "[Backend] Bring in the build plan app, templates, hooks and routes",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-11-04",
      "due": "2026-11-16",
      "assignee": "Yash Janeshwar"
     },
@@ -9947,10 +10849,10 @@
      "project": "AFVU",
      "summary": "[Backend] Updates feed and notification hook on the updated base; check the payload against the real service",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-11-05",
      "due": "2026-10-24",
      "assignee": "Yash Janeshwar"
     },
@@ -10031,10 +10933,10 @@
      "project": "AFVU",
      "summary": "[Backend] Backend test runs, security declarations and route performance on the integrated code",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-16",
-     "resolved": null,
+     "resolved": "2026-11-05",
      "due": "2026-11-16",
      "assignee": "Yash Janeshwar"
     },
@@ -10943,8 +11845,8 @@
      "project": "AFVU",
      "summary": "Build plan notifications: notification-service templates, the updates list on the dashboard card, and an end-to-end test",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-27",
      "resolved": null,
      "due": "2026-11-16",
@@ -11459,8 +12361,8 @@
      "project": "AFVU",
      "summary": "[Backend] Build plan notification conditions and templates, then switch BUILD_PLAN_NOTIFICATIONS_ENABLED on",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Review",
+     "statusCat": "indeterminate",
      "created": "2026-10-29",
      "resolved": null,
      "due": "2026-11-16",
@@ -11471,8 +12373,8 @@
      "project": "AFVU",
      "summary": "[Frontend] Build progress card shows the real updates list (up to five, with the day of each)",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-29",
      "resolved": null,
      "due": "2026-11-15",
@@ -11591,10 +12493,10 @@
      "project": "AFVU",
      "summary": "[Frontend] Portal (next-fe) consumer contracts for the most-called CRM routes, published from the pipeline",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-29",
-     "resolved": null,
+     "resolved": "2026-11-10",
      "due": "2026-11-15",
      "assignee": "Aman prakash"
     },
@@ -11723,8 +12625,8 @@
      "project": "AFVU",
      "summary": "[Test] Live DSX telemetry end to end: readings, alerts, stale and fallback, and no data in another customer's hall",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-30",
      "resolved": null,
      "due": null,
@@ -11739,7 +12641,7 @@
      "statusCat": "indeterminate",
      "created": "2026-10-30",
      "resolved": null,
-     "due": null,
+     "due": "2026-11-13",
      "assignee": "Anshul Bhargava"
     },
     {
@@ -11747,10 +12649,10 @@
      "project": "AFVU",
      "summary": "[Backend] Push the CRM part to next-be v3, merge into demo/main and migrate on AppTest",
      "type": "Subtask",
-     "status": "In Review",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-30",
-     "resolved": null,
+     "resolved": "2026-11-06",
      "due": null,
      "assignee": "Anshul Bhargava"
     },
@@ -11759,10 +12661,10 @@
      "project": "AFVU",
      "summary": "[Frontend] Push the Portal part to NEXT-V3 and merge into demo/main",
      "type": "Subtask",
-     "status": "In Review",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-30",
-     "resolved": null,
+     "resolved": "2026-11-06",
      "due": null,
      "assignee": "Anshul Bhargava"
     },
@@ -11795,8 +12697,8 @@
      "project": "AFVU",
      "summary": "[Frontend] Staff screen for a subscription's asset map and live-feed collector",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-30",
      "resolved": null,
      "due": "2026-11-15",
@@ -11871,7 +12773,7 @@
      "statusCat": "indeterminate",
      "created": "2026-10-30",
      "resolved": null,
-     "due": null,
+     "due": "2026-11-13",
      "assignee": "Anshul Bhargava"
     },
     {
@@ -11979,7 +12881,7 @@
      "statusCat": "indeterminate",
      "created": "2026-11-02",
      "resolved": null,
-     "due": null,
+     "due": "2026-11-13",
      "assignee": "Anshul Bhargava"
     },
     {
@@ -12059,8 +12961,8 @@
      "project": "AFVU",
      "summary": "[Backend] Notification service: map the meeting_minutes email to its SendGrid template, then switch the minutes email on",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Review",
+     "statusCat": "indeterminate",
      "created": "2026-11-02",
      "resolved": null,
      "due": null,
@@ -12095,8 +12997,8 @@
      "project": "AFVU",
      "summary": "[Backend] Release Book a Meeting past AppTest: API gateway routes, request timeout, and the same settings and jobs on each environment",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-11-02",
      "resolved": null,
      "due": null,
@@ -12143,10 +13045,10 @@
      "project": "AFVU",
      "summary": "[Backend] Staff can delete an unused role, and a customer can change the guests and agenda of a meeting that has not started",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-02",
-     "resolved": null,
+     "resolved": "2026-11-07",
      "due": null,
      "assignee": "Anshul Bhargava"
     },
@@ -12155,10 +13057,10 @@
      "project": "AFVU",
      "summary": "[Frontend] Portal: Edit a meeting's guests and agenda from My meetings",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-02",
-     "resolved": null,
+     "resolved": "2026-11-07",
      "due": null,
      "assignee": "Anshul Bhargava"
     },
@@ -12191,12 +13093,108 @@
      "project": "AFVU",
      "summary": "[QA] Move, Edit, host calendar changes and the staff Meetings rows on AppTest",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-11-02",
      "resolved": null,
      "due": null,
      "assignee": "r.jaiswal"
+    },
+    {
+     "key": "AFVU-450",
+     "project": "AFVU",
+     "summary": "[Frontend] 3D hall draws a full container for an order with no server line, and misplaces its management servers and a rack label",
+     "type": "Bug",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-11-05",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-451",
+     "project": "AFVU",
+     "summary": "Plan: Modular and Nuclear AI Factory sites, with the approved site list and site choice in the configurator",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-05",
+     "resolved": "2026-11-05",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-452",
+     "project": "AFVU",
+     "summary": "Plan: GPU-hour rate engine for GPU as a Service",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-05",
+     "resolved": "2026-11-05",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-453",
+     "project": "AFVU",
+     "summary": "Measure the test suite times and propose how to shorten them",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-05",
+     "resolved": "2026-11-05",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-454",
+     "project": "AFVU",
+     "summary": "[Backend] Book a Meeting free times answer 500 for a host whose working hours are set in Asia/Calcutta",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-05",
+     "resolved": "2026-11-07",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-455",
+     "project": "AFVU",
+     "summary": "[Frontend] Moving a meeting hides the free times beside its own place",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-05",
+     "resolved": "2026-11-07",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-456",
+     "project": "AFVU",
+     "summary": "[Frontend] Joining a Teams call before the host starts it ends the call instead of waiting",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-05",
+     "resolved": "2026-11-07",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-457",
+     "project": "AFVU",
+     "summary": "[Frontend] The meeting card names the subscription under the description",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-05",
+     "resolved": "2026-11-07",
+     "due": null,
+     "assignee": "Anshul Bhargava"
     },
     {
      "key": "ATLAS-1",
@@ -12427,30 +13425,6 @@
      "assignee": "b.kumar"
     },
     {
-     "key": "IN-1141",
-     "project": "IN",
-     "summary": "Design AKS-hosted Azure DevOps agent architecture",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-01",
-     "resolved": "2026-10-08",
-     "due": "2026-10-15",
-     "assignee": "k.kishore"
-    },
-    {
-     "key": "IN-1142",
-     "project": "IN",
-     "summary": "Build secure agent image and AKS deployment manifests",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-01",
-     "resolved": "2026-10-08",
-     "due": "2026-10-15",
-     "assignee": "k.kishore"
-    },
-    {
      "key": "IN-1143",
      "project": "IN",
      "summary": "Implement agent registration, scaling, and lifecycle controls",
@@ -12479,24 +13453,12 @@
      "project": "MR",
      "summary": "Resolve Sonar maintainability issues in uvation-cms API code",
      "type": "Story",
-     "status": "Dev",
+     "status": "Ready for Prod",
      "statusCat": "indeterminate",
      "created": "2026-08-31",
      "resolved": null,
      "due": "2026-10-30",
      "assignee": "Vishnu kumar yadav"
-    },
-    {
-     "key": "PRD-1",
-     "project": "PRD",
-     "summary": "Create the project plan for the Interactive AI Factory and publish it on Confluence",
-     "type": "Task",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-09",
-     "resolved": "2026-10-09",
-     "due": "2026-10-09",
-     "assignee": "Anshul Bhargava"
     },
     {
      "key": "PRD-10",
@@ -18179,8 +19141,8 @@
      "project": "UC",
      "summary": "Design & technical spec — lead capture form schema & consent handling",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Dev",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-11-13",
@@ -18191,8 +19153,8 @@
      "project": "UC",
      "summary": "Implementation — lead capture flow and CRM handoff",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Dev",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-11-13",
@@ -18203,8 +19165,8 @@
      "project": "UC",
      "summary": "Integration & security review — lead data consent enforcement",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Dev",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-11-13",
@@ -18215,8 +19177,8 @@
      "project": "UC",
      "summary": "QA & validation — lead capture end-to-end test pass",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Dev",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-11-13",
@@ -18227,7 +19189,7 @@
      "project": "UC",
      "summary": "Design & technical spec — multi-turn context retention rules",
      "type": "Subtask",
-     "status": "Dev Testing",
+     "status": "Ready for Prod",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -18239,7 +19201,7 @@
      "project": "UC",
      "summary": "Implementation — multi-turn memory and thumbs up/down feedback UI",
      "type": "Subtask",
-     "status": "Dev Testing",
+     "status": "Ready for Prod",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -18251,7 +19213,7 @@
      "project": "UC",
      "summary": "Integration & security review — feedback data storage review",
      "type": "Subtask",
-     "status": "Dev Testing",
+     "status": "Ready for Prod",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -18263,7 +19225,7 @@
      "project": "UC",
      "summary": "QA & validation — multi-turn UX regression pass",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "UAT Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -18419,7 +19381,7 @@
      "project": "UC",
      "summary": "Design & technical spec — SLA timer configuration & escalation rules",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "Dev Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -18431,7 +19393,7 @@
      "project": "UC",
      "summary": "Implementation — availability check & connect-within-SLA flow",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "Dev Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -18443,8 +19405,8 @@
      "project": "UC",
      "summary": "Integration & security review — Teams availability check integrity",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Dev Testing",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-11-13",
@@ -18455,8 +19417,8 @@
      "project": "UC",
      "summary": "QA & validation — SLA connect-time testing",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Dev Testing",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2027-01-20",
@@ -18563,7 +19525,7 @@
      "project": "UC",
      "summary": "Authenticated own-records experience — orders, invoices, subscription & low-risk actions",
      "type": "Story",
-     "status": "In Dev",
+     "status": "UAT",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -18611,11 +19573,11 @@
      "project": "UC",
      "summary": "RFQ direct submission in-chat for all visitors",
      "type": "Story",
-     "status": "IN PROGRESS",
+     "status": "In Dev",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
-     "due": "2026-11-13",
+     "due": "2026-11-11",
      "assignee": "Ankit Saxena"
     },
     {
@@ -18755,7 +19717,7 @@
      "project": "UC",
      "summary": "Implementation — in-chat RFQ flow & CRM integration",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "In Dev",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -18767,11 +19729,11 @@
      "project": "UC",
      "summary": "QA & validation — RFQ CRM record creation & confirmation reliability",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Dev",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
-     "due": "2026-11-05",
+     "due": "2026-11-13",
      "assignee": "Ankit Saxena"
     },
     {
@@ -18851,8 +19813,8 @@
      "project": "UC",
      "summary": "Marketing lead capture — persistent Book a Meeting / Contact Us CTA routing",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Dev",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-11-13",
@@ -18887,7 +19849,7 @@
      "project": "UC",
      "summary": "Multi-turn context resolution & feedback capture loop",
      "type": "Story",
-     "status": "Dev Testing",
+     "status": "UAT Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -18983,7 +19945,7 @@
      "project": "UC",
      "summary": "Teams handoff — SLA-timeout fallback when no agent available",
      "type": "Story",
-     "status": "IN PROGRESS",
+     "status": "Dev Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -19103,11 +20065,11 @@
      "project": "UC",
      "summary": "Design & technical spec — live-join transcript continuity",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Dev",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
-     "due": "2026-11-04",
+     "due": "2026-11-11",
      "assignee": "Ankit Saxena"
     },
     {
@@ -19115,11 +20077,11 @@
      "project": "UC",
      "summary": "Integration & security review — dashboard-to-Teams join handshake",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Dev",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
-     "due": "2026-11-06",
+     "due": "2026-11-13",
      "assignee": "Ankit Saxena"
     },
     {
@@ -19207,42 +20169,6 @@
      "assignee": "Ankit Saxena"
     },
     {
-     "key": "UP-146",
-     "project": "UP",
-     "summary": "Tools and access for every developer",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-09",
-     "resolved": "2026-10-09",
-     "due": "2026-10-13",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UP-29",
-     "project": "UP",
-     "summary": "Queries over chat ",
-     "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
-     "created": "2026-07-14",
-     "resolved": null,
-     "due": null,
-     "assignee": null
-    },
-    {
-     "key": "UP-32",
-     "project": "UP",
-     "summary": "Product Innovation and POC",
-     "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
-     "created": "2026-08-03",
-     "resolved": null,
-     "due": null,
-     "assignee": null
-    },
-    {
      "key": "UP-33",
      "project": "UP",
      "summary": "Design Review meeting",
@@ -19255,30 +20181,6 @@
      "assignee": null
     },
     {
-     "key": "UP-39",
-     "project": "UP",
-     "summary": "USP Interactive Design and Rafay Integration",
-     "type": "Epic",
-     "status": "Backlog",
-     "statusCat": "new",
-     "created": "2026-10-06",
-     "resolved": null,
-     "due": null,
-     "assignee": null
-    },
-    {
-     "key": "UP-40",
-     "project": "UP",
-     "summary": "Interactive AI Factory Experience",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-09",
-     "due": "2026-10-15",
-     "assignee": "Anshul Bhargava"
-    },
-    {
      "key": "UP-41",
      "project": "UP",
      "summary": "Rafay SSO Integration",
@@ -19287,210 +20189,6 @@
      "statusCat": "done",
      "created": "2026-10-06",
      "resolved": "2026-11-02",
-     "due": "2026-10-15",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UP-42",
-     "project": "UP",
-     "summary": "Rafay and Infrastructure SSO integration meeting and API documentation",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-06",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UP-43",
-     "project": "UP",
-     "summary": "Create Azure AD B2C policy and SAML metadata URL with Saravana",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-06",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UP-44",
-     "project": "UP",
-     "summary": "Standalone service-dashboard page with redesigned Dashboard tab",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-06",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UP-45",
-     "project": "UP",
-     "summary": "Interactive 3D data hall: racks, build animation, hall size, brand halls",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-06",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UP-46",
-     "project": "UP",
-     "summary": "Cabling and power distribution in the hall",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-07",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UP-47",
-     "project": "UP",
-     "summary": "Rack, server and GPU drill-down",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-06",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UP-48",
-     "project": "UP",
-     "summary": "Probe adapter, health overlays and alerts (simulator for now)",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-09",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UP-49",
-     "project": "UP",
-     "summary": "Dynamic data from USP CRM subscription data",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-06",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UP-50",
-     "project": "UP",
-     "summary": "Subscription lifecycle states and live refresh",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-06",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UP-51",
-     "project": "UP",
-     "summary": "Camera framing, reset view and focus on selected components",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-07",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UP-52",
-     "project": "UP",
-     "summary": "Support tickets, contacts and integration handoff docs",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-06",
-     "resolved": "2026-10-06",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UP-54",
-     "project": "UP",
-     "summary": "UAT: re-test against UAT USP CRM and CRM DB data",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-07",
-     "resolved": "2026-10-08",
-     "due": "2026-10-07",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UP-57",
-     "project": "UP",
-     "summary": "Discovery: Plan walkthrough, repository setup and local environment",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-09",
-     "resolved": "2026-10-09",
-     "due": "2026-10-15",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UP-72",
-     "project": "UP",
-     "summary": "Walk the team through Project Plan V2 and the USP v3 playbook",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-09",
-     "resolved": "2026-10-09",
-     "due": "2026-10-12",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UP-73",
-     "project": "UP",
-     "summary": "Clone usp-fe and uspcrm-be locally as read-only references",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-09",
-     "resolved": "2026-10-09",
-     "due": "2026-10-13",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UP-74",
-     "project": "UP",
-     "summary": "Set up the NEXT-V3 repository and the local uspcrm-be-v3 copy",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-09",
-     "resolved": "2026-10-09",
-     "due": "2026-10-14",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UP-75",
-     "project": "UP",
-     "summary": "Run the local CRM and database from uspcrm-be-v3",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-09",
-     "resolved": "2026-10-09",
      "due": "2026-10-15",
      "assignee": "Anshul Bhargava"
     },
@@ -19560,42 +20258,6 @@
    ],
    "reported": [
     {
-     "key": "MT-1438",
-     "project": "MT",
-     "summary": "Uvation Marketplace Category Disable Task List",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-10-06",
-     "due": "2026-09-10",
-     "assignee": "Shashi Prasad K"
-    },
-    {
-     "key": "MT-1447",
-     "project": "MT",
-     "summary": "Decide URL disposition (410 vs 301 vs 404)",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-10-06",
-     "due": "2026-09-10",
-     "assignee": "Naveen Jangid"
-    },
-    {
-     "key": "MT-1475",
-     "project": "MT",
-     "summary": "Performance check on reduced catalogue",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-10",
-     "resolved": "2026-10-06",
-     "due": "2026-09-10",
-     "assignee": "Naveen Jangid"
-    },
-    {
      "key": "UP-36",
      "project": "UP",
      "summary": "Dashboard creation",
@@ -19620,28 +20282,244 @@
      "assignee": "Anmol Srivastava"
     },
     {
-     "key": "UP-55",
-     "project": "UP",
-     "summary": "Email communications to team",
-     "type": "Subtask",
-     "status": "Backlog",
+     "key": "VTN-2030",
+     "project": "VTN",
+     "summary": "Marketplace – attributes updates",
+     "type": "Task",
+     "status": "To Do",
      "statusCat": "new",
-     "created": "2026-10-07",
+     "created": "2026-11-10",
      "resolved": null,
-     "due": null,
-     "assignee": null
+     "due": "2026-11-14",
+     "assignee": "Razvan Dumitrasconiu"
     },
     {
-     "key": "UP-56",
-     "project": "UP",
-     "summary": "JIRA issue resolution",
-     "type": "Subtask",
-     "status": "Backlog",
+     "key": "VTN-2031",
+     "project": "VTN",
+     "summary": "Invoice redesign and updates",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-10",
+     "resolved": "2026-11-10",
+     "due": "2026-11-06",
+     "assignee": "Razvan Dumitrasconiu"
+    },
+    {
+     "key": "VTN-2032",
+     "project": "VTN",
+     "summary": "NVIDIA DSX Pod design",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-10",
+     "resolved": "2026-11-10",
+     "due": "2026-11-06",
+     "assignee": "a.kaushal"
+    },
+    {
+     "key": "VTN-2033",
+     "project": "VTN",
+     "summary": "Review and comments on system emails",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-10",
+     "resolved": "2026-11-10",
+     "due": "2026-11-06",
+     "assignee": "Raluca Conea"
+    },
+    {
+     "key": "VTN-2034",
+     "project": "VTN",
+     "summary": "Gather all system emails from Marketplace",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-10",
+     "resolved": "2026-11-10",
+     "due": "2026-11-11",
+     "assignee": "a.kaushal"
+    },
+    {
+     "key": "VTN-2035",
+     "project": "VTN",
+     "summary": "Dev overview and feedback for system emails",
+     "type": "Task",
+     "status": "To Do",
      "statusCat": "new",
-     "created": "2026-10-08",
+     "created": "2026-11-10",
      "resolved": null,
-     "due": null,
-     "assignee": null
+     "due": "2026-11-11",
+     "assignee": "Raluca Conea"
+    },
+    {
+     "key": "VTN-2036",
+     "project": "VTN",
+     "summary": "USP V1 2025 file cleanup",
+     "type": "Task",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": "2026-11-14",
+     "assignee": "Raluca Conea"
+    },
+    {
+     "key": "VTN-2037",
+     "project": "VTN",
+     "summary": "Marketing website handoff",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-10",
+     "resolved": "2026-11-10",
+     "due": "2026-11-10",
+     "assignee": "Ivan Divjakovic"
+    },
+    {
+     "key": "VTN-2038",
+     "project": "VTN",
+     "summary": "Feedback for the 3D team",
+     "type": "Task",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": "2026-11-10",
+     "assignee": "Raluca Conea"
+    },
+    {
+     "key": "VTN-2039",
+     "project": "VTN",
+     "summary": "Responsive for checkout flow and request a quote",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-10",
+     "resolved": "2026-11-10",
+     "due": "2026-11-09",
+     "assignee": "Valeriia"
+    },
+    {
+     "key": "VTN-2040",
+     "project": "VTN",
+     "summary": "Purchase order updates",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-10",
+     "resolved": "2026-11-10",
+     "due": "2026-11-06",
+     "assignee": "Milica Stojkovic"
+    },
+    {
+     "key": "VTN-2041",
+     "project": "VTN",
+     "summary": "Video creation for About Us – video 1 of 4",
+     "type": "Task",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": "2026-11-14",
+     "assignee": "Ivan Divjakovic"
+    },
+    {
+     "key": "VTN-2042",
+     "project": "VTN",
+     "summary": "Video creation for About Us – video 3 of 4",
+     "type": "Task",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": "2026-11-14",
+     "assignee": "Ivan Divjakovic"
+    },
+    {
+     "key": "VTN-2043",
+     "project": "VTN",
+     "summary": "Video creation for About Us – video 4 of 4",
+     "type": "Task",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": "2026-11-14",
+     "assignee": "Ivan Divjakovic"
+    },
+    {
+     "key": "VTN-2044",
+     "project": "VTN",
+     "summary": "Video for homepage 1",
+     "type": "Task",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": "2026-11-14",
+     "assignee": "Ivan Divjakovic"
+    },
+    {
+     "key": "VTN-2045",
+     "project": "VTN",
+     "summary": "Video for homepage 2",
+     "type": "Task",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": "2026-11-14",
+     "assignee": "Ivan Divjakovic"
+    },
+    {
+     "key": "VTN-2046",
+     "project": "VTN",
+     "summary": "Video for homepage 3",
+     "type": "Task",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": "2026-11-14",
+     "assignee": "Ivan Divjakovic"
+    },
+    {
+     "key": "VTN-2047",
+     "project": "VTN",
+     "summary": "Video for Project Genesis 1",
+     "type": "Task",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": "2026-11-14",
+     "assignee": "a.kaushal"
+    },
+    {
+     "key": "VTN-2048",
+     "project": "VTN",
+     "summary": "Video for Project Genesis 2",
+     "type": "Task",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": "2026-11-14",
+     "assignee": "a.kaushal"
+    },
+    {
+     "key": "VTN-2049",
+     "project": "VTN",
+     "summary": "Video for Project Genesis 3",
+     "type": "Task",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-10",
+     "resolved": null,
+     "due": "2026-11-14",
+     "assignee": "a.kaushal"
     }
    ]
   },
