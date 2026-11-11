@@ -24,7 +24,7 @@
         "MT",
         "PC"
       ],
-      "headline": "Since 3 Nov Kannan Elangovan closed the first three Playwright suites (framework, authentication and My Account: MT-1633 to MT-1635) and started Home, CMS and navigation (MT-1636). Naman Bapna moved seven more Uvation module checks to Ready For Prod (MT-1690, MT-1692, MT-1699 to MT-1703), and shubham kuchwar closed the three review-module checks (MT-1730 to MT-1732); twelve more checks are in Dev for Naman Bapna, Parth and shubham kuchwar, all due 16 Nov. The GraphQL 403, wishlist and chatbot RFQ redirect fixes moved from In Prod to Done (MT-1754, MT-1760, MT-1761). Naman Bapna started the V2 homepage CMS blocks, product attributes, dynamic quote PDF and new quote email templates (MT-1781 to MT-1786, due 16 Nov), and Naveen Jangid the quote-to-order flow (MT-1790, due 13 Nov). Two new bugs report Marketplace FAQ pages returning 404 in production (MT-1780, MT-1789). The 15 November go-live checklist (MT-1770) is in progress, but four of its checks passed their 4 and 5 Nov dates still open (MT-1772, MT-1774 to MT-1776), and Communication Hub (MT-1777) has no date. The upgrade (MT-1615) and 40 of its subtasks are still Ready For Prod; 49 MT items wait there. 62 items are past due, up from 56."
+      "headline": "Since 10 Nov Kannan Elangovan closed the Home, CMS, navigation and support Playwright suite (MT-1636) and started product listing, search and filters (MT-1637). Naman Bapna and shubham kuchwar moved five more Uvation module checks into Dev (MT-1706, MT-1717, MT-1727, MT-1736, MT-1737), all due 16 Nov, and Naveen Jangid fixed the footer FAQ link 404 (MT-1789) and started My Account Communication Hub (MT-1791, due 13 Nov). The products and contents go-live check (MT-1775) was re-dated to 13 Nov, and Nagamuni Valluri's cart, checkout and quote request front end (MT-1764) passed its 10 Nov date in progress. The upgrade (MT-1615) and 40 of its subtasks are still Ready For Prod, with 49 MT items waiting there four days before the 15 November go-live. 62 items are past due, unchanged."
     },
     {
       "id": "MR",
@@ -32,7 +32,7 @@
       "projects": [
         "MR"
       ],
-      "headline": "Since 3 Nov Vishnu kumar yadav moved the Sonar fixes for the CMS API (MR-1073, MR-1363 to MR-1368) and the November events upload (MR-1454) to Ready for Prod, and moved the People, Careers, Partners, Contact, SLA and Products page updates to Dev (MR-1399, MR-1401 to MR-1404, MR-1408). Kunal Jangid moved the About page to Code Review (MR-1398), started Project Genesis (MR-1400) and the v1.3 Kimi page in desktop, tablet and mobile views (MR-1470 to MR-1473, due 6 to 13 Nov), and holds a new About page validation bug with five subtasks (MR-1477 to MR-1482, due 13 Nov) and a production chatbot card alignment bug (MR-1467). The second v1.2 story (MR-1411) started with no owner, and the first (MR-1379) is still open past 30 Oct. The header and footer updates (MR-1409, MR-1410) are in Code Review past their 3 Nov date. 35 items are past due, up from 29."
+      "headline": "Since 10 Nov the v1.2 revamp (MR-1379) and the Nuclear Energy, Project Genesis and Products page updates (MR-1397, MR-1400, MR-1408) were re-dated to 13 Nov. Kunal Jangid closed the static v1.3 design (MR-1458), moved Project Genesis to Dev and the Contact page to Code Review (MR-1400, MR-1403), and holds a new Contact page validation bug with two subtasks (MR-1484, due 14 Nov; MR-1486, MR-1487); Vishnu kumar yadav moved the homepage updates to Dev (MR-1381) and holds a Communication Hub login error (MR-1485) and resources API updates (MR-1483, due 13 Nov). The second v1.2 story (MR-1411) still has no owner. 30 items are past due, down from 35."
     },
     {
       "id": "USP",
@@ -40,7 +40,7 @@
       "projects": [
         "USP"
       ],
-      "headline": "Since 3 Nov Silviu Oltean closed the Support Hub deploy preparations, v1 fixes, request reassignment and status messages (USP-4228, USP-4253, USP-4332, USP-4333) and the chat events webhook (USP-4431), and deployed Support Hub v2 and auto-assignment to Dev (USP-4252, USP-4331). Livian Stefan Stan closed the front-end polish, whole-portal responsive and design audit work (USP-4351, USP-4354 to USP-4356), started the Communication Hub re-skin and Support Hub mobile (USP-4295, USP-4329), and deployed to Dev the payment messages, maximum deposit, Proposal wording and four new AI Factory Contract Proposal and feature-flag stories (USP-4292, USP-4401, USP-4433, USP-4450 to USP-4453, due 15 Nov). Cășvan Marcel closed the management networking block (USP-4413), and set the unpaid and overdue invoice state to Won't Do (USP-4291). 14 items moved to 31 Dec, including the pricing-rule eval security bug (USP-4414) and the NetSuite export bug (USP-4415); ten more moved to 30 Nov, including Book a meeting (USP-4298), and seven to 15 Dec. Still open: the S1 Document API 502 (USP-4231, TODO, due 15 Nov) and the Highest seat-claims security bug (USP-4369, Deployed In Dev, due 15 Nov). The Payments and Invoicing and Dashboard go-live epics passed their 2 and 8 Nov dates in TODO (USP-4280, USP-4336). 77 items are past due, down from 139."
+      "headline": "Since 10 Nov Silviu Oltean started the hub notifications for the portal bell and email (USP-4302, due 15 Nov). Between 3 and 10 Nov Silviu Oltean closed the Support Hub deploy preparations, v1 fixes, request reassignment and status messages (USP-4228, USP-4253, USP-4332, USP-4333) and the chat events webhook (USP-4431), and deployed Support Hub v2 and auto-assignment to Dev (USP-4252, USP-4331). Livian Stefan Stan closed the front-end polish, whole-portal responsive and design audit work (USP-4351, USP-4354 to USP-4356), started the Communication Hub re-skin and Support Hub mobile (USP-4295, USP-4329), and deployed to Dev the payment messages, maximum deposit, Proposal wording and four new AI Factory Contract Proposal and feature-flag stories (USP-4292, USP-4401, USP-4433, USP-4450 to USP-4453, due 15 Nov). Cășvan Marcel closed the management networking block (USP-4413), and set the unpaid and overdue invoice state to Won't Do (USP-4291). 14 items moved to 31 Dec, including the pricing-rule eval security bug (USP-4414) and the NetSuite export bug (USP-4415); ten more moved to 30 Nov, including Book a meeting (USP-4298), and seven to 15 Dec. Still open: the S1 Document API 502 (USP-4231, TODO, due 15 Nov) and the Highest seat-claims security bug (USP-4369, Deployed In Dev, due 15 Nov). The Payments and Invoicing and Dashboard go-live epics passed their 2 and 8 Nov dates in TODO (USP-4280, USP-4336). 77 items are past due, down from 139."
     },
     {
       "id": "UC",
@@ -48,7 +48,7 @@
       "projects": [
         "UC"
       ],
-      "headline": "Since 3 Nov Ankit Saxena moved the chatbot testing bugs, the ambiguous-query bug and the dev timeout bug to Ready for Prod (UC-413, UC-414 to UC-417, UC-418), moved the own-records experience to UAT (UC-19), and has the in-chat RFQ flow, its QA and the live-join transcript items in Dev (UC-23, UC-45, UC-46, UC-88, UC-89) and the CSM Teams admin dashboard APIs in progress (UC-408, UC-409). Nareddy Shiva Prasad Reddy moved multi-turn context and its regression pass to UAT Testing (UC-60, UC-107) with three subtasks Ready for Prod (UC-104 to UC-106), the Teams SLA-timeout fallback to Dev Testing (UC-69, UC-148 to UC-151) and the marketing lead capture to Dev (UC-57, UC-100 to UC-103), and holds three new chatbot bugs (UC-419 Ready for Prod; UC-420, UC-421 in progress). Shivam Dhoundiyal's admin landing page layout and KPI tiles went back from Code Review to In Dev (UC-403, UC-404), with the Today drawer and API integration also in Dev (UC-405, UC-406). The public chatbot launch items (UC-8, UC-63) are still To Do past 18 Oct. 79 items are past due, up from 67."
+      "headline": "Since 10 Nov Nareddy Shiva Prasad Reddy moved the marketing lead capture story and its four subtasks to Dev Testing (UC-57, UC-100 to UC-103, due 13 Nov) and the two open chatbot bugs to Dev Testing (UC-420, UC-421). Shivam Dhoundiyal moved the admin landing page story and dashboard QA to In Dev (UC-402, UC-407), and the RFQ quotes page design (UC-422) passed its 10 Nov date in Dev. The chatbot fixes UC-413 to UC-419 are still Ready for Prod, and the public chatbot launch items (UC-8, UC-63) are still To Do past 18 Oct. 81 items are past due, up from 79."
     },
     {
       "id": "PULSE",
@@ -64,7 +64,7 @@
       "projects": [
         "ATLAS"
       ],
-      "headline": "Since 3 Nov Saurabh Jain closed lead-behaviour analytics (ATLAS-283) with event tracking, the dashboard and metric validation (ATLAS-290, ATLAS-292, ATLAS-293). On 9 Nov Saurabh Jain raised a CRM roles, lead ownership and sales Kanban epic (ATLAS-304, due 13 Nov) with 13 stories (ATLAS-305 to ATLAS-317) and 32 subtasks (ATLAS-318 to ATLAS-349), most unassigned and due 13 Nov; the user management APIs and settings screens are done (ATLAS-340, ATLAS-341). A hybrid RAG story on pgvector and Neo4j (ATLAS-350, due 13 Nov) has two of its three subtasks done. 294 of the 353 ATLAS tickets are unassigned and 312 have no due date."
+      "headline": "Between 3 and 10 Nov Saurabh Jain closed lead-behaviour analytics (ATLAS-283) with event tracking, the dashboard and metric validation (ATLAS-290, ATLAS-292, ATLAS-293). On 9 Nov Saurabh Jain raised a CRM roles, lead ownership and sales Kanban epic (ATLAS-304, due 13 Nov) with 13 stories (ATLAS-305 to ATLAS-317) and 32 subtasks (ATLAS-318 to ATLAS-349), most unassigned and due 13 Nov; the user management APIs and settings screens are done (ATLAS-340, ATLAS-341). A hybrid RAG story on pgvector and Neo4j (ATLAS-350, due 13 Nov) has two of its three subtasks done. 294 of the 353 ATLAS tickets are unassigned and 312 have no due date."
     },
     {
       "id": "ID",
@@ -72,7 +72,7 @@
       "projects": [
         "ID"
       ],
-      "headline": "Since 3 Nov Yash Janeshwar closed the identity privacy, access governance and operational readiness story and all six of its subtasks (ID-727 to ID-732). Saravana Kumar started the S2 P1 bug where a bearer token stays valid after logout (ID-774, due 15 Nov) and the B2C policy validation with the CRM API (ID-777); r.jaiswal moved the Safari address autocomplete bug to Dev Testing (ID-775). The remediation work is still Ready for Prod (ID-736 to ID-742). 7 items are past due, unchanged."
+      "headline": "Since 10 Nov r.jaiswal moved the Safari address autocomplete bug to UAT Testing (ID-775). Saravana Kumar is working on the S2 P1 bearer token bug (ID-774, due 15 Nov) and the B2C policy validation (ID-777); the remediation work is still Ready for Prod (ID-736 to ID-742). The privacy governance story and its six subtasks (ID-727 to ID-732) closed earlier in the week. 7 items are past due, unchanged."
     },
     {
       "id": "REW",
@@ -96,7 +96,7 @@
       "projects": [
         "IN"
       ],
-      "headline": "Since 3 Nov b.kumar closed the AKS self-hosted agent migration story and its monitoring and validation subtasks (IN-1157, IN-1159, IN-1160) and started the UAT migration (IN-1199, due 16 Nov), whose agent set-up is done (IN-1200). Sarath Chandra deployed USP CMS, Rewards and the marketing CMS database to UAT on AKS agents (IN-1224, IN-1226, IN-1227, IN-1230) and fixed the chatbot ingress timeout and the CDN marketing image issue (IN-1222, IN-1231); b.kumar organised the pipeline folders, automated offline agent clean-up and fixed CSM Support login redirects (IN-1220, IN-1225, IN-1232); k.kishore put the Ops console behind the VPN and on Front Door (IN-1208, IN-1228). Sarath Chandra's UAT upgrade for Magento 2.4.9 (IN-1214), the APIM certificate prompt (IN-1215) and the Marketplace and CMS deployments on AKS agents (IN-1219, IN-1221, IN-1223) are open past their 3 to 6 Nov dates. 15 items sit in BLOCKER status and 30 are past due."
+      "headline": "Since 10 Nov Sarath Chandra closed the UAT upgrade for Magento 2.4.9 with PHP 8.3, MySQL 8.4 and OpenSearch 3.2 (IN-1214), the APIM client certificate prompt (IN-1215) and the Marketplace back-end deployment on AKS agents (IN-1221), and b.kumar fixed the CMS database deployment parameters and added the CSM console API to the APIM pipeline (IN-1233, IN-1234). The Marketplace front-end and CMS deployments on AKS agents (IN-1219, IN-1223) are still open past their 4 and 6 Nov dates, and the UAT pipeline migration (IN-1199, b.kumar) is due 16 Nov. 15 items sit in BLOCKER status and 27 are past due, down from 30."
     },
     {
       "id": "DM",
@@ -104,7 +104,7 @@
       "projects": [
         "DM"
       ],
-      "headline": "Since 3 Nov Shashi Prasad K closed the missing H1 tags (DM-1077), the broken case study images (DM-1084), the reseller terms dev link (DM-1086) and the recurring events 'undefined' page (DM-1103), and started the 410 product page redirects (DM-1096), the JSON-LD schema (DM-1102), the three Marketplace SEO tasks (DM-1104 to DM-1106) and blocking Singapore bot traffic in GA4 (DM-1107, past its 6 Nov date). Six more SEO tasks were added for Shashi Prasad K (DM-1108 to DM-1113), four due 13 Nov. The sitemap 404 task (DM-1097) started with no owner. 28 items are past due, down from 30."
+      "headline": "Since 10 Nov Shashi Prasad K started the repeated soft 404s on the People pages (DM-1112) and removing lazy loading from above-the-fold hero images (DM-1113), both due 13 Nov, and two more schema tasks were added (DM-1114, DM-1115, due 18 Nov). Still in progress: the 410 product page redirects (DM-1096), the JSON-LD schema (DM-1102), the three Marketplace SEO tasks (DM-1104 to DM-1106) and blocking Singapore bot traffic in GA4 (DM-1107, past its 6 Nov date). 28 items are past due, unchanged."
     }
   ],
   "spotlight": [

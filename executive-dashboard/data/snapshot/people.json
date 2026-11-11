@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-11-10",
+ "snapshotDate": "2026-11-11",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -16,7 +16,7 @@
      "resolved": null,
      "due": "2026-10-30",
      "assignee": "Anshul Bhargava",
-     "spentHours": 8.0,
+     "spentHours": 10.0,
      "logs": [
       [
        "2026-10-22",
@@ -25,6 +25,10 @@
       [
        "2026-11-06",
        2.5
+      ],
+      [
+       "2026-11-10",
+       2.0
       ]
      ]
     },
@@ -757,7 +761,7 @@
      "resolved": "2026-10-28",
      "due": "2026-10-28",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.92,
+     "spentHours": 2.92,
      "logs": [
       [
        "2026-10-23",
@@ -766,6 +770,10 @@
       [
        "2026-10-30",
        0.5
+      ],
+      [
+       "2026-11-10",
+       2.0
       ]
      ]
     },
@@ -2315,7 +2323,7 @@
      "resolved": null,
      "due": "2026-11-13",
      "assignee": "Anshul Bhargava",
-     "spentHours": 5.25,
+     "spentHours": 8.75,
      "logs": [
       [
        "2026-11-02",
@@ -2327,6 +2335,14 @@
       ],
       [
        "2026-11-06",
+       2.0
+      ],
+      [
+       "2026-11-10",
+       1.5
+      ],
+      [
+       "2026-11-10",
        2.0
       ]
      ]
@@ -3213,10 +3229,10 @@
      "status": "Done",
      "statusCat": "done",
      "created": "2026-11-04",
-     "resolved": "2026-11-05",
+     "resolved": "2026-11-11",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.42,
+     "spentHours": 1.42,
      "logs": [
       [
        "2026-11-04",
@@ -3225,6 +3241,10 @@
       [
        "2026-11-05",
        0.17
+      ],
+      [
+       "2026-11-11",
+       1.0
       ]
      ]
     },
@@ -3320,10 +3340,10 @@
      "status": "Done",
      "statusCat": "done",
      "created": "2026-11-04",
-     "resolved": "2026-11-05",
+     "resolved": "2026-11-11",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.42,
+     "spentHours": 1.42,
      "logs": [
       [
        "2026-11-04",
@@ -3332,6 +3352,14 @@
       [
        "2026-11-05",
        0.17
+      ],
+      [
+       "2026-11-11",
+       0.5
+      ],
+      [
+       "2026-11-11",
+       0.5
       ]
      ]
     },
@@ -3949,20 +3977,6 @@
      "logs": []
     },
     {
-     "key": "AFVU-460",
-     "project": "AFVU",
-     "summary": "[Frontend] Nuclear Terra at 1 SU of XE9780L uses 6 of 8 compute bays",
-     "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-11-06",
-     "resolved": null,
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
      "key": "AFVU-462",
      "project": "AFVU",
      "summary": "[DO NOT USE] Duplicate of AFVU-463 — Architect reset bug",
@@ -4110,6 +4124,76 @@
      "status": "To Do",
      "statusCat": "new",
      "created": "2026-11-10",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-473",
+     "project": "AFVU",
+     "summary": "Architect Site: edge location cards overlap when more than one is saved",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-11",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-474",
+     "project": "AFVU",
+     "summary": "[S2][P2] Calendar Availability Does Not Update After Changing Host Working Hours in CRM",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-11",
+     "resolved": null,
+     "due": "2026-11-15",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-475",
+     "project": "AFVU",
+     "summary": "[S2][P2] Book a Meeting Remains Functional When Meeting Is Disabled for a Subscription",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-11",
+     "resolved": null,
+     "due": "2026-11-15",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-476",
+     "project": "AFVU",
+     "summary": "[S1][P1] CRM Admin Can Approve First Payment Before Provisioning Is Published",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-11",
+     "resolved": null,
+     "due": "2026-11-15",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-477",
+     "project": "AFVU",
+     "summary": "Interactive View does not show all racks that the Configure page draws for a Genesis DSX factory",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-11",
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
@@ -12361,10 +12445,10 @@
      "project": "AFVU",
      "summary": "[Backend] Build plan notification conditions and templates, then switch BUILD_PLAN_NOTIFICATIONS_ENABLED on",
      "type": "Subtask",
-     "status": "In Review",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-29",
-     "resolved": null,
+     "resolved": "2026-11-11",
      "due": "2026-11-16",
      "assignee": "Yash Janeshwar"
     },
@@ -12961,10 +13045,10 @@
      "project": "AFVU",
      "summary": "[Backend] Notification service: map the meeting_minutes email to its SendGrid template, then switch the minutes email on",
      "type": "Subtask",
-     "status": "In Review",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-02",
-     "resolved": null,
+     "resolved": "2026-11-11",
      "due": null,
      "assignee": "Yash Janeshwar"
     },
@@ -13425,6 +13509,18 @@
      "assignee": "b.kumar"
     },
     {
+     "key": "IN-1141",
+     "project": "IN",
+     "summary": "Design AKS-hosted Azure DevOps agent architecture",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-10-01",
+     "resolved": "2026-10-08",
+     "due": "2026-10-15",
+     "assignee": "k.kishore"
+    },
+    {
      "key": "IN-1143",
      "project": "IN",
      "summary": "Implement agent registration, scaling, and lifecycle controls",
@@ -13839,18 +13935,6 @@
      "type": "Subtask",
      "status": "In Progress",
      "statusCat": "indeterminate",
-     "created": "2026-10-11",
-     "resolved": null,
-     "due": null,
-     "assignee": null
-    },
-    {
-     "key": "PRD-129",
-     "project": "PRD",
-     "summary": "Quality checks: plan creation, visibility rules and the hand-off",
-     "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
      "created": "2026-10-11",
      "resolved": null,
      "due": null,
@@ -19141,7 +19225,7 @@
      "project": "UC",
      "summary": "Design & technical spec — lead capture form schema & consent handling",
      "type": "Subtask",
-     "status": "In Dev",
+     "status": "Dev Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -19153,7 +19237,7 @@
      "project": "UC",
      "summary": "Implementation — lead capture flow and CRM handoff",
      "type": "Subtask",
-     "status": "In Dev",
+     "status": "Dev Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -19165,7 +19249,7 @@
      "project": "UC",
      "summary": "Integration & security review — lead data consent enforcement",
      "type": "Subtask",
-     "status": "In Dev",
+     "status": "Dev Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -19177,7 +19261,7 @@
      "project": "UC",
      "summary": "QA & validation — lead capture end-to-end test pass",
      "type": "Subtask",
-     "status": "In Dev",
+     "status": "Dev Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -19813,7 +19897,7 @@
      "project": "UC",
      "summary": "Marketing lead capture — persistent Book a Meeting / Contact Us CTA routing",
      "type": "Story",
-     "status": "In Dev",
+     "status": "Dev Testing",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -20454,8 +20538,8 @@
      "project": "VTN",
      "summary": "Video for homepage 1",
      "type": "Task",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-11-10",
      "resolved": null,
      "due": "2026-11-14",
@@ -20466,8 +20550,8 @@
      "project": "VTN",
      "summary": "Video for homepage 2",
      "type": "Task",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-11-10",
      "resolved": null,
      "due": "2026-11-14",
@@ -20478,8 +20562,8 @@
      "project": "VTN",
      "summary": "Video for homepage 3",
      "type": "Task",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-11-10",
      "resolved": null,
      "due": "2026-11-14",
