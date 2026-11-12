@@ -1,5 +1,4 @@
 DUE	AFVU-128	In Progress	Anshul Bhargava	2026-10-30				Build plan: tables, templates, staff and customer routes, the Portal tab and card, the 3D hall states and the tester simulator
-DUE	AFVU-131	In Progress	Aman prakash	2026-10-31				Quality gates and UAT sign-off for the integrated CRM backend and Portal
 DUE	AFVU-132	In Progress	Anshul Bhargava	2026-10-30				Release, rollout and rollback: turning the switches on in order, monitoring, documentation and handover
 DUE	AFVU-138	In Progress	r.jaiswal	2026-10-30				[Test] Configurator: order flows, pricing, idempotent data load and fallback
 DUE	AFVU-147	In Progress	r.jaiswal	2026-10-31				[Test] Interactive View: 3D, probes, tickets, performance, keyboard and phone
@@ -12,44 +11,45 @@ DUE	AFVU-214	In Progress	Anshul Bhargava	2026-10-30				GPU as a Service hardenin
 DUE	ID-736	Ready for Prod	Yash Janeshwar	2026-10-30				Remediate identity for signup, data lifecycle, credentials, and runtime configuration
 DUE	MR-1073	Ready for Prod	Vishnu kumar yadav	2026-10-30				Resolve Sonar maintainability issues in uvation-cms API code
 DUE	MR-1362	Code Review	Kunal Jangid	2026-10-30				Integrate the Microsoft Bookings and replace the Calendly
+DUE	MR-1381	Code Review	Kunal Jangid	2026-10-31				Homepage Design Updates & API
+DUE	MR-1382	Code Review	Kunal Jangid	2026-10-30				Mobile – Update Category Dropdown to Display Only the Selected Category
+DUE	MR-1398	Code Review	Kunal Jangid	2026-10-31				About Uvation Page Design Updates
+DUE	MR-1399	Dev Testing	Kannan Elangovan	2026-10-31				People Uvation Page Design Updates
+DUE	MR-1402	Code Review	Kunal Jangid	2026-10-31				Partners Page Design Updates
+DUE	MR-1403	Code Review	Kunal Jangid	2026-10-31				Contact Page Design Updates
+DUE	MR-1404	Code Review	Kunal Jangid	2026-10-31				SLA and Terms Page Design Updates
+DUE	MR-1409	Code Review	Vishnu kumar yadav	2026-11-03				Header Design Updates
+DUE	MR-1410	Code Review	Vishnu kumar yadav	2026-11-03				Footer Design Updates
 DUE	MR-1454	Ready for Prod	Vishnu kumar yadav	2026-10-30				Added the upcoming month's events to the CMS in the Production environment.
-DUE	MT-1615	Ready For Prod	Naman Bapna	2026-10-31				Part-1 : Magento latest version upgrade with compatible with all plugins
-DUE	UC-19	UAT	Ankit Saxena	2026-10-30				Authenticated own-records experience — orders, invoices, subscription & low-risk actions
-DUE	UC-60	UAT Testing	Nareddy Shiva Prasad Reddy	2026-10-30				Multi-turn context resolution & feedback capture loop
-DUE	UC-413	Ready for Prod	Ankit Saxena	2026-11-02				[Chatbot] Fails to Identify Ambiguous Product Queries and Ask Relevant Clarification Questions
-DUE	UC-414	Ready for Prod	Ankit Saxena	2026-11-03				[Chatbot] Additional Issues Identified During Chatbot Testing
-DUE	UC-418	Ready for Prod	Ankit Saxena	2026-11-04				[Chatbot] Chatbot Response Times Out on Marketing and Marketplace DEV Environments
-DUE	MT-1784	Code Review	Naveen Jangid	2026-11-06				[Marketplace] NVIDIA HGX B300 Search Fails with Server Components Render Error on DEV
-DUE	MR-1470	In Progress	Kunal Jangid	2026-11-06				Marketing New Design v1.3 – Kimi Page
+DUE	MR-1468	Dev	Vishnu kumar yadav	2026-11-06				Implement Dynamic Footer CTA Content Based on Page Type
+DUE	MR-1469	Dev	Vishnu kumar yadav	2026-11-06				Creating A API to fetch Job Data
+DUE	MR-1470	Dev Testing	Kannan Elangovan	2026-11-06				Marketing New Design v1.3 – Kimi Page
+DUE	MT-1762	Dev	Naveen Jangid	2026-11-11				[FE] Homepage
 DUE	MT-1763	In Progress	Nagamuni Valluri	2026-11-04				[FE] Navigation, mega menu, and footer
+DUE	MT-1764	In Progress	Nagamuni Valluri	2026-11-10				[FE] Cart, checkout, and quote request
 DUE	MT-1765	Dev	Naveen Jangid	2026-11-06				[FE] Marketing product pages
 DUE	MT-1772	Dev	shubham kuchwar	2026-11-04				Request For Flow
 DUE	MT-1774	Dev	Parth	2026-11-05				Invoice
 DUE	MT-1776	TODO	Naveen Jangid	2026-11-05				AI Chatbot
+DUE	MT-1784	Code Review	Naveen Jangid	2026-11-06				[Marketplace] NVIDIA HGX B300 Search Fails with Server Components Render Error on DEV
 DUE	MT-1788	Dev	Naveen Jangid	2026-11-09				[BE] Add admin on/off switch for Rewards integration (no Rewards API traffic when OFF)
-DUE	MR-1469	Dev	Vishnu kumar yadav	2026-11-06				Creating A API to fetch Job Data
-DUE	UC-45	In Dev	Ankit Saxena	2026-11-04				Implementation — in-chat RFQ flow & CRM integration
+DUE	UC-19	UAT	Ankit Saxena	2026-10-30				Authenticated own-records experience — orders, invoices, subscription & low-risk actions
+DUE	UC-23	In Dev	Ankit Saxena	2026-11-11				RFQ direct submission in-chat for all visitors
+DUE	UC-60	UAT Testing	Nareddy Shiva Prasad Reddy	2026-10-30				Multi-turn context resolution & feedback capture loop
+DUE	UC-140	To Do	Ankit Saxena	2026-11-10				Design & technical spec — canned response templates & routing rules
+DUE	UC-141	To Do	Ankit Saxena	2026-11-11				Implementation — canned response library & handoff routing
 DUE	UC-403	In Dev	Shivam Dhoundiyal	2026-11-02				CSM dashboard information architecture and layout
 DUE	UC-404	In Dev	Shivam Dhoundiyal	2026-10-03				Build KPI tiles and operational summary cards UI
 DUE	UC-405	In Dev	Shivam Dhoundiyal	2026-11-04				Todays drawer Ui/ux enhancements and chat history page
-DUE	UC-407	IN PROGRESS	Shivam Dhoundiyal	2026-10-11				Validate theme switching, Teams hosting behavior, and dashboard QA
+DUE	UC-407	In Dev	Shivam Dhoundiyal	2026-10-11				Validate theme switching, Teams hosting behavior, and dashboard QA
 DUE	UC-409	IN PROGRESS	Ankit Saxena	2026-11-03				Implementation — CSM Teams Admin Dashboard APIs
 DUE	UC-410	To Do	Ankit Saxena	2026-11-05				QA & validation — CSM Teams Admin Dashboard API functionality & reliability
 DUE	UC-411	To Do	Ankit Saxena	2026-11-04				Design & technical spec — CSM Teams Admin Dashboard API architecture & contracts
 DUE	UC-412	To Do	Ankit Saxena	2026-11-06				Integration & security review — CSM Teams Admin Dashboard authentication & access control
-DUE	USP-4225	TODO	Silviu Oltean	2026-10-01				Hub notifications: portal bell and email
+DUE	UC-413	Ready for Prod	Ankit Saxena	2026-11-02				[Chatbot] Fails to Identify Ambiguous Product Queries and Ask Relevant Clarification Questions
+DUE	UC-414	Ready for Prod	Ankit Saxena	2026-11-03				[Chatbot] Additional Issues Identified During Chatbot Testing
+DUE	UC-418	Ready for Prod	Ankit Saxena	2026-11-04				[Chatbot] Chatbot Response Times Out on Marketing and Marketplace DEV Environments
+DUE	UC-422	In Dev	Shivam Dhoundiyal	2026-11-10				Design ui for rfq quotes page for csm handling
 DUE	USP-4310	TODO	Silviu Oltean	2026-10-11				CH-41 – Communication Hub re-skin to the frozen design (web)
 DUE	USP-4311	TODO	Silviu Oltean	2026-10-11				CH-42 – Communication Hub mobile + tablet
-DUE	MR-1381	Dev	Vishnu kumar yadav	2026-10-31				Homepage Design Updates & API
-DUE	MR-1382	Code Review	Kunal Jangid	2026-10-30				Mobile – Update Category Dropdown to Display Only the Selected Category
-DUE	MR-1398	Code Review	Kunal Jangid	2026-10-31				About Uvation Page Design Updates
-DUE	MR-1399	Dev	Vishnu kumar yadav	2026-10-31				People Uvation Page Design Updates
-DUE	MR-1402	Dev	Vishnu kumar yadav	2026-10-31				Partners Page Design Updates
-DUE	MR-1403	Code Review	Kunal Jangid	2026-10-31				Contact Page Design Updates
-DUE	MR-1404	Dev	Vishnu kumar yadav	2026-10-31				SLA and Terms Page Design Updates
-DUE	MR-1409	Code Review	Vishnu kumar yadav	2026-11-03				Header Design Updates
-DUE	MR-1410	Code Review	Vishnu kumar yadav	2026-11-03				Footer Design Updates
-DUE	MR-1468	Dev	Vishnu kumar yadav	2026-11-06				Implement Dynamic Footer CTA Content Based on Page Type
-DUE	MT-1764	In Progress	Nagamuni Valluri	2026-11-10				[FE] Cart, checkout, and quote request
-DUE	UC-140	To Do	Ankit Saxena	2026-11-10				Design & technical spec — canned response templates & routing rules
-DUE	UC-422	In Dev	Shivam Dhoundiyal	2026-11-10				Design ui for rfq quotes page for csm handling
+DUE	USP-4459	In Progress	Silviu Oltean	2026-11-11				Research and planning
