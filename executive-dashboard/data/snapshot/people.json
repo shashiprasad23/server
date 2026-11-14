@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-11-13",
+ "snapshotDate": "2026-11-14",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -4346,20 +4346,6 @@
        1.5
       ]
      ]
-    },
-    {
-     "key": "MT-1588",
-     "project": "MT",
-     "summary": "Review Request for Quote buyer flow, design, and content",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-08",
-     "resolved": "2026-10-15",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
     },
     {
      "key": "PRD-106",
@@ -10083,7 +10069,7 @@
      "project": "USP",
      "summary": "Book a meeting – end to end (booking, calendar view, modal fixes)",
      "type": "Story",
-     "status": "In Progress",
+     "status": "CODE REVIEW",
      "statusCat": "indeterminate",
      "created": "2026-11-03",
      "resolved": null,
@@ -12975,18 +12961,6 @@
      "assignee": "Sarath Chandra"
     },
     {
-     "key": "IN-1126",
-     "project": "IN",
-     "summary": "Production AKS Resize Activity",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-01",
-     "resolved": "2026-10-15",
-     "due": "2026-10-03",
-     "assignee": "k.kishore"
-    },
-    {
      "key": "IN-1127",
      "project": "IN",
      "summary": "General DevOps Ticket",
@@ -12997,18 +12971,6 @@
      "resolved": "2026-10-20",
      "due": "2026-10-15",
      "assignee": "b.kumar"
-    },
-    {
-     "key": "IN-1128",
-     "project": "IN",
-     "summary": "R&D – Configure AKS Pods as Azure DevOps Build Agents",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-01",
-     "resolved": "2026-10-15",
-     "due": "2026-10-15",
-     "assignee": "k.kishore"
     },
     {
      "key": "IN-1129",
@@ -13057,102 +13019,6 @@
      "resolved": "2026-10-15",
      "due": "2026-10-15",
      "assignee": "Sarath Chandra"
-    },
-    {
-     "key": "IN-1133",
-     "project": "IN",
-     "summary": "Capture production AKS baseline and capacity plan",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-01",
-     "resolved": "2026-10-15",
-     "due": "2026-10-15",
-     "assignee": "k.kishore"
-    },
-    {
-     "key": "IN-1134",
-     "project": "IN",
-     "summary": "Prepare AKS change, backup, and rollback plan",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-01",
-     "resolved": "2026-10-15",
-     "due": "2026-10-15",
-     "assignee": "k.kishore"
-    },
-    {
-     "key": "IN-1135",
-     "project": "IN",
-     "summary": "Resize production AKS node pools",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-01",
-     "resolved": "2026-10-15",
-     "due": "2026-10-15",
-     "assignee": "k.kishore"
-    },
-    {
-     "key": "IN-1136",
-     "project": "IN",
-     "summary": "Validate AKS workloads, autoscaling, and monitoring",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-01",
-     "resolved": "2026-10-15",
-     "due": "2026-10-15",
-     "assignee": "k.kishore"
-    },
-    {
-     "key": "IN-1137",
-     "project": "IN",
-     "summary": "Triage and prioritize incoming DevOps requests",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-01",
-     "resolved": "2026-10-15",
-     "due": "2026-10-15",
-     "assignee": "b.kumar"
-    },
-    {
-     "key": "IN-1138",
-     "project": "IN",
-     "summary": "Implement approved DevOps configuration or pipeline changes",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-01",
-     "resolved": "2026-10-15",
-     "due": "2026-10-15",
-     "assignee": "b.kumar"
-    },
-    {
-     "key": "IN-1139",
-     "project": "IN",
-     "summary": "Validate deployment, monitoring, and operational health",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-01",
-     "resolved": "2026-10-15",
-     "due": "2026-10-15",
-     "assignee": "b.kumar"
-    },
-    {
-     "key": "IN-1140",
-     "project": "IN",
-     "summary": "Update DevOps runbooks and closeout evidence",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-01",
-     "resolved": "2026-10-15",
-     "due": "2026-10-15",
-     "assignee": "b.kumar"
     },
     {
      "key": "IN-1141",
@@ -13239,66 +13105,6 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "PRD-120",
-     "project": "PRD",
-     "summary": "Design the build-plan tables: templates, plans and milestones",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-11",
-     "resolved": "2026-10-15",
-     "due": null,
-     "assignee": null
-    },
-    {
-     "key": "PRD-121",
-     "project": "PRD",
-     "summary": "Write the first build-plan templates for traditional, modular and nuclear factories",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-11",
-     "resolved": "2026-10-15",
-     "due": null,
-     "assignee": null
-    },
-    {
-     "key": "PRD-122",
-     "project": "PRD",
-     "summary": "Create the plan when the deposit is confirmed and connect it to the provisioning hand-off",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-11",
-     "resolved": "2026-10-15",
-     "due": null,
-     "assignee": null
-    },
-    {
-     "key": "PRD-123",
-     "project": "PRD",
-     "summary": "CRM endpoints to run the plan: edit, publish and complete milestones",
-     "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
-     "created": "2026-10-11",
-     "resolved": null,
-     "due": null,
-     "assignee": null
-    },
-    {
-     "key": "PRD-124",
-     "project": "PRD",
-     "summary": "Customer endpoint to read the build plan, with only customer-visible fields",
-     "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
-     "created": "2026-10-11",
-     "resolved": null,
-     "due": null,
-     "assignee": null
-    },
-    {
      "key": "PRD-125",
      "project": "PRD",
      "summary": "Build-plan notifications in the app and by e-mail",
@@ -13369,30 +13175,6 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "PRD-150",
-     "project": "PRD",
-     "summary": "Telemetry binding: map each component's sensor data to the component the customer sees",
-     "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-10-14",
-     "resolved": null,
-     "due": null,
-     "assignee": null
-    },
-    {
-     "key": "PRD-155",
-     "project": "PRD",
-     "summary": "Portal: read the component ids and map each drawn rack, cooling unit and power unit to its id",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-14",
-     "resolved": "2026-10-15",
-     "due": null,
-     "assignee": null
     },
     {
      "key": "PRD-160",
@@ -18639,42 +18421,6 @@
      "assignee": "Ankit Saxena"
     },
     {
-     "key": "UC-167",
-     "project": "UC",
-     "summary": "Recommendation Agent — complementary product suggestions on add-to-cart",
-     "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-09-03",
-     "resolved": null,
-     "due": null,
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-168",
-     "project": "UC",
-     "summary": "Quote Follow-Up Agent — scheduled low-pressure re-engagement after RFQ/quote",
-     "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-09-03",
-     "resolved": null,
-     "due": null,
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-169",
-     "project": "UC",
-     "summary": "CSM AI Product Discovery Engine &amp; Quote Console",
-     "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-09-03",
-     "resolved": null,
-     "due": null,
-     "assignee": "Ankit Saxena"
-    },
-    {
      "key": "UC-170",
      "project": "UC",
      "summary": "Identity &amp; Authorization Gateway — structural tool-registry enforcement",
@@ -18687,42 +18433,6 @@
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
     {
-     "key": "UC-171",
-     "project": "UC",
-     "summary": "Returns &amp; Refunds (RMA) Agent — eligibility lookup &amp; in-chat initiation",
-     "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-09-03",
-     "resolved": null,
-     "due": null,
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-172",
-     "project": "UC",
-     "summary": "Reorder Agent — one-step reorder from past order history",
-     "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-09-03",
-     "resolved": null,
-     "due": null,
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-173",
-     "project": "UC",
-     "summary": "Lead Intelligence v2 — dual-track scoring (p_convert vs urgency)",
-     "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-09-03",
-     "resolved": null,
-     "due": null,
-     "assignee": "Ankit Saxena"
-    },
-    {
      "key": "UC-174",
      "project": "UC",
      "summary": "Compliance-first gate — pre-dispatch enforcement ahead of every agent",
@@ -18733,18 +18443,6 @@
      "resolved": null,
      "due": "2026-11-30",
      "assignee": "Nareddy Shiva Prasad Reddy"
-    },
-    {
-     "key": "UC-18",
-     "project": "UC",
-     "summary": "Cross-cutting conversational UX — refusal, multi-turn, feedback, language, mobile",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-08-13",
-     "resolved": "2026-09-16",
-     "due": "2026-09-15",
-     "assignee": "Ankit Saxena"
     },
     {
      "key": "UC-19",
@@ -18816,18 +18514,6 @@
      "created": "2026-09-03",
      "resolved": null,
      "due": "2026-11-30",
-     "assignee": "Nareddy Shiva Prasad Reddy"
-    },
-    {
-     "key": "UC-20",
-     "project": "UC",
-     "summary": "Admin & support dashboard — monitoring, visitor records, analytics, content gaps",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-08-13",
-     "resolved": "2026-09-16",
-     "due": "2026-09-15",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
     {
@@ -18903,18 +18589,6 @@
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
     {
-     "key": "UC-22",
-     "project": "UC",
-     "summary": "Live agent handoff via Microsoft Teams — bidirectional relay & SLA fallback",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-08-13",
-     "resolved": "2026-10-15",
-     "due": "2026-10-15",
-     "assignee": "Ankit Saxena"
-    },
-    {
      "key": "UC-23",
      "project": "UC",
      "summary": "RFQ direct submission in-chat for all visitors",
@@ -18927,42 +18601,6 @@
      "assignee": "Ankit Saxena"
     },
     {
-     "key": "UC-24",
-     "project": "UC",
-     "summary": "Send-a-Quote — deterministic quote generation from approved pricing data",
-     "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-08-13",
-     "resolved": null,
-     "due": "2027-03-21",
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-25",
-     "project": "UC",
-     "summary": "Extended admin analytics — unlisted-product demand & visitor journey view",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-08-13",
-     "resolved": "2026-10-15",
-     "due": "2026-10-15",
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-26",
-     "project": "UC",
-     "summary": "Admin console — LLM provider/model selection without deployment",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-08-13",
-     "resolved": "2026-10-15",
-     "due": "2026-10-15",
-     "assignee": "Ankit Saxena"
-    },
-    {
      "key": "UC-27",
      "project": "UC",
      "summary": "Internal knowledge-base ingestion — isolated, access-controlled index (conditional)",
@@ -18972,18 +18610,6 @@
      "created": "2026-08-13",
      "resolved": "2026-10-29",
      "due": "2026-10-26",
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-28",
-     "project": "UC",
-     "summary": "Deploy Kimi K3 as a self-hosted, selectable LLM backend (conditional)",
-     "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-08-13",
-     "resolved": null,
-     "due": "2027-06-27",
      "assignee": "Ankit Saxena"
     },
     {
@@ -19035,30 +18661,6 @@
      "assignee": "Ankit Saxena"
     },
     {
-     "key": "UC-43",
-     "project": "UC",
-     "summary": "Implementation — Teams Bot Framework integration & bidirectional relay",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-08-13",
-     "resolved": "2026-10-15",
-     "due": "2027-02-12",
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-44",
-     "project": "UC",
-     "summary": "QA & validation — Teams handoff SLA, fallback & audit logging",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-08-13",
-     "resolved": "2026-10-15",
-     "due": "2027-02-21",
-     "assignee": "Ankit Saxena"
-    },
-    {
      "key": "UC-45",
      "project": "UC",
      "summary": "Implementation — in-chat RFQ flow & CRM integration",
@@ -19080,54 +18682,6 @@
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-11-13",
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-49",
-     "project": "UC",
-     "summary": "Implementation — unlisted-product tracking & visitor journey view",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-08-13",
-     "resolved": "2026-10-15",
-     "due": "2027-03-30",
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-50",
-     "project": "UC",
-     "summary": "QA & validation — demand report accuracy & journey view usability",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-08-13",
-     "resolved": "2026-10-15",
-     "due": "2027-04-04",
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-51",
-     "project": "UC",
-     "summary": "Implementation — admin LLM provider/model selection console",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-08-13",
-     "resolved": "2026-10-15",
-     "due": "2027-04-13",
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-52",
-     "project": "UC",
-     "summary": "QA & validation — model switch reliability & Milestone 6 sign-off",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-08-13",
-     "resolved": "2026-10-15",
-     "due": "2027-04-18",
      "assignee": "Ankit Saxena"
     },
     {
@@ -19167,18 +18721,6 @@
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
     {
-     "key": "UC-58",
-     "project": "UC",
-     "summary": "USP support deflection — clear account-specific boundary & handoff readiness",
-     "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-08-13",
-     "resolved": null,
-     "due": "2026-08-23",
-     "assignee": "Ankit Saxena"
-    },
-    {
      "key": "UC-59",
      "project": "UC",
      "summary": "Marketplace RFQ-intent prompt on bulk / pricing signals",
@@ -19203,54 +18745,6 @@
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
     {
-     "key": "UC-61",
-     "project": "UC",
-     "summary": "Internationalization — language selection & localized UI strings",
-     "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-08-13",
-     "resolved": null,
-     "due": "2026-10-04",
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-62",
-     "project": "UC",
-     "summary": "Mobile responsive layout — full-screen widget experience",
-     "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-08-13",
-     "resolved": null,
-     "due": "2026-10-04",
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-64",
-     "project": "UC",
-     "summary": "Personalised plan comparison & support ticket status for signed-in users",
-     "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-08-13",
-     "resolved": null,
-     "due": "2026-12-06",
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-65",
-     "project": "UC",
-     "summary": "Low-risk actions with step-up confirmation (email, tracking, ticket, plan-change)",
-     "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-08-13",
-     "resolved": null,
-     "due": "2026-12-13",
-     "assignee": "Ankit Saxena"
-    },
-    {
      "key": "UC-66",
      "project": "UC",
      "summary": "Out-of-scope account request handling — declines & routing",
@@ -19261,18 +18755,6 @@
      "resolved": "2026-11-02",
      "due": "2026-10-30",
      "assignee": "Nareddy Shiva Prasad Reddy"
-    },
-    {
-     "key": "UC-67",
-     "project": "UC",
-     "summary": "Product/enquiry analytics & content-gap closure workflow",
-     "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-08-13",
-     "resolved": null,
-     "due": "2027-01-10",
-     "assignee": "Ankit Saxena"
     },
     {
      "key": "UC-68",
@@ -19308,18 +18790,6 @@
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-11-30",
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-71",
-     "project": "UC",
-     "summary": "Per-visitor journey view — chronological pages, intents & products",
-     "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-08-13",
-     "resolved": null,
-     "due": "2027-04-04",
      "assignee": "Ankit Saxena"
     },
     {
@@ -19383,30 +18853,6 @@
      "assignee": "Ankit Saxena"
     },
     {
-     "key": "UC-86",
-     "project": "UC",
-     "summary": "Design & technical spec — content-gap clustering algorithm",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-08-13",
-     "resolved": "2026-10-15",
-     "due": "2026-12-18",
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-87",
-     "project": "UC",
-     "summary": "Integration & security review — analytics export audit trail",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-08-13",
-     "resolved": "2026-10-15",
-     "due": "2027-01-01",
-     "assignee": "Ankit Saxena"
-    },
-    {
      "key": "UC-88",
      "project": "UC",
      "summary": "Design & technical spec — live-join transcript continuity",
@@ -19441,54 +18887,6 @@
      "resolved": null,
      "due": "2027-01-10",
      "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "UC-92",
-     "project": "UC",
-     "summary": "Design & technical spec — RFQ payload & sales routing rules",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-08-13",
-     "resolved": "2026-10-15",
-     "due": "2027-02-05",
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-93",
-     "project": "UC",
-     "summary": "Integration & security review — RFQ CRM handoff integrity",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-08-13",
-     "resolved": "2026-10-15",
-     "due": "2027-02-12",
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-94",
-     "project": "UC",
-     "summary": "Design & technical spec — quote-generation pricing source of truth",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-08-13",
-     "resolved": "2026-10-15",
-     "due": "2027-02-05",
-     "assignee": "Ankit Saxena"
-    },
-    {
-     "key": "UC-95",
-     "project": "UC",
-     "summary": "Integration & security review — quote email delivery verification",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-08-13",
-     "resolved": "2026-10-15",
-     "due": "2027-02-12",
-     "assignee": "Ankit Saxena"
     },
     {
      "key": "UC-96",
@@ -19556,20 +18954,6 @@
    "name": "Anmol Srivastava",
    "accountId": "712020:630c75ca-4378-4036-8a73-1743a4b2dbac",
    "assigned": [
-    {
-     "key": "MT-1590",
-     "project": "MT",
-     "summary": "Review Order Checkout design, content, and payment states",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-08",
-     "resolved": "2026-10-15",
-     "due": null,
-     "assignee": "Anmol Srivastava",
-     "spentHours": 0.0,
-     "logs": []
-    },
     {
      "key": "UP-53",
      "project": "UP",
