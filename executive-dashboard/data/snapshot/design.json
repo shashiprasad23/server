@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-11-14",
+ "snapshotDate": "2026-11-15",
  "issues": [
   {
    "key": "DM-1003",
@@ -223,21 +223,6 @@
    "updated": "2026-11-02",
    "resolved": "2026-11-02",
    "due": "2026-08-28",
-   "parent": null,
-   "parentSummary": ""
-  },
-  {
-   "key": "DM-1074",
-   "project": "DM",
-   "summary": "Soft 404 Error - Fix Needed",
-   "type": "Task",
-   "status": "Done",
-   "statusCat": "done",
-   "assignee": "Shashi Prasad K",
-   "created": "2026-09-08",
-   "updated": "2026-10-16",
-   "resolved": "2026-10-16",
-   "due": "2026-09-09",
    "parent": null,
    "parentSummary": ""
   },
@@ -1333,21 +1318,6 @@
    "updated": "2026-10-17",
    "resolved": "2026-10-17",
    "due": "2026-10-02",
-   "parent": null,
-   "parentSummary": ""
-  },
-  {
-   "key": "VTN-1886",
-   "project": "VTN",
-   "summary": "content update on following pages on USP",
-   "type": "Task",
-   "status": "Done",
-   "statusCat": "done",
-   "assignee": "a.kaushal",
-   "created": "2026-10-07",
-   "updated": "2026-10-16",
-   "resolved": "2026-10-16",
-   "due": "2026-10-08",
    "parent": null,
    "parentSummary": ""
   },

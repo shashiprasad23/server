@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-11-14",
+ "snapshotDate": "2026-11-15",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -877,10 +877,10 @@
      "project": "AFVU",
      "summary": "Access, Launch and single sign-on: console roles per team member, single-use Launch tickets, Azure AD B2C as Rafay's Global IdP",
      "type": "Story",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-22",
-     "resolved": null,
+     "resolved": "2026-11-15",
      "due": null,
      "assignee": "Anshul Bhargava",
      "spentHours": 7.42,
@@ -1058,10 +1058,10 @@
      "project": "AFVU",
      "summary": "[Config] B2C custom policy for the GPU console and Rafay Global IdP, with the B2C owners and Rafay",
      "type": "Subtask",
-     "status": "Dependent",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-23",
-     "resolved": null,
+     "resolved": "2026-11-15",
      "due": null,
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
@@ -1456,8 +1456,8 @@
      "project": "AFVU",
      "summary": "GPU as a Service: record Rafay sign-in events for the GPU page's Activity tab",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-27",
      "resolved": null,
      "due": "2026-11-16",
@@ -3280,10 +3280,10 @@
      "project": "AFVU",
      "summary": "[Frontend] DGX Rubin NVL8 Scale step says it follows NVIDIA's reference design exactly at 2 units, but only the 24 InfiniBand switches are published there; the other counts are scaled from the 8-unit table",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-04",
-     "resolved": null,
+     "resolved": "2026-11-15",
      "due": null,
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
@@ -4027,10 +4027,10 @@
      "project": "AFVU",
      "summary": "Architect Vera Rubin NVL72 Review uses 250 kW per rack, not the rate-flow 227 kW",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-10",
-     "resolved": null,
+     "resolved": "2026-11-15",
      "due": null,
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
@@ -4102,10 +4102,10 @@
      "project": "AFVU",
      "summary": "GET /api/subscription/download-summary/ times out on the signing page (60s)",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-10",
-     "resolved": null,
+     "resolved": "2026-11-15",
      "due": null,
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
@@ -4296,37 +4296,6 @@
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
-    },
-    {
-     "key": "ATLAS-1",
-     "project": "ATLAS",
-     "summary": "R&D on CRM for MVP",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-28",
-     "resolved": "2026-10-16",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 8.75,
-     "logs": [
-      [
-       "2026-09-28",
-       2.0
-      ],
-      [
-       "2026-09-29",
-       0.75
-      ],
-      [
-       "2026-10-05",
-       5.5
-      ],
-      [
-       "2026-10-07",
-       0.5
-      ]
-     ]
     },
     {
      "key": "IN-1119",
@@ -11021,10 +10990,10 @@
      "project": "AFVU",
      "summary": "Access, Launch and single sign-on: console roles per team member, single-use Launch tickets, Azure AD B2C as Rafay's Global IdP",
      "type": "Story",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-22",
-     "resolved": null,
+     "resolved": "2026-11-15",
      "due": null,
      "assignee": "Anshul Bhargava"
     },
@@ -11141,10 +11110,10 @@
      "project": "AFVU",
      "summary": "[Config] B2C custom policy for the GPU console and Rafay Global IdP, with the B2C owners and Rafay",
      "type": "Subtask",
-     "status": "Dependent",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-23",
-     "resolved": null,
+     "resolved": "2026-11-15",
      "due": null,
      "assignee": "Anshul Bhargava"
     },
@@ -11477,8 +11446,8 @@
      "project": "AFVU",
      "summary": "GPU as a Service: record Rafay sign-in events for the GPU page's Activity tab",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-10-27",
      "resolved": null,
      "due": "2026-11-16",
@@ -11981,10 +11950,10 @@
      "project": "AFVU",
      "summary": "[Frontend] Activity tab lists who signed in to the GPU console and when",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-10-29",
-     "resolved": null,
+     "resolved": "2026-11-15",
      "due": "2026-11-16",
      "assignee": "Ankit Sharma"
     },
@@ -12925,18 +12894,6 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "ATLAS-1",
-     "project": "ATLAS",
-     "summary": "R&D on CRM for MVP",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-28",
-     "resolved": "2026-10-16",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
      "key": "IN-1119",
      "project": "IN",
      "summary": "Pulse admin Improvement and bug fixes",
@@ -12947,18 +12904,6 @@
      "resolved": "2026-10-19",
      "due": "2026-09-29",
      "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "IN-1125",
-     "project": "IN",
-     "summary": "Migrating Pulse to On-Prem VM",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-01",
-     "resolved": "2026-10-15",
-     "due": "2026-10-15",
-     "assignee": "Sarath Chandra"
     },
     {
      "key": "IN-1127",
@@ -12973,54 +12918,6 @@
      "assignee": "b.kumar"
     },
     {
-     "key": "IN-1129",
-     "project": "IN",
-     "summary": "Prepare and validate on-prem Pulse migration and cutover",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-01",
-     "resolved": "2026-10-15",
-     "due": "2026-10-15",
-     "assignee": "Sarath Chandra"
-    },
-    {
-     "key": "IN-1130",
-     "project": "IN",
-     "summary": "Provision and secure the on-prem Pulse VM",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-01",
-     "resolved": "2026-10-15",
-     "due": "2026-10-15",
-     "assignee": "Sarath Chandra"
-    },
-    {
-     "key": "IN-1131",
-     "project": "IN",
-     "summary": "Migrate Pulse application, configuration, and data",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-01",
-     "resolved": "2026-10-15",
-     "due": "2026-10-15",
-     "assignee": "Sarath Chandra"
-    },
-    {
-     "key": "IN-1132",
-     "project": "IN",
-     "summary": "Execute Pulse cutover validation and rollback readiness",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-01",
-     "resolved": "2026-10-15",
-     "due": "2026-10-15",
-     "assignee": "Sarath Chandra"
-    },
-    {
      "key": "IN-1141",
      "project": "IN",
      "summary": "Design AKS-hosted Azure DevOps agent architecture",
@@ -13029,18 +12926,6 @@
      "statusCat": "done",
      "created": "2026-10-01",
      "resolved": "2026-10-08",
-     "due": "2026-10-15",
-     "assignee": "k.kishore"
-    },
-    {
-     "key": "IN-1144",
-     "project": "IN",
-     "summary": "Run agent pipeline PoC and document production recommendation",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-01",
-     "resolved": "2026-10-15",
      "due": "2026-10-15",
      "assignee": "k.kishore"
     },
@@ -13105,54 +12990,6 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "PRD-125",
-     "project": "PRD",
-     "summary": "Build-plan notifications in the app and by e-mail",
-     "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
-     "created": "2026-10-11",
-     "resolved": null,
-     "due": null,
-     "assignee": null
-    },
-    {
-     "key": "PRD-126",
-     "project": "PRD",
-     "summary": "Build plan on the provisioning page: timeline and latest updates",
-     "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
-     "created": "2026-10-11",
-     "resolved": null,
-     "due": null,
-     "assignee": null
-    },
-    {
-     "key": "PRD-127",
-     "project": "PRD",
-     "summary": "Build plan in the 3D hall: parts coloured by milestone status",
-     "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
-     "created": "2026-10-11",
-     "resolved": null,
-     "due": null,
-     "assignee": null
-    },
-    {
-     "key": "PRD-128",
-     "project": "PRD",
-     "summary": "Ask a question about a milestone through the communication hub",
-     "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
-     "created": "2026-10-11",
-     "resolved": null,
-     "due": null,
-     "assignee": null
-    },
-    {
      "key": "PRD-133",
      "project": "PRD",
      "summary": "Catalogue data for the new page: Supermicro Vera Rubin NVL72, Lenovo entries and a record of changes to existing CRM tables",
@@ -13175,18 +13012,6 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "PRD-160",
-     "project": "PRD",
-     "summary": "Integrate the AI Factory work into the real, updated CRM backend and Portal code (15 to 31 Oct 2026)",
-     "type": "Epic",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-10-16",
-     "resolved": null,
-     "due": "2026-10-31",
-     "assignee": null
     },
     {
      "key": "PRD-20",
@@ -14365,18 +14190,6 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "PULSE-12",
-     "project": "PULSE",
-     "summary": "05.04 — [Backend] Migration and bootstrap ordering",
-     "type": "Story",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
-     "created": "2026-09-28",
-     "resolved": null,
-     "due": null,
-     "assignee": "Naveen Jangid"
-    },
-    {
      "key": "PULSE-120",
      "project": "PULSE",
      "summary": "Document — [Backend] Internal Uvation scope isolation deployment and operational evidence",
@@ -14495,18 +14308,6 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "PULSE-13",
-     "project": "PULSE",
-     "summary": "06.05 — [Backend] Versioned OpenAPI and route contracts",
-     "type": "Story",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
-     "created": "2026-09-28",
-     "resolved": null,
-     "due": null,
-     "assignee": "Naveen Jangid"
     },
     {
      "key": "PULSE-130",
