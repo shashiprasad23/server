@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-11-15",
+ "snapshotDate": "2026-11-16",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -856,7 +856,7 @@
      "resolved": "2026-10-27",
      "due": "2026-10-23",
      "assignee": "Anshul Bhargava",
-     "spentHours": 4.92,
+     "spentHours": 6.42,
      "logs": [
       [
        "2026-10-23",
@@ -869,6 +869,10 @@
       [
        "2026-11-12",
        3.0
+      ],
+      [
+       "2026-11-13",
+       1.5
       ]
      ]
     },
@@ -2357,7 +2361,7 @@
      "resolved": "2026-11-12",
      "due": "2026-11-13",
      "assignee": "Anshul Bhargava",
-     "spentHours": 9.5,
+     "spentHours": 12.0,
      "logs": [
       [
        "2026-11-02",
@@ -2386,6 +2390,10 @@
       [
        "2026-11-12",
        0.25
+      ],
+      [
+       "2026-11-13",
+       2.5
       ]
      ]
     },
@@ -3510,14 +3518,18 @@
      "status": "Done",
      "statusCat": "done",
      "created": "2026-11-04",
-     "resolved": "2026-11-10",
+     "resolved": "2026-11-16",
      "due": "2026-11-13",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.17,
+     "spentHours": 1.17,
      "logs": [
       [
        "2026-11-05",
        0.17
+      ],
+      [
+       "2026-11-16",
+       1.0
       ]
      ]
     },
@@ -3557,10 +3569,10 @@
      "status": "Done",
      "statusCat": "done",
      "created": "2026-11-04",
-     "resolved": "2026-11-05",
+     "resolved": "2026-11-16",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.42,
+     "spentHours": 1.08,
      "logs": [
       [
        "2026-11-04",
@@ -3569,6 +3581,10 @@
       [
        "2026-11-05",
        0.17
+      ],
+      [
+       "2026-11-16",
+       0.67
       ]
      ]
     },
@@ -4108,8 +4124,13 @@
      "resolved": "2026-11-15",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.75,
+     "logs": [
+      [
+       "2026-11-13",
+       0.75
+      ]
+     ]
     },
     {
      "key": "AFVU-472",
@@ -4210,8 +4231,13 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 2.5,
+     "logs": [
+      [
+       "2026-11-13",
+       2.5
+      ]
+     ]
     },
     {
      "key": "AFVU-481",
@@ -4224,8 +4250,13 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-13",
+       0.5
+      ]
+     ]
     },
     {
      "key": "AFVU-482",
@@ -4238,22 +4269,13 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-483",
-     "project": "AFVU",
-     "summary": "[Backend] Schedule the GPU catalog and usage jobs on AppTest",
-     "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
-     "created": "2026-11-13",
-     "resolved": null,
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-13",
+       0.5
+      ]
+     ]
     },
     {
      "key": "AFVU-484",
@@ -4266,8 +4288,13 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-13",
+       0.5
+      ]
+     ]
     },
     {
      "key": "AFVU-485",
@@ -4280,19 +4307,24 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-13",
+       0.5
+      ]
+     ]
     },
     {
-     "key": "AFVU-486",
+     "key": "AFVU-490",
      "project": "AFVU",
-     "summary": "[Backend] Detect Rafay GPU quota before the build, and block a later contract version that adds a deposit after approval",
-     "type": "Subtask",
+     "summary": "Send proposal and Provisioning ready stay hidden until the subscription page is reloaded",
+     "type": "Bug",
      "status": "To Do",
      "statusCat": "new",
-     "created": "2026-11-13",
+     "created": "2026-11-16",
      "resolved": null,
-     "due": null,
+     "due": "2026-11-30",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
@@ -12706,10 +12738,10 @@
      "project": "AFVU",
      "summary": "QA: Move, Edit and host calendar changes need a retest on the current build",
      "type": "Subtask",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-02",
-     "resolved": null,
+     "resolved": "2026-11-16",
      "due": null,
      "assignee": "r.jaiswal"
     },
@@ -12850,12 +12882,12 @@
      "project": "AFVU",
      "summary": "[Backend] Schedule the GPU catalog and usage jobs on AppTest",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-11-13",
      "resolved": null,
-     "due": null,
-     "assignee": "Anshul Bhargava"
+     "due": "2026-11-30",
+     "assignee": "Yash Janeshwar"
     },
     {
      "key": "AFVU-484",
@@ -12886,12 +12918,12 @@
      "project": "AFVU",
      "summary": "[Backend] Detect Rafay GPU quota before the build, and block a later contract version that adds a deposit after approval",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-11-13",
      "resolved": null,
-     "due": null,
-     "assignee": "Anshul Bhargava"
+     "due": "2026-11-30",
+     "assignee": "Yash Janeshwar"
     },
     {
      "key": "IN-1119",
@@ -18226,8 +18258,8 @@
      "project": "UC",
      "summary": "Identity &amp; Authorization Gateway — structural tool-registry enforcement",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-09-03",
      "resolved": null,
      "due": "2026-11-30",
@@ -18262,8 +18294,8 @@
      "project": "UC",
      "summary": "Design & technical spec — Identity & Authorization Gateway",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-09-03",
      "resolved": null,
      "due": "2026-11-30",
@@ -18274,8 +18306,8 @@
      "project": "UC",
      "summary": "Implementation — server-side session auth-state resolution",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-09-03",
      "resolved": null,
      "due": "2026-11-30",
