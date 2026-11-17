@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-11-16",
+ "snapshotDate": "2026-11-17",
  "site": "uvation-devops.atlassian.net",
  "projectsVisible": 20,
  "queries": {
@@ -8,11 +8,11 @@
   "register": "summary ~ Risk|Dependency"
  },
  "counts": {
-  "issuesUpdated30d": 1199,
-  "openAllTime": 1697,
-  "worklogIssues": 332,
-  "worklogEntries": 724,
+  "issuesUpdated30d": 1218,
+  "openAllTime": 1644,
+  "worklogIssues": 336,
+  "worklogEntries": 755,
   "registerItems": 18,
-  "expectedIssues": 1199
+  "expectedIssues": 1218
  }
 }
