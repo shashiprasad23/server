@@ -4,15 +4,9 @@ DUE	AFVU-260	In Progress	Anshul Bhargava	2026-11-16				GPU as a Service: invoice
 DUE	AFVU-261	In Progress	Aman prakash	2026-11-16				GPU as a Service: notification template for new GPU alerts, then turn alert notifications on
 DUE	AFVU-262	In Progress	Anshul Bhargava	2026-11-16				GPU as a Service: record Rafay sign-in events for the GPU page's Activity tab
 DUE	AFVU-352	In Progress	Anshul Bhargava	2026-11-13				NVIDIA DSX POD: live on AppTest at a $1M test price; real price, QA and later rule sync left
-DUE	AFVU-360	In Progress	Anshul Bhargava	2026-11-02				[S3][P3] Summary Step in the Progress Bar Opens Page Not Found on the Agreement Step
 DUE	ATLAS-304	To Do	Saurabh Jain	2026-11-13				Introduce CRM roles, lead ownership and sales Kanban boards
 DUE	MR-1362	Code Review	Kunal Jangid	2026-10-30				Integrate the Microsoft Bookings and replace the Calendly
 DUE	MR-1459	In Progress	Saurabh Jain	2026-11-14				PR Review and Completion
-DUE	MR-1467	UAT Testing	Kannan Elangovan	2026-11-13				[Prod] Chatbot – Product card alignment issue in maximized view after clicking Allow
-DUE	MR-1470	UAT Testing	Kunal Jangid	2026-11-06				Marketing New Design v1.3 – Kimi Page
-DUE	MR-1476	UAT Testing	Kunal Jangid	2026-11-13				[Chatbot] Integrate Async Support Ticket Fallback Handling
-DUE	MR-1477	UAT Testing	Kunal Jangid	2026-11-13				About Page – UI Issues Identified During Figma Design Validation
-DUE	MR-1484	UAT Testing	Kannan Elangovan	2026-11-14				[Contact Page] – UI and Functional Issues Identified During Cross-Device Design Validation
 DUE	MT-1632	In Progress	Kannan Elangovan	2026-11-12				Implement module-wise Playwright automation with test scenarios, cases and CI regression coverage
 DUE	MT-1747	In Progress	Naveen Jangid	2026-11-16				Marketplace New Design Implementation V1.4
 DUE	MT-1770	In Progress	Naman Bapna	2026-11-13				Go-Live checklist 15th November 2026
@@ -20,10 +14,8 @@ DUE	MT-1780	TODO	Naveen Jangid	2026-11-13				[Marketplace][Production] FAQ pages
 DUE	MT-1823	In Progress	Naveen Jangid	2026-11-16				Validate Amasty Request a Quote integration details
 DUE	UC-19	UAT	Ankit Saxena	2026-10-30				Authenticated own-records experience — orders, invoices, subscription & low-risk actions
 DUE	UC-23	UAT	Ankit Saxena	2026-11-11				RFQ direct submission in-chat for all visitors
-DUE	UC-57	UAT Testing	Nareddy Shiva Prasad Reddy	2026-11-13				Marketing lead capture — persistent Book a Meeting / Contact Us CTA routing
 DUE	UC-60	UAT Testing	Nareddy Shiva Prasad Reddy	2026-10-30				Multi-turn context resolution & feedback capture loop
 DUE	UC-68	To Do	Ankit Saxena	2026-11-13				Handoff queue canned responses & business-hours routing rules
-DUE	UC-69	UAT Testing	Nareddy Shiva Prasad Reddy	2026-11-13				Teams handoff — SLA-timeout fallback when no agent available
 DUE	UC-261	UAT	Shivam Dhoundiyal	2026-11-16				[FE] Teams: agent-side support desk station Analytics page UI enhancements and api integration
 DUE	UC-403	UAT	Shivam Dhoundiyal	2026-11-02				CSM dashboard information architecture and layout
 DUE	UC-404	UAT	Shivam Dhoundiyal	2026-10-03				Build KPI tiles and operational summary cards UI
@@ -36,5 +28,16 @@ DUE	UC-414	Ready for Prod	Ankit Saxena	2026-11-03				[Chatbot] Additional Issues
 DUE	UC-418	Ready for Prod	Ankit Saxena	2026-11-04				[Chatbot] Chatbot Response Times Out on Marketing and Marketplace DEV Environments
 DUE	UC-422	UAT	Shivam Dhoundiyal	2026-11-10				Design ui for rfq quotes page for csm handling
 DUE	USP-4302	In Progress	Silviu Oltean	2026-11-15				CH-51/52 – Hub notifications: portal bell and email
-DUE	USP-4435	In Progress	Livian Stefan Stan	2026-11-15				BAU
 DUE	USP-4438	CODE REVIEW	Anshul Bhargava	2026-11-15				Book a meeting – end to end (booking, calendar view, modal fixes)
+DUE	MR-1467	Ready for Prod	Kunal Jangid	2026-11-13				[Prod] Chatbot – Product card alignment issue in maximized view after clicking Allow
+DUE	MR-1470	Ready for Prod	Kunal Jangid	2026-11-06				Marketing New Design v1.3 – Kimi Page
+DUE	MR-1476	UAT Testing	Kunal Jangid	2026-11-13				[Chatbot] Integrate Async Support Ticket Fallback Handling
+DUE	MR-1484	Ready for Prod	Kunal Jangid	2026-11-14				[Contact Page] – UI and Functional Issues Identified During Cross-Device Design Validation
+DUE	UC-57	Ready for Prod	Nareddy Shiva Prasad Reddy	2026-11-13				Marketing lead capture — persistent Book a Meeting / Contact Us CTA routing
+DUE	UC-69	Ready for Prod	Nareddy Shiva Prasad Reddy	2026-11-13				Teams handoff — SLA-timeout fallback when no agent available
+DUE	MR-1489	Dev	Vishnu kumar yadav	2026-11-17				Remove or admin-lock Klaviyo marketing email export route
+DUE	MR-1490	Dev	Vishnu kumar yadav	2026-11-17				Restrict Klaviyo delete_test_profiles to admin or env flag
+DUE	MT-1824	TODO	Naveen Jangid	2026-11-17				Scaffold Vendor_SalesDashboard admin module (route, ACL, menu, start page)
+DUE	UC-424	In Dev	Shivam Dhoundiyal	2026-11-17				UI design
+DUE	UC-425	In Dev	Shivam Dhoundiyal	2026-11-17				UI build and Old UI repolish
+DUE	USP-4470	In Progress	Silviu Oltean	2026-11-17				Switch Communication HUB tenant
