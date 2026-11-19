@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-11-18",
+ "snapshotDate": "2026-11-19",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -16,7 +16,7 @@
      "resolved": "2026-11-12",
      "due": "2026-10-30",
      "assignee": "Anshul Bhargava",
-     "spentHours": 13.92,
+     "spentHours": 14.92,
      "logs": [
       [
        "2026-10-22",
@@ -45,6 +45,14 @@
       [
        "2026-11-17",
        2.0
+      ],
+      [
+       "2026-11-18",
+       0.5
+      ],
+      [
+       "2026-11-18",
+       0.5
       ]
      ]
     },
@@ -2261,8 +2269,13 @@
      "resolved": "2026-11-18",
      "due": "2026-11-02",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.5,
+     "logs": [
+      [
+       "2026-11-18",
+       1.5
+      ]
+     ]
     },
     {
      "key": "AFVU-361",
@@ -4248,8 +4261,13 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.0,
+     "logs": [
+      [
+       "2026-11-18",
+       1.0
+      ]
+     ]
     },
     {
      "key": "AFVU-499",
@@ -4262,8 +4280,13 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.0,
+     "logs": [
+      [
+       "2026-11-18",
+       1.0
+      ]
+     ]
     },
     {
      "key": "AFVU-500",
@@ -4276,8 +4299,13 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.75,
+     "logs": [
+      [
+       "2026-11-18",
+       0.75
+      ]
+     ]
     },
     {
      "key": "AFVU-501",
@@ -4290,8 +4318,13 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.75,
+     "logs": [
+      [
+       "2026-11-18",
+       0.75
+      ]
+     ]
     },
     {
      "key": "AFVU-502",
@@ -4301,6 +4334,235 @@
      "status": "To Do",
      "statusCat": "new",
      "created": "2026-11-18",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 1.0,
+     "logs": [
+      [
+       "2026-11-18",
+       1.0
+      ]
+     ]
+    },
+    {
+     "key": "AFVU-504",
+     "project": "AFVU",
+     "summary": "Regression: Genesis Helios + GB200 NVL72 (HPE/Dell) shows 1.13 MW for 8 racks — below 1.2 MW floor",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-19",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-506",
+     "project": "AFVU",
+     "summary": "[Backend] Architect fits 1.13 MW Dell XE9712 (8 GB300 NVL72 racks) into Genesis Forge, catalogued at 400–800 kW",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-19",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-507",
+     "project": "AFVU",
+     "summary": "[Frontend] Architect Start highlights Traditional while the hall is already 1 × Genesis Forge",
+     "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-19",
+     "resolved": "2026-11-19",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-508",
+     "project": "AFVU",
+     "summary": "[Frontend] Architect Scale says 7 data centers can host a 1.13 MW Enterprise GB300 build whose site cards start at 1.2 MW",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-19",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-509",
+     "project": "AFVU",
+     "summary": "[Frontend] Architect Scale shows 320 switches / 53,376 optics for HGX B300 Enterprise 128 nodes; NVIDIA Table 9 is 112 switches",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-19",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-510",
+     "project": "AFVU",
+     "summary": "[Backend] Architect packs 256 GPUs / ~448 kW of HGX B300 into each Genesis Titan catalogued at 576 GPUs / 800–1,200 kW",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-19",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-511",
+     "project": "AFVU",
+     "summary": "Architect runs on the rate flow only: old flow removed, AppTest fixes carried over, develop merged and pushed to the AI Factory PRs",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-19",
+     "resolved": "2026-11-19",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-512",
+     "project": "AFVU",
+     "summary": "[Backend] Book a Meeting: offer slots from the host's Outlook working hours when the host has no staff-set hours",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-19",
+     "resolved": "2026-11-19",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-513",
+     "project": "AFVU",
+     "summary": "Book a Meeting: check the Graph app limited to roster mailboxes on AppTest",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-19",
+     "resolved": "2026-11-19",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-514",
+     "project": "AFVU",
+     "summary": "Architect rate flow: air-cooled builds capped at 256 servers above NVIDIA's published sizes; HGX B300 Enterprise goes up to 160 units",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-19",
+     "resolved": "2026-11-19",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-515",
+     "project": "AFVU",
+     "summary": "API gateway plan: publish the new CRM routes on APIM for DEV, UAT and PROD",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-19",
+     "resolved": "2026-11-19",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-516",
+     "project": "AFVU",
+     "summary": "[Backend] HGX B300 Enterprise 128-node XE9780L hall is 11 racks (Dell 12/rack); NVIDIA RA air layout is 32 racks",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-19",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-517",
+     "project": "AFVU",
+     "summary": "[Backend] Architect sells 1 × Genesis Grid (30 racks) for an 11-rack XE9780L hall and leaves 19 compute racks empty",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-19",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-518",
+     "project": "AFVU",
+     "summary": "[Frontend] 3D hall draws DLC CDUs for air-cooled XE9785 in Genesis Titan because \"liquid-to-air\" matches /liquid/",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-19",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-519",
+     "project": "AFVU",
+     "summary": "[Frontend] 3D Grid hall looks full for an 11-rack XE9785L build; leftover 19 of 30 bays are filled so empties are not visible",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-19",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-520",
+     "project": "AFVU",
+     "summary": "[Frontend] Architect Review blocks Order on Dell XE9712 GB300 SuperPOD (8 racks, 576 GPUs) as below 1.2 MW",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-19",
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
@@ -10029,11 +10291,11 @@
      "project": "USP",
      "summary": "Book a meeting – end to end (booking, calendar view, modal fixes)",
      "type": "Story",
-     "status": "CODE REVIEW",
+     "status": "In Progress",
      "statusCat": "indeterminate",
      "created": "2026-11-03",
      "resolved": null,
-     "due": "2026-11-15",
+     "due": "2026-11-30",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
@@ -12813,16 +13075,64 @@
      "assignee": null
     },
     {
-     "key": "IN-1127",
-     "project": "IN",
-     "summary": "General DevOps Ticket",
-     "type": "Story",
+     "key": "AFVU-511",
+     "project": "AFVU",
+     "summary": "Architect runs on the rate flow only: old flow removed, AppTest fixes carried over, develop merged and pushed to the AI Factory PRs",
+     "type": "Subtask",
      "status": "Done",
      "statusCat": "done",
-     "created": "2026-10-01",
-     "resolved": "2026-10-20",
-     "due": "2026-10-15",
-     "assignee": "b.kumar"
+     "created": "2026-11-19",
+     "resolved": "2026-11-19",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-512",
+     "project": "AFVU",
+     "summary": "[Backend] Book a Meeting: offer slots from the host's Outlook working hours when the host has no staff-set hours",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-19",
+     "resolved": "2026-11-19",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-513",
+     "project": "AFVU",
+     "summary": "Book a Meeting: check the Graph app limited to roster mailboxes on AppTest",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-19",
+     "resolved": "2026-11-19",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-514",
+     "project": "AFVU",
+     "summary": "Architect rate flow: air-cooled builds capped at 256 servers above NVIDIA's published sizes; HGX B300 Enterprise goes up to 160 units",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-19",
+     "resolved": "2026-11-19",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-515",
+     "project": "AFVU",
+     "summary": "API gateway plan: publish the new CRM routes on APIM for DEV, UAT and PROD",
+     "type": "Subtask",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-19",
+     "resolved": "2026-11-19",
+     "due": null,
+     "assignee": "Anshul Bhargava"
     },
     {
      "key": "IN-1141",
@@ -18109,8 +18419,8 @@
      "project": "UC",
      "summary": "Integration & security review — RFQ lead data handling",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-11-30",
@@ -18121,8 +18431,8 @@
      "project": "UC",
      "summary": "QA & validation — RFQ-intent trigger accuracy test pass",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-11-30",
@@ -18205,8 +18515,8 @@
      "project": "UC",
      "summary": "Integration & security review — prompt-injection/identity-spoofing penetration test",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-09-03",
      "resolved": null,
      "due": "2026-11-30",
