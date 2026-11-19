@@ -10,7 +10,6 @@ DUE	MR-1459	In Progress	Saurabh Jain	2026-11-14				PR Review and Completion
 DUE	MT-1632	In Progress	Kannan Elangovan	2026-11-12				Implement module-wise Playwright automation with test scenarios, cases and CI regression coverage
 DUE	MT-1747	In Progress	Naveen Jangid	2026-11-16				Marketplace New Design Implementation V1.4
 DUE	MT-1770	In Progress	Naman Bapna	2026-11-13				Go-Live checklist 15th November 2026
-DUE	MT-1780	TODO	Naveen Jangid	2026-11-13				[Marketplace][Production] FAQ pages return HTTP 404 – Page Not Found
 DUE	MT-1823	In Progress	Naveen Jangid	2026-11-16				Validate Amasty Request a Quote integration details
 DUE	UC-19	UAT	Ankit Saxena	2026-10-30				Authenticated own-records experience — orders, invoices, subscription & low-risk actions
 DUE	UC-23	UAT	Ankit Saxena	2026-11-11				RFQ direct submission in-chat for all visitors
@@ -27,8 +26,6 @@ DUE	UC-413	Ready for Prod	Ankit Saxena	2026-11-02				[Chatbot] Fails to Identify
 DUE	UC-414	Ready for Prod	Ankit Saxena	2026-11-03				[Chatbot] Additional Issues Identified During Chatbot Testing
 DUE	UC-418	Ready for Prod	Ankit Saxena	2026-11-04				[Chatbot] Chatbot Response Times Out on Marketing and Marketplace DEV Environments
 DUE	UC-422	UAT	Shivam Dhoundiyal	2026-11-10				Design ui for rfq quotes page for csm handling
-DUE	USP-4302	In Progress	Silviu Oltean	2026-11-15				CH-51/52 – Hub notifications: portal bell and email
-DUE	USP-4438	CODE REVIEW	Anshul Bhargava	2026-11-15				Book a meeting – end to end (booking, calendar view, modal fixes)
 DUE	MR-1467	Ready for Prod	Kunal Jangid	2026-11-13				[Prod] Chatbot – Product card alignment issue in maximized view after clicking Allow
 DUE	MR-1470	Ready for Prod	Kunal Jangid	2026-11-06				Marketing New Design v1.3 – Kimi Page
 DUE	MR-1476	UAT Testing	Kunal Jangid	2026-11-13				[Chatbot] Integrate Async Support Ticket Fallback Handling
@@ -40,4 +37,5 @@ DUE	MR-1490	Dev	Vishnu kumar yadav	2026-11-17				Restrict Klaviyo delete_test_pr
 DUE	MT-1824	TODO	Naveen Jangid	2026-11-17				Scaffold Vendor_SalesDashboard admin module (route, ACL, menu, start page)
 DUE	UC-424	In Dev	Shivam Dhoundiyal	2026-11-17				UI design
 DUE	UC-425	In Dev	Shivam Dhoundiyal	2026-11-17				UI build and Old UI repolish
-DUE	USP-4470	In Progress	Silviu Oltean	2026-11-17				Switch Communication HUB tenant
+DUE	MR-1491	Dev	Vishnu kumar yadav	2026-11-18				Lead-rights: require email verification before PII access (MVP)
+DUE	MT-1844	Dev	Naveen Jangid	2026-11-18				Fix RMA allowed status - Admin config + Graphql
