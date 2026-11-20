@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-11-19",
+ "snapshotDate": "2026-11-20",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -433,20 +433,6 @@
      ]
     },
     {
-     "key": "AFVU-189",
-     "project": "AFVU",
-     "summary": "[Frontend] Interactive View reads the CRM probe status answer and shows live readings when the probe reports",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-19",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
      "key": "AFVU-191",
      "project": "AFVU",
      "summary": "Data centre audit done; load into CRM waits for the owner's go-ahead and CRM owners for 10 unresolved rows",
@@ -504,149 +490,9 @@
      ]
     },
     {
-     "key": "AFVU-194",
-     "project": "AFVU",
-     "summary": "[Frontend] 3D realism phase 1: real lighting, reflections, tone mapping and materials, bright hall by default, glow only where real",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-195",
-     "project": "AFVU",
-     "summary": "[Frontend] Realistic servers: DGX B300 and GB300 compute tray fronts, opened server and exploded GPU drawn from the vendors' documentation",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-196",
-     "project": "AFVU",
-     "summary": "[Frontend] Realistic servers for the rest of the catalog: Vera Rubin NVL72, vendor GB300 NVL72 trays, Rubin NVL8, NVL4 and the GB300 station; Rubin system sizes from the product sheet",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
      "key": "AFVU-197",
      "project": "AFVU",
      "summary": "[Frontend] Realistic hall components: switches, storage, NVL72 rack parts, CDU and racks drawn from the ordered design; neutral realistic power room; no made-up numbers",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-198",
-     "project": "AFVU",
-     "summary": "[Frontend] Orders over 64 racks drawn as Hall 1, 2, 3… tabs: one hall built at a time, each hall with its own ids, on the subscription page and the configuration page",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-199",
-     "project": "AFVU",
-     "summary": "[Frontend] Quality pass on the Interactive View and the configuration page: no layout shifts, no GPU memory growth, accessible names, clean console",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-200",
-     "project": "AFVU",
-     "summary": "[Backend] Hall-aware part names in the probe feed: names like H2-A01 reach later halls, one id per part, and the probe status route can answer for one hall",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-201",
-     "project": "AFVU",
-     "summary": "[Frontend] Interactive View reads hall-aware part names: readings, alerts and tickets for every hall of a large order, and each hall tab shows that hall's state",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-202",
-     "project": "AFVU",
-     "summary": "[Frontend] Polished gold DGX B300 bezel with crisp edges and sharp ports; fabric rack readable in the night look (nickel port cages, aisle light, real blanking panels)",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-203",
-     "project": "AFVU",
-     "summary": "[Frontend] Sharp 3D view when zooming in (full screen resolution, sharper equipment fronts) and glass that steps aside instead of washing the view blue",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-204",
-     "project": "AFVU",
-     "summary": "[Frontend] New service page has no Launch or Upgrade button, the same as the team's Portal",
      "type": "Subtask",
      "status": "Done",
      "statusCat": "done",
@@ -3112,28 +2958,42 @@
      "project": "AFVU",
      "summary": "[Frontend] 3D hall draws every rack-scale compute rack with 8 power shelves; the Vera Rubin NVL72 RA has 4 per rack (GB300 has 8)",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-04",
-     "resolved": null,
+     "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.0,
+     "logs": [
+      [
+       "2026-11-20",
+       1.0
+      ]
+     ]
     },
     {
      "key": "AFVU-408",
      "project": "AFVU",
      "summary": "[Frontend] 3D hall network racks always draw 6 identical switches, so the hall shows far fewer switches than the design lists (e.g. 100 for 2 units of Vera Rubin NVL72)",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-04",
-     "resolved": null,
+     "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.5,
+     "logs": [
+      [
+       "2026-11-19",
+       0.5
+      ],
+      [
+       "2026-11-20",
+       1.0
+      ]
+     ]
     },
     {
      "key": "AFVU-409",
@@ -3237,14 +3097,23 @@
      "project": "AFVU",
      "summary": "[Frontend] Cooling choice (In-row or In-rack CDU) does not change the 3D hall; hall always draws 2 floor CDUs whatever the Bill of materials says",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-04",
-     "resolved": null,
+     "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.5,
+     "logs": [
+      [
+       "2026-11-19",
+       0.5
+      ],
+      [
+       "2026-11-20",
+       1.0
+      ]
+     ]
     },
     {
      "key": "AFVU-418",
@@ -3366,10 +3235,10 @@
      "project": "AFVU",
      "summary": "[Frontend] DGX B300 Scale step says \"the network follows NVIDIA's reference design exactly\" at 2 units, but only the compute leaf and spine counts are published there; the other counts are scaled from the 8-unit or 4-unit table",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-04",
-     "resolved": null,
+     "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
@@ -3422,28 +3291,38 @@
      "project": "AFVU",
      "summary": "[Frontend] 3D hall draws 2 cooling units for a 30-rack Vera Rubin NVL72 build, but the page lists 4 in-row CDUs for about 7.5 MW; with no cooling choice on the step, the hall has no way to follow the design",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-04",
-     "resolved": null,
+     "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-19",
+       0.25
+      ]
+     ]
     },
     {
      "key": "AFVU-430",
      "project": "AFVU",
      "summary": "[Frontend] 3D hall for Vera Rubin NVL72 draws 2 network racks and 1 management rack that the Bill of materials does not list; the design has no switch rack lines, so the hall invents them",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-04",
-     "resolved": null,
+     "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-19",
+       0.25
+      ]
+     ]
     },
     {
      "key": "AFVU-431",
@@ -4146,14 +4025,19 @@
      "project": "AFVU",
      "summary": "Interactive View does not show all racks that the Configure page draws for a Genesis DSX factory",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-11",
-     "resolved": null,
+     "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.25,
+     "logs": [
+      [
+       "2026-11-19",
+       0.25
+      ]
+     ]
     },
     {
      "key": "AFVU-480",
@@ -4255,10 +4139,10 @@
      "project": "AFVU",
      "summary": "Architect Scale shows sizes below Uvation IT load floor (e.g. 0.2 MW) before 1.2 MW offer minimum",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-18",
-     "resolved": null,
+     "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
      "spentHours": 1.0,
@@ -4293,17 +4177,21 @@
      "project": "AFVU",
      "summary": "Architect: Site minimum IT load (e.g. Nevada 2 MW) not clear before Scale — dual threshold vs 1.2 MW message",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-18",
-     "resolved": null,
+     "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.75,
+     "spentHours": 1.25,
      "logs": [
       [
        "2026-11-18",
        0.75
+      ],
+      [
+       "2026-11-19",
+       0.5
       ]
      ]
     },
@@ -4312,17 +4200,21 @@
      "project": "AFVU",
      "summary": "Nuclear · Genesis Terra · Dell HGX B200: no orderable scale on Nevada (slider max 1.9 MW < site 2 MW)",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-18",
-     "resolved": null,
+     "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.75,
+     "spentHours": 1.25,
      "logs": [
       [
        "2026-11-18",
        0.75
+      ],
+      [
+       "2026-11-19",
+       0.5
       ]
      ]
     },
@@ -4350,14 +4242,19 @@
      "project": "AFVU",
      "summary": "Regression: Genesis Helios + GB200 NVL72 (HPE/Dell) shows 1.13 MW for 8 racks — below 1.2 MW floor",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-19",
-     "resolved": null,
+     "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-19",
+       0.5
+      ]
+     ]
     },
     {
      "key": "AFVU-506",
@@ -4392,10 +4289,10 @@
      "project": "AFVU",
      "summary": "[Frontend] Architect Scale says 7 data centers can host a 1.13 MW Enterprise GB300 build whose site cards start at 1.2 MW",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-19",
-     "resolved": null,
+     "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
@@ -4406,10 +4303,10 @@
      "project": "AFVU",
      "summary": "[Frontend] Architect Scale shows 320 switches / 53,376 optics for HGX B300 Enterprise 128 nodes; NVIDIA Table 9 is 112 switches",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-19",
-     "resolved": null,
+     "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
@@ -4420,10 +4317,10 @@
      "project": "AFVU",
      "summary": "[Backend] Architect packs 256 GPUs / ~448 kW of HGX B300 into each Genesis Titan catalogued at 576 GPUs / 800–1,200 kW",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-19",
-     "resolved": null,
+     "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
@@ -4440,8 +4337,13 @@
      "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.5,
+     "logs": [
+      [
+       "2026-11-19",
+       1.5
+      ]
+     ]
     },
     {
      "key": "AFVU-512",
@@ -4454,8 +4356,13 @@
      "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.75,
+     "logs": [
+      [
+       "2026-11-19",
+       0.75
+      ]
+     ]
     },
     {
      "key": "AFVU-513",
@@ -4468,8 +4375,13 @@
      "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-19",
+       0.5
+      ]
+     ]
     },
     {
      "key": "AFVU-514",
@@ -4482,8 +4394,13 @@
      "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-19",
+       0.5
+      ]
+     ]
     },
     {
      "key": "AFVU-515",
@@ -4496,8 +4413,13 @@
      "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.0,
+     "logs": [
+      [
+       "2026-11-19",
+       1.0
+      ]
+     ]
     },
     {
      "key": "AFVU-516",
@@ -4565,6 +4487,104 @@
      "created": "2026-11-19",
      "resolved": null,
      "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-521",
+     "project": "AFVU",
+     "summary": "Site Capacity: Total, Buffer And Available Capacity Per Site, With Decommission, Managed In The CRM",
+     "type": "Story",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-11-20",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-522",
+     "project": "AFVU",
+     "summary": "[Frontend] Architect Scale shows 79 switches / 9,264 optics for GB300 Enterprise 8-rack; RA Tables 6–7 + OOB are 71 switches",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-20",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-523",
+     "project": "AFVU",
+     "summary": "Regression: Scale still says 7 data centers can host a 1.13 MW HPE GB300 Enterprise build whose site cards start at 1.2 MW",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-20",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-524",
+     "project": "AFVU",
+     "summary": "[Backend] HPE XD685 DLC (5U liquid) is packed at 4 servers/rack like 10U air; 128 nodes need 32 racks / 4 Titans",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-20",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-525",
+     "project": "AFVU",
+     "summary": "[S2][P2] Saved Architect Design Loads Late and Jumps the Page, Overwriting the Customer's Choice",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-20",
+     "resolved": null,
+     "due": "2026-11-20",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-526",
+     "project": "AFVU",
+     "summary": "[S2][P2] Architect Offers Systems That Can Never Reach the Chosen Site's Minimum, Leaving a Dead End at Scale",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-20",
+     "resolved": null,
+     "due": "2026-11-20",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-527",
+     "project": "AFVU",
+     "summary": "[S3][P3] Vera Rubin DSX Scale Step Says \"No Price in the Portal Catalogue\" While Review Prices It",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-20",
+     "resolved": null,
+     "due": "2026-11-20",
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
@@ -10297,6 +10317,81 @@
      "resolved": null,
      "due": "2026-11-30",
      "assignee": "Anshul Bhargava",
+     "spentHours": 2.0,
+     "logs": [
+      [
+       "2026-11-19",
+       2.0
+      ]
+     ]
+    },
+    {
+     "key": "USP-4506",
+     "project": "USP",
+     "summary": "CRM staff preview and download the Proposal the customer gets",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-20",
+     "resolved": "2026-11-20",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "USP-4507",
+     "project": "USP",
+     "summary": "CRM build plan drives the customer's build view and progress bar",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-20",
+     "resolved": "2026-11-20",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "USP-4508",
+     "project": "USP",
+     "summary": "[Data] Production holds no test data at launch",
+     "type": "Task",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-11-20",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "USP-4509",
+     "project": "USP",
+     "summary": "AI Factory sells full racks only, with a minimum per site",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-20",
+     "resolved": "2026-11-20",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "USP-4510",
+     "project": "USP",
+     "summary": "Express uses the product data collected for Architect",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-20",
+     "resolved": "2026-11-20",
+     "due": null,
+     "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
     }
@@ -10903,18 +10998,6 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "AFVU-189",
-     "project": "AFVU",
-     "summary": "[Frontend] Interactive View reads the CRM probe status answer and shows live readings when the probe reports",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-19",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
      "key": "AFVU-191",
      "project": "AFVU",
      "summary": "Data centre audit done; load into CRM waits for the owner's go-ahead and CRM owners for 10 unresolved rows",
@@ -10951,129 +11034,9 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "AFVU-194",
-     "project": "AFVU",
-     "summary": "[Frontend] 3D realism phase 1: real lighting, reflections, tone mapping and materials, bright hall by default, glow only where real",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-195",
-     "project": "AFVU",
-     "summary": "[Frontend] Realistic servers: DGX B300 and GB300 compute tray fronts, opened server and exploded GPU drawn from the vendors' documentation",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-196",
-     "project": "AFVU",
-     "summary": "[Frontend] Realistic servers for the rest of the catalog: Vera Rubin NVL72, vendor GB300 NVL72 trays, Rubin NVL8, NVL4 and the GB300 station; Rubin system sizes from the product sheet",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
      "key": "AFVU-197",
      "project": "AFVU",
      "summary": "[Frontend] Realistic hall components: switches, storage, NVL72 rack parts, CDU and racks drawn from the ordered design; neutral realistic power room; no made-up numbers",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-198",
-     "project": "AFVU",
-     "summary": "[Frontend] Orders over 64 racks drawn as Hall 1, 2, 3… tabs: one hall built at a time, each hall with its own ids, on the subscription page and the configuration page",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-199",
-     "project": "AFVU",
-     "summary": "[Frontend] Quality pass on the Interactive View and the configuration page: no layout shifts, no GPU memory growth, accessible names, clean console",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-200",
-     "project": "AFVU",
-     "summary": "[Backend] Hall-aware part names in the probe feed: names like H2-A01 reach later halls, one id per part, and the probe status route can answer for one hall",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-201",
-     "project": "AFVU",
-     "summary": "[Frontend] Interactive View reads hall-aware part names: readings, alerts and tickets for every hall of a large order, and each hall tab shows that hall's state",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-202",
-     "project": "AFVU",
-     "summary": "[Frontend] Polished gold DGX B300 bezel with crisp edges and sharp ports; fabric rack readable in the night look (nickel port cages, aisle light, real blanking panels)",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-203",
-     "project": "AFVU",
-     "summary": "[Frontend] Sharp 3D view when zooming in (full screen resolution, sharper equipment fronts) and glass that steps aside instead of washing the view blue",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-204",
-     "project": "AFVU",
-     "summary": "[Frontend] New service page has no Launch or Upgrade button, the same as the team's Portal",
      "type": "Subtask",
      "status": "Done",
      "statusCat": "done",
@@ -13132,6 +13095,54 @@
      "created": "2026-11-19",
      "resolved": "2026-11-19",
      "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-521",
+     "project": "AFVU",
+     "summary": "Site Capacity: Total, Buffer And Available Capacity Per Site, With Decommission, Managed In The CRM",
+     "type": "Story",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-11-20",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-525",
+     "project": "AFVU",
+     "summary": "[S2][P2] Saved Architect Design Loads Late and Jumps the Page, Overwriting the Customer's Choice",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-20",
+     "resolved": null,
+     "due": "2026-11-20",
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-526",
+     "project": "AFVU",
+     "summary": "[S2][P2] Architect Offers Systems That Can Never Reach the Chosen Site's Minimum, Leaving a Dead End at Scale",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-20",
+     "resolved": null,
+     "due": "2026-11-20",
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "AFVU-527",
+     "project": "AFVU",
+     "summary": "[S3][P3] Vera Rubin DSX Scale Step Says \"No Price in the Portal Catalogue\" While Review Prices It",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-20",
+     "resolved": null,
+     "due": "2026-11-20",
      "assignee": "Anshul Bhargava"
     },
     {
@@ -18527,8 +18538,8 @@
      "project": "UC",
      "summary": "QA & validation — end-to-end registry enforcement test pass",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-09-03",
      "resolved": null,
      "due": "2026-11-30",
@@ -18955,16 +18966,64 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "USP-1996",
+     "key": "USP-4506",
      "project": "USP",
-     "summary": "Bug",
-     "type": "Epic",
+     "summary": "CRM staff preview and download the Proposal the customer gets",
+     "type": "Task",
      "status": "Done",
      "statusCat": "done",
-     "created": "2025-12-15",
-     "resolved": "2026-10-21",
+     "created": "2026-11-20",
+     "resolved": "2026-11-20",
      "due": null,
-     "assignee": "r.jaiswal"
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "USP-4507",
+     "project": "USP",
+     "summary": "CRM build plan drives the customer's build view and progress bar",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-20",
+     "resolved": "2026-11-20",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "USP-4508",
+     "project": "USP",
+     "summary": "[Data] Production holds no test data at launch",
+     "type": "Task",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
+     "created": "2026-11-20",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "USP-4509",
+     "project": "USP",
+     "summary": "AI Factory sells full racks only, with a minimum per site",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-20",
+     "resolved": "2026-11-20",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "USP-4510",
+     "project": "USP",
+     "summary": "Express uses the product data collected for Architect",
+     "type": "Task",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-20",
+     "resolved": "2026-11-20",
+     "due": null,
+     "assignee": "Anshul Bhargava"
     }
    ]
   },
@@ -19262,7 +19321,7 @@
      "project": "VTN",
      "summary": "Video for Project Genesis 3",
      "type": "Task",
-     "status": "In Progress",
+     "status": "REVIEW",
      "statusCat": "indeterminate",
      "created": "2026-11-10",
      "resolved": null,
@@ -19276,18 +19335,6 @@
    "accountId": "712020:a25f3fea-9d56-4939-9eae-801bd5a4b0f3",
    "assigned": [],
    "reported": [
-    {
-     "key": "MT-1625",
-     "project": "MT",
-     "summary": "Explore MySQL Data Governance tool - check if it suffices GDPR compliance requirement",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-15",
-     "resolved": "2026-10-15",
-     "due": "2026-10-16",
-     "assignee": "Saurabh Jain"
-    },
     {
      "key": "PC-118",
      "project": "PC",
