@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-11-20",
+ "snapshotDate": "2026-11-21",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -410,25 +410,6 @@
       [
        "2026-10-26",
        0.5
-      ]
-     ]
-    },
-    {
-     "key": "AFVU-188",
-     "project": "AFVU",
-     "summary": "[Backend] Probe status route: the CRM serves the latest reading of every hall part and takes readings from the telemetry feed",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-19",
-     "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 1.0,
-     "logs": [
-      [
-       "2026-10-21",
-       1.0
       ]
      ]
     },
@@ -10317,11 +10298,15 @@
      "resolved": null,
      "due": "2026-11-30",
      "assignee": "Anshul Bhargava",
-     "spentHours": 2.0,
+     "spentHours": 9.0,
      "logs": [
       [
        "2026-11-19",
        2.0
+      ],
+      [
+       "2026-11-20",
+       7.0
       ]
      ]
     },
@@ -10983,18 +10968,6 @@
      "created": "2026-10-19",
      "resolved": "2026-11-02",
      "due": "2026-10-30",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-188",
-     "project": "AFVU",
-     "summary": "[Backend] Probe status route: the CRM serves the latest reading of every hall part and takes readings from the telemetry feed",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-19",
-     "resolved": "2026-10-21",
-     "due": null,
      "assignee": "Anshul Bhargava"
     },
     {
