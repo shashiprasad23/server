@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-11-21",
+ "snapshotDate": "2026-11-23",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -716,39 +716,6 @@
        0.42
       ]
      ]
-    },
-    {
-     "key": "AFVU-222",
-     "project": "AFVU",
-     "summary": "GPU setup fee: quoted by Uvation per customer (TBD until then), invoiced by our app at signing, paid by bank transfer, confirmed by staff before Rafay setup",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-22",
-     "resolved": "2026-10-23",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.67,
-     "logs": [
-      [
-       "2026-10-23",
-       0.67
-      ]
-     ]
-    },
-    {
-     "key": "AFVU-223",
-     "project": "AFVU",
-     "summary": "[Design] Rafay API study, plan, sign-in design and mockups for GPU as a Service",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-23",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
     },
     {
      "key": "AFVU-224",
@@ -4009,14 +3976,18 @@
      "status": "Done",
      "statusCat": "done",
      "created": "2026-11-11",
-     "resolved": "2026-11-19",
+     "resolved": "2026-11-23",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.25,
+     "spentHours": 1.25,
      "logs": [
       [
        "2026-11-19",
        0.25
+      ],
+      [
+       "2026-11-23",
+       1.0
       ]
      ]
     },
@@ -4483,8 +4454,29 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 10.5,
+     "logs": [
+      [
+       "2026-11-20",
+       0.5
+      ],
+      [
+       "2026-11-20",
+       3.0
+      ],
+      [
+       "2026-11-20",
+       1.5
+      ],
+      [
+       "2026-11-20",
+       2.5
+      ],
+      [
+       "2026-11-20",
+       3.0
+      ]
+     ]
     },
     {
      "key": "AFVU-522",
@@ -4511,8 +4503,13 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-20",
+       0.5
+      ]
+     ]
     },
     {
      "key": "AFVU-524",
@@ -4525,47 +4522,104 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-20",
+       0.5
+      ]
+     ]
     },
     {
      "key": "AFVU-525",
      "project": "AFVU",
      "summary": "[S2][P2] Saved Architect Design Loads Late and Jumps the Page, Overwriting the Customer's Choice",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-20",
-     "resolved": null,
+     "resolved": "2026-11-22",
      "due": "2026-11-20",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.0,
+     "logs": [
+      [
+       "2026-11-23",
+       1.0
+      ]
+     ]
     },
     {
      "key": "AFVU-526",
      "project": "AFVU",
      "summary": "[S2][P2] Architect Offers Systems That Can Never Reach the Chosen Site's Minimum, Leaving a Dead End at Scale",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-20",
-     "resolved": null,
+     "resolved": "2026-11-22",
      "due": "2026-11-20",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.0,
+     "logs": [
+      [
+       "2026-11-23",
+       1.0
+      ]
+     ]
     },
     {
      "key": "AFVU-527",
      "project": "AFVU",
      "summary": "[S3][P3] Vera Rubin DSX Scale Step Says \"No Price in the Portal Catalogue\" While Review Prices It",
      "type": "Bug",
+     "status": "Done",
+     "statusCat": "done",
+     "created": "2026-11-20",
+     "resolved": "2026-11-22",
+     "due": "2026-11-20",
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-531",
+     "project": "AFVU",
+     "summary": "[Backend] Architect sells 2 × Genesis Forge for Lenovo GB200 SuperPOD 2 SU at 2.46 MW; each Forge is catalogued 400–800 kW",
+     "type": "Bug",
      "status": "To Do",
      "statusCat": "new",
-     "created": "2026-11-20",
+     "created": "2026-11-23",
      "resolved": null,
-     "due": "2026-11-20",
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-532",
+     "project": "AFVU",
+     "summary": "[Frontend] GB200 SuperPOD 2 SU Scale shows 2 PB storage; Storage step suggests and uses 9 PB",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-23",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-533",
+     "project": "AFVU",
+     "summary": "[Frontend] Architect Scale shows no scalable-units UI for Modular Lenovo HGX B200 under Genesis Forge GB200 (8 GPUs/server)",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-23",
+     "resolved": null,
+     "due": null,
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
@@ -11139,30 +11193,6 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "AFVU-222",
-     "project": "AFVU",
-     "summary": "GPU setup fee: quoted by Uvation per customer (TBD until then), invoiced by our app at signing, paid by bank transfer, confirmed by staff before Rafay setup",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-22",
-     "resolved": "2026-10-23",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-223",
-     "project": "AFVU",
-     "summary": "[Design] Rafay API study, plan, sign-in design and mockups for GPU as a Service",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-23",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
      "key": "AFVU-224",
      "project": "AFVU",
      "summary": "[QA] End-to-end test of GPU as a Service against a real Rafay organization and B2C, with the security checklist recorded",
@@ -13087,10 +13117,10 @@
      "project": "AFVU",
      "summary": "[S2][P2] Saved Architect Design Loads Late and Jumps the Page, Overwriting the Customer's Choice",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-20",
-     "resolved": null,
+     "resolved": "2026-11-22",
      "due": "2026-11-20",
      "assignee": "Anshul Bhargava"
     },
@@ -13099,10 +13129,10 @@
      "project": "AFVU",
      "summary": "[S2][P2] Architect Offers Systems That Can Never Reach the Chosen Site's Minimum, Leaving a Dead End at Scale",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-20",
-     "resolved": null,
+     "resolved": "2026-11-22",
      "due": "2026-11-20",
      "assignee": "Anshul Bhargava"
     },
@@ -13111,10 +13141,10 @@
      "project": "AFVU",
      "summary": "[S3][P3] Vera Rubin DSX Scale Step Says \"No Price in the Portal Catalogue\" While Review Prices It",
      "type": "Bug",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-20",
-     "resolved": null,
+     "resolved": "2026-11-22",
      "due": "2026-11-20",
      "assignee": "Anshul Bhargava"
     },
@@ -18043,10 +18073,10 @@
      "project": "UC",
      "summary": "Design & technical spec — lead capture form schema & consent handling",
      "type": "Subtask",
-     "status": "Ready for Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-11-13",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -18055,10 +18085,10 @@
      "project": "UC",
      "summary": "Implementation — lead capture flow and CRM handoff",
      "type": "Subtask",
-     "status": "Ready for Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-11-13",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -18067,10 +18097,10 @@
      "project": "UC",
      "summary": "Integration & security review — lead data consent enforcement",
      "type": "Subtask",
-     "status": "Ready for Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-11-13",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -18079,10 +18109,10 @@
      "project": "UC",
      "summary": "QA & validation — lead capture end-to-end test pass",
      "type": "Subtask",
-     "status": "Ready for Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-11-13",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -18091,10 +18121,10 @@
      "project": "UC",
      "summary": "Design & technical spec — multi-turn context retention rules",
      "type": "Subtask",
-     "status": "Ready for Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-10-30",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -18103,10 +18133,10 @@
      "project": "UC",
      "summary": "Implementation — multi-turn memory and thumbs up/down feedback UI",
      "type": "Subtask",
-     "status": "Ready for Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-10-30",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -18115,10 +18145,10 @@
      "project": "UC",
      "summary": "Integration & security review — feedback data storage review",
      "type": "Subtask",
-     "status": "Ready for Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-10-30",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -18127,10 +18157,10 @@
      "project": "UC",
      "summary": "QA & validation — multi-turn UX regression pass",
      "type": "Subtask",
-     "status": "UAT Testing",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-10-30",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -18283,10 +18313,10 @@
      "project": "UC",
      "summary": "Design & technical spec — SLA timer configuration & escalation rules",
      "type": "Subtask",
-     "status": "Ready for Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-11-13",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -18295,10 +18325,10 @@
      "project": "UC",
      "summary": "Implementation — availability check & connect-within-SLA flow",
      "type": "Subtask",
-     "status": "Ready for Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-11-13",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -18307,10 +18337,10 @@
      "project": "UC",
      "summary": "Integration & security review — Teams availability check integrity",
      "type": "Subtask",
-     "status": "Ready for Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-11-13",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -18319,10 +18349,10 @@
      "project": "UC",
      "summary": "QA & validation — SLA connect-time testing",
      "type": "Subtask",
-     "status": "Ready for Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2027-01-20",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -18331,8 +18361,8 @@
      "project": "UC",
      "summary": "Design & technical spec — agent-side relay reliability design",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-11-30",
@@ -18343,8 +18373,8 @@
      "project": "UC",
      "summary": "Implementation — agent-side conversation relay build",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-11-30",
@@ -18379,7 +18409,7 @@
      "project": "UC",
      "summary": "Design & technical spec — bulk/pricing RFQ-intent detection rules",
      "type": "Subtask",
-     "status": "Dev Testing",
+     "status": "UAT",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -18391,7 +18421,7 @@
      "project": "UC",
      "summary": "Implementation — RFQ-intent prompt trigger & capture flow",
      "type": "Subtask",
-     "status": "Dev Testing",
+     "status": "UAT",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -18403,7 +18433,7 @@
      "project": "UC",
      "summary": "Integration & security review — RFQ lead data handling",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "UAT",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -18415,7 +18445,7 @@
      "project": "UC",
      "summary": "QA & validation — RFQ-intent trigger accuracy test pass",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "UAT",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -18427,7 +18457,7 @@
      "project": "UC",
      "summary": "Identity &amp; Authorization Gateway — structural tool-registry enforcement",
      "type": "Story",
-     "status": "IN PROGRESS",
+     "status": "In Dev",
      "statusCat": "indeterminate",
      "created": "2026-09-03",
      "resolved": null,
@@ -18439,8 +18469,8 @@
      "project": "UC",
      "summary": "Compliance-first gate — pre-dispatch enforcement ahead of every agent",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-09-03",
      "resolved": null,
      "due": "2026-11-30",
@@ -18451,10 +18481,10 @@
      "project": "UC",
      "summary": "Authenticated own-records experience — orders, invoices, subscription & low-risk actions",
      "type": "Story",
-     "status": "UAT",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-10-30",
      "assignee": "Ankit Saxena"
     },
@@ -18463,7 +18493,7 @@
      "project": "UC",
      "summary": "Design & technical spec — Identity & Authorization Gateway",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "In Dev",
      "statusCat": "indeterminate",
      "created": "2026-09-03",
      "resolved": null,
@@ -18475,7 +18505,7 @@
      "project": "UC",
      "summary": "Implementation — server-side session auth-state resolution",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "In Dev",
      "statusCat": "indeterminate",
      "created": "2026-09-03",
      "resolved": null,
@@ -18487,7 +18517,7 @@
      "project": "UC",
      "summary": "Implementation — routable tool registry filtering & dispatch enforcement",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "In Dev",
      "statusCat": "indeterminate",
      "created": "2026-09-03",
      "resolved": null,
@@ -18499,7 +18529,7 @@
      "project": "UC",
      "summary": "Integration & security review — prompt-injection/identity-spoofing penetration test",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "In Dev",
      "statusCat": "indeterminate",
      "created": "2026-09-03",
      "resolved": null,
@@ -18511,7 +18541,7 @@
      "project": "UC",
      "summary": "QA & validation — end-to-end registry enforcement test pass",
      "type": "Subtask",
-     "status": "IN PROGRESS",
+     "status": "In Dev",
      "statusCat": "indeterminate",
      "created": "2026-09-03",
      "resolved": null,
@@ -18535,8 +18565,8 @@
      "project": "UC",
      "summary": "Design & technical spec — compliance gate pre-dispatch architecture",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-09-03",
      "resolved": null,
      "due": "2026-11-30",
@@ -18595,10 +18625,10 @@
      "project": "UC",
      "summary": "RFQ direct submission in-chat for all visitors",
      "type": "Story",
-     "status": "UAT",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-11-11",
      "assignee": "Ankit Saxena"
     },
@@ -18619,10 +18649,10 @@
      "project": "UC",
      "summary": "Implementation — entitlement layer, internal API tools & deterministic cards",
      "type": "Subtask",
-     "status": "In Dev",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-10-30",
      "assignee": "Ankit Saxena"
     },
@@ -18631,10 +18661,10 @@
      "project": "UC",
      "summary": "QA & validation — entitlement testing & penetration test",
      "type": "Subtask",
-     "status": "In Dev",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-10-30",
      "assignee": "Ankit Saxena"
     },
@@ -18715,10 +18745,10 @@
      "project": "UC",
      "summary": "Marketing lead capture — persistent Book a Meeting / Contact Us CTA routing",
      "type": "Story",
-     "status": "Ready for Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-11-13",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -18727,7 +18757,7 @@
      "project": "UC",
      "summary": "Marketplace RFQ-intent prompt on bulk / pricing signals",
      "type": "Story",
-     "status": "IN PROGRESS",
+     "status": "UAT",
      "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
@@ -18739,10 +18769,10 @@
      "project": "UC",
      "summary": "Multi-turn context resolution & feedback capture loop",
      "type": "Story",
-     "status": "UAT Testing",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-10-30",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -18775,10 +18805,10 @@
      "project": "UC",
      "summary": "Teams handoff — SLA-timeout fallback when no agent available",
      "type": "Story",
-     "status": "Ready for Prod",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-11-13",
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
@@ -18787,8 +18817,8 @@
      "project": "UC",
      "summary": "Agent-side Teams handoff conversation experience",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-11-30",
@@ -18811,10 +18841,10 @@
      "project": "UC",
      "summary": "Design & technical spec — entitlement model & internal API tool contracts",
      "type": "Subtask",
-     "status": "In Dev",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-10-30",
      "assignee": "Ankit Saxena"
     },
@@ -18823,10 +18853,10 @@
      "project": "UC",
      "summary": "Integration & security review — cross-user access exploit testing",
      "type": "Subtask",
-     "status": "In Dev",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-08-13",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-10-30",
      "assignee": "Ankit Saxena"
     },
@@ -19138,11 +19168,11 @@
      "project": "VTN",
      "summary": "USP V1 2025 file cleanup",
      "type": "Task",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-11-10",
      "resolved": null,
-     "due": "2026-11-14",
+     "due": "2026-11-27",
      "assignee": "Raluca Conea"
     },
     {
@@ -19250,7 +19280,7 @@
      "statusCat": "indeterminate",
      "created": "2026-11-10",
      "resolved": null,
-     "due": "2026-11-18",
+     "due": "2026-11-24",
      "assignee": "Ivan Divjakovic"
     },
     {
@@ -19294,10 +19324,10 @@
      "project": "VTN",
      "summary": "Video for Project Genesis 3",
      "type": "Task",
-     "status": "REVIEW",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-10",
-     "resolved": null,
+     "resolved": "2026-11-23",
      "due": "2026-11-14",
      "assignee": "a.kaushal"
     }
