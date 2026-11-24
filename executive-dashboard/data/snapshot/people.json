@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-11-23",
+ "snapshotDate": "2026-11-24",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -10433,6 +10433,90 @@
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
+    },
+    {
+     "key": "USP-4513",
+     "project": "USP",
+     "summary": "AFVU-521: Site capacity for AI Factory sites (total, buffer and available), with decommission",
+     "type": "Story",
+     "status": "TODO",
+     "statusCat": "new",
+     "created": "2026-11-24",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "USP-4514",
+     "project": "USP",
+     "summary": "Architect keeps the last totals when the factory type, site or system changes (stale GPUs, MW and first invoice)",
+     "type": "Bug",
+     "status": "TODO",
+     "statusCat": "new",
+     "created": "2026-11-24",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "USP-4515",
+     "project": "USP",
+     "summary": "Genesis branding on the AI Factory designs (Titan, Terra, Forge, Aether) and B300 SuperPOD sold full",
+     "type": "Story",
+     "status": "TODO",
+     "statusCat": "new",
+     "created": "2026-11-24",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "USP-4516",
+     "project": "USP",
+     "summary": "SuperPOD sizes above the reference architecture are built as copies of whole RA clusters",
+     "type": "Story",
+     "status": "TODO",
+     "statusCat": "new",
+     "created": "2026-11-24",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "USP-4517",
+     "project": "USP",
+     "summary": "Edge locations: customers name a place in the Availability Region, with a 50-mile radius and staff switches",
+     "type": "Story",
+     "status": "TODO",
+     "statusCat": "new",
+     "created": "2026-11-24",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "USP-4518",
+     "project": "USP",
+     "summary": "Mandatory offers: staff mark a service mandatory, pricing includes it and an order without it is refused",
+     "type": "Story",
+     "status": "TODO",
+     "statusCat": "new",
+     "created": "2026-11-24",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
     }
    ],
    "reported": [
@@ -19025,6 +19109,78 @@
      "statusCat": "done",
      "created": "2026-11-20",
      "resolved": "2026-11-20",
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "USP-4513",
+     "project": "USP",
+     "summary": "AFVU-521: Site capacity for AI Factory sites (total, buffer and available), with decommission",
+     "type": "Story",
+     "status": "TODO",
+     "statusCat": "new",
+     "created": "2026-11-24",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "USP-4514",
+     "project": "USP",
+     "summary": "Architect keeps the last totals when the factory type, site or system changes (stale GPUs, MW and first invoice)",
+     "type": "Bug",
+     "status": "TODO",
+     "statusCat": "new",
+     "created": "2026-11-24",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "USP-4515",
+     "project": "USP",
+     "summary": "Genesis branding on the AI Factory designs (Titan, Terra, Forge, Aether) and B300 SuperPOD sold full",
+     "type": "Story",
+     "status": "TODO",
+     "statusCat": "new",
+     "created": "2026-11-24",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "USP-4516",
+     "project": "USP",
+     "summary": "SuperPOD sizes above the reference architecture are built as copies of whole RA clusters",
+     "type": "Story",
+     "status": "TODO",
+     "statusCat": "new",
+     "created": "2026-11-24",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "USP-4517",
+     "project": "USP",
+     "summary": "Edge locations: customers name a place in the Availability Region, with a 50-mile radius and staff switches",
+     "type": "Story",
+     "status": "TODO",
+     "statusCat": "new",
+     "created": "2026-11-24",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava"
+    },
+    {
+     "key": "USP-4518",
+     "project": "USP",
+     "summary": "Mandatory offers: staff mark a service mandatory, pricing includes it and an order without it is refused",
+     "type": "Story",
+     "status": "TODO",
+     "statusCat": "new",
+     "created": "2026-11-24",
+     "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava"
     }
