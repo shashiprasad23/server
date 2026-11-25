@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-11-24",
+ "snapshotDate": "2026-11-25",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -2063,11 +2063,15 @@
      "resolved": "2026-11-18",
      "due": "2026-11-02",
      "assignee": "Anshul Bhargava",
-     "spentHours": 1.5,
+     "spentHours": 2.5,
      "logs": [
       [
        "2026-11-18",
        1.5
+      ],
+      [
+       "2026-11-25",
+       1.0
       ]
      ]
     },
@@ -3189,8 +3193,13 @@
      "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.0,
+     "logs": [
+      [
+       "2026-11-25",
+       1.0
+      ]
+     ]
     },
     {
      "key": "AFVU-426",
@@ -3996,8 +4005,8 @@
      "project": "AFVU",
      "summary": "GPU as a Service: switch-on and first end-to-end order on the shared test environment",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-11-13",
      "resolved": null,
      "due": null,
@@ -4618,6 +4627,20 @@
      "status": "To Do",
      "statusCat": "new",
      "created": "2026-11-23",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-534",
+     "project": "AFVU",
+     "summary": "[Backend] Architect sells 18 × Genesis Forge for Supermicro HGX B300 SuperPOD 18 SU (162 racks); Forge only has 144 compute bays",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-25",
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
@@ -13033,8 +13056,8 @@
      "project": "AFVU",
      "summary": "GPU as a Service: switch-on and first end-to-end order on the shared test environment",
      "type": "Story",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "In Progress",
+     "statusCat": "indeterminate",
      "created": "2026-11-13",
      "resolved": null,
      "due": null,
@@ -16593,18 +16616,6 @@
      "assignee": "Naveen Jangid"
     },
     {
-     "key": "PULSE-279",
-     "project": "PULSE",
-     "summary": "Implement — [Backend] CI install and build reproducibility",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-28",
-     "resolved": "2026-10-26",
-     "due": "2026-10-23",
-     "assignee": "Naveen Jangid"
-    },
-    {
      "key": "PULSE-28",
      "project": "PULSE",
      "summary": "21.04 — [Backend] Telemetry writer normalization and batching",
@@ -16615,30 +16626,6 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "PULSE-280",
-     "project": "PULSE",
-     "summary": "Verify — [Backend] CI install and build reproducibility with automated and failure-path tests",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-28",
-     "resolved": "2026-10-26",
-     "due": "2026-10-27",
-     "assignee": "Naveen Jangid"
-    },
-    {
-     "key": "PULSE-281",
-     "project": "PULSE",
-     "summary": "Document — [Backend] CI install and build reproducibility deployment and operational evidence",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-28",
-     "resolved": "2026-10-26",
-     "due": "2026-10-27",
-     "assignee": "Naveen Jangid"
     },
     {
      "key": "PULSE-282",
@@ -18009,18 +17996,6 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "PULSE-9",
-     "project": "PULSE",
-     "summary": "02.01 — [Backend] CI install and build reproducibility",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-28",
-     "resolved": "2026-10-26",
-     "due": "2026-10-23",
-     "assignee": "Naveen Jangid"
-    },
-    {
      "key": "PULSE-90",
      "project": "PULSE",
      "summary": "Implement — [QA] Regression and integration test harness",
@@ -18633,18 +18608,6 @@
      "assignee": "Nareddy Shiva Prasad Reddy"
     },
     {
-     "key": "UC-21",
-     "project": "UC",
-     "summary": "Live agent console & handoff queue (channel-agnostic baseline)",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-08-13",
-     "resolved": "2026-10-26",
-     "due": "2026-10-21",
-     "assignee": "Ankit Saxena"
-    },
-    {
      "key": "UC-210",
      "project": "UC",
      "summary": "Design & technical spec — compliance gate pre-dispatch architecture",
@@ -18661,8 +18624,8 @@
      "project": "UC",
      "summary": "Implementation — migrate compliance logic out of RAG classify()",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-09-03",
      "resolved": null,
      "due": "2026-11-30",
@@ -18673,8 +18636,8 @@
      "project": "UC",
      "summary": "Implementation — wire booking/RFQ/quote/account-tool agents to the gate",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-09-03",
      "resolved": null,
      "due": "2026-11-30",
@@ -19432,10 +19395,10 @@
      "project": "VTN",
      "summary": "Video for homepage 2",
      "type": "Task",
-     "status": "In Progress",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-10",
-     "resolved": null,
+     "resolved": "2026-11-25",
      "due": "2026-11-24",
      "assignee": "Ivan Divjakovic"
     },
