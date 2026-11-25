@@ -1,0 +1,45 @@
+DUE	AFVU-214	In Progress	Anshul Bhargava	2026-10-30				GPU as a Service hardening, quality gates and release: reconciliation, security tests, runbook, switch-on plan
+DUE	AFVU-259	In Progress	Anshul Bhargava	2026-11-16				GPU as a Service: teardown when a subscription is cancelled or expires (30-day data window)
+DUE	AFVU-260	In Progress	Anshul Bhargava	2026-11-16				GPU as a Service: invoice GPU-hours above the Pay as you go minimum on the next monthly invoice
+DUE	AFVU-261	In Progress	Aman prakash	2026-11-16				GPU as a Service: notification template for new GPU alerts, then turn alert notifications on
+DUE	AFVU-262	In Progress	Anshul Bhargava	2026-11-16				GPU as a Service: record Rafay sign-in events for the GPU page's Activity tab
+DUE	AFVU-352	In Progress	Anshul Bhargava	2026-11-13				NVIDIA DSX POD: live on AppTest at a $1M test price; real price, QA and later rule sync left
+DUE	UC-68	To Do	Ankit Saxena	2026-11-13				Handoff queue canned responses & business-hours routing rules
+DUE	UC-403	UAT	Shivam Dhoundiyal	2026-11-02				CSM dashboard information architecture and layout
+DUE	UC-404	UAT	Shivam Dhoundiyal	2026-10-03				Build KPI tiles and operational summary cards UI
+DUE	UC-405	UAT	Shivam Dhoundiyal	2026-11-04				Todays drawer Ui/ux enhancements and chat history page
+DUE	UC-406	UAT	Shivam Dhoundiyal	2026-11-12				Integrate dashboard sections with backend APIs and real-time updates
+DUE	UC-407	UAT	Shivam Dhoundiyal	2026-10-11				Validate theme switching, Teams hosting behavior, and dashboard QA
+DUE	UC-422	UAT	Shivam Dhoundiyal	2026-11-10				Design ui for rfq quotes page for csm handling
+DUE	UC-424	UAT	Shivam Dhoundiyal	2026-11-17				UI design
+DUE	UC-425	UAT	Shivam Dhoundiyal	2026-11-17				UI build and Old UI repolish
+DUE	UC-426	UAT	Shivam Dhoundiyal	2026-11-19				API integration
+DUE	UC-427	UAT Testing	Shivam Dhoundiyal	2026-11-19				QA
+DUE	MR-1362	Code Review	Kunal Jangid	2026-10-30				Integrate the Microsoft Bookings and replace the Calendly
+DUE	MR-1467	Ready for Prod	Kunal Jangid	2026-11-13				[Prod] Chatbot – Product card alignment issue in maximized view after clicking Allow
+DUE	MR-1476	UAT Testing	Kunal Jangid	2026-11-13				[Chatbot] Integrate Async Support Ticket Fallback Handling
+DUE	MR-1489	Dev	Vishnu kumar yadav	2026-11-17				Remove or admin-lock Klaviyo marketing email export route
+DUE	MR-1490	Dev	Vishnu kumar yadav	2026-11-17				Restrict Klaviyo delete_test_profiles to admin or env flag
+DUE	MR-1491	Dev	Vishnu kumar yadav	2026-11-18				Lead-rights: require email verification before PII access (MVP)
+DUE	MR-1560	Code Review	Vishnu kumar yadav	2026-11-19				Update Kemi page content as per Figma
+DUE	MR-1561	Code Review	Vishnu kumar yadav	2026-11-20	MR-1556			Update About Us page content as per Figma
+DUE	MR-1562	Code Review	Vishnu kumar yadav	2026-11-20	MR-1556			Update Contact Us page content as per Figma
+DUE	MR-1563	Code Review	Vishnu kumar yadav	2026-11-20	MR-1556			Update Careers page content as per Figma
+DUE	MT-1770	In Progress	Naman Bapna	2026-11-13				Go-Live checklist 15th November 2026
+DUE	MT-1823	In Progress	Naveen Jangid	2026-11-16				Validate Amasty Request a Quote integration details
+DUE	MT-1824	In Progress	Naveen Jangid	2026-11-17				Scaffold Vendor_SalesDashboard admin module (route, ACL, menu, start page)
+DUE	MT-1825	In Progress	Naveen Jangid	2026-11-19				Orders widget – counts by status and recent orders (Magento core)
+DUE	MT-1843	In Progress	Naveen Jangid	2026-11-19				Products review + product creation as per Figma
+DUE	MT-1844	Dev	Naveen Jangid	2026-11-18				Fix RMA allowed status - Admin config + Graphql
+DUE	UC-45	UAT	Ankit Saxena	2026-11-04	UC-23			Implementation — in-chat RFQ flow & CRM integration
+DUE	UC-46	UAT	Ankit Saxena	2026-11-13	UC-23			QA & validation — RFQ CRM record creation & confirmation reliability
+DUE	UC-88	UAT	Ankit Saxena	2026-11-11	UC-23			Design & technical spec — live-join transcript continuity
+DUE	UC-89	UAT	Ankit Saxena	2026-11-13	UC-23			Integration & security review — dashboard-to-Teams join handshake
+DUE	UC-409	UAT	Ankit Saxena	2026-11-03	UC-408			Implementation — CSM Teams Admin Dashboard APIs
+DUE	UC-410	UAT	Ankit Saxena	2026-11-05	UC-408			QA & validation — CSM Teams Admin Dashboard API functionality & reliability
+DUE	UC-411	UAT	Ankit Saxena	2026-11-04	UC-408			Design & technical spec — CSM Teams Admin Dashboard API architecture & contracts
+DUE	UC-412	UAT	Ankit Saxena	2026-11-06	UC-408			Integration & security review — CSM Teams Admin Dashboard authentication & access control
+DUE	MR-1494	TODO	Vishnu kumar yadav	2026-11-23	MR-1488			Rate-limit all mutating Klaviyo v2 routes
+DUE	MR-1569	In Progress	Vishnu kumar yadav	2026-11-23	MR-1556			Verify all page content, images, and videos against Figma
+DUE	MT-1852	In Progress	Naveen Jangid	2026-11-23				[Marketplace][Production] Post-deployment known issues: PDP discoverability, 404 legacy URLs, nav typo, SEO and accessibility gaps
+DUE	USP-4512	In Progress	Shivam Dhoundiyal	2026-11-24				Upload/create servers insync with Marketplace Prod configurations
