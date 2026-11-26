@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-11-25",
+ "snapshotDate": "2026-11-26",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -208,20 +208,6 @@
      ]
     },
     {
-     "key": "AFVU-153",
-     "project": "AFVU",
-     "summary": "[Frontend] Bring in the plan tab, progress card, 3D hall states and the tester simulator",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-16",
-     "resolved": "2026-10-27",
-     "due": "2026-10-28",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
      "key": "AFVU-154",
      "project": "AFVU",
      "summary": "Build plan end to end: staff, customer, hidden steps and deadline checked 2 Nov; phone and hall checks left",
@@ -241,48 +227,6 @@
      ]
     },
     {
-     "key": "AFVU-156",
-     "project": "AFVU",
-     "summary": "[Notification service] Add the four conditions and design the four SendGrid templates and in-app entries",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-16",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-157",
-     "project": "AFVU",
-     "summary": "[Frontend] Dashboard card: the real updates list with the day of each",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-16",
-     "resolved": "2026-10-27",
-     "due": "2026-10-25",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-158",
-     "project": "AFVU",
-     "summary": "[Test] Notifications end to end: e-mail, in-app, wording, no internal data, outage",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-16",
-     "resolved": "2026-10-27",
-     "due": "2026-10-31",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
      "key": "AFVU-159",
      "project": "AFVU",
      "summary": "[Backend] Roster: architects in a department and assigned to accounts; check the cost of the chat list route",
@@ -300,34 +244,6 @@
        0.25
       ]
      ]
-    },
-    {
-     "key": "AFVU-160",
-     "project": "AFVU",
-     "summary": "[Frontend] Bring in the contacts, build team list, quick message and the conversation thread",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-16",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-161",
-     "project": "AFVU",
-     "summary": "[Test] Hub conversation with real ACS credentials: send, reply, history, no chat by looking, failures",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-16",
-     "resolved": "2026-10-27",
-     "due": "2026-10-31",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
     },
     {
      "key": "AFVU-165",
@@ -372,25 +288,6 @@
      "logs": []
     },
     {
-     "key": "AFVU-183",
-     "project": "AFVU",
-     "summary": "[Backend] Reference data gaps: power, spec text, SuperPOD items, Supermicro ARS-511GD, data center time zones and add-on wording",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-19",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 1.0,
-     "logs": [
-      [
-       "2026-10-26",
-       1.0
-      ]
-     ]
-    },
-    {
      "key": "AFVU-185",
      "project": "AFVU",
      "summary": "[Backend] [Frontend] Release branch on both v3 repos and the developer kit: local setup with the UAT database copy, working rules and Jira process",
@@ -433,44 +330,6 @@
      ]
     },
     {
-     "key": "AFVU-192",
-     "project": "AFVU",
-     "summary": "[Frontend] Site step allows liquid-cooled (DLC) builds at every data centre unless it says it is air cooled",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-19",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.5,
-     "logs": [
-      [
-       "2026-10-26",
-       0.5
-      ]
-     ]
-    },
-    {
-     "key": "AFVU-193",
-     "project": "AFVU",
-     "summary": "[Test] Pact contract testing pilot (local only): Portal ↔ CRM contracts for probe-status and factory-config, with a demo",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.5,
-     "logs": [
-      [
-       "2026-10-26",
-       0.5
-      ]
-     ]
-    },
-    {
      "key": "AFVU-197",
      "project": "AFVU",
      "summary": "[Frontend] Realistic hall components: switches, storage, NVL72 rack parts, CDU and racks drawn from the ordered design; neutral realistic power room; no made-up numbers",
@@ -483,25 +342,6 @@
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
      "logs": []
-    },
-    {
-     "key": "AFVU-205",
-     "project": "AFVU",
-     "summary": "[Data] Server catalog workbook: platforms, brands and servers with specs, NVIDIA RA sheets, hosting fit and a storefront check",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-21",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.5,
-     "logs": [
-      [
-       "2026-10-26",
-       0.5
-      ]
-     ]
     },
     {
      "key": "AFVU-206",
@@ -746,34 +586,6 @@
      "logs": []
     },
     {
-     "key": "AFVU-226",
-     "project": "AFVU",
-     "summary": "[Design] Send Rafay the open questions and record their answers",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": "2026-10-31",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-227",
-     "project": "AFVU",
-     "summary": "[Backend] Teardown when a GPU subscription is cancelled or expires: stop, a window to copy data out, then delete",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
      "key": "AFVU-228",
      "project": "AFVU",
      "summary": "[Config] B2C custom policy for the GPU console and Rafay Global IdP, with the B2C owners and Rafay",
@@ -802,48 +614,6 @@
      "logs": []
     },
     {
-     "key": "AFVU-230",
-     "project": "AFVU",
-     "summary": "[Backend] Invoice GPU-hours above the Pay as you go minimum on the next monthly invoice",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-231",
-     "project": "AFVU",
-     "summary": "[Backend] gpu_cloud app with its own tables, an off-by-default switch, a Rafay client and staff status routes",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": "2026-10-31",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-232",
-     "project": "AFVU",
-     "summary": "[Backend] Setup checks, sealed organization keys, secret key rotation, and a Rafay client that never follows a redirect",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
      "key": "AFVU-233",
      "project": "AFVU",
      "summary": "[Backend] GPU as a Service catalog item, with the offer and quote routes its configuration page uses",
@@ -863,76 +633,6 @@
      ]
     },
     {
-     "key": "AFVU-234",
-     "project": "AFVU",
-     "summary": "[Backend] Deposit instead of a setup fee, regions with availability zones, Take or pay and Pay as you go, and an order check before anything is built",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-235",
-     "project": "AFVU",
-     "summary": "[Frontend] GPU configuration page in the AI Factory Architect layout, with a 3D view of the customer's GPUs",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-236",
-     "project": "AFVU",
-     "summary": "[Frontend] GPU choices panel hides like the AI Factory's, option pictures on dark glass, and a clean Review step",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-237",
-     "project": "AFVU",
-     "summary": "[Content] Content review of the GPU configuration page and its catalog text: nothing cut off, plain words",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-238",
-     "project": "AFVU",
-     "summary": "[Backend] Provisioning: the customer's Rafay organization, its key, the project, its groups and members, and the ops checklist",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
      "key": "AFVU-239",
      "project": "AFVU",
      "summary": "[Backend] The build starts by itself when the deposit is confirmed, timed jobs, and payment holds that pause and resume GPUs",
@@ -950,20 +650,6 @@
        1.5
       ]
      ]
-    },
-    {
-     "key": "AFVU-240",
-     "project": "AFVU",
-     "summary": "[Frontend] The GPU page says when a subscription is on hold and what that means for its GPUs",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
     },
     {
      "key": "AFVU-241",
@@ -993,146 +679,6 @@
      "statusCat": "done",
      "created": "2026-10-23",
      "resolved": "2026-11-02",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-243",
-     "project": "AFVU",
-     "summary": "[Backend] GPU service page data: the GPUs ordered, the build in the customer's words, and whether Open GPU console can be used",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-244",
-     "project": "AFVU",
-     "summary": "[Frontend] GPU service page: the GPUs, the build progress, Open GPU console, and the existing Agreements, Invoices and User Access tabs",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-245",
-     "project": "AFVU",
-     "summary": "[Backend] Instances, GPU numbers, alerts and activity from Rafay, read live when a tab opens, with new alerts found within a minute",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-246",
-     "project": "AFVU",
-     "summary": "[Frontend] Instances, Alerts and Activity tabs on the GPU page, with each running instance's GPU numbers",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-247",
-     "project": "AFVU",
-     "summary": "[Backend] Hourly GPU usage from Rafay, read every 30 minutes and kept once per instance and hour, with the Usage tab's figures",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-248",
-     "project": "AFVU",
-     "summary": "[Frontend] Usage tab: GPU-hours of the current billing period, by day and by instance",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-249",
-     "project": "AFVU",
-     "summary": "[Backend] The Rafay console and Operations Console addresses never reach a customer",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-250",
-     "project": "AFVU",
-     "summary": "[Backend] Nightly check that Rafay still matches the Portal, putting right what it safely can",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-251",
-     "project": "AFVU",
-     "summary": "[Docs] Ops runbook and switch-on plan for GPU as a Service",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
-     "key": "AFVU-252",
-     "project": "AFVU",
-     "summary": "[Backend] Notification template for new GPU alerts, then switch alert notifications on",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
      "due": null,
      "assignee": "Anshul Bhargava",
      "spentHours": 0.0,
@@ -1261,82 +807,6 @@
      ]
     },
     {
-     "key": "AFVU-273",
-     "project": "AFVU",
-     "summary": "Storage, control and per-TB quantities sized from public reference documents, and checked again when the order is placed",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-27",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.5,
-     "logs": [
-      [
-       "2026-10-27",
-       0.5
-      ]
-     ]
-    },
-    {
-     "key": "AFVU-274",
-     "project": "AFVU",
-     "summary": "Proposal goes through the upstream contract flow (versions, comments, sign) with a fingerprint and a confirm step",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-27",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.67,
-     "logs": [
-      [
-       "2026-10-27",
-       0.67
-      ]
-     ]
-    },
-    {
-     "key": "AFVU-275",
-     "project": "AFVU",
-     "summary": "Code review fixes: sign check tied to the signer, Proposal publish and order check edge cases",
-     "type": "Bug",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-27",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.67,
-     "logs": [
-      [
-       "2026-10-27",
-       0.67
-      ]
-     ]
-    },
-    {
-     "key": "AFVU-276",
-     "project": "AFVU",
-     "summary": "Proposal tab sizes a design once instead of on every load",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-27",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.67,
-     "logs": [
-      [
-       "2026-10-27",
-       0.67
-      ]
-     ]
-    },
-    {
      "key": "AFVU-277",
      "project": "AFVU",
      "summary": "Genesis orders refused with \"The design no longer matches its quantities\"",
@@ -1347,87 +817,15 @@
      "resolved": "2026-10-27",
      "due": "2026-10-27",
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.67,
+     "spentHours": 1.67,
      "logs": [
       [
        "2026-10-27",
        0.67
-      ]
-     ]
-    },
-    {
-     "key": "AFVU-278",
-     "project": "AFVU",
-     "summary": "Proposal PDF never finishes on AppTest (\"The Proposal is being prepared\")",
-     "type": "Bug",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-27",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.67,
-     "logs": [
+      ],
       [
-       "2026-10-27",
-       0.67
-      ]
-     ]
-    },
-    {
-     "key": "AFVU-279",
-     "project": "AFVU",
-     "summary": "Summary page cuts off the monthly price with \"…\"",
-     "type": "Bug",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-27",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.67,
-     "logs": [
-      [
-       "2026-10-27",
-       0.67
-      ]
-     ]
-    },
-    {
-     "key": "AFVU-280",
-     "project": "AFVU",
-     "summary": "New pages use CRM data only, with proper fallbacks instead of old pages or guessed data",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-27",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.5,
-     "logs": [
-      [
-       "2026-10-27",
-       0.5
-      ]
-     ]
-    },
-    {
-     "key": "AFVU-281",
-     "project": "AFVU",
-     "summary": "PR 5955 merge dropped two service page fixes and added debug logging",
-     "type": "Bug",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-27",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.5,
-     "logs": [
-      [
-       "2026-10-27",
-       0.5
+       "2026-11-26",
+       1.0
       ]
      ]
     },
@@ -2063,11 +1461,15 @@
      "resolved": "2026-11-18",
      "due": "2026-11-02",
      "assignee": "Anshul Bhargava",
-     "spentHours": 2.5,
+     "spentHours": 3.5,
      "logs": [
       [
        "2026-11-18",
        1.5
+      ],
+      [
+       "2026-11-25",
+       1.0
       ],
       [
        "2026-11-25",
@@ -3193,8 +2595,12 @@
      "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 1.0,
+     "spentHours": 2.0,
      "logs": [
+      [
+       "2026-11-25",
+       1.0
+      ],
       [
        "2026-11-25",
        1.0
@@ -4011,11 +3417,15 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 2.5,
+     "spentHours": 4.0,
      "logs": [
       [
        "2026-11-13",
        2.5
+      ],
+      [
+       "2026-11-25",
+       1.5
       ]
      ]
     },
@@ -4284,8 +3694,13 @@
      "resolved": "2026-11-19",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.0,
+     "logs": [
+      [
+       "2026-11-25",
+       1.0
+      ]
+     ]
     },
     {
      "key": "AFVU-511",
@@ -4393,8 +3808,17 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.0,
+     "logs": [
+      [
+       "2026-11-25",
+       0.5
+      ],
+      [
+       "2026-11-25",
+       0.5
+      ]
+     ]
     },
     {
      "key": "AFVU-517",
@@ -4644,8 +4068,13 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.5,
+     "logs": [
+      [
+       "2026-11-25",
+       1.5
+      ]
+     ]
     },
     {
      "key": "PRD-106",
@@ -9940,20 +9369,6 @@
      "logs": []
     },
     {
-     "key": "PULSE-80",
-     "project": "PULSE",
-     "summary": "Document — [Backend] Service health and dependency readiness deployment and operational evidence",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-28",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
-    },
-    {
      "key": "PULSE-81",
      "project": "PULSE",
      "summary": "Define — [Backend] Migration and bootstrap ordering contract and acceptance",
@@ -10375,7 +9790,7 @@
      "resolved": null,
      "due": "2026-11-30",
      "assignee": "Anshul Bhargava",
-     "spentHours": 9.0,
+     "spentHours": 11.5,
      "logs": [
       [
        "2026-11-19",
@@ -10384,6 +9799,10 @@
       [
        "2026-11-20",
        7.0
+      ],
+      [
+       "2026-11-24",
+       2.5
       ]
      ]
     },
@@ -10468,8 +9887,13 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 2.0,
+     "logs": [
+      [
+       "2026-11-24",
+       2.0
+      ]
+     ]
     },
     {
      "key": "USP-4514",
@@ -10482,8 +9906,13 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.5,
+     "logs": [
+      [
+       "2026-11-24",
+       1.5
+      ]
+     ]
     },
     {
      "key": "USP-4515",
@@ -10496,8 +9925,13 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 2.0,
+     "logs": [
+      [
+       "2026-11-24",
+       2.0
+      ]
+     ]
     },
     {
      "key": "USP-4516",
@@ -10510,8 +9944,13 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 2.0,
+     "logs": [
+      [
+       "2026-11-24",
+       2.0
+      ]
+     ]
     },
     {
      "key": "USP-4517",
@@ -10524,8 +9963,13 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.5,
+     "logs": [
+      [
+       "2026-11-24",
+       1.5
+      ]
+     ]
     },
     {
      "key": "USP-4518",
@@ -10538,8 +9982,13 @@
      "resolved": null,
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.5,
+     "logs": [
+      [
+       "2026-11-24",
+       1.5
+      ]
+     ]
     }
    ],
    "reported": [
@@ -10928,18 +10377,6 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "AFVU-153",
-     "project": "AFVU",
-     "summary": "[Frontend] Bring in the plan tab, progress card, 3D hall states and the tester simulator",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-16",
-     "resolved": "2026-10-27",
-     "due": "2026-10-28",
-     "assignee": "Anshul Bhargava"
-    },
-    {
      "key": "AFVU-154",
      "project": "AFVU",
      "summary": "Build plan end to end: staff, customer, hidden steps and deadline checked 2 Nov; phone and hall checks left",
@@ -10964,42 +10401,6 @@
      "assignee": "Yash Janeshwar"
     },
     {
-     "key": "AFVU-156",
-     "project": "AFVU",
-     "summary": "[Notification service] Add the four conditions and design the four SendGrid templates and in-app entries",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-16",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-157",
-     "project": "AFVU",
-     "summary": "[Frontend] Dashboard card: the real updates list with the day of each",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-16",
-     "resolved": "2026-10-27",
-     "due": "2026-10-25",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-158",
-     "project": "AFVU",
-     "summary": "[Test] Notifications end to end: e-mail, in-app, wording, no internal data, outage",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-16",
-     "resolved": "2026-10-27",
-     "due": "2026-10-31",
-     "assignee": "Anshul Bhargava"
-    },
-    {
      "key": "AFVU-159",
      "project": "AFVU",
      "summary": "[Backend] Roster: architects in a department and assigned to accounts; check the cost of the chat list route",
@@ -11009,30 +10410,6 @@
      "created": "2026-10-16",
      "resolved": "2026-11-02",
      "due": "2026-10-25",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-160",
-     "project": "AFVU",
-     "summary": "[Frontend] Bring in the contacts, build team list, quick message and the conversation thread",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-16",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-161",
-     "project": "AFVU",
-     "summary": "[Test] Hub conversation with real ACS credentials: send, reply, history, no chat by looking, failures",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-16",
-     "resolved": "2026-10-27",
-     "due": "2026-10-31",
      "assignee": "Anshul Bhargava"
     },
     {
@@ -11108,18 +10485,6 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "AFVU-183",
-     "project": "AFVU",
-     "summary": "[Backend] Reference data gaps: power, spec text, SuperPOD items, Supermicro ARS-511GD, data center time zones and add-on wording",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-19",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
      "key": "AFVU-185",
      "project": "AFVU",
      "summary": "[Backend] [Frontend] Release branch on both v3 repos and the developer kit: local setup with the UAT database copy, working rules and Jira process",
@@ -11144,30 +10509,6 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "AFVU-192",
-     "project": "AFVU",
-     "summary": "[Frontend] Site step allows liquid-cooled (DLC) builds at every data centre unless it says it is air cooled",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-19",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-193",
-     "project": "AFVU",
-     "summary": "[Test] Pact contract testing pilot (local only): Portal ↔ CRM contracts for probe-status and factory-config, with a demo",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-20",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
      "key": "AFVU-197",
      "project": "AFVU",
      "summary": "[Frontend] Realistic hall components: switches, storage, NVL72 rack parts, CDU and racks drawn from the ordered design; neutral realistic power room; no made-up numbers",
@@ -11176,18 +10517,6 @@
      "statusCat": "done",
      "created": "2026-10-20",
      "resolved": "2026-10-21",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-205",
-     "project": "AFVU",
-     "summary": "[Data] Server catalog workbook: platforms, brands and servers with specs, NVIDIA RA sheets, hosting fit and a storefront check",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-21",
-     "resolved": "2026-10-27",
      "due": null,
      "assignee": "Anshul Bhargava"
     },
@@ -11324,30 +10653,6 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "AFVU-226",
-     "project": "AFVU",
-     "summary": "[Design] Send Rafay the open questions and record their answers",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": "2026-10-31",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-227",
-     "project": "AFVU",
-     "summary": "[Backend] Teardown when a GPU subscription is cancelled or expires: stop, a window to copy data out, then delete",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
      "key": "AFVU-228",
      "project": "AFVU",
      "summary": "[Config] B2C custom policy for the GPU console and Rafay Global IdP, with the B2C owners and Rafay",
@@ -11372,42 +10677,6 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "AFVU-230",
-     "project": "AFVU",
-     "summary": "[Backend] Invoice GPU-hours above the Pay as you go minimum on the next monthly invoice",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-231",
-     "project": "AFVU",
-     "summary": "[Backend] gpu_cloud app with its own tables, an off-by-default switch, a Rafay client and staff status routes",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": "2026-10-31",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-232",
-     "project": "AFVU",
-     "summary": "[Backend] Setup checks, sealed organization keys, secret key rotation, and a Rafay client that never follows a redirect",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
      "key": "AFVU-233",
      "project": "AFVU",
      "summary": "[Backend] GPU as a Service catalog item, with the offer and quote routes its configuration page uses",
@@ -11420,81 +10689,9 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "AFVU-234",
-     "project": "AFVU",
-     "summary": "[Backend] Deposit instead of a setup fee, regions with availability zones, Take or pay and Pay as you go, and an order check before anything is built",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-235",
-     "project": "AFVU",
-     "summary": "[Frontend] GPU configuration page in the AI Factory Architect layout, with a 3D view of the customer's GPUs",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-236",
-     "project": "AFVU",
-     "summary": "[Frontend] GPU choices panel hides like the AI Factory's, option pictures on dark glass, and a clean Review step",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-237",
-     "project": "AFVU",
-     "summary": "[Content] Content review of the GPU configuration page and its catalog text: nothing cut off, plain words",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-238",
-     "project": "AFVU",
-     "summary": "[Backend] Provisioning: the customer's Rafay organization, its key, the project, its groups and members, and the ops checklist",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
      "key": "AFVU-239",
      "project": "AFVU",
      "summary": "[Backend] The build starts by itself when the deposit is confirmed, timed jobs, and payment holds that pause and resume GPUs",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-240",
-     "project": "AFVU",
-     "summary": "[Frontend] The GPU page says when a subscription is on hold and what that means for its GPUs",
      "type": "Subtask",
      "status": "Done",
      "statusCat": "done",
@@ -11524,126 +10721,6 @@
      "statusCat": "done",
      "created": "2026-10-23",
      "resolved": "2026-11-02",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-243",
-     "project": "AFVU",
-     "summary": "[Backend] GPU service page data: the GPUs ordered, the build in the customer's words, and whether Open GPU console can be used",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-244",
-     "project": "AFVU",
-     "summary": "[Frontend] GPU service page: the GPUs, the build progress, Open GPU console, and the existing Agreements, Invoices and User Access tabs",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-245",
-     "project": "AFVU",
-     "summary": "[Backend] Instances, GPU numbers, alerts and activity from Rafay, read live when a tab opens, with new alerts found within a minute",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-246",
-     "project": "AFVU",
-     "summary": "[Frontend] Instances, Alerts and Activity tabs on the GPU page, with each running instance's GPU numbers",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-247",
-     "project": "AFVU",
-     "summary": "[Backend] Hourly GPU usage from Rafay, read every 30 minutes and kept once per instance and hour, with the Usage tab's figures",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-248",
-     "project": "AFVU",
-     "summary": "[Frontend] Usage tab: GPU-hours of the current billing period, by day and by instance",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-249",
-     "project": "AFVU",
-     "summary": "[Backend] The Rafay console and Operations Console addresses never reach a customer",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-250",
-     "project": "AFVU",
-     "summary": "[Backend] Nightly check that Rafay still matches the Portal, putting right what it safely can",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-251",
-     "project": "AFVU",
-     "summary": "[Docs] Ops runbook and switch-on plan for GPU as a Service",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-252",
-     "project": "AFVU",
-     "summary": "[Backend] Notification template for new GPU alerts, then switch alert notifications on",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-23",
-     "resolved": "2026-10-27",
      "due": null,
      "assignee": "Anshul Bhargava"
     },
@@ -11756,105 +10833,9 @@
      "assignee": "Aman prakash"
     },
     {
-     "key": "AFVU-273",
-     "project": "AFVU",
-     "summary": "Storage, control and per-TB quantities sized from public reference documents, and checked again when the order is placed",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-27",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-274",
-     "project": "AFVU",
-     "summary": "Proposal goes through the upstream contract flow (versions, comments, sign) with a fingerprint and a confirm step",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-27",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-275",
-     "project": "AFVU",
-     "summary": "Code review fixes: sign check tied to the signer, Proposal publish and order check edge cases",
-     "type": "Bug",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-27",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-276",
-     "project": "AFVU",
-     "summary": "Proposal tab sizes a design once instead of on every load",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-27",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava"
-    },
-    {
      "key": "AFVU-277",
      "project": "AFVU",
      "summary": "Genesis orders refused with \"The design no longer matches its quantities\"",
-     "type": "Bug",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-27",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-278",
-     "project": "AFVU",
-     "summary": "Proposal PDF never finishes on AppTest (\"The Proposal is being prepared\")",
-     "type": "Bug",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-27",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-279",
-     "project": "AFVU",
-     "summary": "Summary page cuts off the monthly price with \"…\"",
-     "type": "Bug",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-27",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-280",
-     "project": "AFVU",
-     "summary": "New pages use CRM data only, with proper fallbacks instead of old pages or guessed data",
-     "type": "Story",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-10-27",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Anshul Bhargava"
-    },
-    {
-     "key": "AFVU-281",
-     "project": "AFVU",
-     "summary": "PR 5955 merge dropped two service page fixes and added debug logging",
      "type": "Bug",
      "status": "Done",
      "statusCat": "done",
@@ -16604,18 +15585,6 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "PULSE-278",
-     "project": "PULSE",
-     "summary": "Define — [Backend] CI install and build reproducibility contract and acceptance",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-28",
-     "resolved": "2026-10-26",
-     "due": "2026-10-20",
-     "assignee": "Naveen Jangid"
-    },
-    {
      "key": "PULSE-28",
      "project": "PULSE",
      "summary": "21.04 — [Backend] Telemetry writer normalization and batching",
@@ -17876,18 +16845,6 @@
      "assignee": "Anshul Bhargava"
     },
     {
-     "key": "PULSE-80",
-     "project": "PULSE",
-     "summary": "Document — [Backend] Service health and dependency readiness deployment and operational evidence",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-28",
-     "resolved": "2026-10-27",
-     "due": null,
-     "assignee": "Anshul Bhargava"
-    },
-    {
      "key": "PULSE-81",
      "project": "PULSE",
      "summary": "Define — [Backend] Migration and bootstrap ordering contract and acceptance",
@@ -18648,8 +17605,8 @@
      "project": "UC",
      "summary": "Integration & security review — bypass-resistance regression & latency review",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-09-03",
      "resolved": null,
      "due": "2026-11-30",
@@ -19457,6 +18414,18 @@
    "accountId": "712020:a25f3fea-9d56-4939-9eae-801bd5a4b0f3",
    "assigned": [],
    "reported": [
+    {
+     "key": "AFVU-535",
+     "project": "AFVU",
+     "summary": "Test",
+     "type": "Story",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-26",
+     "resolved": null,
+     "due": null,
+     "assignee": null
+    },
     {
      "key": "PC-118",
      "project": "PC",
