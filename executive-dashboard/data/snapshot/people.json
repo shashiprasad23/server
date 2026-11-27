@@ -1,5 +1,5 @@
 {
- "snapshotDate": "2026-11-26",
+ "snapshotDate": "2026-11-27",
  "people": [
   {
    "name": "Anshul Bhargava",
@@ -16,7 +16,7 @@
      "resolved": "2026-11-12",
      "due": "2026-10-30",
      "assignee": "Anshul Bhargava",
-     "spentHours": 14.92,
+     "spentHours": 18.92,
      "logs": [
       [
        "2026-10-22",
@@ -52,6 +52,14 @@
       ],
       [
        "2026-11-18",
+       0.5
+      ],
+      [
+       "2026-11-26",
+       3.5
+      ],
+      [
+       "2026-11-26",
        0.5
       ]
      ]
@@ -1488,7 +1496,7 @@
      "resolved": "2026-11-12",
      "due": "2026-11-13",
      "assignee": "Anshul Bhargava",
-     "spentHours": 12.0,
+     "spentHours": 16.0,
      "logs": [
       [
        "2026-11-02",
@@ -1521,6 +1529,10 @@
       [
        "2026-11-13",
        2.5
+      ],
+      [
+       "2026-11-26",
+       4.0
       ]
      ]
     },
@@ -2643,11 +2655,16 @@
      "status": "Done",
      "statusCat": "done",
      "created": "2026-11-04",
-     "resolved": "2026-11-13",
+     "resolved": "2026-11-27",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 1.0,
+     "logs": [
+      [
+       "2026-11-27",
+       1.0
+      ]
+     ]
     },
     {
      "key": "AFVU-429",
@@ -2718,11 +2735,16 @@
      "status": "Done",
      "statusCat": "done",
      "created": "2026-11-04",
-     "resolved": "2026-11-12",
+     "resolved": "2026-11-27",
      "due": null,
      "assignee": "Anshul Bhargava",
-     "spentHours": 0.0,
-     "logs": []
+     "spentHours": 0.5,
+     "logs": [
+      [
+       "2026-11-27",
+       0.5
+      ]
+     ]
     },
     {
      "key": "AFVU-433",
@@ -4075,6 +4097,48 @@
        1.5
       ]
      ]
+    },
+    {
+     "key": "AFVU-538",
+     "project": "AFVU",
+     "summary": "[Backend] AI Factory Download Summary returns 502 Bad Gateway on GET /api/subscription/download-summary/",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-27",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-539",
+     "project": "AFVU",
+     "summary": "[Backend] AI Factory Agreement page cannot load Proposal — GET /api/contract-proposal/ returns 502 Bad Gateway",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-27",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
+    },
+    {
+     "key": "AFVU-540",
+     "project": "AFVU",
+     "summary": "[Frontend] MSA Client signature attributes differ between portal view and downloaded document",
+     "type": "Bug",
+     "status": "To Do",
+     "statusCat": "new",
+     "created": "2026-11-27",
+     "resolved": null,
+     "due": null,
+     "assignee": "Anshul Bhargava",
+     "spentHours": 0.0,
+     "logs": []
     },
     {
      "key": "PRD-106",
@@ -9790,7 +9854,7 @@
      "resolved": null,
      "due": "2026-11-30",
      "assignee": "Anshul Bhargava",
-     "spentHours": 11.5,
+     "spentHours": 13.5,
      "logs": [
       [
        "2026-11-19",
@@ -9799,6 +9863,10 @@
       [
        "2026-11-20",
        7.0
+      ],
+      [
+       "2026-11-23",
+       2.0
       ],
       [
        "2026-11-24",
@@ -12073,10 +12141,10 @@
      "project": "AFVU",
      "summary": "[Backend] Schedule the GPU catalog and usage jobs on AppTest",
      "type": "Subtask",
-     "status": "In Review",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-13",
-     "resolved": null,
+     "resolved": "2026-11-27",
      "due": "2026-11-30",
      "assignee": "Yash Janeshwar"
     },
@@ -12109,10 +12177,10 @@
      "project": "AFVU",
      "summary": "[Backend] Detect Rafay GPU quota before the build, and block a later contract version that adds a deposit after approval",
      "type": "Subtask",
-     "status": "In Review",
-     "statusCat": "indeterminate",
+     "status": "Done",
+     "statusCat": "done",
      "created": "2026-11-13",
-     "resolved": null,
+     "resolved": "2026-11-27",
      "due": "2026-11-30",
      "assignee": "Yash Janeshwar"
     },
@@ -16761,30 +16829,6 @@
      "assignee": "Naveen Jangid"
     },
     {
-     "key": "PULSE-74",
-     "project": "PULSE",
-     "summary": "Define — [DevOps] CI verification and release gates contract and acceptance",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-28",
-     "resolved": "2026-10-27",
-     "due": "2026-10-20",
-     "assignee": "Naveen Jangid"
-    },
-    {
-     "key": "PULSE-75",
-     "project": "PULSE",
-     "summary": "Implement — [DevOps] CI verification and release gates",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-28",
-     "resolved": "2026-10-27",
-     "due": "2026-10-23",
-     "assignee": "Naveen Jangid"
-    },
-    {
      "key": "PULSE-76",
      "project": "PULSE",
      "summary": "Implement — [Backend] Service health and dependency readiness",
@@ -16797,33 +16841,9 @@
      "assignee": "Naveen Jangid"
     },
     {
-     "key": "PULSE-77",
-     "project": "PULSE",
-     "summary": "Verify — [DevOps] CI verification and release gates with automated and failure-path tests",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-28",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Naveen Jangid"
-    },
-    {
      "key": "PULSE-78",
      "project": "PULSE",
      "summary": "Verify — [Backend] Service health and dependency readiness with automated and failure-path tests",
-     "type": "Subtask",
-     "status": "Done",
-     "statusCat": "done",
-     "created": "2026-09-28",
-     "resolved": "2026-10-27",
-     "due": "2026-10-27",
-     "assignee": "Naveen Jangid"
-    },
-    {
-     "key": "PULSE-79",
-     "project": "PULSE",
-     "summary": "Document — [DevOps] CI verification and release gates deployment and operational evidence",
      "type": "Subtask",
      "status": "Done",
      "statusCat": "done",
@@ -17401,8 +17421,8 @@
      "project": "UC",
      "summary": "Integration & security review — relay message integrity check",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-11-30",
@@ -17413,8 +17433,8 @@
      "project": "UC",
      "summary": "QA & validation — live relay latency and reliability testing",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-08-13",
      "resolved": null,
      "due": "2026-11-30",
@@ -17617,8 +17637,8 @@
      "project": "UC",
      "summary": "QA & validation — end-to-end compliance gate test pass",
      "type": "Subtask",
-     "status": "To Do",
-     "statusCat": "new",
+     "status": "IN PROGRESS",
+     "statusCat": "indeterminate",
      "created": "2026-09-03",
      "resolved": null,
      "due": null,
